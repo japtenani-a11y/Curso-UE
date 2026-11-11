@@ -1,0 +1,94 @@
+linha_sql
+-- ============================================================
+-- 03_setup_minimo_v4.3.sql
+-- Sistema de Producao Curricular e Coleta Cientifica
+-- Programa de Cirurgia de Urgencia e Trauma
+-- Versao 4.3 / 10-11-2026
+--
+-- OBJETIVO: popular o banco com o conjunto minimo para testar
+-- o fluxo do aluno. Cria 1 ciclo, 1 tema, 1 onda D0 com 7
+-- itens, 5 alternativas por item, 1 aluno de teste.
+--
+-- PRE-REQUISITO: 01_instalar_v4.4 e 02_verificar_v4.4.
+--
+-- USO: psql -d programa_v44 -v ON_ERROR_STOP=1 -f 03_setup_minimo_v4.3.sql
+-- ============================================================
+
+\set ON_ERROR_STOP on
+\echo '=== SETUP MINIMO v4.3 ==='
+
+BEGIN;
+
+-- CICLO
+INSERT INTO app.ciclo (ano_ingresso, nome, data_inicio, data_fim)
+VALUES (2026, 'Ciclo 2026', '2026-02-01', '2026-12-15')
+ON CONFLICT (ano_ingresso) DO NOTHING;
+
+-- TEMA
+INSERT INTO app.tema (ciclo_id, codigo, titulo, papel_curricular, grau, carga_horaria, dificuldade)
+SELECT ciclo_id, 'T-001', 'Avaliacao inicial do trauma', 'nuclear', 'R1', 8, 2
+  FROM app.ciclo WHERE ano_ingresso = 2026
+ON CONFLICT (ciclo_id, codigo) DO NOTHING;
+
+-- ONDA D0
+INSERT INTO app.onda_instancia (ciclo_id, onda_codigo, ordem_onda, data_abertura, data_fechamento, status)
+SELECT ciclo_id, 'D0', 0, '2026-02-01 00:00:00-03', '2026-02-28 23:59:59-03', 'aberta'
+  FROM app.ciclo WHERE ano_ingresso = 2026
+ON CONFLICT (ciclo_id, onda_codigo) DO NOTHING;
+
+-- 7 ITENS
+DO $$
+DECLARE
+  v_tema_id BIGINT;
+  v_onda_id BIGINT;
+  v_item_id BIGINT;
+  i INTEGER;
+BEGIN
+  SELECT tema_id INTO v_tema_id FROM app.tema WHERE codigo = 'T-001';
+  SELECT onda_id INTO v_onda_id FROM app.onda_instancia WHERE onda_codigo = 'D0';
+
+  FOR i IN 1..7 LOOP
+    INSERT INTO app.item (tema_id, enunciado, dificuldade, ancora)
+    VALUES (v_tema_id,
+            'Item ' || i || ': qual a conduta inicial no atendimento ao politraumatizado grave?',
+            ((i - 1) % 5) + 1,
+            'ATLS 10a edicao, capitulo 1')
+    RETURNING item_id INTO v_item_id;
+
+    INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distrator) VALUES
+      (v_item_id, 1, 'Avaliar via aerea com controle cervical', true, NULL),
+      (v_item_id, 2, 'Solicitar tomografia antes de estabilizar', false, 'erro_conduta'),
+      (v_item_id, 3, 'Administrar antibiótico profilático', false, 'erro_indicacao'),
+      (v_item_id, 4, 'Realizar punção venosa central imediata', false, 'erro_tecnico'),
+      (v_item_id, 5, 'Aguardar exames laboratoriais', false, 'erro_conceitual');
+
+    UPDATE app.item SET gabarito_alternativa_id = (
+      SELECT alternativa_id FROM app.alternativa WHERE item_id = v_item_id AND eh_correta
+    ) WHERE item_id = v_item_id;
+
+    INSERT INTO app.item_selecionado (onda_id, item_id, ordem_apresentada)
+    VALUES (v_onda_id, v_item_id, i);
+  END LOOP;
+END $$;
+
+-- ALUNO DE TESTE
+INSERT INTO app.pessoa (nome_completo, email_primario)
+VALUES ('Aluno Teste R1', 'r1.teste@setup.local')
+ON CONFLICT (email_primario) DO NOTHING;
+
+INSERT INTO app.posicao_anual (pessoa_id, perfil_id, ano_letivo, grau, ativo)
+SELECT p.pessoa_id, 6, 2026, 'R1', true
+  FROM app.pessoa p WHERE p.email_primario = 'r1.teste@setup.local'
+ON CONFLICT (pessoa_id, ano_letivo, perfil_id) DO NOTHING;
+
+-- CONFERENCIA
+\echo '--- Conferencia ---'
+
+SELECT 'itens na onda D0: ' || count(*) FROM app.item_selecionado WHERE onda_codigo = 'D0';
+SELECT 'alternativas por item: ' || count(*) FROM app.alternativa a
+  JOIN app.item i ON i.item_id = a.item_id
+ WHERE i.tema_id = (SELECT tema_id FROM app.tema WHERE codigo = 'T-001');
+
+\echo '=== SETUP MINIMO CONCLUIDO ==='
+
+COMMIT;
