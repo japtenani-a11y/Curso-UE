@@ -18,7 +18,7 @@
 \set ON_ERROR_STOP on
 \echo '=== SETUP PROMPTS DE FASE v4.4 ==='
 
-BEGIN
+BEGIN;
 
 -- 6 PROMPTS DE FASE
 INSERT INTO conteudo.prompt (slug, familia, skill_codigo, conteudo, max_tokens, temperatura) VALUES
@@ -50,7 +50,7 @@ ON CONFLICT (slug) DO UPDATE
        skill_codigo = EXCLUDED.skill_codigo,
        conteudo = EXCLUDED.conteudo,
        max_tokens = EXCLUDED.max_tokens,
-       temperatura = EXCLUDED.temperatura
+       temperatura = EXCLUDED.temperatura;
 
 -- 20 PROMPTS DE TEMA
 INSERT INTO conteudo.prompt (slug, familia, skill_codigo, conteudo, max_tokens, temperatura) VALUES
@@ -79,15 +79,15 @@ ON CONFLICT (slug) DO UPDATE
        skill_codigo = EXCLUDED.skill_codigo,
        conteudo = EXCLUDED.conteudo,
        max_tokens = EXCLUDED.max_tokens,
-       temperatura = EXCLUDED.temperatura
+       temperatura = EXCLUDED.temperatura;
 
 -- CONFERENCIA
 \echo '--- Conferencia ---'
 
-SELECT 'prompts de fase: ' || count(*) FROM conteudo.prompt WHERE slug LIKE 'fase_%'
-SELECT 'prompts de tema: ' || count(*) FROM conteudo.prompt WHERE slug LIKE 'P-%'
-SELECT 'total de prompts: ' || count(*) FROM conteudo.prompt
+SELECT 'prompts de fase: ' || count(*) FROM conteudo.prompt WHERE slug LIKE 'fase_%';
+SELECT 'prompts de tema: ' || count(*) FROM conteudo.prompt WHERE slug LIKE 'P-%';
+SELECT 'total de prompts: ' || count(*) FROM conteudo.prompt;
 
 \echo '=== SETUP PROMPTS DE FASE CONCLUIDO ==='
 
-COMMIT
+COMMIT;
