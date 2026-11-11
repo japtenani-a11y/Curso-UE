@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 08a_implementacao_aluno_core_v1.0.sh
@@ -21,11 +20,11 @@ linha_sql
 
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== IMPLEMENTACAO ALUNO CORE v1.0 ==="""
+echo "=== IMPLEMENTACAO ALUNO CORE v1.0 ==="
 
-"cat > ""$RAIZ/api/src/routes/aluno.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/aluno.ts" <<'EOF'
 import { Router } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -168,5 +167,5 @@ alunoRouter.post('/tentativas/:tentativaId/submeter', async (req, res, next) => 
 });
 EOF
 
-"echo ""=== IMPLEMENTACAO ALUNO CORE CONCLUIDA ==="""
-"echo ""Verifique: ls $RAIZ/api/src/routes/aluno.ts"""
+echo "=== IMPLEMENTACAO ALUNO CORE CONCLUIDA ==="
+echo "Verifique: ls $RAIZ/api/src/routes/aluno.ts"
