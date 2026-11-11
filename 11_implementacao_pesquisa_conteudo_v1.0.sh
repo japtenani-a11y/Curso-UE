@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 11_implementacao_pesquisa_conteudo_v1.0.sh
@@ -16,11 +15,11 @@ linha_sql
 # ============================================================
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== IMPLEMENTACAO PESQUISA E CONTEUDO v1.0 ==="""
+echo "=== IMPLEMENTACAO PESQUISA E CONTEUDO v1.0 ==="
 
-"cat > ""$RAIZ/api/src/routes/pesquisa.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/pesquisa.ts" <<'EOF'
 import { Router } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -163,7 +162,7 @@ pesquisaRouter.get('/alertas', async (_req, res, next) => {
 });
 EOF
 
-"cat > ""$RAIZ/api/src/routes/conteudo.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/conteudo.ts" <<'EOF'
 import { Router } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -257,5 +256,5 @@ conteudoRouter.get('/assinaturas', async (_req, res, next) => {
 });
 EOF
 
-"echo ""=== IMPLEMENTACAO PESQUISA E CONTEUDO CONCLUIDA ==="""
-"echo ""Verifique: ls $RAIZ/api/src/routes/pesquisa.ts $RAIZ/api/src/routes/conteudo.ts"""
+echo "=== IMPLEMENTACAO PESQUISA E CONTEUDO CONCLUIDA ==="
+echo "Verifique: ls $RAIZ/api/src/routes/pesquisa.ts $RAIZ/api/src/routes/conteudo.ts"
