@@ -20,7 +20,7 @@
 \set ON_ERROR_STOP on
 \echo '=== HELPER SESSAO TESTE v4.4 ==='
 
-BEGIN
+BEGIN;
 
 CREATE OR REPLACE FUNCTION app.fn_sessao_teste(p_email TEXT)
 RETURNS TEXT
@@ -28,16 +28,16 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 DECLARE
-  v_pessoa_id BIGINT
-  v_token TEXT
+  v_pessoa_id BIGINT;
+  v_token TEXT;
 BEGIN
   SELECT pessoa_id INTO v_pessoa_id
     FROM app.pessoa
-   WHERE email_primario = p_email
+   WHERE email_primario = p_email;
 
   IF v_pessoa_id IS NULL THEN
     RAISE EXCEPTION 'pessoa nao encontrada: %', p_email USING ERRCODE = '23503';
-  END IF
+  END IF;
 
   v_token := encode(gen_random_bytes(32), 'hex');
 
@@ -46,32 +46,32 @@ BEGIN
           encode(digest(v_token, 'sha256'), 'hex'),
           now() + interval '24 hours',
           '127.0.0.1'::inet,
-          'fn_sessao_teste')
+          'fn_sessao_teste');
 
-  RETURN v_token
-END $$
+  RETURN v_token;
+END $$;
 
 COMMENT ON FUNCTION app.fn_sessao_teste(TEXT) IS
-  'Emite token de sessao para um e-mail cadastrado. Uso exclusivo em teste.'
+  'Emite token de sessao para um e-mail cadastrado. Uso exclusivo em teste.';
 
-GRANT EXECUTE ON FUNCTION app.fn_sessao_teste(TEXT) TO api_rw
+GRANT EXECUTE ON FUNCTION app.fn_sessao_teste(TEXT) TO api_rw;
 
 -- VALIDACAO
 \echo '--- Validacao ---'
 
 DO $$
 DECLARE
-  v_token TEXT
+  v_token TEXT;
 BEGIN
-  v_token := app.fn_sessao_teste('r1.teste@setup.local')
+  v_token := app.fn_sessao_teste('r1.teste@setup.local');
   IF v_token IS NULL OR length(v_token) < 32 THEN
-    RAISE EXCEPTION 'fn_sessao_teste retornou token invalido'
-  END IF
+    RAISE EXCEPTION 'fn_sessao_teste retornou token invalido';
+  END IF;
   RAISE NOTICE 'fn_sessao_teste OK: token de % caracteres', length(v_token);
-END $$
+END $$;
 
-SELECT 'sessoes ativas: ' || count(*) FROM app.sessao WHERE revogada_em IS NULL
+SELECT 'sessoes ativas: ' || count(*) FROM app.sessao WHERE revogada_em IS NULL;
 
 \echo '=== HELPER SESSAO TESTE CONCLUIDO ==='
 
-COMMIT
+COMMIT;
