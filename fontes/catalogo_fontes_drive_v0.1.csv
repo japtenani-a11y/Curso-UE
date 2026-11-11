@@ -1,65 +1,118 @@
-raiz,drive_id,titulo,tipo,temas_provaveis,base_da_classificacao,conteudo
-Protocolos HM,17h0tFcuECfeNx5WojCRo_i6z31XqwoVC,Artigos Protocolo Vesícula,pasta,T037,título,nao_lido
-Protocolos HM,1qwMZXUczRfqPW3goJohKyfbgZj6BUZup,CIRUGIA GERAL - HM,pasta,REVISAR,título,nao_lido
-Protocolos HM,1vL3nvg2pk0ojOLv25W0DYCCgwbRtkOtEmnNvubdZ2U8,Protocolo Colecistectomia - Municipal,doc,T037,título,nao_lido
-Protocolos HM,12T7hixaha-0zKxvr_H2SVCPzjP_AuztH,PROTOCOLO COLECISTECTOMIA - Serrana.docx,docx,T037,título,nao_lido
-Protocolos HM,1yAu4fy4xNlXviwuTy2H_RrYxgiLlox5A,Diretriz Hemorróida.pdf,pdf,T048,título,nao_lido
-Biblioteca,0B-RAtHLBlJV-N2x1ZVFRNnNRaHc,Cirurgia,pasta,REVISAR,título,nao_lido
-Biblioteca,0B-RAtHLBlJV-d3NrdXZNRDNuNVk,Clínica,pasta,REVISAR,título,nao_lido
-Biblioteca,0B-RAtHLBlJV-M01ScjNmTWVDalU,Emergências,pasta,REVISAR,título,nao_lido
-Biblioteca,1NxWAvgLuaFGodfG9y7VQr6GfpxT42SpvGFis20OdRts,Livros,planilha,REVISAR,título,nao_lido
-Biblioteca,1aI05ZE7e0_LcQcjgjeqsIAWiHhL5VRHU,ATLS 11° traduzido.pdf,pdf,T001,título,nao_lido
-Aulas,1HZgG_Q34jniRYgPZphfYNGCPGIwBn0_8,2026,pasta,REVISAR,título,nao_lido
-Aulas,1Qv8rzQ1TKYeZQ6oJ-tMIrS5dyE_OC-7R,Imagens Aulas,pasta,REVISAR,título,nao_lido
-Aulas,14wqHNAwRTxwiGLRoAe3CfAjqXsV9hRtAfu3pgSbdPXg,2024-04-25 - Toracoscopia no Trauma,slides,T014,título,nao_lido
-Aulas,12SUGGY03Zjg2YAbarBe8VY17ZirhMEv-,TOMOGRAFIAS - FAF TORACOADOMINAL - VLP + VIDEOTORACO,pasta,T014;T110,título,nao_lido
-Aulas,1JjJ3aTzSDon-91e_gGK2aTKrbN1L2Pg7NH0qpsd48d4,2025-08-04 - Imaginologia no Trauma,slides,T110,título,nao_lido
-Aulas,1LRPxvT5ZrfyWFaZ5O-ColacXt6iT9yChLpLVvUfLTfU,2023-08-24 - Como eu Trato - Cirurgia de Controle de Danos e Abdome Aberto no Trauma,slides,T007;T009,título,nao_lido
-Aulas,1SohU1x5pxk75_WaSFs-g10KavSmqwGOVsFjbxYevMdw,Reunião SBAIT - Caso Cervico-toracotomia,slides,T015,título,nao_lido
-Aulas,15lnfP2PJs8aubNpNpJjui0OuB9OZOfDGUJEoY4F-GWI,2022-02-24 - Caso Clínico - Reunião SBAIT,slides,REVISAR,título,nao_lido
-Aulas,16rN-JcLgT_1T45FPi5W-yp7Zi5NbH3ODCgOxbF3Yd8g,2021-07-23 - Caso Clínico - Reunião do Dep,slides,REVISAR,título,nao_lido
-Aulas,10lB43lETpFTqA0DIZDG7-eNRIlSqZ8f25-EspnOkE6w,2023-03-08 - Reunião Semanal - Trauma - Avaliação Inicial,slides,T001,título,nao_lido
-Aulas,1MC6v1NmMr6ZhG8wuRaEaAG3mgAbeZlxr9ATsgP45d_U,2024-08-16 - Trauma Brasil - Indicação e técnicas de videotoracoscopia para tratamento de lesões torácicas,slides,T014,título,nao_lido
-Aulas,1bZniXm8rIyhHjSAncZD6wHYpD_ddTiI96rmgiNn2zj8,2024-09-24 - IRCAD Toracoscopia,slides,T014,título,nao_lido
-Aulas,1utiX_VUHEum2zFa_jJ5n72Bq-VENHI1C70I4Rmhxp88,Apresentação - Damage Control - LIGA,slides,T007,título,nao_lido
-Aulas,1GfhzMFu44ksNiaNIzD1Qq_o_LxcC_rzqwPlEuz5H6cM,2023-03-17 - Reunião Departamento - Controle de danos - Esplenectomia,slides,T007;T023,título,nao_lido
-Aulas,133XN_COfxZVC7TEk3o6nudwu-WPsuanGrUV8MCqKtFk,2022-04-29 - Caso Clínico - Reunião Departamento,slides,REVISAR,título,nao_lido
-Aulas,1KrTX7sWa4yFDKW-0dHuBgx7sDEb6pUaN,2023-07-30 - Congresso CBC-SBAIT-SPT - trauma cervical - quando não operar.pptx,pptx,T034,título,nao_lido
-Aulas,1aROv68jdxoSI1SKXkAevsmphY07pa_X46dW_rslsJkw,2023-04-29 - Discussão de Caso - TACS - SBAIT,slides,REVISAR,título,nao_lido
-Aulas,1ikZkjIRLxUeJbqB67Bchzv6vdhWA1GP_TR3TkYYxSRU,2023-03-22 - Reunião Semanal - Trauma - Coagulopatia Induzida por Trauma,slides,T005,título,nao_lido
-Aulas,1Pn_nhn_WOgs9l6lxS8pdeOXdJqQmZs4KLV1b09iWfig,2023-03-15 - Reunião Semanal - Trauma - Via Aéra,slides,REVISAR,título,nao_lido
-Aulas,1-zXuI7Kex8gUPOJbcYbJSkrJF7DCq9GPgRMXZOubJ2c,2022-10-21 - Reunião DP - Caso clínico - Decisões Críticas em Trauma,slides,T077,título,nao_lido
-Aulas,1kOSE-vb1jVmAQqMAXV03fKKMaas5Gk0jkRusGoKpVLk,2022-07-08 - IRCAD - Caso clínico - Decisões Críticas em Trauma,slides,T077,título,nao_lido
-Aulas,1xHbHlehmCfCDRDj-kLjI5Od1nX1beQAlDvLRRuzZWzo,2022-06-23 - Caso Clínico - Reunião SBAIT - Trauma Vesícula,slides,T022,título,nao_lido
-Aulas,1Z3F50MSpIPt99GcGkyhcr0v73iCDQlZfxj2P3oD-c70,2023-06-17 - TNO Esplenico - TACS - SBAIT,slides,T023,título,nao_lido
-Aulas,10QzCOO24KnkG186E4bM8QPmbMurBT9HDi6BbrTHdOo4,2023-10-14 - Fixação de arcos costais - Como eu faço - TACS - SBAIT,slides,T012,título,nao_lido
-Aulas,14VV9zGf_aal_zfc0w8xy7cuE6MsmT6Nw77EIsctxwVo,Cópia de 2024-09-24 - IRCAD Toracoscopia,slides,T014,título,nao_lido
-Aulas,1dRbWQZUAzePqpMBNvVLDsdv8fLN7JLy6,IRCAD Toracoscopia.pptx,pptx,T014,título,nao_lido
-Aulas,1Bjl2aARTZNDeY6ypXEb6ztIK08dme4PPIuquHfkiTTk,FAF TORAX + ABDOME - VLP + VIDEOTÓRACO,doc,T014;T110,título,nao_lido
-Aulas,1CvaggH8DdvNe-d4SvUTt5eMIAEREXgI4,Apresentação_LOGO UE.pptx,pptx,REVISAR,título,nao_lido
-Aulas,1mUpOiTg1Bo9uR7L6IcQ0RDiWxk_FLgVIb-rXxs1b12o,Apresentação Artigo UTF 2018/04/12,slides,REVISAR,título,nao_lido
-Aulas,1_sCEM_qk5now1FsQELaPYUML35UcPHNwehonfjqoHXI,Aula - DS GAP-SJ - Litiase Renal,slides,T065,título,nao_lido
-Aulas,1gUZfmCi_n7vri6nDWIYyH7GF8xhcywLyAJ_O-1Q5akg,ITU - Gestação,slides,REVISAR,título,nao_lido
-Aulas,101rEONGwnr9tbF-tZ0j9-dkSHauTx9RrHnb74D3Cd14,Hidroeletrolitico,doc,T089,título,nao_lido
-Aulas,0B-RAtHLBlJV-NVJZNXhGQ2RVaE0,Exercícios Val.doc,doc,REVISAR,título,nao_lido
-Aulas,0B-RAtHLBlJV-U3VBWWVLQWJtdEU,Slide PeriOP - Cx 6º Ano.pps,pps,T086,título,nao_lido
-Aulas,0B-RAtHLBlJV-U0ZPcEYyY2xfczA,Caso 2 - Neonatologia.pptx,pptx,REVISAR,título,nao_lido
-Aulas,15TyhIr9U2rYA3k0ojZHzDw8rWuRohBNiJZwO_v2QQz0,Caso URO - Tx intervivos,slides,REVISAR,título,nao_lido
-Aulas,1ZEskDWufxplbhsEpWTcw-b9OQr9t11QooJ3IW7ym0fw,Caso VASC,slides,REVISAR,título,nao_lido
-Aulas,1x_tgB_Cf8Dwv5XJ090uoadlEqeM0nT2gxuZaFQzUw7E,domingos.pptx,slides,REVISAR,título,nao_lido
-Aulas,1YJi8mGWgROvLbrj1ae0dB_7jFwGJMni5aTMJeBiA188,Antônio-da-Silva-13169964I.pptx,slides,REVISAR,título,nao_lido
-Aulas,0B-RAtHLBlJV-d3pIbmVkdlZvWDg,COMA.pptx,pptx,REVISAR,título,nao_lido
-Aulas,1porufPhpDDKh1VKx10e0-zqfRU8abJ94zJ1hI5OC8fo,Caso Clínico - GAC (semana mista),slides,REVISAR,título,nao_lido
-Aulas,1Sdq3YtntL9v9S9Szlr1E3PrbvxIvWa0ZS0_gI7IDs9Q,CasoNEURO-AILTON.pptx,slides,REVISAR,título,nao_lido
-Aulas,1qiGWLaqwF9zhkJMaX4ZhfUK_7oYyQKzohlUWbpAbVfk,NSF VI,slides,REVISAR,título,nao_lido
-Pastas por técnica,13JAbyaZ7VuB4zZs1n8w87jHWZV-27GHZ,Laparoscopia no trauma,pasta,T109,título,nao_lido
-Pastas por técnica,1k7J9yUoPlEl526Kf6Z8sb-8PzFuX-VBK,toracoscopia,pasta,T014,título,nao_lido
-Pastas por técnica,1MY1mUO2WNBBWDQNbwknTWlKOYUA9l_gx,Via Aérea,pasta,T002,título,nao_lido
-Pastas por técnica,1mib4bMeKKRzPw0wg22tABEkhS32PFiVT,Pantomografia,pasta,REVISAR,título,nao_lido
-Pastas por técnica,1E2svFcsVYHX1EcsksojixrlMRSpSCzTU,RENAL,pasta,T065,título,nao_lido
-Serviço Trauma HCRP,1V9D3zvgg5MKJmZTrNBbymmsH76NSfFUy,Protocolos,pasta,REVISAR,título,nao_lido
-Serviço Trauma HCRP,1vcUb2ah1nR6t_OJxVw7-7cX380Tv1RBI,PROTOCOLOS 2021,pasta,REVISAR,título,nao_lido
-Serviço Trauma HCRP,1lCqMXlSQ6qHPZhp4_4FEsBRWWQ5OPGP3,Aulas,pasta,REVISAR,título,nao_lido
-Serviço Trauma HCRP,1BjCIc-gZcJInOCnP-unH3hRNOiY9yYYz,Esplenectomia.m4v,video,T023,título,nao_lido
-Reunião semanal,19bcAyfMF3sj7L4PekuKvOeXpMdE-_7wyB1ecAWwwhaU,2023-03-15 - Via Aérea,slides,T002,título,nao_lido
-Reunião semanal,14v01R0CIpxjke4g3Hqa-8iprAXE0AhYE,2023-04-19 - Peritoneostomia e controle de danos.pptx,pptx,T007;T009,título,nao_lido
+raiz,drive_id,titulo,tipo,temas_provaveis,uso,base_da_classificacao,conteudo
+Protocolos HM,17h0tFcuECfeNx5WojCRo_i6z31XqwoVC,Artigos Protocolo Vesícula,pasta,T037,pasta_a_percorrer,título,nao_lido
+Protocolos HM,1qwMZXUczRfqPW3goJohKyfbgZj6BUZup,CIRUGIA GERAL - HM,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Protocolos HM,1vL3nvg2pk0ojOLv25W0DYCCgwbRtkOtEmnNvubdZ2U8,Protocolo Colecistectomia - Municipal,doc,T037,fonte_institucional,título,nao_lido
+Protocolos HM,12T7hixaha-0zKxvr_H2SVCPzjP_AuztH,PROTOCOLO COLECISTECTOMIA - Serrana.docx,docx,T037,fonte_institucional,título,nao_lido
+Protocolos HM,1yAu4fy4xNlXviwuTy2H_RrYxgiLlox5A,Diretriz Hemorróida.pdf,pdf,T048,fonte_institucional,título,nao_lido
+Biblioteca,0B-RAtHLBlJV-N2x1ZVFRNnNRaHc,Cirurgia,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Biblioteca,0B-RAtHLBlJV-d3NrdXZNRDNuNVk,Clínica,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Biblioteca,0B-RAtHLBlJV-M01ScjNmTWVDalU,Emergências,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Biblioteca,1NxWAvgLuaFGodfG9y7VQr6GfpxT42SpvGFis20OdRts,Livros,planilha,REVISAR,fonte_institucional,título,nao_lido
+Biblioteca,1aI05ZE7e0_LcQcjgjeqsIAWiHhL5VRHU,ATLS 11° traduzido.pdf,pdf,T001,fonte_institucional,título,nao_lido
+Aulas,1HZgG_Q34jniRYgPZphfYNGCPGIwBn0_8,2026,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Aulas,1Qv8rzQ1TKYeZQ6oJ-tMIrS5dyE_OC-7R,Imagens Aulas,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Aulas,14wqHNAwRTxwiGLRoAe3CfAjqXsV9hRtAfu3pgSbdPXg,2024-04-25 - Toracoscopia no Trauma,slides,T014,fonte_institucional,título,nao_lido
+Aulas,12SUGGY03Zjg2YAbarBe8VY17ZirhMEv-,TOMOGRAFIAS - FAF TORACOADOMINAL - VLP + VIDEOTORACO,pasta,T014;T110,pasta_a_percorrer,título,nao_lido
+Aulas,1JjJ3aTzSDon-91e_gGK2aTKrbN1L2Pg7NH0qpsd48d4,2025-08-04 - Imaginologia no Trauma,slides,T110,fonte_institucional,título,nao_lido
+Aulas,1LRPxvT5ZrfyWFaZ5O-ColacXt6iT9yChLpLVvUfLTfU,2023-08-24 - Como eu Trato - Cirurgia de Controle de Danos e Abdome Aberto no Trauma,slides,T007;T009,fonte_institucional,título,nao_lido
+Aulas,1SohU1x5pxk75_WaSFs-g10KavSmqwGOVsFjbxYevMdw,Reunião SBAIT - Caso Cervico-toracotomia,slides,T015,fonte_institucional,título,nao_lido
+Aulas,15lnfP2PJs8aubNpNpJjui0OuB9OZOfDGUJEoY4F-GWI,2022-02-24 - Caso Clínico - Reunião SBAIT,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,16rN-JcLgT_1T45FPi5W-yp7Zi5NbH3ODCgOxbF3Yd8g,2021-07-23 - Caso Clínico - Reunião do Dep,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,10lB43lETpFTqA0DIZDG7-eNRIlSqZ8f25-EspnOkE6w,2023-03-08 - Reunião Semanal - Trauma - Avaliação Inicial,slides,T001,fonte_institucional,título,nao_lido
+Aulas,1MC6v1NmMr6ZhG8wuRaEaAG3mgAbeZlxr9ATsgP45d_U,2024-08-16 - Trauma Brasil - Indicação e técnicas de videotoracoscopia para tratamento de lesões torácicas,slides,T014,fonte_institucional,título,nao_lido
+Aulas,1bZniXm8rIyhHjSAncZD6wHYpD_ddTiI96rmgiNn2zj8,2024-09-24 - IRCAD Toracoscopia,slides,T014,fonte_institucional,título,nao_lido
+Aulas,1utiX_VUHEum2zFa_jJ5n72Bq-VENHI1C70I4Rmhxp88,Apresentação - Damage Control - LIGA,slides,T007,fonte_institucional,título,nao_lido
+Aulas,1GfhzMFu44ksNiaNIzD1Qq_o_LxcC_rzqwPlEuz5H6cM,2023-03-17 - Reunião Departamento - Controle de danos - Esplenectomia,slides,T007;T023,fonte_institucional,título,nao_lido
+Aulas,133XN_COfxZVC7TEk3o6nudwu-WPsuanGrUV8MCqKtFk,2022-04-29 - Caso Clínico - Reunião Departamento,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1KrTX7sWa4yFDKW-0dHuBgx7sDEb6pUaN,2023-07-30 - Congresso CBC-SBAIT-SPT - trauma cervical - quando não operar.pptx,pptx,T034,fonte_institucional,título,nao_lido
+Aulas,1aROv68jdxoSI1SKXkAevsmphY07pa_X46dW_rslsJkw,2023-04-29 - Discussão de Caso - TACS - SBAIT,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1ikZkjIRLxUeJbqB67Bchzv6vdhWA1GP_TR3TkYYxSRU,2023-03-22 - Reunião Semanal - Trauma - Coagulopatia Induzida por Trauma,slides,T005,fonte_institucional,título,nao_lido
+Aulas,1Pn_nhn_WOgs9l6lxS8pdeOXdJqQmZs4KLV1b09iWfig,2023-03-15 - Reunião Semanal - Trauma - Via Aéra,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1-zXuI7Kex8gUPOJbcYbJSkrJF7DCq9GPgRMXZOubJ2c,2022-10-21 - Reunião DP - Caso clínico - Decisões Críticas em Trauma,slides,T077,fonte_institucional,título,nao_lido
+Aulas,1kOSE-vb1jVmAQqMAXV03fKKMaas5Gk0jkRusGoKpVLk,2022-07-08 - IRCAD - Caso clínico - Decisões Críticas em Trauma,slides,T077,fonte_institucional,título,nao_lido
+Aulas,1xHbHlehmCfCDRDj-kLjI5Od1nX1beQAlDvLRRuzZWzo,2022-06-23 - Caso Clínico - Reunião SBAIT - Trauma Vesícula,slides,T022,fonte_institucional,título,nao_lido
+Aulas,1Z3F50MSpIPt99GcGkyhcr0v73iCDQlZfxj2P3oD-c70,2023-06-17 - TNO Esplenico - TACS - SBAIT,slides,T021;T023,fonte_institucional,título,nao_lido
+Aulas,10QzCOO24KnkG186E4bM8QPmbMurBT9HDi6BbrTHdOo4,2023-10-14 - Fixação de arcos costais - Como eu faço - TACS - SBAIT,slides,T012,fonte_institucional,título,nao_lido
+Aulas,14VV9zGf_aal_zfc0w8xy7cuE6MsmT6Nw77EIsctxwVo,Cópia de 2024-09-24 - IRCAD Toracoscopia,slides,T014,fonte_institucional,título,nao_lido
+Aulas,1dRbWQZUAzePqpMBNvVLDsdv8fLN7JLy6,IRCAD Toracoscopia.pptx,pptx,T014,fonte_institucional,título,nao_lido
+Aulas,1Bjl2aARTZNDeY6ypXEb6ztIK08dme4PPIuquHfkiTTk,FAF TORAX + ABDOME - VLP + VIDEOTÓRACO,doc,T014;T110,fonte_institucional,título,nao_lido
+Aulas,1CvaggH8DdvNe-d4SvUTt5eMIAEREXgI4,Apresentação_LOGO UE.pptx,pptx,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1mUpOiTg1Bo9uR7L6IcQ0RDiWxk_FLgVIb-rXxs1b12o,Apresentação Artigo UTF 2018/04/12,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1_sCEM_qk5now1FsQELaPYUML35UcPHNwehonfjqoHXI,Aula - DS GAP-SJ - Litiase Renal,slides,T065,fonte_institucional,título,nao_lido
+Aulas,1gUZfmCi_n7vri6nDWIYyH7GF8xhcywLyAJ_O-1Q5akg,ITU - Gestação,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,101rEONGwnr9tbF-tZ0j9-dkSHauTx9RrHnb74D3Cd14,Hidroeletrolitico,doc,T089,fonte_institucional,título,nao_lido
+Aulas,0B-RAtHLBlJV-NVJZNXhGQ2RVaE0,Exercícios Val.doc,doc,REVISAR,fonte_institucional,título,nao_lido
+Aulas,0B-RAtHLBlJV-U3VBWWVLQWJtdEU,Slide PeriOP - Cx 6º Ano.pps,pps,T086,fonte_institucional,título,nao_lido
+Aulas,0B-RAtHLBlJV-U0ZPcEYyY2xfczA,Caso 2 - Neonatologia.pptx,pptx,REVISAR,fonte_institucional,título,nao_lido
+Aulas,15TyhIr9U2rYA3k0ojZHzDw8rWuRohBNiJZwO_v2QQz0,Caso URO - Tx intervivos,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1ZEskDWufxplbhsEpWTcw-b9OQr9t11QooJ3IW7ym0fw,Caso VASC,slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1x_tgB_Cf8Dwv5XJ090uoadlEqeM0nT2gxuZaFQzUw7E,domingos.pptx,slides,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Aulas,1YJi8mGWgROvLbrj1ae0dB_7jFwGJMni5aTMJeBiA188,Antônio-da-Silva-13169964I.pptx,slides,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Aulas,0B-RAtHLBlJV-d3pIbmVkdlZvWDg,COMA.pptx,pptx,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1porufPhpDDKh1VKx10e0-zqfRU8abJ94zJ1hI5OC8fo,Caso Clínico - GAC (semana mista),slides,REVISAR,fonte_institucional,título,nao_lido
+Aulas,1Sdq3YtntL9v9S9Szlr1E3PrbvxIvWa0ZS0_gI7IDs9Q,CasoNEURO-AILTON.pptx,slides,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Aulas,1qiGWLaqwF9zhkJMaX4ZhfUK_7oYyQKzohlUWbpAbVfk,NSF VI,slides,REVISAR,fonte_institucional,título,nao_lido
+Pastas por técnica,13JAbyaZ7VuB4zZs1n8w87jHWZV-27GHZ,Laparoscopia no trauma,pasta,T109,pasta_a_percorrer,título,nao_lido
+Pastas por técnica,1k7J9yUoPlEl526Kf6Z8sb-8PzFuX-VBK,toracoscopia,pasta,T014,pasta_a_percorrer,título,nao_lido
+Pastas por técnica,1MY1mUO2WNBBWDQNbwknTWlKOYUA9l_gx,Via Aérea,pasta,T002,pasta_a_percorrer,título,nao_lido
+Pastas por técnica,1mib4bMeKKRzPw0wg22tABEkhS32PFiVT,Pantomografia,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Pastas por técnica,1E2svFcsVYHX1EcsksojixrlMRSpSCzTU,RENAL,pasta,T065,pasta_a_percorrer,título,nao_lido
+Serviço Trauma HCRP,1V9D3zvgg5MKJmZTrNBbymmsH76NSfFUy,Protocolos,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Serviço Trauma HCRP,1vcUb2ah1nR6t_OJxVw7-7cX380Tv1RBI,PROTOCOLOS 2021,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Serviço Trauma HCRP,1lCqMXlSQ6qHPZhp4_4FEsBRWWQ5OPGP3,Aulas,pasta,REVISAR,pasta_a_percorrer,título,nao_lido
+Serviço Trauma HCRP,1BjCIc-gZcJInOCnP-unH3hRNOiY9yYYz,Esplenectomia.m4v,video,T023,midia_nao_texto,título,nao_lido
+Reunião semanal,19bcAyfMF3sj7L4PekuKvOeXpMdE-_7wyB1ecAWwwhaU,2023-03-15 - Via Aérea,slides,T002,fonte_institucional,título,nao_lido
+Reunião semanal,14v01R0CIpxjke4g3Hqa-8iprAXE0AhYE,2023-04-19 - Peritoneostomia e controle de danos.pptx,pptx,T007;T009,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1CG6NEejIy4a0JwepdgVtV1WcVAVz29RS,PROTOCOLO APENDICITE.doc,doc,T036,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1HzyJLbn40RQipOvyiv9AlGYwBKOtfcZu,Ziedler Estável.pdf,pdf,T016;T018,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1dZnLhlZp_bQgdKVdaBpaqskKZ44Bdq1u,Zona de Transição Estável.pdf,pdf,T016;T018,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1vVOTzL2nm_UXJvdgdgejCOmx-dAmMUug,TCCI Crianças.pdf,pdf,T031,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,17UOeeJUeaCu_andiP2VveD7abeTWlVCn,Ziedler Instável.pdf,pdf,T016;T018,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1EU3VAfDkoQqubm_AuZJwY3oujOGePaI9,Trauma Vascular Contuso.pdf,pdf,T028,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1wbeZcK57ADDTJ3Nfg1-2h-TV7hjSRwti,Trauma Vascular Penetrante.pdf,pdf,T028,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,19WMoqqmN9VA1vjmm-TdsFOe-Ld_TGU7V,Zona de Transição Instável.pdf,pdf,T016;T018,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1AqEGynRi0ISlCKq1_uVbhBqF1jN9ft4W,Hemotransfusão Maciça.pdf,pdf,T005,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1bA2ZHLjFfHAiuDzAAwTAgPisYLa9jd3L,Fixação de Arcos Costais.pdf,pdf,T012,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1wxzZYbfPtTbb9HODzATwRoep744EAB2_,Trauma de Pelve.pdf,pdf,T072,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1ki5LzhsLXQDJFi6YmUcB8gkXC7jDu6sk,TC Cranio 0 a 23 meses.pdf,pdf,T031,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,11lRTMzTTlWou-IIkjKy_wRUbBWN_rt2B,Ferimentos Cervicais.pdf,pdf,T034,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1Wpj1c6Q9782ww1SU1M6segr1RqpMfrTo,Hemotorax.pdf,pdf,T014,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1zkrP1icWfbf8qyVoKWavHxqaNb3X7KkY,TC Cranio 2 a 14 anos.pdf,pdf,T031,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1RXjp-eoM6Z318b87zlYqwSSpLoxrRGGS,Ferimentos Cervicais - Cervicotomia.pdf,pdf,T015;T034,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1z_LwDrvw2-NeRz1f4xn31VTDHseZl01M,Ferimentos Transfixantes Mediastino.pdf,pdf,T016;T018,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,14cVJlXBLhsADqj6xiC4Ryp54AcrWSbSa,TNO.pdf,pdf,T021,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1T3kQ0udv_pgVaKqEcpGqSdo5O499uu5y,FAF Anterior.pdf,pdf,T021;T110,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1Ye44taHB09J0zAQsXLU9D9whqnnBkJQq,Ferimento de Dorso.pdf,pdf,T021,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1DFq478_Am_AQsuAmAcVLRJluRijmidZS,FAB Anterior.pdf,pdf,T021,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Protocolos,1WhuYytOudHb-sIMpv6JQIJjHqLdhIIh5,TCCI adolescente e adulto.pdf,pdf,T031,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / PROTOCOLOS 2021,1_6mGG2VoZXbvCtfYYwCS9cAoYHGZv9Ir,COLECISTITE AGUDA.docx,docx,T037,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / PROTOCOLOS 2021,1svp57HAmWNB1K9_hELonuzE9y3mJNjlr,PROTOCOLO TRAUMA ESPLENICO.docx,docx,T023,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / PROTOCOLOS 2021,1p43abTuy53bZbhTt4yxgrMnr0Eivy4dw,PROTOCOLO PADRAO.doc,doc,REVISAR,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1hBldSavzzEAmptjbkBHw7idjT6wXHWvYddaM43KW7XI,REUNIÃO CLÍNICA - 27/10/2020 - TRAUMA PÉLVICO - A VISÃO DO CIRURGIÃO,slides,T072,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1Pl86PAQYZjl2CzOASkB6PukMkeSyKjVO,Crash Laparotomy.pptx,pptx,T007,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,19CzaPvHilWb1sj3tnmgL5QDPg6sgPYMwLQ0PTl2y0tQ,Revisão Trauma - 2020,slides,T001,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1T39f81qtXeUxFzvO1ameah45xaFSDhD3,Trauma Hepàtico.pptx,pptx,T022,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,11pEa_wKiqFLtU1Fuhc0nkrSx5cDQwvry,Hemotorax retido-protocolo.pptx,pptx,T014,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1X0A3eL6vXW2Fbs8C0qCepbwp1J--ZivKE0pCVKlB7vE,Reunião Clinica SBAIT - 25/02/2021 - Luan,slides,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1hnRKsvUwcNXcPAgxTFlRQV8DfRxdvoB-,Trauma Pediatrico.pptx,pptx,T100,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1hr5CJtwF9U7BXHewuV-RQuSTl43nEmyA,HÉRNIAS ABDOMINAIS.docx,docx,T043;T140;T142,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1elE4VB8wCft10zfwmEncmoIJ69-ISpyR,PAN TC E-FAST - Guilherme Café - COMPLETO.pptx,pptx,T003,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1kpgGM3WwTTZ_pyuBlUhkrVGNNueNKq7L,Trauma em Membros.pptx,pptx,T028;T029,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1VNXWa-ba8eZEprFDHGYw_cquhnsNXDyT,Trauma Cervical.pptx,pptx,T034,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1JmpyVq2A4lsb3m6YKNGdglR62oksKdlk,Morbimortalidade Maurício.pptx,pptx,T115,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1wNORAwImkWwSRhLWQtfUrIRZVLpbm24D,MAURICIO 1650986H.txt,txt,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1KgVhxI7wntW_jdT9DXVw_wQAj4R2IplQEKAPpHXA7f8,TRAUMA GENITURINARIO,slides,T063,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1s5YSAP486LfotLLR-ccYUF4Qd4Kx6fKEoqg8SmkBHu8,TRAUMA GENITURINARIO (2),slides,T063,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1tOE3nBI7WeC_ytGOKgIUnIO-YHYfS-wn,Hernia Parede Abdominal.pptx,pptx,T043;T140;T142,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,10vtJOY7Mh5NblQVNNzQB5yeSIMsD4z_w,Morbimortalidade Walber.pptx,pptx,T115,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1YGJfBxG9ax6T7zcsjFeoiy89NNzT2gFM,Torax contuso.pptx,pptx,T011,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1d4OMvtu3sqPQdKHdaBamAaPlbKhUfgkZ,HDA DISCUSSÃO DE CASO ERON.pptx,pptx,T044,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1hSu0N7HUx2UKXQHCwJLDcr0BGhJyfJmz,Reunião Clínica 14_05 - Neusa.pptx,pptx,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,16KuJrVvA9vDOxInjhGTnjIGdU9NeO6ty,Cópia de Hemotorax retido-protocolo.pptx,pptx,T014,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1BDXqfWcMvD5ITg39OhMxS5iSgJtWVbSE202awudg5cs,REUNIÃO CLÍNICA - 18/03/2021 - Profilaxia TEV - POOH,slides,T006,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1CIezOK__fFqv6p4gl406FjurIGuOUF43,PROTOCOLO APENDICITE.doc (2),doc,T036,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1CU80qyFRC9YJ2cpvo0blKMKNUib-tddd,PROTOCOLO APENDICITE.doc (3),doc,T036,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,1Wqmcv5nzuPQsj_TX7gGUWVJj2BRsl9acQNtqX0rufcs,Cópia de REUNIÃO CLINICA - 30/04/2020,slides,REVISAR,fonte_institucional,título,nao_lido
+Serviço Trauma HCRP / Aulas,13cZfK-fC7MRw_bDltCnRT-olssRJpmP_,Cópia de caso clinico 07/05/2020,video,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,1O4QMxhQzlZGMZVqoNPCv_A4PUAy-OtaJEJYIfuD2zO4,Documento sem título,doc,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
+Serviço Trauma HCRP / Aulas,18lBphu1WfGV3KGNWHcdT4NF0J-ukAOwEL-es6t-oQ2g,Euclides,doc,REVISAR,EXCLUIR_ATE_REVISAO_DADO_DE_PACIENTE,título,nao_lido
