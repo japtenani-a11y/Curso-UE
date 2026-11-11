@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 07_implementacao_oauth_v1.0.sh
@@ -16,11 +15,11 @@ linha_sql
 
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== IMPLEMENTACAO OAUTH v1.0 ==="""
+echo "=== IMPLEMENTACAO OAUTH v1.0 ==="
 
-"cat > ""$RAIZ/api/src/routes/auth.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/auth.ts" <<'EOF'
 import { Router } from 'express';
 import { randomBytes, createHash } from 'node:crypto';
 import { withMaestro } from '../db/transaction.js';
@@ -144,7 +143,7 @@ authRouter.get('/estado', (_req, res) => {
 });
 EOF
 
-"cat > ""$RAIZ/api/src/middleware/sessao.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/middleware/sessao.ts" <<'EOF'
 import type { Request, Response, NextFunction } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -193,5 +192,5 @@ export async function carregarSessao(
 }
 EOF
 
-"echo ""=== IMPLEMENTACAO OAUTH CONCLUIDA ==="""
-"echo ""Verifique: ls $RAIZ/api/src/routes/auth.ts"""
+echo "=== IMPLEMENTACAO OAUTH CONCLUIDA ==="
+echo "Verifique: ls $RAIZ/api/src/routes/auth.ts"
