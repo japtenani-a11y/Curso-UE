@@ -23,6 +23,6 @@ SELECT t.tema_id, d.fase, d.skill, 'pendente', d.prio,
        jsonb_build_object('tipo', d.tipo, 'titulo', d.titulo,
          'termos', 'ATLS advanced trauma life support primary survey xABCDE exsanguinating hemorrhage initial assessment trauma team')
 FROM t, d
-WHERE NOT EXISTS (SELECT 1 FROM maestro.job j WHERE j.tema_id = t.tema_id AND j.payload->>'tipo' = d.tipo AND j.estado IN ('pendente','em_execucao'));
+WHERE NOT EXISTS (SELECT 1 FROM maestro.job j WHERE j.tema_id = t.tema_id AND j.payload->>'tipo' = d.tipo AND j.estado IN ('pendente','executando'));
 SELECT 'jobs T001 enfileirados: ' || count(*) FROM maestro.job j JOIN app.tema a USING (tema_id) WHERE replace(a.codigo,'-','')='T001' AND j.estado='pendente';
 COMMIT;

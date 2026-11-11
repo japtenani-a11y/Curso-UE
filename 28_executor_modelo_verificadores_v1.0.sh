@@ -6,7 +6,7 @@
 # Reprovado => nada e gravado e o job tenta de novo (limite do ciclo). Aprovado => artefato 'rascunho'.
 # USO: bash 28_executor_modelo_verificadores_v1.0.sh ./programa-cut
 # PRE-REQUISITOS: 22b_patch_executor_v1.1, 28_texto_integral_fontes_v1.0.sql
-# ENV do executor: ANTHROPIC_API_KEY, ANTHROPIC_MODEL
+# ENV do executor: ANTHROPIC_API_KEY, ANTHROPIC_MODEL, NCBI_API_KEY (opcional)
 # Payload do job: {"tipo":"<tipo do artefato>","titulo":"...","termos":"<palavras-chave em ingles, opcional>"}; fontes com texto_integral no tema.
 # ============================================================
 set -euo pipefail
@@ -98,7 +98,7 @@ export async function verificarPmidDoi(
 // Buscador real (NCBI esummary + Crossref). Exige rede; usado so no executor.
 export const buscadorReal: Buscador = async ({ pmid, doi }) => {
   if (pmid) {
-    const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`);
+    const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json${process.env.NCBI_API_KEY ? `&api_key=${process.env.NCBI_API_KEY}` : ''}`);
     if (!res.ok) throw new Error(`NCBI HTTP ${res.status}`);
     const j: any = await res.json();
     const d = j?.result?.[pmid];
