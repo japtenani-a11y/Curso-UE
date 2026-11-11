@@ -83,7 +83,7 @@ ON CONFLICT (pessoa_id, ano_letivo, perfil_id) DO NOTHING;
 -- CONFERENCIA
 \echo '--- Conferencia ---'
 
-SELECT 'itens na onda D0: ' || count(*) FROM app.item_selecionado WHERE onda_codigo = 'D0';
+SELECT 'itens na onda D0: ' || count(*) FROM app.item_selecionado s JOIN app.onda_instancia o ON o.onda_id = s.onda_id WHERE o.onda_codigo = 'D0';
 SELECT 'alternativas por item: ' || count(*) FROM app.alternativa a
   JOIN app.item i ON i.item_id = a.item_id
  WHERE i.tema_id = (SELECT tema_id FROM app.tema WHERE codigo = 'T-001');
