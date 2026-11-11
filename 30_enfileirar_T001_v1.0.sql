@@ -4,6 +4,11 @@
 -- Cada job gera um 'rascunho' so se o gate de evidencia aprovar; nada e publicado sem revisao humana.
 -- Uso: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f 30_enfileirar_T001_v1.0.sql
 BEGIN;
+-- Varios artefatos usam a mesma skill (ex.: 5 usam SK-08). A unicidade (tema, skill, estado) bloquearia o lote;
+-- passa a incluir o tipo do artefato do payload. Jobs sem tipo (gatilhos) continuam protegidos pela checagem do proprio gatilho.
+ALTER TABLE maestro.job DROP CONSTRAINT IF EXISTS uq_job_tema_skill_estado;
+DROP INDEX IF EXISTS maestro.uq_job_tema_skill_estado;
+CREATE UNIQUE INDEX IF NOT EXISTS uq_job_tema_skill_estado_tipo ON maestro.job (tema_id, skill_codigo, estado, (payload->>'tipo'));
 WITH t AS (SELECT tema_id FROM app.tema WHERE replace(codigo,'-','') = 'T001'),
 d(tipo, titulo, fase, skill, prio) AS (VALUES
  ('sintese_evidencia','Sintese de evidencia','evidencia','SK-01',1),
