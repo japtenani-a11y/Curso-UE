@@ -126,7 +126,7 @@ export async function chamarModelo(p: {
   system: string;
   user: string;
   maxTokens?: number;
-  temperatura?: number;
+  temperatura?: number; // ignorado: modelos recentes nao aceitam temperature
 }): Promise<RespostaModelo> {
   const chave = process.env.ANTHROPIC_API_KEY;
   const modelo = process.env.ANTHROPIC_MODEL;
@@ -137,7 +137,6 @@ export async function chamarModelo(p: {
     body: JSON.stringify({
       model: modelo,
       max_tokens: p.maxTokens ?? 4096,
-      temperature: p.temperatura ?? 0.2,
       system: p.system,
       messages: [{ role: 'user', content: p.user }],
     }),
