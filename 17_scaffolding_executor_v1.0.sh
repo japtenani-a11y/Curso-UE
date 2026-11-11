@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 17_scaffolding_executor_v1.0.sh
@@ -16,13 +15,13 @@ linha_sql
 # ============================================================
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== SCAFFOLDING EXECUTOR v1.0 ==="""
+echo "=== SCAFFOLDING EXECUTOR v1.0 ==="
 
-"mkdir -p ""$RAIZ""/executor/src/{maestro,motor,tipos}"
+mkdir -p "$RAIZ"/executor/src/{maestro,motor,tipos}
 
-"cat > ""$RAIZ/executor/src/maestro/pool.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/pool.ts" <<'EOF'
 import pg from 'pg';
 
 const { Pool } = pg;
@@ -39,7 +38,7 @@ pool.on('error', (err) => {
 });
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/logger.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/logger.ts" <<'EOF'
 import pino from 'pino';
 
 export const logger = pino({
@@ -48,7 +47,7 @@ export const logger = pino({
 });
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/ciclo.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/ciclo.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 import { executarJob } from './motor.js';
@@ -116,7 +115,7 @@ export async function ciclo(): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/motor.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/motor.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 import { avaliarGates } from './gate.js';
@@ -171,7 +170,7 @@ export async function executarJob(job: Job): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/gate.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/gate.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 
@@ -219,7 +218,7 @@ export async function avaliarGates(job: Job): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/tipos/job.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/tipos/job.ts" <<'EOF'
 export interface Job {
   job_id: number;
   tema_id: number | null;
@@ -237,7 +236,7 @@ export interface GateResultado {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/main.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/main.ts" <<'EOF'
 import { logger } from './maestro/logger.js';
 import { ciclo } from './maestro/ciclo.js';
 
@@ -267,5 +266,5 @@ async function loop(): Promise<void> {
 void loop();
 EOF
 
-"echo ""=== SCAFFOLDING EXECUTOR CONCLUIDO ==="""
-"echo ""Verifique: ls $RAIZ/executor/src/maestro/"""
+echo "=== SCAFFOLDING EXECUTOR CONCLUIDO ==="
+echo "Verifique: ls $RAIZ/executor/src/maestro/"
