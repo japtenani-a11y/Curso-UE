@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 24_pwa_telas_restantes_v1.0.sh
@@ -19,14 +18,14 @@ linha_sql
 # ============================================================
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== PWA TELAS RESTANTES v1.0 ==="""
+echo "=== PWA TELAS RESTANTES v1.0 ==="
 
-"mkdir -p ""$RAIZ""/pwa/src/pages/{aluno,preceptor,curador,pesquisa}"
-"mkdir -p ""$RAIZ""/pwa/src/components"
+mkdir -p "$RAIZ"/pwa/src/pages/{aluno,preceptor,curador,pesquisa}
+mkdir -p "$RAIZ"/pwa/src/components
 
-"cat > ""$RAIZ/pwa/src/pages/aluno/Home.tsx"" <<'EOF'"
+cat > "$RAIZ/pwa/src/pages/aluno/Home.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
@@ -49,7 +48,7 @@ export function AlunoHome() {
       .catch(() => setErro('Falha ao carregar ondas'));
   }, []);
 
-"  if (erro) return <p role=""alert"">{erro}</p>;"
+  if (erro) return <p role="alert">{erro}</p>;
 
   return (
     <section>
@@ -67,7 +66,7 @@ export function AlunoHome() {
 }
 EOF
 
-"cat > ""$RAIZ/pwa/src/pages/preceptor/Home.tsx"" <<'EOF'"
+cat > "$RAIZ/pwa/src/pages/preceptor/Home.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
@@ -88,7 +87,7 @@ export function PreceptorHome() {
       .catch(() => setErro('Falha ao carregar modulos'));
   }, []);
 
-"  if (erro) return <p role=""alert"">{erro}</p>;"
+  if (erro) return <p role="alert">{erro}</p>;
 
   return (
     <section>
@@ -105,7 +104,7 @@ export function PreceptorHome() {
 }
 EOF
 
-"cat > ""$RAIZ/pwa/src/pages/curador/Home.tsx"" <<'EOF'"
+cat > "$RAIZ/pwa/src/pages/curador/Home.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
@@ -142,7 +141,7 @@ export function CuradorHome() {
       .catch(() => setErro('Falha ao carregar dados do curador'));
   }, []);
 
-"  if (erro) return <p role=""alert"">{erro}</p>;"
+  if (erro) return <p role="alert">{erro}</p>;
 
   return (
     <section>
@@ -196,7 +195,7 @@ export function CuradorHome() {
 }
 EOF
 
-"cat > ""$RAIZ/pwa/src/pages/pesquisa/Home.tsx"" <<'EOF'"
+cat > "$RAIZ/pwa/src/pages/pesquisa/Home.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 import { GraficoRetencao, type PontoRetencao } from '../../components/GraficoRetencao.js';
@@ -227,7 +226,7 @@ export function PesquisaHome() {
       .catch(() => setErro('Falha ao carregar dados de pesquisa'));
   }, []);
 
-"  if (erro) return <p role=""alert"">{erro}</p>;"
+  if (erro) return <p role="alert">{erro}</p>;
 
   return (
     <section>
@@ -239,7 +238,7 @@ export function PesquisaHome() {
 }
 EOF
 
-"cat > ""$RAIZ/pwa/src/components/GraficoRetencao.tsx"" <<'EOF'"
+cat > "$RAIZ/pwa/src/components/GraficoRetencao.tsx" <<'EOF'
 export interface PontoRetencao {
   onda_codigo: string;
   ordem_onda: number | null;
@@ -286,8 +285,8 @@ export function GraficoRetencao({ pontos }: Props) {
       <svg
         width={LARGURA}
         height={ALTURA}
-"        role=""img"""
-"        aria-label=""Curva de retencao por onda"""
+        role="img"
+        aria-label="Curva de retencao por onda"
         style={{ background: 'var(--cor-neutro-100, #FFFFFF)' }}
       >
         <line
@@ -295,7 +294,7 @@ export function GraficoRetencao({ pontos }: Props) {
           y1={y(0)}
           x2={LARGURA - MARGEM.direita}
           y2={y(0)}
-"          stroke=""var(--cor-neutro-700, #424242)"""
+          stroke="var(--cor-neutro-700, #424242)"
           strokeWidth={1}
         />
         <line
@@ -303,7 +302,7 @@ export function GraficoRetencao({ pontos }: Props) {
           y1={y(1)}
           x2={LARGURA - MARGEM.direita}
           y2={y(1)}
-"          stroke=""var(--cor-neutro-700, #424242)"""
+          stroke="var(--cor-neutro-700, #424242)"
           strokeWidth={1}
         />
 
@@ -316,14 +315,14 @@ export function GraficoRetencao({ pontos }: Props) {
               y1={y(inferior)}
               x2={x(i)}
               y2={y(superior)}
-"              stroke=""var(--cor-acento, #C8963E)"""
+              stroke="var(--cor-acento, #C8963E)"
               strokeWidth={2}
               opacity={0.5}
             />
           );
         })}
 
-"        <path d={linha} fill=""none"" stroke=""var(--cor-primaria, #1E3A5F)"" strokeWidth={2} />"
+        <path d={linha} fill="none" stroke="var(--cor-primaria, #1E3A5F)" strokeWidth={2} />
 
         {pontos.map((p, i) => (
           <circle
@@ -331,7 +330,7 @@ export function GraficoRetencao({ pontos }: Props) {
             cx={x(i)}
             cy={y(p.p_medio)}
             r={4}
-"            fill=""var(--cor-primaria, #1E3A5F)"""
+            fill="var(--cor-primaria, #1E3A5F)"
           />
         ))}
 
@@ -340,18 +339,18 @@ export function GraficoRetencao({ pontos }: Props) {
             key={`lb-${p.onda_codigo}`}
             x={x(i)}
             y={ALTURA - MARGEM.baixo + 20}
-"            textAnchor=""middle"""
+            textAnchor="middle"
             fontSize={12}
-"            fill=""var(--cor-neutro-700, #424242)"""
+            fill="var(--cor-neutro-700, #424242)"
           >
             {p.onda_codigo}
           </text>
         ))}
 
-"        <text x={10} y={y(1) + 4} fontSize={11} fill=""var(--cor-neutro-700, #424242)"">"
+        <text x={10} y={y(1) + 4} fontSize={11} fill="var(--cor-neutro-700, #424242)">
           1.0
         </text>
-"        <text x={10} y={y(0) + 4} fontSize={11} fill=""var(--cor-neutro-700, #424242)"">"
+        <text x={10} y={y(0) + 4} fontSize={11} fill="var(--cor-neutro-700, #424242)">
           0.0
         </text>
       </svg>
@@ -363,5 +362,5 @@ export function GraficoRetencao({ pontos }: Props) {
 }
 EOF
 
-"echo ""=== PWA TELAS RESTANTES CONCLUIDA ==="""
-"echo ""Verifique: ls $RAIZ/pwa/src/pages/"""
+echo "=== PWA TELAS RESTANTES CONCLUIDA ==="
+echo "Verifique: ls $RAIZ/pwa/src/pages/"
