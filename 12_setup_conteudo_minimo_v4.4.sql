@@ -1,4 +1,3 @@
-linha_sql
 -- ============================================================
 -- 12_setup_conteudo_minimo_v4.4.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
