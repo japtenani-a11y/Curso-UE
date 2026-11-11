@@ -1,0 +1,969 @@
+linha_sql
+-- ============================================================
+-- 01_instalar_v4.4.sql
+-- Sistema de Producao Curricular e Coleta Cientifica
+-- Programa de Cirurgia de Urgencia e Trauma
+-- Versao 4.4 / 10-11-2026
+--
+-- OBJETIVO: instalacao completa do banco. Cria os seis schemas
+-- (app, pesquisa, conteudo, maestro, ops, cobranca), as 91
+-- tabelas, as funcoes de apoio, os triggers de integridade e
+-- as policies de RLS.
+--
+-- PRE-REQUISITO: PostgreSQL 16, banco vazio programa_v44.
+--
+-- USO: psql -d programa_v44 -v ON_ERROR_STOP=1 -f 01_instalar_v4.4.sql
+--
+-- EXECUTAR COMO: superusuario postgres.
+-- ============================================================
+
+\set ON_ERROR_STOP on
+\timing on
+\echo '=== INSTALACAO v4.4 ==='
+
+BEGIN;
+
+-- ETAPA 1 — SCHEMAS
+CREATE SCHEMA IF NOT EXISTS app;
+CREATE SCHEMA IF NOT EXISTS pesquisa;
+CREATE SCHEMA IF NOT EXISTS conteudo;
+CREATE SCHEMA IF NOT EXISTS maestro;
+CREATE SCHEMA IF NOT EXISTS ops;
+CREATE SCHEMA IF NOT EXISTS cobranca;
+
+COMMENT ON SCHEMA app IS 'Operacional: pessoas, ciclos, temas, ondas, itens, respostas, tentativas.';
+COMMENT ON SCHEMA pesquisa IS 'Analitico: coortes, respostas de pesquisa, curva de retencao, analise psicometrica.';
+COMMENT ON SCHEMA conteudo IS 'Conteudo: artefatos, blocos, fontes, prompts, design tokens, assinaturas.';
+COMMENT ON SCHEMA maestro IS 'Producao: jobs, execucao de motor, gate resultados, fila de skills.';
+COMMENT ON SCHEMA ops IS 'Operacao: auditoria, alertas, gatilhos, automacoes, relatorios.';
+COMMENT ON SCHEMA cobranca IS 'Financeiro: planos, assinaturas, faturas, pagamentos.';
+
+-- ETAPA 2 — EXTENSOES
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+
+-- ETAPA 3 — DOMINIOS E TIPOS
+CREATE DOMAIN app.email_valido AS TEXT
+  CHECK (VALUE ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+
+CREATE DOMAIN app.cor_hex AS TEXT
+  CHECK (VALUE ~ '^#[0-9A-Fa-f]{6}$');
+
+CREATE TYPE app.grau_enum AS ENUM ('R1','R2','R3','R4','R5','preceptor','docente');
+CREATE TYPE app.status_artefato AS ENUM ('rascunho','revisao','aprovado','publicado','arquivado');
+CREATE TYPE app.status_onda AS ENUM ('planejada','aberta','fechada','cancelada');
+CREATE TYPE app.status_job AS ENUM ('pendente','executando','concluido','falhou','cancelado');
+CREATE TYPE app.severidade_alerta AS ENUM ('info','atencao','critica');
+
+-- ETAPA 4 — SCHEMA APP: PESSOAS E PERFIS
+
+CREATE TABLE app.pessoa (
+  pessoa_id BIGSERIAL PRIMARY KEY,
+  nome_completo TEXT NOT NULL,
+  email_primario app.email_valido NOT NULL UNIQUE,
+  cpf TEXT UNIQUE,
+  data_nascimento DATE,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  atualizado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE app.perfil (
+  perfil_id SMALLINT PRIMARY KEY,
+  codigo TEXT NOT NULL UNIQUE,
+  nome TEXT NOT NULL,
+  descricao TEXT
+);
+
+INSERT INTO app.perfil (perfil_id, codigo, nome, descricao) VALUES
+  (1, 'admin', 'Administrador', 'Acesso total ao sistema'),
+  (2, 'data_steward', 'Curador de dados', 'Gerencia conteudo e integridade'),
+  (3, 'curador', 'Curador de conteudo', 'Produz e revisa artefatos'),
+  (4, 'pesquisador', 'Pesquisador', 'Acessa dados de pesquisa'),
+  (5, 'docente', 'Docente', 'Coordena o programa'),
+  (6, 'aluno', 'Aluno', 'Responde ondas e acessa conteudo'),
+  (25, 'preceptor', 'Preceptor', 'Verifica tarefas e acompanha alunos');
+
+CREATE TABLE app.posicao_anual (
+  posicao_id BIGSERIAL PRIMARY KEY,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  perfil_id SMALLINT NOT NULL REFERENCES app.perfil(perfil_id),
+  ano_letivo SMALLINT NOT NULL,
+  grau app.grau_enum,
+  ativo BOOLEAN NOT NULL DEFAULT true,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (pessoa_id, ano_letivo, perfil_id)
+);
+
+CREATE TABLE app.designacao (
+  designacao_id BIGSERIAL PRIMARY KEY,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  papel TEXT NOT NULL CHECK (papel IN ('admin','data_steward','curador','pesquisador','docente')),
+  aprovador_id BIGINT REFERENCES app.pessoa(pessoa_id),
+  vigencia_inicio DATE NOT NULL,
+  vigencia_fim DATE,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE app.sessao (
+  sessao_id BIGSERIAL PRIMARY KEY,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  token_hash TEXT NOT NULL UNIQUE,
+  emitida_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  expira_em TIMESTAMPTZ NOT NULL,
+  revogada_em TIMESTAMPTZ,
+  ip_origem INET,
+  user_agent TEXT
+);
+
+CREATE INDEX ix_sessao_pessoa ON app.sessao (pessoa_id) WHERE revogada_em IS NULL;
+CREATE INDEX ix_sessao_expira ON app.sessao (expira_em) WHERE revogada_em IS NULL;
+
+-- ETAPA 5 — SCHEMA APP: CICLOS, TEMAS, MODULOS
+
+CREATE TABLE app.ciclo (
+  ciclo_id BIGSERIAL PRIMARY KEY,
+  ano_ingresso SMALLINT NOT NULL UNIQUE,
+  nome TEXT NOT NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE NOT NULL,
+  congelado_em TIMESTAMPTZ,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  CHECK (data_fim > data_inicio)
+);
+
+CREATE TABLE app.tema (
+  tema_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  codigo TEXT NOT NULL,
+  titulo TEXT NOT NULL,
+  papel_curricular TEXT NOT NULL CHECK (papel_curricular IN ('nuclear','complementar','eletivo')),
+  grau app.grau_enum NOT NULL,
+  carga_horaria SMALLINT NOT NULL CHECK (carga_horaria > 0),
+  dificuldade SMALLINT NOT NULL CHECK (dificuldade BETWEEN 1 AND 5),
+  congelado_em TIMESTAMPTZ,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (ciclo_id, codigo)
+);
+
+CREATE TABLE app.tema_dependencia (
+  dependencia_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  tema_requerido_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  CHECK (tema_id <> tema_requerido_id),
+  UNIQUE (tema_id, tema_requerido_id)
+);
+
+CREATE TABLE app.modulo (
+  modulo_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  codigo TEXT NOT NULL,
+  nome TEXT NOT NULL,
+  ordem SMALLINT NOT NULL,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (ciclo_id, codigo)
+);
+
+CREATE TABLE app.modulo_tema (
+  modulo_tema_id BIGSERIAL PRIMARY KEY,
+  modulo_id BIGINT NOT NULL REFERENCES app.modulo(modulo_id) ON DELETE CASCADE,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  ordem SMALLINT NOT NULL,
+  UNIQUE (modulo_id, tema_id)
+);
+
+CREATE TABLE app.preceptor_modulo (
+  preceptor_modulo_id BIGSERIAL PRIMARY KEY,
+  preceptor_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  modulo_id BIGINT NOT NULL REFERENCES app.modulo(modulo_id) ON DELETE CASCADE,
+  carga_maxima SMALLINT NOT NULL DEFAULT 10,
+  vigencia_inicio DATE NOT NULL,
+  revogado_em TIMESTAMPTZ,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX ix_preceptor_modulo_ativo ON app.preceptor_modulo (preceptor_id, modulo_id) WHERE revogado_em IS NULL;
+
+-- ETAPA 6 — SCHEMA APP: ONDAS, ITENS, RESPOSTAS
+
+CREATE TABLE app.onda_instancia (
+  onda_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  onda_codigo TEXT NOT NULL,
+  ordem_onda SMALLINT NOT NULL,
+  data_abertura TIMESTAMPTZ NOT NULL,
+  data_fechamento TIMESTAMPTZ NOT NULL,
+  status app.status_onda NOT NULL DEFAULT 'planejada',
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  CHECK (data_fechamento > data_abertura),
+  UNIQUE (ciclo_id, onda_codigo)
+);
+
+CREATE TABLE app.item (
+  item_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  enunciado TEXT NOT NULL,
+  dificuldade SMALLINT NOT NULL CHECK (dificuldade BETWEEN 1 AND 5),
+  ancora TEXT,
+  gabarito_alternativa_id BIGINT,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE app.alternativa (
+  alternativa_id BIGSERIAL PRIMARY KEY,
+  item_id BIGINT NOT NULL REFERENCES app.item(item_id) ON DELETE CASCADE,
+  ordem SMALLINT NOT NULL,
+  texto TEXT NOT NULL,
+  eh_correta BOOLEAN NOT NULL DEFAULT false,
+  categoria_distrator TEXT CHECK (categoria_distrator IN ('erro_conceitual','erro_calculo','erro_conduta','erro_indicacao','erro_tecnico')),
+  UNIQUE (item_id, ordem)
+);
+
+ALTER TABLE app.item
+  ADD CONSTRAINT fk_item_gabarito
+  FOREIGN KEY (gabarito_alternativa_id) REFERENCES app.alternativa(alternativa_id);
+
+CREATE TABLE app.item_selecionado (
+  item_selecionado_id BIGSERIAL PRIMARY KEY,
+  onda_id BIGINT NOT NULL REFERENCES app.onda_instancia(onda_id) ON DELETE CASCADE,
+  item_id BIGINT NOT NULL REFERENCES app.item(item_id) ON DELETE CASCADE,
+  ordem_apresentada SMALLINT NOT NULL,
+  UNIQUE (onda_id, item_id)
+);
+
+CREATE TABLE app.tentativa (
+  tentativa_id BIGSERIAL PRIMARY KEY,
+  onda_id BIGINT NOT NULL REFERENCES app.onda_instancia(onda_id) ON DELETE CASCADE,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  iniciada_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  submetida_em TIMESTAMPTZ,
+  UNIQUE (onda_id, pessoa_id)
+);
+
+CREATE TABLE app.resposta (
+  resposta_id BIGSERIAL PRIMARY KEY,
+  tentativa_id BIGINT NOT NULL REFERENCES app.tentativa(tentativa_id) ON DELETE CASCADE,
+  item_id BIGINT NOT NULL REFERENCES app.item(item_id) ON DELETE CASCADE,
+  alternativa_id BIGINT NOT NULL REFERENCES app.alternativa(alternativa_id),
+  tempo_resposta_ms INTEGER,
+  ordem_apresentada SMALLINT,
+  respondida_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (tentativa_id, item_id)
+);
+
+CREATE TABLE app.tarefa (
+  tarefa_id BIGSERIAL PRIMARY KEY,
+  modulo_id BIGINT NOT NULL REFERENCES app.modulo(modulo_id) ON DELETE CASCADE,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL,
+  descricao TEXT NOT NULL,
+  prazo DATE,
+  status TEXT NOT NULL DEFAULT 'pendente' CHECK (status IN ('pendente','verificada','rejeitada')),
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE app.verificacao (
+  verificacao_id BIGSERIAL PRIMARY KEY,
+  tarefa_id BIGINT NOT NULL REFERENCES app.tarefa(tarefa_id) ON DELETE CASCADE,
+  preceptor_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id),
+  parecer TEXT NOT NULL,
+  conforme BOOLEAN NOT NULL,
+  verificado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE app.parecer (
+  parecer_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  nivel_atingido TEXT,
+  evidencia JSONB,
+  emitido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ETAPA 7 — SCHEMA PESQUISA
+
+CREATE TABLE pesquisa.coorte (
+  coorte_id BIGSERIAL PRIMARY KEY,
+  ano_ingresso SMALLINT NOT NULL UNIQUE,
+  n_participantes INTEGER NOT NULL DEFAULT 0,
+  trilha_dominante TEXT,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE pesquisa.participante (
+  participante_id BIGSERIAL PRIMARY KEY,
+  coorte_id BIGINT NOT NULL REFERENCES pesquisa.coorte(coorte_id) ON DELETE CASCADE,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  consentimento_em TIMESTAMPTZ NOT NULL,
+  codigo_anonimo TEXT NOT NULL UNIQUE,
+  UNIQUE (coorte_id, pessoa_id)
+);
+
+CREATE TABLE pesquisa.resposta_participante (
+  resposta_participante_id BIGSERIAL PRIMARY KEY,
+  participante_id BIGINT NOT NULL REFERENCES pesquisa.participante(participante_id) ON DELETE CASCADE,
+  onda_codigo TEXT NOT NULL,
+  constructo TEXT NOT NULL,
+  valor NUMERIC(6,3),
+  respondida_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE pesquisa.analise_item (
+  analise_item_id BIGSERIAL PRIMARY KEY,
+  onda_id BIGINT NOT NULL REFERENCES app.onda_instancia(onda_id) ON DELETE CASCADE,
+  item_id BIGINT NOT NULL REFERENCES app.item(item_id) ON DELETE CASCADE,
+  p NUMERIC(5,4),
+  r NUMERIC(5,4),
+  n INTEGER,
+  calculado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (onda_id, item_id)
+);
+
+CREATE TABLE pesquisa.analise_distrator (
+  analise_distrator_id BIGSERIAL PRIMARY KEY,
+  onda_id BIGINT NOT NULL REFERENCES app.onda_instancia(onda_id) ON DELETE CASCADE,
+  alternativa_id BIGINT NOT NULL REFERENCES app.alternativa(alternativa_id) ON DELETE CASCADE,
+  frequencia INTEGER,
+  classificacao TEXT CHECK (classificacao IN ('funcional','nula','atrativa')),
+  calculado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE pesquisa.analise (
+  analise_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL,
+  resultado JSONB,
+  pressupostos_verificados BOOLEAN NOT NULL DEFAULT false,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE VIEW pesquisa.v_curva_retencao AS
+SELECT c.coorte_id,
+       c.ano_ingresso,
+       rp.onda_codigo,
+       count(DISTINCT rp.participante_id) AS n,
+       round(avg(rp.valor), 4) AS p_medio,
+       min(oi.ordem_onda) AS ordem_onda
+  FROM pesquisa.coorte c
+  JOIN pesquisa.participante p ON p.coorte_id = c.coorte_id
+  JOIN pesquisa.resposta_participante rp ON rp.participante_id = p.participante_id
+  LEFT JOIN app.onda_instancia oi ON oi.onda_codigo = rp.onda_codigo
+ GROUP BY c.coorte_id, c.ano_ingresso, rp.onda_codigo;
+
+-- ETAPA 8 — SCHEMA CONTEUDO
+
+CREATE TABLE conteudo.fonte (
+  fonte_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  camada SMALLINT NOT NULL CHECK (camada BETWEEN 1 AND 5),
+  titulo TEXT NOT NULL,
+  autores TEXT,
+  ano SMALLINT,
+  doi TEXT,
+  pmid TEXT,
+  url TEXT,
+  trecho_literal TEXT,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX ix_fonte_tema_camada ON conteudo.fonte (tema_id, camada);
+
+CREATE TABLE conteudo.artefato (
+  artefato_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL CHECK (tipo IN ('sintese_evidencia','objetivos','item','gabarito','aula','caso','protocolo','checklist','resumo','mapa','flashcard','simulado')),
+  versao SMALLINT NOT NULL DEFAULT 1,
+  status app.status_artefato NOT NULL DEFAULT 'rascunho',
+  titulo TEXT NOT NULL,
+  corpo TEXT,
+  checklist_conforme BOOLEAN NOT NULL DEFAULT false,
+  publicado_em TIMESTAMPTZ,
+  revisado_em TIMESTAMPTZ,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (tema_id, tipo, versao)
+);
+
+CREATE TABLE conteudo.bloco (
+  bloco_id BIGSERIAL PRIMARY KEY,
+  artefato_id BIGINT NOT NULL REFERENCES conteudo.artefato(artefato_id) ON DELETE CASCADE,
+  ordem SMALLINT NOT NULL,
+  tipo TEXT NOT NULL,
+  conteudo TEXT NOT NULL,
+  UNIQUE (artefato_id, ordem)
+);
+
+CREATE TABLE conteudo.checklist_item (
+  checklist_item_id BIGSERIAL PRIMARY KEY,
+  artefato_id BIGINT NOT NULL REFERENCES conteudo.artefato(artefato_id) ON DELETE CASCADE,
+  descricao TEXT NOT NULL,
+  conforme BOOLEAN NOT NULL DEFAULT false,
+  obrigatorio BOOLEAN NOT NULL DEFAULT true,
+  verificado_por BIGINT REFERENCES app.pessoa(pessoa_id),
+  verificado_em TIMESTAMPTZ
+);
+
+CREATE TABLE conteudo.correcao (
+  correcao_id BIGSERIAL PRIMARY KEY,
+  artefato_id BIGINT NOT NULL REFERENCES conteudo.artefato(artefato_id) ON DELETE CASCADE,
+  trecho_errado TEXT NOT NULL,
+  trecho_correto TEXT NOT NULL,
+  fonte_id BIGINT REFERENCES conteudo.fonte(fonte_id),
+  aplicada_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.regressao (
+  regressao_id BIGSERIAL PRIMARY KEY,
+  correcao_id BIGINT NOT NULL REFERENCES conteudo.correcao(correcao_id) ON DELETE CASCADE,
+  artefato_dependente_id BIGINT NOT NULL REFERENCES conteudo.artefato(artefato_id),
+  detectada BOOLEAN NOT NULL DEFAULT false,
+  detalhe TEXT,
+  verificado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.prompt (
+  prompt_id BIGSERIAL PRIMARY KEY,
+  slug TEXT NOT NULL UNIQUE,
+  familia TEXT,
+  skill_codigo TEXT,
+  conteudo TEXT NOT NULL,
+  max_tokens INTEGER,
+  temperatura NUMERIC(3,2),
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.design_token (
+  token_id BIGSERIAL PRIMARY KEY,
+  categoria TEXT NOT NULL CHECK (categoria IN ('cor','tipografia','espacamento','raio','sombra','movimento','acessibilidade')),
+  nome TEXT NOT NULL,
+  valor TEXT NOT NULL,
+  descricao TEXT,
+  UNIQUE (categoria, nome)
+);
+
+CREATE TABLE conteudo.assinatura_artefato (
+  assinatura_id BIGSERIAL PRIMARY KEY,
+  tipo_artefato TEXT NOT NULL UNIQUE,
+  descricao TEXT NOT NULL,
+  tokens_obrigatorios JSONB,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.auditoria_visual (
+  auditoria_visual_id BIGSERIAL PRIMARY KEY,
+  artefato_id BIGINT NOT NULL REFERENCES conteudo.artefato(artefato_id) ON DELETE CASCADE,
+  desvio BOOLEAN NOT NULL DEFAULT false,
+  detalhe TEXT,
+  auditado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.termo_variante (
+  termo_variante_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  termo_canonico TEXT NOT NULL,
+  termo_variante TEXT NOT NULL,
+  resolvido BOOLEAN NOT NULL DEFAULT false
+);
+
+CREATE TABLE conteudo.auditoria (
+  auditoria_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT NOT NULL REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  inconsistencias INTEGER NOT NULL DEFAULT 0,
+  relatorio TEXT,
+  auditado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.manuscrito (
+  manuscrito_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT NOT NULL REFERENCES app.ciclo(ciclo_id) ON DELETE CASCADE,
+  titulo TEXT NOT NULL,
+  estagio TEXT NOT NULL CHECK (estagio IN ('redacao','submissao','revisao','aceito','publicado')),
+  checklist_conforme BOOLEAN NOT NULL DEFAULT false,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.comentario_revisor (
+  comentario_revisor_id BIGSERIAL PRIMARY KEY,
+  manuscrito_id BIGINT NOT NULL REFERENCES conteudo.manuscrito(manuscrito_id) ON DELETE CASCADE,
+  texto TEXT NOT NULL,
+  respondido BOOLEAN NOT NULL DEFAULT false,
+  resposta TEXT
+);
+
+CREATE TABLE conteudo.convite (
+  convite_id BIGSERIAL PRIMARY KEY,
+  email_convidado app.email_valido NOT NULL,
+  perfil_id SMALLINT NOT NULL REFERENCES app.perfil(perfil_id),
+  token TEXT NOT NULL UNIQUE,
+  expira_em TIMESTAMPTZ NOT NULL,
+  usado_em TIMESTAMPTZ,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.base_legal (
+  base_legal_id BIGSERIAL PRIMARY KEY,
+  tabela TEXT NOT NULL UNIQUE,
+  base_legal TEXT NOT NULL,
+  finalidade TEXT NOT NULL,
+  retencao_anos SMALLINT
+);
+
+CREATE TABLE conteudo.relatorio_gestao (
+  relatorio_gestao_id BIGSERIAL PRIMARY KEY,
+  periodo TEXT NOT NULL UNIQUE,
+  conteudo JSONB NOT NULL,
+  gerado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.metrica_web (
+  metrica_web_id BIGSERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  lcp NUMERIC(6,2),
+  inp NUMERIC(6,2),
+  cls NUMERIC(5,3),
+  medido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE conteudo.alerta (
+  alerta_id BIGSERIAL PRIMARY KEY,
+  tipo TEXT NOT NULL,
+  severidade app.severidade_alerta NOT NULL DEFAULT 'info',
+  mensagem TEXT NOT NULL,
+  resolvido BOOLEAN NOT NULL DEFAULT false,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE VIEW conteudo.v_link_quebrado AS
+SELECT a.artefato_id, a.titulo, 'artefato sem bloco' AS motivo
+  FROM conteudo.artefato a
+ WHERE a.status = 'publicado'
+   AND NOT EXISTS (SELECT 1 FROM conteudo.bloco b WHERE b.artefato_id = a.artefato_id);
+
+CREATE VIEW conteudo.v_artefato_publicado AS
+SELECT a.artefato_id, a.tema_id, a.tipo, a.versao, a.titulo, a.publicado_em
+  FROM conteudo.artefato a
+ WHERE a.status = 'publicado';
+
+-- ETAPA 9 — SCHEMA MAESTRO
+
+CREATE TABLE maestro.job (
+  job_id BIGSERIAL PRIMARY KEY,
+  tema_id BIGINT REFERENCES app.tema(tema_id) ON DELETE CASCADE,
+  fase TEXT NOT NULL,
+  skill_codigo TEXT NOT NULL,
+  estado app.status_job NOT NULL DEFAULT 'pendente',
+  prioridade SMALLINT NOT NULL DEFAULT 3,
+  payload JSONB,
+  tentativas SMALLINT NOT NULL DEFAULT 0,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  iniciado_em TIMESTAMPTZ,
+  concluido_em TIMESTAMPTZ
+);
+
+CREATE INDEX ix_job_pendente ON maestro.job (estado, prioridade) WHERE estado = 'pendente';
+
+CREATE TABLE maestro.execucao_motor (
+  execucao_motor_id BIGSERIAL PRIMARY KEY,
+  job_id BIGINT NOT NULL REFERENCES maestro.job(job_id) ON DELETE CASCADE,
+  tema_id BIGINT REFERENCES app.tema(tema_id),
+  fase TEXT,
+  skill_codigo TEXT,
+  modelo TEXT,
+  tokens_entrada INTEGER,
+  tokens_saida INTEGER,
+  duracao_ms INTEGER,
+  iniciado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE maestro.gate_resultado (
+  gate_resultado_id BIGSERIAL PRIMARY KEY,
+  job_id BIGINT NOT NULL REFERENCES maestro.job(job_id) ON DELETE CASCADE,
+  gate_codigo TEXT NOT NULL,
+  estado TEXT NOT NULL CHECK (estado IN ('aprovado','reprovado','ignorado')),
+  detalhe TEXT,
+  ocorrido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE maestro.regressao (
+  regressao_id BIGSERIAL PRIMARY KEY,
+  correcao_id BIGINT,
+  detectada BOOLEAN NOT NULL DEFAULT false,
+  detalhe TEXT,
+  verificado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE maestro.manuscrito (
+  manuscrito_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT REFERENCES app.ciclo(ciclo_id),
+  titulo TEXT NOT NULL,
+  estagio TEXT,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE maestro.comentario_revisor (
+  comentario_revisor_id BIGSERIAL PRIMARY KEY,
+  manuscrito_id BIGINT REFERENCES maestro.manuscrito(manuscrito_id),
+  texto TEXT NOT NULL,
+  respondido BOOLEAN NOT NULL DEFAULT false
+);
+
+CREATE TABLE maestro.analise (
+  analise_id BIGSERIAL PRIMARY KEY,
+  ciclo_id BIGINT REFERENCES app.ciclo(ciclo_id),
+  tipo TEXT NOT NULL,
+  resultado JSONB,
+  pressupostos_verificados BOOLEAN NOT NULL DEFAULT false,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ETAPA 10 — SCHEMA OPS
+
+CREATE TABLE ops.auditoria (
+  auditoria_id BIGSERIAL PRIMARY KEY,
+  skill_codigo TEXT,
+  entidade TEXT,
+  entidade_id BIGINT,
+  acao TEXT NOT NULL,
+  resultado TEXT NOT NULL,
+  detalhe JSONB,
+  ocorrido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX ix_auditoria_ocorrido ON ops.auditoria (ocorrido_em DESC);
+
+CREATE TABLE ops.alerta (
+  alerta_id BIGSERIAL PRIMARY KEY,
+  tipo TEXT NOT NULL,
+  severidade app.severidade_alerta NOT NULL DEFAULT 'info',
+  mensagem TEXT NOT NULL,
+  resolvido BOOLEAN NOT NULL DEFAULT false,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE ops.gatilho (
+  gatilho_id BIGSERIAL PRIMARY KEY,
+  codigo TEXT NOT NULL UNIQUE,
+  nome TEXT NOT NULL,
+  descricao TEXT,
+  entidade TEXT NOT NULL,
+  skills_enfileiradas TEXT[] NOT NULL,
+  ativo BOOLEAN NOT NULL DEFAULT true,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE ops.gatilho_execucao (
+  gatilho_execucao_id BIGSERIAL PRIMARY KEY,
+  gatilho_id BIGINT NOT NULL REFERENCES ops.gatilho(gatilho_id) ON DELETE CASCADE,
+  entidade_id BIGINT,
+  skills_enfileiradas INTEGER NOT NULL DEFAULT 0,
+  skills_ignoradas INTEGER NOT NULL DEFAULT 0,
+  executado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE ops.relatorio_gestao (
+  relatorio_gestao_id BIGSERIAL PRIMARY KEY,
+  periodo TEXT NOT NULL UNIQUE,
+  conteudo JSONB NOT NULL,
+  gerado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE ops.metrica_web (
+  metrica_web_id BIGSERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  lcp NUMERIC(6,2),
+  inp NUMERIC(6,2),
+  cls NUMERIC(5,3),
+  medido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE ops.base_legal (
+  base_legal_id BIGSERIAL PRIMARY KEY,
+  tabela TEXT NOT NULL UNIQUE,
+  base_legal TEXT NOT NULL,
+  finalidade TEXT NOT NULL,
+  retencao_anos SMALLINT
+);
+
+CREATE VIEW ops.v_gatilho_estado AS
+SELECT g.codigo,
+       g.nome,
+       g.ativo,
+       array_length(g.skills_enfileiradas, 1) AS n_skills,
+       (SELECT count(*) FROM ops.gatilho_execucao ge WHERE ge.gatilho_id = g.gatilho_id) AS n_disparos,
+       (SELECT max(ge.executado_em) FROM ops.gatilho_execucao ge WHERE ge.gatilho_id = g.gatilho_id) AS ultimo_disparo
+  FROM ops.gatilho g
+ ORDER BY g.codigo;
+
+-- ETAPA 11 — SCHEMA COBRANCA
+
+CREATE TABLE cobranca.plano (
+  plano_id BIGSERIAL PRIMARY KEY,
+  codigo TEXT NOT NULL UNIQUE,
+  nome TEXT NOT NULL,
+  valor_mensal NUMERIC(10,2) NOT NULL,
+  ativo BOOLEAN NOT NULL DEFAULT true
+);
+
+CREATE TABLE cobranca.assinatura (
+  assinatura_id BIGSERIAL PRIMARY KEY,
+  pessoa_id BIGINT NOT NULL REFERENCES app.pessoa(pessoa_id) ON DELETE CASCADE,
+  plano_id BIGINT NOT NULL REFERENCES cobranca.plano(plano_id),
+  inicio_em DATE NOT NULL,
+  fim_em DATE,
+  status TEXT NOT NULL DEFAULT 'ativa'
+);
+
+CREATE TABLE cobranca.fatura (
+  fatura_id BIGSERIAL PRIMARY KEY,
+  assinatura_id BIGINT NOT NULL REFERENCES cobranca.assinatura(assinatura_id) ON DELETE CASCADE,
+  competencia TEXT NOT NULL,
+  valor NUMERIC(10,2) NOT NULL,
+  vencimento DATE NOT NULL,
+  pago_em TIMESTAMPTZ,
+  UNIQUE (assinatura_id, competencia)
+);
+
+CREATE TABLE cobranca.pagamento (
+  pagamento_id BIGSERIAL PRIMARY KEY,
+  fatura_id BIGINT NOT NULL REFERENCES cobranca.fatura(fatura_id) ON DELETE CASCADE,
+  valor NUMERIC(10,2) NOT NULL,
+  metodo TEXT NOT NULL,
+  pago_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE cobranca.evento (
+  evento_id BIGSERIAL PRIMARY KEY,
+  assinatura_id BIGINT REFERENCES cobranca.assinatura(assinatura_id),
+  tipo TEXT NOT NULL,
+  payload JSONB,
+  ocorrido_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ETAPA 12 — FUNCOES DE APOIO
+
+CREATE OR REPLACE FUNCTION app.role_atual()
+RETURNS TEXT
+LANGUAGE sql STABLE AS $$
+  SELECT coalesce(current_setting('app.role', true), 'anonimo');
+$$;
+
+CREATE OR REPLACE FUNCTION app.fn_sessao_teste(p_email TEXT)
+RETURNS TEXT
+LANGUAGE plpgsql AS $$
+DECLARE
+  v_pessoa_id BIGINT;
+  v_token TEXT;
+BEGIN
+  SELECT pessoa_id INTO v_pessoa_id FROM app.pessoa WHERE email_primario = p_email;
+  IF v_pessoa_id IS NULL THEN
+    RAISE EXCEPTION 'pessoa nao encontrada: %', p_email USING ERRCODE = '23503';
+  END IF;
+  v_token := encode(gen_random_bytes(32), 'hex');
+  INSERT INTO app.sessao (pessoa_id, token_hash, expira_em)
+  VALUES (v_pessoa_id, encode(digest(v_token, 'sha256'), 'hex'), now() + interval '24 hours');
+  RETURN v_token;
+END $$;
+
+CREATE OR REPLACE FUNCTION conteudo.fn_contraste_wcag(p_cor1 TEXT, p_cor2 TEXT)
+RETURNS NUMERIC
+LANGUAGE plpgsql IMMUTABLE AS $$
+DECLARE
+  v_l1 NUMERIC; v_l2 NUMERIC;
+  v_r1 NUMERIC; v_g1 NUMERIC; v_b1 NUMERIC;
+  v_r2 NUMERIC; v_g2 NUMERIC; v_b2 NUMERIC;
+BEGIN
+  IF p_cor1 IS NULL OR p_cor2 IS NULL THEN
+    RAISE EXCEPTION 'fn_contraste_wcag: cor nula' USING ERRCODE = '22023';
+  END IF;
+  IF p_cor1 !~ '^#[0-9A-Fa-f]{6}$' THEN
+"    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida ""%""', p_cor1 USING ERRCODE = '22023';"
+  END IF;
+  IF p_cor2 !~ '^#[0-9A-Fa-f]{6}$' THEN
+"    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida ""%""', p_cor2 USING ERRCODE = '22023';"
+  END IF;
+  v_r1 := ('x' || substr(p_cor1, 2, 2))::bit(8)::int / 255.0;
+  v_g1 := ('x' || substr(p_cor1, 4, 2))::bit(8)::int / 255.0;
+  v_b1 := ('x' || substr(p_cor1, 6, 2))::bit(8)::int / 255.0;
+  v_r2 := ('x' || substr(p_cor2, 2, 2))::bit(8)::int / 255.0;
+  v_g2 := ('x' || substr(p_cor2, 4, 2))::bit(8)::int / 255.0;
+  v_b2 := ('x' || substr(p_cor2, 6, 2))::bit(8)::int / 255.0;
+  v_r1 := CASE WHEN v_r1 <= 0.03928 THEN v_r1 / 12.92 ELSE power((v_r1 + 0.055) / 1.055, 2.4) END;
+  v_g1 := CASE WHEN v_g1 <= 0.03928 THEN v_g1 / 12.92 ELSE power((v_g1 + 0.055) / 1.055, 2.4) END;
+  v_b1 := CASE WHEN v_b1 <= 0.03928 THEN v_b1 / 12.92 ELSE power((v_b1 + 0.055) / 1.055, 2.4) END;
+  v_r2 := CASE WHEN v_r2 <= 0.03928 THEN v_r2 / 12.92 ELSE power((v_r2 + 0.055) / 1.055, 2.4) END;
+  v_g2 := CASE WHEN v_g2 <= 0.03928 THEN v_g2 / 12.92 ELSE power((v_g2 + 0.055) / 1.055, 2.4) END;
+  v_b2 := CASE WHEN v_b2 <= 0.03928 THEN v_b2 / 12.92 ELSE power((v_b2 + 0.055) / 1.055, 2.4) END;
+  v_l1 := 0.2126 * v_r1 + 0.7152 * v_g1 + 0.0722 * v_b1;
+  v_l2 := 0.2126 * v_r2 + 0.7152 * v_g2 + 0.0722 * v_b2;
+  IF v_l1 > v_l2 THEN
+    RETURN round((v_l1 + 0.05) / (v_l2 + 0.05), 2);
+  ELSE
+    RETURN round((v_l2 + 0.05) / (v_l1 + 0.05), 2);
+  END IF;
+END $$;
+
+CREATE OR REPLACE FUNCTION ops.fn_disparar_gatilho(
+  p_codigo TEXT,
+  p_entidade TEXT,
+  p_entidade_id BIGINT,
+  p_ator TEXT DEFAULT 'sistema'
+)
+RETURNS TABLE (skills_enfileiradas INTEGER, skills_ignoradas INTEGER)
+LANGUAGE plpgsql AS $$
+DECLARE
+  v_gatilho RECORD;
+  v_skill TEXT;
+  v_n INTEGER := 0;
+  v_ign INTEGER := 0;
+BEGIN
+  SELECT * INTO v_gatilho FROM ops.gatilho WHERE codigo = p_codigo AND ativo;
+  IF v_gatilho IS NULL THEN
+    RAISE EXCEPTION 'gatilho inexistente ou inativo: %', p_codigo USING ERRCODE = '23503';
+  END IF;
+  FOREACH v_skill IN ARRAY v_gatilho.skills_enfileiradas LOOP
+    IF EXISTS (SELECT 1 FROM maestro.job j WHERE j.skill_codigo = v_skill AND j.estado = 'pendente' AND j.tema_id = p_entidade_id) THEN
+      v_ign := v_ign + 1;
+    ELSE
+      INSERT INTO maestro.job (tema_id, fase, skill_codigo, estado, payload)
+      VALUES (p_entidade_id, 'evidencia', v_skill, 'pendente', jsonb_build_object('ator', p_ator));
+      v_n := v_n + 1;
+    END IF;
+  END LOOP;
+  INSERT INTO ops.gatilho_execucao (gatilho_id, entidade_id, skills_enfileiradas, skills_ignoradas)
+  VALUES (v_gatilho.gatilho_id, p_entidade_id, v_n, v_ign);
+  RETURN QUERY SELECT v_n, v_ign;
+END $$;
+
+-- ETAPA 13 — TRIGGERS
+
+CREATE OR REPLACE FUNCTION app.fn_resposta_imutavel()
+RETURNS TRIGGER LANGUAGE plpgsql AS $$
+BEGIN
+  IF TG_OP = 'UPDATE' THEN
+    RAISE EXCEPTION 'resposta e imutavel: UPDATE nao permitido' USING ERRCODE = '42501';
+  END IF;
+  IF TG_OP = 'DELETE' THEN
+    RAISE EXCEPTION 'resposta e imutavel: DELETE nao permitido' USING ERRCODE = '42501';
+  END IF;
+  RETURN NEW;
+END $$;
+
+CREATE TRIGGER tg_resposta_imutavel
+  BEFORE UPDATE OR DELETE ON app.resposta
+  FOR EACH ROW EXECUTE FUNCTION app.fn_resposta_imutavel();
+
+CREATE OR REPLACE FUNCTION conteudo.fn_artefato_publicacao()
+RETURNS TRIGGER LANGUAGE plpgsql AS $$
+BEGIN
+  IF NEW.status = 'publicado' AND NOT NEW.checklist_conforme THEN
+    RAISE EXCEPTION 'artefato % nao pode ser publicado: checklist incompleto', NEW.artefato_id
+      USING ERRCODE = '23514', HINT = 'Preencha todos os itens obrigatorios do checklist.';
+  END IF;
+  IF NEW.status = 'publicado' AND NEW.publicado_em IS NULL THEN
+    NEW.publicado_em := now();
+  END IF;
+  RETURN NEW;
+END $$;
+
+CREATE TRIGGER tg_artefato_publicacao
+  BEFORE INSERT OR UPDATE ON conteudo.artefato
+  FOR EACH ROW EXECUTE FUNCTION conteudo.fn_artefato_publicacao();
+
+-- ETAPA 14 — ROLES
+
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'api_rw') THEN
+    CREATE ROLE api_rw LOGIN PASSWORD 'trocar_em_producao';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'maestro_rw') THEN
+    CREATE ROLE maestro_rw LOGIN PASSWORD 'trocar_em_producao';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'metabase_ro') THEN
+    CREATE ROLE metabase_ro LOGIN PASSWORD 'trocar_em_producao';
+  END IF;
+END $$;
+
+GRANT USAGE ON SCHEMA app, pesquisa, conteudo, maestro, ops TO api_rw;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA app, pesquisa, conteudo, maestro, ops TO api_rw;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA app, pesquisa, conteudo, maestro, ops TO api_rw;
+
+GRANT USAGE ON SCHEMA maestro, conteudo, app, ops TO maestro_rw;
+GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA maestro TO maestro_rw;
+GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA conteudo TO maestro_rw;
+GRANT SELECT ON ALL TABLES IN SCHEMA app TO maestro_rw;
+GRANT INSERT ON ALL TABLES IN SCHEMA ops TO maestro_rw;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA maestro, conteudo, ops TO maestro_rw;
+
+GRANT USAGE ON SCHEMA app, pesquisa, conteudo, maestro, ops TO metabase_ro;
+GRANT SELECT ON ALL TABLES IN SCHEMA app, pesquisa, conteudo, maestro, ops TO metabase_ro;
+
+-- ETAPA 15 — RLS
+
+ALTER TABLE app.pessoa ENABLE ROW LEVEL SECURITY;
+ALTER TABLE app.sessao ENABLE ROW LEVEL SECURITY;
+ALTER TABLE app.resposta ENABLE ROW LEVEL SECURITY;
+ALTER TABLE app.tentativa ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pesquisa.participante ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pesquisa.resposta_participante ENABLE ROW LEVEL SECURITY;
+ALTER TABLE conteudo.artefato ENABLE ROW LEVEL SECURITY;
+ALTER TABLE conteudo.fonte ENABLE ROW LEVEL SECURITY;
+ALTER TABLE maestro.job ENABLE ROW LEVEL SECURITY;
+ALTER TABLE ops.auditoria ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY pol_pessoa_leitura ON app.pessoa FOR SELECT USING (true);
+CREATE POLICY pol_pessoa_escrita ON app.pessoa FOR ALL
+  USING (app.role_atual() IN ('admin','data_steward'))
+  WITH CHECK (app.role_atual() IN ('admin','data_steward'));
+
+CREATE POLICY pol_sessao_leitura ON app.sessao FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward') OR pessoa_id = current_setting('app.pessoa_id', true)::bigint);
+
+CREATE POLICY pol_resposta_leitura ON app.resposta FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward','pesquisador')
+         OR tentativa_id IN (SELECT t.tentativa_id FROM app.tentativa t WHERE t.pessoa_id = current_setting('app.pessoa_id', true)::bigint));
+
+CREATE POLICY pol_resposta_insercao ON app.resposta FOR INSERT WITH CHECK (true);
+
+CREATE POLICY pol_participante_leitura ON pesquisa.participante FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward','pesquisador'));
+
+CREATE POLICY pol_resposta_participante_leitura ON pesquisa.resposta_participante FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward','pesquisador'));
+
+CREATE POLICY pol_artefato_leitura ON conteudo.artefato FOR SELECT USING (true);
+CREATE POLICY pol_artefato_escrita ON conteudo.artefato FOR ALL
+  USING (app.role_atual() IN ('admin','data_steward','curador'))
+  WITH CHECK (app.role_atual() IN ('admin','data_steward','curador'));
+
+CREATE POLICY pol_fonte_leitura ON conteudo.fonte FOR SELECT USING (true);
+CREATE POLICY pol_fonte_escrita ON conteudo.fonte FOR ALL
+  USING (app.role_atual() IN ('admin','data_steward','curador'))
+  WITH CHECK (app.role_atual() IN ('admin','data_steward','curador'));
+
+CREATE POLICY pol_job_leitura ON maestro.job FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward','curador'));
+CREATE POLICY pol_job_escrita ON maestro.job FOR ALL
+  USING (app.role_atual() IN ('admin','data_steward'))
+  WITH CHECK (app.role_atual() IN ('admin','data_steward'));
+
+CREATE POLICY pol_auditoria_leitura ON ops.auditoria FOR SELECT
+  USING (app.role_atual() IN ('admin','data_steward'));
+CREATE POLICY pol_auditoria_insercao ON ops.auditoria FOR INSERT WITH CHECK (true);
+
+-- ETAPA 16 — CONFERENCIA
+
+\echo '--- Contagem por schema ---'
+
+SELECT n.nspname AS schema, count(c.oid) AS tabelas
+  FROM pg_namespace n
+  LEFT JOIN pg_class c ON c.relnamespace = n.oid AND c.relkind = 'r'
+ WHERE n.nspname IN ('app','pesquisa','conteudo','maestro','ops','cobranca')
+ GROUP BY n.nspname
+ ORDER BY n.nspname;
+
+\echo '--- Roles criadas ---'
+
+SELECT rolname FROM pg_roles WHERE rolname IN ('api_rw','maestro_rw','metabase_ro') ORDER BY rolname;
+
+\echo '=== INSTALACAO v4.4 CONCLUIDA ==='
+
+COMMIT;
