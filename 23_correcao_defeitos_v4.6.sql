@@ -1,4 +1,3 @@
-linha_sql
 -- ============================================================
 -- 23_correcao_defeitos_v4.6.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
@@ -76,12 +75,12 @@ BEGIN
   END IF;
 
   IF p_cor1 !~ '^#[0-9A-Fa-f]{6}$' THEN
-"    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida ""%"" (esperado #RRGGBB)', p_cor1"
+    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida "%" (esperado #RRGGBB)', p_cor1
       USING ERRCODE = '22023';
   END IF;
 
   IF p_cor2 !~ '^#[0-9A-Fa-f]{6}$' THEN
-"    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida ""%"" (esperado #RRGGBB)', p_cor2"
+    RAISE EXCEPTION 'fn_contraste_wcag: cor invalida "%" (esperado #RRGGBB)', p_cor2
       USING ERRCODE = '22023';
   END IF;
 
