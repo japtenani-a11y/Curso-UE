@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 08b_implementacao_aluno_resto_v1.0.sh
@@ -19,11 +18,11 @@ linha_sql
 
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== IMPLEMENTACAO ALUNO RESTO v1.0 ==="""
+echo "=== IMPLEMENTACAO ALUNO RESTO v1.0 ==="
 
-"cat > ""$RAIZ/api/src/routes/aluno.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/aluno.ts" <<'EOF'
 import { Router } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -279,5 +278,5 @@ alunoRouter.get('/historico', async (req, res, next) => {
 });
 EOF
 
-"echo ""=== IMPLEMENTACAO ALUNO RESTO CONCLUIDA ==="""
-"echo ""Verifique: wc -l $RAIZ/api/src/routes/aluno.ts"""
+echo "=== IMPLEMENTACAO ALUNO RESTO CONCLUIDA ==="
+echo "Verifique: wc -l $RAIZ/api/src/routes/aluno.ts"
