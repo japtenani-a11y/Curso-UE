@@ -1,0 +1,131 @@
+linha_sql
+-- ============================================================
+-- 02_verificar_v4.4.sql
+-- Sistema de Producao Curricular e Coleta Cientifica
+-- Programa de Cirurgia de Urgencia e Trauma
+-- Versao 4.4 / 10-11-2026
+--
+-- OBJETIVO: verificar a instalacao do 01_instalar. Dez blocos
+-- (A a J) que conferem tabelas, funcoes, triggers, policies,
+-- roles e dados minimos. Cada bloco retorna zero linhas se
+-- estiver correto.
+--
+-- PRE-REQUISITO: 01_instalar_v4.4 executado.
+--
+-- USO: psql -d programa_v44 -f 02_verificar_v4.4.sql
+--
+-- NOTA: o bloco A4 compara com 44 tabelas. Se o banco tiver
+-- outro numero, ajustar o valor antes de executar. O script
+-- 23b_patch_arquivos faz esse ajuste automaticamente.
+-- ============================================================
+
+\set ON_ERROR_STOP on
+\echo '=== VERIFICACAO v4.4 ==='
+
+-- BLOCO A — TABELAS
+\echo '--- A: tabelas por schema ---'
+
+SELECT 'A1: schema app ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'app');
+SELECT 'A2: schema pesquisa ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'pesquisa');
+SELECT 'A3: schema conteudo ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'conteudo');
+SELECT 'A4: app tem ' || count(*) || ' tabelas, esperado 44'
+  FROM information_schema.tables
+ WHERE table_schema = 'app' AND table_type = 'BASE TABLE'
+HAVING count(*) <> 44;
+SELECT 'A5: maestro ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'maestro');
+SELECT 'A6: ops ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'ops');
+SELECT 'A7: cobranca ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'cobranca');
+
+-- BLOCO B — FUNCOES
+\echo '--- B: funcoes ---'
+
+SELECT 'B1: fn_sessao_teste ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
+                    WHERE n.nspname = 'app' AND p.proname = 'fn_sessao_teste');
+SELECT 'B2: fn_contraste_wcag ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
+                    WHERE n.nspname = 'conteudo' AND p.proname = 'fn_contraste_wcag');
+SELECT 'B3: fn_disparar_gatilho ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
+                    WHERE n.nspname = 'ops' AND p.proname = 'fn_disparar_gatilho');
+SELECT 'B4: role_atual ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
+                    WHERE n.nspname = 'app' AND p.proname = 'role_atual');
+
+-- BLOCO C — TRIGGERS
+\echo '--- C: triggers ---'
+
+SELECT 'C1: tg_resposta_imutavel ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'tg_resposta_imutavel');
+SELECT 'C2: tg_artefato_publicacao ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'tg_artefato_publicacao');
+
+-- BLOCO D — ROLES
+\echo '--- D: roles ---'
+
+SELECT 'D1: api_rw ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'api_rw');
+SELECT 'D2: maestro_rw ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'maestro_rw');
+SELECT 'D3: metabase_ro ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'metabase_ro');
+
+-- BLOCO E — RLS
+\echo '--- E: RLS ---'
+
+SELECT 'E1: app.resposta sem RLS'
+ WHERE NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'app.resposta'::regclass);
+SELECT 'E2: conteudo.artefato sem RLS'
+ WHERE NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'conteudo.artefato'::regclass);
+SELECT 'E3: ops.auditoria sem RLS'
+ WHERE NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'ops.auditoria'::regclass);
+
+-- BLOCO F — VIEWS
+\echo '--- F: views ---'
+
+SELECT 'F1: v_curva_retencao ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM information_schema.views
+                    WHERE table_schema = 'pesquisa' AND table_name = 'v_curva_retencao');
+SELECT 'F2: v_gatilho_estado ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM information_schema.views
+                    WHERE table_schema = 'ops' AND table_name = 'v_gatilho_estado');
+SELECT 'F3: v_link_quebrado ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM information_schema.views
+                    WHERE table_schema = 'conteudo' AND table_name = 'v_link_quebrado');
+
+-- BLOCO G — DOMINIOS E TIPOS
+\echo '--- G: dominios e tipos ---'
+
+SELECT 'G1: dominio email_valido ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_type t JOIN pg_namespace n ON n.oid = t.typnamespace
+                    WHERE n.nspname = 'app' AND t.typname = 'email_valido');
+SELECT 'G2: tipo grau_enum ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_type t JOIN pg_namespace n ON n.oid = t.typnamespace
+                    WHERE n.nspname = 'app' AND t.typname = 'grau_enum');
+SELECT 'G3: tipo status_artefato ausente'
+ WHERE NOT EXISTS (SELECT 1 FROM pg_type t JOIN pg_namespace n ON n.oid = t.typnamespace
+                    WHERE n.nspname = 'app' AND t.typname = 'status_artefato');
+
+-- BLOCO H — EXTENSOES
+\echo '--- H: extensoes ---'
+
+SELECT 'H1: pgcrypto ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'pgcrypto');
+SELECT 'H2: pg_trgm ausente' WHERE NOT EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'pg_trgm');
+
+-- BLOCO I — PERFIS
+\echo '--- I: perfis ---'
+
+SELECT 'I1: perfis insuficientes: ' || count(*) || ', esperado 7'
+  FROM app.perfil
+HAVING count(*) <> 7;
+
+-- BLOCO J — DADOS MINIMOS (depende do 03_setup_minimo)
+\echo '--- J: dados minimos ---'
+
+SELECT 'J1: nenhuma pessoa cadastrada'
+ WHERE NOT EXISTS (SELECT 1 FROM app.pessoa);
+SELECT 'J2: nenhum ciclo cadastrado'
+ WHERE NOT EXISTS (SELECT 1 FROM app.ciclo);
+SELECT 'J3: nenhum tema cadastrado'
+ WHERE NOT EXISTS (SELECT 1 FROM app.tema);
+
+\echo '=== VERIFICACAO CONCLUIDA ==='
+\echo 'Blocos A a I devem retornar zero linhas.'
+\echo 'Bloco J retorna FALHA antes do 03_setup_minimo — e esperado.'
