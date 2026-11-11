@@ -1,4 +1,3 @@
-linha_sql
 -- ============================================================
 -- 05_setup_preceptor_e_curador_v4.4.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
