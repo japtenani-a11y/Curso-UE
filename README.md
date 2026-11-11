@@ -1,0 +1,1 @@
+Arquivos do repositorio Curso-UE convertidos de CSV de uma coluna para scripts reais (.sql/.sh). Nao corrigidos: ver o documento. Erros conhecidos: 03 usa coluna onda_codigo inexistente; 13,14a,16,18,19,20 sem ponto e virgula; 12,22,23 dependem desses.
