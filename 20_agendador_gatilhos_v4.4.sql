@@ -17,7 +17,7 @@
 \set ON_ERROR_STOP on
 \echo '=== SETUP AGENDADOR GATILHOS v4.4 ==='
 
-BEGIN
+BEGIN;
 
 INSERT INTO ops.gatilho (codigo, nome, descricao, entidade, skills_enfileiradas, ativo) VALUES
 ('GAT_CICLO_ABERTURA',
@@ -80,24 +80,24 @@ ON CONFLICT (codigo) DO UPDATE
        descricao = EXCLUDED.descricao,
        entidade = EXCLUDED.entidade,
        skills_enfileiradas = EXCLUDED.skills_enfileiradas,
-       ativo = EXCLUDED.ativo
+       ativo = EXCLUDED.ativo;
 
 -- CONFERENCIA
 \echo '--- Conferencia ---'
 
-SELECT 'total de gatilhos: ' || count(*) FROM ops.gatilho
+SELECT 'total de gatilhos: ' || count(*) FROM ops.gatilho;
 
 SELECT codigo, array_length(skills_enfileiradas, 1) AS n_skills
   FROM ops.gatilho
- ORDER BY codigo
+ ORDER BY codigo;
 
-SELECT 'FALHA: total de gatilhos <> 8' WHERE (SELECT count(*) FROM ops.gatilho) <> 8
+SELECT 'FALHA: total de gatilhos <> 8' WHERE (SELECT count(*) FROM ops.gatilho) <> 8;
 
 SELECT 'FALHA: gatilho com skill inexistente: ' || g.codigo
   FROM ops.gatilho g
  CROSS JOIN LATERAL unnest(g.skills_enfileiradas) AS s(cod)
- WHERE NOT EXISTS (SELECT 1 FROM ops.skill_definicao sd WHERE sd.codigo = s.cod)
+ WHERE NOT EXISTS (SELECT 1 FROM ops.skill_definicao sd WHERE sd.codigo = s.cod);
 
 \echo '=== SETUP AGENDADOR GATILHOS CONCLUIDO ==='
 
-COMMIT
+COMMIT;
