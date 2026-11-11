@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 22b_patch_executor_v1.1.sh
@@ -20,16 +19,16 @@ linha_sql
 
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== PATCH EXECUTOR v1.1 ==="""
+echo "=== PATCH EXECUTOR v1.1 ==="
 
-"if [ ! -d ""$RAIZ/executor/src/maestro"" ]; then"
-"  echo ""ERRO: $RAIZ/executor/src/maestro nao existe. Rode 17_scaffolding_executor primeiro."""
+if [ ! -d "$RAIZ/executor/src/maestro" ]; then
+  echo "ERRO: $RAIZ/executor/src/maestro nao existe. Rode 17_scaffolding_executor primeiro."
   exit 1
 fi
 
-"cat > ""$RAIZ/executor/src/maestro/ciclo.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/ciclo.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 import { executarJob } from './motor.js';
@@ -148,7 +147,7 @@ export async function ciclo(): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/motor.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/motor.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 import { avaliarGates } from './gate.js';
@@ -211,7 +210,7 @@ export async function executarJob(job: Job): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/gate.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/gate.ts" <<'EOF'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
 
@@ -259,7 +258,7 @@ export async function avaliarGates(job: Job): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/maestro/backoff.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/maestro/backoff.ts" <<'EOF'
 export function backoffMs(tentativa: number): number {
   const base = 1000;
   const teto = 60000;
@@ -272,7 +271,7 @@ export function aguardar(ms: number): Promise<void> {
 }
 EOF
 
-"cat > ""$RAIZ/executor/src/main.ts"" <<'EOF'"
+cat > "$RAIZ/executor/src/main.ts" <<'EOF'
 import { logger } from './maestro/logger.js';
 import { ciclo } from './maestro/ciclo.js';
 
@@ -308,7 +307,7 @@ async function loop(): Promise<void> {
 void loop();
 EOF
 
-"echo ""=== PATCH EXECUTOR CONCLUIDO ==="""
-"echo ""Verifique:"""
-"echo ""  grep skill_codigo $RAIZ/executor/src/maestro/ciclo.ts"""
-"echo ""  ls $RAIZ/executor/src/maestro/backoff.ts"""
+echo "=== PATCH EXECUTOR CONCLUIDO ==="
+echo "Verifique:"
+echo "  grep skill_codigo $RAIZ/executor/src/maestro/ciclo.ts"
+echo "  ls $RAIZ/executor/src/maestro/backoff.ts"
