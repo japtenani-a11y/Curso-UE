@@ -20,7 +20,7 @@
 \set ON_ERROR_STOP on
 \echo '=== SETUP DESIGN TOKENS v4.4 ==='
 
-BEGIN
+BEGIN;
 
 -- 57 TOKENS EM 7 CATEGORIAS
 
@@ -125,15 +125,15 @@ INSERT INTO conteudo.assinatura_artefato (tipo_artefato, descricao, tokens_obrig
 ('simulado','Simulado com itens e tempo','{"cor":["primaria","alerta"],"tipografia":["familia_corpo","escala_16"],"espacamento":["esp_16"]}')
 ON CONFLICT (tipo_artefato) DO UPDATE
    SET descricao = EXCLUDED.descricao,
-       tokens_obrigatorios = EXCLUDED.tokens_obrigatorios
+       tokens_obrigatorios = EXCLUDED.tokens_obrigatorios;
 
 -- RLS
-ALTER TABLE conteudo.design_token ENABLE ROW LEVEL SECURITY
+ALTER TABLE conteudo.design_token ENABLE ROW LEVEL SECURITY;
 
-DROP POLICY IF EXISTS pol_design_token_leitura ON conteudo.design_token
-CREATE POLICY pol_design_token_leitura ON conteudo.design_token FOR SELECT USING (true)
+DROP POLICY IF EXISTS pol_design_token_leitura ON conteudo.design_token;
+CREATE POLICY pol_design_token_leitura ON conteudo.design_token FOR SELECT USING (true);
 
-DROP POLICY IF EXISTS pol_design_token_escrita ON conteudo.design_token
+DROP POLICY IF EXISTS pol_design_token_escrita ON conteudo.design_token;
 CREATE POLICY pol_design_token_escrita ON conteudo.design_token FOR ALL
   USING (app.role_atual() IN ('admin','data_steward'))
   WITH CHECK (app.role_atual() IN ('admin','data_steward'));
@@ -141,18 +141,18 @@ CREATE POLICY pol_design_token_escrita ON conteudo.design_token FOR ALL
 -- CONFERENCIA
 \echo '--- Conferencia ---'
 
-SELECT 'total de tokens: ' || count(*) FROM conteudo.design_token
+SELECT 'total de tokens: ' || count(*) FROM conteudo.design_token;
 
 SELECT categoria, count(*) AS n
   FROM conteudo.design_token
  GROUP BY categoria
- ORDER BY categoria
+ ORDER BY categoria;
 
-SELECT 'assinaturas: ' || count(*) FROM conteudo.assinatura_artefato
+SELECT 'assinaturas: ' || count(*) FROM conteudo.assinatura_artefato;
 
-SELECT 'FALHA: total de tokens <> 57' WHERE (SELECT count(*) FROM conteudo.design_token) <> 57
-SELECT 'FALHA: assinaturas <> 12' WHERE (SELECT count(*) FROM conteudo.assinatura_artefato) <> 12
-SELECT 'FALHA: design_token sem RLS' WHERE NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'conteudo.design_token'::regclass)
+SELECT 'FALHA: total de tokens <> 57' WHERE (SELECT count(*) FROM conteudo.design_token) <> 57;
+SELECT 'FALHA: assinaturas <> 12' WHERE (SELECT count(*) FROM conteudo.assinatura_artefato) <> 12;
+SELECT 'FALHA: design_token sem RLS' WHERE NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'conteudo.design_token'::regclass);
 
 -- VALIDACAO DE CONTRASTE
 \echo '--- Validacao de contraste WCAG ---'
@@ -162,4 +162,4 @@ SELECT 'contraste neutro_900/neutro_100: ' || conteudo.fn_contraste_wcag('#12121
 
 \echo '=== SETUP DESIGN TOKENS CONCLUIDO ==='
 
-COMMIT
+COMMIT;
