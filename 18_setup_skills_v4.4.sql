@@ -21,7 +21,7 @@
 \set ON_ERROR_STOP on
 \echo '=== SETUP SKILLS v4.4 ==='
 
-BEGIN
+BEGIN;
 
 CREATE TABLE IF NOT EXISTS ops.skill_definicao (
   skill_definicao_id BIGSERIAL PRIMARY KEY,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS ops.skill_definicao (
   gate_codigo TEXT,
   ativo BOOLEAN NOT NULL DEFAULT true,
   criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
-)
+);
 
 CREATE INDEX IF NOT EXISTS ix_skill_familia ON ops.skill_definicao (familia, codigo);
 
@@ -63,7 +63,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA PK (39 skills de plataforma, curso, site, dados, gestao, manutencao)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -109,7 +109,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA RS (14 skills de pesquisa cientifica)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -130,7 +130,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA PS (8 skills de psicometria)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -145,7 +145,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA AV (7 skills de avaliacao e feedback)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -159,7 +159,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA PG (7 skills de pos-graduacao)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -173,7 +173,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA DC (6 skills de disseminacao)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -186,7 +186,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA EN (8 skills de engenharia)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -201,7 +201,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA GV (5 skills de governanca)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -213,7 +213,7 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- FAMILIA DS (4 skills de design visual)
 INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entrada, saida, gate_codigo) VALUES
@@ -224,26 +224,26 @@ INSERT INTO ops.skill_definicao (codigo, familia, volume, nome, descricao, entra
 ON CONFLICT (codigo) DO UPDATE
    SET familia = EXCLUDED.familia, volume = EXCLUDED.volume, nome = EXCLUDED.nome,
        descricao = EXCLUDED.descricao, entrada = EXCLUDED.entrada, saida = EXCLUDED.saida,
-       gate_codigo = EXCLUDED.gate_codigo
+       gate_codigo = EXCLUDED.gate_codigo;
 
 -- CONFERENCIA
 \echo '--- Conferencia ---'
 
-SELECT 'total de skills: ' || count(*) FROM ops.skill_definicao
+SELECT 'total de skills: ' || count(*) FROM ops.skill_definicao;
 
 SELECT familia, count(*) AS n
   FROM ops.skill_definicao
  GROUP BY familia
- ORDER BY familia
+ ORDER BY familia;
 
-SELECT 'FALHA: total <> 117' WHERE (SELECT count(*) FROM ops.skill_definicao) <> 117
+SELECT 'FALHA: total <> 117' WHERE (SELECT count(*) FROM ops.skill_definicao) <> 117;
 
 SELECT 'FALHA: familia sem CHECK' WHERE NOT EXISTS (
   SELECT 1 FROM pg_constraint c
     JOIN pg_class t ON t.oid = c.conrelid
    WHERE t.relname = 'skill_definicao' AND c.contype = 'c' AND pg_get_constraintdef(c.oid) LIKE '%familia%'
-)
+);
 
 \echo '=== SETUP SKILLS CONCLUIDO ==='
 
-COMMIT
+COMMIT;
