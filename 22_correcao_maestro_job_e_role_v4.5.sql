@@ -1,4 +1,3 @@
-linha_sql
 -- ============================================================
 -- 22_correcao_maestro_job_e_role_v4.5.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
