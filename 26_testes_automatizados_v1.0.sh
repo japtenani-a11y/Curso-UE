@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 26_testes_automatizados_v1.0.sh
@@ -15,14 +14,14 @@ linha_sql
 # ============================================================
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== TESTES AUTOMATIZADOS v1.0 ==="""
+echo "=== TESTES AUTOMATIZADOS v1.0 ==="
 
-"mkdir -p ""$RAIZ""/api/test/{unit,integration}"
-"mkdir -p ""$RAIZ""/pwa/tests"
+mkdir -p "$RAIZ"/api/test/{unit,integration}
+mkdir -p "$RAIZ"/pwa/tests
 
-"cat > ""$RAIZ/api/test/unit/erro.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/unit/erro.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 import { erroHandler } from '../../src/middleware/erro.js';
 
@@ -75,7 +74,7 @@ describe('erroHandler', () => {
 });
 EOF
 
-"cat > ""$RAIZ/api/test/unit/role.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/unit/role.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 import { requireRole } from '../../src/middleware/role.js';
 
@@ -126,7 +125,7 @@ describe('requireRole', () => {
 });
 EOF
 
-"cat > ""$RAIZ/api/test/unit/ic.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/unit/ic.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 
 function ic95(p: number, n: number): { inferior: number; superior: number } {
@@ -163,7 +162,7 @@ describe('intervalo de confianca 95%', () => {
 });
 EOF
 
-"cat > ""$RAIZ/api/test/integration/health.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/integration/health.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 
 const BASE = process.env.TEST_API_URL ?? 'http://localhost:3000';
@@ -179,7 +178,7 @@ describe('GET /health', () => {
 });
 EOF
 
-"cat > ""$RAIZ/api/test/integration/auth.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/integration/auth.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 
 const BASE = process.env.TEST_API_URL ?? 'http://localhost:3000';
@@ -216,7 +215,7 @@ describe('POST /auth/login', () => {
 });
 EOF
 
-"cat > ""$RAIZ/api/test/integration/aluno.test.ts"" <<'EOF'"
+cat > "$RAIZ/api/test/integration/aluno.test.ts" <<'EOF'
 import { describe, it, expect } from 'vitest';
 
 const BASE = process.env.TEST_API_URL ?? 'http://localhost:3000';
@@ -247,7 +246,7 @@ describe('GET /aluno/ondas', () => {
 });
 EOF
 
-"cat > ""$RAIZ/pwa/tests/login.spec.ts"" <<'EOF'"
+cat > "$RAIZ/pwa/tests/login.spec.ts" <<'EOF'
 import { test, expect } from '@playwright/test';
 
 test('tela de login carrega', async ({ page }) => {
@@ -263,7 +262,7 @@ test('login com email invalido mostra erro', async ({ page }) => {
 });
 EOF
 
-"cat > ""$RAIZ/pwa/tests/aluno.spec.ts"" <<'EOF'"
+cat > "$RAIZ/pwa/tests/aluno.spec.ts" <<'EOF'
 import { test, expect } from '@playwright/test';
 
 test('aluno ve lista de ondas', async ({ page }) => {
@@ -272,7 +271,7 @@ test('aluno ve lista de ondas', async ({ page }) => {
 });
 EOF
 
-"cat > ""$RAIZ/pwa/tests/curador.spec.ts"" <<'EOF'"
+cat > "$RAIZ/pwa/tests/curador.spec.ts" <<'EOF'
 import { test, expect } from '@playwright/test';
 
 test('curador ve painel com temas e gates', async ({ page }) => {
@@ -283,7 +282,7 @@ test('curador ve painel com temas e gates', async ({ page }) => {
 });
 EOF
 
-"cat > ""$RAIZ/pwa/tests/pesquisa.spec.ts"" <<'EOF'"
+cat > "$RAIZ/pwa/tests/pesquisa.spec.ts" <<'EOF'
 import { test, expect } from '@playwright/test';
 
 test('pesquisa ve grafico de retencao', async ({ page }) => {
@@ -293,7 +292,7 @@ test('pesquisa ve grafico de retencao', async ({ page }) => {
 });
 EOF
 
-"cat > ""$RAIZ/pwa/playwright.config.ts"" <<'EOF'"
+cat > "$RAIZ/pwa/playwright.config.ts" <<'EOF'
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
@@ -310,8 +309,8 @@ export default defineConfig({
 });
 EOF
 
-"echo ""=== TESTES AUTOMATIZADOS CONCLUIDOS ==="""
-"echo ""Verifique:"""
-"echo ""  ls $RAIZ/api/test/unit/"""
-"echo ""  ls $RAIZ/api/test/integration/"""
-"echo ""  ls $RAIZ/pwa/tests/"""
+echo "=== TESTES AUTOMATIZADOS CONCLUIDOS ==="
+echo "Verifique:"
+echo "  ls $RAIZ/api/test/unit/"
+echo "  ls $RAIZ/api/test/integration/"
+echo "  ls $RAIZ/pwa/tests/"
