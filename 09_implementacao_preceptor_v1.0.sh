@@ -1,4 +1,3 @@
-linha_sql
 #!/usr/bin/env bash
 # ============================================================
 # 09_implementacao_preceptor_v1.0.sh
@@ -19,11 +18,11 @@ linha_sql
 
 set -euo pipefail
 
-"RAIZ=""${1:-./programa-cut}"""
+RAIZ="${1:-./programa-cut}"
 
-"echo ""=== IMPLEMENTACAO PRECEPTOR v1.0 ==="""
+echo "=== IMPLEMENTACAO PRECEPTOR v1.0 ==="
 
-"cat > ""$RAIZ/api/src/routes/preceptor.ts"" <<'EOF'"
+cat > "$RAIZ/api/src/routes/preceptor.ts" <<'EOF'
 import { Router } from 'express';
 import { withMaestro } from '../db/transaction.js';
 
@@ -182,5 +181,5 @@ preceptorRouter.get('/alunos/:alunoId/progresso', async (req, res, next) => {
 });
 EOF
 
-"echo ""=== IMPLEMENTACAO PRECEPTOR CONCLUIDA ==="""
-"echo ""Verifique: ls $RAIZ/api/src/routes/preceptor.ts"""
+echo "=== IMPLEMENTACAO PRECEPTOR CONCLUIDA ==="
+echo "Verifique: ls $RAIZ/api/src/routes/preceptor.ts"
