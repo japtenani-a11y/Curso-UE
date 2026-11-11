@@ -1,4 +1,3 @@
-linha_sql
 -- ============================================================
 -- 04_setup_resposta_e_pesquisa_v4.3.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
