@@ -1,0 +1,443 @@
+{
+ "tema": "T001",
+ "tipo": "banco_dificuldade",
+ "titulo": "Banco de questões e distribuição de dificuldade",
+ "status": "rascunho",
+ "versao_padrao": "guia v0.1 (12/11/2026)",
+ "gerado_por": "Claude, geração manual fora do executor",
+ "corpo": "> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.\n\n# T001 — Banco de questões e distribuição de dificuldade\n\nQuestões por perfil e teste com o grau-alvo de cada onda. O grau cresce com a onda e com a experiência do perfil. Dentro de cada teste, as questões variam um grau abaixo e um acima do alvo.\n\n| Perfil | Pré-teste inicial | Pré-teste 2 | Pós D0 | Pós D+15 | Pós D+45 | Pós D+90 | Questão fixa |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Graduação | Muito fácil | Fácil | Fácil | Média | Média | Média | Média |\n| R1 | Fácil | Média | Média | Média | Difícil | Difícil | Fácil |\n| R2 | Média | Média | Difícil | Difícil | Difícil | Muito difícil | Muito fácil |\n| R3 | Média | Difícil | Difícil | Muito difícil | Muito difícil | Muito difícil | Muito fácil |\n| R+ | Difícil | Difícil | Muito difícil | Muito difícil | Extrema | Extrema | Muito fácil |\n\n| Grau | Taxa de acerto esperada | Questões no banco |\n| --- | --- | --- |\n| Muito fácil | acima de 90% | 8 |\n| Fácil | 75% a 90% | 23 |\n| Média | 50% a 75% | 40 |\n| Difícil | 30% a 50% | 46 |\n| Muito difícil | 15% a 30% | 33 |\n| Extrema | abaixo de 15% | 20 |\n\nTotal: 170 questões de caso e 1 questão fixa (igual para todos os perfis). O simulado opcional de cada aluno é formado pelas questões dos outros perfis, que ele não recebe nos testes.\n\nA questão fixa tem grau diferente por perfil porque o mesmo enunciado é mais fácil para quem tem mais experiência.",
+ "afirmacoes": [
+  {
+   "id": "A1",
+   "texto": "Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies"
+  },
+  {
+   "id": "A2",
+   "texto": "Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)"
+  },
+  {
+   "id": "A3",
+   "texto": "Estudo piloto de viabilidade de ensaio randomizado por conglomerados (ATLS, PTC e cuidado padrão) incluiu 376 pacientes e 22 residentes.",
+   "fonte_arquivo": "2025_36",
+   "trecho_literal": "We included 376 patients and 22 residents."
+  },
+  {
+   "id": "A4",
+   "texto": "Os autores afirmam que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes, motivando um novo ensaio pragmático.",
+   "fonte_arquivo": "2026_26",
+   "trecho_literal": "there is no high-quality evidence that it can improve patient outcomes"
+  },
+  {
+   "id": "A5",
+   "texto": "O ensaio ADVANCE TRAUMA (stepped-wedge, Índia) incluirá pelo menos 4320 pacientes adultos com 15 anos ou mais.",
+   "fonte_arquivo": "2026_26",
+   "trecho_literal": "The trial will include at least 4320 adult trauma patients (≥ 15 years)"
+  },
+  {
+   "id": "A6",
+   "texto": "O custo de implementação de programas de treinamento variou de USD 3,70 (primeiro respondedor leigo) a USD 1433,5 (ATLS).",
+   "fonte_arquivo": "2026_42",
+   "trecho_literal": "starting from USD 3.70 (Lay-First-Responder) to USD 1433.5 (Advanced Trauma Life Support)"
+  },
+  {
+   "id": "A7",
+   "texto": "A revisão sistemática sobre checklist na ressuscitação identificou 625 artigos e incluiu apenas estudos do tipo antes-e-depois.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "Three of the 625 identified articles were included, which all used a before-and-after study design"
+  },
+  {
+   "id": "A8",
+   "texto": "O uso de checklist pode melhorar a adesão ao ATLS e o fluxo de trabalho durante a ressuscitação do trauma.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "The application of a checklist may improve ATLS adherence and workflow during trauma resuscitation."
+  },
+  {
+   "id": "A9",
+   "texto": "Em um estudo, houve menor mortalidade no grupo mais grave (ISS > 25, aOR 0,51; IC 95% 0,30–0,89) com checklist.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "Reduced mortality rates were found in the most severely injured patient group (Injury Severity score > 25, aOR 0.51, 95% CI 0.30–0.89)"
+  },
+  {
+   "id": "A10",
+   "texto": "Um estudo mostrou maior incidência de pneumonia no grupo com checklist (aOR 1,69; IC 95% 1,03–2,80).",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "the incidence of pneumonia was higher in the group where a checklist was applied [adjusted odds ratio (aOR) 1.69, 95% Confidence Interval (CI 1.03–2.80)]"
+  },
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A15",
+   "texto": "A mortalidade caiu de 17,7% para 12,1% entre 302 pacientes com fisiologia alterada na chegada.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "The mortality rate decreased from 17.7 to 12.1 per cent among 302 patients"
+  },
+  {
+   "id": "A16",
+   "texto": "O uso do WHO Trauma Care Checklist foi favorecido por campeão institucional, adaptação ao contexto e integração às rotinas e à documentação.",
+   "fonte_arquivo": "2020_40",
+   "trecho_literal": "Presence of an institutional champion, context-specific adaptation, and integration of the TCC with existing care and documentation practices contribute to successful utilization."
+  },
+  {
+   "id": "A17",
+   "texto": "O treinamento de equipe por simulação pode reduzir o tempo até exames de sangue, tomografia e hemostasia.",
+   "fonte_arquivo": "2018_23",
+   "trecho_literal": "Simulation team training could help reduce time to blood routine reports, scans and hemostasis."
+  },
+  {
+   "id": "A18",
+   "texto": "Treinamento mensal em equipe, in situ, com debriefing em vídeo reduziu significativamente o tempo de ressuscitação na sala de emergência.",
+   "fonte_arquivo": "2018_55",
+   "trecho_literal": "Monthly video assisted team based in situ training with video debriefing significantly reduces resuscitation time in the emergency bay."
+  },
+  {
+   "id": "A19",
+   "texto": "Com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor (p = 0,03).",
+   "fonte_arquivo": "2022_65",
+   "trecho_literal": "the mean total resuscitation time was 259 seconds shorter (p = 0.03)"
+  },
+  {
+   "id": "A20",
+   "texto": "Meta-análise de coortes retrospectivas: sem diferença de sobrevida entre líder cirurgião e não cirurgião (OR 0,82; IC 95% 0,61-1,10).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "no difference in survival [odds ratio (OR): 0.82, 95% confidence interval (CI) 0.61-1.10, P=0.19]"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A22",
+   "texto": "A sobrevida no grupo com colaboração próxima entre radiologia intervencionista e cirurgia foi 15,5% maior que a prevista (IC 95% 7,5–23,6%).",
+   "fonte_arquivo": "2024_64",
+   "trecho_literal": "the survival rate in the CG was 15.5% higher than the Ps (95% CI: 7.5–23.6%; p < 0.001)"
+  },
+  {
+   "id": "A23",
+   "texto": "Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A27",
+   "texto": "Em pesquisa com respondentes, 73 % (IC 95% 70 a 76 %) não apoiaram oxigênio suplementar sempre para todo traumatizado grave sem considerar a SpO2.",
+   "fonte_arquivo": "2025_12",
+   "trecho_literal": "A majority of respondents (73 % [95 % CI: 70 to 76 %]) did not support that supplemental oxygen should always be provided to all severely injured trauma patients"
+  },
+  {
+   "id": "A28",
+   "texto": "A cricotireoidostomia/via aérea cirúrgica de emergência ocorreu em 467 pacientes (0,24%) de uma coorte retrospectiva japonesa.",
+   "fonte_arquivo": "2020_18",
+   "trecho_literal": "emergency front-of-neck airway occurred in 467 patients (0.24%)"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A31",
+   "texto": "Na parada cardíaca extra-hospitalar traumática, a adrenalina associou-se a menor sobrevida em 7 dias (OR 0,20; IC 95% 0,08–0,48).",
+   "fonte_arquivo": "2019_31",
+   "trecho_literal": "The use of epinephrine was significantly associated with decreased 7-day survival (odds ratio = 0.20; 95% CI = 0.08–0.48; P < 0.01)"
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A37",
+   "texto": "Não há abordagem baseada em evidência para manejo da hipotermia no trauma, ao contrário da acidose e do sangramento.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "there is no evidence-based approach to managing hypothermia in trauma patients"
+  },
+  {
+   "id": "A38",
+   "texto": "Fluido pré-aquecido a 39 °C só permanece acima de 37 °C no paciente com alto fluxo e alta temperatura ambiente, em equipo não isolado de 175 cm.",
+   "fonte_arquivo": "2024_07",
+   "trecho_literal": "preheated to 39 °C is to remain above 37 °C when it reaches the patient using a 175-cm-long uninsulated infusion set"
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "A40",
+   "texto": "Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações e nenhum teve lesão à imagem.",
+   "fonte_arquivo": "2024_48",
+   "trecho_literal": "From 3976 patients treated with WBCT, 120 patients (3.02%) showed an inconspicuous primary survey."
+  },
+  {
+   "id": "A41",
+   "texto": "Apesar do algoritmo da sala de trauma, lesão potencialmente letal surgiu depois da avaliação terciária em 0,26% dos pacientes graves.",
+   "fonte_arquivo": "2022_17",
+   "trecho_literal": "In seven patients (0.26%; mean age 50.4 years, range 18–90; mean ISS 39.7, range 34–50), a life-threatening injury occurred in the further course"
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  },
+  {
+   "id": "A43",
+   "texto": "O teste SILENT (membro inferior) teve sensibilidade de 75% (IC 95% 64 a 84%) e especificidade de 99% (IC 95% 97 a 100%).",
+   "fonte_arquivo": "2024_11",
+   "trecho_literal": "Overall sensitivity was 75% (95%CI 64 to 84%), and overall specificity was 99% (95%CI 97 to 100%)."
+  },
+  {
+   "id": "A44",
+   "texto": "Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.",
+   "fonte_arquivo": "2026_10",
+   "trecho_literal": "Checklist- and algorithm-based formats produced similar short-term gains."
+  },
+  {
+   "id": "D1",
+   "texto": "O objetivo da avaliação inicial é identificar e tratar rapidamente as lesões que ameaçam a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "The goal of the initial assessment is the rapid identification and treatment of life-threatening injuries."
+  },
+  {
+   "id": "D2",
+   "texto": "Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação é avaliada e tratada antes da via aérea (CAB).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "circulation evaluation and treatment will come before airway (ie, CAB [circulation, airway, breathing])"
+  },
+  {
+   "id": "D3",
+   "texto": "No paciente que chega em extremis, a circulação tem precedência (CABDE).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "where circulation takes precedence (ie, CABDE)"
+  },
+  {
+   "id": "D5",
+   "texto": "Embora ensinada passo a passo, boa parte da avaliação primária pode ser feita simultaneamente.",
+   "fonte_arquivo": "Mattox9_cap10_pre_hospitalar",
+   "trecho_literal": "many aspects of this evaluation can be done simultaneously"
+  },
+  {
+   "id": "D6",
+   "texto": "O sangramento externo ativo é tratado primeiro com compressão direta.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Treatment for active external bleeding identified through these exams should begin with direct pressure."
+  },
+  {
+   "id": "D7",
+   "texto": "No trauma de extremidade, o torniquete pode salvar a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "For extremity trauma, placement of a tourniquet can be lifesaving."
+  },
+  {
+   "id": "D8",
+   "texto": "O pinçamento às cegas de feridas profundas deve ser evitado.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Blind clamping of deep wounds is discouraged"
+  },
+  {
+   "id": "D9",
+   "texto": "Nos pacientes de alto risco para sangramento pélvico, a cinta pélvica deve ser colocada imediatamente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a pelvic binder should be immediately placed in high-risk patients"
+  },
+  {
+   "id": "D10",
+   "texto": "O paciente que fala com voz normal não tem obstrução de via aérea.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a patient who is able to speak in his or her normal voice does not have airway obstruction"
+  },
+  {
+   "id": "D11",
+   "texto": "A via aérea deve ser assegurada no paciente com alteração importante do nível de consciência (Glasgow ≤8).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Airway stabilization should also be performed in the patient with a significant alteration in mental status (Glasgow Coma Scale [GCS] score ≤8)"
+  },
+  {
+   "id": "D12",
+   "texto": "Antes da sedação e do bloqueio neuromuscular, faz-se um exame neurológico breve e completo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a brief but thorough neurologic exam should be performed prior to the administration of paralytics and sedation"
+  },
+  {
+   "id": "D13",
+   "texto": "No trauma penetrante sem indicação de proteção cervical, sentar o paciente para que cuspa ou aspire o sangue pode controlar a via aérea.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "merely placing patients into an upright sitting position and allowing them to spit or suction the blood"
+  },
+  {
+   "id": "D14",
+   "texto": "O medidor automático de pressão pode errar no paciente em choque; se for medir, medir manualmente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "noninvasive blood pressure devices may be erroneous in patients in shock"
+  },
+  {
+   "id": "D15",
+   "texto": "Sem acesso venoso imediato, considerar o acesso intraósseo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "consideration should be made to perform intraosseous access"
+  },
+  {
+   "id": "D16",
+   "texto": "O Glasgow é avaliado na chegada e repetido durante a ressuscitação.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "The GCS score should be assessed immediately upon presentation and sequentially during the resuscitation."
+  },
+  {
+   "id": "D17",
+   "texto": "Agitação e agressividade também são sinais clássicos de choque classe III e IV.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "generalized agitation and combativeness are also classic symptoms of class III and IV shock"
+  },
+  {
+   "id": "D18",
+   "texto": "Toda a roupa é retirada para um exame completo em 360 graus.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "All clothing should be removed to facilitate a complete 360-degree exam."
+  },
+  {
+   "id": "D19",
+   "texto": "Terminado o exame, manter o paciente aquecido é prioridade: mantas aquecidas, manta de ar forçado e fluidos aquecidos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "warm blankets, forced hot air blankets, and warm intravenous fluids"
+  },
+  {
+   "id": "D20",
+   "texto": "A avaliação secundária é uma história e exame completos, cujo objetivo é identificar todas as demais lesões.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "whose aim is to identify all other injuries"
+  },
+  {
+   "id": "D21",
+   "texto": "A história segue o AMPLE: alergias, medicações, doenças prévias, última refeição e eventos/mecanismo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "ATLS suggests using AMPLE (allergies, medications, past illnesses, last meal, events/environment/mechanism)"
+  },
+  {
+   "id": "D22",
+   "texto": "No centro de trauma, o líder da equipe deve ser o cirurgião do trauma.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "In a trauma center, this should be the trauma surgeon."
+  },
+  {
+   "id": "D23",
+   "texto": "A passagem do pré-hospitalar segue um formato estruturado, como o MIST: mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "MIST (mechanism, injuries suspected, vital signs and symptoms, treatments)"
+  },
+  {
+   "id": "D24",
+   "texto": "A passagem do pré-hospitalar não deve durar mais que 45 segundos a 1 minuto.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the prehospital report should not take more than 45 seconds to 1 minute"
+  },
+  {
+   "id": "D25",
+   "texto": "O exame físico tem baixo valor preditivo negativo, mas achados positivos quase sempre indicam lesão grave e exigem ação.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "positive findings are almost always secondary to serious injuries and should be acted upon"
+  },
+  {
+   "id": "D26",
+   "texto": "A alteração fisiológica é o maior determinante do desfecho.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "that is the greatest determinant of outcome"
+  },
+  {
+   "id": "D27",
+   "texto": "A mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40%.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the mortality rate of patients presenting with a systolic blood pressure of less than 90 mm Hg who require an emergent laparotomy is greater than 40%"
+  },
+  {
+   "id": "D28",
+   "texto": "O acesso intraósseo para iniciar a ressuscitação pode salvar vidas no choque.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Initiating the resuscitation with intraosseous access can be lifesaving in patients in shock."
+  },
+  {
+   "id": "D29",
+   "texto": "Treinandos podem liderar a equipe sob supervisão próxima do assistente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "opportunities should be made for them to be team leader under the close supervision of the attending"
+  },
+  {
+   "id": "D30",
+   "texto": "No paciente de UTI, a avaliação terciária e a revisão cuidadosa das imagens reduzem o risco de lesão não identificada.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Trauma patients in the ICU should undergo a tertiary survey and careful review of imaging results to reduce the risk of missed injury."
+  },
+  {
+   "id": "D31",
+   "texto": "A avaliação terciária deve ser feita depois de completadas a ressuscitação inicial e as intervenções cirúrgicas.",
+   "fonte_arquivo": "Mattox9_cap44_membro_inferior",
+   "trecho_literal": "A “tertiary survey” should be completed after the initial resuscitation and operative interventions are complete"
+  },
+  {
+   "id": "D32",
+   "texto": "A hipotensão após a ressuscitação é sangramento até prova em contrário.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Any patient developing hypotension postresuscitation is bleeding until proven otherwise"
+  }
+ ]
+}

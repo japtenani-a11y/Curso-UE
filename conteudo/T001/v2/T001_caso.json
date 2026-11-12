@@ -1,0 +1,131 @@
+{
+ "tema": "T001",
+ "tipo": "caso",
+ "titulo": "Caso da aula",
+ "status": "rascunho",
+ "versao_padrao": "guia v0.1 (12/11/2026)",
+ "gerado_por": "Claude, geração manual fora do executor",
+ "corpo": "> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.\n\n# T001 — Caso da aula (fictício, para discussão em pequenos grupos)\n\nDuração: 15 minutos na reunião. Dados inventados; nenhum paciente real.\n\nHomem, 34 anos, colisão moto × automóvel. Chega com torniquete na coxa esquerda, aplicado no local por sangramento volumoso. Agitado, FC 128, PA 92/58 no aparelho automático, SpO2 91% em ar ambiente, temperatura 34,9 °C.\n\n**Ponto de decisão 1 — Por onde começar?**\nSituação: O paciente entra na sala de trauma. O curativo sob o torniquete está encharcado de sangue.\nDiscussão: Hemorragia externa com risco de vida: a circulação vem antes da via aérea (CAB) [D2]. Reavaliar o torniquete; o torniquete pode salvar a vida [D7], mas associa-se a mais amputação inicial (RR 2,07) [A24]. Se optar por compressão direta, lembrar que a pressão aplicada varia muito e a percepção de quem aplica não é confiável [D6, A26].\n\n**Ponto de decisão 2 — Ele está agitado**\nSituação: O paciente grita e tenta tirar o colar. Um colega sugere sedá-lo para continuar o exame.\nDiscussão: Agitação pode ser choque classe III ou IV [D17]. Se for preciso intubar, fazer exame neurológico breve antes da sedação [D12].\n\n**Ponto de decisão 3 — Oxigênio e tórax**\nSituação: Hemorragia controlada. SpO2 segue em 91%. O eFAST não mostra pneumotórax.\nDiscussão: Oxigênio guiado pela SpO2, e não para todos [A27]. eFAST negativo não encerra a investigação [A29, A30].\n\n**Ponto de decisão 4 — A pressão melhorou?**\nSituação: O aparelho automático marca PA 104/66. A pele segue fria.\nDiscussão: O aparelho automático pode errar no choque [D14]; medir manualmente. Não decidir por um número isolado [A32, A33].\n\n**Ponto de decisão 5 — Temperatura e TC**\nSituação: Temperatura 34,9 °C; a TC está a poucos minutos.\nDiscussão: Aquecer com mantas, ar forçado e fluidos aquecidos [D19]; a hipotermia é subvalorizada [A36]. A TC de corpo inteiro tem benefício incerto em mortalidade [A12] e, no choque, não aumentou a mortalidade precoce [A39].\n\n**Ponto de decisão 6 — No dia seguinte**\nSituação: A TC não mostrou outras lesões. No primeiro dia, ele se queixa de dor no punho direito.\nDiscussão: Lesões de diagnóstico tardio ocorrem mesmo com TC (13,9 %) [A42]; a avaliação terciária é feita depois da ressuscitação e das cirurgias [D31] e reduz lesões não identificadas [D30].\n\n**Desfecho**\nA radiografia mostra fratura do rádio distal, tratada com imobilização. O torniquete foi retirado no centro cirúrgico, com reparo vascular. O paciente teve alta da UTI no terceiro dia. Lição: a avaliação terciária encontrou o que a sala de trauma e a TC não viram [D30, A42].\n",
+ "afirmacoes": [
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A26",
+   "texto": "Não houve correlação entre a autoavaliação subjetiva e a pressão objetiva medida (p = 0,541).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "No correlation was found between subjective self-assessment and objective pressure measurements (p = 0.541)"
+  },
+  {
+   "id": "A27",
+   "texto": "Em pesquisa com respondentes, 73 % (IC 95% 70 a 76 %) não apoiaram oxigênio suplementar sempre para todo traumatizado grave sem considerar a SpO2.",
+   "fonte_arquivo": "2025_12",
+   "trecho_literal": "A majority of respondents (73 % [95 % CI: 70 to 76 %]) did not support that supplemental oxygen should always be provided to all severely injured trauma patients"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  },
+  {
+   "id": "D2",
+   "texto": "Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação é avaliada e tratada antes da via aérea (CAB).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "circulation evaluation and treatment will come before airway (ie, CAB [circulation, airway, breathing])"
+  },
+  {
+   "id": "D6",
+   "texto": "O sangramento externo ativo é tratado primeiro com compressão direta.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Treatment for active external bleeding identified through these exams should begin with direct pressure."
+  },
+  {
+   "id": "D7",
+   "texto": "No trauma de extremidade, o torniquete pode salvar a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "For extremity trauma, placement of a tourniquet can be lifesaving."
+  },
+  {
+   "id": "D12",
+   "texto": "Antes da sedação e do bloqueio neuromuscular, faz-se um exame neurológico breve e completo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a brief but thorough neurologic exam should be performed prior to the administration of paralytics and sedation"
+  },
+  {
+   "id": "D14",
+   "texto": "O medidor automático de pressão pode errar no paciente em choque; se for medir, medir manualmente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "noninvasive blood pressure devices may be erroneous in patients in shock"
+  },
+  {
+   "id": "D17",
+   "texto": "Agitação e agressividade também são sinais clássicos de choque classe III e IV.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "generalized agitation and combativeness are also classic symptoms of class III and IV shock"
+  },
+  {
+   "id": "D19",
+   "texto": "Terminado o exame, manter o paciente aquecido é prioridade: mantas aquecidas, manta de ar forçado e fluidos aquecidos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "warm blankets, forced hot air blankets, and warm intravenous fluids"
+  },
+  {
+   "id": "D30",
+   "texto": "No paciente de UTI, a avaliação terciária e a revisão cuidadosa das imagens reduzem o risco de lesão não identificada.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Trauma patients in the ICU should undergo a tertiary survey and careful review of imaging results to reduce the risk of missed injury."
+  },
+  {
+   "id": "D31",
+   "texto": "A avaliação terciária deve ser feita depois de completadas a ressuscitação inicial e as intervenções cirúrgicas.",
+   "fonte_arquivo": "Mattox9_cap44_membro_inferior",
+   "trecho_literal": "A “tertiary survey” should be completed after the initial resuscitation and operative interventions are complete"
+  }
+ ]
+}

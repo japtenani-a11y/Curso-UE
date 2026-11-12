@@ -1,0 +1,7552 @@
+[
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "Graduação",
+  "id": "T1-Graduação-1",
+  "fixa": false,
+  "caso": 1,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 1, qual é a primeira medida?",
+  "alternativas": [
+   "Pedir radiografia de tórax",
+   "Comprimir diretamente o ponto que sangra",
+   "Levar para a tomografia",
+   "Colher a história AMPLE",
+   "Intubar a paciente"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Exame de imagem não vem antes de controlar um sangramento que mata em minutos.",
+   "Correta: hemorragia externa com risco de vida vem primeiro, começando pela compressão direta.",
+   "Transportar sangrando para a tomografia é perigoso e atrasa o tratamento.",
+   "A história faz parte da avaliação secundária, depois da primária.",
+   "Ela fala com voz normal: a via aérea está pérvia e intubar agora atrasa o controle do sangramento."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D6",
+   "D10"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "Graduação",
+  "id": "T1-Graduação-2",
+  "fixa": false,
+  "caso": 1,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "A paciente do caso 1 responde às perguntas com voz normal. O que isso indica?",
+  "alternativas": [
+   "Que a coluna cervical está lesada",
+   "Que ela precisa de via aérea definitiva",
+   "Que o Glasgow é menor que 8",
+   "Que não há choque",
+   "Que a via aérea está pérvia"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A fala não informa sobre a coluna.",
+   "Via aérea definitiva é indicada por Glasgow ≤8 ou obstrução, não por fala normal.",
+   "Quem responde às perguntas não tem Glasgow tão baixo.",
+   "Falar não exclui choque: FC 124 e pele fria sugerem o contrário.",
+   "Correta: quem fala com voz normal não tem obstrução de via aérea."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D10",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "Graduação",
+  "id": "T1-Graduação-3",
+  "fixa": false,
+  "caso": 1,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Por que, no caso 1, a circulação é tratada antes da via aérea?",
+  "alternativas": [
+   "Porque há hemorragia externa com risco de vida",
+   "Porque a fratura é exposta",
+   "Porque ela tem mais de 40 anos",
+   "Porque a FC é o primeiro sinal vital medido",
+   "Porque a via aérea nunca é prioridade no trauma"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: hemorragia externa com risco de vida inverte a ordem (CAB).",
+   "O que muda a ordem é o sangramento grave, não o tipo de fratura.",
+   "A idade não muda a ordem da avaliação.",
+   "A ordem de medida dos sinais vitais não define a prioridade.",
+   "A via aérea é prioridade na maioria dos casos; a inversão é a exceção."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "Graduação",
+  "id": "T1-Graduação-4",
+  "fixa": false,
+  "caso": 1,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Controlado o sangramento e terminado o exame com a paciente despida, o que deve ser feito?",
+  "alternativas": [
+   "Dar banho com água fria para limpar",
+   "Aquecer só se a temperatura cair abaixo de 32 °C",
+   "Mantê-la descoberta para reexaminar",
+   "Aquecê-la com mantas, ar forçado e fluidos aquecidos",
+   "Esperar a TC para decidir"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Água fria piora a hipotermia.",
+   "Esperar a hipotermia grave contraria a prevenção, que é a prioridade.",
+   "Deixar o paciente descoberto favorece hipotermia.",
+   "Correta: terminado o exame, manter o paciente aquecido é prioridade.",
+   "Aquecer não depende de exame de imagem."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D19",
+   "A36"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R1",
+  "id": "T1-R1-1",
+  "fixa": false,
+  "caso": 1,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 1, a compressão direta não controla o sangramento da perna. Qual é a próxima medida?",
+  "alternativas": [
+   "Pinçar às cegas dentro da ferida",
+   "Elevar o membro e observar por 10 minutos",
+   "Aplicar torniquete proximal à lesão",
+   "Intubar antes de qualquer outra coisa",
+   "Pedir angiotomografia antes de agir"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Pinçar às cegas pode lesar nervos e piorar o sangramento.",
+   "Observar sangramento ativo não controlado é perder tempo.",
+   "Correta: no trauma de membro, o torniquete pode salvar a vida.",
+   "A via aérea está pérvia; intubar atrasa o controle do sangramento.",
+   "Imagem não precede o controle de hemorragia com risco de vida."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D7",
+   "D8",
+   "D2"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R1",
+  "id": "T1-R1-2",
+  "fixa": false,
+  "caso": 1,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, o aparelho automático marca PA 120/80. Como interpretar?",
+  "alternativas": [
+   "A paciente não está em choque",
+   "A pressão normal libera a paciente para a TC sem reavaliação",
+   "Deve-se suspender a reposição",
+   "A FC alta é só dor",
+   "O aparelho automático pode errar no choque; confirmar com medida manual e com a clínica"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "FC 124 e pele fria sugerem choque apesar do número.",
+   "Pressão isolada não dispensa a reavaliação.",
+   "Suspender a reposição com base num número possivelmente errado é erro de conduta.",
+   "Atribuir a taquicardia à dor sem excluir sangramento é perigoso.",
+   "Correta: o aparelho automático pode errar no choque."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D14",
+   "D17"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R1",
+  "id": "T1-R1-3",
+  "fixa": false,
+  "caso": 1,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, a equipe não consegue acesso venoso em duas tentativas. Qual a melhor alternativa?",
+  "alternativas": [
+   "Continuar tentando veia periférica por 15 minutos",
+   "Acesso intraósseo",
+   "Puncionar a artéria femoral para infundir",
+   "Adiar a reposição até chegar à TC",
+   "Dar líquidos por via oral"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Insistir prolongadamente atrasa a ressuscitação.",
+   "Correta: sem acesso venoso imediato, considerar o intraósseo.",
+   "Infusão arterial não é via de reposição.",
+   "Adiar a reposição no choque é erro de conduta.",
+   "Via oral não serve para ressuscitação no choque."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D15",
+   "D28"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R1",
+  "id": "T1-R1-4",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Ao despir a paciente do caso 1, o que justifica remover toda a roupa?",
+  "alternativas": [
+   "Permitir o exame completo em 360 graus, para não deixar lesões passarem",
+   "Facilitar o uso da cinta pélvica em todos os casos",
+   "Só é necessário no trauma penetrante",
+   "Só facilitar a limpeza",
+   "Evitar a hipotermia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: a exposição completa permite o exame em 360 graus.",
+   "Cinta pélvica é indicada pelo risco, não justifica despir.",
+   "A exposição vale para todo trauma, não só o penetrante.",
+   "Limpeza não é o objetivo da exposição.",
+   "Despir favorece a perda de calor; por isso se aquece depois."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D18",
+   "D19"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R2",
+  "id": "T1-R2-1",
+  "fixa": false,
+  "caso": 1,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, um torniquete é aplicado e controla o sangramento. O que a evidência mostra sobre o torniquete pré-hospitalar?",
+  "alternativas": [
+   "Não altera a taxa de amputação",
+   "Redução de mortalidade não significativa e mais amputação inicial",
+   "Reduz a mortalidade de forma significativa",
+   "Só deve ser usado no membro superior",
+   "Aumenta a mortalidade"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A amputação inicial foi mais frequente no grupo torniquete.",
+   "Correta: RR 0,70 não significativo para mortalidade e RR 2,07 para amputação inicial.",
+   "A redução (RR 0,70) não foi estatisticamente significativa.",
+   "Não há essa restrição; o torniquete serve para o trauma de membro.",
+   "Não houve aumento de mortalidade."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A23",
+   "A24",
+   "D7"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R2",
+  "id": "T1-R2-2",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, FC 124 e pele fria, mas a paciente está lúcida e responde bem. O que considerar?",
+  "alternativas": [
+   "A tabela de classes de choque é suficiente para decidir",
+   "Lucidez exclui choque grave",
+   "Não decidir por um parâmetro isolado; a classificação clássica tem limitações",
+   "Sedar para medir melhor a FC",
+   "Aguardar a hipotensão para tratar"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Os parâmetros clássicos tiveram viés e não há consenso sobre estabilidade.",
+   "Pacientes jovens podem compensar com lucidez preservada.",
+   "Correta: a classe de choque pelos parâmetros tradicionais foi superestimada e a definição de estabilidade é heterogênea.",
+   "Sedar sem indicação piora a avaliação.",
+   "Esperar a hipotensão atrasa o tratamento."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A32",
+   "A33"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R2",
+  "id": "T1-R2-3",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, há suspeita de lesão de bacia associada, com sangramento. Qual a conduta inicial?",
+  "alternativas": [
+   "Fazer laparotomia exploradora antes de qualquer imagem",
+   "Retirar a cinta para radiografar",
+   "Esperar a TC para confirmar",
+   "Colocar a cinta pélvica imediatamente",
+   "Testar a estabilidade da bacia várias vezes"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Laparotomia não é o tratamento do sangramento pélvico.",
+   "Retirar a cinta para imagem expõe a novo sangramento.",
+   "Esperar a imagem atrasa o controle do sangramento.",
+   "Correta: nos pacientes de alto risco, a cinta pélvica deve ser colocada imediatamente.",
+   "Manipular a bacia não controla o sangramento e atrasa a cinta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D9"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R2",
+  "id": "T1-R2-4",
+  "fixa": false,
+  "caso": 1,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, um colega diz que, com a perna controlada, a 'avaliação primária acabou'. O que está errado?",
+  "alternativas": [
+   "A primária segue por todas as letras, reavaliando após cada intervenção",
+   "Nada; o sangramento era o único problema",
+   "A primária termina com a radiografia de tórax",
+   "Basta repetir a FC",
+   "É hora de dar alta da sala"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: a avaliação inicial identifica e trata todas as lesões que ameaçam a vida, seguindo as demais letras.",
+   "Controlar um problema não exclui outros.",
+   "A radiografia é adjunta, não o fim da avaliação.",
+   "A FC sozinha não completa a avaliação.",
+   "Ainda faltam via aérea, respiração, neurológico e exposição."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D1",
+   "D5"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Apenas depois de obtida a radiografia de tórax",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R3",
+  "id": "T1-R3-1",
+  "fixa": false,
+  "caso": 1,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, você é o líder. Antes da chegada da paciente, o que deveria ter sido feito?",
+  "alternativas": [
+   "Definir funções e preparar material, já que houve aviso prévio",
+   "Chamar a TC para reservar horário e nada mais",
+   "Pedir que todos examinem a paciente ao mesmo tempo, sem funções",
+   "Esperar a paciente para distribuir funções",
+   "Deixar o residente mais novo liderar sem supervisão"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: com o pré-aviso, o líder dirige a equipe e distribui tarefas antes da chegada.",
+   "Reservar a TC não substitui o preparo da equipe.",
+   "Sem funções definidas, a avaliação fica desorganizada.",
+   "Distribuir funções depois da chegada desperdiça tempo.",
+   "Treinandos podem liderar, mas sob supervisão próxima."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D22",
+   "D29"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R3",
+  "id": "T1-R3-2",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, como deveria ser a passagem do caso pelo pré-hospitalar?",
+  "alternativas": [
+   "Só com os sinais vitais",
+   "Por escrito, lida depois do atendimento",
+   "Livre, enquanto a equipe já examina",
+   "Estruturada (MIST), com a equipe parada ouvindo, em até 1 minuto",
+   "Longa, com todos os detalhes da cena"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Faltariam mecanismo, lesões suspeitas e tratamentos.",
+   "A informação é necessária na chegada, não depois.",
+   "Examinar enquanto o caso é contado faz a equipe perder informação.",
+   "Correta: passagem estruturada como o MIST, em no máximo 45 segundos a 1 minuto.",
+   "A passagem longa atrasa o atendimento."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D23",
+   "D24"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R3",
+  "id": "T1-R3-3",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, após o torniquete, a paciente segue com FC 124 e pele fria. Qual a decisão do líder?",
+  "alternativas": [
+   "Encerrar a reposição porque o torniquete resolveu",
+   "Esperar o resultado do lactato antes de qualquer conduta",
+   "Dar alta da sala para a enfermaria",
+   "Manter a avaliação primária, buscar outras fontes de sangramento e decidir o destino com base na resposta à ressuscitação",
+   "Mandar para a TC e reavaliar na volta"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Sinais de choque persistentes indicam que algo não está resolvido.",
+   "Esperar exame laboratorial atrasa a conduta.",
+   "Alta da sala sem completar a avaliação é erro grave.",
+   "Correta: a fisiologia é o maior determinante do desfecho; o destino depende da resposta.",
+   "Levar à TC um paciente sem resposta clara à ressuscitação é arriscado."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D26",
+   "A39"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R3",
+  "id": "T1-R3-4",
+  "fixa": false,
+  "caso": 1,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?",
+  "alternativas": [
+   "Redução comprovada da mortalidade por ensaio randomizado",
+   "Nenhum efeito sobre o processo",
+   "Aumento comprovado da mortalidade",
+   "Só serve para fins de auditoria, sem relação com o cuidado",
+   "Melhora de indicadores da avaliação primária, como o registro da via aérea"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.",
+   "Houve melhora em 14 de 16 indicadores.",
+   "Não houve aumento de mortalidade.",
+   "Os indicadores melhorados são do cuidado, não só do registro.",
+   "Correta: melhora em 14 de 16 indicadores; registro da via aérea de 72,9% para 98,4%."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A13",
+   "A14",
+   "A15"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R+",
+  "id": "T1-R+-1",
+  "fixa": false,
+  "caso": 1,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, um residente pergunta se o torniquete 'salva vidas'. Qual a resposta mais fiel à evidência?",
+  "alternativas": [
+   "Não, ele aumenta a mortalidade",
+   "Não há dados sobre o tema",
+   "Sim, com redução significativa comprovada",
+   "Só salva vidas quando colocado no hospital",
+   "A doutrina o considera potencialmente salvador, mas a revisão pré-hospitalar não mostrou redução significativa e há mais amputação inicial, possivelmente por confusão com a gravidade"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não houve aumento de mortalidade.",
+   "Há revisão sistemática sobre o tema.",
+   "A redução de mortalidade não foi significativa (RR 0,70).",
+   "A revisão estudou o torniquete pré-hospitalar.",
+   "Correta: há conflito entre doutrina e evidência observacional, que precisa ser interpretado."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D7",
+   "A23",
+   "A24"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R+",
+  "id": "T1-R+-2",
+  "fixa": false,
+  "caso": 1,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "Ainda no caso 1: qual afirmação sobre treinamentos como o ATLS é a mais precisa?",
+  "alternativas": [
+   "Associam-se a menor mortalidade (OR 0,60) em estudos observacionais, sem evidência de alta qualidade",
+   "Reduzem a mortalidade, como mostram ensaios randomizados",
+   "Não têm associação com mortalidade",
+   "Só funcionam em países de alta renda",
+   "Aumentam o tempo de atendimento"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: associação em estudos observacionais; falta evidência de alta qualidade.",
+   "Não há ensaio randomizado de alta qualidade demonstrando benefício.",
+   "Há associação com menor mortalidade.",
+   "Não há dado que sustente isso.",
+   "Não há dado que sustente isso."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A2",
+   "A4"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R+",
+  "id": "T1-R+-3",
+  "fixa": false,
+  "caso": 1,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "Se a paciente do caso 1 chegasse em parada cardíaca traumática, o que a evidência observacional mostra sobre a adrenalina?",
+  "alternativas": [
+   "Obrigatória antes de qualquer outra medida",
+   "Sem associação com sobrevida",
+   "Associada a maior sobrevida em 7 dias",
+   "Associada a melhor desfecho neurológico comprovado",
+   "Associada a menor sobrevida em 7 dias (OR 0,20)"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Dar adrenalina antes de tratar a causa contraria a prioridade.",
+   "Houve associação significativa.",
+   "A associação foi com menor sobrevida.",
+   "Não há esse dado.",
+   "Correta: menor sobrevida em 7 dias, em dado observacional; na parada traumática, o foco é a causa."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A31"
+  ]
+ },
+ {
+  "teste": 1,
+  "nome_teste": "Pré-teste inicial",
+  "perfil": "R+",
+  "id": "T1-R+-4",
+  "fixa": false,
+  "caso": 1,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Você vai propor ao serviço um checklist para a sala de trauma, usando casos como o 1. Qual cautela a evidência impõe?",
+  "alternativas": [
+   "O checklist só funciona em pacientes com ISS abaixo de 25",
+   "Os estudos são antes-e-depois e um deles mostrou mais pneumonia; medir desfechos após implantar",
+   "Nenhuma; os benefícios são comprovados por ensaios",
+   "Não há estudos sobre checklist no trauma",
+   "O checklist aumenta a mortalidade"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "O benefício de mortalidade apareceu justamente no ISS > 25.",
+   "Correta: evidência antes-e-depois, com sinal de efeito adverso (pneumonia, aOR 1,69); monitorar desfechos.",
+   "Não há ensaios; os estudos são antes-e-depois.",
+   "Há revisão sistemática sobre o tema.",
+   "Um estudo mostrou menor mortalidade no ISS > 25."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A7",
+   "A9",
+   "A10"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE)."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-1",
+  "fixa": false,
+  "caso": 2,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 2, o paciente fala. O que isso indica sobre a via aérea?",
+  "alternativas": [
+   "Que o Glasgow é menor que 8",
+   "Que precisa ser intubado",
+   "Que está pérvia",
+   "Que não há lesão no tórax",
+   "Que há lesão de coluna"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Quem fala e responde não tem Glasgow tão baixo.",
+   "Falar não indica intubação.",
+   "Correta: quem fala com voz normal não tem obstrução.",
+   "Falar não exclui lesão torácica.",
+   "A fala não informa sobre a coluna."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D10"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-2",
+  "fixa": false,
+  "caso": 2,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 2, a SpO2 é 89%. O oxigênio está indicado?",
+  "alternativas": [
+   "Só depois da TC",
+   "Sim, guiado pela saturação baixa",
+   "Só se o eFAST for positivo",
+   "Não, oxigênio nunca é usado no trauma",
+   "Só se houver parada"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não se espera exame de imagem para tratar hipoxemia.",
+   "Correta: a prática caminha para oxigênio guiado pela SpO2; aqui a saturação está baixa.",
+   "O eFAST não é o critério para oxigênio.",
+   "Oxigênio é usado quando indicado.",
+   "Esperar a parada é erro de conduta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A27"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-3",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, o que fazer com a roupa do paciente?",
+  "alternativas": [
+   "Retirar só se houver sangue visível",
+   "Retirar toda a roupa para examinar o corpo inteiro",
+   "Manter a roupa para evitar frio",
+   "Cortar só a camisa",
+   "Retirar depois da TC"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Lesões podem estar escondidas sem sangue visível.",
+   "Correta: a exposição completa permite o exame em 360 graus; depois se aquece.",
+   "O frio se evita aquecendo depois do exame, não deixando de examinar.",
+   "Outras lesões podem passar despercebidas.",
+   "Lesões precisam ser vistas antes."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D18",
+   "D19"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-4",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, qual é o objetivo da avaliação primária?",
+  "alternativas": [
+   "Fazer o diagnóstico completo de todas as lesões",
+   "Decidir a alta",
+   "Colher a história da família",
+   "Identificar e tratar rapidamente as lesões que ameaçam a vida",
+   "Preencher o prontuário"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O diagnóstico completo é tarefa da secundária e da terciária.",
+   "Não é momento de alta.",
+   "A história vem depois.",
+   "Correta: esse é o objetivo da avaliação inicial.",
+   "O registro acompanha, mas não é o objetivo."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D1",
+   "D20"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-5",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, quanto tempo a passagem do caso pelo SAMU deveria durar?",
+  "alternativas": [
+   "Pelo menos 5 minutos",
+   "No máximo 45 segundos a 1 minuto",
+   "Não deve haver passagem verbal",
+   "Só depois do exame da equipe",
+   "O tempo que o SAMU quiser"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Passagem longa atrasa o atendimento.",
+   "Correta: a passagem não deve passar de 45 segundos a 1 minuto.",
+   "A passagem verbal estruturada melhora a comunicação.",
+   "A equipe deve ouvir antes de examinar, salvo extremis.",
+   "O líder conduz e limita a passagem."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D24",
+   "D23"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "Graduação",
+  "id": "T2-Graduação-6",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, o eFAST não mostra pneumotórax. Isso exclui pneumotórax?",
+  "alternativas": [
+   "O eFAST não avalia o tórax",
+   "Sim, sempre",
+   "Só exclui se repetido três vezes",
+   "Não necessariamente; houve estudo com baixa sensibilidade",
+   "Sim, se o paciente fala"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O eFAST inclui a avaliação do tórax.",
+   "Os estudos são conflitantes.",
+   "Não há esse critério nas fontes.",
+   "Correta: estudo prospectivo mostrou baixa sensibilidade e muitos falsos negativos.",
+   "Falar não exclui pneumotórax."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A30",
+   "A29"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE)."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-1",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, como conduzir a passagem do SAMU?",
+  "alternativas": [
+   "O SAMU entrega um papel e sai",
+   "Só o enfermeiro ouve",
+   "A equipe para e ouve uma passagem estruturada, como o MIST, antes de passar o paciente",
+   "A passagem é feita depois da TC",
+   "Todos examinam enquanto o SAMU fala"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A passagem verbal estruturada melhora a comunicação.",
+   "O líder conduz a passagem para toda a equipe.",
+   "Correta: fora do extremis, a passagem é feita antes ou durante a passagem para a maca, com a equipe ouvindo.",
+   "A informação é necessária na chegada.",
+   "Examinar enquanto ouve faz perder informação."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D23",
+   "D24"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-2",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, quais são os elementos do MIST?",
+  "alternativas": [
+   "Mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos",
+   "Monitorização, imagem, sangue, tomografia",
+   "Motivo, informante, situação, telefone",
+   "Medicações, idade, sexo, tempo",
+   "Mecanismo, intubação, sedação, transporte"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não são os elementos do MIST.",
+   "Não são os elementos do MIST.",
+   "Não são os elementos do MIST.",
+   "Não são os elementos do MIST."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D23"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-3",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, PA 104/70 no aparelho automático e FC 112. Qual a interpretação correta?",
+  "alternativas": [
+   "A pressão normal dispensa acesso venoso",
+   "A FC alta é só ansiedade",
+   "O paciente está estável",
+   "O aparelho pode errar no choque; medir manualmente e avaliar a clínica",
+   "Deve-se esperar a pressão cair"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O acesso venoso faz parte da avaliação da circulação.",
+   "Atribuir à ansiedade sem excluir sangramento é perigoso.",
+   "Não há definição consensual de estabilidade que permita concluir isso.",
+   "Correta: o aparelho automático pode errar no choque.",
+   "Esperar a hipotensão atrasa o tratamento."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D14",
+   "A33"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-4",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, depois da primária, como colher a história?",
+  "alternativas": [
+   "Perguntando só sobre dor",
+   "Não é necessário colher história no trauma",
+   "Usando o AMPLE: alergias, medicações, doenças prévias, última refeição, eventos",
+   "Só com a família, depois da alta",
+   "Pedindo que o paciente escreva"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Incompleto.",
+   "A história faz parte da avaliação secundária.",
+   "Correta: o AMPLE organiza a história da secundária.",
+   "A história é colhida na secundária.",
+   "Não é o método."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D21",
+   "D20"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-5",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, por que examinar as costas e as axilas do paciente esfaqueado?",
+  "alternativas": [
+   "Porque a TC não vê as costas",
+   "Porque é rotina só para fins legais",
+   "Porque o eFAST já excluiu lesões",
+   "Não é necessário examinar as costas",
+   "Porque a exposição completa permite achar outras lesões"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é esse o motivo.",
+   "Não é só uma rotina legal.",
+   "O eFAST não exclui outras feridas.",
+   "Feridas escondidas podem passar despercebidas.",
+   "Correta: o exame em 360 graus evita que lesões passem."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D18"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R1",
+  "id": "T2-R1-6",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, achados positivos no exame físico do tórax devem ser valorizados?",
+  "alternativas": [
+   "Só se o eFAST concordar",
+   "Sim: o exame tem baixo valor preditivo negativo, mas achados positivos quase sempre indicam lesão grave",
+   "Não, só valem com imagem",
+   "Não, o exame físico não tem valor no trauma",
+   "Só no trauma fechado"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Achados positivos exigem ação por si.",
+   "Correta.",
+   "Achados positivos exigem ação.",
+   "O exame tem valor, com limitações.",
+   "Vale para todo trauma."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D25"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-1",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, o eFAST não mostrou pneumotórax, mas a SpO2 segue 89% e a respiração rápida. O que fazer?",
+  "alternativas": [
+   "Repetir o eFAST só no dia seguinte",
+   "Atribuir à ansiedade",
+   "Dar alta da sala",
+   "Manter a investigação e o exame, porque o ultrassom pode dar falso negativo",
+   "Encerrar a hipótese de pneumotórax"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A investigação deve continuar agora.",
+   "Hipoxemia não se explica por ansiedade sem investigação.",
+   "Não há condição para alta.",
+   "Correta: há estudo com baixa sensibilidade e muitos falsos negativos.",
+   "O resultado negativo não basta com a clínica alterada."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A30",
+   "A29"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-2",
+  "fixa": false,
+  "caso": 2,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, qual foi a sensibilidade do E-FAST para pneumotórax no estudo com melhor resultado?",
+  "alternativas": [
+   "75%",
+   "99,8%",
+   "93,6%",
+   "50%",
+   "100%"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é o valor do estudo.",
+   "99,8% é a especificidade.",
+   "Correta; a especificidade foi 99,8%.",
+   "Não é o valor do estudo.",
+   "Nenhum estudo mostrou 100%."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A29"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-3",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, sem acesso venoso após tentativas, qual a melhor opção?",
+  "alternativas": [
+   "Esperar a TC",
+   "Insistir na veia por tempo indefinido",
+   "Acesso intraósseo",
+   "Usar só via oral",
+   "Adiar a reposição"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A TC não resolve o acesso.",
+   "Insistir atrasa a ressuscitação.",
+   "Correta: o intraósseo pode salvar vidas no choque.",
+   "Via oral não serve.",
+   "Adiar a reposição é erro de conduta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D15",
+   "D28"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-4",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, o paciente em choque tem a pele fria. Qual medida não deve ser esquecida após o exame?",
+  "alternativas": [
+   "Manter despido",
+   "Dar líquidos frios",
+   "Aquecer com mantas, ar forçado e fluidos aquecidos",
+   "Esperar a temperatura cair para agir",
+   "Aquecer só na UTI"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Despido, perde calor.",
+   "Fluidos frios pioram a hipotermia.",
+   "Correta.",
+   "Prevenção é prioridade.",
+   "Aquecer começa na sala de trauma."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D19",
+   "A36"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-5",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, por que a ordem padrão ABCDE é mantida e não invertida para CAB?",
+  "alternativas": [
+   "Porque não há hemorragia externa com risco de vida nem o paciente está em extremis",
+   "Porque o paciente é jovem",
+   "Porque o eFAST foi negativo",
+   "Porque o ferimento é penetrante",
+   "Porque a SpO2 está baixa"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: só esses cenários invertem a ordem.",
+   "A idade não inverte a ordem.",
+   "O eFAST não define a ordem.",
+   "O mecanismo não inverte a ordem.",
+   "Hipoxemia é tratada no B, não inverte a ordem."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R2",
+  "id": "T2-R2-6",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, qual a frequência da via aérea cirúrgica de emergência em grande coorte japonesa?",
+  "alternativas": [
+   "0,024%",
+   "2,4%",
+   "10%",
+   "24%",
+   "0,24%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é o valor do estudo.",
+   "Não é o valor do estudo.",
+   "Não é o valor do estudo.",
+   "Valor muito acima do estudo.",
+   "Correta: 0,24% dos pacientes."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "A28"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-1",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, você lidera. Onde se posicionar durante o atendimento?",
+  "alternativas": [
+   "Na cabeceira, fazendo a via aérea",
+   "Onde tenha a visão do todo, geralmente aos pés da maca",
+   "No posto de enfermagem",
+   "Fora da sala, ao telefone",
+   "Junto ao monitor, de costas para o paciente"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Fazer a via aérea tira o líder da coordenação.",
+   "Correta: o líder deve ter a 'visão grande' da sala.",
+   "Longe demais para coordenar.",
+   "Fora da sala não coordena.",
+   "De costas não acompanha a equipe."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D22"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-2",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, quem deve tomar as decisões sobre os próximos passos?",
+  "alternativas": [
+   "Quem chegar primeiro",
+   "Cada membro decide sua parte",
+   "O enfermeiro da maca",
+   "O SAMU",
+   "O líder da equipe"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é critério.",
+   "Decisões fragmentadas desorganizam a equipe.",
+   "O enfermeiro tem outras funções.",
+   "O SAMU passa o caso e sai do comando.",
+   "Correta: as decisões são do líder."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D22"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-3",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, o paciente responde à reposição e segue com SpO2 baixa. A TC de corpo inteiro de rotina reduz mortalidade?",
+  "alternativas": [
+   "Reduz a mortalidade de forma comprovada",
+   "Aumenta a mortalidade",
+   "Dispensa a avaliação secundária",
+   "Dispensa a avaliação terciária",
+   "Parece ter pouco ou nenhum efeito em mortalidade"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não há essa comprovação.",
+   "Não há esse dado.",
+   "A TC não substitui o exame.",
+   "Lesões tardias ocorrem mesmo com TC.",
+   "Correta: segundo revisão de revisões."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A12",
+   "A42"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-4",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, a passagem do SAMU durou 4 minutos com detalhes da cena. Qual a correção?",
+  "alternativas": [
+   "Pedir que o SAMU volte depois",
+   "Nenhuma; detalhes são sempre úteis",
+   "Deixar a passagem para o fim",
+   "O líder deve conduzir e limitar a passagem a 45 segundos a 1 minuto",
+   "Proibir a passagem verbal"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Atrasa a informação.",
+   "Passagem longa atrasa e dispersa.",
+   "A informação é necessária na chegada.",
+   "Correta.",
+   "A passagem estruturada é útil."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D24"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-5",
+  "fixa": false,
+  "caso": 2,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, quando o residente do primeiro ano pode liderar?",
+  "alternativas": [
+   "Sempre que quiser",
+   "Só se o assistente sair",
+   "Só em pacientes graves",
+   "Nunca",
+   "Sob supervisão próxima do assistente"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Sem supervisão, não.",
+   "Sem supervisão, não.",
+   "Não é o critério.",
+   "Treinandos devem ter oportunidade de liderar.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D29"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R3",
+  "id": "T2-R3-6",
+  "fixa": false,
+  "caso": 2,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, qual estratégia de treinamento da equipe reduz o tempo de ressuscitação, segundo estudo?",
+  "alternativas": [
+   "Avaliação escrita semestral",
+   "Nenhuma estratégia mostrou efeito",
+   "Treino mensal in situ com debriefing em vídeo",
+   "Aulas teóricas anuais",
+   "Leitura de protocolos"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não foi o que o estudo testou.",
+   "Houve redução de tempo com o treino in situ.",
+   "Correta.",
+   "Não foi o que o estudo testou.",
+   "Não foi o que o estudo testou."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A18"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Em todo paciente com fratura de membro",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-1",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, discutindo com residentes os dois estudos de eFAST para pneumotórax, qual a síntese correta?",
+  "alternativas": [
+   "O eFAST é sempre sensível",
+   "Os dois estudos concordam",
+   "A especificidade é baixa",
+   "O eFAST é sempre inútil",
+   "Resultados conflitantes: sensibilidade alta em um, baixa em outro; negativo não encerra a investigação"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Um estudo mostrou baixa sensibilidade.",
+   "Os resultados divergem.",
+   "A especificidade foi 99,8% no estudo citado.",
+   "Um estudo mostrou sensibilidade de 93,6%.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "A29",
+   "A30"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-2",
+  "fixa": false,
+  "caso": 2,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, sobre oxigênio suplementar no traumatizado grave, o que a pesquisa com profissionais mostrou?",
+  "alternativas": [
+   "Contraindica oxigênio no trauma",
+   "Não houve consenso algum",
+   "É um ensaio clínico com desfecho de mortalidade",
+   "A maioria (73 %) não apoia dar oxigênio sempre, sem considerar a SpO2",
+   "A maioria apoia oxigênio para todos"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não há contraindicação.",
+   "Houve maioria clara.",
+   "É pesquisa de opinião.",
+   "Correta; é opinião de profissionais, não desfecho clínico.",
+   "Foi o contrário."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A27"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-3",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, um residente quer intubar porque o paciente 'pode piorar'. Qual a melhor resposta baseada na doutrina?",
+  "alternativas": [
+   "O paciente fala com voz normal e tem Glasgow alto; tratar a hipoxemia e reavaliar",
+   "Intubar só após a TC",
+   "Intubar sempre no trauma penetrante de tórax",
+   "Intubar sem exame neurológico prévio",
+   "Nunca intubar no trauma de tórax"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: voz normal indica via aérea pérvia; a indicação de via aérea definitiva tem critérios.",
+   "A decisão não depende da TC.",
+   "O mecanismo não indica intubação por si.",
+   "O exame neurológico vem antes da sedação.",
+   "A via aérea definitiva pode ser necessária."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D10",
+   "D11",
+   "D12"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-4",
+  "fixa": false,
+  "caso": 2,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, se o paciente sangrasse muito pela boca após trauma de face penetrante, sem indicação de proteção cervical, qual medida simples pode ajudar?",
+  "alternativas": [
+   "Sentá-lo para que cuspa ou aspire o sangue",
+   "Sedar profundamente antes de avaliar",
+   "Deitá-lo em decúbito dorsal",
+   "Tamponar a boca",
+   "Colocar colar cervical"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: pode transformar uma emergência de via aérea em situação mais controlada.",
+   "Sedar sem preparar a via aérea é perigoso.",
+   "Deitado, o sangue tende a ir para a via aérea.",
+   "Tamponar a boca obstrui a via aérea.",
+   "O colar não está indicado nesse cenário."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D13"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-5",
+  "fixa": false,
+  "caso": 2,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, como interpretar a evidência sobre treinamentos de suporte de vida ao planejar o ensino da equipe?",
+  "alternativas": [
+   "Associação com menor mortalidade em estudos observacionais e ensaio pragmático em andamento",
+   "Benefício comprovado por ensaios",
+   "Nenhuma associação",
+   "Custos iguais entre programas",
+   "O ATLS é o programa mais barato"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não há ensaio de alta qualidade concluído.",
+   "Há associação.",
+   "Os custos variam muito.",
+   "O ATLS foi o mais caro (USD 1433,5)."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A2",
+   "A4",
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "teste": 2,
+  "nome_teste": "Pré-teste após o conhecimento básico",
+  "perfil": "R+",
+  "id": "T2-R+-6",
+  "fixa": false,
+  "caso": 2,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, um colega afirma que lesões passam despercebidas só sem TC. Qual dado o contradiz?",
+  "alternativas": [
+   "Lesões tardias só ocorrem em crianças",
+   "Nenhum dado",
+   "A TC detecta 100% das lesões",
+   "Lesões com diagnóstico tardio em 13,9 % mesmo com TC de corpo inteiro",
+   "A avaliação terciária é desnecessária"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não há esse dado.",
+   "Há dado que contradiz.",
+   "Nenhum estudo mostrou isso.",
+   "Correta.",
+   "A terciária reduz lesões não identificadas."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A42",
+   "D30"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-1",
+  "fixa": false,
+  "caso": 3,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 3, o Glasgow é 7. O que isso indica?",
+  "alternativas": [
+   "Que basta oxigênio por cateter",
+   "Que a via aérea está garantida",
+   "Necessidade de via aérea definitiva",
+   "Que pode esperar a TC para decidir",
+   "Que não há trauma de crânio"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Insuficiente para Glasgow 7.",
+   "Ronco e Glasgow 7 indicam risco.",
+   "Correta: Glasgow ≤8 indica via aérea definitiva.",
+   "A decisão sobre a via aérea não espera a TC.",
+   "O Glasgow baixo sugere o contrário."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-2",
+  "fixa": false,
+  "caso": 3,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 3, a agitação no caminho pode significar o quê?",
+  "alternativas": [
+   "Só embriaguez",
+   "Choque, além de álcool ou trauma de crânio",
+   "Só dor",
+   "Que o paciente está bem",
+   "Nada de importante"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Atribuir só ao álcool é perigoso.",
+   "Correta: agitação é sinal clássico de choque classe III e IV.",
+   "Incompleto.",
+   "Agitação não é sinal de bem-estar.",
+   "Pode ser grave."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D17"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-3",
+  "fixa": false,
+  "caso": 3,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 3, temperatura de 35,1 °C. O que fazer?",
+  "alternativas": [
+   "Esperar a TC",
+   "Dar banho frio",
+   "Retirar as mantas para examinar de novo",
+   "Nada, é normal",
+   "Aquecer: mantas, ar forçado, fluidos aquecidos"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Aquecer não depende de imagem.",
+   "Piora a hipotermia.",
+   "Reexaminar não justifica deixá-lo frio.",
+   "Abaixo do normal e frequente no trauma grave.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D19",
+   "A36"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-4",
+  "fixa": false,
+  "caso": 3,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 3, quando o Glasgow deve ser avaliado?",
+  "alternativas": [
+   "Na chegada e de novo durante a ressuscitação",
+   "Só na chegada",
+   "Só se houver fratura de crânio",
+   "Só na UTI",
+   "Só depois da intubação"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "A avaliação deve ser repetida.",
+   "Vale para todos.",
+   "Começa na sala de trauma.",
+   "Antes também."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D16"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-5",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, a pressão de 132/84 no aparelho automático exclui choque?",
+  "alternativas": [
+   "Sim",
+   "Sim, no idoso",
+   "Sim, se a FC for alta",
+   "Só se a pele estiver quente",
+   "Não; o aparelho automático pode errar no choque"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "FC 118 e pele fria sugerem choque.",
+   "A idade não torna o aparelho confiável.",
+   "FC alta não confirma ausência de choque.",
+   "A pele aqui está fria.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D14",
+   "D17"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "Graduação",
+  "id": "T3-Graduação-6",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, qual é a sequência padrão da avaliação primária neste paciente sem hemorragia externa?",
+  "alternativas": [
+   "Só AB",
+   "CAB",
+   "ABCDE",
+   "EDCBA",
+   "DEABC"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Incompleta.",
+   "CAB é para hemorragia externa ou extremis.",
+   "Correta: sem hemorragia externa grave nem extremis, a ordem é ABCDE.",
+   "Ordem inexistente.",
+   "Ordem inexistente."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-1",
+  "fixa": false,
+  "caso": 3,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 3, antes de sedar e intubar, o que deve ser feito?",
+  "alternativas": [
+   "Nada; intubar imediatamente sem exame",
+   "Retirar o colar",
+   "TC de crânio",
+   "Exame neurológico breve e completo",
+   "Colher o AMPLE completo"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Perde-se a informação neurológica de base.",
+   "Não é o passo antes da intubação.",
+   "A TC não precede a via aérea.",
+   "Correta.",
+   "O AMPLE é da secundária."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D12"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-2",
+  "fixa": false,
+  "caso": 3,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 3, por que medir a pressão manualmente?",
+  "alternativas": [
+   "Porque o aparelho automático pode errar no choque",
+   "Por tradição, sem motivo",
+   "Porque o manual é sempre mais alto",
+   "Porque o idoso não tem pulso",
+   "Porque o automático é proibido"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Há motivo.",
+   "Não é a razão.",
+   "Falso.",
+   "Não é proibido."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D14"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-3",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, o hálito alcoólico explica o Glasgow 7?",
+  "alternativas": [
+   "Não se deve atribuir ao álcool sem excluir choque e trauma de crânio",
+   "Não importa a causa",
+   "Sim, sempre",
+   "Sim, se o paciente for idoso",
+   "Sim, se a TC for normal"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: agitação e rebaixamento podem ser choque.",
+   "A causa muda a conduta.",
+   "Atribuir ao álcool é armadilha.",
+   "A idade não muda isso.",
+   "A TC não exclui choque."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D17"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-4",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, após a intubação, qual cuidado com a temperatura?",
+  "alternativas": [
+   "Nenhum",
+   "Só na UTI",
+   "Só se abaixo de 30 °C",
+   "Resfriar para proteger o cérebro",
+   "Aquecer ativamente e medir"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A hipotermia é frequente e subvalorizada.",
+   "Começa na sala.",
+   "Esperar piora é erro.",
+   "Não há base para isso aqui.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D19",
+   "A36"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-5",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, um colega diz que o exame físico normal da barriga dispensa investigação. O que a doutrina diz?",
+  "alternativas": [
+   "Exame normal exclui lesão",
+   "Exame físico não tem valor",
+   "Exame normal libera a alta",
+   "Só a TC tem valor",
+   "O exame físico tem baixo valor preditivo negativo; um exame normal não exclui lesão"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "O exame normal não exclui.",
+   "Achados positivos têm valor.",
+   "Não libera.",
+   "O exame físico tem valor.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D25"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R1",
+  "id": "T3-R1-6",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, qual a frequência de hipotermia no trauma grave?",
+  "alternativas": [
+   "Só em quem fica na chuva",
+   "Só em crianças",
+   "Até dois terços dos pacientes",
+   "Não há dados",
+   "Menos de 1%"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Ocorre em geral.",
+   "Ocorre em todas as idades.",
+   "Correta.",
+   "Há dados.",
+   "Muito mais frequente."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A36"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-1",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, por que o aquecimento com fluido aquecido pode ser insuficiente?",
+  "alternativas": [
+   "Fluido aquecido não existe na prática",
+   "Fluido aquecido esfria o paciente",
+   "O fluido chega sempre a 39 °C",
+   "Fluido a 39 °C só chega acima de 37 °C com alto fluxo e ambiente quente",
+   "O fluido aquecido é contraindicado"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Existe.",
+   "Não esfria; pode chegar abaixo do esperado.",
+   "Perde calor no equipo.",
+   "Correta.",
+   "Não é contraindicado."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A38"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-2",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, existe abordagem baseada em evidência para manejar a hipotermia no trauma?",
+  "alternativas": [
+   "Sim, só para idosos",
+   "Sim, resfriar ativamente",
+   "Não, ao contrário da acidose e do sangramento",
+   "Sim, com ensaios definitivos",
+   "Não é necessária"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não há.",
+   "Não há base.",
+   "Correta: é uma lacuna.",
+   "Não há.",
+   "É necessária; é frequente."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A37"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-3",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, FC 118 e pele fria com PA normal no automático. Como avaliar o choque?",
+  "alternativas": [
+   "Pela FC apenas",
+   "Pelo Glasgow apenas",
+   "Pela tabela de classes apenas",
+   "Pela PA apenas",
+   "Sem depender de um parâmetro isolado; a classificação clássica tem limitações"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Insuficiente.",
+   "Insuficiente.",
+   "A tabela clássica teve viés.",
+   "Pode errar no choque.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A32",
+   "D14"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-4",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, ao revisar o caso no dia seguinte, o que reduz lesões não identificadas?",
+  "alternativas": [
+   "Dar alta precoce",
+   "Confiar só no laudo inicial",
+   "Repetir a TC de corpo inteiro em todos",
+   "Avaliação terciária com revisão cuidadosa das imagens",
+   "Nada"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Aumenta o risco.",
+   "Lesões podem passar no laudo inicial.",
+   "Não é o que a fonte recomenda.",
+   "Correta.",
+   "Há medida."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D30"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-5",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, após intubação, a PA cai. Como interpretar?",
+  "alternativas": [
+   "Ignorar",
+   "É do álcool",
+   "É normal no idoso",
+   "É só efeito da sedação",
+   "Hipotensão após a ressuscitação é sangramento até prova em contrário"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Erro de conduta.",
+   "Não explica.",
+   "Não é.",
+   "Atribuir à sedação sem investigar é armadilha.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R2",
+  "id": "T3-R2-6",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, um grande estudo encontrou lesão potencialmente letal surgindo após a avaliação terciária em qual proporção dos graves?",
+  "alternativas": [
+   "0%",
+   "13,9 %",
+   "26%",
+   "0,26%",
+   "2,6%"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Houve casos.",
+   "Esse é o valor de lesões tardias em outro estudo.",
+   "Muito acima.",
+   "Correta.",
+   "Não é o valor."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A41"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE)."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-1",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, como líder, qual o destino após estabilizar a via aérea e a circulação?",
+  "alternativas": [
+   "TC sempre, mesmo instável sem resposta",
+   "Alta da sala sem TC",
+   "Decidir pela resposta à ressuscitação; a TC é possível no paciente que responde",
+   "Esperar 6 horas",
+   "UTI sem imagem"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Arriscado.",
+   "Inadequado.",
+   "Correta: no choque, a TC não aumentou a mortalidade precoce, mas a decisão depende da resposta.",
+   "Atraso.",
+   "Faltam diagnósticos."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A39",
+   "D26"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-2",
+  "fixa": false,
+  "caso": 3,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, em pacientes em choque, a TC de corpo inteiro aumentou a mortalidade em 24 h?",
+  "alternativas": [
+   "Não: 17,4% com TC e 27,6% sem, p = 0,21",
+   "Não há estudos",
+   "Sim, dobrou",
+   "Sim, com significância",
+   "Só nos idosos"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Há estudo.",
+   "Não.",
+   "Não houve significância.",
+   "Não há esse dado."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A39"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-3",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, como garantir que a equipe faça a avaliação em paralelo?",
+  "alternativas": [
+   "Um faz tudo sozinho",
+   "Sem liderança definida",
+   "Todos fazem tudo",
+   "Esperar o assistente",
+   "Funções definidas pelo líder antes da chegada"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Lento.",
+   "Desorganiza.",
+   "Desorganiza.",
+   "Atrasa.",
+   "Correta: boa parte da avaliação é simultânea com funções distribuídas."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D5",
+   "D22"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-4",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, qual o maior determinante do desfecho?",
+  "alternativas": [
+   "O número de exames",
+   "A idade isolada",
+   "O horário da chegada",
+   "A alteração fisiológica",
+   "O mecanismo isolado"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não isoladamente.",
+   "Não.",
+   "Correta.",
+   "Não isoladamente."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D26"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-5",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, após a TC, quem deve fazer a avaliação terciária e quando?",
+  "alternativas": [
+   "Antes da primária",
+   "Só na alta",
+   "Ninguém, a TC basta",
+   "Só se houver queixa",
+   "A equipe, depois de concluídas a ressuscitação inicial e as intervenções"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Ordem errada.",
+   "Tarde demais.",
+   "Lesões tardias ocorrem mesmo com TC.",
+   "Pacientes intubados não se queixam.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D31",
+   "A42"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R3",
+  "id": "T3-R3-6",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, o teste clínico SILENT para lesão de membro inferior teve qual desempenho?",
+  "alternativas": [
+   "Especificidade 75%",
+   "Sensibilidade 75% e especificidade 99%",
+   "Sensibilidade 100%",
+   "Sensibilidade 99% e especificidade 75%",
+   "Ambas 50%"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta: bom para confirmar, insuficiente para excluir.",
+   "Não.",
+   "Invertido.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A43"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-1",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, ao ensinar sobre classes de choque, qual crítica metodológica deve ser apresentada?",
+  "alternativas": [
+   "A tabela foi validada sem limitações",
+   "A comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais",
+   "O déficit de base nunca foi estudado",
+   "Não há críticas publicadas",
+   "A classe de choque é definida pela idade"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Há limitações.",
+   "Correta.",
+   "Foi estudado.",
+   "Há.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A32"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-2",
+  "fixa": false,
+  "caso": 3,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, sobre 'estabilidade hemodinâmica', o que a revisão de 222 artigos mostrou?",
+  "alternativas": [
+   "Definida em 70% dos artigos elegíveis, sem consenso nos pontos de corte",
+   "Nunca definida",
+   "Definida só pela PA",
+   "Definição universal",
+   "Definida em 100%"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Foi definida em 70%.",
+   "Não.",
+   "Não há consenso.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A33"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-3",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, você audita o serviço. Qual indicador de processo é mais coerente com as lacunas do tema?",
+  "alternativas": [
+   "Tempo de alta hospitalar",
+   "Número de TCs por mês",
+   "Custo do material",
+   "Número de residentes",
+   "Temperatura medida na admissão"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não mede a lacuna.",
+   "Não mede a lacuna.",
+   "Não mede a lacuna.",
+   "Não mede a lacuna.",
+   "Correta: a hipotermia é frequente, subvalorizada e sem manejo baseado em evidência."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "A36",
+   "A37"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-4",
+  "fixa": false,
+  "caso": 3,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, ao discutir lesões não identificadas, qual a melhor estratégia institucional baseada nas fontes?",
+  "alternativas": [
+   "Restringir o exame físico",
+   "Avaliação terciária com revisão de imagens e vigilância depois dela",
+   "Nada a fazer",
+   "Alta precoce",
+   "Mais TCs de rotina"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "O exame tem valor.",
+   "Correta.",
+   "Há estratégia.",
+   "Aumenta o risco.",
+   "A TC de rotina não eliminou lesões tardias."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D30",
+   "A41",
+   "A42"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-5",
+  "fixa": false,
+  "caso": 3,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 3, qual a interpretação correta de 'achados positivos no exame físico quase sempre indicam lesão grave'?",
+  "alternativas": [
+   "O exame normal exclui lesão",
+   "Achados positivos exigem ação, mesmo que o exame normal não exclua lesão",
+   "Só vale com TC",
+   "O exame não tem valor",
+   "Só vale para o tórax"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Baixo valor preditivo negativo.",
+   "Correta.",
+   "Vale por si.",
+   "Tem valor.",
+   "Vale em geral."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D25"
+  ]
+ },
+ {
+  "teste": 3,
+  "nome_teste": "Pós-teste D0",
+  "perfil": "R+",
+  "id": "T3-R+-6",
+  "fixa": false,
+  "caso": 3,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 3, ao revisar o protocolo, o que justificaria manter o aquecimento ativo como item obrigatório, apesar da falta de evidência de manejo?",
+  "alternativas": [
+   "Nenhuma razão",
+   "Ensaio randomizado definitivo",
+   "A frequência alta e a subvalorização da hipotermia, e a recomendação da doutrina de aquecer",
+   "Mortalidade comprovadamente reduzida",
+   "Custo zero comprovado"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Há razões.",
+   "Não existe.",
+   "Correta.",
+   "Não há essa comprovação.",
+   "Não é o argumento."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A36",
+   "A37",
+   "D19"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE)."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-1",
+  "fixa": false,
+  "caso": 4,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?",
+  "alternativas": [
+   "Primeiro a história AMPLE",
+   "Primeiro a TC",
+   "Primeiro a radiografia",
+   "Exposição antes de tudo",
+   "A circulação tem precedência (CABDE)"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "O AMPLE é da secundária.",
+   "A TC não vem antes.",
+   "Exame de imagem não vem antes.",
+   "A exposição não precede a circulação.",
+   "Correta: no paciente em extremis, a circulação vem primeiro."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D3"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-2",
+  "fixa": false,
+  "caso": 4,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 4, há dor na bacia e choque. O que colocar imediatamente?",
+  "alternativas": [
+   "Nada até a TC",
+   "Sonda vesical",
+   "Cinta pélvica",
+   "Colar cervical apenas",
+   "Torniquete na coxa"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Esperar atrasa o controle.",
+   "Não é a prioridade.",
+   "Correta: no alto risco, a cinta pélvica vai imediatamente.",
+   "Não trata o sangramento pélvico.",
+   "Não há sangramento de membro."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D9"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-3",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, as veias falharam. Qual acesso usar?",
+  "alternativas": [
+   "Intraósseo",
+   "Nenhum até a TC",
+   "Intramuscular",
+   "Continuar tentando veia por muito tempo",
+   "Oral"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Atrasa a ressuscitação.",
+   "Não serve para ressuscitação.",
+   "Atrasa.",
+   "Não serve."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D15",
+   "D28"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-4",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, o paciente sonolento e pálido. A sonolência pode ser sinal de quê?",
+  "alternativas": [
+   "Nada",
+   "Só álcool",
+   "Choque",
+   "Boa evolução",
+   "Só cansaço"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não deve ser presumido.",
+   "Correta: alteração do nível de consciência acompanha o choque grave.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D17",
+   "D26"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-5",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, o que mais define o prognóstico deste paciente?",
+  "alternativas": [
+   "O número de exames",
+   "A idade",
+   "A alteração fisiológica",
+   "A marca da moto",
+   "O horário"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não isoladamente.",
+   "Correta.",
+   "Irrelevante.",
+   "Irrelevante."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D26"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "Graduação",
+  "id": "T4-Graduação-6",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a PA foi medida manualmente. Por quê?",
+  "alternativas": [
+   "Por tradição",
+   "Porque o automático não existe",
+   "Porque o aparelho automático pode errar no choque",
+   "Sem motivo",
+   "Porque é mais rápido"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Há motivo.",
+   "Não.",
+   "Correta.",
+   "Há motivo.",
+   "Não é o motivo."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D14"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-1",
+  "fixa": false,
+  "caso": 4,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 4, ao colocar a cinta pélvica, o que a doutrina recomenda?",
+  "alternativas": [
+   "Colocá-la imediatamente nos pacientes de alto risco",
+   "Não usar no choque",
+   "Colocar só no centro cirúrgico",
+   "Testar a bacia repetidamente antes",
+   "Esperar a radiografia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "É justamente indicada.",
+   "Atraso.",
+   "Não controla o sangramento e atrasa.",
+   "Atraso."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D9"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-2",
+  "fixa": false,
+  "caso": 4,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 4, qual exame à beira-leito ajuda a buscar sangramento cavitário?",
+  "alternativas": [
+   "Nenhum",
+   "TC antes de qualquer conduta",
+   "Ultrassom (FAST)",
+   "Ressonância",
+   "Endoscopia"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Há adjuntos.",
+   "Transportar paciente instável é arriscado.",
+   "Correta: adjunto para buscar sangramento intracavitário.",
+   "Não é exame de emergência.",
+   "Não se aplica."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A34",
+   "A35"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-3",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, qual a mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência?",
+  "alternativas": [
+   "Abaixo de 5%",
+   "Não há dados",
+   "Cerca de 10%",
+   "Acima de 40%",
+   "Zero"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Muito abaixo.",
+   "Há dados.",
+   "Abaixo.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D27"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-4",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, o intraósseo foi obtido. Qual o papel dele?",
+  "alternativas": [
+   "Só para medicação de parada",
+   "Não serve no adulto",
+   "Só para colher exames",
+   "Só depois da TC",
+   "Iniciar a ressuscitação; pode salvar vidas no choque"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não só.",
+   "Serve.",
+   "Não só.",
+   "Atraso.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D28"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-5",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, o ultrassom pode avaliar a sínfise púbica. Em que proporção um estudo achou alargamento crítico?",
+  "alternativas": [
+   "0,75%",
+   "50%",
+   "7,5%",
+   "75%",
+   "Nenhum"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Correta (5 de 67 pacientes).",
+   "Não.",
+   "Houve casos."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A35"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R1",
+  "id": "T4-R1-6",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, um colega quer levar o paciente para a TC antes de qualquer resposta à reposição. O que considerar?",
+  "alternativas": [
+   "TC sempre primeiro",
+   "Não importa",
+   "Esperar 2 horas",
+   "A decisão depende da resposta à ressuscitação; paciente sem resposta não deve sair para a TC sem decisão do líder",
+   "Alta da sala"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Arriscado.",
+   "Importa.",
+   "Atraso.",
+   "Correta.",
+   "Inadequado."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D26",
+   "A39",
+   "D22"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-1",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, qual a sensibilidade do RUSH no diagnóstico do politraumatizado instável, em estudo?",
+  "alternativas": [
+   "64%",
+   "9,4%",
+   "94,2%",
+   "42%",
+   "100%"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é o valor.",
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A34"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-2",
+  "fixa": false,
+  "caso": 4,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, após a cinta e a reposição, a PA segue 80/50. Qual a decisão mais adequada?",
+  "alternativas": [
+   "Suspender a reposição",
+   "Dar alta para a enfermaria",
+   "Controle do sangramento (centro cirúrgico ou radiologia intervencionista), conforme a fonte",
+   "Observar na sala",
+   "TC de corpo inteiro e aguardar"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Erro de conduta.",
+   "Inadequado.",
+   "Correta: sem resposta, a prioridade é controlar o sangramento.",
+   "Atraso.",
+   "Atraso no instável sem resposta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D26",
+   "D27"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-3",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, se a radiologia intervencionista atua junto com a cirurgia, o que um estudo mostrou?",
+  "alternativas": [
+   "Não há estudo",
+   "Sobrevida menor",
+   "Sobrevida 15,5% maior que a prevista",
+   "Mais mortes",
+   "Sem diferença"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Há.",
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Houve diferença."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A22"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-4",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a FC 136 e a PA baixa. O que dizer da tabela de classes de choque?",
+  "alternativas": [
+   "Perfeitamente validada",
+   "Só vale no idoso",
+   "Define a conduta sozinha",
+   "Inútil",
+   "Útil como referência, mas com limitações metodológicas; não decidir por ela sozinha"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Teve viés.",
+   "Não.",
+   "Não deve decidir sozinha.",
+   "Tem utilidade com limites.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "A32",
+   "D17"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-5",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, o FAST-PLUS teve qual concordância com a TC para alargamento crítico da sínfise?",
+  "alternativas": [
+   "Nenhum confirmado",
+   "Metade confirmada",
+   "Todos os casos confirmados na TC",
+   "Não foi comparado",
+   "Só 10% confirmados"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Foi comparado.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A35"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R2",
+  "id": "T4-R2-6",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, por que não pinçar às cegas um sangramento profundo encontrado durante o exame?",
+  "alternativas": [
+   "Porque é sempre ineficaz",
+   "Porque atrasa a TC",
+   "Não há motivo",
+   "Risco de lesar nervos e criar novo trauma e sangramento",
+   "Porque é proibido por lei"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não é o motivo descrito.",
+   "Não é o motivo.",
+   "Há motivo.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D8"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-1",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, quem deve liderar e como?",
+  "alternativas": [
+   "O cirurgião do trauma, com participação ativa, dada a gravidade",
+   "Ninguém em particular",
+   "O radiologista",
+   "Um residente sem supervisão",
+   "O SAMU"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no extremis, os mais experientes participam ativamente.",
+   "Desorganiza.",
+   "Não.",
+   "Não sem supervisão.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D22",
+   "D3"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-2",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, quais as opções para controlar o sangramento pélvico e abdominal?",
+  "alternativas": [
+   "Só observação",
+   "Só TC",
+   "Alta",
+   "Só reposição",
+   "Centro cirúrgico ou radiologia intervencionista, conforme a fonte"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não controla.",
+   "Não.",
+   "Não controla.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A22",
+   "D27"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-3",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, qual o papel da TC de corpo inteiro neste paciente sem resposta à reposição?",
+  "alternativas": [
+   "Não é prioridade antes do controle do sangramento",
+   "Substitui o FAST",
+   "Reduz a mortalidade comprovadamente",
+   "Obrigatória antes da cirurgia",
+   "Deve ser repetida a cada hora"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: a TC de rotina não mostrou efeito em mortalidade e o paciente não respondeu.",
+   "Não.",
+   "Não comprovado.",
+   "Atraso.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A12",
+   "D26"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-4",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, na equipe, como organizar os procedimentos simultâneos?",
+  "alternativas": [
+   "Sem organização",
+   "O líder define antes quem faz cada procedimento",
+   "Cada um escolhe na hora",
+   "Esperar o assistente",
+   "Um só faz todos"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Desorganiza.",
+   "Atrasa.",
+   "Lento."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D22",
+   "D5"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-5",
+  "fixa": false,
+  "caso": 4,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 4, após cirurgia, o paciente volta hipotenso na UTI. Como pensar?",
+  "alternativas": [
+   "Esperar a manhã",
+   "Só fratura de fêmur",
+   "Efeito da anestesia apenas",
+   "Sangramento até prova em contrário; investigar lesão não identificada",
+   "Normal"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Atraso.",
+   "Armadilha descrita.",
+   "Armadilha.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R3",
+  "id": "T4-R3-6",
+  "fixa": false,
+  "caso": 4,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 4, qual a mortalidade a esperar e qual a implicação para a equipe?",
+  "alternativas": [
+   "Igual à de pacientes estáveis",
+   "Não há dados",
+   "Zero; não há urgência",
+   "Abaixo de 5%; pode esperar",
+   "Acima de 40%; exige os mais experientes e decisão rápida"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Há.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D27"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-1",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, ao discutir com residentes a avaliação ultrassonográfica, qual síntese das fontes é correta?",
+  "alternativas": [
+   "Ultrassom sem utilidade no choque",
+   "Ultrassom substitui a TC sempre",
+   "Sensibilidade de 100% em todos os estudos",
+   "RUSH sensível no instável e FAST-PLUS com alargamento pélvico confirmado na TC",
+   "Não há estudos"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Há."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A34",
+   "A35"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-2",
+  "fixa": false,
+  "caso": 4,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, um estudo de colaboração entre cirurgia e radiologia intervencionista mostrou sobrevida maior que a prevista. Como interpretar?",
+  "alternativas": [
+   "Mostra pior desfecho",
+   "Associação favorável num desenho observacional; apoia a integração, sem provar causa",
+   "Só vale para trauma penetrante",
+   "Sem relevância",
+   "Prova causal definitiva"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não há essa restrição.",
+   "Relevante.",
+   "Desenho não permite."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A22"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-3",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, qual frase resume a doutrina do paciente em extremis?",
+  "alternativas": [
+   "Esperar estabilizar para decidir",
+   "Exposição primeiro",
+   "ABCDE sem exceção",
+   "A via aérea sempre primeiro",
+   "A circulação tem precedência (CABDE) e os mais experientes conduzem"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Atraso.",
+   "Não.",
+   "Há exceção.",
+   "Não no extremis.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D3",
+   "D22"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-4",
+  "fixa": false,
+  "caso": 4,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, você revisa o protocolo. Que indicador captaria atraso neste tipo de paciente?",
+  "alternativas": [
+   "Número de residentes",
+   "Tempo de internação",
+   "Tempo até o controle do sangramento",
+   "Custo da cinta",
+   "Número de radiografias"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Indireto.",
+   "Correta: ligado à mortalidade acima de 40% e à prioridade da circulação.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D27",
+   "D3"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-5",
+  "fixa": false,
+  "caso": 4,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 4, qual crítica faria a quem decide só pela tabela de classes de choque?",
+  "alternativas": [
+   "A tabela é perfeita",
+   "A comparação clássica teve viés e não há consenso sobre estabilidade",
+   "Classes não existem",
+   "Só a FC importa",
+   "Só a PA importa"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A32",
+   "A33"
+  ]
+ },
+ {
+  "teste": 4,
+  "nome_teste": "Pós-teste D+15",
+  "perfil": "R+",
+  "id": "T4-R+-6",
+  "fixa": false,
+  "caso": 4,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 4, um residente pergunta sobre o acesso intraósseo no adulto em choque. Qual resposta das fontes?",
+  "alternativas": [
+   "Só para crianças",
+   "Contraindicado no adulto",
+   "Sem papel no trauma",
+   "Pode salvar vidas ao iniciar a ressuscitação quando a veia falha",
+   "Só para colher sangue"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D28",
+   "D15"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-1",
+  "fixa": false,
+  "caso": 5,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 5, a TC foi normal. A dor nova pode ser uma lesão?",
+  "alternativas": [
+   "Sim; lesões podem ser descobertas depois, mesmo com TC",
+   "Só em crianças",
+   "Não, a TC exclui tudo",
+   "Só se houver febre",
+   "Não importa"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Lesões tardias ocorrem mesmo com TC.",
+   "Não é critério.",
+   "Importa."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-2",
+  "fixa": false,
+  "caso": 5,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 5, o que é a avaliação terciária?",
+  "alternativas": [
+   "Um reexame completo depois da ressuscitação e das intervenções",
+   "A primeira avaliação na sala",
+   "A TC de corpo inteiro",
+   "O exame do SAMU",
+   "A alta"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Essa é a primária.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D31"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-3",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, a PA caiu para 88/56. O que pensar primeiro?",
+  "alternativas": [
+   "Nada",
+   "Ansiedade",
+   "Sono",
+   "Sangramento até prova em contrário",
+   "Desidratação"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Erro.",
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não presumir."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-4",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, qual a proporção de lesões com diagnóstico tardio num estudo, mesmo com TC?",
+  "alternativas": [
+   "13,9 %",
+   "90%",
+   "0%",
+   "50%",
+   "1%"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-5",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o que fazer com as imagens já feitas?",
+  "alternativas": [
+   "Repetir todas sem revisar",
+   "Ignorar",
+   "Confiar só no primeiro laudo",
+   "Revisá-las cuidadosamente na avaliação terciária",
+   "Descartar"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não é o recomendado.",
+   "Não.",
+   "Lesões podem passar.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D30"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "Graduação",
+  "id": "T5-Graduação-6",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o exame físico achou dor no pé. Como valorizar o achado?",
+  "alternativas": [
+   "Só valorizar se houver deformidade",
+   "Só na alta",
+   "Não valorizar",
+   "Achados positivos quase sempre indicam lesão e exigem ação",
+   "Ignorar sem imagem"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Atraso.",
+   "Não.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D25"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-1",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, quando a avaliação terciária deveria ser feita?",
+  "alternativas": [
+   "Depois da ressuscitação inicial e das intervenções",
+   "Antes da primária",
+   "Nunca",
+   "Só na alta",
+   "Só se a TC for anormal"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Ordem errada.",
+   "Não.",
+   "Tarde.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D31"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-2",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, qual a conduta diante da hipotensão?",
+  "alternativas": [
+   "Dar só analgésico",
+   "Alta",
+   "Atribuir à dor",
+   "Esperar a manhã",
+   "Reavaliar como sangramento e procurar lesão não identificada"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Armadilha.",
+   "Atraso.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-3",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, qual teste clínico tem especificidade de 99% para lesão de membro inferior?",
+  "alternativas": [
+   "MIST",
+   "AMPLE",
+   "RUSH",
+   "SILENT",
+   "FAST"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "É formato de passagem.",
+   "É roteiro de história.",
+   "É protocolo de ultrassom.",
+   "Correta.",
+   "Não é desse teste."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A43"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-4",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o SILENT negativo exclui lesão?",
+  "alternativas": [
+   "Sim, se a TC for normal",
+   "Sempre",
+   "Sim",
+   "Só no idoso",
+   "Não; sensibilidade de 75%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A43"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-5",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, qual a taxa de lesão potencialmente letal surgindo após a terciária em estudo?",
+  "alternativas": [
+   "13,9 %",
+   "26%",
+   "0,26%",
+   "Nenhuma",
+   "2,6%"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Outro estudo.",
+   "Não.",
+   "Correta.",
+   "Houve.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A41"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R1",
+  "id": "T5-R1-6",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, quem atendeu a paciente na UTI deve fazer o quê?",
+  "alternativas": [
+   "Nada",
+   "Só repetir a TC",
+   "Avaliação terciária e revisão das imagens",
+   "Só prescrição",
+   "Alta"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não é o recomendado.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D30"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-1",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, qual a melhor explicação para a lesão só aparecer no dia seguinte?",
+  "alternativas": [
+   "A TC sempre vê tudo",
+   "Lesões ocultas são comuns e a TC não elimina o risco",
+   "Erro grosseiro sempre",
+   "Lesão nova sem relação com o trauma",
+   "Simulação da paciente"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não necessariamente.",
+   "Improvável.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A42",
+   "D30"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-2",
+  "fixa": false,
+  "caso": 5,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, hipotensão após ressuscitação. Qual armadilha evitar?",
+  "alternativas": [
+   "Chamar o líder",
+   "Revisar imagens",
+   "Assumir que é por outra causa e ignorar o episódio",
+   "Investigar sangramento",
+   "Reexaminar"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "É o certo.",
+   "É o certo.",
+   "Correta: é armadilha comum.",
+   "É o certo.",
+   "É o certo."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-3",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, qual o desempenho do SILENT e o que isso implica?",
+  "alternativas": [
+   "Inútil",
+   "Ótimo para excluir",
+   "Especificidade 75%",
+   "Sensibilidade 75% e especificidade 99%: bom para confirmar, ruim para excluir",
+   "Sensibilidade 99%"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Útil para confirmar.",
+   "Não.",
+   "Invertido.",
+   "Correta.",
+   "Invertido."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A43"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-4",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, entre pacientes com TC de corpo inteiro, quantos tinham avaliação primária sem alterações em um estudo?",
+  "alternativas": [
+   "0,3%",
+   "Nenhum",
+   "50%",
+   "3,02%",
+   "30,2%"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Houve.",
+   "Não.",
+   "Correta (120 de 3976).",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A40"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-5",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, como reduzir a chance de nova lesão despercebida até a alta?",
+  "alternativas": [
+   "Alta precoce",
+   "Proibir queixas",
+   "Nova TC de rotina sem exame",
+   "Avaliação terciária, revisão de imagens e reexame ao surgirem queixas",
+   "Nenhuma medida"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não é o recomendado.",
+   "Correta.",
+   "Há."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D30",
+   "D25"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R2",
+  "id": "T5-R2-6",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, a paciente estava acordada. Por que a terciária importa mais ainda nos intubados?",
+  "alternativas": [
+   "Porque têm alta mais cedo",
+   "Porque têm menos lesões",
+   "Não importa",
+   "Porque a TC é melhor neles",
+   "Não se queixam e o exame neurológico fica indisponível"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Importa.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D31"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-1",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, você revisa o caso com a equipe. Qual mensagem principal?",
+  "alternativas": [
+   "Evitar internar",
+   "Nada a aprender",
+   "A sala de trauma e a TC não encerram o diagnóstico; a terciária é parte do atendimento",
+   "A paciente simulou",
+   "A TC basta"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Há.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D30",
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-2",
+  "fixa": false,
+  "caso": 5,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, como conduzir o debriefing?",
+  "alternativas": [
+   "Punindo o residente",
+   "Só por escrito meses depois",
+   "Com a equipe, logo após, focando no processo",
+   "Não fazer",
+   "Sem a equipe"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Tarde.",
+   "Correta: debriefing apoia o aprendizado da equipe.",
+   "Perde-se a oportunidade.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A18"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-3",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, qual dado sobre a TC de rotina ajuda a explicar o caso?",
+  "alternativas": [
+   "Aumenta a mortalidade",
+   "Pouco ou nenhum efeito em mortalidade e lesões tardias mesmo com ela",
+   "Reduz lesões tardias a zero",
+   "Dispensa a terciária",
+   "Não há dados"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Há."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A12",
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-4",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, qual indicador de qualidade acompanharia este problema?",
+  "alternativas": [
+   "Tempo de passagem do SAMU",
+   "Número de TCs",
+   "Custo da TC",
+   "Lesões de diagnóstico tardio",
+   "Número de radiografias"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Outro processo.",
+   "Indireto.",
+   "Não.",
+   "Correta.",
+   "Indireto."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-5",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, hipotensão à tarde. Qual a primeira decisão do líder?",
+  "alternativas": [
+   "Esperar o plantão seguinte",
+   "Atribuir à dor",
+   "Dar alta",
+   "Suspender o soro",
+   "Tratar como sangramento e investigar já"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Atraso.",
+   "Armadilha.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R3",
+  "id": "T5-R3-6",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, qual a proporção de lesões tardias após terciária, e o que implica?",
+  "alternativas": [
+   "Não há dados",
+   "13,9 %: só depende da TC",
+   "26%: a terciária é inútil",
+   "0%: a terciária é infalível",
+   "0,26%: a vigilância continua depois da terciária"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Há.",
+   "Outro estudo.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A41"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-1",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, como você explicaria os 13,9 % de lesões tardias mesmo com TC?",
+  "alternativas": [
+   "A TC é inútil",
+   "Estudo inválido",
+   "Erro de leitura sempre",
+   "Só em hospitais pequenos",
+   "A TC não elimina lesões ocultas; exame seriado e revisão de imagens seguem necessários"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Extrapola.",
+   "Não há base.",
+   "Simplifica demais.",
+   "Não há base.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A42",
+   "D30"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-2",
+  "fixa": false,
+  "caso": 5,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, o que a doutrina recomenda para o paciente de UTI?",
+  "alternativas": [
+   "Avaliação terciária e revisão cuidadosa das imagens",
+   "Alta precoce",
+   "Nova TC diária",
+   "Nada",
+   "Só exames laboratoriais"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Incompleto."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D30"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-3",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, o teste SILENT poderia substituir a imagem?",
+  "alternativas": [
+   "Não há dados",
+   "Sim, sempre",
+   "Sim, nos idosos",
+   "Sim, com especificidade de 75%",
+   "Não para excluir lesão: sensibilidade de 75%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Há.",
+   "Não.",
+   "Não.",
+   "Invertido.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A43"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-4",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, ao propor mudança de protocolo, qual seria a base mais sólida?",
+  "alternativas": [
+   "Lesões tardias e lesões após terciária documentadas, apoiando reexame seriado",
+   "Opinião isolada",
+   "Preferência do residente",
+   "Nenhuma",
+   "Custo da TC"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Fraco.",
+   "Fraco.",
+   "Há base.",
+   "Não é o foco."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A41",
+   "A42"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-5",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, qual seria o papel de reavaliar a hipotensão tardia na auditoria?",
+  "alternativas": [
+   "Identificar lesão não identificada ou ressangramento",
+   "Nenhum",
+   "Só para pesquisa",
+   "Só multar",
+   "Só registrar"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Há papel.",
+   "Incompleto.",
+   "Não.",
+   "Incompleto."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "teste": 5,
+  "nome_teste": "Pós-teste D+45",
+  "perfil": "R+",
+  "id": "T5-R+-6",
+  "fixa": false,
+  "caso": 5,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 5, a paciente teve avaliação primária sem alterações e TC normal. O que um estudo diz sobre esse grupo?",
+  "alternativas": [
+   "Só idosos",
+   "Não há estudo",
+   "3,02% dos submetidos tinham primária sem alterações, e nenhum teve lesão na imagem",
+   "Todos tinham lesão",
+   "Metade tinha lesão grave"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Há.",
+   "Correta (120 de 3976).",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A40"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Em todo paciente com fratura de membro",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-1",
+  "fixa": false,
+  "caso": 6,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 6, o que a equipe deve fazer antes de os pacientes chegarem?",
+  "alternativas": [
+   "Ir tomar café",
+   "Esperar para ver quem chega",
+   "Definir funções e preparar o material",
+   "Nada",
+   "Pedir TC para os dois"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Perde-se tempo.",
+   "Correta.",
+   "Não.",
+   "Sem avaliação."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "correta",
+   "erro conceitual",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D22"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-2",
+  "fixa": false,
+  "caso": 6,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 6, o motorista sangra no antebraço. Qual a primeira medida?",
+  "alternativas": [
+   "TC",
+   "Compressão direta",
+   "AMPLE",
+   "Radiografia",
+   "Intubação"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Depois.",
+   "Não.",
+   "Não indicada."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D6"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-3",
+  "fixa": false,
+  "caso": 6,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, o passageiro está inconsciente. O que avaliar logo na via aérea?",
+  "alternativas": [
+   "Se a via aérea está pérvia e se o Glasgow indica via aérea definitiva",
+   "Só a temperatura",
+   "Só a pressão",
+   "Só a cor da pele",
+   "Nada"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D10",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-4",
+  "fixa": false,
+  "caso": 6,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, quem deve ser o líder?",
+  "alternativas": [
+   "O enfermeiro",
+   "Ninguém",
+   "Quem chegar primeiro",
+   "O SAMU",
+   "O cirurgião do trauma"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D22"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-5",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, como o SAMU deve passar o caso?",
+  "alternativas": [
+   "Só para o enfermeiro",
+   "Não passar",
+   "De forma estruturada e curta",
+   "Por escrito depois",
+   "Livre e longa"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D23",
+   "D24"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "Graduação",
+  "id": "T6-Graduação-6",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, depois do exame, o que fazer com os pacientes despidos?",
+  "alternativas": [
+   "Aquecê-los",
+   "Banho frio",
+   "Nada",
+   "Deixá-los descobertos",
+   "Esperar a TC"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D19"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 2,
+  "grau_nome": "Fácil",
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-1",
+  "fixa": false,
+  "caso": 6,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, o R1 pergunta se pode liderar o atendimento do motorista. Qual a resposta?",
+  "alternativas": [
+   "Sim, sozinho",
+   "Só no próximo ano",
+   "Sim, sob supervisão próxima do assistente",
+   "Não, nunca",
+   "Só se o assistente sair"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não sem supervisão.",
+   "Não é o critério.",
+   "Correta.",
+   "Treinandos devem ter oportunidade.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D29"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-2",
+  "fixa": false,
+  "caso": 6,
+  "grau": 3,
+  "grau_nome": "Média",
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, o formulário de admissão do trauma foi associado a quê?",
+  "alternativas": [
+   "Melhora de indicadores, como o registro da via aérea",
+   "Mais tempo de sala",
+   "Nenhum efeito",
+   "Piora dos indicadores",
+   "Mais mortes"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A13",
+   "A14"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-3",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a presença do cirurgião de trauma no local reduziu o tempo de ressuscitação em quanto, em estudo?",
+  "alternativas": [
+   "259 segundos",
+   "25 minutos",
+   "25 segundos",
+   "2 horas",
+   "Nada"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Houve redução."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A19"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-4",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?",
+  "alternativas": [
+   "AMPLE",
+   "Exame neurológico breve e completo",
+   "Nada",
+   "TC",
+   "Alta"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D12",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-5",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, quais elementos do MIST o SAMU deve trazer?",
+  "alternativas": [
+   "Nenhum",
+   "Só sinais vitais",
+   "Nome, endereço, telefone",
+   "Só mecanismo",
+   "Mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Incompleto.",
+   "Não.",
+   "Incompleto.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D23"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R1",
+  "id": "T6-R1-6",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, em equipe, a avaliação deve ser feita em sequência rígida por uma pessoa?",
+  "alternativas": [
+   "Só à noite",
+   "Sim, sempre",
+   "Não há regra",
+   "Não; boa parte pode ser feita simultaneamente",
+   "Só com dois pacientes"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Há.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D5"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE)."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-1",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, o líder cirurgião foi associado a quê em meta-análise?",
+  "alternativas": [
+   "Mais mortes",
+   "Sobrevida muito maior",
+   "Mais lesões perdidas",
+   "Nada",
+   "Menos lesões não identificadas, sobrevida semelhante"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não houve diferença de sobrevida.",
+   "Não.",
+   "Houve efeito.",
+   "Correta (OR 0,48 para lesões não identificadas; OR 0,82 sobrevida)."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "A20",
+   "A21"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-2",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, o checklist na ressuscitação foi associado a quê?",
+  "alternativas": [
+   "Prova de menor mortalidade por ensaio",
+   "Menos pneumonia comprovada",
+   "Pior adesão",
+   "Nada",
+   "Melhor adesão ao ATLS e ao fluxo; evidência antes-e-depois"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não há ensaio.",
+   "Um estudo mostrou mais pneumonia.",
+   "Não.",
+   "Houve efeito.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A8",
+   "A7",
+   "A10"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-3",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, treinamento de equipe por simulação mostrou qual efeito?",
+  "alternativas": [
+   "Só satisfação",
+   "Mais erros",
+   "Nenhum",
+   "Redução do tempo até exames, tomografia e hemostasia",
+   "Aumento do tempo"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Houve.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A17"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-4",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, qual a ordem para o motorista com sangramento controlado e falando?",
+  "alternativas": [
+   "Só tratar o braço",
+   "Seguir ABCDE, reavaliando o sangramento",
+   "Intubar",
+   "Alta",
+   "TC sem avaliação"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Incompleto.",
+   "Correta.",
+   "Não indicado.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D1",
+   "D2"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-5",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?",
+  "alternativas": [
+   "TC",
+   "AMPLE",
+   "Exposição",
+   "Radiografia",
+   "Circulação (CABDE), com os mais experientes"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D3"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R2",
+  "id": "T6-R2-6",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, onde o líder deve ficar?",
+  "alternativas": [
+   "De costas",
+   "No posto",
+   "Com visão de toda a sala",
+   "Fora da sala",
+   "Na via aérea"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D22"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Apenas depois de obtida a radiografia de tórax",
+   "Em todo paciente com fratura de membro",
+   "Somente quando o Glasgow é menor ou igual a 8",
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.",
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-1",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, você lidera. Como distribuir a equipe entre os dois pacientes?",
+  "alternativas": [
+   "Sem distribuição",
+   "Só o R1 nos dois",
+   "Funções definidas antes da chegada, com o mais experiente no paciente mais grave",
+   "Todos no primeiro que chegar",
+   "Esperar o terceiro paciente"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D22",
+   "D3"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-2",
+  "fixa": false,
+  "caso": 6,
+  "grau": 4,
+  "grau_nome": "Difícil",
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a OMS tem um checklist de cuidado ao trauma. O que favorece sua implantação?",
+  "alternativas": [
+   "Nada",
+   "Campeão institucional, adaptação ao contexto e integração à rotina e à documentação",
+   "Só distribuir o papel",
+   "Usar só em auditorias",
+   "Imposição sem treinamento"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não.",
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A16"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-3",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, após os atendimentos, qual a melhor prática de equipe?",
+  "alternativas": [
+   "Debriefing e treinamento in situ periódico",
+   "Punição de erros",
+   "Trocar a equipe",
+   "Nada",
+   "Só relatório escrito"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Incompleto."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A18"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-4",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, um R2 quer pedir TC de corpo inteiro para os dois de rotina. O que dizer?",
+  "alternativas": [
+   "Só pedir para o mais jovem",
+   "Pedir antes da primária",
+   "Sempre pedir",
+   "Nunca pedir",
+   "A TC de rotina tem pouco ou nenhum efeito em mortalidade; indicar por critérios"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A12"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-5",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual o custo do ATLS comparado a outros programas, em estudo?",
+  "alternativas": [
+   "Não há dados",
+   "O mais baixo",
+   "Igual aos outros",
+   "O mais alto (USD 1433,5)",
+   "Gratuito"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Há.",
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro conceitual",
+   "erro de indicação",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A6"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R3",
+  "id": "T6-R3-6",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual efeito da presença do cirurgião de trauma no tempo de ressuscitação?",
+  "alternativas": [
+   "Nenhum",
+   "259 segundos a menos",
+   "Mais tempo",
+   "Não há dados",
+   "Dobro do tempo"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Houve.",
+   "Correta.",
+   "Não.",
+   "Há.",
+   "Não."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A19"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "FIXA",
+  "fixa": true,
+  "caso": null,
+  "grau": 1,
+  "grau_nome": "Muito fácil",
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "Na avaliação inicial do traumatizado, em qual situação a avaliação e o tratamento da circulação vêm antes da via aérea?",
+  "alternativas": [
+   "Na hemorragia externa ou compressível com risco de vida e no paciente em extremis",
+   "Sempre que houver trauma penetrante, independentemente do sangramento",
+   "Em todo paciente com fratura de membro",
+   "Apenas depois de obtida a radiografia de tórax",
+   "Somente quando o Glasgow é menor ou igual a 8"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: nesses casos a circulação vem antes da via aérea (CAB, CABDE).",
+   "O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.",
+   "Fratura sem sangramento grave não muda a ordem ABCDE.",
+   "A radiografia é adjunta; a prioridade não espera exame de imagem.",
+   "Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D2",
+   "D3",
+   "D11"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-1",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, você vai ensinar a equipe. Qual formato de treino in situ é equivalente no curto prazo?",
+  "alternativas": [
+   "Nenhum funciona",
+   "Só aula teórica",
+   "Só algoritmo funciona",
+   "Por checklist ou por algoritmo, com ganhos semelhantes",
+   "Só checklist funciona"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não.",
+   "Não.",
+   "Não.",
+   "Correta.",
+   "Não."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de conduta",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A44"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-2",
+  "fixa": false,
+  "caso": 6,
+  "grau": 5,
+  "grau_nome": "Muito difícil",
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, como explicar ao serviço o valor de ter o cirurgião como líder?",
+  "alternativas": [
+   "Nenhum valor",
+   "Mais custo sem benefício comprovado algum",
+   "Menos lesões não identificadas, sem diferença de sobrevida",
+   "Mais lesões perdidas",
+   "Sobrevida muito maior"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Há valor.",
+   "Há benefício em lesões não identificadas.",
+   "Correta.",
+   "Não.",
+   "Não houve diferença de sobrevida."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A20",
+   "A21"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-3",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?",
+  "alternativas": [
+   "Prova causal",
+   "Nenhum dado",
+   "Queda de 17,7% para 12,1% em estudo antes-e-depois; não prova causa",
+   "Queda para zero",
+   "Aumento de mortalidade"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Desenho não permite.",
+   "Há.",
+   "Correta.",
+   "Não.",
+   "Não."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro técnico",
+   "correta",
+   "erro de conduta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A15"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-4",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, como você propõe avaliar o ATLS no seu serviço, dada a evidência?",
+  "alternativas": [
+   "Medir desfechos e processo, sabendo que falta evidência de alta qualidade",
+   "Assumir benefício comprovado",
+   "Nada",
+   "Só medir custo",
+   "Abandonar o treinamento"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Não.",
+   "Não.",
+   "Incompleto.",
+   "Não há base."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A4",
+   "A2"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-5",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual estudo de viabilidade foi feito para comparar ATLS, PTC e cuidado padrão?",
+  "alternativas": [
+   "Meta-análise de 3 estudos",
+   "Coorte de 10 pacientes",
+   "Ensaio com 92.614 pacientes",
+   "Nenhum",
+   "Piloto com 376 pacientes e 22 residentes"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é o desenho.",
+   "Não.",
+   "Esse número é da revisão de 19 estudos.",
+   "Há.",
+   "Correta."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro conceitual",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A3",
+   "A1"
+  ]
+ },
+ {
+  "teste": 6,
+  "nome_teste": "Pós-teste D+90",
+  "perfil": "R+",
+  "id": "T6-R+-6",
+  "fixa": false,
+  "caso": 6,
+  "grau": 6,
+  "grau_nome": "Extrema",
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual seria a principal lacuna a explicar aos residentes sobre checklists?",
+  "alternativas": [
+   "Só há estudos antes-e-depois, com sinais mistos de benefício e dano",
+   "Não há estudos",
+   "Ensaios definitivos já existem",
+   "Só há benefício",
+   "Só há dano"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta.",
+   "Há.",
+   "Não.",
+   "Houve mais pneumonia em um estudo.",
+   "Houve benefício em ISS > 25."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro técnico",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A7",
+   "A9",
+   "A10"
+  ]
+ }
+]

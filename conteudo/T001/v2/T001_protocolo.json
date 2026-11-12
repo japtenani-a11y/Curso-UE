@@ -1,0 +1,197 @@
+{
+ "tema": "T001",
+ "tipo": "protocolo",
+ "titulo": "Protocolo assistencial",
+ "status": "rascunho",
+ "versao_padrao": "guia v0.1 (12/11/2026)",
+ "gerado_por": "Claude, geração manual fora do executor",
+ "corpo": "> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.\n\n# T001 — Protocolo assistencial: avaliação inicial do traumatizado\n\n**Proposta** para apresentação à diretoria do HCFMRP após a aula. Não é protocolo vigente.\n\n## 1. Título\nAvaliação inicial do paciente traumatizado na sala de trauma.\n\n## 2. Objetivo\nIdentificar e tratar rapidamente as lesões que ameaçam a vida [D1] de forma padronizada e registrada.\n\n## 3. População-alvo\nAdultos que acionam a equipe de trauma na sala de emergência. **[definir critérios de acionamento com o serviço]**\n\n## 4. Definições\n- Avaliação primária: ABCDE, ou CAB quando há hemorragia externa ou extremis [D2, D3].\n- Avaliação secundária: história AMPLE e exame completo [D20, D21].\n- Avaliação terciária: reexame após a ressuscitação e as cirurgias [D31].\n\n## 5. Critérios de inclusão\nTodo paciente atendido pela equipe de trauma.\n\n## 6. Critérios de exclusão\nNenhum. Pacientes em extremis seguem o fluxo CABDE [D3].\n\n## 7. Avaliação inicial\n1. Antes da chegada: líder (cirurgião do trauma) e funções definidos [D22].\n2. Passagem MIST em até 1 minuto [D23, D24].\n3. Registro em formulário estruturado [A13, A14].\n\n## 8. Conduta passo a passo\n1. Hemorragia externa: compressão direta; torniquete no membro; sem pinçamento às cegas; cinta pélvica no alto risco [D6, D7, D8, D9].\n2. Via aérea: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação [D11, D12].\n3. Respiração: eFAST como adjunto; negativo não exclui pneumotórax [A30].\n4. Circulação: pressão manual se houver dúvida; intraósseo sem veia [D14, D15].\n5. Neurológico: Glasgow na chegada e repetido [D16].\n6. Exposição: despir e aquecer [D18, D19]; medir a temperatura.\n7. Secundária: AMPLE e exame completo [D21].\n8. TC de corpo inteiro: indicação conforme critérios do serviço [A12]. **[definir com a radiologia]**\n\n## 9. Materiais necessários\nCinta pélvica, torniquetes, kit de intraósseo, mantas aquecidas, manta de ar forçado e aquecedor de fluidos [D19], ultrassom.\n\n## 10. Complicações esperadas\nLesões não identificadas [A42]; hipotermia [A36]; amputação associada ao torniquete [A24].\n\n## 11. Manejo das complicações\nAvaliação terciária com revisão das imagens [D30]; hipotensão após a ressuscitação tratada como sangramento até prova em contrário [D32].\n\n## 12. Critérios de transferência\n**[definir: centro cirúrgico, radiologia intervencionista, UTI]**\n\n## 13. Critérios de alta da sala de trauma\nAvaliações primária e secundária concluídas e registradas; destino definido pelo líder [D22].\n\n## 14. Indicadores de qualidade\nPreenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo até a TC; lesões de diagnóstico tardio [A42].\n\n## 15. Referências\nMattox, Trauma 9ª ed., capítulos 10, 13, 44 e 57; artigos A1 a A44 da síntese de evidência do T001.\n",
+ "afirmacoes": [
+  {
+   "id": "A1",
+   "texto": "Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies"
+  },
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  },
+  {
+   "id": "A44",
+   "texto": "Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.",
+   "fonte_arquivo": "2026_10",
+   "trecho_literal": "Checklist- and algorithm-based formats produced similar short-term gains."
+  },
+  {
+   "id": "D1",
+   "texto": "O objetivo da avaliação inicial é identificar e tratar rapidamente as lesões que ameaçam a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "The goal of the initial assessment is the rapid identification and treatment of life-threatening injuries."
+  },
+  {
+   "id": "D2",
+   "texto": "Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação é avaliada e tratada antes da via aérea (CAB).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "circulation evaluation and treatment will come before airway (ie, CAB [circulation, airway, breathing])"
+  },
+  {
+   "id": "D3",
+   "texto": "No paciente que chega em extremis, a circulação tem precedência (CABDE).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "where circulation takes precedence (ie, CABDE)"
+  },
+  {
+   "id": "D6",
+   "texto": "O sangramento externo ativo é tratado primeiro com compressão direta.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Treatment for active external bleeding identified through these exams should begin with direct pressure."
+  },
+  {
+   "id": "D7",
+   "texto": "No trauma de extremidade, o torniquete pode salvar a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "For extremity trauma, placement of a tourniquet can be lifesaving."
+  },
+  {
+   "id": "D8",
+   "texto": "O pinçamento às cegas de feridas profundas deve ser evitado.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Blind clamping of deep wounds is discouraged"
+  },
+  {
+   "id": "D9",
+   "texto": "Nos pacientes de alto risco para sangramento pélvico, a cinta pélvica deve ser colocada imediatamente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a pelvic binder should be immediately placed in high-risk patients"
+  },
+  {
+   "id": "D11",
+   "texto": "A via aérea deve ser assegurada no paciente com alteração importante do nível de consciência (Glasgow ≤8).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Airway stabilization should also be performed in the patient with a significant alteration in mental status (Glasgow Coma Scale [GCS] score ≤8)"
+  },
+  {
+   "id": "D12",
+   "texto": "Antes da sedação e do bloqueio neuromuscular, faz-se um exame neurológico breve e completo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a brief but thorough neurologic exam should be performed prior to the administration of paralytics and sedation"
+  },
+  {
+   "id": "D14",
+   "texto": "O medidor automático de pressão pode errar no paciente em choque; se for medir, medir manualmente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "noninvasive blood pressure devices may be erroneous in patients in shock"
+  },
+  {
+   "id": "D15",
+   "texto": "Sem acesso venoso imediato, considerar o acesso intraósseo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "consideration should be made to perform intraosseous access"
+  },
+  {
+   "id": "D16",
+   "texto": "O Glasgow é avaliado na chegada e repetido durante a ressuscitação.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "The GCS score should be assessed immediately upon presentation and sequentially during the resuscitation."
+  },
+  {
+   "id": "D18",
+   "texto": "Toda a roupa é retirada para um exame completo em 360 graus.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "All clothing should be removed to facilitate a complete 360-degree exam."
+  },
+  {
+   "id": "D19",
+   "texto": "Terminado o exame, manter o paciente aquecido é prioridade: mantas aquecidas, manta de ar forçado e fluidos aquecidos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "warm blankets, forced hot air blankets, and warm intravenous fluids"
+  },
+  {
+   "id": "D20",
+   "texto": "A avaliação secundária é uma história e exame completos, cujo objetivo é identificar todas as demais lesões.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "whose aim is to identify all other injuries"
+  },
+  {
+   "id": "D21",
+   "texto": "A história segue o AMPLE: alergias, medicações, doenças prévias, última refeição e eventos/mecanismo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "ATLS suggests using AMPLE (allergies, medications, past illnesses, last meal, events/environment/mechanism)"
+  },
+  {
+   "id": "D22",
+   "texto": "No centro de trauma, o líder da equipe deve ser o cirurgião do trauma.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "In a trauma center, this should be the trauma surgeon."
+  },
+  {
+   "id": "D23",
+   "texto": "A passagem do pré-hospitalar segue um formato estruturado, como o MIST: mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "MIST (mechanism, injuries suspected, vital signs and symptoms, treatments)"
+  },
+  {
+   "id": "D24",
+   "texto": "A passagem do pré-hospitalar não deve durar mais que 45 segundos a 1 minuto.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the prehospital report should not take more than 45 seconds to 1 minute"
+  },
+  {
+   "id": "D30",
+   "texto": "No paciente de UTI, a avaliação terciária e a revisão cuidadosa das imagens reduzem o risco de lesão não identificada.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Trauma patients in the ICU should undergo a tertiary survey and careful review of imaging results to reduce the risk of missed injury."
+  },
+  {
+   "id": "D31",
+   "texto": "A avaliação terciária deve ser feita depois de completadas a ressuscitação inicial e as intervenções cirúrgicas.",
+   "fonte_arquivo": "Mattox9_cap44_membro_inferior",
+   "trecho_literal": "A “tertiary survey” should be completed after the initial resuscitation and operative interventions are complete"
+  },
+  {
+   "id": "D32",
+   "texto": "A hipotensão após a ressuscitação é sangramento até prova em contrário.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Any patient developing hypotension postresuscitation is bleeding until proven otherwise"
+  }
+ ]
+}
