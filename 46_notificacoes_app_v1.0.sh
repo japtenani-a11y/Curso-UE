@@ -99,6 +99,7 @@ cat > "$API/notificador.ts" <<'EOF'
 // Enviador de lembretes por e-mail e WhatsApp.
 // Uso: npm run notificar            (fica rodando; a cada NOTIFICAR_INTERVALO_MIN minutos, padrao 5)
 //      npm run notificar -- --uma-vez  (roda uma vez e sai; serve para agendar no cron do servidor)
+//      npm run notificar -- --teste-email voce@exemplo.com  (manda um e-mail de teste e sai)
 // NOTIFICAR_MODO=simular (padrao) so registra no log; NOTIFICAR_MODO=enviar envia de fato pelos
 // canais com credenciais nas variaveis de ambiente.
 import nodemailer from 'nodemailer';
@@ -180,6 +181,16 @@ export async function rodadaDeEnvio(): Promise<{ fila: number; enviadas: number;
 }
 
 async function principal(): Promise<void> {
+  const iTeste = process.argv.indexOf('--teste-email');
+  if (iTeste > 0) {
+    const para = process.argv[iTeste + 1] ?? env.SMTP_USER ?? '';
+    try {
+      await enviarEmail({ notificacao_id: 0, canal: 'email', destino: para, assunto: 'Teste de envio do Programa de Cirurgia de Urgência e Trauma',
+        corpo: 'Se você recebeu esta mensagem, o envio de lembretes por e-mail está funcionando.', parametros: { caminho: '/aluno' } });
+      console.log(`e-mail de teste enviado para ${para}`);
+      process.exit(0);
+    } catch (e) { console.error(`falha no envio: ${e instanceof Error ? e.message : String(e)}`); process.exit(1); }
+  }
   logger.info({ modo: MODO, canais, email_configurado: EMAIL_OK, whatsapp_configurado: ZAP_OK }, 'enviador de lembretes iniciado');
   const umaVez = process.argv.includes('--uma-vez');
   for (;;) {

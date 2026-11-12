@@ -95,7 +95,7 @@ testeRouter.get('/ondas/:ondaId', async (req, res, next) => {
           ORDER BY i.fixa DESC, s.ordem_apresentada`, [ondaId, onda.perfil, tent.rows[0].tentativa_id]);
       return { teste_num: onda.teste_num, perfil: onda.perfil, tentativa: tent.rows[0], caso: caso.rows[0] ?? null, itens: itens.rows };
     });
-    if ('erro' in dados) { res.status(dados.status).json({ erro: dados.erro }); return; }
+    if ('erro' in dados) { res.status(dados.status ?? 400).json({ erro: dados.erro }); return; }
     res.json(dados);
   } catch (err) { next(err); }
 });
@@ -140,7 +140,7 @@ testeRouter.post('/ondas/:ondaId/respostas', async (req, res, next) => {
       }
       return { ok: true, submetido: Boolean(corpo.submeter) };
     });
-    if ('erro' in r) { res.status(r.status).json(r); return; }
+    if ('erro' in r) { res.status(r.status ?? 400).json(r); return; }
     res.json(r);
   } catch (err) { next(err); }
 });

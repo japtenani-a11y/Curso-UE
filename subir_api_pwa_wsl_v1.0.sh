@@ -51,6 +51,7 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then bash 34_leitura_aluno_v1.0.sh "$RAIZ" >
 if [ -f 40_testes_aluno_v1.0.sh ]; then bash 40_testes_aluno_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "40_testes_aluno falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 44_lembretes_app_v1.0.sh ]; then bash 44_lembretes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "44_lembretes_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 46_notificacoes_app_v1.0.sh ]; then bash 46_notificacoes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "46_notificacoes_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 51_acabamento_app_v1.0.sh ]; then bash 51_acabamento_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "51_acabamento_app falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
@@ -60,7 +61,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
@@ -105,7 +106,7 @@ S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T
 echo "      sem login a mesma pagina responde $S (esperado 403)"
 if [ -f 34_leitura_aluno_v1.0.sh ]; then
   NP=$(curl -s -b "$CK" "http://localhost:3000/leitura/temas/T001?previa=1" | grep -o '"artefato_id"' | wc -l)
-  echo "      previa de leitura para o revisor: $NP artefatos (esperado 8)"
+  echo "      previa de leitura para o revisor: $NP artefatos (esperado 13)"
   CA="$RAIZ/logs/cookie_aluno.txt"
   curl -s -o /dev/null -c "$CA" -H "Content-Type: application/json" -d '{"email":"r1.teste@setup.local"}' http://localhost:3000/auth/login
   SA=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/leitura/temas/T001?previa=1")
@@ -126,13 +127,15 @@ fi
 rm -f "$CK"
 
 if [ -f "$RAIZ/api/src/notificador.ts" ]; then
-  echo "      ligando o enviador de lembretes em modo SIMULADO (so registra em logs/notificador.log)"
-  ( cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=teste_local NOTIFICAR_MODO=simular \
+  EM="$HOME/.config/curso-ue/email.env"
+  if [ -f "$EM" ]; then echo "      ligando o enviador de lembretes: e-mail pelo Gmail configurado (so para quem autorizou)"
+  else echo "      ligando o enviador de lembretes em modo SIMULADO (configure o e-mail com 52_configurar_email_v1.0.sh)"; fi
+  ( set -a; [ -f "$EM" ] && . "$EM"; set +a; cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=teste_local NOTIFICAR_MODO="${NOTIFICAR_MODO:-simular}" \
     APP_URL=http://localhost:5173 LOG_LEVEL=info nohup setsid npx tsx src/notificador.ts > "$RABS/logs/notificador.log" 2>&1 & echo $! > "$RABS/logs/notificador.pid" )
 fi
 
 echo "[7/7] Ligando o PWA (porta 5173)..."
-( cd "$RAIZ/pwa" && VITE_API_URL=http://localhost:3000 nohup setsid npx vite --host 127.0.0.1 --port 5173 --strictPort > "$RABS/logs/pwa.log" 2>&1 & echo $! > "$RABS/logs/pwa.pid" )
+( cd "$RAIZ/pwa" && VITE_API_URL=http://localhost:3000 VITE_LOGIN_TESTE=1 nohup setsid npx vite --host 127.0.0.1 --port 5173 --strictPort > "$RABS/logs/pwa.log" 2>&1 & echo $! > "$RABS/logs/pwa.pid" )
 OK=""; for i in $(seq 1 30); do sleep 1; curl -s -o /dev/null http://localhost:5173/ && { OK=1; break; }; done
 [ -n "$OK" ] || { tail -20 "$RAIZ/logs/pwa.log"; falhar "o PWA nao ligou; as ultimas linhas do log estao acima ($RAIZ/logs/pwa.log)."; }
 
