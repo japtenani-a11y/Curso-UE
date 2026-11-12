@@ -5,7 +5,7 @@ S=json.load(open('/home/claude/japtenani-a11y/curso-ue/conteudo/T001/T001_sintes
 AF={a['id']:a for a in S['afirmacoes']}
 for i,f,t,tr in doutrina.D: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
 for i,f,t,tr in doutrina.EXTRA_A: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
-for i,f,t,tr in doutrina.P: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
+for i,f,t,tr in doutrina.P+doutrina.H+doutrina.G: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
 CASOS={**testes_a.CASOS,**testes_b.CASOS,**testes_c.CASOS}
 TESTES={**testes_a.TESTES,**testes_b.TESTES,**testes_c.TESTES}
 import testes_d
@@ -35,7 +35,7 @@ def checar(q,nome):
     for a in anc:
         if a not in AF: erros.append((nome,'ancora',a))
     pool=norm(' '.join(AF[a]['texto']+' '+AF[a]['trecho_literal'] for a in anc if a in AF))
-    txt=re.sub(r"caso \d|Caso \d|\b[AD]\d+\b","",alts[c]+' '+js[c])
+    txt=re.sub(r"caso \d|Caso \d|\b[ADPHG]\d+\b","",alts[c]+' '+js[c])
     nums=[n for n in set(re.findall(r"\d+(?:[.,]\d+)?",txt)) if norm(n) not in pool]
     if nums: erros.append((nome,'numero',nums))
 banco=[]

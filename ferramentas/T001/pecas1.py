@@ -1,15 +1,16 @@
-# Bloco 1 do T001 no padrão novo. Códigos [A#] = artigos da revisão (camada 4); [D#] = Mattox 9ª ed. (camada 2).
+# Bloco 1 do T001 no padrão novo. [H#] histórico (camada 1); [D#] livro-texto: Mattox 9ª ed. e ATLS vigente (camada 2); [P#] protocolo institucional (camada 3); [A#] revisão dos últimos 10 anos (camada 4); [G#] diretriz (camada 5).
 P = {}
 
 P['sintese_evidencia'] = ('Síntese de evidência', """
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
-Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Mattox (camada 2) e 75 artigos da revisão dos últimos 10 anos (camada 4), além do Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3). Camadas 1 e 5 ainda sem fontes carregadas para este tema.
+Tempo de leitura: cerca de 10 minutos. Base nas cinco camadas: história do ATLS e de suas edições antigas (camada 1); capítulos do Mattox e o ATLS vigente (camada 2); Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3); 75 artigos da revisão dos últimos 10 anos (camada 4); diretriz europeia de sangramento maior no trauma, 6ª edição, 2023 (camada 5).
 
 ## Consenso
 
+- **Origem.** O ATLS nasceu de um acidente aéreo em 1976 no interior de Nebraska, quando um cirurgião julgou errado o atendimento dado à própria família [H1]. Foi feito para quem não atende trauma com frequência [H2]; os cursos-piloto foram em 1977 e, em 1980, o curso já era nacional [H3]. Tratar primeiro a maior ameaça à vida foi controverso no início, por fugir da sequência história, exame e diagnóstico diferencial [H4].
 - **Objetivo.** A avaliação inicial serve para identificar e tratar rapidamente as lesões que ameaçam a vida [D1]. A alteração fisiológica é o maior determinante do desfecho [D26].
-- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A sigla xABCDE, usada pelo ATLS 11, expressa a mesma prioridade **[DOUTRINA – confirmar no ATLS 11, que não pode ser carregado]**.
+- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44].
 - **Hemorragia externa.** Compressão direta primeiro [D6]; no membro, o torniquete pode salvar a vida [D7]; não pinçar às cegas [D8]; cinta pélvica imediata nos pacientes de alto risco [D9].
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
@@ -17,19 +18,22 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Avaliação secundária e terciária.** A secundária é história (AMPLA) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
 - **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
+- **Diretriz.** A diretriz europeia de 2023 recomenda reduzir ao mínimo o tempo até o controle do sangramento [G1]; compressão e torniquete como adjunto no membro [G2]; estimar a hemorragia pela fisiologia, padrão de lesão, mecanismo e resposta à reposição [G4], com índice de choque e/ou pressão de pulso [G5]; controle imediato quando a fonte é evidente ou no choque em extremis [G6]; FAST no trauma toracoabdominal [G8]; cinta pélvica na suspeita de fratura de pelve [G13]; e aquecimento precoce [G12].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
-- **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
+- **Torniquete.** A doutrina diz que pode salvar a vida [D7] e a diretriz o recomenda como adjunto [G2]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
 - **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
 - **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
+- **TC de corpo inteiro.** A diretriz recomenda imagem precoce com TC de corpo inteiro (grau 1B) [G9]; a revisão mostra pouco ou nenhum efeito em mortalidade [A12].
 
 ## Lacunas no conhecimento
 
+- O conhecimento do curso cai em seis meses, embora os princípios fiquem por cerca de seis anos [H5]; isso justifica os pós-testes espaçados.
 - Os estudos de checklist são todos antes-e-depois [A7]; o ensaio que testará o ATLS de forma pragmática ainda está em andamento [A5].
 - Não há abordagem baseada em evidência para a hipotermia no trauma [A37], que atinge até dois terços dos graves [A36].
 - Lesões com diagnóstico tardio persistem: 13,9 % mesmo com TC de corpo inteiro [A42]; lesão potencialmente letal após a terciária em 0,26% [A41].
@@ -39,7 +43,7 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 
 1. **Quando inverter a ordem:** CAB/xABCDE para hemorragia externa e extremis [D2, D3] e ABCDE para os demais.
 2. **Torniquete:** salva vidas [D7] ou troca morte por amputação [A23, A24]?
-3. **TC de corpo inteiro:** rotina ou seletiva [A12, A39, A42]?
+3. **TC de corpo inteiro:** rotina ou seletiva [G9, A12, A39, A42]?
 4. **Classificar o choque:** a tabela do ATLS ainda serve [A32, A33]?
 """)
 
@@ -236,7 +240,7 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
 8. TC de corpo inteiro (pan-TC): indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos ou fisiológicos, ou TCE moderado a grave [P2] (por exemplo, desaceleração severa ou capotamento [P3]; trauma evidente em várias regiões do corpo [P4]; Glasgow ≤12 aferido antes da sedação [P5]). Sem critério, a imagem é dirigida pelo mecanismo, pelo exame e por regras clínicas [P11]. Pan-TC não é sinônimo de qualquer trauma [P15]. O paciente instável ou sem resposta adequada vai primeiro para o controle da causa [P9]; o protocolo rápido de aquisição não é indicação de tomografia [P10]. Não esperar creatinina nem jejum [P12]; afrouxar ou retirar o torniquete antes da angio-TC do membro [P13]. **[Protocolo de tomografia de corpo inteiro em anexo]**
 9. Acionamento do protocolo de transfusão maciça. Acionar se houver qualquer um:
    - Escore ABC: FAST positivo, mecanismo penetrante, FC acima de 120 bpm, PAS abaixo de 90 mmHg, um ponto cada [D33]. Acionar com 2 ou mais pontos (ponto de corte confirmado pelo serviço em 12/11/2026).
-   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
+   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38]; a diretriz europeia recomenda o índice de choque e/ou a pressão de pulso para estimar choque e necessidade de transfusão [G5].
    - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
    - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
    Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. O protocolo de transfusão maciça do HCFMRP estará disponível em anexo próprio, na aula do tema de coagulopatia e transfusão maciça.
@@ -253,8 +257,9 @@ Avaliação terciária com revisão das imagens [D30]; hipotensão após a ressu
 ## 12. Critérios de transferência da sala vermelha
 A decisão é do líder do atendimento [D22], registrada no formulário.
 1. **Centro cirúrgico, sem passar pela tomografia.** Paciente instável ou sem resposta adequada à reposição (seção 4) com fonte provável de sangramento, priorizado para controle imediato da causa [P9]. Também o paciente que respondeu à reposição, mas precisa de cirurgia de emergência, como no tamponamento cardíaco ou no trauma de extremidade com sangramento exsanguinante [D40].
+   A diretriz europeia recomenda controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita [G6].
 2. **Radiologia intervencionista.** Paciente que precisa de controle de sangramento por via endovascular, como na fratura pélvica grave, sem atraso para outros exames [D40]. A colaboração próxima entre radiologia intervencionista e cirurgia associou-se a sobrevida 15,5% maior que a prevista [A22]. Disponível 24 horas por dia (informação do serviço, 12/11/2026). **[definir com a radiologia intervencionista: tempo de acionamento e uso de sala híbrida]**
-3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
+3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Sem fonte identificada e sem necessidade de controle imediato, investigar de imediato [G7]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
 4. **UTI.** **[proposta, sem fonte carregada; validar com a UTI]** Depois do controle do sangramento, ou da tomografia sem indicação cirúrgica imediata, se houver: via aérea definitiva ou ventilação mecânica; vasopressor ou transfusão em curso; protocolo de transfusão maciça acionado; TCE grave (Glasgow ≤8); necessidade de monitorização contínua. Na UTI, fazer a avaliação terciária com revisão das imagens [D30].
 5. **Enfermaria ou observação.** Paciente estável, com avaliações primária e secundária concluídas, sem indicação cirúrgica, de intervenção ou de UTI. Avaliação terciária depois [D31].
 
@@ -265,7 +270,7 @@ Avaliações primária e secundária concluídas e registradas; destino definido
 Preenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo porta-tomografia (meta de 30 minutos a validar [P14]); tempo até acionar o protocolo de transfusão maciça; pacientes instáveis levados à tomografia; lesões de diagnóstico tardio [A42].
 
 ## 15. Referências
-Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001.
+Camada 1: Carmont, história do ATLS, Postgrad Med J 2005 [H1]. Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57; ATLS, edição atual (anúncio oficial do ACS, 2025) [D44]. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001. Camada 5: diretriz europeia de sangramento maior no trauma, 6ª edição (Rossaint et al., Crit Care 2023;27:80) [G1].
 """)
 
 P['aula'] = ('Aula', """
@@ -277,15 +282,16 @@ Duração: 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-
 - O objetivo é achar e tratar o que mata agora [D1]; a fisiologia pesa mais que a anatomia [D26].
 - PAS abaixo de 90 mmHg com laparotomia de emergência: mortalidade acima de 40% [D27].
 - Treinamento associa-se a menor mortalidade (OR 0,60), em estudos observacionais [A2].
+- Origem: o ATLS nasceu de um acidente em 1976, para treinar quem não atende trauma com frequência [H1, H2].
 
 ## 2. O que a evidência diz (10 min)
-**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4].
+**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4]. A edição atual do ATLS adotou o xABCDE [D44].
 
-**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
+**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7] e é recomendado pela diretriz como adjunto [G2], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
 
-**[CONTROVÉRSIA 3] TC de corpo inteiro.** Pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
+**[CONTROVÉRSIA 3] TC de corpo inteiro.** A diretriz recomenda TC precoce de corpo inteiro [G9], mas a revisão mostra pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
 
-**[CONTROVÉRSIA 4] Classificar o choque.** Viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
+**[CONTROVÉRSIA 4] Classificar o choque.** A diretriz recomenda índice de choque e/ou pressão de pulso [G5]; viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
 
 Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; checklist melhora adesão, com efeito incerto em mortalidade [A8, A9, A10].
 

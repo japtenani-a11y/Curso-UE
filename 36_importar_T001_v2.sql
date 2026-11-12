@@ -7,7 +7,7 @@ ALTER TABLE conteudo.artefato ADD CONSTRAINT artefato_tipo_check CHECK (tipo IN 
 -- renomeia o antigo 'caso semente' para 'caso base' (se ja importado)
 UPDATE conteudo.artefato SET tipo='caso_base', titulo=replace(titulo,'Caso semente','Caso base'), corpo=replace(replace(corpo,'Caso semente','Caso base'),'caso semente','caso base') WHERE tipo='caso_semente';
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'aula', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula'),0)+1, 'rascunho', $T1$Aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'aula', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula'),0)+1, 'rascunho', $T1$Aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Aula: avaliação inicial do traumatizado
 
@@ -17,15 +17,16 @@ Duração: 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-
 - O objetivo é achar e tratar o que mata agora [D1]; a fisiologia pesa mais que a anatomia [D26].
 - PAS abaixo de 90 mmHg com laparotomia de emergência: mortalidade acima de 40% [D27].
 - Treinamento associa-se a menor mortalidade (OR 0,60), em estudos observacionais [A2].
+- Origem: o ATLS nasceu de um acidente em 1976, para treinar quem não atende trauma com frequência [H1, H2].
 
 ## 2. O que a evidência diz (10 min)
-**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4].
+**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4]. A edição atual do ATLS adotou o xABCDE [D44].
 
-**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
+**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7] e é recomendado pela diretriz como adjunto [G2], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
 
-**[CONTROVÉRSIA 3] TC de corpo inteiro.** Pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
+**[CONTROVÉRSIA 3] TC de corpo inteiro.** A diretriz recomenda TC precoce de corpo inteiro [G9], mas a revisão mostra pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
 
-**[CONTROVÉRSIA 4] Classificar o choque.** Viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
+**[CONTROVÉRSIA 4] Classificar o choque.** A diretriz recomenda índice de choque e/ou pressão de pulso [G5]; viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
 
 Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; checklist melhora adesão, com efeito incerto em mortalidade [A8, A9, A10].
 
@@ -52,7 +53,7 @@ Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; check
 5. Avaliação terciária sempre.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Aula: avaliação inicial do traumatizado
 
@@ -62,15 +63,16 @@ Duração: 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-
 - O objetivo é achar e tratar o que mata agora [D1]; a fisiologia pesa mais que a anatomia [D26].
 - PAS abaixo de 90 mmHg com laparotomia de emergência: mortalidade acima de 40% [D27].
 - Treinamento associa-se a menor mortalidade (OR 0,60), em estudos observacionais [A2].
+- Origem: o ATLS nasceu de um acidente em 1976, para treinar quem não atende trauma com frequência [H1, H2].
 
 ## 2. O que a evidência diz (10 min)
-**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4].
+**[CONTROVÉRSIA 1] Quando inverter a ordem.** ABCDE é o padrão; hemorragia externa ou extremis invertem para CAB [D2, D3]; no pré-hospitalar, hemorragia maciça primeiro [D4]. A edição atual do ATLS adotou o xABCDE [D44].
 
-**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
+**[CONTROVÉRSIA 2] Torniquete.** Pode salvar vidas [D7] e é recomendado pela diretriz como adjunto [G2], mas a revisão mostra mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
 
-**[CONTROVÉRSIA 3] TC de corpo inteiro.** Pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
+**[CONTROVÉRSIA 3] TC de corpo inteiro.** A diretriz recomenda TC precoce de corpo inteiro [G9], mas a revisão mostra pouco ou nenhum efeito em mortalidade [A12]; no choque, sem aumento de mortalidade precoce [A39]; lesões tardias em 13,9 % mesmo com ela [A42].
 
-**[CONTROVÉRSIA 4] Classificar o choque.** Viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
+**[CONTROVÉRSIA 4] Classificar o choque.** A diretriz recomenda índice de choque e/ou pressão de pulso [G5]; viés na comparação clássica [A32]; estabilidade hemodinâmica sem consenso [A33]; agitação como sinal de choque [D17].
 
 Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; checklist melhora adesão, com efeito incerto em mortalidade [A8, A9, A10].
 
@@ -281,8 +283,38 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'D44', $af$Na edição atual do ATLS, o ABCDE passou a xABCDE: o x indica o controle rápido da hemorragia externa exsanguinante, que salva vidas em alguns pacientes.$af$, 'ACS_ATLS11_anuncio_2025', $af$For certain patients, rapid control of exsanguinating external hemorrhage is lifesaving. To reflect this additional focus, the letter “x” was added to the beginning of the well-known ATLS mnemonic. ABCDE is now xABCDE.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G2', $af$Recomenda-se compressão local das feridas abertas e torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend adjunct tourniquet use to stop life-threatening bleeding from open extremity injuries in the pre-surgical setting (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G5', $af$Recomenda-se usar o índice de choque e/ou a pressão de pulso para estimar o grau de choque e a necessidade de transfusão (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the shock index (SI) and/or pulse pressure (PP) be used to assess the degree of hypovolaemic shock and transfusion requirements (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G9', $af$Recomenda-se imagem precoce com TC de corpo inteiro contrastada para identificar as lesões e a fonte de sangramento (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend early imaging using contrast-enhanced whole-body CT (WBCT) for the detection and identification of the type of injury and the potential source of bleeding (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H1', $af$O ATLS nasceu depois de um acidente aéreo em 1976 no interior de Nebraska, em que o cirurgião ortopedista James Styner se feriu, perdeu a esposa e teve três filhos gravemente feridos, e considerou errado o atendimento que receberam.$af$, 'Carmont2005_historia_ATLS', $af$He was horrified at the treatment his family received at a local hospital in rural Nebraska and decided that the established system for managing the severely injured was wrong.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H2', $af$O objetivo original era treinar médicos que não atendem trauma com frequência, como generalistas do interior, na abordagem inicial do traumatizado grave.$af$, 'Carmont2005_historia_ATLS', $af$train those doctors who do not manage trauma on a regular basis, such as rural general practitioners, in the initial management of the severely injured patient$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'banco_dificuldade', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade'),0)+1, 'rascunho', $T1$Banco de questões e distribuição de dificuldade$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'banco_dificuldade', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade'),0)+1, 'rascunho', $T1$Banco de questões e distribuição de dificuldade$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Banco de questões e distribuição de dificuldade
 
@@ -309,7 +341,7 @@ Total: 170 questões de caso e 1 questão fixa (igual para todos os perfis). O s
 
 A questão fixa tem grau diferente por perfil porque o mesmo enunciado é mais fácil para quem tem mais experiência.$T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Banco de questões e distribuição de dificuldade
 
@@ -706,7 +738,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'caso', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso'),0)+1, 'rascunho', $T1$Caso da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'caso', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso'),0)+1, 'rascunho', $T1$Caso da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso da aula (fictício, para discussão em pequenos grupos)
 
@@ -742,7 +774,7 @@ Discussão: Lesões de diagnóstico tardio ocorrem mesmo com TC (13,9 %) [A42]; 
 A radiografia mostra fratura do rádio distal, tratada com imobilização. O torniquete foi retirado no centro cirúrgico, com reparo vascular. O paciente teve alta da UTI no terceiro dia. Lição: a avaliação terciária encontrou o que a sala de trauma e a TC não viram [D30, A42].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso da aula (fictício, para discussão em pequenos grupos)
 
@@ -878,7 +910,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='caso' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='caso')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'caso_base', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base'),0)+1, 'rascunho', $T1$Caso base$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'caso_base', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base'),0)+1, 'rascunho', $T1$Caso base$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso base
 
@@ -899,7 +931,7 @@ Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão dis
 7. A passagem do SAMU foi feita da melhor forma?
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso base
 
@@ -920,7 +952,7 @@ Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão dis
 7. A passagem do SAMU foi feita da melhor forma?
 $T1$);
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist'),0)+1, 'rascunho', $T1$Checklists$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist'),0)+1, 'rascunho', $T1$Checklists$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Checklist da sala de trauma (PROPOSTA para validação)
 
@@ -946,7 +978,7 @@ SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefa
 - [ ] Avaliação terciária realizada e registrada [A42]
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Checklist da sala de trauma (PROPOSTA para validação)
 
@@ -1037,7 +1069,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='checklist' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='checklist')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard'),0)+1, 'rascunho', $T1$Flashcards$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard'),0)+1, 'rascunho', $T1$Flashcards$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Flashcards (18)
 
@@ -1063,7 +1095,7 @@ SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefa
 | 18 | Líder cirurgião vs. não cirurgião: lesões não identificadas? | Menos com cirurgião (OR 0,48) [A21]. |
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Flashcards (18)
 
@@ -1184,7 +1216,7 @@ SELECT a.artefato_id, 'A43', $af$O teste SILENT (membro inferior) teve sensibili
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='flashcard' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='flashcard')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste inicial
 
@@ -1381,7 +1413,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Um estudo mostrou menor mortalidade no ISS > 25.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste inicial
 
@@ -1768,7 +1800,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste após o conhecimento básico
 
@@ -2035,7 +2067,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: A terciária reduz lesões não identificadas.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste após o conhecimento básico
 
@@ -2472,7 +2504,7 @@ SELECT a.artefato_id, 'D30', $af$No paciente de UTI, a avaliação terciária e 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D0
 
@@ -2739,7 +2771,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: Não é o argumento.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D0
 
@@ -3126,7 +3158,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_3' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_3')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+15
 
@@ -3393,7 +3425,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: Não.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+15
 
@@ -3765,7 +3797,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_4' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_4')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+45
 
@@ -4032,7 +4064,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+45
 
@@ -4364,7 +4396,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_5' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_5')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+90
 
@@ -4631,7 +4663,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Houve benefício em ISS > 25.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+90
 
@@ -5068,7 +5100,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'mapa', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa'),0)+1, 'rascunho', $T1$Mapa conceitual$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'mapa', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa'),0)+1, 'rascunho', $T1$Mapa conceitual$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Mapa conceitual
 
@@ -5109,7 +5141,7 @@ mindmap
 ```
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Mapa conceitual
 
@@ -5275,7 +5307,7 @@ SELECT a.artefato_id, 'A42', $af$Mesmo com TC de corpo inteiro na avaliação pr
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='mapa' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='mapa')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'objetivos', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos'),0)+1, 'rascunho', $T1$Objetivos de aprendizagem por perfil$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'objetivos', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos'),0)+1, 'rascunho', $T1$Objetivos de aprendizagem por perfil$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Objetivos de aprendizagem por perfil
 
@@ -5323,7 +5355,7 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 5. (A) **Supervisionar** treinandos na liderança da equipe sem assumir o comando sem necessidade [D29].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Objetivos de aprendizagem por perfil
 
@@ -5576,7 +5608,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='objetivos' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='objetivos')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'podcast_roteiro', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro'),0)+1, 'rascunho', $T1$Roteiro de podcast$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'podcast_roteiro', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro'),0)+1, 'rascunho', $T1$Roteiro de podcast$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Roteiro de podcast: "xABCDE: o que mudou e o que a evidência sustenta"
 
@@ -5673,7 +5705,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 8 a 10 minuto
 **RESIDENTE:** Até lá!
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Roteiro de podcast: "xABCDE: o que mudou e o que a evidência sustenta"
 
@@ -5910,7 +5942,7 @@ SELECT a.artefato_id, 'D4', $af$No pré-hospitalar, a hemorragia externa maciça
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='podcast_roteiro' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='podcast_roteiro')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'protocolo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo'),0)+1, 'rascunho', $T1$Protocolo assistencial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'protocolo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo'),0)+1, 'rascunho', $T1$Protocolo assistencial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Protocolo assistencial: avaliação inicial do traumatizado
 
@@ -5953,7 +5985,7 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
 8. TC de corpo inteiro (pan-TC): indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos ou fisiológicos, ou TCE moderado a grave [P2] (por exemplo, desaceleração severa ou capotamento [P3]; trauma evidente em várias regiões do corpo [P4]; Glasgow ≤12 aferido antes da sedação [P5]). Sem critério, a imagem é dirigida pelo mecanismo, pelo exame e por regras clínicas [P11]. Pan-TC não é sinônimo de qualquer trauma [P15]. O paciente instável ou sem resposta adequada vai primeiro para o controle da causa [P9]; o protocolo rápido de aquisição não é indicação de tomografia [P10]. Não esperar creatinina nem jejum [P12]; afrouxar ou retirar o torniquete antes da angio-TC do membro [P13]. **[Protocolo de tomografia de corpo inteiro em anexo]**
 9. Acionamento do protocolo de transfusão maciça. Acionar se houver qualquer um:
    - Escore ABC: FAST positivo, mecanismo penetrante, FC acima de 120 bpm, PAS abaixo de 90 mmHg, um ponto cada [D33]. Acionar com 2 ou mais pontos (ponto de corte confirmado pelo serviço em 12/11/2026).
-   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
+   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38]; a diretriz europeia recomenda o índice de choque e/ou a pressão de pulso para estimar choque e necessidade de transfusão [G5].
    - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
    - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
    Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. O protocolo de transfusão maciça do HCFMRP estará disponível em anexo próprio, na aula do tema de coagulopatia e transfusão maciça.
@@ -5970,8 +6002,9 @@ Avaliação terciária com revisão das imagens [D30]; hipotensão após a ressu
 ## 12. Critérios de transferência da sala vermelha
 A decisão é do líder do atendimento [D22], registrada no formulário.
 1. **Centro cirúrgico, sem passar pela tomografia.** Paciente instável ou sem resposta adequada à reposição (seção 4) com fonte provável de sangramento, priorizado para controle imediato da causa [P9]. Também o paciente que respondeu à reposição, mas precisa de cirurgia de emergência, como no tamponamento cardíaco ou no trauma de extremidade com sangramento exsanguinante [D40].
+   A diretriz europeia recomenda controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita [G6].
 2. **Radiologia intervencionista.** Paciente que precisa de controle de sangramento por via endovascular, como na fratura pélvica grave, sem atraso para outros exames [D40]. A colaboração próxima entre radiologia intervencionista e cirurgia associou-se a sobrevida 15,5% maior que a prevista [A22]. Disponível 24 horas por dia (informação do serviço, 12/11/2026). **[definir com a radiologia intervencionista: tempo de acionamento e uso de sala híbrida]**
-3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
+3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Sem fonte identificada e sem necessidade de controle imediato, investigar de imediato [G7]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
 4. **UTI.** **[proposta, sem fonte carregada; validar com a UTI]** Depois do controle do sangramento, ou da tomografia sem indicação cirúrgica imediata, se houver: via aérea definitiva ou ventilação mecânica; vasopressor ou transfusão em curso; protocolo de transfusão maciça acionado; TCE grave (Glasgow ≤8); necessidade de monitorização contínua. Na UTI, fazer a avaliação terciária com revisão das imagens [D30].
 5. **Enfermaria ou observação.** Paciente estável, com avaliações primária e secundária concluídas, sem indicação cirúrgica, de intervenção ou de UTI. Avaliação terciária depois [D31].
 
@@ -5982,10 +6015,10 @@ Avaliações primária e secundária concluídas e registradas; destino definido
 Preenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo porta-tomografia (meta de 30 minutos a validar [P14]); tempo até acionar o protocolo de transfusão maciça; pacientes instáveis levados à tomografia; lesões de diagnóstico tardio [A42].
 
 ## 15. Referências
-Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001.
+Camada 1: Carmont, história do ATLS, Postgrad Med J 2005 [H1]. Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57; ATLS, edição atual (anúncio oficial do ACS, 2025) [D44]. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001. Camada 5: diretriz europeia de sangramento maior no trauma, 6ª edição (Rossaint et al., Crit Care 2023;27:80) [G1].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Protocolo assistencial: avaliação inicial do traumatizado
 
@@ -6028,7 +6061,7 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
 8. TC de corpo inteiro (pan-TC): indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos ou fisiológicos, ou TCE moderado a grave [P2] (por exemplo, desaceleração severa ou capotamento [P3]; trauma evidente em várias regiões do corpo [P4]; Glasgow ≤12 aferido antes da sedação [P5]). Sem critério, a imagem é dirigida pelo mecanismo, pelo exame e por regras clínicas [P11]. Pan-TC não é sinônimo de qualquer trauma [P15]. O paciente instável ou sem resposta adequada vai primeiro para o controle da causa [P9]; o protocolo rápido de aquisição não é indicação de tomografia [P10]. Não esperar creatinina nem jejum [P12]; afrouxar ou retirar o torniquete antes da angio-TC do membro [P13]. **[Protocolo de tomografia de corpo inteiro em anexo]**
 9. Acionamento do protocolo de transfusão maciça. Acionar se houver qualquer um:
    - Escore ABC: FAST positivo, mecanismo penetrante, FC acima de 120 bpm, PAS abaixo de 90 mmHg, um ponto cada [D33]. Acionar com 2 ou mais pontos (ponto de corte confirmado pelo serviço em 12/11/2026).
-   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
+   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38]; a diretriz europeia recomenda o índice de choque e/ou a pressão de pulso para estimar choque e necessidade de transfusão [G5].
    - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
    - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
    Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. O protocolo de transfusão maciça do HCFMRP estará disponível em anexo próprio, na aula do tema de coagulopatia e transfusão maciça.
@@ -6045,8 +6078,9 @@ Avaliação terciária com revisão das imagens [D30]; hipotensão após a ressu
 ## 12. Critérios de transferência da sala vermelha
 A decisão é do líder do atendimento [D22], registrada no formulário.
 1. **Centro cirúrgico, sem passar pela tomografia.** Paciente instável ou sem resposta adequada à reposição (seção 4) com fonte provável de sangramento, priorizado para controle imediato da causa [P9]. Também o paciente que respondeu à reposição, mas precisa de cirurgia de emergência, como no tamponamento cardíaco ou no trauma de extremidade com sangramento exsanguinante [D40].
+   A diretriz europeia recomenda controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita [G6].
 2. **Radiologia intervencionista.** Paciente que precisa de controle de sangramento por via endovascular, como na fratura pélvica grave, sem atraso para outros exames [D40]. A colaboração próxima entre radiologia intervencionista e cirurgia associou-se a sobrevida 15,5% maior que a prevista [A22]. Disponível 24 horas por dia (informação do serviço, 12/11/2026). **[definir com a radiologia intervencionista: tempo de acionamento e uso de sala híbrida]**
-3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
+3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Sem fonte identificada e sem necessidade de controle imediato, investigar de imediato [G7]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
 4. **UTI.** **[proposta, sem fonte carregada; validar com a UTI]** Depois do controle do sangramento, ou da tomografia sem indicação cirúrgica imediata, se houver: via aérea definitiva ou ventilação mecânica; vasopressor ou transfusão em curso; protocolo de transfusão maciça acionado; TCE grave (Glasgow ≤8); necessidade de monitorização contínua. Na UTI, fazer a avaliação terciária com revisão das imagens [D30].
 5. **Enfermaria ou observação.** Paciente estável, com avaliações primária e secundária concluídas, sem indicação cirúrgica, de intervenção ou de UTI. Avaliação terciária depois [D31].
 
@@ -6057,7 +6091,7 @@ Avaliações primária e secundária concluídas e registradas; destino definido
 Preenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo porta-tomografia (meta de 30 minutos a validar [P14]); tempo até acionar o protocolo de transfusão maciça; pacientes instáveis levados à tomografia; lesões de diagnóstico tardio [A42].
 
 ## 15. Referências
-Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001.
+Camada 1: Carmont, história do ATLS, Postgrad Med J 2005 [H1]. Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57; ATLS, edição atual (anúncio oficial do ACS, 2025) [D44]. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001. Camada 5: diretriz europeia de sangramento maior no trauma, 6ª edição (Rossaint et al., Crit Care 2023;27:80) [G1].
 $T1$);
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A1', $af$Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).$af$, '2026_24', $af$we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies$af$
@@ -6260,6 +6294,36 @@ SELECT a.artefato_id, 'D41', $af$Quem responde à reposição sem necessidade ev
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'D44', $af$Na edição atual do ATLS, o ABCDE passou a xABCDE: o x indica o controle rápido da hemorragia externa exsanguinante, que salva vidas em alguns pacientes.$af$, 'ACS_ATLS11_anuncio_2025', $af$For certain patients, rapid control of exsanguinating external hemorrhage is lifesaving. To reflect this additional focus, the letter “x” was added to the beginning of the well-known ATLS mnemonic. ABCDE is now xABCDE.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G1', $af$Recomenda-se reduzir ao mínimo o tempo entre a lesão e o controle do sangramento (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the time elapsed between injury and bleeding control be minimised (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G5', $af$Recomenda-se usar o índice de choque e/ou a pressão de pulso para estimar o grau de choque e a necessidade de transfusão (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the shock index (SI) and/or pulse pressure (PP) be used to assess the degree of hypovolaemic shock and transfusion requirements (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G6', $af$Recomenda-se controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that patients with an obvious bleeding source and those presenting with haemorrhagic shock in extremis and a suspected source of bleeding undergo an immediate bleeding control procedure (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G7', $af$Sem fonte identificada e sem necessidade de controle imediato, recomenda-se investigação imediata para achar a fonte (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that patients with an unidentified source of bleeding, but without a need for immediate bleeding control, undergo immediate further investigation to determine the bleeding source (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H1', $af$O ATLS nasceu depois de um acidente aéreo em 1976 no interior de Nebraska, em que o cirurgião ortopedista James Styner se feriu, perdeu a esposa e teve três filhos gravemente feridos, e considerou errado o atendimento que receberam.$af$, 'Carmont2005_historia_ATLS', $af$He was horrified at the treatment his family received at a local hospital in rural Nebraska and decided that the established system for managing the severely injured was wrong.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'P1', $af$O protocolo de imagem da UE é uma versão preliminar, em validação multidisciplinar.$af$, 'HCFMRP_protocolo_imagem_politrauma_v2026-08', $af$Documento em construção e validação multidisciplinar$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
@@ -6335,7 +6399,7 @@ SELECT a.artefato_id, 'P15', $af$Pan-TC não é sinônimo de qualquer trauma.$af
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'resumo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo'),0)+1, 'rascunho', $T1$Resumo executivo$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'resumo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo'),0)+1, 'rascunho', $T1$Resumo executivo$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo executivo
 
@@ -6382,7 +6446,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 5. Fazer a avaliação terciária: a sala de trauma não encerra o diagnóstico.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo executivo
 
@@ -6604,7 +6668,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='resumo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='resumo')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'resumo_basico', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico'),0)+1, 'rascunho', $T1$Resumo básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'resumo_basico', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico'),0)+1, 'rascunho', $T1$Resumo básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
@@ -6643,7 +6707,7 @@ Um líder, de preferência o cirurgião do trauma, coordena e fica com a visão 
 4. Reavaliar sempre: lesão escondida aparece depois.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
@@ -6832,16 +6896,17 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='resumo_basico' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='resumo_basico')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'sintese_evidencia', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia'),0)+1, 'rascunho', $T1$Síntese de evidência$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'sintese_evidencia', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia'),0)+1, 'rascunho', $T1$Síntese de evidência$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
-Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Mattox (camada 2) e 75 artigos da revisão dos últimos 10 anos (camada 4), além do Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3). Camadas 1 e 5 ainda sem fontes carregadas para este tema.
+Tempo de leitura: cerca de 10 minutos. Base nas cinco camadas: história do ATLS e de suas edições antigas (camada 1); capítulos do Mattox e o ATLS vigente (camada 2); Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3); 75 artigos da revisão dos últimos 10 anos (camada 4); diretriz europeia de sangramento maior no trauma, 6ª edição, 2023 (camada 5).
 
 ## Consenso
 
+- **Origem.** O ATLS nasceu de um acidente aéreo em 1976 no interior de Nebraska, quando um cirurgião julgou errado o atendimento dado à própria família [H1]. Foi feito para quem não atende trauma com frequência [H2]; os cursos-piloto foram em 1977 e, em 1980, o curso já era nacional [H3]. Tratar primeiro a maior ameaça à vida foi controverso no início, por fugir da sequência história, exame e diagnóstico diferencial [H4].
 - **Objetivo.** A avaliação inicial serve para identificar e tratar rapidamente as lesões que ameaçam a vida [D1]. A alteração fisiológica é o maior determinante do desfecho [D26].
-- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A sigla xABCDE, usada pelo ATLS 11, expressa a mesma prioridade **[DOUTRINA – confirmar no ATLS 11, que não pode ser carregado]**.
+- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44].
 - **Hemorragia externa.** Compressão direta primeiro [D6]; no membro, o torniquete pode salvar a vida [D7]; não pinçar às cegas [D8]; cinta pélvica imediata nos pacientes de alto risco [D9].
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
@@ -6849,19 +6914,22 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Avaliação secundária e terciária.** A secundária é história (AMPLA) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
 - **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
+- **Diretriz.** A diretriz europeia de 2023 recomenda reduzir ao mínimo o tempo até o controle do sangramento [G1]; compressão e torniquete como adjunto no membro [G2]; estimar a hemorragia pela fisiologia, padrão de lesão, mecanismo e resposta à reposição [G4], com índice de choque e/ou pressão de pulso [G5]; controle imediato quando a fonte é evidente ou no choque em extremis [G6]; FAST no trauma toracoabdominal [G8]; cinta pélvica na suspeita de fratura de pelve [G13]; e aquecimento precoce [G12].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
-- **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
+- **Torniquete.** A doutrina diz que pode salvar a vida [D7] e a diretriz o recomenda como adjunto [G2]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
 - **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
 - **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
+- **TC de corpo inteiro.** A diretriz recomenda imagem precoce com TC de corpo inteiro (grau 1B) [G9]; a revisão mostra pouco ou nenhum efeito em mortalidade [A12].
 
 ## Lacunas no conhecimento
 
+- O conhecimento do curso cai em seis meses, embora os princípios fiquem por cerca de seis anos [H5]; isso justifica os pós-testes espaçados.
 - Os estudos de checklist são todos antes-e-depois [A7]; o ensaio que testará o ATLS de forma pragmática ainda está em andamento [A5].
 - Não há abordagem baseada em evidência para a hipotermia no trauma [A37], que atinge até dois terços dos graves [A36].
 - Lesões com diagnóstico tardio persistem: 13,9 % mesmo com TC de corpo inteiro [A42]; lesão potencialmente letal após a terciária em 0,26% [A41].
@@ -6871,20 +6939,21 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 
 1. **Quando inverter a ordem:** CAB/xABCDE para hemorragia externa e extremis [D2, D3] e ABCDE para os demais.
 2. **Torniquete:** salva vidas [D7] ou troca morte por amputação [A23, A24]?
-3. **TC de corpo inteiro:** rotina ou seletiva [A12, A39, A42]?
+3. **TC de corpo inteiro:** rotina ou seletiva [G9, A12, A39, A42]?
 4. **Classificar o choque:** a tabela do ATLS ainda serve [A32, A33]?
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
-Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Mattox (camada 2) e 75 artigos da revisão dos últimos 10 anos (camada 4), além do Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3). Camadas 1 e 5 ainda sem fontes carregadas para este tema.
+Tempo de leitura: cerca de 10 minutos. Base nas cinco camadas: história do ATLS e de suas edições antigas (camada 1); capítulos do Mattox e o ATLS vigente (camada 2); Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3); 75 artigos da revisão dos últimos 10 anos (camada 4); diretriz europeia de sangramento maior no trauma, 6ª edição, 2023 (camada 5).
 
 ## Consenso
 
+- **Origem.** O ATLS nasceu de um acidente aéreo em 1976 no interior de Nebraska, quando um cirurgião julgou errado o atendimento dado à própria família [H1]. Foi feito para quem não atende trauma com frequência [H2]; os cursos-piloto foram em 1977 e, em 1980, o curso já era nacional [H3]. Tratar primeiro a maior ameaça à vida foi controverso no início, por fugir da sequência história, exame e diagnóstico diferencial [H4].
 - **Objetivo.** A avaliação inicial serve para identificar e tratar rapidamente as lesões que ameaçam a vida [D1]. A alteração fisiológica é o maior determinante do desfecho [D26].
-- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A sigla xABCDE, usada pelo ATLS 11, expressa a mesma prioridade **[DOUTRINA – confirmar no ATLS 11, que não pode ser carregado]**.
+- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44].
 - **Hemorragia externa.** Compressão direta primeiro [D6]; no membro, o torniquete pode salvar a vida [D7]; não pinçar às cegas [D8]; cinta pélvica imediata nos pacientes de alto risco [D9].
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
@@ -6892,19 +6961,22 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Avaliação secundária e terciária.** A secundária é história (AMPLA) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
 - **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
+- **Diretriz.** A diretriz europeia de 2023 recomenda reduzir ao mínimo o tempo até o controle do sangramento [G1]; compressão e torniquete como adjunto no membro [G2]; estimar a hemorragia pela fisiologia, padrão de lesão, mecanismo e resposta à reposição [G4], com índice de choque e/ou pressão de pulso [G5]; controle imediato quando a fonte é evidente ou no choque em extremis [G6]; FAST no trauma toracoabdominal [G8]; cinta pélvica na suspeita de fratura de pelve [G13]; e aquecimento precoce [G12].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
-- **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
+- **Torniquete.** A doutrina diz que pode salvar a vida [D7] e a diretriz o recomenda como adjunto [G2]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
 - **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
 - **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
+- **TC de corpo inteiro.** A diretriz recomenda imagem precoce com TC de corpo inteiro (grau 1B) [G9]; a revisão mostra pouco ou nenhum efeito em mortalidade [A12].
 
 ## Lacunas no conhecimento
 
+- O conhecimento do curso cai em seis meses, embora os princípios fiquem por cerca de seis anos [H5]; isso justifica os pós-testes espaçados.
 - Os estudos de checklist são todos antes-e-depois [A7]; o ensaio que testará o ATLS de forma pragmática ainda está em andamento [A5].
 - Não há abordagem baseada em evidência para a hipotermia no trauma [A37], que atinge até dois terços dos graves [A36].
 - Lesões com diagnóstico tardio persistem: 13,9 % mesmo com TC de corpo inteiro [A42]; lesão potencialmente letal após a terciária em 0,26% [A41].
@@ -6914,7 +6986,7 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 
 1. **Quando inverter a ordem:** CAB/xABCDE para hemorragia externa e extremis [D2, D3] e ABCDE para os demais.
 2. **Torniquete:** salva vidas [D7] ou troca morte por amputação [A23, A24]?
-3. **TC de corpo inteiro:** rotina ou seletiva [A12, A39, A42]?
+3. **TC de corpo inteiro:** rotina ou seletiva [G9, A12, A39, A42]?
 4. **Classificar o choque:** a tabela do ATLS ainda serve [A32, A33]?
 $T1$);
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
@@ -7197,8 +7269,83 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'D44', $af$Na edição atual do ATLS, o ABCDE passou a xABCDE: o x indica o controle rápido da hemorragia externa exsanguinante, que salva vidas em alguns pacientes.$af$, 'ACS_ATLS11_anuncio_2025', $af$For certain patients, rapid control of exsanguinating external hemorrhage is lifesaving. To reflect this additional focus, the letter “x” was added to the beginning of the well-known ATLS mnemonic. ABCDE is now xABCDE.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G1', $af$Recomenda-se reduzir ao mínimo o tempo entre a lesão e o controle do sangramento (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the time elapsed between injury and bleeding control be minimised (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G2', $af$Recomenda-se compressão local das feridas abertas e torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend adjunct tourniquet use to stop life-threatening bleeding from open extremity injuries in the pre-surgical setting (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G4', $af$Recomenda-se estimar a hemorragia pela combinação de fisiologia, padrão anatômico, mecanismo e resposta à reposição inicial (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the physician clinically assess the extent of traumatic haemorrhage using a combination of patient physiology, anatomical injury pattern, mechanism of injury and the patient response to initial resuscitation (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G5', $af$Recomenda-se usar o índice de choque e/ou a pressão de pulso para estimar o grau de choque e a necessidade de transfusão (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the shock index (SI) and/or pulse pressure (PP) be used to assess the degree of hypovolaemic shock and transfusion requirements (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G6', $af$Recomenda-se controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that patients with an obvious bleeding source and those presenting with haemorrhagic shock in extremis and a suspected source of bleeding undergo an immediate bleeding control procedure (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G8', $af$Recomenda-se ultrassom à beira do leito, incluindo o FAST, no trauma toracoabdominal (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend the use of point-of-care ultrasonography (POCUS), including FAST, in patients with thoracoabdominal injuries (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G9', $af$Recomenda-se imagem precoce com TC de corpo inteiro contrastada para identificar as lesões e a fonte de sangramento (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend early imaging using contrast-enhanced whole-body CT (WBCT) for the detection and identification of the type of injury and the potential source of bleeding (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G12', $af$Recomenda-se aplicar cedo medidas para reduzir a perda de calor e aquecer o hipotérmico até a normotermia (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend early application of measures to reduce heat loss and warm the hypothermic patient to achieve and maintain normothermia (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G13', $af$Recomenda-se cinta pélvica como adjunto na suspeita de fratura de pelve com sangramento com risco de vida (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend the adjunct use of a pelvic binder in the pre-hospital setting to limit life-threatening bleeding in the presence of a suspected pelvic fracture (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H1', $af$O ATLS nasceu depois de um acidente aéreo em 1976 no interior de Nebraska, em que o cirurgião ortopedista James Styner se feriu, perdeu a esposa e teve três filhos gravemente feridos, e considerou errado o atendimento que receberam.$af$, 'Carmont2005_historia_ATLS', $af$He was horrified at the treatment his family received at a local hospital in rural Nebraska and decided that the established system for managing the severely injured was wrong.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H2', $af$O objetivo original era treinar médicos que não atendem trauma com frequência, como generalistas do interior, na abordagem inicial do traumatizado grave.$af$, 'Carmont2005_historia_ATLS', $af$train those doctors who do not manage trauma on a regular basis, such as rural general practitioners, in the initial management of the severely injured patient$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H3', $af$Os cursos-piloto foram em 1977, em Nebraska, e em 1980 o curso já era nacional, sob o Colégio Americano de Cirurgiões.$af$, 'Carmont2005_historia_ATLS', $af$The pilot courses were run in Aubern, Nebraska in 1977. These had expanded nationally under the auspices of the American College of Surgeons by 1980.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H4', $af$A filosofia do ATLS é tratar primeiro a maior ameaça à vida; no início isso foi controverso, por contrariar a sequência tradicional de história, exame e diagnóstico diferencial.$af$, 'Carmont2005_historia_ATLS', $af$This practice was initially thought to be controversial as it contradicted the established medical wisdom of the need to take a history and examine the patient leading to a differential diagnosis.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H5', $af$O conhecimento cai seis meses depois do curso, mas os princípios importantes ficam por cerca de seis anos.$af$, 'Carmont2005_historia_ATLS', $af$Authors report a deterioration of knowledge by six months after the course however the important principles are retained for some six years.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'slides', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides'),0)+1, 'rascunho', $T1$Slides da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'slides', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides'),0)+1, 'rascunho', $T1$Slides da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Slides da aula
 Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresentação visual é projetada na reunião.
@@ -7249,7 +7396,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 
 *T001 · Seção 1 · Fontes: A1, A2, A4, A5*
 
-> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
+> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Contexto histórico: o ATLS nasceu de um acidente em 1976 e foi feito para quem não atende trauma com frequência [H1, H2]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
 
 
 ## 2. O que a evidência diz: as quatro controvérsias, os formulários e checklists e o ultrassom.
@@ -7269,9 +7416,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Exposição e temperatura
 - O que mudou: o sangramento que mata em minutos passa à frente da via aérea.
 
-*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.)*
+*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.), D44 (ATLS), G2, G6 (diretriz europeia 2023)*
 
-> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A sigla xABCDE é a do ATLS 11, que não foi carregado; os revisores confirmam.
+> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44]. A diretriz europeia de 2023 recomenda compressão e torniquete como adjunto [G2] e controle imediato quando a fonte é evidente [G6].
 
 ### Slide 6. x · Hemorragia externa
 - Torniquete pré-hospitalar
@@ -7282,9 +7429,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Percepção de quem aplica: sem correlação com a pressão medida
 - Atenção: dados observacionais. Mais amputação pode refletir lesões mais graves, não efeito do torniquete.
 
-*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7*
+*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7, G2*
 
-> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
+> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. A diretriz europeia de 2023 recomenda torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B) [G2]. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
 
 ### Slide 7. Tomografia de corpo inteiro
 - Pouco ou nenhum efeito
@@ -7294,9 +7441,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - 3,02%
 - Dos submetidos tinham avaliação primária sem alterações
 
-*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: A12, A39, A40*
+*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: G9, A12, A39, A40, P2*
 
-> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A indicação depende de critérios do serviço, a definir no protocolo institucional.
+> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A diretriz europeia de 2023 recomenda TC de corpo inteiro precoce (grau 1B) [G9]; a revisão não mostra ganho de mortalidade com a rotina [A12]. No HCFMRP, a indicação segue o protocolo de imagem da UE: pelo menos um dos três grupos de critérios [P2].
 
 ### Slide 8. C · O paciente está “estável”?
 - Ferramenta ou conceito
@@ -7312,9 +7459,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Adrenalina na parada traumática
 - Associada a menor sobrevida em 7 dias (OR 0,20)
 
-*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17*
+*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17, G5*
 
-> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
+> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado; a diretriz europeia recomenda índice de choque e/ou pressão de pulso [G5]: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
 
 ### Slide 9. Checklist na ressuscitação
 - A favor
@@ -7444,7 +7591,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 > **Nota do apresentador:** Retome a votação do início e peça que alguém explique por que a resposta é B [A2, A4]. Feche com as cinco mensagens. Em seguida: discussão de 10 minutos e o caso clínico em pequenos grupos.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Slides da aula
 Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresentação visual é projetada na reunião.
@@ -7495,7 +7642,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 
 *T001 · Seção 1 · Fontes: A1, A2, A4, A5*
 
-> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
+> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Contexto histórico: o ATLS nasceu de um acidente em 1976 e foi feito para quem não atende trauma com frequência [H1, H2]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
 
 
 ## 2. O que a evidência diz: as quatro controvérsias, os formulários e checklists e o ultrassom.
@@ -7515,9 +7662,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Exposição e temperatura
 - O que mudou: o sangramento que mata em minutos passa à frente da via aérea.
 
-*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.)*
+*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.), D44 (ATLS), G2, G6 (diretriz europeia 2023)*
 
-> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A sigla xABCDE é a do ATLS 11, que não foi carregado; os revisores confirmam.
+> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44]. A diretriz europeia de 2023 recomenda compressão e torniquete como adjunto [G2] e controle imediato quando a fonte é evidente [G6].
 
 ### Slide 6. x · Hemorragia externa
 - Torniquete pré-hospitalar
@@ -7528,9 +7675,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Percepção de quem aplica: sem correlação com a pressão medida
 - Atenção: dados observacionais. Mais amputação pode refletir lesões mais graves, não efeito do torniquete.
 
-*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7*
+*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7, G2*
 
-> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
+> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. A diretriz europeia de 2023 recomenda torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B) [G2]. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
 
 ### Slide 7. Tomografia de corpo inteiro
 - Pouco ou nenhum efeito
@@ -7540,9 +7687,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - 3,02%
 - Dos submetidos tinham avaliação primária sem alterações
 
-*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: A12, A39, A40*
+*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: G9, A12, A39, A40, P2*
 
-> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A indicação depende de critérios do serviço, a definir no protocolo institucional.
+> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A diretriz europeia de 2023 recomenda TC de corpo inteiro precoce (grau 1B) [G9]; a revisão não mostra ganho de mortalidade com a rotina [A12]. No HCFMRP, a indicação segue o protocolo de imagem da UE: pelo menos um dos três grupos de critérios [P2].
 
 ### Slide 8. C · O paciente está “estável”?
 - Ferramenta ou conceito
@@ -7558,9 +7705,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Adrenalina na parada traumática
 - Associada a menor sobrevida em 7 dias (OR 0,20)
 
-*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17*
+*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17, G5*
 
-> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
+> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado; a diretriz europeia recomenda índice de choque e/ou pressão de pulso [G5]: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
 
 ### Slide 9. Checklist na ressuscitação
 - A favor
@@ -8029,8 +8176,48 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'D44', $af$Na edição atual do ATLS, o ABCDE passou a xABCDE: o x indica o controle rápido da hemorragia externa exsanguinante, que salva vidas em alguns pacientes.$af$, 'ACS_ATLS11_anuncio_2025', $af$For certain patients, rapid control of exsanguinating external hemorrhage is lifesaving. To reflect this additional focus, the letter “x” was added to the beginning of the well-known ATLS mnemonic. ABCDE is now xABCDE.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G2', $af$Recomenda-se compressão local das feridas abertas e torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend adjunct tourniquet use to stop life-threatening bleeding from open extremity injuries in the pre-surgical setting (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G5', $af$Recomenda-se usar o índice de choque e/ou a pressão de pulso para estimar o grau de choque e a necessidade de transfusão (grau 1C).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that the shock index (SI) and/or pulse pressure (PP) be used to assess the degree of hypovolaemic shock and transfusion requirements (Grade 1C).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G6', $af$Recomenda-se controle imediato do sangramento quando a fonte é evidente e no choque em extremis com fonte suspeita (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend that patients with an obvious bleeding source and those presenting with haemorrhagic shock in extremis and a suspected source of bleeding undergo an immediate bleeding control procedure (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'G9', $af$Recomenda-se imagem precoce com TC de corpo inteiro contrastada para identificar as lesões e a fonte de sangramento (grau 1B).$af$, 'Diretriz_europeia_sangramento_2023', $af$We recommend early imaging using contrast-enhanced whole-body CT (WBCT) for the detection and identification of the type of injury and the potential source of bleeding (Grade 1B).$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H1', $af$O ATLS nasceu depois de um acidente aéreo em 1976 no interior de Nebraska, em que o cirurgião ortopedista James Styner se feriu, perdeu a esposa e teve três filhos gravemente feridos, e considerou errado o atendimento que receberam.$af$, 'Carmont2005_historia_ATLS', $af$He was horrified at the treatment his family received at a local hospital in rural Nebraska and decided that the established system for managing the severely injured was wrong.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'H2', $af$O objetivo original era treinar médicos que não atendem trauma com frequência, como generalistas do interior, na abordagem inicial do traumatizado grave.$af$, 'Carmont2005_historia_ATLS', $af$train those doctors who do not manage trauma on a regular basis, such as rural general practitioners, in the initial management of the severely injured patient$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'P2', $af$A pan-TC é indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos/fisiológicos ou TCE moderado a grave.$af$, 'HCFMRP_protocolo_imagem_politrauma_v2026-08', $af$Indicar Pan-TC quando houver pelo menos UM dos três grupos abaixo$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1'),0)+1, 'rascunho', $T1$Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1'),0)+1, 'rascunho', $T1$Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste inicial
 
@@ -8229,7 +8416,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - E) O checklist aumenta a mortalidade
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste inicial
 
@@ -8618,7 +8805,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2'),0)+1, 'rascunho', $T1$Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2'),0)+1, 'rascunho', $T1$Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste após o conhecimento básico
 
@@ -8887,7 +9074,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) A avaliação terciária é desnecessária
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste após o conhecimento básico
 
@@ -9326,7 +9513,7 @@ SELECT a.artefato_id, 'D30', $af$No paciente de UTI, a avaliação terciária e 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3'),0)+1, 'rascunho', $T1$Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3'),0)+1, 'rascunho', $T1$Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D0
 
@@ -9595,7 +9782,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Custo zero comprovado
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D0
 
@@ -9984,7 +10171,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_3' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_3')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4'),0)+1, 'rascunho', $T1$Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4'),0)+1, 'rascunho', $T1$Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+15
 
@@ -10253,7 +10440,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Só para colher sangue
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+15
 
@@ -10627,7 +10814,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_4' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_4')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5'),0)+1, 'rascunho', $T1$Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5'),0)+1, 'rascunho', $T1$Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+45
 
@@ -10896,7 +11083,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) TC para todos, dispensando a terciária
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+45
 
@@ -11230,7 +11417,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_5' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_5')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6'),0)+1, 'rascunho', $T1$Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6'),0)+1, 'rascunho', $T1$Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+90
 
@@ -11499,7 +11686,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Só há dano
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+90
 

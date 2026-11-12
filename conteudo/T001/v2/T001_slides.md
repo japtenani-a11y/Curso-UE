@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Slides da aula
 Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresentação visual é projetada na reunião.
@@ -49,7 +49,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 
 *T001 · Seção 1 · Fontes: A1, A2, A4, A5*
 
-> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
+> **Nota do apresentador:** Retome a votação: a resposta é B. Há associação com menor mortalidade (OR 0,60), mas vinda de estudos observacionais [A1, A2]. Os autores do ADVANCE TRAUMA escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos [A4]; o ensaio incluirá pelo menos 4320 pacientes [A5]. Contexto histórico: o ATLS nasceu de um acidente em 1976 e foi feito para quem não atende trauma com frequência [H1, H2]. Pergunta ao grupo: isso muda a forma como ensinamos o ATLS?
 
 
 ## 2. O que a evidência diz: as quatro controvérsias, os formulários e checklists e o ultrassom.
@@ -69,9 +69,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Exposição e temperatura
 - O que mudou: o sangramento que mata em minutos passa à frente da via aérea.
 
-*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.)*
+*T001 · Controvérsia 1: quando inverter a ordem · Fontes: D2, D3, D4 (Mattox, Trauma 9ª ed.), D44 (ATLS), G2, G6 (diretriz europeia 2023)*
 
-> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A sigla xABCDE é a do ATLS 11, que não foi carregado; os revisores confirmam.
+> **Nota do apresentador:** Mattox, capítulo 13: na hemorragia externa ou compressível com risco de vida e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. Capítulo 10: no pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. A edição atual do ATLS passou a usar xABCDE: o x é o controle rápido da hemorragia externa exsanguinante [D44]. A diretriz europeia de 2023 recomenda compressão e torniquete como adjunto [G2] e controle imediato quando a fonte é evidente [G6].
 
 ### Slide 6. x · Hemorragia externa
 - Torniquete pré-hospitalar
@@ -82,9 +82,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Percepção de quem aplica: sem correlação com a pressão medida
 - Atenção: dados observacionais. Mais amputação pode refletir lesões mais graves, não efeito do torniquete.
 
-*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7*
+*T001 · Controvérsia 2: torniquete · Fontes: A23, A24, A25, A26, D6, D7, G2*
 
-> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
+> **Nota do apresentador:** Revisão sistemática de torniquete pré-hospitalar: mortalidade 4,02% vs 6,43%, RR 0,70 (IC 95% 0,46–1,07), não significativo [A23]; amputação inicial 19,32% vs 6,4%, RR 2,07 (IC 95% 1,21–3,52) [A24]. Discutir confusão por gravidade e tempo de torniquete. A diretriz europeia de 2023 recomenda torniquete como adjunto no sangramento de extremidade com risco de vida (grau 1B) [G2]. Curativos compressivos: pressão média 169,35 ± 84,33 mmHg, variação 50–412 [A25]; sem correlação entre autoavaliação e pressão medida, p = 0,541 [A26].
 
 ### Slide 7. Tomografia de corpo inteiro
 - Pouco ou nenhum efeito
@@ -94,9 +94,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - 3,02%
 - Dos submetidos tinham avaliação primária sem alterações
 
-*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: A12, A39, A40*
+*T001 · Controvérsia 3: TC de corpo inteiro · Fontes: G9, A12, A39, A40, P2*
 
-> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A indicação depende de critérios do serviço, a definir no protocolo institucional.
+> **Nota do apresentador:** Revisão de revisões: TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência [A12]. Em pacientes em choque, mortalidade precoce de 17,4% com TC e 27,6% sem, p = 0,21 — sem diferença [A39]. Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações [A40]. A diretriz europeia de 2023 recomenda TC de corpo inteiro precoce (grau 1B) [G9]; a revisão não mostra ganho de mortalidade com a rotina [A12]. No HCFMRP, a indicação segue o protocolo de imagem da UE: pelo menos um dos três grupos de critérios [P2].
 
 ### Slide 8. C · O paciente está “estável”?
 - Ferramenta ou conceito
@@ -112,9 +112,9 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 - Adrenalina na parada traumática
 - Associada a menor sobrevida em 7 dias (OR 0,20)
 
-*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17*
+*T001 · Controvérsia 4: classificar o choque · Fontes: A31, A32, A33, A34, A35, D17, G5*
 
-> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
+> **Nota do apresentador:** Não classificar o choque por um parâmetro isolado; a diretriz europeia recomenda índice de choque e/ou pressão de pulso [G5]: a comparação clássica entre déficit de base e parâmetros do ATLS superestimou a classe de choque dos parâmetros tradicionais [A32]. Estabilidade hemodinâmica: 67 artigos elegíveis, definida em 70% deles, sem consenso [A33]. RUSH 94,2% de sensibilidade [A34]. FAST-PLUS: 5 de 67 pacientes, 7,5% [A35]. Adrenalina na parada extra-hospitalar traumática: OR 0,20 (IC 95% 0,08–0,48) para sobrevida em 7 dias — observacional [A31].
 
 ### Slide 9. Checklist na ressuscitação
 - A favor
