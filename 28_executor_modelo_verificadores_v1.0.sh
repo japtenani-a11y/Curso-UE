@@ -120,6 +120,7 @@ export interface RespostaModelo {
   modelo: string;
   tokensEntrada: number;
   tokensSaida: number;
+  parou: string;
 }
 
 export async function chamarModelo(p: {
@@ -144,7 +145,7 @@ export async function chamarModelo(p: {
   if (!res.ok) throw new Error(`API do modelo HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const j: any = (await res.json()) as any;
   const texto = (j.content ?? []).filter((b: any) => b.type === 'text').map((b: any) => b.text).join('');
-  return { texto, modelo: j.model ?? modelo, tokensEntrada: j.usage?.input_tokens ?? 0, tokensSaida: j.usage?.output_tokens ?? 0 };
+  return { texto, modelo: j.model ?? modelo, tokensEntrada: j.usage?.input_tokens ?? 0, tokensSaida: j.usage?.output_tokens ?? 0, parou: j.stop_reason ?? '' };
 }
 EOF_modelo
 cat > "$M/avaliar.ts" <<'EOF_avaliar'
@@ -228,7 +229,7 @@ export async function executarJob(job: Job): Promise<void> {
   const r = await chamarModelo({
     system: prompt.conteudo + '\n\n' + contrato,
     user,
-    maxTokens: prompt.max_tokens ?? 8000,
+    maxTokens: Math.max(prompt.max_tokens ?? 0, Number(process.env.MIN_TOKENS_SAIDA ?? 16000)),
     temperatura: prompt.temperatura ?? 0.2,
   });
 
@@ -238,6 +239,7 @@ export async function executarJob(job: Job): Promise<void> {
     [job.job_id, job.tema_id, job.fase, job.skill_codigo, r.modelo, r.tokensEntrada, r.tokensSaida, Date.now() - inicio],
   );
 
+  if (r.parou === 'max_tokens') throw new Error('saida do modelo truncada (max_tokens); aumente MIN_TOKENS_SAIDA');
   const saida = lerSaida(r.texto);
   const aprovado = await avaliarGates(job, saida.afirmacoes, fontes);
   if (!aprovado) throw new Error('gate de evidencia reprovou o artefato; nada foi gravado');
@@ -371,6 +373,13 @@ test('lerSaida tolera cerca de codigo', () => {
   assert.throws(() => lerSaida('sem json'));
 });
 EOF_t
+cat > "$RAIZ/executor/tsconfig.teste.json" <<'EOF_tc'
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "rootDir": ".", "outDir": "dist-test" },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}
+EOF_tc
 cat > "$RAIZ/executor/test/selecao.test.ts" <<'EOF_ts'
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -394,4 +403,4 @@ test('selecionarFontes respeita orcamento e prioriza relevantes', () => {
   assert.ok(r.reduce((s, x) => s + x.texto.length, 0) <= 10_000);
 });
 EOF_ts
-echo "OK. Teste: cd $RAIZ/executor && npx tsc && node --test dist/test/*.test.js"
+echo "OK. Teste: cd $RAIZ/executor && npx tsc && npx tsc -p tsconfig.teste.json && node --test dist-test/test/*.test.js"
