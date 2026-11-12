@@ -16,36 +16,30 @@ sudo service postgresql start
 ```
 
 ## 3. Copiar o projeto e as fontes para dentro do Ubuntu
-No Windows, suas pastas ficam em `/mnt/c/Users/SEU_USUARIO/...`. Exemplo:
+O Ubuntu enxerga o Windows em `/mnt/c/...`. Com o ZIP do projeto e o `T001_fontes.zip` em `C:\Users\japt7\Downloads`:
 ```
-cp -r /mnt/c/Users/SEU_USUARIO/CAMINHO/Curso-UE ~/Curso-UE
-mkdir -p ~/fontes_zip && unzip /mnt/c/Users/SEU_USUARIO/Downloads/T001_fontes.zip -d ~/fontes_zip
+unzip -q /mnt/c/Users/japt7/Downloads/Curso-UE-executor-v2.zip -d ~
+ls ~                       # veja o nome da pasta criada (ex.: Curso-UE-executor-v2)
+cd ~/Curso-UE-executor-v2  # ajuste ao nome que apareceu
+mkdir -p ~/fontes_zip && unzip -q /mnt/c/Users/japt7/Downloads/T001_fontes.zip -d ~/fontes_zip
+ls ~/fontes_zip/T001 | head -3
 ```
-(o zip cria `~/fontes_zip/T001/`). Confira: `ls ~/fontes_zip/T001 | head`.
 
-## 4. Criar o banco e instalar (uma vez)
+## 4. Criar o banco e instalar (uma vez) — um unico comando
+Dentro da pasta do projeto:
 ```
-cd ~/Curso-UE
-sudo -u postgres createdb programa
-export PGUSER=postgres PGHOST=/var/run/postgresql   # se pedir senha, use: sudo -u postgres psql ...
-for f in 01_instalar_v4.4_linhas 03_setup_minimo_v4.3_linhas 04_setup_resposta_e_pesquisa_v4.3.sql 05_setup_preceptor_e_curador_v4.4.sql 12_setup_conteudo_minimo_v4.4.sql 13_setup_pesquisador_v4.4.sql 16_setup_prompts_fase_v4.4.sql 18_setup_skills_v4.4.sql 19_setup_design_tokens_v4.4.sql 20_agendador_gatilhos_v4.4.sql 22_correcao_maestro_job_e_role_v4.5.sql 23_correcao_defeitos_v4.6.sql; do
-  sudo -u postgres psql -d programa -v ON_ERROR_STOP=1 -q -f $f || break
-done
-sudo -u postgres psql -d programa -v ON_ERROR_STOP=1 -q -v api_pw=TROQUE1 -v maestro_pw=TROQUE2 -v metabase_pw=TROQUE3 -f 27_correcoes_seguranca_v1.0.sql
-sudo -u postgres psql -d programa -v ON_ERROR_STOP=1 -q -f 28_texto_integral_fontes_v1.0.sql
-sudo -u postgres psql -d programa -v ON_ERROR_STOP=1 -q -f 29_carga_fontes_v1.0.sql
-bash 06_scaffolding_v1.0.sh ./programa-cut && bash 17_scaffolding_executor_v1.0.sh ./programa-cut && bash 22b_patch_executor_v1.1.sh ./programa-cut
+bash instalar_banco_wsl_v1.0.sh japt1992 ./programa-cut
 ```
-Troque `TROQUE1/2/3` por senhas suas (anote a do `maestro_pw`).
+(`japt1992` e a senha do banco local de teste; vale para postgres, api_rw, maestro_rw e metabase_ro.)
+Se o arquivo `instalar_banco_wsl_v1.0.sh` nao existir na sua pasta, baixe de novo o ZIP da branch executor-v2 ou copie o arquivo enviado no chat para dentro dela.
+Nao use `sudo -u postgres psql -f arquivo`: o usuario postgres nao le arquivos da sua pasta pessoal ("permission denied").
 
 ## 5. Variaveis e execucao (so no terminal)
 ```
 export ANTHROPIC_API_KEY="..."        # chave nova
 export ANTHROPIC_MODEL="claude-sonnet-5-5"
 export NCBI_API_KEY="..."             # opcional
-export MAESTRO_DATABASE_URL="postgres://maestro_rw:TROQUE2@localhost:5432/programa"
-export DATABASE_URL="postgres://postgres@/programa?host=/var/run/postgresql"
+export MAESTRO_DATABASE_URL="postgresql://maestro_rw:japt1992@localhost:5432/programa"
+export DATABASE_URL="postgresql://postgres:japt1992@localhost:5432/programa"
 bash rodar_T001_v1.0.sh ./programa-cut ~/fontes_zip 45
 ```
-Se o `psql` do passo 5 pedir senha do usuario `postgres`, rode como: `sudo -u postgres psql ...` ou defina uma senha para ele.
-Para `localhost:5432` aceitar o `maestro_rw` com senha, o `pg_hba.conf` do Ubuntu normalmente ja usa `scram-sha-256` para 127.0.0.1.
