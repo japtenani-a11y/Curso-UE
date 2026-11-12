@@ -248,6 +248,24 @@
    "trecho_literal": "Checklist- and algorithm-based formats produced similar short-term gains."
   },
   {
+   "id": "A45",
+   "texto": "O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals"
+  },
+  {
+   "id": "A46",
+   "texto": "A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)"
+  },
+  {
+   "id": "A47",
+   "texto": "O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "A prospective observational analysis of patients with blunt chest trauma"
+  },
+  {
    "id": "D1",
    "texto": "O objetivo da avaliação inicial é identificar e tratar rapidamente as lesões que ameaçam a vida.",
    "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",

@@ -236,10 +236,10 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro conceitual: Não houve diferença de sobrevida.
 
-**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15
-- A) erro conceitual: Desenho não permite.
-- B) erro técnico: Há.
-- C) **correta**: 
+**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15, A45, A46
+- A) erro conceitual: O efeito foi num subgrupo e em hospitais não terciários.
+- B) erro técnico: Há dado de mortalidade.
+- C) **correta**: desfecho secundário, num subgrupo e num contexto diferente do nosso; vale aplicar com cautela.
 - D) erro de conduta: Não.
 - E) erro de indicação: Não.
 

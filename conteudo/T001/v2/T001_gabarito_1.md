@@ -149,8 +149,8 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: a fisiologia é o maior determinante do desfecho; o destino depende da resposta.
 - E) erro de indicação: Levar à TC um paciente sem resposta clara à ressuscitação é arriscado.
 
-**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15
-- A) erro de indicação: A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.
+**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15, A45, A46
+- A) erro de indicação: A mortalidade foi desfecho secundário e caiu no subgrupo com fisiologia alterada, em ensaio randomizado por conglomerados.
 - B) erro conceitual: Houve melhora em 14 de 16 indicadores.
 - C) erro de conduta: Não houve aumento de mortalidade.
 - D) erro técnico: Os indicadores melhorados são do cuidado, não só do registro.

@@ -336,11 +336,6 @@ Total: 170 questões de caso e 1 questão fixa (igual para todos os perfis). O s
 
 A questão fixa tem grau diferente por perfil porque o mesmo enunciado é mais fácil para quem tem mais experiência.$T1$);
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
-SELECT a.artefato_id, 'A1', $af$Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).$af$, '2026_24', $af$we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies$af$
-  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
- WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
-ON CONFLICT (artefato_id, codigo) DO NOTHING;
-INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A2', $af$Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.$af$, '2026_24', $af$Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
@@ -537,6 +532,21 @@ SELECT a.artefato_id, 'A43', $af$O teste SILENT (membro inferior) teve sensibili
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A44', $af$Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.$af$, '2026_10', $af$Checklist- and algorithm-based formats produced similar short-term gains.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A47', $af$O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.$af$, '2024_47', $af$A prospective observational analysis of patients with blunt chest trauma$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -1325,8 +1335,8 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: a fisiologia é o maior determinante do desfecho; o destino depende da resposta.
 - E) erro de indicação: Levar à TC um paciente sem resposta clara à ressuscitação é arriscado.
 
-**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15
-- A) erro de indicação: A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.
+**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15, A45, A46
+- A) erro de indicação: A mortalidade foi desfecho secundário e caiu no subgrupo com fisiologia alterada, em ensaio randomizado por conglomerados.
 - B) erro conceitual: Houve melhora em 14 de 16 indicadores.
 - C) erro de conduta: Não houve aumento de mortalidade.
 - D) erro técnico: Os indicadores melhorados são do cuidado, não só do registro.
@@ -1522,8 +1532,8 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: a fisiologia é o maior determinante do desfecho; o destino depende da resposta.
 - E) erro de indicação: Levar à TC um paciente sem resposta clara à ressuscitação é arriscado.
 
-**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15
-- A) erro de indicação: A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.
+**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A13, A14, A15, A45, A46
+- A) erro de indicação: A mortalidade foi desfecho secundário e caiu no subgrupo com fisiologia alterada, em ensaio randomizado por conglomerados.
 - B) erro conceitual: Houve melhora em 14 de 16 indicadores.
 - C) erro de conduta: Não houve aumento de mortalidade.
 - D) erro técnico: Os indicadores melhorados são do cuidado, não só do registro.
@@ -1639,6 +1649,16 @@ SELECT a.artefato_id, 'A36', $af$A hipotermia está presente em até dois terço
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A39', $af$Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).$af$, '2020_70', $af$no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_1')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_1')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -1875,12 +1895,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: há estudo com baixa sensibilidade e muitos falsos negativos.
 - E) erro conceitual: O resultado negativo não basta com a clínica alterada.
 
-**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29
-- A) erro de indicação: Não é o valor do estudo.
-- B) erro técnico: 99,8% é a especificidade.
-- C) **correta**: a especificidade foi 99,8%.
-- D) erro conceitual: Não é o valor do estudo.
-- E) erro de conduta: Nenhum estudo mostrou 100%.
+**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29, A30
+- A) erro técnico: O eFAST inclui a avaliação do tórax.
+- B) erro de indicação: Exame negativo não indica drenagem.
+- C) **correta**: sensibilidade de 93,6% em um estudo e baixa, com muitos falsos negativos, em outro.
+- D) erro conceitual: 99,8% foi a especificidade, não a sensibilidade.
+- E) erro de conduta: Sem reavaliação, um pneumotórax pode passar.
 
 **4. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D15, D28
 - A) erro conceitual: A TC não resolve o acesso.
@@ -1903,12 +1923,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: O mecanismo não inverte a ordem.
 - E) erro de conduta: Hipoxemia é tratada no B, não inverte a ordem.
 
-**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A28
-- A) erro de conduta: Não é o valor do estudo.
-- B) erro técnico: Não é o valor do estudo.
-- C) erro de indicação: Não é o valor do estudo.
-- D) erro conceitual: Valor muito acima do estudo.
-- E) **correta**: 0,24% dos pacientes.
+**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D11, D12, A28
+- A) erro conceitual: Fala difícil com Glasgow 8 não garante a via aérea.
+- B) erro de indicação: A via aérea cirúrgica é exceção (0,24% numa grande coorte), não a primeira opção.
+- C) erro técnico: Perde-se a informação neurológica de base.
+- D) erro de conduta: Esperar piora atrasa a proteção da via aérea.
+- E) **correta**: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação.
 
 
 ## Perfil R3
@@ -1972,12 +1992,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.
 - E) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.
 
-**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30
+**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30, A47
 - A) erro conceitual: Um estudo mostrou baixa sensibilidade.
 - B) erro de indicação: Os resultados divergem.
 - C) erro técnico: A especificidade foi 99,8% no estudo citado.
 - D) erro de conduta: Um estudo mostrou sensibilidade de 93,6%.
-- E) **correta**: 
+- E) **correta**: Atenção: o estudo de baixa sensibilidade incluiu só trauma torácico fechado, e o paciente do caso 2 tem ferimento penetrante.
 
 **3. Resposta D** · grau Média · taxa de acerto esperada 50% a 75% · âncora A27
 - A) erro de conduta: Não há contraindicação.
@@ -2142,12 +2162,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: há estudo com baixa sensibilidade e muitos falsos negativos.
 - E) erro conceitual: O resultado negativo não basta com a clínica alterada.
 
-**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29
-- A) erro de indicação: Não é o valor do estudo.
-- B) erro técnico: 99,8% é a especificidade.
-- C) **correta**: a especificidade foi 99,8%.
-- D) erro conceitual: Não é o valor do estudo.
-- E) erro de conduta: Nenhum estudo mostrou 100%.
+**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29, A30
+- A) erro técnico: O eFAST inclui a avaliação do tórax.
+- B) erro de indicação: Exame negativo não indica drenagem.
+- C) **correta**: sensibilidade de 93,6% em um estudo e baixa, com muitos falsos negativos, em outro.
+- D) erro conceitual: 99,8% foi a especificidade, não a sensibilidade.
+- E) erro de conduta: Sem reavaliação, um pneumotórax pode passar.
 
 **4. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D15, D28
 - A) erro conceitual: A TC não resolve o acesso.
@@ -2170,12 +2190,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: O mecanismo não inverte a ordem.
 - E) erro de conduta: Hipoxemia é tratada no B, não inverte a ordem.
 
-**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A28
-- A) erro de conduta: Não é o valor do estudo.
-- B) erro técnico: Não é o valor do estudo.
-- C) erro de indicação: Não é o valor do estudo.
-- D) erro conceitual: Valor muito acima do estudo.
-- E) **correta**: 0,24% dos pacientes.
+**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D11, D12, A28
+- A) erro conceitual: Fala difícil com Glasgow 8 não garante a via aérea.
+- B) erro de indicação: A via aérea cirúrgica é exceção (0,24% numa grande coorte), não a primeira opção.
+- C) erro técnico: Perde-se a informação neurológica de base.
+- D) erro de conduta: Esperar piora atrasa a proteção da via aérea.
+- E) **correta**: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação.
 
 
 ## Perfil R3
@@ -2239,12 +2259,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.
 - E) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.
 
-**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30
+**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30, A47
 - A) erro conceitual: Um estudo mostrou baixa sensibilidade.
 - B) erro de indicação: Os resultados divergem.
 - C) erro técnico: A especificidade foi 99,8% no estudo citado.
 - D) erro de conduta: Um estudo mostrou sensibilidade de 93,6%.
-- E) **correta**: 
+- E) **correta**: Atenção: o estudo de baixa sensibilidade incluiu só trauma torácico fechado, e o paciente do caso 2 tem ferimento penetrante.
 
 **3. Resposta D** · grau Média · taxa de acerto esperada 50% a 75% · âncora A27
 - A) erro de conduta: Não há contraindicação.
@@ -2343,6 +2363,11 @@ SELECT a.artefato_id, 'A36', $af$A hipotermia está presente em até dois terço
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A42', $af$Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.$af$, '2024_16', $af$Delayed diagnosed injuries were found in 97 patients (13.9 %)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_2')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A47', $af$O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.$af$, '2024_47', $af$A prospective observational analysis of patients with blunt chest trauma$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -2550,12 +2575,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: O exame físico tem valor.
 - E) **correta**: 
 
-**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36
-- A) erro de indicação: Ocorre em geral.
-- B) erro técnico: Ocorre em todas as idades.
+**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36, D19, A38
+- A) erro de indicação: Não há base para resfriar aqui.
+- B) erro técnico: Fluido aquecido sozinho pode não bastar; usar mantas e ar forçado.
 - C) **correta**: 
-- D) erro de conduta: Há dados.
-- E) erro conceitual: Muito mais frequente.
+- D) erro conceitual: É frequente.
+- E) erro de conduta: Esperar piorar contraria a prevenção.
 
 
 ## Perfil R2
@@ -2602,12 +2627,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Atribuir à sedação sem investigar é armadilha.
 - E) **correta**: 
 
-**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de conduta: Houve casos.
-- B) erro de indicação: Esse é o valor de lesões tardias em outro estudo.
-- C) erro conceitual: Muito acima.
-- D) **correta**: 
-- E) erro técnico: Não é o valor.
+**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D30
+- A) erro de indicação: Inadequado com piora.
+- B) erro de conduta: Atraso.
+- C) erro conceitual: A terciária reduz, mas não elimina, lesões não identificadas.
+- D) **correta**: reexaminar e investigar.
+- E) erro técnico: A imagem não substitui o reexame.
 
 
 ## Perfil R3
@@ -2654,12 +2679,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Pacientes intubados não se queixam.
 - E) **correta**: 
 
-**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43
-- A) erro de conduta: Não.
+**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43, D25
+- A) erro de indicação: Não há indicação com os dados do caso.
 - B) **correta**: bom para confirmar, insuficiente para excluir.
-- C) erro de indicação: Não.
-- D) erro técnico: Invertido.
-- E) erro conceitual: Não.
+- C) erro técnico: Repetir o teste não muda seu desempenho.
+- D) erro conceitual: A especificidade alta serve para confirmar, não para excluir.
+- E) erro de conduta: Achado positivo de exame exige ação.
 
 
 ## Perfil R+
@@ -2678,12 +2703,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Há.
 - E) erro técnico: Não.
 
-**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33
-- A) **correta**: 
-- B) erro de indicação: Foi definida em 70%.
-- C) erro de conduta: Não.
-- D) erro conceitual: Não há consenso.
-- E) erro técnico: Não.
+**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33, D14
+- A) **correta**: foi definida em 70% dos artigos, sem consenso nos cortes; e o aparelho automático pode errar no choque.
+- B) erro técnico: Pode errar no choque.
+- C) erro de conduta: FC 118 e pele fria sugerem choque.
+- D) erro conceitual: Não há definição única.
+- E) erro de indicação: Parâmetro isolado não basta.
 
 **4. Resposta E** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A36, A37
 - A) erro de indicação: Não mede a lacuna.
@@ -2817,12 +2842,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: O exame físico tem valor.
 - E) **correta**: 
 
-**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36
-- A) erro de indicação: Ocorre em geral.
-- B) erro técnico: Ocorre em todas as idades.
+**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36, D19, A38
+- A) erro de indicação: Não há base para resfriar aqui.
+- B) erro técnico: Fluido aquecido sozinho pode não bastar; usar mantas e ar forçado.
 - C) **correta**: 
-- D) erro de conduta: Há dados.
-- E) erro conceitual: Muito mais frequente.
+- D) erro conceitual: É frequente.
+- E) erro de conduta: Esperar piorar contraria a prevenção.
 
 
 ## Perfil R2
@@ -2869,12 +2894,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Atribuir à sedação sem investigar é armadilha.
 - E) **correta**: 
 
-**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de conduta: Houve casos.
-- B) erro de indicação: Esse é o valor de lesões tardias em outro estudo.
-- C) erro conceitual: Muito acima.
-- D) **correta**: 
-- E) erro técnico: Não é o valor.
+**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D30
+- A) erro de indicação: Inadequado com piora.
+- B) erro de conduta: Atraso.
+- C) erro conceitual: A terciária reduz, mas não elimina, lesões não identificadas.
+- D) **correta**: reexaminar e investigar.
+- E) erro técnico: A imagem não substitui o reexame.
 
 
 ## Perfil R3
@@ -2921,12 +2946,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Pacientes intubados não se queixam.
 - E) **correta**: 
 
-**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43
-- A) erro de conduta: Não.
+**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43, D25
+- A) erro de indicação: Não há indicação com os dados do caso.
 - B) **correta**: bom para confirmar, insuficiente para excluir.
-- C) erro de indicação: Não.
-- D) erro técnico: Invertido.
-- E) erro conceitual: Não.
+- C) erro técnico: Repetir o teste não muda seu desempenho.
+- D) erro conceitual: A especificidade alta serve para confirmar, não para excluir.
+- E) erro de conduta: Achado positivo de exame exige ação.
 
 
 ## Perfil R+
@@ -2945,12 +2970,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Há.
 - E) erro técnico: Não.
 
-**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33
-- A) **correta**: 
-- B) erro de indicação: Foi definida em 70%.
-- C) erro de conduta: Não.
-- D) erro conceitual: Não há consenso.
-- E) erro técnico: Não.
+**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33, D14
+- A) **correta**: foi definida em 70% dos artigos, sem consenso nos cortes; e o aparelho automático pode errar no choque.
+- B) erro técnico: Pode errar no choque.
+- C) erro de conduta: FC 118 e pele fria sugerem choque.
+- D) erro conceitual: Não há definição única.
+- E) erro de indicação: Parâmetro isolado não basta.
 
 **4. Resposta E** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A36, A37
 - A) erro de indicação: Não mede a lacuna.
@@ -3197,12 +3222,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Atraso.
 - E) **correta**: 
 
-**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A35
-- A) erro técnico: Não.
-- B) erro de indicação: Não.
-- C) **correta**: (5 de 67 pacientes).
-- D) erro conceitual: Não.
-- E) erro de conduta: Houve casos.
+**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D9, A35
+- A) erro conceitual: O FAST-PLUS avalia a sínfise.
+- B) erro de conduta: Atraso no controle do sangramento.
+- C) **correta**: o ultrassom detectou alargamento crítico confirmado na TC, e a cinta vai já no alto risco.
+- D) erro técnico: Retirar expõe a novo sangramento.
+- E) erro de indicação: Laparotomia não trata o sangramento pélvico.
 
 **7. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D26, A39, D22
 - A) erro de conduta: Arriscado.
@@ -3222,11 +3247,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.
 
 **2. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora A34
-- A) erro conceitual: Não é o valor.
-- B) erro de conduta: Não.
-- C) **correta**: 
-- D) erro de indicação: Não.
-- E) erro técnico: Não.
+- A) erro de conduta: Diagnóstico não substitui tratamento.
+- B) erro técnico: É exame de beira-leito.
+- C) **correta**: teve sensibilidade de 94,2% no politraumatizado instável.
+- D) erro conceitual: Não é essa a função.
+- E) erro de indicação: Foi estudado justamente no instável.
 
 **3. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D26, D27
 - A) erro conceitual: Erro de conduta.
@@ -3235,12 +3260,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Atraso.
 - E) erro de conduta: Atraso no instável sem resposta.
 
-**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22
-- A) erro técnico: Há.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Não.
-- E) erro de indicação: Houve diferença.
+**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22, D9
+- A) erro técnico: Expõe a novo sangramento.
+- B) erro de conduta: Atraso.
+- C) **correta**: a colaboração próxima associou-se a sobrevida 15,5% maior que a prevista.
+- D) erro conceitual: Não exclui sangramento retroperitoneal ou pélvico.
+- E) erro de indicação: Não trata o sangramento pélvico.
 
 **5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A32, D17
 - A) erro conceitual: Teve viés.
@@ -3464,12 +3489,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Atraso.
 - E) **correta**: 
 
-**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A35
-- A) erro técnico: Não.
-- B) erro de indicação: Não.
-- C) **correta**: (5 de 67 pacientes).
-- D) erro conceitual: Não.
-- E) erro de conduta: Houve casos.
+**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D9, A35
+- A) erro conceitual: O FAST-PLUS avalia a sínfise.
+- B) erro de conduta: Atraso no controle do sangramento.
+- C) **correta**: o ultrassom detectou alargamento crítico confirmado na TC, e a cinta vai já no alto risco.
+- D) erro técnico: Retirar expõe a novo sangramento.
+- E) erro de indicação: Laparotomia não trata o sangramento pélvico.
 
 **7. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D26, A39, D22
 - A) erro de conduta: Arriscado.
@@ -3489,11 +3514,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.
 
 **2. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora A34
-- A) erro conceitual: Não é o valor.
-- B) erro de conduta: Não.
-- C) **correta**: 
-- D) erro de indicação: Não.
-- E) erro técnico: Não.
+- A) erro de conduta: Diagnóstico não substitui tratamento.
+- B) erro técnico: É exame de beira-leito.
+- C) **correta**: teve sensibilidade de 94,2% no politraumatizado instável.
+- D) erro conceitual: Não é essa a função.
+- E) erro de indicação: Foi estudado justamente no instável.
 
 **3. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D26, D27
 - A) erro conceitual: Erro de conduta.
@@ -3502,12 +3527,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Atraso.
 - E) erro de conduta: Atraso no instável sem resposta.
 
-**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22
-- A) erro técnico: Há.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Não.
-- E) erro de indicação: Houve diferença.
+**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22, D9
+- A) erro técnico: Expõe a novo sangramento.
+- B) erro de conduta: Atraso.
+- C) **correta**: a colaboração próxima associou-se a sobrevida 15,5% maior que a prevista.
+- D) erro conceitual: Não exclui sangramento retroperitoneal ou pélvico.
+- E) erro de indicação: Não trata o sangramento pélvico.
 
 **5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A32, D17
 - A) erro conceitual: Teve viés.
@@ -3778,11 +3803,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro conceitual: Não presumir.
 
 **5. Resposta A** · grau Média · taxa de acerto esperada 50% a 75% · âncora A42
-- A) **correta**: 
-- B) erro de conduta: Não.
-- C) erro técnico: Não.
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+- A) **correta**: num estudo, ocorreram em 13,9 % dos pacientes.
+- B) erro de conduta: O reexame é o que encontra essas lesões.
+- C) erro técnico: Ocorre em adultos.
+- D) erro de indicação: Improvável e não justifica deixar de investigar.
+- E) erro conceitual: Não vê.
 
 **6. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D30
 - A) erro técnico: Não é o recomendado.
@@ -3836,12 +3861,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) **correta**: 
 
-**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de indicação: Outro estudo.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Houve.
-- E) erro técnico: Não.
+**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D25
+- A) erro técnico: A imagem não substitui o exame.
+- B) erro conceitual: A terciária não é infalível.
+- C) **correta**: lesões potencialmente letais apareceram após a terciária em 0,26% dos graves, e achado positivo exige ação.
+- D) erro de indicação: Inadequado com queixa nova.
+- E) erro de conduta: Presumir sem examinar é erro.
 
 **7. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30
 - A) erro conceitual: Não.
@@ -3881,12 +3906,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: 
 - E) erro técnico: Invertido.
 
-**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40
-- A) erro técnico: Não.
-- B) erro de conduta: Houve.
-- C) erro de indicação: Não.
+**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40, A12
+- A) erro de indicação: Teve pouco ou nenhum efeito em mortalidade.
+- B) erro técnico: Não há base.
+- C) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 - D) **correta**: (120 de 3976).
-- E) erro conceitual: Não.
+- E) erro conceitual: Não foi o achado.
 
 **6. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30, D25
 - A) erro conceitual: Não.
@@ -3999,12 +4024,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro de indicação: Incompleto.
 
-**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A40
-- A) erro de conduta: Não.
-- B) erro técnico: Há.
-- C) **correta**: (120 de 3976).
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A12, A40, D30
+- A) erro conceitual: Não há essa comprovação.
+- B) erro técnico: Critério isolado e sem base.
+- C) **correta**: a TC de rotina tem pouco efeito em mortalidade, a primária normal raramente esconde lesão na imagem, e a terciária reduz lesões não identificadas.
+- D) erro de indicação: Sem base.
+- E) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
    AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
@@ -4045,11 +4070,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro conceitual: Não presumir.
 
 **5. Resposta A** · grau Média · taxa de acerto esperada 50% a 75% · âncora A42
-- A) **correta**: 
-- B) erro de conduta: Não.
-- C) erro técnico: Não.
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+- A) **correta**: num estudo, ocorreram em 13,9 % dos pacientes.
+- B) erro de conduta: O reexame é o que encontra essas lesões.
+- C) erro técnico: Ocorre em adultos.
+- D) erro de indicação: Improvável e não justifica deixar de investigar.
+- E) erro conceitual: Não vê.
 
 **6. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D30
 - A) erro técnico: Não é o recomendado.
@@ -4103,12 +4128,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) **correta**: 
 
-**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de indicação: Outro estudo.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Houve.
-- E) erro técnico: Não.
+**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D25
+- A) erro técnico: A imagem não substitui o exame.
+- B) erro conceitual: A terciária não é infalível.
+- C) **correta**: lesões potencialmente letais apareceram após a terciária em 0,26% dos graves, e achado positivo exige ação.
+- D) erro de indicação: Inadequado com queixa nova.
+- E) erro de conduta: Presumir sem examinar é erro.
 
 **7. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30
 - A) erro conceitual: Não.
@@ -4148,12 +4173,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: 
 - E) erro técnico: Invertido.
 
-**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40
-- A) erro técnico: Não.
-- B) erro de conduta: Houve.
-- C) erro de indicação: Não.
+**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40, A12
+- A) erro de indicação: Teve pouco ou nenhum efeito em mortalidade.
+- B) erro técnico: Não há base.
+- C) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 - D) **correta**: (120 de 3976).
-- E) erro conceitual: Não.
+- E) erro conceitual: Não foi o achado.
 
 **6. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30, D25
 - A) erro conceitual: Não.
@@ -4266,12 +4291,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro de indicação: Incompleto.
 
-**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A40
-- A) erro de conduta: Não.
-- B) erro técnico: Há.
-- C) **correta**: (120 de 3976).
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A12, A40, D30
+- A) erro conceitual: Não há essa comprovação.
+- B) erro técnico: Critério isolado e sem base.
+- C) **correta**: a TC de rotina tem pouco efeito em mortalidade, a primária normal raramente esconde lesão na imagem, e a terciária reduz lesões não identificadas.
+- D) erro de indicação: Sem base.
+- E) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 $T1$);
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A12', $af$A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.$af$, '2023_62', $af$The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department$af$
@@ -4421,12 +4446,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Não.
 - E) erro de conduta: Não.
 
-**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19
+**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19, D29, D22
 - A) **correta**: 
-- B) erro de indicação: Não.
-- C) erro conceitual: Não.
-- D) erro de conduta: Não.
-- E) erro técnico: Houve redução.
+- B) erro de conduta: Treinandos lideram sob supervisão próxima.
+- C) erro conceitual: Não há dado que sustente.
+- D) erro técnico: O líder precisa da visão do todo.
+- E) erro de indicação: Atraso.
 
 **5. Resposta B** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D12, D11
 - A) erro conceitual: Não.
@@ -4539,12 +4564,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de indicação: Não.
 - E) **correta**: 
 
-**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6
-- A) erro de conduta: Há.
+**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6, A2, A4
+- A) erro de conduta: Há associação com menor mortalidade (OR 0,60).
 - B) erro conceitual: Não.
-- C) erro de indicação: Não.
+- C) erro de indicação: Não há ensaio de alta qualidade.
 - D) **correta**: 
-- E) erro técnico: Não.
+- E) erro técnico: O programa para leigos custou USD 3,70.
 
 **7. Resposta B** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A19
 - A) erro de indicação: Houve.
@@ -4577,10 +4602,10 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro conceitual: Não houve diferença de sobrevida.
 
-**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15
-- A) erro conceitual: Desenho não permite.
-- B) erro técnico: Há.
-- C) **correta**: 
+**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15, A45, A46
+- A) erro conceitual: O efeito foi num subgrupo e em hospitais não terciários.
+- B) erro técnico: Há dado de mortalidade.
+- C) **correta**: desfecho secundário, num subgrupo e num contexto diferente do nosso; vale aplicar com cautela.
 - D) erro de conduta: Não.
 - E) erro de indicação: Não.
 
@@ -4591,12 +4616,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Incompleto.
 - E) erro de indicação: Não há base.
 
-**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A1
-- A) erro de conduta: Não é o desenho.
-- B) erro técnico: Não.
-- C) erro conceitual: Esse número é da revisão de 19 estudos.
-- D) erro de indicação: Há.
-- E) **correta**: 
+**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A7
+- A) erro técnico: Comparação sem ajuste é enviesada.
+- B) erro de indicação: Não mede desfecho.
+- C) erro conceitual: Os estudos antes-e-depois são a limitação atual.
+- D) erro de conduta: O piloto mostrou o contrário.
+- E) **correta**: piloto com 376 pacientes e 22 residentes mostrou a viabilidade.
 
 **7. Resposta A** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A7, A9, A10
 - A) **correta**: 
@@ -4688,12 +4713,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Não.
 - E) erro de conduta: Não.
 
-**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19
+**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19, D29, D22
 - A) **correta**: 
-- B) erro de indicação: Não.
-- C) erro conceitual: Não.
-- D) erro de conduta: Não.
-- E) erro técnico: Houve redução.
+- B) erro de conduta: Treinandos lideram sob supervisão próxima.
+- C) erro conceitual: Não há dado que sustente.
+- D) erro técnico: O líder precisa da visão do todo.
+- E) erro de indicação: Atraso.
 
 **5. Resposta B** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D12, D11
 - A) erro conceitual: Não.
@@ -4806,12 +4831,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de indicação: Não.
 - E) **correta**: 
 
-**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6
-- A) erro de conduta: Há.
+**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6, A2, A4
+- A) erro de conduta: Há associação com menor mortalidade (OR 0,60).
 - B) erro conceitual: Não.
-- C) erro de indicação: Não.
+- C) erro de indicação: Não há ensaio de alta qualidade.
 - D) **correta**: 
-- E) erro técnico: Não.
+- E) erro técnico: O programa para leigos custou USD 3,70.
 
 **7. Resposta B** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A19
 - A) erro de indicação: Houve.
@@ -4844,10 +4869,10 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro conceitual: Não houve diferença de sobrevida.
 
-**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15
-- A) erro conceitual: Desenho não permite.
-- B) erro técnico: Há.
-- C) **correta**: 
+**4. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A15, A45, A46
+- A) erro conceitual: O efeito foi num subgrupo e em hospitais não terciários.
+- B) erro técnico: Há dado de mortalidade.
+- C) **correta**: desfecho secundário, num subgrupo e num contexto diferente do nosso; vale aplicar com cautela.
 - D) erro de conduta: Não.
 - E) erro de indicação: Não.
 
@@ -4858,12 +4883,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Incompleto.
 - E) erro de indicação: Não há base.
 
-**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A1
-- A) erro de conduta: Não é o desenho.
-- B) erro técnico: Não.
-- C) erro conceitual: Esse número é da revisão de 19 estudos.
-- D) erro de indicação: Há.
-- E) **correta**: 
+**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A7
+- A) erro técnico: Comparação sem ajuste é enviesada.
+- B) erro de indicação: Não mede desfecho.
+- C) erro conceitual: Os estudos antes-e-depois são a limitação atual.
+- D) erro de conduta: O piloto mostrou o contrário.
+- E) **correta**: piloto com 376 pacientes e 22 residentes mostrou a viabilidade.
 
 **7. Resposta A** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A7, A9, A10
 - A) **correta**: 
@@ -4872,11 +4897,6 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Houve mais pneumonia em um estudo.
 - E) erro de conduta: Houve benefício em ISS > 25.
 $T1$);
-INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
-SELECT a.artefato_id, 'A1', $af$Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).$af$, '2026_24', $af$we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies$af$
-  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
- WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
-ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A2', $af$Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.$af$, '2026_24', $af$Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
@@ -4969,6 +4989,16 @@ SELECT a.artefato_id, 'A21', $af$Houve menos lesões não identificadas quando a
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A44', $af$Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.$af$, '2026_10', $af$Checklist- and algorithm-based formats produced similar short-term gains.$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -6674,15 +6704,16 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Neurológico e exposição.** Glasgow na chegada e repetido [D16]; agitação também é sinal de choque classe III e IV [D17]. Despir por completo [D18] e, terminado o exame, aquecer: mantas, ar forçado e fluidos aquecidos [D19].
 - **Avaliação secundária e terciária.** A secundária é história (AMPLE) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
-- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14].
+- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
 - **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
-- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro [A30].
+- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
+- **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
 
 ## Lacunas no conhecimento
@@ -6716,15 +6747,16 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Neurológico e exposição.** Glasgow na chegada e repetido [D16]; agitação também é sinal de choque classe III e IV [D17]. Despir por completo [D18] e, terminado o exame, aquecer: mantas, ar forçado e fluidos aquecidos [D19].
 - **Avaliação secundária e terciária.** A secundária é história (AMPLE) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
-- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14].
+- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
 - **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
-- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro [A30].
+- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
+- **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
 
 ## Lacunas no conhecimento
@@ -6797,6 +6829,11 @@ SELECT a.artefato_id, 'A14', $af$A avaliação das vias aéreas subiu de 72,9% p
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A15', $af$A mortalidade caiu de 17,7% para 12,1% entre 302 pacientes com fisiologia alterada na chegada.$af$, '2023_60', $af$The mortality rate decreased from 17.7 to 12.1 per cent among 302 patients$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A23', $af$Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).$af$, '2024_43', $af$a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
@@ -6858,6 +6895,21 @@ SELECT a.artefato_id, 'A41', $af$Apesar do algoritmo da sala de trauma, lesão p
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A42', $af$Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.$af$, '2024_16', $af$Delayed diagnosed injuries were found in 97 patients (13.9 %)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A47', $af$O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.$af$, '2024_47', $af$A prospective observational analysis of patients with blunt chest trauma$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -7156,7 +7208,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - E) Mandar para a TC e reavaliar na volta
 
 **5.** No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?
-- A) Redução comprovada da mortalidade por ensaio randomizado
+- A) Redução de mortalidade em todos os pacientes, como desfecho principal
 - B) Nenhum efeito sobre o processo
 - C) Aumento comprovado da mortalidade
 - D) Só serve para fins de auditoria, sem relação com o cuidado
@@ -7355,7 +7407,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - E) Mandar para a TC e reavaliar na volta
 
 **5.** No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?
-- A) Redução comprovada da mortalidade por ensaio randomizado
+- A) Redução de mortalidade em todos os pacientes, como desfecho principal
 - B) Nenhum efeito sobre o processo
 - C) Aumento comprovado da mortalidade
 - D) Só serve para fins de auditoria, sem relação com o cuidado
@@ -7471,6 +7523,16 @@ SELECT a.artefato_id, 'A36', $af$A hipotermia está presente em até dois terço
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A39', $af$Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).$af$, '2020_70', $af$no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_1')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_1')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -7709,12 +7771,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Manter a investigação e o exame, porque o ultrassom pode dar falso negativo
 - E) Encerrar a hipótese de pneumotórax
 
-**3.** No caso 2, qual foi a sensibilidade do E-FAST para pneumotórax no estudo com melhor resultado?
-- A) 75%
-- B) 99,8%
-- C) 93,6%
-- D) 50%
-- E) 100%
+**3.** No caso 2, o eFAST foi negativo e a SpO2 melhora com oxigênio. Como usar esse eFAST negativo na decisão?
+- A) Ignorá-lo, porque o ultrassom não avalia o tórax
+- B) Para indicar drenagem torácica imediata
+- C) Como dado de apoio, sem descartar pneumotórax: a sensibilidade variou entre os estudos
+- D) Para descartar pneumotórax, porque a sensibilidade é sempre maior que 99%
+- E) Para liberar o paciente da sala sem reavaliar
 
 **4.** No caso 2, sem acesso venoso após tentativas, qual a melhor opção?
 - A) Esperar a TC
@@ -7737,12 +7799,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Porque o ferimento é penetrante
 - E) Porque a SpO2 está baixa
 
-**7.** No caso 2, qual a frequência da via aérea cirúrgica de emergência em grande coorte japonesa?
-- A) 0,024%
-- B) 2,4%
-- C) 10%
-- D) 24%
-- E) 0,24%
+**7.** No caso 2, o paciente fica sonolento, com Glasgow 8, e fala com dificuldade. Qual a conduta de via aérea?
+- A) Nenhuma, porque ele ainda fala
+- B) Cricotireoidostomia imediata, sem tentar intubação
+- C) Sedar e paralisar antes de qualquer exame neurológico
+- D) Aguardar o Glasgow cair mais
+- E) Via aérea definitiva, com exame neurológico breve antes da sedação
 
 
 ## Perfil R3
@@ -7978,12 +8040,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Manter a investigação e o exame, porque o ultrassom pode dar falso negativo
 - E) Encerrar a hipótese de pneumotórax
 
-**3.** No caso 2, qual foi a sensibilidade do E-FAST para pneumotórax no estudo com melhor resultado?
-- A) 75%
-- B) 99,8%
-- C) 93,6%
-- D) 50%
-- E) 100%
+**3.** No caso 2, o eFAST foi negativo e a SpO2 melhora com oxigênio. Como usar esse eFAST negativo na decisão?
+- A) Ignorá-lo, porque o ultrassom não avalia o tórax
+- B) Para indicar drenagem torácica imediata
+- C) Como dado de apoio, sem descartar pneumotórax: a sensibilidade variou entre os estudos
+- D) Para descartar pneumotórax, porque a sensibilidade é sempre maior que 99%
+- E) Para liberar o paciente da sala sem reavaliar
 
 **4.** No caso 2, sem acesso venoso após tentativas, qual a melhor opção?
 - A) Esperar a TC
@@ -8006,12 +8068,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Porque o ferimento é penetrante
 - E) Porque a SpO2 está baixa
 
-**7.** No caso 2, qual a frequência da via aérea cirúrgica de emergência em grande coorte japonesa?
-- A) 0,024%
-- B) 2,4%
-- C) 10%
-- D) 24%
-- E) 0,24%
+**7.** No caso 2, o paciente fica sonolento, com Glasgow 8, e fala com dificuldade. Qual a conduta de via aérea?
+- A) Nenhuma, porque ele ainda fala
+- B) Cricotireoidostomia imediata, sem tentar intubação
+- C) Sedar e paralisar antes de qualquer exame neurológico
+- D) Aguardar o Glasgow cair mais
+- E) Via aérea definitiva, com exame neurológico breve antes da sedação
 
 
 ## Perfil R3
@@ -8179,6 +8241,11 @@ SELECT a.artefato_id, 'A36', $af$A hipotermia está presente em até dois terço
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A42', $af$Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.$af$, '2024_16', $af$Delayed diagnosed injuries were found in 97 patients (13.9 %)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_2')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A47', $af$O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.$af$, '2024_47', $af$A prospective observational analysis of patients with blunt chest trauma$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
@@ -8388,12 +8455,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só a TC tem valor
 - E) O exame físico tem baixo valor preditivo negativo; um exame normal não exclui lesão
 
-**7.** No caso 3, qual a frequência de hipotermia no trauma grave?
-- A) Só em quem fica na chuva
-- B) Só em crianças
-- C) Até dois terços dos pacientes
-- D) Não há dados
-- E) Menos de 1%
+**7.** No caso 3, a temperatura é 35,1 °C e um colega diz que isso não é prioridade. Como responder?
+- A) Resfriar para proteger o cérebro
+- B) Aquecer só com fluido, sem mantas
+- C) A hipotermia atinge até dois terços dos graves e é subvalorizada: aquecer já
+- D) Hipotermia é rara no trauma
+- E) Concordar: só tratar abaixo de 32 °C
 
 
 ## Perfil R2
@@ -8440,12 +8507,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) É só efeito da sedação
 - E) Hipotensão após a ressuscitação é sangramento até prova em contrário
 
-**7.** No caso 3, um grande estudo encontrou lesão potencialmente letal surgindo após a avaliação terciária em qual proporção dos graves?
-- A) 0%
-- B) 13,9 %
-- C) 26%
-- D) 0,26%
-- E) 2,6%
+**7.** No caso 3, a avaliação terciária no segundo dia não achou nada. No quarto dia, o paciente piora. Como pensar?
+- A) Dar alta da UTI
+- B) Aguardar 48 horas
+- C) A terciária excluiu tudo; pensar só em causas clínicas
+- D) Ainda pode haver lesão não identificada: houve lesão potencialmente letal após a terciária em 0,26% dos graves
+- E) Repetir a TC de corpo inteiro sem examinar
 
 
 ## Perfil R3
@@ -8492,12 +8559,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só se houver queixa
 - E) A equipe, depois de concluídas a ressuscitação inicial e as intervenções
 
-**7.** No caso 3, o teste clínico SILENT para lesão de membro inferior teve qual desempenho?
-- A) Especificidade 75%
-- B) Sensibilidade 75% e especificidade 99%
-- C) Sensibilidade 100%
-- D) Sensibilidade 99% e especificidade 75%
-- E) Ambas 50%
+**7.** No caso 3, o paciente intubado tem a perna esquerda edemaciada e o teste clínico SILENT é negativo. Como agir?
+- A) Indicar fasciotomia imediata
+- B) Não excluir lesão: o SILENT tem sensibilidade de 75%; investigar com imagem
+- C) Repetir o SILENT até ficar positivo
+- D) Excluir lesão, porque a especificidade é 99%
+- E) Ignorar o edema
 
 
 ## Perfil R+
@@ -8516,12 +8583,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Não há críticas publicadas
 - E) A classe de choque é definida pela idade
 
-**3.** No caso 3, sobre 'estabilidade hemodinâmica', o que a revisão de 222 artigos mostrou?
-- A) Definida em 70% dos artigos elegíveis, sem consenso nos pontos de corte
-- B) Nunca definida
-- C) Definida só pela PA
-- D) Definição universal
-- E) Definida em 100%
+**3.** No caso 3, um residente diz que o paciente está 'hemodinamicamente estável' porque a PA do aparelho automático é normal. Como corrigir o raciocínio?
+- A) Estabilidade não tem definição consensual; descrever os parâmetros e a resposta, e medir a PA manualmente
+- B) Confiar no aparelho automático no choque
+- C) Encerrar a reposição
+- D) Concordar: PA normal define estabilidade
+- E) Usar só a FC para decidir
 
 **4.** No caso 3, você audita o serviço. Qual indicador de processo é mais coerente com as lacunas do tema?
 - A) Tempo de alta hospitalar
@@ -8657,12 +8724,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só a TC tem valor
 - E) O exame físico tem baixo valor preditivo negativo; um exame normal não exclui lesão
 
-**7.** No caso 3, qual a frequência de hipotermia no trauma grave?
-- A) Só em quem fica na chuva
-- B) Só em crianças
-- C) Até dois terços dos pacientes
-- D) Não há dados
-- E) Menos de 1%
+**7.** No caso 3, a temperatura é 35,1 °C e um colega diz que isso não é prioridade. Como responder?
+- A) Resfriar para proteger o cérebro
+- B) Aquecer só com fluido, sem mantas
+- C) A hipotermia atinge até dois terços dos graves e é subvalorizada: aquecer já
+- D) Hipotermia é rara no trauma
+- E) Concordar: só tratar abaixo de 32 °C
 
 
 ## Perfil R2
@@ -8709,12 +8776,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) É só efeito da sedação
 - E) Hipotensão após a ressuscitação é sangramento até prova em contrário
 
-**7.** No caso 3, um grande estudo encontrou lesão potencialmente letal surgindo após a avaliação terciária em qual proporção dos graves?
-- A) 0%
-- B) 13,9 %
-- C) 26%
-- D) 0,26%
-- E) 2,6%
+**7.** No caso 3, a avaliação terciária no segundo dia não achou nada. No quarto dia, o paciente piora. Como pensar?
+- A) Dar alta da UTI
+- B) Aguardar 48 horas
+- C) A terciária excluiu tudo; pensar só em causas clínicas
+- D) Ainda pode haver lesão não identificada: houve lesão potencialmente letal após a terciária em 0,26% dos graves
+- E) Repetir a TC de corpo inteiro sem examinar
 
 
 ## Perfil R3
@@ -8761,12 +8828,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só se houver queixa
 - E) A equipe, depois de concluídas a ressuscitação inicial e as intervenções
 
-**7.** No caso 3, o teste clínico SILENT para lesão de membro inferior teve qual desempenho?
-- A) Especificidade 75%
-- B) Sensibilidade 75% e especificidade 99%
-- C) Sensibilidade 100%
-- D) Sensibilidade 99% e especificidade 75%
-- E) Ambas 50%
+**7.** No caso 3, o paciente intubado tem a perna esquerda edemaciada e o teste clínico SILENT é negativo. Como agir?
+- A) Indicar fasciotomia imediata
+- B) Não excluir lesão: o SILENT tem sensibilidade de 75%; investigar com imagem
+- C) Repetir o SILENT até ficar positivo
+- D) Excluir lesão, porque a especificidade é 99%
+- E) Ignorar o edema
 
 
 ## Perfil R+
@@ -8785,12 +8852,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Não há críticas publicadas
 - E) A classe de choque é definida pela idade
 
-**3.** No caso 3, sobre 'estabilidade hemodinâmica', o que a revisão de 222 artigos mostrou?
-- A) Definida em 70% dos artigos elegíveis, sem consenso nos pontos de corte
-- B) Nunca definida
-- C) Definida só pela PA
-- D) Definição universal
-- E) Definida em 100%
+**3.** No caso 3, um residente diz que o paciente está 'hemodinamicamente estável' porque a PA do aparelho automático é normal. Como corrigir o raciocínio?
+- A) Estabilidade não tem definição consensual; descrever os parâmetros e a resposta, e medir a PA manualmente
+- B) Confiar no aparelho automático no choque
+- C) Encerrar a reposição
+- D) Concordar: PA normal define estabilidade
+- E) Usar só a FC para decidir
 
 **4.** No caso 3, você audita o serviço. Qual indicador de processo é mais coerente com as lacunas do tema?
 - A) Tempo de alta hospitalar
@@ -9039,12 +9106,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só depois da TC
 - E) Iniciar a ressuscitação; pode salvar vidas no choque
 
-**6.** No caso 4, o ultrassom pode avaliar a sínfise púbica. Em que proporção um estudo achou alargamento crítico?
-- A) 0,75%
-- B) 50%
-- C) 7,5%
-- D) 75%
-- E) Nenhum
+**6.** No caso 4, o ultrassom à beira-leito mostra afastamento da sínfise púbica. O que fazer?
+- A) Ignorar: o ultrassom não avalia a bacia
+- B) Aguardar a TC para colocar a cinta
+- C) Manter a cinta pélvica e tratar como sangramento pélvico
+- D) Retirar a cinta para radiografar
+- E) Laparotomia imediata para tratar a bacia
 
 **7.** No caso 4, um colega quer levar o paciente para a TC antes de qualquer resposta à reposição. O que considerar?
 - A) TC sempre primeiro
@@ -9063,12 +9130,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Apenas depois de obtida a radiografia de tórax
 - E) Somente quando o Glasgow é menor ou igual a 8
 
-**2.** No caso 4, qual a sensibilidade do RUSH no diagnóstico do politraumatizado instável, em estudo?
-- A) 64%
-- B) 9,4%
-- C) 94,2%
-- D) 42%
-- E) 100%
+**2.** No caso 4, você faz o protocolo RUSH à beira-leito. Para que ele serve neste paciente?
+- A) Substituir o controle do sangramento
+- B) Deve ser feito dentro da TC
+- C) Buscar a causa do choque sem sair da sala
+- D) Definir a classe de choque pela tabela
+- E) Só serve para pacientes estáveis
 
 **3.** No caso 4, após a cinta e a reposição, a PA segue 80/50. Qual a decisão mais adequada?
 - A) Suspender a reposição
@@ -9077,12 +9144,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Observar na sala
 - E) TC de corpo inteiro e aguardar
 
-**4.** No caso 4, se a radiologia intervencionista atua junto com a cirurgia, o que um estudo mostrou?
-- A) Não há estudo
-- B) Sobrevida menor
-- C) Sobrevida 15,5% maior que a prevista
-- D) Mais mortes
-- E) Sem diferença
+**4.** No caso 4, o FAST não mostra líquido livre e há suspeita de sangramento pélvico ativo. Qual o próximo passo mais adequado?
+- A) Retirar a cinta para examinar a bacia
+- B) Esperar o resultado do lactato
+- C) Acionar cirurgia e radiologia intervencionista juntas
+- D) Concluir que o FAST negativo exclui sangramento
+- E) Laparotomia exploradora de rotina
 
 **5.** No caso 4, a FC 136 e a PA baixa. O que dizer da tabela de classes de choque?
 - A) Perfeitamente validada
@@ -9308,12 +9375,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só depois da TC
 - E) Iniciar a ressuscitação; pode salvar vidas no choque
 
-**6.** No caso 4, o ultrassom pode avaliar a sínfise púbica. Em que proporção um estudo achou alargamento crítico?
-- A) 0,75%
-- B) 50%
-- C) 7,5%
-- D) 75%
-- E) Nenhum
+**6.** No caso 4, o ultrassom à beira-leito mostra afastamento da sínfise púbica. O que fazer?
+- A) Ignorar: o ultrassom não avalia a bacia
+- B) Aguardar a TC para colocar a cinta
+- C) Manter a cinta pélvica e tratar como sangramento pélvico
+- D) Retirar a cinta para radiografar
+- E) Laparotomia imediata para tratar a bacia
 
 **7.** No caso 4, um colega quer levar o paciente para a TC antes de qualquer resposta à reposição. O que considerar?
 - A) TC sempre primeiro
@@ -9332,12 +9399,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Apenas depois de obtida a radiografia de tórax
 - E) Somente quando o Glasgow é menor ou igual a 8
 
-**2.** No caso 4, qual a sensibilidade do RUSH no diagnóstico do politraumatizado instável, em estudo?
-- A) 64%
-- B) 9,4%
-- C) 94,2%
-- D) 42%
-- E) 100%
+**2.** No caso 4, você faz o protocolo RUSH à beira-leito. Para que ele serve neste paciente?
+- A) Substituir o controle do sangramento
+- B) Deve ser feito dentro da TC
+- C) Buscar a causa do choque sem sair da sala
+- D) Definir a classe de choque pela tabela
+- E) Só serve para pacientes estáveis
 
 **3.** No caso 4, após a cinta e a reposição, a PA segue 80/50. Qual a decisão mais adequada?
 - A) Suspender a reposição
@@ -9346,12 +9413,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Observar na sala
 - E) TC de corpo inteiro e aguardar
 
-**4.** No caso 4, se a radiologia intervencionista atua junto com a cirurgia, o que um estudo mostrou?
-- A) Não há estudo
-- B) Sobrevida menor
-- C) Sobrevida 15,5% maior que a prevista
-- D) Mais mortes
-- E) Sem diferença
+**4.** No caso 4, o FAST não mostra líquido livre e há suspeita de sangramento pélvico ativo. Qual o próximo passo mais adequado?
+- A) Retirar a cinta para examinar a bacia
+- B) Esperar o resultado do lactato
+- C) Acionar cirurgia e radiologia intervencionista juntas
+- D) Concluir que o FAST negativo exclui sangramento
+- E) Laparotomia exploradora de rotina
 
 **5.** No caso 4, a FC 136 e a PA baixa. O que dizer da tabela de classes de choque?
 - A) Perfeitamente validada
@@ -9623,12 +9690,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sangramento até prova em contrário
 - E) Desidratação
 
-**5.** No caso 5, qual a proporção de lesões com diagnóstico tardio num estudo, mesmo com TC?
-- A) 13,9 %
-- B) 90%
-- C) 0%
-- D) 50%
-- E) 1%
+**5.** No caso 5, a família pergunta por que a lesão não apareceu na TC. Qual a explicação correta?
+- A) Lesões podem ser descobertas depois mesmo com TC
+- B) Não é preciso reexaminar
+- C) Isso só acontece em crianças
+- D) A lesão surgiu depois, sem relação com o atropelamento
+- E) A TC vê todas as lesões
 
 **6.** No caso 5, o que fazer com as imagens já feitas?
 - A) Repetir todas sem revisar
@@ -9682,12 +9749,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só no idoso
 - E) Não; sensibilidade de 75%
 
-**6.** No caso 5, qual a taxa de lesão potencialmente letal surgindo após a terciária em estudo?
-- A) 13,9 %
-- B) 26%
-- C) 0,26%
-- D) Nenhuma
-- E) 2,6%
+**6.** No caso 5, a avaliação terciária foi feita no segundo dia e não achou nada. A dor no ombro surge no terceiro. O que fazer?
+- A) Repetir a TC de corpo inteiro sem exame
+- B) Ignorar, porque a terciária já foi feita
+- C) Reexaminar e investigar
+- D) Dar alta e reavaliar no ambulatório
+- E) Atribuir à posição no leito sem examinar
 
 **7.** No caso 5, quem atendeu a paciente na UTI deve fazer o quê?
 - A) Nada
@@ -9727,12 +9794,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sensibilidade 75% e especificidade 99%: bom para confirmar, ruim para excluir
 - E) Sensibilidade 99%
 
-**5.** No caso 5, entre pacientes com TC de corpo inteiro, quantos tinham avaliação primária sem alterações em um estudo?
-- A) 0,3%
-- B) Nenhum
-- C) 50%
-- D) 3,02%
-- E) 30,2%
+**5.** Ao revisar a indicação da TC no caso 5, qual argumento é sustentado pela evidência?
+- A) A TC de rotina reduz a mortalidade de forma comprovada
+- B) A TC deve ser repetida a cada 12 horas
+- C) A TC dispensa a avaliação terciária
+- D) Com primária sem alterações, a TC de corpo inteiro acrescentou pouco: 3,02% dos submetidos estavam nesse grupo e nenhum teve lesão na imagem
+- E) A TC encontra lesão grave em metade desses pacientes
 
 **6.** No caso 5, como reduzir a chance de nova lesão despercebida até a alta?
 - A) Alta precoce
@@ -9845,12 +9912,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só multar
 - E) Só registrar
 
-**7.** No caso 5, a paciente teve avaliação primária sem alterações e TC normal. O que um estudo diz sobre esse grupo?
-- A) Só idosos
-- B) Não há estudo
-- C) 3,02% dos submetidos tinham primária sem alterações, e nenhum teve lesão na imagem
-- D) Todos tinham lesão
-- E) Metade tinha lesão grave
+**7.** No caso 5, você revisa o critério de TC de corpo inteiro do serviço. Qual proposta é coerente com as fontes?
+- A) Tornar a TC universal porque reduz mortalidade
+- B) Indicar só pela idade
+- C) Indicar por critérios e manter a avaliação terciária
+- D) Nunca fazer TC em atropelados
+- E) TC para todos, dispensando a terciária
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
    AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
@@ -9892,12 +9959,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sangramento até prova em contrário
 - E) Desidratação
 
-**5.** No caso 5, qual a proporção de lesões com diagnóstico tardio num estudo, mesmo com TC?
-- A) 13,9 %
-- B) 90%
-- C) 0%
-- D) 50%
-- E) 1%
+**5.** No caso 5, a família pergunta por que a lesão não apareceu na TC. Qual a explicação correta?
+- A) Lesões podem ser descobertas depois mesmo com TC
+- B) Não é preciso reexaminar
+- C) Isso só acontece em crianças
+- D) A lesão surgiu depois, sem relação com o atropelamento
+- E) A TC vê todas as lesões
 
 **6.** No caso 5, o que fazer com as imagens já feitas?
 - A) Repetir todas sem revisar
@@ -9951,12 +10018,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só no idoso
 - E) Não; sensibilidade de 75%
 
-**6.** No caso 5, qual a taxa de lesão potencialmente letal surgindo após a terciária em estudo?
-- A) 13,9 %
-- B) 26%
-- C) 0,26%
-- D) Nenhuma
-- E) 2,6%
+**6.** No caso 5, a avaliação terciária foi feita no segundo dia e não achou nada. A dor no ombro surge no terceiro. O que fazer?
+- A) Repetir a TC de corpo inteiro sem exame
+- B) Ignorar, porque a terciária já foi feita
+- C) Reexaminar e investigar
+- D) Dar alta e reavaliar no ambulatório
+- E) Atribuir à posição no leito sem examinar
 
 **7.** No caso 5, quem atendeu a paciente na UTI deve fazer o quê?
 - A) Nada
@@ -9996,12 +10063,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sensibilidade 75% e especificidade 99%: bom para confirmar, ruim para excluir
 - E) Sensibilidade 99%
 
-**5.** No caso 5, entre pacientes com TC de corpo inteiro, quantos tinham avaliação primária sem alterações em um estudo?
-- A) 0,3%
-- B) Nenhum
-- C) 50%
-- D) 3,02%
-- E) 30,2%
+**5.** Ao revisar a indicação da TC no caso 5, qual argumento é sustentado pela evidência?
+- A) A TC de rotina reduz a mortalidade de forma comprovada
+- B) A TC deve ser repetida a cada 12 horas
+- C) A TC dispensa a avaliação terciária
+- D) Com primária sem alterações, a TC de corpo inteiro acrescentou pouco: 3,02% dos submetidos estavam nesse grupo e nenhum teve lesão na imagem
+- E) A TC encontra lesão grave em metade desses pacientes
 
 **6.** No caso 5, como reduzir a chance de nova lesão despercebida até a alta?
 - A) Alta precoce
@@ -10114,12 +10181,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só multar
 - E) Só registrar
 
-**7.** No caso 5, a paciente teve avaliação primária sem alterações e TC normal. O que um estudo diz sobre esse grupo?
-- A) Só idosos
-- B) Não há estudo
-- C) 3,02% dos submetidos tinham primária sem alterações, e nenhum teve lesão na imagem
-- D) Todos tinham lesão
-- E) Metade tinha lesão grave
+**7.** No caso 5, você revisa o critério de TC de corpo inteiro do serviço. Qual proposta é coerente com as fontes?
+- A) Tornar a TC universal porque reduz mortalidade
+- B) Indicar só pela idade
+- C) Indicar por critérios e manter a avaliação terciária
+- D) Nunca fazer TC em atropelados
+- E) TC para todos, dispensando a terciária
 $T1$);
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A12', $af$A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.$af$, '2023_62', $af$The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department$af$
@@ -10271,12 +10338,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Piora dos indicadores
 - E) Mais mortes
 
-**4.** No caso 6, a presença do cirurgião de trauma no local reduziu o tempo de ressuscitação em quanto, em estudo?
-- A) 259 segundos
-- B) 25 minutos
-- C) 25 segundos
-- D) 2 horas
-- E) Nada
+**4.** No caso 6, o assistente sugere orientar por telefone, de fora da sala. O que a evidência indica?
+- A) Ele deve estar presente: a presença do cirurgião de trauma encurtou a ressuscitação em 259 segundos
+- B) Deixar o R1 liderar sozinho
+- C) O telefone é equivalente
+- D) Liderar da porta, sem ver o paciente
+- E) Só chamá-lo se houver parada
 
 **5.** No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?
 - A) AMPLE
@@ -10389,12 +10456,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Nunca pedir
 - E) A TC de rotina tem pouco ou nenhum efeito em mortalidade; indicar por critérios
 
-**6.** No caso 6, qual o custo do ATLS comparado a outros programas, em estudo?
-- A) Não há dados
-- B) O mais baixo
-- C) Igual aos outros
-- D) O mais alto (USD 1433,5)
-- E) Gratuito
+**6.** Depois do caso 6, o serviço quer treinar toda a equipe. Qual argumento sobre o ATLS é correto ao planejar o orçamento?
+- A) Treinar não tem efeito, então não vale treinar
+- B) É gratuito
+- C) Tem benefício comprovado por ensaio, o que justifica qualquer custo
+- D) É o programa de maior custo (USD 1433,5), e o benefício em mortalidade vem de estudos observacionais
+- E) Custa o mesmo que programas para leigos
 
 **7.** No caso 6, qual efeito da presença do cirurgião de trauma no tempo de ressuscitação?
 - A) Nenhum
@@ -10428,9 +10495,9 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Sobrevida muito maior
 
 **4.** No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?
-- A) Prova causal
-- B) Nenhum dado
-- C) Queda de 17,7% para 12,1% em estudo antes-e-depois; não prova causa
+- A) Redução comprovada em todos os pacientes de centros de trauma de alta complexidade
+- B) Nenhum dado de mortalidade
+- C) Queda de 17,7% para 12,1% nos pacientes com fisiologia alterada, em ensaio randomizado por conglomerados em hospitais não terciários de Gana
 - D) Queda para zero
 - E) Aumento de mortalidade
 
@@ -10441,12 +10508,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só medir custo
 - E) Abandonar o treinamento
 
-**6.** No caso 6, qual estudo de viabilidade foi feito para comparar ATLS, PTC e cuidado padrão?
-- A) Meta-análise de 3 estudos
-- B) Coorte de 10 pacientes
-- C) Ensaio com 92.614 pacientes
-- D) Nenhum
-- E) Piloto com 376 pacientes e 22 residentes
+**6.** Após o caso 6, você quer estudar o efeito do treinamento no seu serviço. Que desenho as fontes mostram ser viável e mais informativo?
+- A) Comparar com dados de outro país sem ajuste
+- B) Só pesquisa de opinião
+- C) Antes-e-depois sem controle, que já basta
+- D) Nenhum estudo é possível
+- E) Ensaio randomizado por conglomerados, com viabilidade testada em piloto
 
 **7.** No caso 6, qual seria a principal lacuna a explicar aos residentes sobre checklists?
 - A) Só há estudos antes-e-depois, com sinais mistos de benefício e dano
@@ -10540,12 +10607,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Piora dos indicadores
 - E) Mais mortes
 
-**4.** No caso 6, a presença do cirurgião de trauma no local reduziu o tempo de ressuscitação em quanto, em estudo?
-- A) 259 segundos
-- B) 25 minutos
-- C) 25 segundos
-- D) 2 horas
-- E) Nada
+**4.** No caso 6, o assistente sugere orientar por telefone, de fora da sala. O que a evidência indica?
+- A) Ele deve estar presente: a presença do cirurgião de trauma encurtou a ressuscitação em 259 segundos
+- B) Deixar o R1 liderar sozinho
+- C) O telefone é equivalente
+- D) Liderar da porta, sem ver o paciente
+- E) Só chamá-lo se houver parada
 
 **5.** No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?
 - A) AMPLE
@@ -10658,12 +10725,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Nunca pedir
 - E) A TC de rotina tem pouco ou nenhum efeito em mortalidade; indicar por critérios
 
-**6.** No caso 6, qual o custo do ATLS comparado a outros programas, em estudo?
-- A) Não há dados
-- B) O mais baixo
-- C) Igual aos outros
-- D) O mais alto (USD 1433,5)
-- E) Gratuito
+**6.** Depois do caso 6, o serviço quer treinar toda a equipe. Qual argumento sobre o ATLS é correto ao planejar o orçamento?
+- A) Treinar não tem efeito, então não vale treinar
+- B) É gratuito
+- C) Tem benefício comprovado por ensaio, o que justifica qualquer custo
+- D) É o programa de maior custo (USD 1433,5), e o benefício em mortalidade vem de estudos observacionais
+- E) Custa o mesmo que programas para leigos
 
 **7.** No caso 6, qual efeito da presença do cirurgião de trauma no tempo de ressuscitação?
 - A) Nenhum
@@ -10697,9 +10764,9 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Sobrevida muito maior
 
 **4.** No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?
-- A) Prova causal
-- B) Nenhum dado
-- C) Queda de 17,7% para 12,1% em estudo antes-e-depois; não prova causa
+- A) Redução comprovada em todos os pacientes de centros de trauma de alta complexidade
+- B) Nenhum dado de mortalidade
+- C) Queda de 17,7% para 12,1% nos pacientes com fisiologia alterada, em ensaio randomizado por conglomerados em hospitais não terciários de Gana
 - D) Queda para zero
 - E) Aumento de mortalidade
 
@@ -10710,12 +10777,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só medir custo
 - E) Abandonar o treinamento
 
-**6.** No caso 6, qual estudo de viabilidade foi feito para comparar ATLS, PTC e cuidado padrão?
-- A) Meta-análise de 3 estudos
-- B) Coorte de 10 pacientes
-- C) Ensaio com 92.614 pacientes
-- D) Nenhum
-- E) Piloto com 376 pacientes e 22 residentes
+**6.** Após o caso 6, você quer estudar o efeito do treinamento no seu serviço. Que desenho as fontes mostram ser viável e mais informativo?
+- A) Comparar com dados de outro país sem ajuste
+- B) Só pesquisa de opinião
+- C) Antes-e-depois sem controle, que já basta
+- D) Nenhum estudo é possível
+- E) Ensaio randomizado por conglomerados, com viabilidade testada em piloto
 
 **7.** No caso 6, qual seria a principal lacuna a explicar aos residentes sobre checklists?
 - A) Só há estudos antes-e-depois, com sinais mistos de benefício e dano
@@ -10724,11 +10791,6 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só há benefício
 - E) Só há dano
 $T1$);
-INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
-SELECT a.artefato_id, 'A1', $af$Revisão sistemática com 19 estudos e 92.614 pacientes sobre programas de suporte de vida no trauma (ATLS o mais comum).$af$, '2026_24', $af$we identified and included 19 eligible studies. There were 92,614 patients cumulatively across the 19 studies$af$
-  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
- WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
-ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'A2', $af$Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.$af$, '2026_24', $af$Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
@@ -10825,6 +10887,16 @@ SELECT a.artefato_id, 'A44', $af$Treinamento in situ baseado em checklist e base
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A45', $af$O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.$af$, '2023_60', $af$A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
+SELECT a.artefato_id, 'A46', $af$A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).$af$, '2023_60', $af$(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)$af$
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
+ON CONFLICT (artefato_id, codigo) DO NOTHING;
+INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, 'D1', $af$O objetivo da avaliação inicial é identificar e tratar rapidamente as lesões que ameaçam a vida.$af$, 'Mattox9_cap13_avaliacao_inicial', $af$The goal of the initial assessment is the rapid identification and treatment of life-threatening injuries.$af$
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
@@ -10889,5 +10961,5 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_6')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
-SELECT a.tipo, max(a.versao) AS versao, (SELECT count(*) FROM conteudo.afirmacao f WHERE f.artefato_id=max(a.artefato_id)) AS afirmacoes FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' GROUP BY a.tipo ORDER BY 1;
+SELECT a.tipo, max(a.versao) AS versao FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' GROUP BY a.tipo ORDER BY 1;
 COMMIT;

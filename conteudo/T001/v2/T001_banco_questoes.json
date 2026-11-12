@@ -738,7 +738,7 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?",
   "alternativas": [
-   "Redução comprovada da mortalidade por ensaio randomizado",
+   "Redução de mortalidade em todos os pacientes, como desfecho principal",
    "Nenhum efeito sobre o processo",
    "Aumento comprovado da mortalidade",
    "Só serve para fins de auditoria, sem relação com o cuidado",
@@ -746,7 +746,7 @@
   ],
   "correta": "E",
   "justificativas": [
-   "A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.",
+   "A mortalidade foi desfecho secundário e caiu no subgrupo com fisiologia alterada, em ensaio randomizado por conglomerados.",
    "Houve melhora em 14 de 16 indicadores.",
    "Não houve aumento de mortalidade.",
    "Os indicadores melhorados são do cuidado, não só do registro.",
@@ -762,7 +762,9 @@
   "ancoras": [
    "A13",
    "A14",
-   "A15"
+   "A15",
+   "A45",
+   "A46"
   ]
  },
  {
@@ -2079,7 +2081,7 @@
    "Os resultados divergem.",
    "A especificidade foi 99,8% no estudo citado.",
    "Um estudo mostrou sensibilidade de 93,6%.",
-   "Correta."
+   "Correta. Atenção: o estudo de baixa sensibilidade incluiu só trauma torácico fechado, e o paciente do caso 2 tem ferimento penetrante."
   ],
   "categorias": [
    "erro conceitual",
@@ -2090,7 +2092,8 @@
   ],
   "ancoras": [
    "A29",
-   "A30"
+   "A30",
+   "A47"
   ]
  },
  {
@@ -7427,17 +7430,17 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?",
   "alternativas": [
-   "Prova causal",
-   "Nenhum dado",
-   "Queda de 17,7% para 12,1% em estudo antes-e-depois; não prova causa",
+   "Redução comprovada em todos os pacientes de centros de trauma de alta complexidade",
+   "Nenhum dado de mortalidade",
+   "Queda de 17,7% para 12,1% nos pacientes com fisiologia alterada, em ensaio randomizado por conglomerados em hospitais não terciários de Gana",
    "Queda para zero",
    "Aumento de mortalidade"
   ],
   "correta": "C",
   "justificativas": [
-   "Desenho não permite.",
-   "Há.",
-   "Correta.",
+   "O efeito foi num subgrupo e em hospitais não terciários.",
+   "Há dado de mortalidade.",
+   "Correta: desfecho secundário, num subgrupo e num contexto diferente do nosso; vale aplicar com cautela.",
    "Não.",
    "Não."
   ],
@@ -7449,7 +7452,9 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "A15"
+   "A15",
+   "A45",
+   "A46"
   ]
  },
  {

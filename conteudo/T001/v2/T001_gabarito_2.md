@@ -222,12 +222,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.
 - E) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.
 
-**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30
+**2. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora A29, A30, A47
 - A) erro conceitual: Um estudo mostrou baixa sensibilidade.
 - B) erro de indicação: Os resultados divergem.
 - C) erro técnico: A especificidade foi 99,8% no estudo citado.
 - D) erro de conduta: Um estudo mostrou sensibilidade de 93,6%.
-- E) **correta**: 
+- E) **correta**: Atenção: o estudo de baixa sensibilidade incluiu só trauma torácico fechado, e o paciente do caso 2 tem ferimento penetrante.
 
 **3. Resposta D** · grau Média · taxa de acerto esperada 50% a 75% · âncora A27
 - A) erro de conduta: Não há contraindicação.

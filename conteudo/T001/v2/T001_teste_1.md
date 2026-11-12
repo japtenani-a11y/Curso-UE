@@ -152,7 +152,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - E) Mandar para a TC e reavaliar na volta
 
 **5.** No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?
-- A) Redução comprovada da mortalidade por ensaio randomizado
+- A) Redução de mortalidade em todos os pacientes, como desfecho principal
 - B) Nenhum efeito sobre o processo
 - C) Aumento comprovado da mortalidade
 - D) Só serve para fins de auditoria, sem relação com o cuidado

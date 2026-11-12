@@ -111,8 +111,8 @@ TESTES[2] = {
 'R+': [
  ("No caso 2, discutindo com residentes os dois estudos de eFAST para pneumotórax, qual a síntese correta?",
   ["Resultados conflitantes: sensibilidade alta em um, baixa em outro; negativo não encerra a investigação","O eFAST é sempre sensível","O eFAST é sempre inútil","A especificidade é baixa","Os dois estudos concordam"],0,
-  ["Correta.","Um estudo mostrou baixa sensibilidade.","Um estudo mostrou sensibilidade de 93,6%.","A especificidade foi 99,8% no estudo citado.","Os resultados divergem."],
-  ["OK","CO","CD","TE","IN"],["A29","A30"]),
+  ["Correta. Atenção: o estudo de baixa sensibilidade incluiu só trauma torácico fechado, e o paciente do caso 2 tem ferimento penetrante.","Um estudo mostrou baixa sensibilidade.","Um estudo mostrou sensibilidade de 93,6%.","A especificidade foi 99,8% no estudo citado.","Os resultados divergem."],
+  ["OK","CO","CD","TE","IN"],["A29","A30","A47"]),
  ("No caso 2, sobre oxigênio suplementar no traumatizado grave, o que a pesquisa com profissionais mostrou?",
   ["A maioria (73 %) não apoia dar oxigênio sempre, sem considerar a SpO2","A maioria apoia oxigênio para todos","Não houve consenso algum","É um ensaio clínico com desfecho de mortalidade","Contraindica oxigênio no trauma"],0,
   ["Correta; é opinião de profissionais, não desfecho clínico.","Foi o contrário.","Houve maioria clara.","É pesquisa de opinião.","Não há contraindicação."],

@@ -14,15 +14,16 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Neurológico e exposição.** Glasgow na chegada e repetido [D16]; agitação também é sinal de choque classe III e IV [D17]. Despir por completo [D18] e, terminado o exame, aquecer: mantas, ar forçado e fluidos aquecidos [D19].
 - **Avaliação secundária e terciária.** A secundária é história (AMPLE) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
-- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14].
+- **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
 
 ## Disputa
 
 - **Treinamento e mortalidade.** Programas de suporte de vida associam-se a menor mortalidade (OR 0,60), mas em estudos observacionais [A2]; não há evidência de alta qualidade de benefício para o paciente [A4].
 - **Torniquete.** A doutrina diz que pode salvar a vida [D7]; a revisão de dados pré-hospitalares mostra redução de mortalidade não significativa (RR 0,70) [A23] e mais amputação inicial (RR 2,07) [A24], possivelmente por confusão com a gravidade da lesão.
 - **Classes de choque.** Sinais clínicos seguem úteis [D17], mas a comparação clássica com o déficit de base teve viés que superestimou a classe pelos parâmetros tradicionais [A32]; "estabilidade hemodinâmica" foi definida em 70% dos artigos, sem consenso [A33].
-- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro [A30].
+- **Ultrassom para pneumotórax.** Sensibilidade de 93,6% em um estudo [A29], baixa sensibilidade com muitos falsos negativos em outro, só em trauma fechado [A30, A47].
 - **Checklist.** Menor mortalidade no ISS > 25 em um estudo (aOR 0,51) [A9]; mais pneumonia em outro (aOR 1,69) [A10].
+- **Formulário e mortalidade.** No mesmo ensaio, a mortalidade caiu de 17,7% para 12,1% só no subgrupo com fisiologia alterada [A15, A46], desfecho secundário e em contexto diferente de um centro de trauma de referência [A45].
 - **Oxigênio.** A maioria dos profissionais (73 %) não apoia oxigênio sempre, sem considerar a SpO2 [A27].
 
 ## Lacunas no conhecimento

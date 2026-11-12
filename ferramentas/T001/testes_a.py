@@ -92,9 +92,9 @@ TESTES[1] = {
   ["Levar à TC um paciente sem resposta clara à ressuscitação é arriscado.","Correta: a fisiologia é o maior determinante do desfecho; o destino depende da resposta.","Alta da sala sem completar a avaliação é erro grave.","Sinais de choque persistentes indicam que algo não está resolvido.","Esperar exame laboratorial atrasa a conduta."],
   ["IN","OK","CD","CO","TE"],["D26","A39"]),
  ("No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?",
-  ["Nenhum efeito sobre o processo","Melhora de indicadores da avaliação primária, como o registro da via aérea","Aumento comprovado da mortalidade","Redução comprovada da mortalidade por ensaio randomizado","Só serve para fins de auditoria, sem relação com o cuidado"],1,
-  ["Houve melhora em 14 de 16 indicadores.","Correta: melhora em 14 de 16 indicadores; registro da via aérea de 72,9% para 98,4%.","Não houve aumento de mortalidade.","A queda de mortalidade veio de estudo antes-e-depois, não de ensaio randomizado.","Os indicadores melhorados são do cuidado, não só do registro."],
-  ["CO","OK","CD","IN","TE"],["A13","A14","A15"]),
+  ["Nenhum efeito sobre o processo","Melhora de indicadores da avaliação primária, como o registro da via aérea","Aumento comprovado da mortalidade","Redução de mortalidade em todos os pacientes, como desfecho principal","Só serve para fins de auditoria, sem relação com o cuidado"],1,
+  ["Houve melhora em 14 de 16 indicadores.","Correta: melhora em 14 de 16 indicadores; registro da via aérea de 72,9% para 98,4%.","Não houve aumento de mortalidade.","A mortalidade foi desfecho secundário e caiu no subgrupo com fisiologia alterada, em ensaio randomizado por conglomerados.","Os indicadores melhorados são do cuidado, não só do registro."],
+  ["CO","OK","CD","IN","TE"],["A13","A14","A15","A45","A46"]),
 ],
 'R+': [
  ("No caso 1, um residente pergunta se o torniquete 'salva vidas'. Qual a resposta mais fiel à evidência?",

@@ -33,3 +33,10 @@ D=[
 ("D31","Mattox9_cap44_membro_inferior","A avaliação terciária deve ser feita depois de completadas a ressuscitação inicial e as intervenções cirúrgicas.","A “tertiary survey” should be completed after the initial resuscitation and operative interventions are complete"),
 ("D32","Mattox9_cap57_uti","A hipotensão após a ressuscitação é sangramento até prova em contrário.","Any patient developing hypotension postresuscitation is bleeding until proven otherwise"),
 ]
+
+# Afirmações de artigos acrescentadas na auditoria de 12/11 (camada 4).
+EXTRA_A=[
+("A45","2023_60","O estudo do formulário de admissão (TIF) foi um ensaio randomizado por conglomerados (stepped-wedge) em oito hospitais não terciários de Gana.","A stepped-wedge cluster randomized trial was conducted by stationing research assistants at emergency units of eight nontertiary hospitals"),
+("A47","2024_47","O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.","A prospective observational analysis of patients with blunt chest trauma"),
+("A46","2023_60","A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).","(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)"),
+]

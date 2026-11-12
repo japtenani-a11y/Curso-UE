@@ -239,9 +239,9 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Sobrevida muito maior
 
 **4.** No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?
-- A) Prova causal
-- B) Nenhum dado
-- C) Queda de 17,7% para 12,1% em estudo antes-e-depois; não prova causa
+- A) Redução comprovada em todos os pacientes de centros de trauma de alta complexidade
+- B) Nenhum dado de mortalidade
+- C) Queda de 17,7% para 12,1% nos pacientes com fisiologia alterada, em ensaio randomizado por conglomerados em hospitais não terciários de Gana
 - D) Queda para zero
 - E) Aumento de mortalidade
 
