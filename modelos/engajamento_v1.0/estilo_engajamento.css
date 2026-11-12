@@ -1,0 +1,28 @@
+
+/* ---------- engajamento (avaliacao, duvidas, ranking, temas) ---------- */
+.engajamento { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--borda); }
+.avaliacao .nps { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+.avaliacao .nps button, .escala button { min-width: 36px; min-height: 36px; border: 1px solid var(--borda); background: var(--superficie); color: var(--texto); border-radius: 8px; cursor: pointer; font: inherit; }
+.avaliacao button.sel, .escala button.sel, .botao.sel { background: var(--primaria); color: var(--primaria-texto); border-color: var(--primaria); }
+.escala { display: grid; grid-template-columns: minmax(160px, 1fr) auto; align-items: center; gap: 4px 12px; margin: 6px 0; }
+.escala > div { display: flex; gap: 4px; }
+.escala small { grid-column: 1 / -1; color: var(--texto-2); font-size: .75rem; }
+.escala input { width: 100px; padding: 6px 8px; border: 1px solid var(--borda); border-radius: 8px; background: var(--superficie); color: var(--texto); }
+.avaliacao textarea, .cartao-app textarea { width: 100%; min-height: 70px; padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; font: inherit; background: var(--superficie); color: var(--texto); margin-top: 8px; }
+.tabela-rolavel { overflow-x: auto; }
+.tabela { border-collapse: collapse; width: 100%; background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); font-size: .92rem; }
+.tabela th, .tabela td { padding: 8px 10px; border-bottom: 1px solid var(--borda); text-align: left; vertical-align: middle; }
+.tabela th { background: var(--superficie-2); font-weight: 600; }
+.tabela tr.eu td { background: var(--acento-suave); font-weight: 600; }
+.busca { width: 100%; max-width: 420px; padding: 10px 12px; border: 1px solid var(--borda); border-radius: 10px; font: inherit; margin: 8px 0; background: var(--superficie); color: var(--texto); }
+.agendar { display: inline-flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.agendar input { padding: 6px 8px; border: 1px solid var(--borda); border-radius: 8px; font: inherit; background: var(--superficie); color: var(--texto); }
+.resposta { background: var(--superficie-2); border-radius: 10px; padding: 4px 14px; }
+@media (max-width: 720px) { .escala { grid-template-columns: 1fr; } }
+button.etapa { border: 0; cursor: pointer; font: inherit; text-align: center; }
+/* dentro da tela de testes (.tst), os botoes do formulario nao herdam o azul dos botoes do teste */
+.tst .engajamento button:not(.botao) { background: var(--superficie); color: var(--texto); border: 1px solid var(--borda); padding: 0; }
+.tst .engajamento button.sel:not(.botao), .tst .engajamento button.etapa.atual { background: var(--primaria); color: var(--primaria-texto); border-color: var(--primaria); }
+.tst .engajamento button.etapa:not(.atual) { background: var(--superficie-2); color: var(--texto-2); border: 0; padding: 8px 10px; }
+.tst .engajamento .botao.discreto { background: var(--superficie); color: var(--texto); border-color: var(--borda); }
+.tst .engajamento .botao:not(.discreto) { background: var(--primaria); color: var(--primaria-texto); }

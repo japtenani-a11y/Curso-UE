@@ -55,8 +55,8 @@ Nunca coloque esses valores no repositório nem no chat.
 
 ```bash
 cd ~/Curso-UE
-bash subir_api_pwa_wsl_v1.0.sh japt1992      # gera, instala e testa localmente (uma vez por atualização)
-bash 50_servidor_revisao_v1.0.sh japt1992    # coloca no ar em https://SEU-DOMINIO
+bash subir_api_pwa_wsl_v1.0.sh SUA_SENHA_DO_BANCO      # gera, instala e testa localmente (uma vez por atualização)
+bash 50_servidor_revisao_v1.0.sh SUA_SENHA_DO_BANCO    # coloca no ar em https://SEU-DOMINIO
 bash 50_servidor_revisao_v1.0.sh parar       # tira do ar
 ```
 O computador precisa ficar ligado (e o WSL aberto) enquanto os revisores trabalham. Na primeira visita, o ngrok gratuito mostra uma página de aviso: é só clicar em **Visit Site**.

@@ -63,6 +63,13 @@ UPDATE conteudo.artefato a SET status = 'arquivado'
         OR a.versao < (SELECT max(x.versao) FROM conteudo.artefato x
                         WHERE x.tema_id = a.tema_id AND x.tipo = a.tipo AND x.status = 'rascunho'));
 
+-- Arquiva os 12 artefatos de demonstracao publicados pela instalacao (texto "Conteudo do artefato ..."),
+-- para o aluno nao ver material falso enquanto o T001 real esta em revisao.
+UPDATE conteudo.artefato a SET status = 'arquivado'
+  FROM app.tema t
+ WHERE a.tema_id = t.tema_id AND replace(t.codigo,'-','') = 'T001' AND a.status = 'publicado'
+   AND a.corpo LIKE 'Conteudo do artefato %' AND length(a.corpo) < 200;
+
 SELECT p.email_primario, d.papel FROM app.designacao d JOIN app.pessoa p USING (pessoa_id)
  WHERE p.email_primario::text IN ('japtenani@gmail.com','aline@sardow.com','jorge.carnesecca@hotmail.com');
 COMMIT;

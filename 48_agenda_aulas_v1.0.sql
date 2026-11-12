@@ -5,8 +5,9 @@
 --  Feriados considerados: nacionais, do estado de Sao Paulo, municipal de Ribeirao Preto (19/06)
 --  e pontos facultativos do servico publico (Carnaval, Cinzas, Corpus Christi, Dia do Servidor,
 --  vesperas de Natal e Ano-Novo). Fonte da lista de 2027: proximoferiado.net (Ribeirao Preto, 2027).
---  A ordem dos temas segue a dificuldade (1 primeiro, 5 por ultimo) e, no empate, o codigo.
--- Pre-requisito: 43 (agendar_ondas_tema). Pode ser rodado mais de uma vez.
+--  Entram so os 39 temas principais (nuclear, ver 53), na ordem de dificuldade (ordem_principal).
+--  Os demais temas sao opcionais: cada residente escolhe o D0 (54).
+-- Pre-requisito: 43 (agendar_ondas_tema) e 53 (temas). RODAR SO NO SERVIDOR: move as ondas do T001 para 2027. Pode ser rodado mais de uma vez.
 \set ON_ERROR_STOP on
 BEGIN;
 
@@ -91,8 +92,9 @@ BEGIN
     SELECT a.ordem, row_number() OVER (ORDER BY a.ordem) AS n FROM app.agenda_aula a
      WHERE a.ciclo_id = p_ciclo AND a.tema_id IS NULL),
   pendentes AS (
-    SELECT t.tema_id, row_number() OVER (ORDER BY coalesce(t.dificuldade, 3), t.codigo) AS n FROM app.tema t
-     WHERE t.ciclo_id = p_ciclo AND NOT EXISTS (SELECT 1 FROM app.agenda_aula a WHERE a.tema_id = t.tema_id))
+    SELECT t.tema_id, row_number() OVER (ORDER BY t.ordem_principal, coalesce(t.dificuldade, 3), t.codigo) AS n FROM app.tema t
+     WHERE t.ciclo_id = p_ciclo AND t.papel_curricular = 'nuclear'
+       AND NOT EXISTS (SELECT 1 FROM app.agenda_aula a WHERE a.tema_id = t.tema_id))
   UPDATE app.agenda_aula a SET tema_id = p.tema_id
     FROM livres l JOIN pendentes p USING (n)
    WHERE a.ciclo_id = p_ciclo AND a.ordem = l.ordem;

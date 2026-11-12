@@ -32,7 +32,7 @@ HOST="${PGHOST_TESTE:-localhost}"; PORTA="${PGPORT_TESTE:-5432}"
 falhar() { echo; echo "ERRO: $*"; exit 1; }
 
 parar() {
-  for n in srv_api srv_gateway srv_ngrok srv_notificador; do
+  for n in srv_api srv_gateway srv_ngrok srv_notificador srv_respondedor; do
     [ -f "$RABS/logs/$n.pid" ] && kill "$(cat "$RABS/logs/$n.pid")" 2>/dev/null && echo "parado: $n"
     rm -f "$RABS/logs/$n.pid"
   done
@@ -57,7 +57,9 @@ command -v ngrok >/dev/null || falhar "ngrok nao instalado. Veja docs/servidor_r
 
 SQL="psql postgresql://postgres:$PW@$HOST:$PORTA/programa -v ON_ERROR_STOP=1 -q"
 echo "[1/5] Cadastrando revisores e registro de acesso..."
-$SQL -f 49_revisores_v1.0.sql > "$RABS/logs/srv_banco.log" 2>&1 || falhar "49_revisores falhou; veja $RAIZ/logs/srv_banco.log"
+for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql; do
+  $SQL -f $f >> "$RABS/logs/srv_banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/srv_banco.log"
+done
 grep -E "@" "$RABS/logs/srv_banco.log" | sed 's/^/      /'
 
 echo "[2/5] Gerando o aplicativo para producao (pwa/dist)..."
@@ -84,6 +86,10 @@ sleep 1; curl -s http://127.0.0.1:8080/api/health | grep -q ok || falhar "o gate
   NOTIFICAR_MODO="${NOTIFICAR_MODO:-simular}" APP_URL="https://$DOMINIO" GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" GOOGLE_CLIENT_SECRET="$GOOGLE_CLIENT_SECRET" \
   GOOGLE_REDIRECT_URI="https://$DOMINIO/api/auth/callback" CORS_ORIGINS="https://$DOMINIO" LOG_LEVEL=info \
   nohup setsid npx tsx src/notificador.ts > "$RABS/logs/srv_notificador.log" 2>&1 & echo $! > "$RABS/logs/srv_notificador.pid" )
+IA="$HOME/.config/curso-ue/ia.env"
+( set -a; [ -f "$IA" ] && . "$IA"; set +a; cd "$RABS/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=production LOG_LEVEL=info \
+  GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" GOOGLE_CLIENT_SECRET="$GOOGLE_CLIENT_SECRET" GOOGLE_REDIRECT_URI="https://$DOMINIO/api/auth/callback" CORS_ORIGINS="https://$DOMINIO" \
+  nohup setsid npx tsx src/respondedor.ts > "$RABS/logs/srv_respondedor.log" 2>&1 & echo $! > "$RABS/logs/srv_respondedor.pid" )
 echo "      ok"
 
 echo "[5/5] Abrindo o tunel HTTPS (ngrok) em https://$DOMINIO ..."

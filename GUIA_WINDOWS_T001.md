@@ -28,9 +28,9 @@ ls ~/fontes_zip/T001 | head -3
 ## 4. Criar o banco e instalar (uma vez) — um unico comando
 Dentro da pasta do projeto:
 ```
-bash instalar_banco_wsl_v1.0.sh japt1992 ./programa-cut
+bash instalar_banco_wsl_v1.0.sh SUA_SENHA_DO_BANCO ./programa-cut
 ```
-(`japt1992` e a senha do banco local de teste; vale para postgres, api_rw, maestro_rw e metabase_ro.)
+(`SUA_SENHA_DO_BANCO` e a senha do banco local de teste; vale para postgres, api_rw, maestro_rw e metabase_ro.)
 Se o arquivo `instalar_banco_wsl_v1.0.sh` nao existir na sua pasta, baixe de novo o ZIP da branch executor-v2 ou copie o arquivo enviado no chat para dentro dela.
 Nao use `sudo -u postgres psql -f arquivo`: o usuario postgres nao le arquivos da sua pasta pessoal ("permission denied").
 
@@ -39,7 +39,7 @@ Nao use `sudo -u postgres psql -f arquivo`: o usuario postgres nao le arquivos d
 export ANTHROPIC_API_KEY="..."        # chave nova
 export ANTHROPIC_MODEL="claude-sonnet-5-5"
 export NCBI_API_KEY="..."             # opcional
-export MAESTRO_DATABASE_URL="postgresql://maestro_rw:japt1992@localhost:5432/programa"
-export DATABASE_URL="postgresql://postgres:japt1992@localhost:5432/programa"
+export MAESTRO_DATABASE_URL="postgresql://maestro_rw:SUA_SENHA_DO_BANCO@localhost:5432/programa"
+export DATABASE_URL="postgresql://postgres:SUA_SENHA_DO_BANCO@localhost:5432/programa"
 bash rodar_T001_v1.0.sh ./programa-cut ~/fontes_zip 45
 ```
