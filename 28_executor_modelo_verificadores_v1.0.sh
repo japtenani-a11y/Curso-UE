@@ -100,7 +100,7 @@ export const buscadorReal: Buscador = async ({ pmid, doi }) => {
   if (pmid) {
     const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json${process.env.NCBI_API_KEY ? `&api_key=${process.env.NCBI_API_KEY}` : ''}`);
     if (!res.ok) throw new Error(`NCBI HTTP ${res.status}`);
-    const j: any = await res.json();
+    const j: any = (await res.json()) as any;
     const d = j?.result?.[pmid];
     if (!d || d.error) return { existe: false };
     const tipos: string[] = (d.pubtype ?? []).map((x: string) => x.toLowerCase());
@@ -109,7 +109,7 @@ export const buscadorReal: Buscador = async ({ pmid, doi }) => {
   const res = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi!)}`);
   if (res.status === 404) return { existe: false };
   if (!res.ok) throw new Error(`Crossref HTTP ${res.status}`);
-  const m: any = (await res.json()).message;
+  const m: any = ((await res.json()) as any).message;
   const upd = JSON.stringify(m?.relation ?? {}) + JSON.stringify(m?.['update-to'] ?? []);
   return { existe: true, titulo: (m?.title ?? [])[0], retratado: /retract/i.test(upd) };
 };
@@ -142,7 +142,7 @@ export async function chamarModelo(p: {
     }),
   });
   if (!res.ok) throw new Error(`API do modelo HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const j: any = await res.json();
+  const j: any = (await res.json()) as any;
   const texto = (j.content ?? []).filter((b: any) => b.type === 'text').map((b: any) => b.text).join('');
   return { texto, modelo: j.model ?? modelo, tokensEntrada: j.usage?.input_tokens ?? 0, tokensSaida: j.usage?.output_tokens ?? 0 };
 }
