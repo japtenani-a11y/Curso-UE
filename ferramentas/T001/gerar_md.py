@@ -46,4 +46,8 @@ for tipo,tit,trocas in [('podcast_roteiro','Roteiro de podcast',[('A ideia é qu
         assert x in c,(tipo,x); c=c.replace(x,y)
     assert 'DOUTRINA – confirmar na camada 2' not in c,tipo
     salvar(tipo,tit,c,[i for i in refs(c) if i in AF])
+# slides da aula em texto (vao ao aplicativo na etapa 3 e a revisao)
+sys.path.insert(0,'/home/claude/japtenani-a11y/curso-ue/ferramentas/T001')
+from gerar_slides_md import slides_md
+c=AV+slides_md(); salvar('slides','Slides da aula',c,[i for i in refs(c) if i in AF])
 print(len(os.listdir(OUT)),'arquivos')

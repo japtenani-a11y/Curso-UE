@@ -2,7 +2,7 @@
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
-Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Mattox (camada 2) e 75 artigos da revisão dos últimos 10 anos (camada 4). Camadas 1, 3 e 5 ainda sem fontes carregadas para este tema.
+Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Mattox (camada 2) e 75 artigos da revisão dos últimos 10 anos (camada 4), além do Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar (camada 3). Camadas 1 e 5 ainda sem fontes carregadas para este tema.
 
 ## Consenso
 

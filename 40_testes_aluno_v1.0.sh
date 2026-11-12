@@ -189,7 +189,7 @@ export const leituraRouter = Router();
 
 const REVISORES = ['admin', 'data_steward', 'curador', 'preceptor'];
 const TIPOS = ['objetivos', 'resumo_basico', 'podcast_roteiro', 'caso_base', 'sintese_evidencia', 'resumo', 'mapa',
-  'flashcard', 'protocolo', 'checklist', 'aula', 'caso'];
+  'flashcard', 'protocolo', 'checklist', 'aula', 'slides', 'caso'];
 
 // Aluno: versao publicada mais recente de cada tipo, so ate a etapa liberada.
 // Revisor com ?previa=1: rascunho mais recente de cada tipo, sem travas.
