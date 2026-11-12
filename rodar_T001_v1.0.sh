@@ -22,7 +22,17 @@ for c in psql node npm pdftotext python3; do command -v $c >/dev/null || { echo 
 echo "== 1/6 gerar executor (modelo + verificadores + selecao de fontes)"
 bash "$AQUI/28_executor_modelo_verificadores_v1.0.sh" "$RAIZ" >/dev/null
 echo "== 2/6 compilar e testar"
-( cd "$RAIZ/executor" && npm install --no-audit --no-fund >/dev/null && npx tsc && node --test dist/test/ 2>&1 | grep -E "^# (tests|pass|fail)" )
+(
+  cd "$RAIZ/executor"
+  npm install --no-audit --no-fund >/dev/null 2>&1
+  npx tsc
+  LOGT="$(mktemp)"
+  if node --test dist/test/*.test.js >"$LOGT" 2>&1; then
+    echo "   testes do executor: OK ($(ls dist/test/*.test.js | wc -l) arquivos)"
+  else
+    echo "ERRO nos testes do executor:"; tail -40 "$LOGT"; exit 1
+  fi
+)
 echo "== 3/6 carregar as 75 fontes do T001 (confira carga_fontes_pendentes.txt)"
 ( cd "$AQUI" && bash 29_carga_fontes_v1.0.sh fontes/catalogo_T001.csv "$PASTA" --aplicar 2>&1 | tail -5 )
 echo "== 4/6 enfileirar os 12 jobs"

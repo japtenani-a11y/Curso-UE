@@ -394,4 +394,4 @@ test('selecionarFontes respeita orcamento e prioriza relevantes', () => {
   assert.ok(r.reduce((s, x) => s + x.texto.length, 0) <= 10_000);
 });
 EOF_ts
-echo "OK. Teste: cd $RAIZ/executor && npx tsc && node --test dist/test/"
+echo "OK. Teste: cd $RAIZ/executor && npx tsc && node --test dist/test/*.test.js"
