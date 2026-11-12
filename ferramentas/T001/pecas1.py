@@ -127,8 +127,8 @@ Um líder, de preferência o cirurgião do trauma, coordena e fica com a visão 
 4. Reavaliar sempre: lesão escondida aparece depois.
 """)
 
-P['caso_semente'] = ('Caso semente', """
-# T001 — Caso semente
+P['caso_base'] = ('Caso base', """
+# T001 — Caso base
 
 Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão discutidas na aula. Não há respostas aqui: anote as suas.
 

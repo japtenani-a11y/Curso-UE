@@ -127,12 +127,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Manter a investigação e o exame, porque o ultrassom pode dar falso negativo
 - E) Encerrar a hipótese de pneumotórax
 
-**3.** No caso 2, qual foi a sensibilidade do E-FAST para pneumotórax no estudo com melhor resultado?
-- A) 75%
-- B) 99,8%
-- C) 93,6%
-- D) 50%
-- E) 100%
+**3.** No caso 2, o eFAST foi negativo e a SpO2 melhora com oxigênio. Como usar esse eFAST negativo na decisão?
+- A) Ignorá-lo, porque o ultrassom não avalia o tórax
+- B) Para indicar drenagem torácica imediata
+- C) Como dado de apoio, sem descartar pneumotórax: a sensibilidade variou entre os estudos
+- D) Para descartar pneumotórax, porque a sensibilidade é sempre maior que 99%
+- E) Para liberar o paciente da sala sem reavaliar
 
 **4.** No caso 2, sem acesso venoso após tentativas, qual a melhor opção?
 - A) Esperar a TC
@@ -155,12 +155,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Porque o ferimento é penetrante
 - E) Porque a SpO2 está baixa
 
-**7.** No caso 2, qual a frequência da via aérea cirúrgica de emergência em grande coorte japonesa?
-- A) 0,024%
-- B) 2,4%
-- C) 10%
-- D) 24%
-- E) 0,24%
+**7.** No caso 2, o paciente fica sonolento, com Glasgow 8, e fala com dificuldade. Qual a conduta de via aérea?
+- A) Nenhuma, porque ele ainda fala
+- B) Cricotireoidostomia imediata, sem tentar intubação
+- C) Sedar e paralisar antes de qualquer exame neurológico
+- D) Aguardar o Glasgow cair mais
+- E) Via aérea definitiva, com exame neurológico breve antes da sedação
 
 
 ## Perfil R3

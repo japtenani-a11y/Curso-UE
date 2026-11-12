@@ -94,12 +94,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Atraso.
 - E) **correta**: 
 
-**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A35
-- A) erro técnico: Não.
-- B) erro de indicação: Não.
-- C) **correta**: (5 de 67 pacientes).
-- D) erro conceitual: Não.
-- E) erro de conduta: Houve casos.
+**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D9, A35
+- A) erro conceitual: O FAST-PLUS avalia a sínfise.
+- B) erro de conduta: Atraso no controle do sangramento.
+- C) **correta**: o ultrassom detectou alargamento crítico confirmado na TC, e a cinta vai já no alto risco.
+- D) erro técnico: Retirar expõe a novo sangramento.
+- E) erro de indicação: Laparotomia não trata o sangramento pélvico.
 
 **7. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D26, A39, D22
 - A) erro de conduta: Arriscado.
@@ -119,11 +119,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.
 
 **2. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora A34
-- A) erro conceitual: Não é o valor.
-- B) erro de conduta: Não.
-- C) **correta**: 
-- D) erro de indicação: Não.
-- E) erro técnico: Não.
+- A) erro de conduta: Diagnóstico não substitui tratamento.
+- B) erro técnico: É exame de beira-leito.
+- C) **correta**: teve sensibilidade de 94,2% no politraumatizado instável.
+- D) erro conceitual: Não é essa a função.
+- E) erro de indicação: Foi estudado justamente no instável.
 
 **3. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D26, D27
 - A) erro conceitual: Erro de conduta.
@@ -132,12 +132,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Atraso.
 - E) erro de conduta: Atraso no instável sem resposta.
 
-**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22
-- A) erro técnico: Há.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Não.
-- E) erro de indicação: Houve diferença.
+**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22, D9
+- A) erro técnico: Expõe a novo sangramento.
+- B) erro de conduta: Atraso.
+- C) **correta**: a colaboração próxima associou-se a sobrevida 15,5% maior que a prevista.
+- D) erro conceitual: Não exclui sangramento retroperitoneal ou pélvico.
+- E) erro de indicação: Não trata o sangramento pélvico.
 
 **5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A32, D17
 - A) erro conceitual: Teve viés.

@@ -37,12 +37,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sangramento até prova em contrário
 - E) Desidratação
 
-**5.** No caso 5, qual a proporção de lesões com diagnóstico tardio num estudo, mesmo com TC?
-- A) 13,9 %
-- B) 90%
-- C) 0%
-- D) 50%
-- E) 1%
+**5.** No caso 5, a família pergunta por que a lesão não apareceu na TC. Qual a explicação correta?
+- A) Lesões podem ser descobertas depois mesmo com TC
+- B) Não é preciso reexaminar
+- C) Isso só acontece em crianças
+- D) A lesão surgiu depois, sem relação com o atropelamento
+- E) A TC vê todas as lesões
 
 **6.** No caso 5, o que fazer com as imagens já feitas?
 - A) Repetir todas sem revisar
@@ -96,12 +96,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só no idoso
 - E) Não; sensibilidade de 75%
 
-**6.** No caso 5, qual a taxa de lesão potencialmente letal surgindo após a terciária em estudo?
-- A) 13,9 %
-- B) 26%
-- C) 0,26%
-- D) Nenhuma
-- E) 2,6%
+**6.** No caso 5, a avaliação terciária foi feita no segundo dia e não achou nada. A dor no ombro surge no terceiro. O que fazer?
+- A) Repetir a TC de corpo inteiro sem exame
+- B) Ignorar, porque a terciária já foi feita
+- C) Reexaminar e investigar
+- D) Dar alta e reavaliar no ambulatório
+- E) Atribuir à posição no leito sem examinar
 
 **7.** No caso 5, quem atendeu a paciente na UTI deve fazer o quê?
 - A) Nada
@@ -141,12 +141,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Sensibilidade 75% e especificidade 99%: bom para confirmar, ruim para excluir
 - E) Sensibilidade 99%
 
-**5.** No caso 5, entre pacientes com TC de corpo inteiro, quantos tinham avaliação primária sem alterações em um estudo?
-- A) 0,3%
-- B) Nenhum
-- C) 50%
-- D) 3,02%
-- E) 30,2%
+**5.** Ao revisar a indicação da TC no caso 5, qual argumento é sustentado pela evidência?
+- A) A TC de rotina reduz a mortalidade de forma comprovada
+- B) A TC deve ser repetida a cada 12 horas
+- C) A TC dispensa a avaliação terciária
+- D) Com primária sem alterações, a TC de corpo inteiro acrescentou pouco: 3,02% dos submetidos estavam nesse grupo e nenhum teve lesão na imagem
+- E) A TC encontra lesão grave em metade desses pacientes
 
 **6.** No caso 5, como reduzir a chance de nova lesão despercebida até a alta?
 - A) Alta precoce
@@ -259,9 +259,9 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só multar
 - E) Só registrar
 
-**7.** No caso 5, a paciente teve avaliação primária sem alterações e TC normal. O que um estudo diz sobre esse grupo?
-- A) Só idosos
-- B) Não há estudo
-- C) 3,02% dos submetidos tinham primária sem alterações, e nenhum teve lesão na imagem
-- D) Todos tinham lesão
-- E) Metade tinha lesão grave
+**7.** No caso 5, você revisa o critério de TC de corpo inteiro do serviço. Qual proposta é coerente com as fontes?
+- A) Tornar a TC universal porque reduz mortalidade
+- B) Indicar só pela idade
+- C) Indicar por critérios e manter a avaliação terciária
+- D) Nunca fazer TC em atropelados
+- E) TC para todos, dispensando a terciária

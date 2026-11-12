@@ -1573,31 +1573,32 @@
   "grau": 2,
   "grau_nome": "Fácil",
   "taxa_esperada": "75% a 90%",
-  "enunciado": "No caso 2, qual foi a sensibilidade do E-FAST para pneumotórax no estudo com melhor resultado?",
+  "enunciado": "No caso 2, o eFAST foi negativo e a SpO2 melhora com oxigênio. Como usar esse eFAST negativo na decisão?",
   "alternativas": [
-   "75%",
-   "99,8%",
-   "93,6%",
-   "50%",
-   "100%"
+   "Ignorá-lo, porque o ultrassom não avalia o tórax",
+   "Para indicar drenagem torácica imediata",
+   "Como dado de apoio, sem descartar pneumotórax: a sensibilidade variou entre os estudos",
+   "Para descartar pneumotórax, porque a sensibilidade é sempre maior que 99%",
+   "Para liberar o paciente da sala sem reavaliar"
   ],
   "correta": "C",
   "justificativas": [
-   "Não é o valor do estudo.",
-   "99,8% é a especificidade.",
-   "Correta; a especificidade foi 99,8%.",
-   "Não é o valor do estudo.",
-   "Nenhum estudo mostrou 100%."
+   "O eFAST inclui a avaliação do tórax.",
+   "Exame negativo não indica drenagem.",
+   "Correta: sensibilidade de 93,6% em um estudo e baixa, com muitos falsos negativos, em outro.",
+   "99,8% foi a especificidade, não a sensibilidade.",
+   "Sem reavaliação, um pneumotórax pode passar."
   ],
   "categorias": [
-   "erro de indicação",
    "erro técnico",
+   "erro de indicação",
    "correta",
    "erro conceitual",
    "erro de conduta"
   ],
   "ancoras": [
-   "A29"
+   "A29",
+   "A30"
   ]
  },
  {
@@ -1724,30 +1725,32 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 2, qual a frequência da via aérea cirúrgica de emergência em grande coorte japonesa?",
+  "enunciado": "No caso 2, o paciente fica sonolento, com Glasgow 8, e fala com dificuldade. Qual a conduta de via aérea?",
   "alternativas": [
-   "0,024%",
-   "2,4%",
-   "10%",
-   "24%",
-   "0,24%"
+   "Nenhuma, porque ele ainda fala",
+   "Cricotireoidostomia imediata, sem tentar intubação",
+   "Sedar e paralisar antes de qualquer exame neurológico",
+   "Aguardar o Glasgow cair mais",
+   "Via aérea definitiva, com exame neurológico breve antes da sedação"
   ],
   "correta": "E",
   "justificativas": [
-   "Não é o valor do estudo.",
-   "Não é o valor do estudo.",
-   "Não é o valor do estudo.",
-   "Valor muito acima do estudo.",
-   "Correta: 0,24% dos pacientes."
+   "Fala difícil com Glasgow 8 não garante a via aérea.",
+   "A via aérea cirúrgica é exceção (0,24% numa grande coorte), não a primeira opção.",
+   "Perde-se a informação neurológica de base.",
+   "Esperar piora atrasa a proteção da via aérea.",
+   "Correta: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação."
   ],
   "categorias": [
-   "erro de conduta",
-   "erro técnico",
-   "erro de indicação",
    "erro conceitual",
+   "erro de indicação",
+   "erro técnico",
+   "erro de conduta",
    "correta"
   ],
   "ancoras": [
+   "D11",
+   "D12",
    "A28"
   ]
  },
@@ -2779,31 +2782,33 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 3, qual a frequência de hipotermia no trauma grave?",
+  "enunciado": "No caso 3, a temperatura é 35,1 °C e um colega diz que isso não é prioridade. Como responder?",
   "alternativas": [
-   "Só em quem fica na chuva",
-   "Só em crianças",
-   "Até dois terços dos pacientes",
-   "Não há dados",
-   "Menos de 1%"
+   "Resfriar para proteger o cérebro",
+   "Aquecer só com fluido, sem mantas",
+   "A hipotermia atinge até dois terços dos graves e é subvalorizada: aquecer já",
+   "Hipotermia é rara no trauma",
+   "Concordar: só tratar abaixo de 32 °C"
   ],
   "correta": "C",
   "justificativas": [
-   "Ocorre em geral.",
-   "Ocorre em todas as idades.",
+   "Não há base para resfriar aqui.",
+   "Fluido aquecido sozinho pode não bastar; usar mantas e ar forçado.",
    "Correta.",
-   "Há dados.",
-   "Muito mais frequente."
+   "É frequente.",
+   "Esperar piorar contraria a prevenção."
   ],
   "categorias": [
    "erro de indicação",
    "erro técnico",
    "correta",
-   "erro de conduta",
-   "erro conceitual"
+   "erro conceitual",
+   "erro de conduta"
   ],
   "ancoras": [
-   "A36"
+   "A36",
+   "D19",
+   "A38"
   ]
  },
  {
@@ -3041,31 +3046,32 @@
   "grau": 5,
   "grau_nome": "Muito difícil",
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 3, um grande estudo encontrou lesão potencialmente letal surgindo após a avaliação terciária em qual proporção dos graves?",
+  "enunciado": "No caso 3, a avaliação terciária no segundo dia não achou nada. No quarto dia, o paciente piora. Como pensar?",
   "alternativas": [
-   "0%",
-   "13,9 %",
-   "26%",
-   "0,26%",
-   "2,6%"
+   "Dar alta da UTI",
+   "Aguardar 48 horas",
+   "A terciária excluiu tudo; pensar só em causas clínicas",
+   "Ainda pode haver lesão não identificada: houve lesão potencialmente letal após a terciária em 0,26% dos graves",
+   "Repetir a TC de corpo inteiro sem examinar"
   ],
   "correta": "D",
   "justificativas": [
-   "Houve casos.",
-   "Esse é o valor de lesões tardias em outro estudo.",
-   "Muito acima.",
-   "Correta.",
-   "Não é o valor."
+   "Inadequado com piora.",
+   "Atraso.",
+   "A terciária reduz, mas não elimina, lesões não identificadas.",
+   "Correta: reexaminar e investigar.",
+   "A imagem não substitui o reexame."
   ],
   "categorias": [
-   "erro de conduta",
    "erro de indicação",
+   "erro de conduta",
    "erro conceitual",
    "correta",
    "erro técnico"
   ],
   "ancoras": [
-   "A41"
+   "A41",
+   "D30"
   ]
  },
  {
@@ -3305,31 +3311,32 @@
   "grau": 5,
   "grau_nome": "Muito difícil",
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 3, o teste clínico SILENT para lesão de membro inferior teve qual desempenho?",
+  "enunciado": "No caso 3, o paciente intubado tem a perna esquerda edemaciada e o teste clínico SILENT é negativo. Como agir?",
   "alternativas": [
-   "Especificidade 75%",
-   "Sensibilidade 75% e especificidade 99%",
-   "Sensibilidade 100%",
-   "Sensibilidade 99% e especificidade 75%",
-   "Ambas 50%"
+   "Indicar fasciotomia imediata",
+   "Não excluir lesão: o SILENT tem sensibilidade de 75%; investigar com imagem",
+   "Repetir o SILENT até ficar positivo",
+   "Excluir lesão, porque a especificidade é 99%",
+   "Ignorar o edema"
   ],
   "correta": "B",
   "justificativas": [
-   "Não.",
+   "Não há indicação com os dados do caso.",
    "Correta: bom para confirmar, insuficiente para excluir.",
-   "Não.",
-   "Invertido.",
-   "Não."
+   "Repetir o teste não muda seu desempenho.",
+   "A especificidade alta serve para confirmar, não para excluir.",
+   "Achado positivo de exame exige ação."
   ],
   "categorias": [
-   "erro de conduta",
-   "correta",
    "erro de indicação",
+   "correta",
    "erro técnico",
-   "erro conceitual"
+   "erro conceitual",
+   "erro de conduta"
   ],
   "ancoras": [
-   "A43"
+   "A43",
+   "D25"
   ]
  },
  {
@@ -3418,31 +3425,32 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 3, sobre 'estabilidade hemodinâmica', o que a revisão de 222 artigos mostrou?",
+  "enunciado": "No caso 3, um residente diz que o paciente está 'hemodinamicamente estável' porque a PA do aparelho automático é normal. Como corrigir o raciocínio?",
   "alternativas": [
-   "Definida em 70% dos artigos elegíveis, sem consenso nos pontos de corte",
-   "Nunca definida",
-   "Definida só pela PA",
-   "Definição universal",
-   "Definida em 100%"
+   "Estabilidade não tem definição consensual; descrever os parâmetros e a resposta, e medir a PA manualmente",
+   "Confiar no aparelho automático no choque",
+   "Encerrar a reposição",
+   "Concordar: PA normal define estabilidade",
+   "Usar só a FC para decidir"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta.",
-   "Foi definida em 70%.",
-   "Não.",
-   "Não há consenso.",
-   "Não."
+   "Correta: foi definida em 70% dos artigos, sem consenso nos cortes; e o aparelho automático pode errar no choque.",
+   "Pode errar no choque.",
+   "FC 118 e pele fria sugerem choque.",
+   "Não há definição única.",
+   "Parâmetro isolado não basta."
   ],
   "categorias": [
    "correta",
-   "erro de indicação",
+   "erro técnico",
    "erro de conduta",
    "erro conceitual",
-   "erro técnico"
+   "erro de indicação"
   ],
   "ancoras": [
-   "A33"
+   "A33",
+   "D14"
   ]
  },
  {
@@ -4059,30 +4067,31 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 4, o ultrassom pode avaliar a sínfise púbica. Em que proporção um estudo achou alargamento crítico?",
+  "enunciado": "No caso 4, o ultrassom à beira-leito mostra afastamento da sínfise púbica. O que fazer?",
   "alternativas": [
-   "0,75%",
-   "50%",
-   "7,5%",
-   "75%",
-   "Nenhum"
+   "Ignorar: o ultrassom não avalia a bacia",
+   "Aguardar a TC para colocar a cinta",
+   "Manter a cinta pélvica e tratar como sangramento pélvico",
+   "Retirar a cinta para radiografar",
+   "Laparotomia imediata para tratar a bacia"
   ],
   "correta": "C",
   "justificativas": [
-   "Não.",
-   "Não.",
-   "Correta (5 de 67 pacientes).",
-   "Não.",
-   "Houve casos."
+   "O FAST-PLUS avalia a sínfise.",
+   "Atraso no controle do sangramento.",
+   "Correta: o ultrassom detectou alargamento crítico confirmado na TC, e a cinta vai já no alto risco.",
+   "Retirar expõe a novo sangramento.",
+   "Laparotomia não trata o sangramento pélvico."
   ],
   "categorias": [
-   "erro técnico",
-   "erro de indicação",
-   "correta",
    "erro conceitual",
-   "erro de conduta"
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
   ],
   "ancoras": [
+   "D9",
    "A35"
   ]
  },
@@ -4174,28 +4183,28 @@
   "grau": 3,
   "grau_nome": "Média",
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 4, qual a sensibilidade do RUSH no diagnóstico do politraumatizado instável, em estudo?",
+  "enunciado": "No caso 4, você faz o protocolo RUSH à beira-leito. Para que ele serve neste paciente?",
   "alternativas": [
-   "64%",
-   "9,4%",
-   "94,2%",
-   "42%",
-   "100%"
+   "Substituir o controle do sangramento",
+   "Deve ser feito dentro da TC",
+   "Buscar a causa do choque sem sair da sala",
+   "Definir a classe de choque pela tabela",
+   "Só serve para pacientes estáveis"
   ],
   "correta": "C",
   "justificativas": [
-   "Não é o valor.",
-   "Não.",
-   "Correta.",
-   "Não.",
-   "Não."
+   "Diagnóstico não substitui tratamento.",
+   "É exame de beira-leito.",
+   "Correta: teve sensibilidade de 94,2% no politraumatizado instável.",
+   "Não é essa a função.",
+   "Foi estudado justamente no instável."
   ],
   "categorias": [
-   "erro conceitual",
    "erro de conduta",
+   "erro técnico",
    "correta",
-   "erro de indicação",
-   "erro técnico"
+   "erro conceitual",
+   "erro de indicação"
   ],
   "ancoras": [
    "A34"
@@ -4249,31 +4258,32 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 4, se a radiologia intervencionista atua junto com a cirurgia, o que um estudo mostrou?",
+  "enunciado": "No caso 4, o FAST não mostra líquido livre e há suspeita de sangramento pélvico ativo. Qual o próximo passo mais adequado?",
   "alternativas": [
-   "Não há estudo",
-   "Sobrevida menor",
-   "Sobrevida 15,5% maior que a prevista",
-   "Mais mortes",
-   "Sem diferença"
+   "Retirar a cinta para examinar a bacia",
+   "Esperar o resultado do lactato",
+   "Acionar cirurgia e radiologia intervencionista juntas",
+   "Concluir que o FAST negativo exclui sangramento",
+   "Laparotomia exploradora de rotina"
   ],
   "correta": "C",
   "justificativas": [
-   "Há.",
-   "Não.",
-   "Correta.",
-   "Não.",
-   "Houve diferença."
+   "Expõe a novo sangramento.",
+   "Atraso.",
+   "Correta: a colaboração próxima associou-se a sobrevida 15,5% maior que a prevista.",
+   "Não exclui sangramento retroperitoneal ou pélvico.",
+   "Não trata o sangramento pélvico."
   ],
   "categorias": [
    "erro técnico",
-   "erro conceitual",
-   "correta",
    "erro de conduta",
+   "correta",
+   "erro conceitual",
    "erro de indicação"
   ],
   "ancoras": [
-   "A22"
+   "A22",
+   "D9"
   ]
  },
  {
@@ -5079,21 +5089,21 @@
   "grau": 3,
   "grau_nome": "Média",
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 5, qual a proporção de lesões com diagnóstico tardio num estudo, mesmo com TC?",
+  "enunciado": "No caso 5, a família pergunta por que a lesão não apareceu na TC. Qual a explicação correta?",
   "alternativas": [
-   "13,9 %",
-   "90%",
-   "0%",
-   "50%",
-   "1%"
+   "Lesões podem ser descobertas depois mesmo com TC",
+   "Não é preciso reexaminar",
+   "Isso só acontece em crianças",
+   "A lesão surgiu depois, sem relação com o atropelamento",
+   "A TC vê todas as lesões"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta.",
-   "Não.",
-   "Não.",
-   "Não.",
-   "Não."
+   "Correta: num estudo, ocorreram em 13,9 % dos pacientes.",
+   "O reexame é o que encontra essas lesões.",
+   "Ocorre em adultos.",
+   "Improvável e não justifica deixar de investigar.",
+   "Não vê."
   ],
   "categorias": [
    "correta",
@@ -5377,31 +5387,32 @@
   "grau": 5,
   "grau_nome": "Muito difícil",
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 5, qual a taxa de lesão potencialmente letal surgindo após a terciária em estudo?",
+  "enunciado": "No caso 5, a avaliação terciária foi feita no segundo dia e não achou nada. A dor no ombro surge no terceiro. O que fazer?",
   "alternativas": [
-   "13,9 %",
-   "26%",
-   "0,26%",
-   "Nenhuma",
-   "2,6%"
+   "Repetir a TC de corpo inteiro sem exame",
+   "Ignorar, porque a terciária já foi feita",
+   "Reexaminar e investigar",
+   "Dar alta e reavaliar no ambulatório",
+   "Atribuir à posição no leito sem examinar"
   ],
   "correta": "C",
   "justificativas": [
-   "Outro estudo.",
-   "Não.",
-   "Correta.",
-   "Houve.",
-   "Não."
+   "A imagem não substitui o exame.",
+   "A terciária não é infalível.",
+   "Correta: lesões potencialmente letais apareceram após a terciária em 0,26% dos graves, e achado positivo exige ação.",
+   "Inadequado com queixa nova.",
+   "Presumir sem examinar é erro."
   ],
   "categorias": [
-   "erro de indicação",
+   "erro técnico",
    "erro conceitual",
    "correta",
-   "erro de conduta",
-   "erro técnico"
+   "erro de indicação",
+   "erro de conduta"
   ],
   "ancoras": [
-   "A41"
+   "A41",
+   "D25"
   ]
  },
  {
@@ -5602,31 +5613,32 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 5, entre pacientes com TC de corpo inteiro, quantos tinham avaliação primária sem alterações em um estudo?",
+  "enunciado": "Ao revisar a indicação da TC no caso 5, qual argumento é sustentado pela evidência?",
   "alternativas": [
-   "0,3%",
-   "Nenhum",
-   "50%",
-   "3,02%",
-   "30,2%"
+   "A TC de rotina reduz a mortalidade de forma comprovada",
+   "A TC deve ser repetida a cada 12 horas",
+   "A TC dispensa a avaliação terciária",
+   "Com primária sem alterações, a TC de corpo inteiro acrescentou pouco: 3,02% dos submetidos estavam nesse grupo e nenhum teve lesão na imagem",
+   "A TC encontra lesão grave em metade desses pacientes"
   ],
   "correta": "D",
   "justificativas": [
-   "Não.",
-   "Houve.",
-   "Não.",
+   "Teve pouco ou nenhum efeito em mortalidade.",
+   "Não há base.",
+   "Lesões tardias ocorrem mesmo com TC.",
    "Correta (120 de 3976).",
-   "Não."
+   "Não foi o achado."
   ],
   "categorias": [
+   "erro de indicação",
    "erro técnico",
    "erro de conduta",
-   "erro de indicação",
    "correta",
    "erro conceitual"
   ],
   "ancoras": [
-   "A40"
+   "A40",
+   "A12"
   ]
  },
  {
@@ -6203,31 +6215,33 @@
   "grau": 6,
   "grau_nome": "Extrema",
   "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 5, a paciente teve avaliação primária sem alterações e TC normal. O que um estudo diz sobre esse grupo?",
+  "enunciado": "No caso 5, você revisa o critério de TC de corpo inteiro do serviço. Qual proposta é coerente com as fontes?",
   "alternativas": [
-   "Só idosos",
-   "Não há estudo",
-   "3,02% dos submetidos tinham primária sem alterações, e nenhum teve lesão na imagem",
-   "Todos tinham lesão",
-   "Metade tinha lesão grave"
+   "Tornar a TC universal porque reduz mortalidade",
+   "Indicar só pela idade",
+   "Indicar por critérios e manter a avaliação terciária",
+   "Nunca fazer TC em atropelados",
+   "TC para todos, dispensando a terciária"
   ],
   "correta": "C",
   "justificativas": [
-   "Não.",
-   "Há.",
-   "Correta (120 de 3976).",
-   "Não.",
-   "Não."
+   "Não há essa comprovação.",
+   "Critério isolado e sem base.",
+   "Correta: a TC de rotina tem pouco efeito em mortalidade, a primária normal raramente esconde lesão na imagem, e a terciária reduz lesões não identificadas.",
+   "Sem base.",
+   "Lesões tardias ocorrem mesmo com TC."
   ],
   "categorias": [
-   "erro de conduta",
+   "erro conceitual",
    "erro técnico",
    "correta",
    "erro de indicação",
-   "erro conceitual"
+   "erro de conduta"
   ],
   "ancoras": [
-   "A40"
+   "A12",
+   "A40",
+   "D30"
   ]
  },
  {
@@ -6617,31 +6631,33 @@
   "grau": 4,
   "grau_nome": "Difícil",
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 6, a presença do cirurgião de trauma no local reduziu o tempo de ressuscitação em quanto, em estudo?",
+  "enunciado": "No caso 6, o assistente sugere orientar por telefone, de fora da sala. O que a evidência indica?",
   "alternativas": [
-   "259 segundos",
-   "25 minutos",
-   "25 segundos",
-   "2 horas",
-   "Nada"
+   "Ele deve estar presente: a presença do cirurgião de trauma encurtou a ressuscitação em 259 segundos",
+   "Deixar o R1 liderar sozinho",
+   "O telefone é equivalente",
+   "Liderar da porta, sem ver o paciente",
+   "Só chamá-lo se houver parada"
   ],
   "correta": "A",
   "justificativas": [
    "Correta.",
-   "Não.",
-   "Não.",
-   "Não.",
-   "Houve redução."
+   "Treinandos lideram sob supervisão próxima.",
+   "Não há dado que sustente.",
+   "O líder precisa da visão do todo.",
+   "Atraso."
   ],
   "categorias": [
    "correta",
-   "erro de indicação",
-   "erro conceitual",
    "erro de conduta",
-   "erro técnico"
+   "erro conceitual",
+   "erro técnico",
+   "erro de indicação"
   ],
   "ancoras": [
-   "A19"
+   "A19",
+   "D29",
+   "D22"
   ]
  },
  {
@@ -7219,21 +7235,21 @@
   "grau": 6,
   "grau_nome": "Extrema",
   "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 6, qual o custo do ATLS comparado a outros programas, em estudo?",
+  "enunciado": "Depois do caso 6, o serviço quer treinar toda a equipe. Qual argumento sobre o ATLS é correto ao planejar o orçamento?",
   "alternativas": [
-   "Não há dados",
-   "O mais baixo",
-   "Igual aos outros",
-   "O mais alto (USD 1433,5)",
-   "Gratuito"
+   "Treinar não tem efeito, então não vale treinar",
+   "É gratuito",
+   "Tem benefício comprovado por ensaio, o que justifica qualquer custo",
+   "É o programa de maior custo (USD 1433,5), e o benefício em mortalidade vem de estudos observacionais",
+   "Custa o mesmo que programas para leigos"
   ],
   "correta": "D",
   "justificativas": [
-   "Há.",
+   "Há associação com menor mortalidade (OR 0,60).",
    "Não.",
-   "Não.",
+   "Não há ensaio de alta qualidade.",
    "Correta.",
-   "Não."
+   "O programa para leigos custou USD 3,70."
   ],
   "categorias": [
    "erro de conduta",
@@ -7243,7 +7259,9 @@
    "erro técnico"
   ],
   "ancoras": [
-   "A6"
+   "A6",
+   "A2",
+   "A4"
   ]
  },
  {
@@ -7482,32 +7500,32 @@
   "grau": 6,
   "grau_nome": "Extrema",
   "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 6, qual estudo de viabilidade foi feito para comparar ATLS, PTC e cuidado padrão?",
+  "enunciado": "Após o caso 6, você quer estudar o efeito do treinamento no seu serviço. Que desenho as fontes mostram ser viável e mais informativo?",
   "alternativas": [
-   "Meta-análise de 3 estudos",
-   "Coorte de 10 pacientes",
-   "Ensaio com 92.614 pacientes",
-   "Nenhum",
-   "Piloto com 376 pacientes e 22 residentes"
+   "Comparar com dados de outro país sem ajuste",
+   "Só pesquisa de opinião",
+   "Antes-e-depois sem controle, que já basta",
+   "Nenhum estudo é possível",
+   "Ensaio randomizado por conglomerados, com viabilidade testada em piloto"
   ],
   "correta": "E",
   "justificativas": [
-   "Não é o desenho.",
-   "Não.",
-   "Esse número é da revisão de 19 estudos.",
-   "Há.",
-   "Correta."
+   "Comparação sem ajuste é enviesada.",
+   "Não mede desfecho.",
+   "Os estudos antes-e-depois são a limitação atual.",
+   "O piloto mostrou o contrário.",
+   "Correta: piloto com 376 pacientes e 22 residentes mostrou a viabilidade."
   ],
   "categorias": [
-   "erro de conduta",
    "erro técnico",
-   "erro conceitual",
    "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
    "correta"
   ],
   "ancoras": [
    "A3",
-   "A1"
+   "A7"
   ]
  },
  {

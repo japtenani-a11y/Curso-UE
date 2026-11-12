@@ -103,12 +103,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só a TC tem valor
 - E) O exame físico tem baixo valor preditivo negativo; um exame normal não exclui lesão
 
-**7.** No caso 3, qual a frequência de hipotermia no trauma grave?
-- A) Só em quem fica na chuva
-- B) Só em crianças
-- C) Até dois terços dos pacientes
-- D) Não há dados
-- E) Menos de 1%
+**7.** No caso 3, a temperatura é 35,1 °C e um colega diz que isso não é prioridade. Como responder?
+- A) Resfriar para proteger o cérebro
+- B) Aquecer só com fluido, sem mantas
+- C) A hipotermia atinge até dois terços dos graves e é subvalorizada: aquecer já
+- D) Hipotermia é rara no trauma
+- E) Concordar: só tratar abaixo de 32 °C
 
 
 ## Perfil R2
@@ -155,12 +155,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) É só efeito da sedação
 - E) Hipotensão após a ressuscitação é sangramento até prova em contrário
 
-**7.** No caso 3, um grande estudo encontrou lesão potencialmente letal surgindo após a avaliação terciária em qual proporção dos graves?
-- A) 0%
-- B) 13,9 %
-- C) 26%
-- D) 0,26%
-- E) 2,6%
+**7.** No caso 3, a avaliação terciária no segundo dia não achou nada. No quarto dia, o paciente piora. Como pensar?
+- A) Dar alta da UTI
+- B) Aguardar 48 horas
+- C) A terciária excluiu tudo; pensar só em causas clínicas
+- D) Ainda pode haver lesão não identificada: houve lesão potencialmente letal após a terciária em 0,26% dos graves
+- E) Repetir a TC de corpo inteiro sem examinar
 
 
 ## Perfil R3
@@ -207,12 +207,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só se houver queixa
 - E) A equipe, depois de concluídas a ressuscitação inicial e as intervenções
 
-**7.** No caso 3, o teste clínico SILENT para lesão de membro inferior teve qual desempenho?
-- A) Especificidade 75%
-- B) Sensibilidade 75% e especificidade 99%
-- C) Sensibilidade 100%
-- D) Sensibilidade 99% e especificidade 75%
-- E) Ambas 50%
+**7.** No caso 3, o paciente intubado tem a perna esquerda edemaciada e o teste clínico SILENT é negativo. Como agir?
+- A) Indicar fasciotomia imediata
+- B) Não excluir lesão: o SILENT tem sensibilidade de 75%; investigar com imagem
+- C) Repetir o SILENT até ficar positivo
+- D) Excluir lesão, porque a especificidade é 99%
+- E) Ignorar o edema
 
 
 ## Perfil R+
@@ -231,12 +231,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Não há críticas publicadas
 - E) A classe de choque é definida pela idade
 
-**3.** No caso 3, sobre 'estabilidade hemodinâmica', o que a revisão de 222 artigos mostrou?
-- A) Definida em 70% dos artigos elegíveis, sem consenso nos pontos de corte
-- B) Nunca definida
-- C) Definida só pela PA
-- D) Definição universal
-- E) Definida em 100%
+**3.** No caso 3, um residente diz que o paciente está 'hemodinamicamente estável' porque a PA do aparelho automático é normal. Como corrigir o raciocínio?
+- A) Estabilidade não tem definição consensual; descrever os parâmetros e a resposta, e medir a PA manualmente
+- B) Confiar no aparelho automático no choque
+- C) Encerrar a reposição
+- D) Concordar: PA normal define estabilidade
+- E) Usar só a FC para decidir
 
 **4.** No caso 3, você audita o serviço. Qual indicador de processo é mais coerente com as lacunas do tema?
 - A) Tempo de alta hospitalar

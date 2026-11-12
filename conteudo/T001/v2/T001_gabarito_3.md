@@ -101,12 +101,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: O exame físico tem valor.
 - E) **correta**: 
 
-**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36
-- A) erro de indicação: Ocorre em geral.
-- B) erro técnico: Ocorre em todas as idades.
+**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A36, D19, A38
+- A) erro de indicação: Não há base para resfriar aqui.
+- B) erro técnico: Fluido aquecido sozinho pode não bastar; usar mantas e ar forçado.
 - C) **correta**: 
-- D) erro de conduta: Há dados.
-- E) erro conceitual: Muito mais frequente.
+- D) erro conceitual: É frequente.
+- E) erro de conduta: Esperar piorar contraria a prevenção.
 
 
 ## Perfil R2
@@ -153,12 +153,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Atribuir à sedação sem investigar é armadilha.
 - E) **correta**: 
 
-**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de conduta: Houve casos.
-- B) erro de indicação: Esse é o valor de lesões tardias em outro estudo.
-- C) erro conceitual: Muito acima.
-- D) **correta**: 
-- E) erro técnico: Não é o valor.
+**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D30
+- A) erro de indicação: Inadequado com piora.
+- B) erro de conduta: Atraso.
+- C) erro conceitual: A terciária reduz, mas não elimina, lesões não identificadas.
+- D) **correta**: reexaminar e investigar.
+- E) erro técnico: A imagem não substitui o reexame.
 
 
 ## Perfil R3
@@ -205,12 +205,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Pacientes intubados não se queixam.
 - E) **correta**: 
 
-**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43
-- A) erro de conduta: Não.
+**7. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A43, D25
+- A) erro de indicação: Não há indicação com os dados do caso.
 - B) **correta**: bom para confirmar, insuficiente para excluir.
-- C) erro de indicação: Não.
-- D) erro técnico: Invertido.
-- E) erro conceitual: Não.
+- C) erro técnico: Repetir o teste não muda seu desempenho.
+- D) erro conceitual: A especificidade alta serve para confirmar, não para excluir.
+- E) erro de conduta: Achado positivo de exame exige ação.
 
 
 ## Perfil R+
@@ -229,12 +229,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de conduta: Há.
 - E) erro técnico: Não.
 
-**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33
-- A) **correta**: 
-- B) erro de indicação: Foi definida em 70%.
-- C) erro de conduta: Não.
-- D) erro conceitual: Não há consenso.
-- E) erro técnico: Não.
+**3. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A33, D14
+- A) **correta**: foi definida em 70% dos artigos, sem consenso nos cortes; e o aparelho automático pode errar no choque.
+- B) erro técnico: Pode errar no choque.
+- C) erro de conduta: FC 118 e pele fria sugerem choque.
+- D) erro conceitual: Não há definição única.
+- E) erro de indicação: Parâmetro isolado não basta.
 
 **4. Resposta E** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A36, A37
 - A) erro de indicação: Não mede a lacuna.

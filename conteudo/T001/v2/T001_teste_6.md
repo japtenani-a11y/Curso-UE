@@ -82,12 +82,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Piora dos indicadores
 - E) Mais mortes
 
-**4.** No caso 6, a presença do cirurgião de trauma no local reduziu o tempo de ressuscitação em quanto, em estudo?
-- A) 259 segundos
-- B) 25 minutos
-- C) 25 segundos
-- D) 2 horas
-- E) Nada
+**4.** No caso 6, o assistente sugere orientar por telefone, de fora da sala. O que a evidência indica?
+- A) Ele deve estar presente: a presença do cirurgião de trauma encurtou a ressuscitação em 259 segundos
+- B) Deixar o R1 liderar sozinho
+- C) O telefone é equivalente
+- D) Liderar da porta, sem ver o paciente
+- E) Só chamá-lo se houver parada
 
 **5.** No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?
 - A) AMPLE
@@ -200,12 +200,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Nunca pedir
 - E) A TC de rotina tem pouco ou nenhum efeito em mortalidade; indicar por critérios
 
-**6.** No caso 6, qual o custo do ATLS comparado a outros programas, em estudo?
-- A) Não há dados
-- B) O mais baixo
-- C) Igual aos outros
-- D) O mais alto (USD 1433,5)
-- E) Gratuito
+**6.** Depois do caso 6, o serviço quer treinar toda a equipe. Qual argumento sobre o ATLS é correto ao planejar o orçamento?
+- A) Treinar não tem efeito, então não vale treinar
+- B) É gratuito
+- C) Tem benefício comprovado por ensaio, o que justifica qualquer custo
+- D) É o programa de maior custo (USD 1433,5), e o benefício em mortalidade vem de estudos observacionais
+- E) Custa o mesmo que programas para leigos
 
 **7.** No caso 6, qual efeito da presença do cirurgião de trauma no tempo de ressuscitação?
 - A) Nenhum
@@ -252,12 +252,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só medir custo
 - E) Abandonar o treinamento
 
-**6.** No caso 6, qual estudo de viabilidade foi feito para comparar ATLS, PTC e cuidado padrão?
-- A) Meta-análise de 3 estudos
-- B) Coorte de 10 pacientes
-- C) Ensaio com 92.614 pacientes
-- D) Nenhum
-- E) Piloto com 376 pacientes e 22 residentes
+**6.** Após o caso 6, você quer estudar o efeito do treinamento no seu serviço. Que desenho as fontes mostram ser viável e mais informativo?
+- A) Comparar com dados de outro país sem ajuste
+- B) Só pesquisa de opinião
+- C) Antes-e-depois sem controle, que já basta
+- D) Nenhum estudo é possível
+- E) Ensaio randomizado por conglomerados, com viabilidade testada em piloto
 
 **7.** No caso 6, qual seria a principal lacuna a explicar aos residentes sobre checklists?
 - A) Só há estudos antes-e-depois, com sinais mistos de benefício e dano

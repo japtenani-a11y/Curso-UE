@@ -80,12 +80,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: Não.
 - E) erro de conduta: Não.
 
-**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19
+**4. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A19, D29, D22
 - A) **correta**: 
-- B) erro de indicação: Não.
-- C) erro conceitual: Não.
-- D) erro de conduta: Não.
-- E) erro técnico: Houve redução.
+- B) erro de conduta: Treinandos lideram sob supervisão próxima.
+- C) erro conceitual: Não há dado que sustente.
+- D) erro técnico: O líder precisa da visão do todo.
+- E) erro de indicação: Atraso.
 
 **5. Resposta B** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D12, D11
 - A) erro conceitual: Não.
@@ -198,12 +198,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro de indicação: Não.
 - E) **correta**: 
 
-**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6
-- A) erro de conduta: Há.
+**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A6, A2, A4
+- A) erro de conduta: Há associação com menor mortalidade (OR 0,60).
 - B) erro conceitual: Não.
-- C) erro de indicação: Não.
+- C) erro de indicação: Não há ensaio de alta qualidade.
 - D) **correta**: 
-- E) erro técnico: Não.
+- E) erro técnico: O programa para leigos custou USD 3,70.
 
 **7. Resposta B** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A19
 - A) erro de indicação: Houve.
@@ -250,12 +250,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Incompleto.
 - E) erro de indicação: Não há base.
 
-**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A1
-- A) erro de conduta: Não é o desenho.
-- B) erro técnico: Não.
-- C) erro conceitual: Esse número é da revisão de 19 estudos.
-- D) erro de indicação: Há.
-- E) **correta**: 
+**6. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A3, A7
+- A) erro técnico: Comparação sem ajuste é enviesada.
+- B) erro de indicação: Não mede desfecho.
+- C) erro conceitual: Os estudos antes-e-depois são a limitação atual.
+- D) erro de conduta: O piloto mostrou o contrário.
+- E) **correta**: piloto com 376 pacientes e 22 residentes mostrou a viabilidade.
 
 **7. Resposta A** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A7, A9, A10
 - A) **correta**: 

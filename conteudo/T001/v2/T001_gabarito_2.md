@@ -125,12 +125,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: há estudo com baixa sensibilidade e muitos falsos negativos.
 - E) erro conceitual: O resultado negativo não basta com a clínica alterada.
 
-**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29
-- A) erro de indicação: Não é o valor do estudo.
-- B) erro técnico: 99,8% é a especificidade.
-- C) **correta**: a especificidade foi 99,8%.
-- D) erro conceitual: Não é o valor do estudo.
-- E) erro de conduta: Nenhum estudo mostrou 100%.
+**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A29, A30
+- A) erro técnico: O eFAST inclui a avaliação do tórax.
+- B) erro de indicação: Exame negativo não indica drenagem.
+- C) **correta**: sensibilidade de 93,6% em um estudo e baixa, com muitos falsos negativos, em outro.
+- D) erro conceitual: 99,8% foi a especificidade, não a sensibilidade.
+- E) erro de conduta: Sem reavaliação, um pneumotórax pode passar.
 
 **4. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D15, D28
 - A) erro conceitual: A TC não resolve o acesso.
@@ -153,12 +153,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro conceitual: O mecanismo não inverte a ordem.
 - E) erro de conduta: Hipoxemia é tratada no B, não inverte a ordem.
 
-**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A28
-- A) erro de conduta: Não é o valor do estudo.
-- B) erro técnico: Não é o valor do estudo.
-- C) erro de indicação: Não é o valor do estudo.
-- D) erro conceitual: Valor muito acima do estudo.
-- E) **correta**: 0,24% dos pacientes.
+**7. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D11, D12, A28
+- A) erro conceitual: Fala difícil com Glasgow 8 não garante a via aérea.
+- B) erro de indicação: A via aérea cirúrgica é exceção (0,24% numa grande coorte), não a primeira opção.
+- C) erro técnico: Perde-se a informação neurológica de base.
+- D) erro de conduta: Esperar piora atrasa a proteção da via aérea.
+- E) **correta**: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação.
 
 
 ## Perfil R3

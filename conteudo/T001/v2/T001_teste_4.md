@@ -96,12 +96,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Só depois da TC
 - E) Iniciar a ressuscitação; pode salvar vidas no choque
 
-**6.** No caso 4, o ultrassom pode avaliar a sínfise púbica. Em que proporção um estudo achou alargamento crítico?
-- A) 0,75%
-- B) 50%
-- C) 7,5%
-- D) 75%
-- E) Nenhum
+**6.** No caso 4, o ultrassom à beira-leito mostra afastamento da sínfise púbica. O que fazer?
+- A) Ignorar: o ultrassom não avalia a bacia
+- B) Aguardar a TC para colocar a cinta
+- C) Manter a cinta pélvica e tratar como sangramento pélvico
+- D) Retirar a cinta para radiografar
+- E) Laparotomia imediata para tratar a bacia
 
 **7.** No caso 4, um colega quer levar o paciente para a TC antes de qualquer resposta à reposição. O que considerar?
 - A) TC sempre primeiro
@@ -120,12 +120,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Apenas depois de obtida a radiografia de tórax
 - E) Somente quando o Glasgow é menor ou igual a 8
 
-**2.** No caso 4, qual a sensibilidade do RUSH no diagnóstico do politraumatizado instável, em estudo?
-- A) 64%
-- B) 9,4%
-- C) 94,2%
-- D) 42%
-- E) 100%
+**2.** No caso 4, você faz o protocolo RUSH à beira-leito. Para que ele serve neste paciente?
+- A) Substituir o controle do sangramento
+- B) Deve ser feito dentro da TC
+- C) Buscar a causa do choque sem sair da sala
+- D) Definir a classe de choque pela tabela
+- E) Só serve para pacientes estáveis
 
 **3.** No caso 4, após a cinta e a reposição, a PA segue 80/50. Qual a decisão mais adequada?
 - A) Suspender a reposição
@@ -134,12 +134,12 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - D) Observar na sala
 - E) TC de corpo inteiro e aguardar
 
-**4.** No caso 4, se a radiologia intervencionista atua junto com a cirurgia, o que um estudo mostrou?
-- A) Não há estudo
-- B) Sobrevida menor
-- C) Sobrevida 15,5% maior que a prevista
-- D) Mais mortes
-- E) Sem diferença
+**4.** No caso 4, o FAST não mostra líquido livre e há suspeita de sangramento pélvico ativo. Qual o próximo passo mais adequado?
+- A) Retirar a cinta para examinar a bacia
+- B) Esperar o resultado do lactato
+- C) Acionar cirurgia e radiologia intervencionista juntas
+- D) Concluir que o FAST negativo exclui sangramento
+- E) Laparotomia exploradora de rotina
 
 **5.** No caso 4, a FC 136 e a PA baixa. O que dizer da tabela de classes de choque?
 - A) Perfeitamente validada

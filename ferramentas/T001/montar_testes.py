@@ -1,11 +1,14 @@
 import json,re,sys,hashlib,random
 sys.path.insert(0,'/tmp/w21')
-import testes_a,testes_b,testes_c,doutrina
+import testes_a,testes_b,testes_c,testes_d,doutrina
 S=json.load(open('/home/claude/japtenani-a11y/curso-ue/conteudo/T001/T001_sintese_evidencia.json'))
 AF={a['id']:a for a in S['afirmacoes']}
 for i,f,t,tr in doutrina.D: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
 CASOS={**testes_a.CASOS,**testes_b.CASOS,**testes_c.CASOS}
 TESTES={**testes_a.TESTES,**testes_b.TESTES,**testes_c.TESTES}
+import testes_d
+for (t,p,i),q in testes_d.OVERRIDE.items():
+    TESTES[t][p][i]=q
 PERFIS=['Graduação','R1','R2','R3','R+']
 NOMES={1:'Pré-teste inicial',2:'Pré-teste após o conhecimento básico',3:'Pós-teste D0',4:'Pós-teste D+15',5:'Pós-teste D+45',6:'Pós-teste D+90'}
 GRAUS=['Muito fácil','Fácil','Média','Difícil','Muito difícil','Extrema']

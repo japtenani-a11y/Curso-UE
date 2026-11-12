@@ -3,7 +3,9 @@
 \set ON_ERROR_STOP on
 BEGIN;
 ALTER TABLE conteudo.artefato DROP CONSTRAINT IF EXISTS artefato_tipo_check;
-ALTER TABLE conteudo.artefato ADD CONSTRAINT artefato_tipo_check CHECK (tipo IN ('aula', 'banco_dificuldade', 'caso', 'caso_semente', 'checklist', 'flashcard', 'gabarito', 'gabarito_1', 'gabarito_2', 'gabarito_3', 'gabarito_4', 'gabarito_5', 'gabarito_6', 'item', 'mapa', 'objetivos', 'podcast_roteiro', 'protocolo', 'resumo', 'resumo_basico', 'simulado', 'sintese_evidencia', 'slides', 'teste_1', 'teste_2', 'teste_3', 'teste_4', 'teste_5', 'teste_6'));
+ALTER TABLE conteudo.artefato ADD CONSTRAINT artefato_tipo_check CHECK (tipo IN ('aula', 'banco_dificuldade', 'caso', 'caso_base', 'caso_semente', 'checklist', 'flashcard', 'gabarito', 'gabarito_1', 'gabarito_2', 'gabarito_3', 'gabarito_4', 'gabarito_5', 'gabarito_6', 'item', 'mapa', 'objetivos', 'podcast_roteiro', 'protocolo', 'resumo', 'resumo_basico', 'simulado', 'sintese_evidencia', 'slides', 'teste_1', 'teste_2', 'teste_3', 'teste_4', 'teste_5', 'teste_6'));
+-- renomeia o antigo 'caso semente' para 'caso base' (se ja importado)
+UPDATE conteudo.artefato SET tipo='caso_base', titulo=replace(titulo,'Caso semente','Caso base'), corpo=replace(replace(corpo,'Caso semente','Caso base'),'caso semente','caso base') WHERE tipo='caso_semente';
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
 SELECT t.tema_id, 'aula', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula'),0)+1, 'rascunho', $T1$Aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
 
@@ -866,9 +868,9 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='caso' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='caso')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'caso_semente', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_semente'),0)+1, 'rascunho', $T1$Caso semente$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'caso_base', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base'),0)+1, 'rascunho', $T1$Caso base$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
 
-# T001 — Caso semente
+# T001 — Caso base
 
 Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão discutidas na aula. Não há respostas aqui: anote as suas.
 
@@ -887,9 +889,9 @@ Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão dis
 7. A passagem do SAMU foi feita da melhor forma?
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_semente' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
 
-# T001 — Caso semente
+# T001 — Caso base
 
 Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão discutidas na aula. Não há respostas aqui: anote as suas.
 

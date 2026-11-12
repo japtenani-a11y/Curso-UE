@@ -36,11 +36,11 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro conceitual: Não presumir.
 
 **5. Resposta A** · grau Média · taxa de acerto esperada 50% a 75% · âncora A42
-- A) **correta**: 
-- B) erro de conduta: Não.
-- C) erro técnico: Não.
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+- A) **correta**: num estudo, ocorreram em 13,9 % dos pacientes.
+- B) erro de conduta: O reexame é o que encontra essas lesões.
+- C) erro técnico: Ocorre em adultos.
+- D) erro de indicação: Improvável e não justifica deixar de investigar.
+- E) erro conceitual: Não vê.
 
 **6. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D30
 - A) erro técnico: Não é o recomendado.
@@ -94,12 +94,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) **correta**: 
 
-**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41
-- A) erro de indicação: Outro estudo.
-- B) erro conceitual: Não.
-- C) **correta**: 
-- D) erro de conduta: Houve.
-- E) erro técnico: Não.
+**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A41, D25
+- A) erro técnico: A imagem não substitui o exame.
+- B) erro conceitual: A terciária não é infalível.
+- C) **correta**: lesões potencialmente letais apareceram após a terciária em 0,26% dos graves, e achado positivo exige ação.
+- D) erro de indicação: Inadequado com queixa nova.
+- E) erro de conduta: Presumir sem examinar é erro.
 
 **7. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30
 - A) erro conceitual: Não.
@@ -139,12 +139,12 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) **correta**: 
 - E) erro técnico: Invertido.
 
-**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40
-- A) erro técnico: Não.
-- B) erro de conduta: Houve.
-- C) erro de indicação: Não.
+**5. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A40, A12
+- A) erro de indicação: Teve pouco ou nenhum efeito em mortalidade.
+- B) erro técnico: Não há base.
+- C) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 - D) **correta**: (120 de 3976).
-- E) erro conceitual: Não.
+- E) erro conceitual: Não foi o achado.
 
 **6. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D30, D25
 - A) erro conceitual: Não.
@@ -257,9 +257,9 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - D) erro técnico: Não.
 - E) erro de indicação: Incompleto.
 
-**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A40
-- A) erro de conduta: Não.
-- B) erro técnico: Há.
-- C) **correta**: (120 de 3976).
-- D) erro de indicação: Não.
-- E) erro conceitual: Não.
+**7. Resposta C** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A12, A40, D30
+- A) erro conceitual: Não há essa comprovação.
+- B) erro técnico: Critério isolado e sem base.
+- C) **correta**: a TC de rotina tem pouco efeito em mortalidade, a primária normal raramente esconde lesão na imagem, e a terciária reduz lesões não identificadas.
+- D) erro de indicação: Sem base.
+- E) erro de conduta: Lesões tardias ocorrem mesmo com TC.

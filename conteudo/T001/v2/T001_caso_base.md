@@ -1,6 +1,6 @@
 > RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
 
-# T001 — Caso semente
+# T001 — Caso base
 
 Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão discutidas na aula. Não há respostas aqui: anote as suas.
 
