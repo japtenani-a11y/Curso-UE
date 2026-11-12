@@ -47,6 +47,7 @@ if [ ! -f "$RAIZ/.api_pwa_gerado" ]; then
   touch "$RAIZ/.api_pwa_gerado"
 fi
 bash 32_revisao_curador_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "32_revisao_curador falhou; veja $RAIZ/logs/gerar.log"
+if [ -f 34_leitura_aluno_v1.0.sh ]; then bash 34_leitura_aluno_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "34_leitura_aluno falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
@@ -94,6 +95,15 @@ console.log("      curador enxerga "+d.artefatos.length+" rascunhos e "+af+" afi
 process.exit(d.artefatos.length>=12?0:1)' "$RAIZ/logs/revisao_T001.json" || falhar "o curador nao enxergou os 12 rascunhos; veja $RAIZ/logs/revisao_T001.json"
 S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T001)
 echo "      sem login a mesma pagina responde $S (esperado 403)"
+if [ -f 34_leitura_aluno_v1.0.sh ]; then
+  NP=$(curl -s -b "$CK" "http://localhost:3000/leitura/temas/T001?previa=1" | grep -o '"artefato_id"' | wc -l)
+  echo "      previa de leitura para o revisor: $NP artefatos (esperado 8)"
+  CA="$RAIZ/logs/cookie_aluno.txt"
+  curl -s -o /dev/null -c "$CA" -H "Content-Type: application/json" -d '{"email":"r1.teste@setup.local"}' http://localhost:3000/auth/login
+  SA=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/leitura/temas/T001?previa=1")
+  echo "      aluno de teste pedindo a previa de rascunhos responde $SA (esperado 403)"
+  rm -f "$CA"
+fi
 rm -f "$CK"
 
 echo "[7/7] Ligando o PWA (porta 5173)..."
