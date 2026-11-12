@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+# ============================================================
+# subir_api_pwa_wsl_v1.0.sh
+# OBJETIVO: no WSL, gerar a API e o PWA, instalar a tela de revisao
+# do curador, ligar os dois em modo de teste local e conferir que o
+# curador enxerga os rascunhos do T001.
+# USO:   bash subir_api_pwa_wsl_v1.0.sh <SENHA_DO_BANCO> [RAIZ]
+#        bash subir_api_pwa_wsl_v1.0.sh parar [RAIZ]
+# Rode de dentro da pasta do projeto (onde estao os scripts 06, 07...).
+# Modo de TESTE LOCAL: login sem Google (ALLOW_TEST_LOGIN=1). Nao usar em producao.
+# ============================================================
+set -uo pipefail
+PW="${1:?uso: bash subir_api_pwa_wsl_v1.0.sh <SENHA_DO_BANCO> [RAIZ]}"
+RAIZ="${2:-./programa-cut}"
+HOST="${PGHOST_TESTE:-localhost}"; PORTA="${PGPORT_TESTE:-5432}"
+AQUI="$(pwd)"
+falhar() { echo; echo "ERRO: $*"; exit 1; }
+
+parar() {
+  for n in api pwa; do
+    if [ -f "$RAIZ/logs/$n.pid" ]; then
+      kill "$(cat "$RAIZ/logs/$n.pid")" 2>/dev/null && echo "parado: $n"
+      rm -f "$RAIZ/logs/$n.pid"
+    fi
+  done
+  pkill -f "tsx src/main.ts" 2>/dev/null; pkill -f "vite" 2>/dev/null; true
+}
+if [ "$PW" = "parar" ]; then parar; echo "API e PWA parados."; exit 0; fi
+
+[ -f 06_scaffolding_v1.0.sh ] || falhar "rode este script de dentro da pasta do projeto (onde esta o 06_scaffolding_v1.0.sh)."
+for f in 32_revisao_v1.0.sql 33_carga_afirmacoes_T001_v1.0.sql 32_revisao_curador_v1.0.sh; do
+  [ -f "$f" ] || falhar "arquivo $f nao encontrado nesta pasta. Descompacte o atualizacao_revisao.zip aqui."
+done
+command -v node >/dev/null || falhar "node nao instalado."
+command -v psql >/dev/null || falhar "psql nao instalado."
+mkdir -p "$RAIZ/logs"; RABS="$(cd "$RAIZ" && pwd)"
+
+echo "[1/7] Gerando o codigo da API e do PWA..."
+if [ ! -f "$RAIZ/api/src/main.ts" ]; then bash 06_scaffolding_v1.0.sh "$RAIZ" > "$RAIZ/logs/gerar.log" 2>&1 || falhar "06 falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ ! -f "$RAIZ/.api_pwa_gerado" ]; then
+  for s in 07_implementacao_oauth_v1.0.sh 08a_implementacao_aluno_core_v1.0.sh 08b_implementacao_aluno_resto_v1.0.sh \
+           09_implementacao_preceptor_v1.0.sh 10_implementacao_curador_v1.0.sh 11_implementacao_pesquisa_conteudo_v1.0.sh \
+           24_pwa_telas_restantes_v1.0.sh 27b_seguranca_api_v1.0.sh; do
+    [ -f "$s" ] || falhar "script $s nao encontrado."
+    bash "$s" "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "$s falhou; veja $RAIZ/logs/gerar.log"
+  done
+  touch "$RAIZ/.api_pwa_gerado"
+fi
+bash 32_revisao_curador_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "32_revisao_curador falhou; veja $RAIZ/logs/gerar.log"
+echo "      ok"
+
+echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
+export PGPASSWORD="$PW"
+SQL="psql -h $HOST -p $PORTA -U postgres -d programa -v ON_ERROR_STOP=1 -q"
+$SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_v1.0.sql falhou; veja $RAIZ/logs/banco.log"
+$SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"
+N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
+R=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status='rascunho'")
+T=$($SQL -At -c "SELECT count(*) FROM pg_proc WHERE proname='fn_sessao_teste'")
+echo "      rascunhos do T001: $R | afirmacoes carregadas: $N"
+[ "$R" -ge 12 ] || falhar "os rascunhos do T001 nao estao no banco. Rode antes o 31_importar_T001_rascunhos_v1.0.sql."
+[ "$T" -ge 1 ] || falhar "funcao de login de teste (fn_sessao_teste) nao existe no banco."
+[ -n "${SO_PREPARAR:-}" ] && { echo "SO_PREPARAR: parando antes de instalar pacotes."; exit 0; }
+
+echo "[3/7] Instalando pacotes da API e do PWA (pode levar alguns minutos)..."
+(cd "$RAIZ/api" && npm install --no-audit --no-fund > "$RABS/logs/npm_api.log" 2>&1) || falhar "npm install da API falhou; veja $RAIZ/logs/npm_api.log"
+(cd "$RAIZ/pwa" && npm install --no-audit --no-fund > "$RABS/logs/npm_pwa.log" 2>&1) || falhar "npm install do PWA falhou; veja $RAIZ/logs/npm_pwa.log"
+echo "      ok"
+
+echo "[4/7] Conferindo o codigo (tipos)..."
+(cd "$RAIZ/api" && npx tsc --noEmit > "$RABS/logs/tipos_api.log" 2>&1); EA=$(grep -c "error TS" "$RAIZ/logs/tipos_api.log" || true)
+(cd "$RAIZ/pwa" && npx tsc --noEmit > "$RABS/logs/tipos_pwa.log" 2>&1); EP=$(grep -c "error TS" "$RAIZ/logs/tipos_pwa.log" || true)
+echo "      erros de tipo -> API: $EA | PWA: $EP  (nao impedem o teste; se houver, me envie os arquivos logs/tipos_*.log)"
+
+echo "[5/7] Ligando a API (porta 3000)..."
+parar >/dev/null 2>&1
+( cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" PORT=3000 NODE_ENV=development \
+  ALLOW_TEST_LOGIN=1 APP_URL=http://localhost:5173 CORS_ORIGINS=http://localhost:5173 LOG_LEVEL=info \
+  nohup setsid npx tsx src/main.ts > "$RABS/logs/api.log" 2>&1 & echo $! > "$RABS/logs/api.pid" )
+OK=""; for i in $(seq 1 30); do sleep 1; curl -s http://localhost:3000/health | grep -q '"db":"ok"' && { OK=1; break; }; done
+[ -n "$OK" ] || { tail -20 "$RAIZ/logs/api.log"; falhar "a API nao respondeu; as ultimas linhas do log estao acima ($RAIZ/logs/api.log)."; }
+echo "      ok"
+
+echo "[6/7] Testando: login do curador de teste e leitura dos rascunhos..."
+CK="$RAIZ/logs/cookie.txt"; rm -f "$CK"
+L=$(curl -s -o /dev/null -w "%{http_code}" -c "$CK" -H "Content-Type: application/json" -d '{"email":"curador.teste@setup.local"}' http://localhost:3000/auth/login)
+[ "$L" = "200" ] || { tail -8 "$RAIZ/logs/api.log"; falhar "login de teste respondeu $L (esperado 200)."; }
+curl -s -b "$CK" http://localhost:3000/revisao/temas/T001 > "$RAIZ/logs/revisao_T001.json"
+node -e '
+const d=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));
+if(!d.artefatos){console.log("      resposta inesperada: "+JSON.stringify(d).slice(0,200));process.exit(1)}
+const af=d.artefatos.reduce((s,a)=>s+a.afirmacoes.length,0);
+console.log("      curador enxerga "+d.artefatos.length+" rascunhos e "+af+" afirmacoes");
+process.exit(d.artefatos.length>=12?0:1)' "$RAIZ/logs/revisao_T001.json" || falhar "o curador nao enxergou os 12 rascunhos; veja $RAIZ/logs/revisao_T001.json"
+S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T001)
+echo "      sem login a mesma pagina responde $S (esperado 403)"
+rm -f "$CK"
+
+echo "[7/7] Ligando o PWA (porta 5173)..."
+( cd "$RAIZ/pwa" && VITE_API_URL=http://localhost:3000 nohup setsid npx vite --host 127.0.0.1 --port 5173 --strictPort > "$RABS/logs/pwa.log" 2>&1 & echo $! > "$RABS/logs/pwa.pid" )
+OK=""; for i in $(seq 1 30); do sleep 1; curl -s -o /dev/null http://localhost:5173/ && { OK=1; break; }; done
+[ -n "$OK" ] || { tail -20 "$RAIZ/logs/pwa.log"; falhar "o PWA nao ligou; as ultimas linhas do log estao acima ($RAIZ/logs/pwa.log)."; }
+
+cat <<FIM
+
+=== PRONTO ===
+1. Abra no navegador do Windows:  http://localhost:5173/login
+2. Digite o e-mail:               curador.teste@setup.local   e clique em Entrar
+3. Voce cai na tela de revisao do T001.
+
+Para desligar tudo:  bash subir_api_pwa_wsl_v1.0.sh parar
+Registros (logs):    $RAIZ/logs/
+FIM
