@@ -54,6 +54,7 @@ echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
 export PGPASSWORD="$PW"
 SQL="psql -h $HOST -p $PORTA -U postgres -d programa -v ON_ERROR_STOP=1 -q"
 $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_v1.0.sql falhou; veja $RAIZ/logs/banco.log"
+if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
 R=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status='rascunho'")

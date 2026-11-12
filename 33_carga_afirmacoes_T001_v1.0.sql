@@ -1711,5 +1711,4 @@ SELECT a.artefato_id, 'A44', $af$Treinamento in situ baseado em checklist e base
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.status='rascunho'
    AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo=a.tipo AND x.status='rascunho')
 ON CONFLICT (artefato_id, codigo) DO UPDATE SET texto=EXCLUDED.texto, fonte_arquivo=EXCLUDED.fonte_arquivo, trecho_literal=EXCLUDED.trecho_literal;
-SELECT a.tipo, count(f.*) AS afirmacoes FROM conteudo.artefato a LEFT JOIN conteudo.afirmacao f USING (artefato_id) JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status='rascunho' GROUP BY 1 ORDER BY 1;
 COMMIT;

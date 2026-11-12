@@ -167,6 +167,12 @@ function etapasDoCaso(corpo: string): Etapa[] {
   return saida;
 }
 
+// Parte do ponto de decisao que o aluno ve antes de pedir a discussao.
+function situacao(texto: string): string {
+  const i = texto.indexOf('Discussão:');
+  return i > 0 ? texto.slice(0, i).trim() : '';
+}
+
 function Caso(props: { corpo: string }) {
   const etapas = etapasDoCaso(props.corpo);
   const [i, setI] = useState(0);
@@ -184,6 +190,7 @@ function Caso(props: { corpo: string }) {
         <h3>{e.titulo}</h3>
         {e.decisao && !aberta ? (
           <div>
+            {situacao(e.texto) !== '' && <Markdown texto={situacao(e.texto)} />}
             <p>Pense na sua conduta antes de ver a discussão.</p>
             <div className="nav"><button type="button" onClick={() => setAberta(true)}>Ver discussão</button></div>
           </div>
