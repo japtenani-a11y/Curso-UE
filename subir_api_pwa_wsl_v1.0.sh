@@ -74,7 +74,7 @@ echo "      erros de tipo -> API: $EA | PWA: $EP  (nao impedem o teste; se houve
 
 echo "[5/7] Ligando a API (porta 3000)..."
 parar >/dev/null 2>&1
-( cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" PORT=3000 NODE_ENV=development \
+( cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" PORT=3000 NODE_ENV=teste_local \
   ALLOW_TEST_LOGIN=1 APP_URL=http://localhost:5173 CORS_ORIGINS=http://localhost:5173 LOG_LEVEL=info \
   nohup setsid npx tsx src/main.ts > "$RABS/logs/api.log" 2>&1 & echo $! > "$RABS/logs/api.pid" )
 OK=""; for i in $(seq 1 30); do sleep 1; curl -s http://localhost:3000/health | grep -q '"db":"ok"' && { OK=1; break; }; done
