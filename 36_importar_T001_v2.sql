@@ -5956,7 +5956,7 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
    - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
    - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
    - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
-   Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. **[pendente: anexar o protocolo de transfusão maciça vigente do HCFMRP e alinhar os critérios com a hemoterapia]**
+   Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. O protocolo de transfusão maciça do HCFMRP estará disponível em anexo próprio, na aula do tema de coagulopatia e transfusão maciça.
 
 ## 9. Materiais necessários
 Cinta pélvica, torniquetes, kit de intraósseo, mantas aquecidas, manta de ar forçado e aquecedor de fluidos [D19], ultrassom.
@@ -6031,7 +6031,7 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
    - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
    - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
    - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
-   Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. **[pendente: anexar o protocolo de transfusão maciça vigente do HCFMRP e alinhar os critérios com a hemoterapia]**
+   Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. O protocolo de transfusão maciça do HCFMRP estará disponível em anexo próprio, na aula do tema de coagulopatia e transfusão maciça.
 
 ## 9. Materiais necessários
 Cinta pélvica, torniquetes, kit de intraósseo, mantas aquecidas, manta de ar forçado e aquecedor de fluidos [D19], ultrassom.
