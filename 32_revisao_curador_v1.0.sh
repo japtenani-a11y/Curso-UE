@@ -426,4 +426,8 @@ if grep -q "window.location.href = '/aluno';" "$PWA/pages/Login.tsx"; then
   sed -i "s#window.location.href = '/aluno';#window.location.href = email.includes('curador') ? '/curador/revisao/T001' : '/aluno';#" "$PWA/pages/Login.tsx"
   echo "alterado: pwa/src/pages/Login.tsx"
 fi
+# ---------- correcoes de tipo em codigo ja existente ----------
+sed -i "s#^import pinoHttp from 'pino-http';#import { pinoHttp } from 'pino-http';#" "$API/main.ts"
+[ -f "$PWA/vite-env.d.ts" ] || echo '/// <reference types="vite/client" />' > "$PWA/vite-env.d.ts"
+
 echo "=== revisao do curador instalada ==="
