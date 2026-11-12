@@ -5,6 +5,7 @@ S=json.load(open('/home/claude/japtenani-a11y/curso-ue/conteudo/T001/T001_sintes
 AF={a['id']:a for a in S['afirmacoes']}
 for i,f,t,tr in doutrina.D: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
 for i,f,t,tr in doutrina.EXTRA_A: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
+for i,f,t,tr in doutrina.P: AF[i]={'id':i,'texto':t,'fonte_arquivo':f,'trecho_literal':tr}
 CASOS={**testes_a.CASOS,**testes_b.CASOS,**testes_c.CASOS}
 TESTES={**testes_a.TESTES,**testes_b.TESTES,**testes_c.TESTES}
 import testes_d

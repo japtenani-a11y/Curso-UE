@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D0
 
@@ -73,7 +73,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - B) Retirar o colar
 - C) TC de crânio
 - D) Exame neurológico breve e completo
-- E) Colher o AMPLE completo
+- E) Colher o AMPLA completo
 
 **3.** No caso 3, por que medir a pressão manualmente?
 - A) Porque o aparelho automático pode errar no choque

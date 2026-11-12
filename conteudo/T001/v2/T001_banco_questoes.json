@@ -53,7 +53,7 @@
    "Pedir radiografia de tórax",
    "Comprimir diretamente o ponto que sangra",
    "Levar para a tomografia",
-   "Colher a história AMPLE",
+   "Colher a história AMPLA",
    "Intubar a paciente"
   ],
   "correta": "B",
@@ -1390,7 +1390,7 @@
   "alternativas": [
    "Perguntando só sobre dor",
    "Não é necessário colher história no trauma",
-   "Usando o AMPLE: alergias, medicações, doenças prévias, última refeição, eventos",
+   "Usando o AMPLA: alergias, medicações, doenças prévias, última refeição, eventos",
    "Só com a família, depois da alta",
    "Pedindo que o paciente escreva"
   ],
@@ -1398,7 +1398,7 @@
   "justificativas": [
    "Incompleto.",
    "A história faz parte da avaliação secundária.",
-   "Correta: o AMPLE organiza a história da secundária.",
+   "Correta: o AMPLA organiza a história da secundária.",
    "A história é colhida na secundária.",
    "Não é o método."
   ],
@@ -2605,7 +2605,7 @@
    "Retirar o colar",
    "TC de crânio",
    "Exame neurológico breve e completo",
-   "Colher o AMPLE completo"
+   "Colher o AMPLA completo"
   ],
   "correta": "D",
   "justificativas": [
@@ -2613,7 +2613,7 @@
    "Não é o passo antes da intubação.",
    "A TC não precede a via aérea.",
    "Correta.",
-   "O AMPLE é da secundária."
+   "O AMPLA é da secundária."
   ],
   "categorias": [
    "erro de conduta",
@@ -3660,7 +3660,7 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?",
   "alternativas": [
-   "Primeiro a história AMPLE",
+   "Primeiro a história AMPLA",
    "Primeiro a TC",
    "Primeiro a radiografia",
    "Exposição antes de tudo",
@@ -3668,7 +3668,7 @@
   ],
   "correta": "E",
   "justificativas": [
-   "O AMPLE é da secundária.",
+   "O AMPLA é da secundária.",
    "A TC não vem antes.",
    "Exame de imagem não vem antes.",
    "A exposição não precede a circulação.",
@@ -5319,7 +5319,7 @@
   "enunciado": "No caso 5, qual teste clínico tem especificidade de 99% para lesão de membro inferior?",
   "alternativas": [
    "MIST",
-   "AMPLE",
+   "AMPLA",
    "RUSH",
    "SILENT",
    "FAST"
@@ -6337,7 +6337,7 @@
   "alternativas": [
    "TC",
    "Compressão direta",
-   "AMPLE",
+   "AMPLA",
    "Radiografia",
    "Intubação"
   ],
@@ -6675,7 +6675,7 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?",
   "alternativas": [
-   "AMPLE",
+   "AMPLA",
    "Exame neurológico breve e completo",
    "Nada",
    "TC",
@@ -6979,7 +6979,7 @@
   "enunciado": "No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?",
   "alternativas": [
    "TC",
-   "AMPLE",
+   "AMPLA",
    "Exposição",
    "Radiografia",
    "Circulação (CABDE), com os mais experientes"

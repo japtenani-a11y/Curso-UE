@@ -2,7 +2,8 @@
 -- Liberacao progressiva do tema para o aluno.
 --   Etapa 1: so o pre-teste inicial (teste 1).
 --   Etapa 2: material pre-reuniao + pre-teste 2      (libera ao submeter o teste 1)
---   Etapa 3: material da reuniao + pos-teste D0      (libera ao submeter o teste 2)
+--   Etapa 3: material da reuniao + pos-teste D0      (libera ao submeter o teste 2, ou quando o prazo
+--            do pre-teste 2 vence: ele fecha 1 hora antes da reuniao, e quem nao respondeu segue sem ele)
 --   Etapa 4: material pos-reuniao + pos-testes D+15, D+45, D+90 (libera ao submeter o teste 3)
 -- O gabarito de um teste so e liberado depois que o aluno submete aquele teste (rota da API).
 -- Pre-requisito: 37_banco_questoes_v1.0.sql. Pode ser rodado mais de uma vez.
@@ -31,12 +32,26 @@ LANGUAGE sql STABLE AS $$
                   WHERE t.pessoa_id = p_pessoa AND o.tema_id = p_tema AND o.teste_num = p_teste
                     AND t.submetida_em IS NOT NULL) $$;
 
--- Etapa liberada (1 a 4), sempre em sequencia.
+-- A onda aceita respostas agora? (aberta, ja comecou e o prazo nao venceu)
+CREATE OR REPLACE FUNCTION app.onda_respondivel(p_onda BIGINT) RETURNS BOOLEAN
+LANGUAGE sql STABLE AS $$
+  SELECT EXISTS (SELECT 1 FROM app.onda_instancia o
+                  WHERE o.onda_id = p_onda AND o.status = 'aberta' AND o.data_abertura <= now()
+                    AND (o.data_fechamento IS NULL OR now() < o.data_fechamento)) $$;
+
+-- O prazo do teste n do tema ja venceu?
+CREATE OR REPLACE FUNCTION app.prazo_vencido(p_tema BIGINT, p_teste SMALLINT) RETURNS BOOLEAN
+LANGUAGE sql STABLE AS $$
+  SELECT EXISTS (SELECT 1 FROM app.onda_instancia o
+                  WHERE o.tema_id = p_tema AND o.teste_num = p_teste AND o.data_fechamento <= now()) $$;
+
+-- Etapa liberada (1 a 4), sempre em sequencia. O pre-teste 2 vencido nao trava as etapas seguintes.
 CREATE OR REPLACE FUNCTION app.etapa_liberada(p_pessoa BIGINT, p_tema BIGINT) RETURNS INT
 LANGUAGE sql STABLE AS $$
   SELECT CASE
     WHEN NOT app.teste_submetido(p_pessoa, p_tema, 1::smallint) THEN 1
-    WHEN NOT app.teste_submetido(p_pessoa, p_tema, 2::smallint) THEN 2
+    WHEN NOT app.teste_submetido(p_pessoa, p_tema, 2::smallint)
+         AND NOT app.prazo_vencido(p_tema, 2::smallint) THEN 2
     WHEN NOT app.teste_submetido(p_pessoa, p_tema, 3::smallint) THEN 3
     ELSE 4 END $$;
 
@@ -54,7 +69,7 @@ CREATE OR REPLACE FUNCTION app.teste_liberado(p_pessoa BIGINT, p_tema BIGINT, p_
 LANGUAGE sql STABLE AS $$
   SELECT app.etapa_liberada(p_pessoa, p_tema) >= CASE WHEN p_teste <= 3 THEN p_teste ELSE 4 END $$;
 
-GRANT EXECUTE ON FUNCTION app.perfil_da_pessoa(BIGINT), app.teste_submetido(BIGINT,BIGINT,SMALLINT),
+GRANT EXECUTE ON FUNCTION app.perfil_da_pessoa(BIGINT), app.onda_respondivel(BIGINT), app.prazo_vencido(BIGINT,SMALLINT), app.teste_submetido(BIGINT,BIGINT,SMALLINT),
   app.etapa_liberada(BIGINT,BIGINT), app.etapa_do_material(TEXT), app.teste_liberado(BIGINT,BIGINT,SMALLINT),
   app.perfil_questoes(app.grau_enum) TO api_rw;
 

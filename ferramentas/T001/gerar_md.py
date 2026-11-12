@@ -4,12 +4,12 @@ exec(open('montar_testes.py').read().split('banco=[]')[0])
 import pecas1
 b=json.load(open('banco.json'))
 OUT='/home/claude/japtenani-a11y/curso-ue/conteudo/T001/v2'; os.makedirs(OUT,exist_ok=True)
-AV="> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.\n\n"
+AV="> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.\n\n"
 def salvar(tipo,titulo,corpo,ids):
     ids=sorted(set(ids),key=lambda x:(x[0],int(x[1:])))
     o={"tema":"T001","tipo":tipo,"titulo":titulo,"status":"rascunho","versao_padrao":"guia v0.1 (12/11/2026)","gerado_por":"Claude, geração manual fora do executor","corpo":corpo,"afirmacoes":[AF[i] for i in ids]}
     json.dump(o,open(f"{OUT}/T001_{tipo}.json","w"),ensure_ascii=False,indent=1); open(f"{OUT}/T001_{tipo}.md","w").write(corpo)
-refs=lambda c: re.findall(r"\b[AD]\d+\b",c)
+refs=lambda c: re.findall(r"\b[ADP]\d+\b",c)
 for k,(tit,c) in pecas1.P.items():
     corpo=AV+c.strip()+"\n"; salvar(k,tit,corpo,[i for i in refs(c) if i in AF])
 for t in range(1,7):
@@ -41,6 +41,7 @@ for tipo,tit,trocas in [('podcast_roteiro','Roteiro de podcast',[('A ideia é qu
   ('mapa','Mapa conceitual',[]),('flashcard','Flashcards',[])]:
     c=open(f'{V1}/T001_{tipo}.md').read()
     c=AV+c.split('\n\n',1)[1]
+    c=c.replace('AMPLE','AMPLA')
     for x,y in trocas:
         assert x in c,(tipo,x); c=c.replace(x,y)
     assert 'DOUTRINA – confirmar na camada 2' not in c,tipo

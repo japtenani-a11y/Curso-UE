@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
@@ -12,7 +12,7 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
 - **Neurológico e exposição.** Glasgow na chegada e repetido [D16]; agitação também é sinal de choque classe III e IV [D17]. Despir por completo [D18] e, terminado o exame, aquecer: mantas, ar forçado e fluidos aquecidos [D19].
-- **Avaliação secundária e terciária.** A secundária é história (AMPLE) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
+- **Avaliação secundária e terciária.** A secundária é história (AMPLA) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
 - **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
 

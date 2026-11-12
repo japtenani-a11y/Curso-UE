@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
@@ -23,7 +23,7 @@ A ordem padrão é ABCDE: via aérea, respiração, circulação, estado neurol�
 
 ## Depois da primária
 
-A avaliação secundária é a história (AMPLE: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Isso importa: mesmo com tomografia, lesões são descobertas depois [A42].
+A avaliação secundária é a história (AMPLA: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Isso importa: mesmo com tomografia, lesões são descobertas depois [A42].
 
 ## A equipe
 

@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste após o conhecimento básico
 
@@ -92,7 +92,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 **5.** No caso 2, depois da primária, como colher a história?
 - A) Perguntando só sobre dor
 - B) Não é necessário colher história no trauma
-- C) Usando o AMPLE: alergias, medicações, doenças prévias, última refeição, eventos
+- C) Usando o AMPLA: alergias, medicações, doenças prévias, última refeição, eventos
 - D) Só com a família, depois da alta
 - E) Pedindo que o paciente escreva
 

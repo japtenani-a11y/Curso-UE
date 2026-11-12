@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+90
 
@@ -26,7 +26,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 **3.** No caso 6, o motorista sangra no antebraço. Qual a primeira medida?
 - A) TC
 - B) Compressão direta
-- C) AMPLE
+- C) AMPLA
 - D) Radiografia
 - E) Intubação
 
@@ -90,7 +90,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Só chamá-lo se houver parada
 
 **5.** No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?
-- A) AMPLE
+- A) AMPLA
 - B) Exame neurológico breve e completo
 - C) Nada
 - D) TC
@@ -150,7 +150,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 
 **6.** No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?
 - A) TC
-- B) AMPLE
+- B) AMPLA
 - C) Exposição
 - D) Radiografia
 - E) Circulação (CABDE), com os mais experientes

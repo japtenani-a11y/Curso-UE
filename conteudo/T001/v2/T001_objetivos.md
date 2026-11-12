@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Objetivos de aprendizagem por perfil
 
@@ -9,7 +9,7 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 1. (C) **Descrever** a sequência ABCDE e quando a circulação vem antes da via aérea [D2, D3], em uma pergunta oral, sem omitir etapas.
 2. (H) **Aplicar** compressão direta em sangramento externo em simulação, antes de qualquer outra medida [D6].
 3. (C) **Reconhecer** os sinais de via aérea pérvia e a indicação de via aérea definitiva por Glasgow [D10, D11], em caso escrito, com acerto.
-4. (H) **Colher** a história AMPLE completa em paciente simulado [D21].
+4. (H) **Colher** a história AMPLA completa em paciente simulado [D21].
 5. (A) **Manter** o paciente coberto e aquecido após o exame [D19], em toda simulação.
 
 ## R1

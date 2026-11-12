@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo executivo
 
@@ -25,7 +25,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 4. Via aérea: voz normal = pérvia; Glasgow ≤8 = via aérea definitiva [D10, D11].
 5. Circulação: pressão manual se houver dúvida; intraósseo sem veia [D14, D15].
 6. Glasgow repetido; despir e aquecer [D16, D18, D19].
-7. Secundária com AMPLE; terciária depois [D21, D31].
+7. Secundária com AMPLA; terciária depois [D21, D31].
 
 ## 4. O que dá errado
 

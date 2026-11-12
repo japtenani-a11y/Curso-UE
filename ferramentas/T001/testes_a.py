@@ -26,7 +26,7 @@ CASOS[1] = ("Caso 1", "Mulher de 45 anos, motorista, colisão frontal. Chega aco
 TESTES[1] = {
 'Graduação': [
  ("No caso 1, qual é a primeira medida?",
-  ["Intubar a paciente","Comprimir diretamente o ponto que sangra","Pedir radiografia de tórax","Colher a história AMPLE","Levar para a tomografia"],1,
+  ["Intubar a paciente","Comprimir diretamente o ponto que sangra","Pedir radiografia de tórax","Colher a história AMPLA","Levar para a tomografia"],1,
   ["Ela fala com voz normal: a via aérea está pérvia e intubar agora atrasa o controle do sangramento.","Correta: hemorragia externa com risco de vida vem primeiro, começando pela compressão direta.","Exame de imagem não vem antes de controlar um sangramento que mata em minutos.","A história faz parte da avaliação secundária, depois da primária.","Transportar sangrando para a tomografia é perigoso e atrasa o tratamento."],
   ["IN","OK","TE","CO","CD"],["D2","D6","D10"]),
  ("A paciente do caso 1 responde às perguntas com voz normal. O que isso indica?",

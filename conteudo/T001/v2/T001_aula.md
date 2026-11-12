@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Aula: avaliação inicial do traumatizado
 
@@ -26,7 +26,7 @@ Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; check
 3. Via aérea: voz normal, Glasgow ≤8 [D10, D11, D12].
 4. Circulação: pressão manual, intraósseo [D14, D15].
 5. Glasgow repetido; despir e aquecer [D16, D18, D19].
-6. Secundária com AMPLE; terciária após a ressuscitação [D21, D31].
+6. Secundária com AMPLA; terciária após a ressuscitação [D21, D31].
 
 ## 4. O que dá errado (5 min)
 - Aparelho automático de pressão no choque [D14].

@@ -17,13 +17,13 @@ AQUI="$(pwd)"
 falhar() { echo; echo "ERRO: $*"; exit 1; }
 
 parar() {
-  for n in api pwa; do
+  for n in api pwa notificador; do
     if [ -f "$RAIZ/logs/$n.pid" ]; then
       kill "$(cat "$RAIZ/logs/$n.pid")" 2>/dev/null && echo "parado: $n"
       rm -f "$RAIZ/logs/$n.pid"
     fi
   done
-  pkill -f "tsx src/main.ts" 2>/dev/null; pkill -f "vite" 2>/dev/null; true
+  pkill -f "tsx src/main.ts" 2>/dev/null; pkill -f "tsx src/notificador.ts" 2>/dev/null; pkill -f "vite" 2>/dev/null; true
 }
 if [ "$PW" = "parar" ]; then parar; echo "API e PWA parados."; exit 0; fi
 
@@ -50,6 +50,7 @@ bash 32_revisao_curador_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar
 if [ -f 34_leitura_aluno_v1.0.sh ]; then bash 34_leitura_aluno_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "34_leitura_aluno falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 40_testes_aluno_v1.0.sh ]; then bash 40_testes_aluno_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "40_testes_aluno falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 44_lembretes_app_v1.0.sh ]; then bash 44_lembretes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "44_lembretes_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 46_notificacoes_app_v1.0.sh ]; then bash 46_notificacoes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "46_notificacoes_app falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
@@ -59,7 +60,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
@@ -115,9 +116,20 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then
     GB=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/teste/ondas/999999/gabarito")
     echo "      testes do T001 para o aluno de teste: $NT (esperado 6) | gabarito sem responder: $GB (esperado 403)"
   fi
+  if [ -f 46_notificacoes_app_v1.0.sh ]; then
+    CT=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/contato")
+    ZI=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" -H "Content-Type: application/json" -d '{"whatsapp":"123","aceita_whatsapp":true}' "http://localhost:3000/contato")
+    echo "      tela de contato do aluno: $CT (esperado 200) | WhatsApp invalido recusado: $ZI (esperado 422)"
+  fi
   rm -f "$CA"
 fi
 rm -f "$CK"
+
+if [ -f "$RAIZ/api/src/notificador.ts" ]; then
+  echo "      ligando o enviador de lembretes em modo SIMULADO (so registra em logs/notificador.log)"
+  ( cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=teste_local NOTIFICAR_MODO=simular \
+    APP_URL=http://localhost:5173 LOG_LEVEL=info nohup setsid npx tsx src/notificador.ts > "$RABS/logs/notificador.log" 2>&1 & echo $! > "$RABS/logs/notificador.pid" )
+fi
 
 echo "[7/7] Ligando o PWA (porta 5173)..."
 ( cd "$RAIZ/pwa" && VITE_API_URL=http://localhost:3000 nohup setsid npx vite --host 127.0.0.1 --port 5173 --strictPort > "$RABS/logs/pwa.log" 2>&1 & echo $! > "$RABS/logs/pwa.pid" )

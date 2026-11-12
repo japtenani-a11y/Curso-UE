@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste inicial
 
@@ -20,7 +20,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - A) Pedir radiografia de tórax
 - B) Comprimir diretamente o ponto que sangra
 - C) Levar para a tomografia
-- D) Colher a história AMPLE
+- D) Colher a história AMPLA
 - E) Intubar a paciente
 
 **3.** A paciente do caso 1 responde às perguntas com voz normal. O que isso indica?

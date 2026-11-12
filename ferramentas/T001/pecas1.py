@@ -14,7 +14,7 @@ Tempo de leitura: cerca de 10 minutos. Base: capítulos 10, 13, 44 e 57 do Matto
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
 - **Neurológico e exposição.** Glasgow na chegada e repetido [D16]; agitação também é sinal de choque classe III e IV [D17]. Despir por completo [D18] e, terminado o exame, aquecer: mantas, ar forçado e fluidos aquecidos [D19].
-- **Avaliação secundária e terciária.** A secundária é história (AMPLE) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
+- **Avaliação secundária e terciária.** A secundária é história (AMPLA) e exame completos para achar todas as demais lesões [D20, D21]. A terciária é feita depois da ressuscitação e das cirurgias [D31] e, com a revisão das imagens, reduz lesões não identificadas [D30].
 - **Equipe.** No centro de trauma, o líder é o cirurgião do trauma [D22]; treinandos podem liderar sob supervisão próxima [D29]. A passagem do pré-hospitalar é estruturada (MIST) [D23] e dura no máximo 45 segundos a 1 minuto [D24].
 - **Estrutura melhora o processo.** Checklist pode melhorar a adesão ao ATLS e o fluxo [A8, A11]; o formulário de admissão melhorou 14 de 16 indicadores [A13] e levou o registro da via aérea de 72,9% para 98,4% [A14], em ensaio randomizado por conglomerados em hospitais não terciários de Gana [A45].
 
@@ -53,7 +53,7 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 1. (C) **Descrever** a sequência ABCDE e quando a circulação vem antes da via aérea [D2, D3], em uma pergunta oral, sem omitir etapas.
 2. (H) **Aplicar** compressão direta em sangramento externo em simulação, antes de qualquer outra medida [D6].
 3. (C) **Reconhecer** os sinais de via aérea pérvia e a indicação de via aérea definitiva por Glasgow [D10, D11], em caso escrito, com acerto.
-4. (H) **Colher** a história AMPLE completa em paciente simulado [D21].
+4. (H) **Colher** a história AMPLA completa em paciente simulado [D21].
 5. (A) **Manter** o paciente coberto e aquecido após o exame [D19], em toda simulação.
 
 ## R1
@@ -114,7 +114,7 @@ A ordem padrão é ABCDE: via aérea, respiração, circulação, estado neurol�
 
 ## Depois da primária
 
-A avaliação secundária é a história (AMPLE: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Isso importa: mesmo com tomografia, lesões são descobertas depois [A42].
+A avaliação secundária é a história (AMPLA: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Isso importa: mesmo com tomografia, lesões são descobertas depois [A42].
 
 ## A equipe
 
@@ -174,7 +174,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 4. Via aérea: voz normal = pérvia; Glasgow ≤8 = via aérea definitiva [D10, D11].
 5. Circulação: pressão manual se houver dúvida; intraósseo sem veia [D14, D15].
 6. Glasgow repetido; despir e aquecer [D16, D18, D19].
-7. Secundária com AMPLE; terciária depois [D21, D31].
+7. Secundária com AMPLA; terciária depois [D21, D31].
 
 ## 4. O que dá errado
 
@@ -197,30 +197,31 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 P['protocolo'] = ('Protocolo assistencial', """
 # T001 — Protocolo assistencial: avaliação inicial do traumatizado
 
-**Proposta** para apresentação à diretoria do HCFMRP após a aula. Não é protocolo vigente.
+**Proposta** para apresentação à diretoria do HCFMRP após a aula. Não é protocolo vigente. Integra o Protocolo de Imagem no Politrauma da UE-HCFMRP, versão preliminar de agosto de 2026, ainda em validação multidisciplinar [P1].
 
 ## 1. Título
-Avaliação inicial do paciente traumatizado na sala de trauma.
+Avaliação inicial do paciente traumatizado na sala vermelha.
 
 ## 2. Objetivo
 Identificar e tratar rapidamente as lesões que ameaçam a vida [D1] de forma padronizada e registrada.
 
 ## 3. População-alvo
-Adultos que acionam a equipe de trauma na sala de emergência. **[definir critérios de acionamento com o serviço]**
+Todas as vítimas de trauma que entram pela sala vermelha do hospital. Em todas elas a equipe de cirurgia do trauma é acionada.
 
 ## 4. Definições
 - Avaliação primária: ABCDE, ou CAB quando há hemorragia externa ou extremis [D2, D3].
-- Avaliação secundária: história AMPLE e exame completo [D20, D21].
+- Avaliação secundária: história AMPLA (alergias, medicamentos, passado médico e prenhez, líquidos e alimentos ingeridos, ambiente e eventos) e exame completo [D20, D21].
 - Avaliação terciária: reexame após a ressuscitação e as cirurgias [D31].
+- Comprometimento hemodinâmico (critério institucional), qualquer um: PAS ≤80 mmHg; PAS ≤100 mmHg se TCE moderado ou grave; vasopressor ou transfusão em curso para manter a pressão; FC ≥ PAS, isto é, índice de choque ≥1 [P6]. O índice de choque serve para incluir, não para excluir instabilidade [P7]. O líder pode classificar o paciente como instável mesmo sem critério objetivo [P8].
 
 ## 5. Critérios de inclusão
-Todo paciente atendido pela equipe de trauma.
+Toda vítima de trauma admitida na sala vermelha (seção 3).
 
 ## 6. Critérios de exclusão
 Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
 
 ## 7. Avaliação inicial
-1. Antes da chegada: líder (cirurgião do trauma) e funções definidos [D22].
+1. Antes da chegada: líder (cirurgião do trauma ou Chefe da Emergência) e funções definidos [D22].
 2. Passagem MIST em até 1 minuto [D23, D24].
 3. Registro em formulário estruturado [A13, A14].
 
@@ -228,11 +229,17 @@ Nenhum. Pacientes em extremis seguem o fluxo CABDE [D3].
 1. Hemorragia externa: compressão direta; torniquete no membro; sem pinçamento às cegas; cinta pélvica no alto risco [D6, D7, D8, D9].
 2. Via aérea: Glasgow ≤8 indica via aérea definitiva, com exame neurológico antes da sedação [D11, D12].
 3. Respiração: eFAST como adjunto; negativo não exclui pneumotórax [A30].
-4. Circulação: pressão manual se houver dúvida; intraósseo sem veia [D14, D15].
+4. Circulação: pressão manual se houver dúvida; intraósseo sem veia [D14, D15]. No choque evidente, sangue e plasma começam cedo, antes ou em vez de cristaloide [D39]. Acionar o protocolo de transfusão maciça pelos critérios do item 8.9.
 5. Neurológico: Glasgow na chegada e repetido [D16].
 6. Exposição: despir e aquecer [D18, D19]; medir a temperatura.
-7. Secundária: AMPLE e exame completo [D21].
-8. TC de corpo inteiro: indicação conforme critérios do serviço [A12]. **[definir com a radiologia]**
+7. Secundária: AMPLA e exame completo [D21].
+8. TC de corpo inteiro (pan-TC): indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos ou fisiológicos, ou TCE moderado a grave [P2] (por exemplo, desaceleração severa ou capotamento [P3]; trauma evidente em várias regiões do corpo [P4]; Glasgow ≤12 aferido antes da sedação [P5]). Sem critério, a imagem é dirigida pelo mecanismo, pelo exame e por regras clínicas [P11]. Pan-TC não é sinônimo de qualquer trauma [P15]. O paciente instável ou sem resposta adequada vai primeiro para o controle da causa [P9]; o protocolo rápido de aquisição não é indicação de tomografia [P10]. Não esperar creatinina nem jejum [P12]; afrouxar ou retirar o torniquete antes da angio-TC do membro [P13]. **[Protocolo de tomografia de corpo inteiro em anexo]**
+9. Acionamento do protocolo de transfusão maciça. Acionar se houver qualquer um:
+   - Escore ABC: FAST positivo, mecanismo penetrante, FC acima de 120 bpm, PAS abaixo de 90 mmHg, um ponto cada [D33]. Ponto de corte proposto: 2 ou mais. **[confirmar o ponto de corte na publicação original do escore e com a hemoterapia]**
+   - Índice de choque ≥1 ou outro critério institucional de comprometimento hemodinâmico (seção 4) [P6]. Em adultos, índice de choque acima de 0,9 associou-se a risco de morte de 16%, contra 6% abaixo de 0,9 [D38].
+   - Avaliação do líder do atendimento: ele pode acionar mesmo sem critério objetivo [P8]. Os escores têm bom valor preditivo negativo, mas valor preditivo positivo fraco; a experiência decide [D34].
+   - Durante o atendimento, atingir o limiar crítico de 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas [D37].
+   Ao acionar, avisar o banco de sangue de imediato [D35]. O hospital deve ter protocolo de transfusão maciça com acesso imediato aos hemocomponentes [D36]. **[anexar o protocolo de transfusão maciça vigente do HCFMRP e alinhar os critérios com a hemoterapia]**
 
 ## 9. Materiais necessários
 Cinta pélvica, torniquetes, kit de intraósseo, mantas aquecidas, manta de ar forçado e aquecedor de fluidos [D19], ultrassom.
@@ -243,17 +250,22 @@ Lesões não identificadas [A42]; hipotermia [A36]; amputação associada ao tor
 ## 11. Manejo das complicações
 Avaliação terciária com revisão das imagens [D30]; hipotensão após a ressuscitação tratada como sangramento até prova em contrário [D32].
 
-## 12. Critérios de transferência
-**[definir: centro cirúrgico, radiologia intervencionista, UTI]**
+## 12. Critérios de transferência da sala vermelha
+A decisão é do líder do atendimento [D22], registrada no formulário.
+1. **Centro cirúrgico, sem passar pela tomografia.** Paciente instável ou sem resposta adequada à reposição (seção 4) com fonte provável de sangramento, priorizado para controle imediato da causa [P9]. Também o paciente que respondeu à reposição, mas precisa de cirurgia de emergência, como no tamponamento cardíaco ou no trauma de extremidade com sangramento exsanguinante [D40].
+2. **Radiologia intervencionista.** Paciente que precisa de controle de sangramento por via endovascular, como na fratura pélvica grave, sem atraso para outros exames [D40]. A colaboração próxima entre radiologia intervencionista e cirurgia associou-se a sobrevida 15,5% maior que a prevista [A22]. **[definir com a radiologia intervencionista: horário de disponibilidade, tempo de acionamento e uso de sala híbrida]**
+3. **Tomografia.** Paciente estável, ou que respondeu à reposição sem necessidade evidente de intervenção, com critério de pan-TC (item 8.8) [D41, P2]. Instável não vai à tomografia para diagnóstico [P9, P10]. Meta de porta-tomografia de 30 minutos ainda pendente no protocolo de imagem [P14].
+4. **UTI.** **[proposta, sem fonte carregada; validar com a UTI]** Depois do controle do sangramento, ou da tomografia sem indicação cirúrgica imediata, se houver: via aérea definitiva ou ventilação mecânica; vasopressor ou transfusão em curso; protocolo de transfusão maciça acionado; TCE grave (Glasgow ≤8); necessidade de monitorização contínua. Na UTI, fazer a avaliação terciária com revisão das imagens [D30].
+5. **Enfermaria ou observação.** Paciente estável, com avaliações primária e secundária concluídas, sem indicação cirúrgica, de intervenção ou de UTI. Avaliação terciária depois [D31].
 
 ## 13. Critérios de alta da sala de trauma
-Avaliações primária e secundária concluídas e registradas; destino definido pelo líder [D22].
+Avaliações primária e secundária concluídas e registradas; destino definido pelo líder pelos critérios da seção 12 [D22].
 
 ## 14. Indicadores de qualidade
-Preenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo até a TC; lesões de diagnóstico tardio [A42].
+Preenchimento do formulário; registro da via aérea [A14]; temperatura medida na admissão; tempo porta-tomografia (meta de 30 minutos a validar [P14]); tempo até acionar o protocolo de transfusão maciça; pacientes instáveis levados à tomografia; lesões de diagnóstico tardio [A42].
 
 ## 15. Referências
-Mattox, Trauma 9ª ed., capítulos 10, 13, 44 e 57; artigos A1 a A44 da síntese de evidência do T001.
+Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001.
 """)
 
 P['aula'] = ('Aula', """
@@ -283,7 +295,7 @@ Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; check
 3. Via aérea: voz normal, Glasgow ≤8 [D10, D11, D12].
 4. Circulação: pressão manual, intraósseo [D14, D15].
 5. Glasgow repetido; despir e aquecer [D16, D18, D19].
-6. Secundária com AMPLE; terciária após a ressuscitação [D21, D31].
+6. Secundária com AMPLA; terciária após a ressuscitação [D21, D31].
 
 ## 4. O que dá errado (5 min)
 - Aparelho automático de pressão no choque [D14].

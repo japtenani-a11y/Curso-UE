@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D0
 
@@ -71,7 +71,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - B) erro técnico: Não é o passo antes da intubação.
 - C) erro de indicação: A TC não precede a via aérea.
 - D) **correta**: 
-- E) erro conceitual: O AMPLE é da secundária.
+- E) erro conceitual: O AMPLA é da secundária.
 
 **3. Resposta A** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora D14
 - A) **correta**: 

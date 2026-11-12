@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste após o conhecimento básico
 
@@ -90,7 +90,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 **5. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D21, D20
 - A) erro conceitual: Incompleto.
 - B) erro de indicação: A história faz parte da avaliação secundária.
-- C) **correta**: o AMPLE organiza a história da secundária.
+- C) **correta**: o AMPLA organiza a história da secundária.
 - D) erro de conduta: A história é colhida na secundária.
 - E) erro técnico: Não é o método.
 

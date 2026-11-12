@@ -50,7 +50,7 @@ testeRouter.get('/temas/:codigo', async (req, res, next) => {
       const t = tema.rows[0];
       const testes = await client.query(
         `SELECT o.onda_id, o.teste_num, o.onda_codigo, o.data_abertura, o.data_fechamento, o.status,
-                app.teste_liberado($2, o.tema_id, o.teste_num) AS liberado,
+                app.teste_liberado($2, o.tema_id, o.teste_num) AS liberado, app.onda_respondivel(o.onda_id) AS respondivel,
                 (SELECT tt.submetida_em FROM app.tentativa tt WHERE tt.onda_id = o.onda_id AND tt.pessoa_id = $2) AS submetida_em
            FROM app.onda_instancia o WHERE o.tema_id = $1 ORDER BY o.teste_num`, [t.tema_id, p]);
       return { tema: t, testes: testes.rows };
@@ -68,13 +68,14 @@ testeRouter.get('/ondas/:ondaId', async (req, res, next) => {
     const ondaId = Number(req.params.ondaId);
     const dados = await withMaestro(null, async (client) => {
       const o = await client.query(
-        `SELECT o.onda_id, o.tema_id, o.teste_num, o.status, app.teste_liberado($2, o.tema_id, o.teste_num) AS liberado,
+        `SELECT o.onda_id, o.tema_id, o.teste_num, o.status, o.data_fechamento, app.onda_respondivel(o.onda_id) AS respondivel,
+                app.teste_liberado($2, o.tema_id, o.teste_num) AS liberado,
                 app.perfil_da_pessoa($2) AS perfil
            FROM app.onda_instancia o WHERE o.onda_id = $1 AND o.tema_id IS NOT NULL`, [ondaId, p]);
       const onda = o.rows[0];
       if (!onda) return { erro: 'onda_nao_encontrada', status: 404 };
       if (!onda.liberado) return { erro: 'teste_bloqueado', status: 403 };
-      if (onda.status !== 'aberta') return { erro: 'onda_fechada', status: 409 };
+      if (!onda.respondivel) return { erro: 'onda_fechada', status: 409 };
       if (!onda.perfil) return { erro: 'perfil_nao_cadastrado', status: 409 };
       const tent = await client.query(
         `INSERT INTO app.tentativa (onda_id, pessoa_id) VALUES ($1, $2)
@@ -109,10 +110,11 @@ testeRouter.post('/ondas/:ondaId/respostas', async (req, res, next) => {
     const respostas = Array.isArray(corpo.respostas) ? corpo.respostas.slice(0, 20) : [];
     const r = await withMaestro(null, async (client) => {
       const t = await client.query(
-        `SELECT t.tentativa_id, t.submetida_em, app.perfil_da_pessoa($2) AS perfil
+        `SELECT t.tentativa_id, t.submetida_em, app.perfil_da_pessoa($2) AS perfil, app.onda_respondivel(t.onda_id) AS respondivel
            FROM app.tentativa t WHERE t.onda_id = $1 AND t.pessoa_id = $2`, [ondaId, p]);
       const tent = t.rows[0];
       if (!tent) return { erro: 'teste_nao_iniciado', status: 409 };
+      if (!tent.submetida_em && !tent.respondivel) return { erro: 'prazo_encerrado', status: 409 };
       if (tent.submetida_em) return { erro: 'teste_ja_submetido', status: 409 };
       for (const x of respostas) {
         await client.query(
@@ -257,7 +259,7 @@ cat > "$PWA/pages/aluno/Testes.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet, apiPost } from '../../lib/api.js';
 
-interface Teste { onda_id: number; teste_num: number; liberado: boolean; submetida_em: string | null; status: string; data_fechamento: string }
+interface Teste { onda_id: number; teste_num: number; liberado: boolean; respondivel: boolean; submetida_em: string | null; status: string; data_abertura: string; data_fechamento: string }
 interface Lista { tema: { codigo: string; titulo: string; etapa: number; perfil: string | null }; testes: Teste[] }
 interface Alt { alternativa_id: number; ordem: number; texto: string; correta?: boolean; categoria?: string | null; justificativa?: string | null }
 interface Item { item_id: number; enunciado: string; fixa: boolean; alternativas: Alt[]; resposta?: number | null; escolhida?: number; grau?: string; taxa_esperada?: string; ancora?: string }
@@ -265,6 +267,13 @@ interface Aberto { teste_num: number; caso: { titulo: string; texto: string } | 
 
 const NOMES = ['', 'Pré-teste inicial', 'Pré-teste após o conhecimento básico', 'Pós-teste D0', 'Pós-teste D+15', 'Pós-teste D+45', 'Pós-teste D+90'];
 const LETRAS = 'ABCDE';
+const dataHora = (s: string) => new Date(s).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+function situacao(t: Teste): string {
+  if (t.submetida_em) return 'Respondido';
+  if (!t.liberado) return 'Bloqueado: responda o teste anterior';
+  if (!t.respondivel) return new Date(t.data_fechamento) <= new Date() ? 'Prazo encerrado' : `Abre em ${dataHora(t.data_abertura)}`;
+  return t.teste_num === 2 ? `Liberado · prazo: até ${dataHora(t.data_fechamento)} (1 hora antes da aula)` : 'Liberado';
+}
 const CAT: Record<string, string> = { erro_conceitual: 'erro conceitual', erro_conduta: 'erro de conduta', erro_indicacao: 'erro de indicação', erro_tecnico: 'erro técnico', erro_calculo: 'erro de cálculo' };
 
 const CSS = `
@@ -309,7 +318,7 @@ export function Testes() {
       const m: Record<number, number> = {};
       d.itens.forEach((i) => { if (i.resposta) m[i.item_id] = i.resposta; });
       setMarcadas(m); setAberto({ ondaId, dados: d }); setInicio(Date.now());
-    } catch { setErro('Este teste ainda não está liberado, ou seu perfil (grau) não está cadastrado.'); }
+    } catch { setErro('Este teste não está disponível agora (ainda não liberado, fora do prazo) ou seu perfil (grau) não está cadastrado.'); }
   }
 
   async function verGabarito(ondaId: number) {
@@ -330,7 +339,7 @@ export function Testes() {
       });
       const ondaId = aberto.ondaId;
       setAberto(null); carregar(); await verGabarito(ondaId);
-    } catch { setErro('Falha ao enviar as respostas.'); }
+    } catch { setErro('Falha ao enviar as respostas. Se o prazo do teste terminou, ele não aceita mais respostas.'); }
   }
 
   if (!lista) return <p>{erro ?? 'Carregando…'}</p>;
@@ -345,10 +354,10 @@ export function Testes() {
       {!aberto && !gab && lista.testes.map((t) => (
         <div key={t.onda_id} className="linha">
           <div><strong>{NOMES[t.teste_num]}</strong><div className="meta">
-            {t.submetida_em ? 'Respondido' : t.liberado ? 'Liberado' : 'Bloqueado: responda o teste anterior'}</div></div>
+            {situacao(t)}</div></div>
           {t.submetida_em
             ? <button type="button" className="sec" onClick={() => verGabarito(t.onda_id)}>Ver gabarito</button>
-            : <button type="button" disabled={!t.liberado} onClick={() => abrir(t.onda_id)}>Responder</button>}
+            : <button type="button" disabled={!t.liberado || !t.respondivel} onClick={() => abrir(t.onda_id)}>Responder</button>}
         </div>
       ))}
 

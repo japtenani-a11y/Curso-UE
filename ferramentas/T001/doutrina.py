@@ -20,7 +20,7 @@ D=[
 ("D18","Mattox9_cap13_avaliacao_inicial","Toda a roupa é retirada para um exame completo em 360 graus.","All clothing should be removed to facilitate a complete 360-degree exam."),
 ("D19","Mattox9_cap13_avaliacao_inicial","Terminado o exame, manter o paciente aquecido é prioridade: mantas aquecidas, manta de ar forçado e fluidos aquecidos.","warm blankets, forced hot air blankets, and warm intravenous fluids"),
 ("D20","Mattox9_cap13_avaliacao_inicial","A avaliação secundária é uma história e exame completos, cujo objetivo é identificar todas as demais lesões.","whose aim is to identify all other injuries"),
-("D21","Mattox9_cap13_avaliacao_inicial","A história segue o AMPLE: alergias, medicações, doenças prévias, última refeição e eventos/mecanismo.","ATLS suggests using AMPLE (allergies, medications, past illnesses, last meal, events/environment/mechanism)"),
+("D21","Mattox9_cap13_avaliacao_inicial","A história segue o AMPLE (em português, AMPLA): alergias, medicações, doenças prévias, última refeição e eventos/mecanismo.","ATLS suggests using AMPLE (allergies, medications, past illnesses, last meal, events/environment/mechanism)"),
 ("D22","Mattox9_cap13_avaliacao_inicial","No centro de trauma, o líder da equipe deve ser o cirurgião do trauma.","In a trauma center, this should be the trauma surgeon."),
 ("D23","Mattox9_cap13_avaliacao_inicial","A passagem do pré-hospitalar segue um formato estruturado, como o MIST: mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos.","MIST (mechanism, injuries suspected, vital signs and symptoms, treatments)"),
 ("D24","Mattox9_cap13_avaliacao_inicial","A passagem do pré-hospitalar não deve durar mais que 45 segundos a 1 minuto.","the prehospital report should not take more than 45 seconds to 1 minute"),
@@ -40,3 +40,34 @@ EXTRA_A=[
 ("A47","2024_47","O estudo que mostrou baixa sensibilidade do ultrassom torácico incluiu só trauma torácico fechado.","A prospective observational analysis of patients with blunt chest trauma"),
 ("A46","2023_60","A redução de mortalidade com o TIF foi no subgrupo com fisiologia alterada na chegada (OR ajustado 0,10; intervalo 0,02 a 0,56).","(adjusted OR 0.10, 0.02 to 0.56; P = 0.009)"),
 ]
+D_NOVAS = [
+("D33","Mattox9_cap16_coagulopatia","O escore ABC usa quatro variáveis: FAST positivo, mecanismo penetrante, FC acima de 120 bpm e PAS abaixo de 90 mmHg.","These include a positive FAST, penetrating mechanism, heart rate >120 bpm, and systolic blood pressure less than 90 mm Hg."),
+("D34","Mattox9_cap16_coagulopatia","Os escores de previsão de transfusão maciça têm alto valor preditivo negativo, mas baixo valor preditivo positivo; a decisão depende da experiência.","high negative predictive value but universally lack a strong positive predictive value"),
+("D35","Mattox9_cap16_coagulopatia","O objetivo é avisar cedo o banco de sangue da necessidade urgente de grande volume de hemocomponentes.","early communication to the blood bank of the urgent need of a large volume of blood products"),
+("D36","Mattox9_cap15_choque","O hospital deve ter um protocolo de transfusão maciça que garanta acesso imediato aos hemocomponentes.","Hospitals should have a massive transfusion protocol"),
+("D37","Mattox9_cap15_choque","Uma definição atual de transfusão maciça é o limiar crítico: pelo menos 3 concentrados de hemácias em qualquer período de 1 hora nas primeiras 24 horas.","at least 3 PRBC units within any 1-hour period in the first 24 hours of admission"),
+("D38","Mattox9_cap48_pediatrico","Em adultos, o risco de morte foi de 16% com índice de choque acima de 0,9 e de 6% abaixo de 0,9.","death is 16% when the SI is greater than 0.9 compared to a 6% risk of death when the SI is less than 0.9"),
+("D39","Mattox9_cap13_avaliacao_inicial","No choque evidente com possível transfusão maciça, sangue e plasma devem começar cedo, antes ou mesmo em vez de cristaloide.","should begin prior to and even in lieu of crystalloid"),
+("D40","Mattox9_cap13_avaliacao_inicial","Pacientes que precisam de intervenção de emergência vão ao centro cirúrgico ou à radiologia intervencionista sem atraso para imagem, mesmo que tenham respondido à reposição.","emergent surgery or interventional radiology without further radiologic or investigatory delay"),
+("D41","Mattox9_cap13_avaliacao_inicial","Quem responde à reposição sem necessidade evidente de intervenção pode fazer a investigação completa.","Patients who respond without obvious need for intervention may undergo complete trauma workup as needed."),
+]
+P_NOVAS = [
+("P1","HCFMRP_protocolo_imagem_politrauma_v2026-08","O protocolo de imagem da UE é uma versão preliminar, em validação multidisciplinar.","Documento em construção e validação multidisciplinar"),
+("P2","HCFMRP_protocolo_imagem_politrauma_v2026-08","A pan-TC é indicada quando há pelo menos um de três grupos de critérios: mecanismo, critérios clínicos/fisiológicos ou TCE moderado a grave.","Indicar Pan-TC quando houver pelo menos UM dos três grupos abaixo"),
+("P3","HCFMRP_protocolo_imagem_politrauma_v2026-08","Entre os critérios de mecanismo está desaceleração severa ou capotamento.","Desaceleração severa ou capotamento"),
+("P4","HCFMRP_protocolo_imagem_politrauma_v2026-08","Entre os critérios clínicos está trauma evidente em múltiplas regiões corporais.","Trauma evidente em múltiplas regiões corporais"),
+("P5","HCFMRP_protocolo_imagem_politrauma_v2026-08","TCE moderado a grave: Glasgow ≤12, aferido antes de sedação e após corrigir hipóxia, hipotensão e hipoglicemia.","GCS <=12, aferido antes de sedação/bloqueio e após correção de hipóxia, hipotensão e hipoglicemia"),
+("P6","HCFMRP_protocolo_imagem_politrauma_v2026-08","Comprometimento hemodinâmico é qualquer um: PAS ≤80 mmHg; PAS ≤100 mmHg com TCE moderado/grave; vasopressor ou transfusão para manter a pressão; FC ≥ PAS (índice de choque ≥1).","Qualquer um: PAS <=80 mmHg; PAS <=100 mmHg se TCE moderado/grave; vasopressor ou transfusão em curso para manter a pressão; FC >= PAS (índice de choque >=1)."),
+("P7","HCFMRP_protocolo_imagem_politrauma_v2026-08","O índice de choque serve para incluir, não para excluir instabilidade.","O índice de choque serve para INCLUIR, não para excluir instabilidade."),
+("P8","HCFMRP_protocolo_imagem_politrauma_v2026-08","O líder do trauma pode classificar o paciente como instável mesmo sem critério objetivo.","O líder do trauma pode classificar o paciente como instável mesmo sem preenchimento de critério objetivo"),
+("P9","HCFMRP_protocolo_imagem_politrauma_v2026-08","Pacientes instáveis ou sem resposta adequada são priorizados para controle imediato da causa.","pacientes instáveis ou sem resposta adequada devem ser priorizados para controle imediato da causa"),
+("P10","HCFMRP_protocolo_imagem_politrauma_v2026-08","O protocolo de aquisição rápida não constitui indicação de tomografia.","Sua existência NÃO constitui indicação de tomografia."),
+("P11","HCFMRP_protocolo_imagem_politrauma_v2026-08","Sem critério para pan-TC, a imagem é dirigida pelo mecanismo, exame físico e regras clínicas.","Imagem dirigida conforme mecanismo, exame físico e regras clínicas"),
+("P12","HCFMRP_protocolo_imagem_politrauma_v2026-08","No politrauma com TC contrastada indicada, não é preciso esperar creatinina nem jejum.","não é necessário aguardar resultado de creatinina nem jejum"),
+("P13","HCFMRP_protocolo_imagem_politrauma_v2026-08","Antes da angio-TC de extremidade, o torniquete deve ser afrouxado ou retirado pela equipe assistente.","deverá ser afrouxado ou retirado pela equipe assistente"),
+("P14","HCFMRP_protocolo_imagem_politrauma_v2026-08","Está pendente incorporar a meta de porta-tomografia de 30 minutos.","Incorporar a meta de porta-tomografia de 30 minutos"),
+("P15","HCFMRP_protocolo_imagem_politrauma_v2026-08","Pan-TC não é sinônimo de qualquer trauma.","Pan-TC não é sinônimo de qualquer trauma."),
+]
+
+D += D_NOVAS
+P = P_NOVAS

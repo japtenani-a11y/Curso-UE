@@ -56,7 +56,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T1-Graduação-1' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T1-Graduação-1')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 1, qual é a primeira medida?$q$ OR i.ancora IS DISTINCT FROM 'D2, D6, D10' OR i.dificuldade <> 1
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$Pedir radiografia de tórax|Exame de imagem não vem antes de controlar um sangramento que mata em minutos.#Comprimir diretamente o ponto que sangra|Correta: hemorragia externa com risco de vida vem primeiro, começando pela compressão direta.#Levar para a tomografia|Transportar sangrando para a tomografia é perigoso e atrasa o tratamento.#Colher a história AMPLE|A história faz parte da avaliação secundária, depois da primária.#Intubar a paciente|Ela fala com voz normal: a via aérea está pérvia e intubar agora atrasa o controle do sangramento.$q$);
+           IS DISTINCT FROM $q$Pedir radiografia de tórax|Exame de imagem não vem antes de controlar um sangramento que mata em minutos.#Comprimir diretamente o ponto que sangra|Correta: hemorragia externa com risco de vida vem primeiro, começando pela compressão direta.#Levar para a tomografia|Transportar sangrando para a tomografia é perigoso e atrasa o tratamento.#Colher a história AMPLA|A história faz parte da avaliação secundária, depois da primária.#Intubar a paciente|Ela fala com voz normal: a via aérea está pérvia e intubar agora atrasa o controle do sangramento.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T1-Graduação-1' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 1, qual é a primeira medida?$q$, dificuldade=1, ancora='D2, D6, D10', taxa_esperada='acima de 90%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T1-Graduação-1' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -72,7 +72,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
   (1, $q$Pedir radiografia de tórax$q$, false, 'erro_tecnico', $q$Exame de imagem não vem antes de controlar um sangramento que mata em minutos.$q$),
   (2, $q$Comprimir diretamente o ponto que sangra$q$, true, NULL, $q$Correta: hemorragia externa com risco de vida vem primeiro, começando pela compressão direta.$q$),
   (3, $q$Levar para a tomografia$q$, false, 'erro_conduta', $q$Transportar sangrando para a tomografia é perigoso e atrasa o tratamento.$q$),
-  (4, $q$Colher a história AMPLE$q$, false, 'erro_conceitual', $q$A história faz parte da avaliação secundária, depois da primária.$q$),
+  (4, $q$Colher a história AMPLA$q$, false, 'erro_conceitual', $q$A história faz parte da avaliação secundária, depois da primária.$q$),
   (5, $q$Intubar a paciente$q$, false, 'erro_indicacao', $q$Ela fala com voz normal: a via aérea está pérvia e intubar agora atrasa o controle do sangramento.$q$)) v(ordem, texto, correta, cat, just);
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T1-Graduação-2' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T1-Graduação-2')
    AND (i.enunciado IS DISTINCT FROM $q$A paciente do caso 1 responde às perguntas com voz normal. O que isso indica?$q$ OR i.ancora IS DISTINCT FROM 'D10, D11' OR i.dificuldade <> 1
@@ -665,7 +665,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T2-R1-4' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T2-R1-4')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 2, depois da primária, como colher a história?$q$ OR i.ancora IS DISTINCT FROM 'D21, D20' OR i.dificuldade <> 3
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$Perguntando só sobre dor|Incompleto.#Não é necessário colher história no trauma|A história faz parte da avaliação secundária.#Usando o AMPLE: alergias, medicações, doenças prévias, última refeição, eventos|Correta: o AMPLE organiza a história da secundária.#Só com a família, depois da alta|A história é colhida na secundária.#Pedindo que o paciente escreva|Não é o método.$q$);
+           IS DISTINCT FROM $q$Perguntando só sobre dor|Incompleto.#Não é necessário colher história no trauma|A história faz parte da avaliação secundária.#Usando o AMPLA: alergias, medicações, doenças prévias, última refeição, eventos|Correta: o AMPLA organiza a história da secundária.#Só com a família, depois da alta|A história é colhida na secundária.#Pedindo que o paciente escreva|Não é o método.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T2-R1-4' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 2, depois da primária, como colher a história?$q$, dificuldade=3, ancora='D21, D20', taxa_esperada='50% a 75%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T2-R1-4' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -680,7 +680,7 @@ INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distra
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
   (1, $q$Perguntando só sobre dor$q$, false, 'erro_conceitual', $q$Incompleto.$q$),
   (2, $q$Não é necessário colher história no trauma$q$, false, 'erro_indicacao', $q$A história faz parte da avaliação secundária.$q$),
-  (3, $q$Usando o AMPLE: alergias, medicações, doenças prévias, última refeição, eventos$q$, true, NULL, $q$Correta: o AMPLE organiza a história da secundária.$q$),
+  (3, $q$Usando o AMPLA: alergias, medicações, doenças prévias, última refeição, eventos$q$, true, NULL, $q$Correta: o AMPLA organiza a história da secundária.$q$),
   (4, $q$Só com a família, depois da alta$q$, false, 'erro_conduta', $q$A história é colhida na secundária.$q$),
   (5, $q$Pedindo que o paciente escreva$q$, false, 'erro_tecnico', $q$Não é o método.$q$)) v(ordem, texto, correta, cat, just);
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T2-R1-5' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T2-R1-5')
@@ -1232,7 +1232,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T3-R1-1' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T3-R1-1')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 3, antes de sedar e intubar, o que deve ser feito?$q$ OR i.ancora IS DISTINCT FROM 'D12' OR i.dificuldade <> 2
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$Nada; intubar imediatamente sem exame|Perde-se a informação neurológica de base.#Retirar o colar|Não é o passo antes da intubação.#TC de crânio|A TC não precede a via aérea.#Exame neurológico breve e completo|Correta.#Colher o AMPLE completo|O AMPLE é da secundária.$q$);
+           IS DISTINCT FROM $q$Nada; intubar imediatamente sem exame|Perde-se a informação neurológica de base.#Retirar o colar|Não é o passo antes da intubação.#TC de crânio|A TC não precede a via aérea.#Exame neurológico breve e completo|Correta.#Colher o AMPLA completo|O AMPLA é da secundária.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T3-R1-1' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 3, antes de sedar e intubar, o que deve ser feito?$q$, dificuldade=2, ancora='D12', taxa_esperada='75% a 90%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T3-R1-1' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -1249,7 +1249,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
   (2, $q$Retirar o colar$q$, false, 'erro_tecnico', $q$Não é o passo antes da intubação.$q$),
   (3, $q$TC de crânio$q$, false, 'erro_indicacao', $q$A TC não precede a via aérea.$q$),
   (4, $q$Exame neurológico breve e completo$q$, true, NULL, $q$Correta.$q$),
-  (5, $q$Colher o AMPLE completo$q$, false, 'erro_conceitual', $q$O AMPLE é da secundária.$q$)) v(ordem, texto, correta, cat, just);
+  (5, $q$Colher o AMPLA completo$q$, false, 'erro_conceitual', $q$O AMPLA é da secundária.$q$)) v(ordem, texto, correta, cat, just);
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T3-R1-2' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T3-R1-2')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 3, por que medir a pressão manualmente?$q$ OR i.ancora IS DISTINCT FROM 'D14' OR i.dificuldade <> 2
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
@@ -1736,7 +1736,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T4-Graduação-1' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T4-Graduação-1')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?$q$ OR i.ancora IS DISTINCT FROM 'D3' OR i.dificuldade <> 2
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$Primeiro a história AMPLE|O AMPLE é da secundária.#Primeiro a TC|A TC não vem antes.#Primeiro a radiografia|Exame de imagem não vem antes.#Exposição antes de tudo|A exposição não precede a circulação.#A circulação tem precedência (CABDE)|Correta: no paciente em extremis, a circulação vem primeiro.$q$);
+           IS DISTINCT FROM $q$Primeiro a história AMPLA|O AMPLA é da secundária.#Primeiro a TC|A TC não vem antes.#Primeiro a radiografia|Exame de imagem não vem antes.#Exposição antes de tudo|A exposição não precede a circulação.#A circulação tem precedência (CABDE)|Correta: no paciente em extremis, a circulação vem primeiro.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T4-Graduação-1' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?$q$, dificuldade=2, ancora='D3', taxa_esperada='75% a 90%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T4-Graduação-1' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -1749,7 +1749,7 @@ alvo AS (SELECT item_id FROM i UNION SELECT x.item_id FROM app.item x JOIN app.t
             AND NOT EXISTS (SELECT 1 FROM app.alternativa a WHERE a.item_id=x.item_id))
 INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distrator, justificativa)
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
-  (1, $q$Primeiro a história AMPLE$q$, false, 'erro_conceitual', $q$O AMPLE é da secundária.$q$),
+  (1, $q$Primeiro a história AMPLA$q$, false, 'erro_conceitual', $q$O AMPLA é da secundária.$q$),
   (2, $q$Primeiro a TC$q$, false, 'erro_conduta', $q$A TC não vem antes.$q$),
   (3, $q$Primeiro a radiografia$q$, false, 'erro_tecnico', $q$Exame de imagem não vem antes.$q$),
   (4, $q$Exposição antes de tudo$q$, false, 'erro_indicacao', $q$A exposição não precede a circulação.$q$),
@@ -2534,7 +2534,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T5-R1-3' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T5-R1-3')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 5, qual teste clínico tem especificidade de 99% para lesão de membro inferior?$q$ OR i.ancora IS DISTINCT FROM 'A43' OR i.dificuldade <> 4
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$MIST|É formato de passagem.#AMPLE|É roteiro de história.#RUSH|É protocolo de ultrassom.#SILENT|Correta.#FAST|Não é desse teste.$q$);
+           IS DISTINCT FROM $q$MIST|É formato de passagem.#AMPLA|É roteiro de história.#RUSH|É protocolo de ultrassom.#SILENT|Correta.#FAST|Não é desse teste.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T5-R1-3' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 5, qual teste clínico tem especificidade de 99% para lesão de membro inferior?$q$, dificuldade=4, ancora='A43', taxa_esperada='30% a 50%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T5-R1-3' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -2548,7 +2548,7 @@ alvo AS (SELECT item_id FROM i UNION SELECT x.item_id FROM app.item x JOIN app.t
 INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distrator, justificativa)
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
   (1, $q$MIST$q$, false, 'erro_tecnico', $q$É formato de passagem.$q$),
-  (2, $q$AMPLE$q$, false, 'erro_indicacao', $q$É roteiro de história.$q$),
+  (2, $q$AMPLA$q$, false, 'erro_indicacao', $q$É roteiro de história.$q$),
   (3, $q$RUSH$q$, false, 'erro_conduta', $q$É protocolo de ultrassom.$q$),
   (4, $q$SILENT$q$, true, NULL, $q$Correta.$q$),
   (5, $q$FAST$q$, false, 'erro_conceitual', $q$Não é desse teste.$q$)) v(ordem, texto, correta, cat, just);
@@ -3017,7 +3017,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-Graduação-2' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T6-Graduação-2')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 6, o motorista sangra no antebraço. Qual a primeira medida?$q$ OR i.ancora IS DISTINCT FROM 'D6' OR i.dificuldade <> 2
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$TC|Não.#Compressão direta|Correta.#AMPLE|Depois.#Radiografia|Não.#Intubação|Não indicada.$q$);
+           IS DISTINCT FROM $q$TC|Não.#Compressão direta|Correta.#AMPLA|Depois.#Radiografia|Não.#Intubação|Não indicada.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-Graduação-2' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 6, o motorista sangra no antebraço. Qual a primeira medida?$q$, dificuldade=2, ancora='D6', taxa_esperada='75% a 90%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-Graduação-2' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -3032,7 +3032,7 @@ INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distra
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
   (1, $q$TC$q$, false, 'erro_conduta', $q$Não.$q$),
   (2, $q$Compressão direta$q$, true, NULL, $q$Correta.$q$),
-  (3, $q$AMPLE$q$, false, 'erro_conceitual', $q$Depois.$q$),
+  (3, $q$AMPLA$q$, false, 'erro_conceitual', $q$Depois.$q$),
   (4, $q$Radiografia$q$, false, 'erro_tecnico', $q$Não.$q$),
   (5, $q$Intubação$q$, false, 'erro_indicacao', $q$Não indicada.$q$)) v(ordem, texto, correta, cat, just);
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-Graduação-3' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T6-Graduação-3')
@@ -3185,7 +3185,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R1-4' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T6-R1-4')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?$q$ OR i.ancora IS DISTINCT FROM 'D12, D11' OR i.dificuldade <> 4
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$AMPLE|Não.#Exame neurológico breve e completo|Correta.#Nada|Não.#TC|Não.#Alta|Não.$q$);
+           IS DISTINCT FROM $q$AMPLA|Não.#Exame neurológico breve e completo|Correta.#Nada|Não.#TC|Não.#Alta|Não.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R1-4' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?$q$, dificuldade=4, ancora='D12, D11', taxa_esperada='30% a 50%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R1-4' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -3198,7 +3198,7 @@ alvo AS (SELECT item_id FROM i UNION SELECT x.item_id FROM app.item x JOIN app.t
             AND NOT EXISTS (SELECT 1 FROM app.alternativa a WHERE a.item_id=x.item_id))
 INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distrator, justificativa)
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
-  (1, $q$AMPLE$q$, false, 'erro_conceitual', $q$Não.$q$),
+  (1, $q$AMPLA$q$, false, 'erro_conceitual', $q$Não.$q$),
   (2, $q$Exame neurológico breve e completo$q$, true, NULL, $q$Correta.$q$),
   (3, $q$Nada$q$, false, 'erro_conduta', $q$Não.$q$),
   (4, $q$TC$q$, false, 'erro_indicacao', $q$Não.$q$),
@@ -3332,7 +3332,7 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
 UPDATE app.item i SET gabarito_alternativa_id = NULL FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R2-5' AND NOT EXISTS (SELECT 1 FROM app.resposta r JOIN app.item x ON x.item_id=r.item_id WHERE x.tema_id=t.tema_id AND x.codigo='T6-R2-5')
    AND (i.enunciado IS DISTINCT FROM $q$No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?$q$ OR i.ancora IS DISTINCT FROM 'D3' OR i.dificuldade <> 6
         OR (SELECT string_agg(a.texto||'|'||coalesce(a.justificativa,''), '#' ORDER BY a.ordem) FROM app.alternativa a WHERE a.item_id=i.item_id)
-           IS DISTINCT FROM $q$TC|Não.#AMPLE|Não.#Exposição|Não.#Radiografia|Não.#Circulação (CABDE), com os mais experientes|Correta.$q$);
+           IS DISTINCT FROM $q$TC|Não.#AMPLA|Não.#Exposição|Não.#Radiografia|Não.#Circulação (CABDE), com os mais experientes|Correta.$q$);
 DELETE FROM app.alternativa a USING app.item i, app.tema t WHERE a.item_id=i.item_id AND i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R2-5' AND i.gabarito_alternativa_id IS NULL;
 UPDATE app.item i SET enunciado=$q$No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?$q$, dificuldade=6, ancora='D3', taxa_esperada='abaixo de 15%' FROM app.tema t WHERE i.tema_id=t.tema_id AND replace(t.codigo,'-','')='T001' AND i.codigo='T6-R2-5' AND i.gabarito_alternativa_id IS NULL;
 WITH i AS (
@@ -3346,7 +3346,7 @@ alvo AS (SELECT item_id FROM i UNION SELECT x.item_id FROM app.item x JOIN app.t
 INSERT INTO app.alternativa (item_id, ordem, texto, eh_correta, categoria_distrator, justificativa)
 SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALUES
   (1, $q$TC$q$, false, 'erro_tecnico', $q$Não.$q$),
-  (2, $q$AMPLE$q$, false, 'erro_conceitual', $q$Não.$q$),
+  (2, $q$AMPLA$q$, false, 'erro_conceitual', $q$Não.$q$),
   (3, $q$Exposição$q$, false, 'erro_indicacao', $q$Não.$q$),
   (4, $q$Radiografia$q$, false, 'erro_conduta', $q$Não.$q$),
   (5, $q$Circulação (CABDE), com os mais experientes$q$, true, NULL, $q$Correta.$q$)) v(ordem, texto, correta, cat, just);

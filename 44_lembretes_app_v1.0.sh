@@ -2,6 +2,7 @@
 # ============================================================
 # 44_lembretes_app_v1.0.sh
 # OBJETIVO: mostrar ao aluno os lembretes de pos-teste pendente (7, 14, 28 e 60 dias apos a data)
+# e de pre-teste 2 com prazo terminando em menos de 24 horas (fecha 1 hora antes da aula)
 # e abrir automaticamente as ondas cuja data chegou.
 #  - API: GET /teste/lembretes (gera e lista os lembretes da pessoa) e POST /teste/lembretes/:id/lido
 #  - PWA: aviso no topo da pagina inicial do aluno, com link para os testes
@@ -25,11 +26,12 @@ testeRouter.get('/lembretes', async (req, res, next) => {
       await client.query('SELECT app.abrir_ondas_do_dia()');
       await client.query('SELECT app.gerar_lembretes_pessoa()');
       const { rows } = await client.query(
-        `SELECT l.lembrete_id, l.dias_apos, o.teste_num, o.data_abertura, t.codigo AS tema, t.titulo
+        `SELECT l.lembrete_id, l.dias_apos, o.teste_num, o.data_abertura, o.data_fechamento, t.codigo AS tema, t.titulo
            FROM app.lembrete l
            JOIN app.onda_instancia o ON o.onda_id = l.onda_id
            JOIN app.tema t ON t.tema_id = o.tema_id
           WHERE l.lido_em IS NULL AND NOT app.teste_submetido(l.pessoa_id, o.tema_id, o.teste_num)
+            AND (l.dias_apos <> -1 OR now() < o.data_fechamento)
           ORDER BY l.dias_apos DESC, o.data_abertura`);
       return rows;
     });
@@ -56,7 +58,7 @@ cat > "$PWA/components/Lembretes.tsx" <<'EOF'
 import { useEffect, useState } from 'react';
 import { apiGet, apiPost } from '../lib/api.js';
 
-interface Lembrete { lembrete_id: number; dias_apos: number; teste_num: number; tema: string; titulo: string }
+interface Lembrete { lembrete_id: number; dias_apos: number; teste_num: number; tema: string; titulo: string; data_fechamento: string }
 const NOMES = ['', 'Pré-teste inicial', 'Pré-teste 2', 'Pós-teste D0', 'Pós-teste D+15', 'Pós-teste D+45', 'Pós-teste D+90'];
 
 export function Lembretes() {
@@ -73,7 +75,9 @@ export function Lembretes() {
     <div style={{ background: '#fff3cd', border: '1px solid #d9a400', borderRadius: 8, padding: '8px 12px', margin: '8px 0', fontFamily: 'system-ui, sans-serif' }}>
       {lista.map((l) => (
         <p key={l.lembrete_id} style={{ margin: '4px 0' }}>
-          {NOMES[l.teste_num]} de {l.tema} pendente há {l.dias_apos} dias.{' '}
+          {l.dias_apos === -1
+            ? `${NOMES[l.teste_num]} de ${l.tema}: o prazo termina em ${new Date(l.data_fechamento).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })} (1 hora antes da aula).`
+            : `${NOMES[l.teste_num]} de ${l.tema} pendente há ${l.dias_apos} dias.`}{' '}
           <a href={`/aluno/testes/${l.tema.replace('-', '')}`}>Responder agora</a>{' '}
           <button type="button" onClick={() => dispensar(l.lembrete_id)} style={{ marginLeft: 8 }}>Dispensar</button>
         </p>

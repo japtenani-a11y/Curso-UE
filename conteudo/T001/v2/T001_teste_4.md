@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2). Casos e dados de pacientes são fictícios.
+> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [A#] = artigo da revisão (camada 4); [D#] = Mattox, Trauma 9ª ed. (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+15
 
@@ -17,7 +17,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Na hemorragia externa ou compressível com risco de vida e no paciente em extremis
 
 **2.** No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?
-- A) Primeiro a história AMPLE
+- A) Primeiro a história AMPLA
 - B) Primeiro a TC
 - C) Primeiro a radiografia
 - D) Exposição antes de tudo
