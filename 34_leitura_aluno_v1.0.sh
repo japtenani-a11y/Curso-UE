@@ -151,6 +151,55 @@ function nosDoMapa(corpo: string, previa: boolean): No[] {
   return saida;
 }
 
+// Caso clinico em etapas: cenario, depois um ponto de decisao por vez (discussao so aparece ao pedir).
+interface Etapa { titulo: string; texto: string; decisao: boolean }
+function etapasDoCaso(corpo: string): Etapa[] {
+  const saida: Etapa[] = [{ titulo: 'Cenário', texto: '', decisao: false }];
+  for (const l of corpo.split('\n')) {
+    const m = l.match(/^\*\*((?:Ponto de decisão|Perguntas de fechamento)[^*]*)\*\*\s*(.*)$/);
+    if (m) {
+      saida.push({ titulo: (m[1] ?? '').replace(/[.:]\s*$/, ''), texto: m[2] ?? '', decisao: (m[1] ?? '').startsWith('Ponto') });
+    } else {
+      const atual = saida[saida.length - 1];
+      if (atual) atual.texto += (atual.texto ? '\n' : '') + l;
+    }
+  }
+  return saida;
+}
+
+function Caso(props: { corpo: string }) {
+  const etapas = etapasDoCaso(props.corpo);
+  const [i, setI] = useState(0);
+  const [aberta, setAberta] = useState(false);
+  const total = etapas.length;
+  const e = etapas[Math.min(i, total - 1)];
+  if (!e) return <p>Sem caso.</p>;
+  function ir(d: number) {
+    setI(Math.max(0, Math.min(total - 1, i + d)));
+    setAberta(false);
+  }
+  return (
+    <div>
+      <div className="md">
+        <h3>{e.titulo}</h3>
+        {e.decisao && !aberta ? (
+          <div>
+            <p>Pense na sua conduta antes de ver a discussão.</p>
+            <div className="nav"><button type="button" onClick={() => setAberta(true)}>Ver discussão</button></div>
+          </div>
+        ) : (
+          <Markdown texto={e.texto} />
+        )}
+      </div>
+      <div className="nav" style={{ marginTop: '12px' }}>
+        <button type="button" onClick={() => ir(-1)} disabled={i === 0}>Anterior</button>
+        <span>Etapa {i + 1} de {total}</span>
+        <button type="button" onClick={() => ir(1)} disabled={i === total - 1}>Próximo</button>
+      </div>
+    </div>
+  );
+}
+
 function Flashcards(props: { lista: Cartao[] }) {
   const [i, setI] = useState(0);
   const [virado, setVirado] = useState(false);
@@ -212,6 +261,8 @@ export function Leitura() {
           </div>
           {art.tipo === 'flashcard' && cartoes(art.corpo).length > 0 ? (
             <Flashcards lista={cartoes(limpar(art.corpo, dados.previa))} />
+          ) : art.tipo === 'caso' && etapasDoCaso(art.corpo).length > 1 ? (
+            <Caso key={art.artefato_id} corpo={limpar(art.corpo, dados.previa)} />
           ) : art.tipo === 'mapa' && nosDoMapa(art.corpo, dados.previa).length > 0 ? (
             <div className="mapa">
               {nosDoMapa(art.corpo, dados.previa).map((n, k) => (
