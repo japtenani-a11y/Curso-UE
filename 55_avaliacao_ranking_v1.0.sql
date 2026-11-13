@@ -64,6 +64,9 @@ CREATE TABLE IF NOT EXISTS app.mensagem_aluno (
   revisado_por  BIGINT REFERENCES app.pessoa(pessoa_id),
   criado_em     TIMESTAMPTZ NOT NULL DEFAULT now());
 CREATE INDEX IF NOT EXISTS ix_mensagem_status ON app.mensagem_aluno (status, criado_em);
+-- Resposta da coordenacao (usada pelo 58); criada aqui tambem para a view de pesquisa abaixo.
+ALTER TABLE app.mensagem_aluno ADD COLUMN IF NOT EXISTS resposta TEXT CHECK (length(resposta) <= 8000);
+ALTER TABLE app.mensagem_aluno ADD COLUMN IF NOT EXISTS respondida_por BIGINT REFERENCES app.pessoa(pessoa_id);
 ALTER TABLE app.mensagem_aluno ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS pol_msg_propria ON app.mensagem_aluno;
 CREATE POLICY pol_msg_propria ON app.mensagem_aluno FOR SELECT TO api_rw USING (pessoa_id = app.pessoa_atual());
@@ -254,9 +257,10 @@ CREATE OR REPLACE VIEW pesquisa.vw_estudo_uso AS
     FROM app.uso_material u JOIN app.tema t ON t.tema_id = u.tema_id
     JOIN app.consentimento_pesquisa c ON c.pessoa_id = u.pessoa_id AND c.aceito
    GROUP BY 1, 2, 3;
-CREATE OR REPLACE VIEW pesquisa.vw_estudo_mensagens AS
+DROP VIEW IF EXISTS pesquisa.vw_estudo_mensagens;
+CREATE VIEW pesquisa.vw_estudo_mensagens AS
   SELECT pesquisa.codigo_participante(m.pessoa_id) AS participante, t.codigo AS tema, m.ferramenta, m.tipo,
-         m.texto, m.resposta, m.util, m.criado_em
+         m.texto, m.resposta, m.util, m.criado_em, m.respondida_em
     FROM app.mensagem_aluno m LEFT JOIN app.tema t ON t.tema_id = m.tema_id
     JOIN app.consentimento_pesquisa c ON c.pessoa_id = m.pessoa_id AND c.aceito;
 -- NPS por ferramenta (promotores 9-10 menos detratores 0-6), para o painel do coordenador.
