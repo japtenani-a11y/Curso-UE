@@ -1,6 +1,6 @@
 -- 53_temas_programa_v1.0.sql
 -- Carrega os 150 temas do programa (lista: BUSCAS_PUBMED_150_temas, 32 modulos) com o grau de dificuldade.
--- T136, T137 e T138 entraram em 13/11/2026 (temas opcionais).
+-- T136, T137 e T138 entraram em 13/11/2026 (temas opcionais, aprovados pela coordenacao).
 --  nuclear      = 39 temas principais, dados nas 39 quintas do ciclo, em ordem de dificuldade (ordem_principal)
 --                 (essenciais menos trauma do idoso/perioperatorio do idoso e abdome agudo na gestante)
 --  complementar = os demais temas essenciais: opcionais, recomendados

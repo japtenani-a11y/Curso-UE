@@ -44,7 +44,7 @@
 - **Pesquisador:** Ajuda no menu.
 
 ## 150 temas, árvore e produção
-- **T136, T137 e T138 propostos** (opcionais, aprovação pendente; os títulos mudam só no `53_temas_programa_v1.0.sql`):
+- **T136, T137 e T138 aprovados em 13/11/2026** (opcionais; pastas criadas no Drive, dentro do módulo de cada um):
   - T136 Trauma penetrante: balística, ferimento por arma branca e manejo não operatório seletivo
     (módulo Trauma abdominal, recomendado, grau 4). Mães: T001 e T021.
   - T137 Trauma no idoso e no paciente anticoagulado: queda da própria altura, reversão e limites de investimento
