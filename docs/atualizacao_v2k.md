@@ -10,9 +10,10 @@ Esta versão inclui também tudo da v2j (jornada do aluno e painel). Se você ai
 - Ficha:
   - nome, data de nascimento, e-mail (o da conta Google, não editável) e celular;
   - situação: estudante de graduação (semestre do 7º ao 12º), médico residente ou médico formado fora da residência;
-  - faculdade e ano de formatura;
+  - onde faz a faculdade (graduandos) ou onde se formou e o ano de formatura, com lista de sugestões: as 69 escolas médicas do estado de SP e as principais públicas dos outros estados. Se a faculdade não estiver na lista, o aluno digita o nome;
   - especialidade: cirurgia geral, cirurgia de urgência e trauma, medicina de emergência ou outra cirúrgica (com campo "qual");
-  - para residentes: instituição, ano de ingresso e data prevista de término.
+  - para residentes: onde faz a residência (lista de hospitais, aceita outro nome digitado), ano de ingresso e data prevista de término;
+  - para médicos formados: onde fez a residência, se fez.
 - Termos, cada um com o texto completo e uma cópia para baixar:
   - **Termo de uso, confidencialidade e segurança** (obrigatório): responsabilidade pelo conteúdo, conta pessoal, proibição de copiar, gravar ou repassar o material, proibição de dados de pacientes, conduta, e registro de tudo o que é feito e escrito na plataforma;
   - **Aviso de privacidade (LGPD)** (obrigatório): dados coletados, finalidades e bases legais, compartilhamento, prazo de guarda, segurança e direitos do titular;

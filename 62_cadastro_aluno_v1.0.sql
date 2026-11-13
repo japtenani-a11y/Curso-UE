@@ -1,6 +1,7 @@
 -- 62_cadastro_aluno_v1.0.sql
 -- Inscricao do aluno no curso, ficha cadastral e termos (versionados, com historico de aceites).
 --  - Primeiro login com Google de um e-mail novo: cria a pessoa e a ficha em "rascunho" (se a inscricao estiver aberta).
+--  - Faculdade (onde faz ou onde se formou) e local da residencia (onde faz ou onde fez) tem lista de sugestoes no app.
 --  - O aluno preenche a ficha e aceita os termos obrigatorios (uso/confidencialidade/seguranca e privacidade);
 --    o TCLE de pesquisa e a autorizacao de divulgacao sao OPCIONAIS e podem ser revogados a qualquer momento
 --    (a participacao no curso nao depende deles).
@@ -259,6 +260,8 @@ BEGIN
   IF coalesce(p->>'celular', '') !~ '^\+[1-9][0-9]{9,14}$' THEN RAISE EXCEPTION 'campo:celular'; END IF;
   IF v_sit NOT IN ('graduacao','residencia','formado') OR v_sit IS NULL THEN RAISE EXCEPTION 'campo:situacao'; END IF;
   IF v_sit = 'graduacao' AND coalesce((p->>'semestre')::int, 0) NOT BETWEEN 7 AND 12 THEN RAISE EXCEPTION 'campo:semestre'; END IF;
+  IF length(trim(coalesce(p->>'faculdade', ''))) < 3 THEN RAISE EXCEPTION 'campo:faculdade'; END IF;
+  IF v_sit = 'residencia' AND length(trim(coalesce(p->>'instituicao_residencia', ''))) < 3 THEN RAISE EXCEPTION 'campo:instituicao_residencia'; END IF;
   IF v_sit <> 'graduacao' AND coalesce((p->>'ano_formatura')::int, 0) NOT BETWEEN 1960 AND extract(year FROM current_date)::int THEN
     RAISE EXCEPTION 'campo:ano_formatura'; END IF;
   IF v_sit <> 'graduacao' AND coalesce(p->>'especialidade', '') NOT IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica') THEN
@@ -288,7 +291,7 @@ BEGIN
           nullif(left(trim(coalesce(p->>'faculdade', '')), 200), ''),
           CASE WHEN v_sit <> 'graduacao' THEN p->>'especialidade' END,
           CASE WHEN v_sit <> 'graduacao' AND p->>'especialidade' = 'outra_cirurgica' THEN left(trim(p->>'especialidade_outra'), 120) END,
-          CASE WHEN v_sit = 'residencia' THEN nullif(left(trim(coalesce(p->>'instituicao_residencia', '')), 200), '') END,
+          CASE WHEN v_sit IN ('residencia','formado') THEN nullif(left(trim(coalesce(p->>'instituicao_residencia', '')), 200), '') END,
           CASE WHEN v_sit = 'residencia' THEN (p->>'ano_ingresso_residencia')::smallint END,
           CASE WHEN v_sit = 'residencia' THEN v_term END,
           'pendente', now(), now())

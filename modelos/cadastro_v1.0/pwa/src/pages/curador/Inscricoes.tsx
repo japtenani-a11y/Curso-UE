@@ -49,6 +49,7 @@ export function CuradorInscricoes() {
             <dt>Situação</dt><dd>{SIT[i.ficha.situacao ?? ''] ?? '—'}{i.ficha.semestre ? ` · ${i.ficha.semestre}º semestre` : ''}{i.ficha.ano_formatura ? ` · formado em ${i.ficha.ano_formatura}` : ''}</dd>
             <dt>Faculdade</dt><dd>{i.ficha.faculdade ?? '—'}</dd>
             {i.ficha.situacao !== 'graduacao' && <><dt>Especialidade</dt><dd>{i.especialidade_rotulo ?? '—'}</dd></>}
+            {i.ficha.situacao === 'formado' && i.ficha.instituicao_residencia && <><dt>Residência</dt><dd>{i.ficha.instituicao_residencia}</dd></>}
             {i.ficha.situacao === 'residencia' && <><dt>Residência</dt><dd>{i.ficha.instituicao_residencia ?? '—'} · ingresso {i.ficha.ano_ingresso_residencia} · término {dia(i.ficha.termino_previsto)} · <strong>{i.grau}</strong></dd></>}
             <dt>Termos</dt><dd>{TERMOS.map(([k, r]) => `${r}: ${i.termos?.[k] ? 'sim' : 'não'}`).join(' · ')}</dd>
             {i.ficha.motivo_status && <><dt>Motivo</dt><dd>{i.ficha.motivo_status}</dd></>}

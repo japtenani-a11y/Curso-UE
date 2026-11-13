@@ -26,3 +26,4 @@
 .decisao { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .decisao .busca { margin: 0; flex: 1; min-width: 220px; }
 @media (max-width: 720px) { .ficha-resumo { grid-template-columns: 1fr; } .ficha-resumo dt { margin-top: 6px; } }
+.ficha .dica { font-weight: 400; color: var(--texto-2); font-size: .8rem; }

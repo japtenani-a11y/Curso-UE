@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { apiGet, apiPost } from '../lib/api.js';
 import { Markdown } from '../lib/md.js';
+import { FACULDADES, RESIDENCIAS } from '../lib/instituicoes.js';
 
 const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 
@@ -21,7 +22,8 @@ const CAMPOS: Record<string, string> = {
   celular: 'Informe o celular com DDD, por exemplo (16) 99999-0000.', situacao: 'Escolha a sua situação atual.',
   semestre: 'Escolha o semestre da graduação (7º a 12º).', ano_formatura: 'Informe o ano de formatura.',
   especialidade: 'Escolha a especialidade.', especialidade_outra: 'Diga qual é a outra especialidade cirúrgica.',
-  ano_ingresso_residencia: 'Informe o ano de ingresso na residência.', termino_previsto: 'Informe a data prevista de término (depois do ingresso).',
+  ano_ingresso_residencia: 'Informe o ano de ingresso na residência.', faculdade: 'Informe a faculdade de medicina (escolha da lista ou digite).',
+  instituicao_residencia: 'Informe o local da residência (escolha da lista ou digite).', termino_previsto: 'Informe a data prevista de término (depois do ingresso).',
 };
 const STATUS: Record<string, string> = {
   rascunho: 'Preencha a ficha, leia e aceite os termos e envie a inscrição.',
@@ -129,7 +131,9 @@ export function Cadastro() {
               <label key={k} className={`opcao${sit === k ? ' sel' : ''}`}><input type="radio" name="situacao" checked={sit === k} onChange={() => setF({ ...f, situacao: k })} /> {r}</label>
             ))}
           </div>
-          <label>Faculdade de medicina<input placeholder="ex.: FMRP-USP" {...campo('faculdade')} /></label>
+          {sit && <label>{sit === 'graduacao' ? 'Onde você faz a faculdade' : 'Onde você se formou (faculdade)'}
+            <input list="lista-faculdades" placeholder="digite para buscar: FMRP, FAMERP, FAMEMA, UNESP…" {...campo('faculdade')} />
+            <small className="dica">Escolha da lista ou digite o nome, se não encontrar.</small></label>}
           {sit === 'graduacao' && (
             <label>Semestre da graduação<select {...campo('semestre')}><option value="">escolha</option>{[7, 8, 9, 10, 11, 12].map((s) => <option key={s} value={s}>{s}º semestre</option>)}</select></label>
           )}
@@ -138,8 +142,14 @@ export function Cadastro() {
             <label>Especialidade<select {...campo('especialidade')}><option value="">escolha</option>{ESPECIALIDADES.map(([k, r]) => <option key={k} value={k}>{r}</option>)}</select></label>
             {f.especialidade === 'outra_cirurgica' && <label>Qual especialidade?<input {...campo('especialidade_outra')} /></label>}
           </>)}
+          {sit === 'formado' && (
+            <label>Onde você fez a residência (se fez)<input list="lista-residencias" placeholder="deixe em branco se não fez residência" {...campo('instituicao_residencia')} /></label>
+          )}
+          <datalist id="lista-faculdades">{FACULDADES.map((x) => <option key={x} value={x} />)}</datalist>
+          <datalist id="lista-residencias">{RESIDENCIAS.map((x) => <option key={x} value={x} />)}</datalist>
           {sit === 'residencia' && (<>
-            <label>Instituição da residência<input placeholder="ex.: HCFMRP-USP" {...campo('instituicao_residencia')} /></label>
+            <label>Onde você faz a residência<input list="lista-residencias" placeholder="digite para buscar: HCFMRP, Hospital de Base, UNICAMP…" {...campo('instituicao_residencia')} />
+              <small className="dica">Escolha da lista ou digite o nome do hospital/instituição.</small></label>
             <label>Ano de ingresso na residência<input type="number" min={1990} max={new Date().getFullYear() + 1} {...campo('ano_ingresso_residencia')} /></label>
             <label>Data prevista de término da residência<input type="date" {...campo('termino_previsto')} /></label>
           </>)}

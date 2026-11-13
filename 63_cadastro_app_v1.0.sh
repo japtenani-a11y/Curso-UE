@@ -24,6 +24,7 @@ cp "$M/api/src/middleware/cadastro.ts" "$API/middleware/cadastro.ts"
 cp "$M/pwa/src/pages/Cadastro.tsx" "$PWA/pages/Cadastro.tsx"
 cp "$M/pwa/src/pages/curador/Inscricoes.tsx" "$PWA/pages/curador/Inscricoes.tsx"
 cp "$M/pwa/src/components/GuardaCadastro.tsx" "$PWA/components/GuardaCadastro.tsx"
+cp "$M/pwa/src/lib/instituicoes.ts" "$PWA/lib/instituicoes.ts"
 grep -q "cadastro (ficha, termos" "$PWA/estilo.css" || cat "$M/estilo_cadastro.css" >> "$PWA/estilo.css"
 echo "copiados: routes/cadastro.ts, routes/inscricoes.ts, middleware/cadastro.ts, Cadastro, Inscricoes, GuardaCadastro"
 
