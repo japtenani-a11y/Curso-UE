@@ -18,6 +18,7 @@ if [ "$ACAO" = "configurar" ]; then
   mkdir -p "$(dirname "$CFG")"; chmod 700 "$(dirname "$CFG")"
   read -r -p "Pasta de destino no Windows [/mnt/c/Users/$(cmd.exe /c echo %USERNAME% 2>/dev/null | tr -d '\r' || echo SEU_USUARIO)/CursoUE_backups]: " DEST
   DEST="${DEST:-/mnt/c/Users/$(cmd.exe /c echo %USERNAME% 2>/dev/null | tr -d '\r')/CursoUE_backups}"
+  case "$DEST" in /*) ;; *) echo "ERRO: use o caminho completo, ex.: /mnt/c/Users/SEU_USUARIO/CursoUE_backups"; exit 1 ;; esac
   read -r -s -p "Frase-senha da criptografia (guarde num lugar seguro; sem ela a copia nao abre): " F1; echo
   read -r -s -p "Repita a frase-senha: " F2; echo
   [ "$F1" = "$F2" ] && [ ${#F1} -ge 12 ] || { echo "ERRO: frases diferentes ou com menos de 12 caracteres"; exit 1; }
@@ -33,6 +34,9 @@ fi
 [ -f "$CFG" ] || { echo "ERRO: rode antes: bash $0 configurar"; exit 1; }
 # shellcheck disable=SC1090
 . "$CFG"; export PGHOST PGPORT PGDATABASE PGUSER
+case "$DESTINO" in /*) ;; *) echo "ERRO: DESTINO em $CFG precisa ser um caminho completo (ex.: /mnt/c/Users/SEU_USUARIO/CursoUE_backups)"; exit 1 ;; esac
+[ -f "$HOME/.pgpass" ] || echo "AVISO: sem ~/.pgpass o banco vai pedir senha varias vezes (veja docs/atualizacao_v2l.md)"
+export PGPASSFILE="$HOME/.pgpass"
 command -v gpg >/dev/null || { echo "ERRO: instale o gpg: sudo apt install -y gnupg"; exit 1; }
 
 case "$ACAO" in
