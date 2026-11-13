@@ -7,7 +7,7 @@ ALTER TABLE conteudo.artefato ADD CONSTRAINT artefato_tipo_check CHECK (tipo IN 
 -- renomeia o antigo 'caso semente' para 'caso base' (se ja importado)
 UPDATE conteudo.artefato SET tipo='caso_base', titulo=replace(titulo,'Caso semente','Caso base'), corpo=replace(replace(corpo,'Caso semente','Caso base'),'caso semente','caso base') WHERE tipo='caso_semente';
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'aula', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula'),0)+1, 'rascunho', $T1$Aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'aula', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula'),0)+1, 'rascunho', $T1$Aula$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Aula: avaliação inicial do traumatizado
 
@@ -53,7 +53,7 @@ Estrutura: o formulário de admissão melhorou 14 de 16 indicadores [A13]; check
 5. Avaliação terciária sempre.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='aula' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Aula: avaliação inicial do traumatizado
 
@@ -314,7 +314,7 @@ SELECT a.artefato_id, 'H2', $af$O objetivo original era treinar médicos que nã
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='aula' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='aula')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'banco_dificuldade', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade'),0)+1, 'rascunho', $T1$Banco de questões e distribuição de dificuldade$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'banco_dificuldade', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade'),0)+1, 'rascunho', $T1$Banco de questões e distribuição de dificuldade$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Banco de questões e distribuição de dificuldade
 
@@ -341,7 +341,7 @@ Total: 170 questões de caso e 1 questão fixa (igual para todos os perfis). O s
 
 A questão fixa tem grau diferente por perfil porque o mesmo enunciado é mais fácil para quem tem mais experiência.$T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='banco_dificuldade' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Banco de questões e distribuição de dificuldade
 
@@ -738,7 +738,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='banco_dificuldade' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='banco_dificuldade')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'caso', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso'),0)+1, 'rascunho', $T1$Caso da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'caso', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso'),0)+1, 'rascunho', $T1$Caso da aula$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso da aula (fictício, para discussão em pequenos grupos)
 
@@ -774,7 +774,7 @@ Discussão: Lesões de diagnóstico tardio ocorrem mesmo com TC (13,9 %) [A42]; 
 A radiografia mostra fratura do rádio distal, tratada com imobilização. O torniquete foi retirado no centro cirúrgico, com reparo vascular. O paciente teve alta da UTI no terceiro dia. Lição: a avaliação terciária encontrou o que a sala de trauma e a TC não viram [D30, A42].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso da aula (fictício, para discussão em pequenos grupos)
 
@@ -910,7 +910,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='caso' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='caso')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'caso_base', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base'),0)+1, 'rascunho', $T1$Caso base$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'caso_base', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base'),0)+1, 'rascunho', $T1$Caso base$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso base
 
@@ -931,7 +931,7 @@ Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão dis
 7. A passagem do SAMU foi feita da melhor forma?
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='caso_base' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Caso base
 
@@ -952,7 +952,7 @@ Tempo: cerca de 5 minutos. Caso fictício, para levantar dúvidas que serão dis
 7. A passagem do SAMU foi feita da melhor forma?
 $T1$);
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist'),0)+1, 'rascunho', $T1$Checklists$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist'),0)+1, 'rascunho', $T1$Checklists$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Checklist da sala de trauma (PROPOSTA para validação)
 
@@ -978,7 +978,7 @@ SELECT t.tema_id, 'checklist', COALESCE((SELECT MAX(versao) FROM conteudo.artefa
 - [ ] Avaliação terciária realizada e registrada [A42]
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='checklist' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Checklist da sala de trauma (PROPOSTA para validação)
 
@@ -1069,7 +1069,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='checklist' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='checklist')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard'),0)+1, 'rascunho', $T1$Flashcards$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard'),0)+1, 'rascunho', $T1$Flashcards$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Flashcards (18)
 
@@ -1095,7 +1095,7 @@ SELECT t.tema_id, 'flashcard', COALESCE((SELECT MAX(versao) FROM conteudo.artefa
 | 18 | Líder cirurgião vs. não cirurgião: lesões não identificadas? | Menos com cirurgião (OR 0,48) [A21]. |
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='flashcard' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Flashcards (18)
 
@@ -1216,7 +1216,7 @@ SELECT a.artefato_id, 'A43', $af$O teste SILENT (membro inferior) teve sensibili
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='flashcard' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='flashcard')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste inicial
 
@@ -1413,7 +1413,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Um estudo mostrou menor mortalidade no ISS > 25.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_1' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste inicial
 
@@ -1800,7 +1800,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2'),0)+1, 'rascunho', $T1$Gabarito comentado — Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste após o conhecimento básico
 
@@ -2067,7 +2067,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: A terciária reduz lesões não identificadas.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_2' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pré-teste após o conhecimento básico
 
@@ -2504,7 +2504,7 @@ SELECT a.artefato_id, 'D30', $af$No paciente de UTI, a avaliação terciária e 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D0$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D0
 
@@ -2771,7 +2771,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: Não é o argumento.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_3' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D0
 
@@ -3158,7 +3158,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_3' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_3')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+15
 
@@ -3425,7 +3425,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro técnico: Não.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_4' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+15
 
@@ -3797,7 +3797,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_4' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_4')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+45
 
@@ -4064,7 +4064,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Lesões tardias ocorrem mesmo com TC.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_5' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+45
 
@@ -4396,7 +4396,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_5' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_5')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'gabarito_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'gabarito_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6'),0)+1, 'rascunho', $T1$Gabarito comentado — Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+90
 
@@ -4663,7 +4663,7 @@ Liberado ao aluno só depois de ele responder o teste. Para cada questão: respo
 - E) erro de conduta: Houve benefício em ISS > 25.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='gabarito_6' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Gabarito comentado: Pós-teste D+90
 
@@ -5100,7 +5100,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='gabarito_6' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='gabarito_6')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'mapa', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa'),0)+1, 'rascunho', $T1$Mapa conceitual$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'mapa', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa'),0)+1, 'rascunho', $T1$Mapa conceitual$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Mapa conceitual
 
@@ -5141,7 +5141,7 @@ mindmap
 ```
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='mapa' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Mapa conceitual
 
@@ -5307,7 +5307,7 @@ SELECT a.artefato_id, 'A42', $af$Mesmo com TC de corpo inteiro na avaliação pr
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='mapa' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='mapa')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'objetivos', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos'),0)+1, 'rascunho', $T1$Objetivos de aprendizagem por perfil$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'objetivos', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos'),0)+1, 'rascunho', $T1$Objetivos de aprendizagem por perfil$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Objetivos de aprendizagem por perfil
 
@@ -5355,7 +5355,7 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 5. (A) **Supervisionar** treinandos na liderança da equipe sem assumir o comando sem necessidade [D29].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='objetivos' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Objetivos de aprendizagem por perfil
 
@@ -5608,7 +5608,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='objetivos' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='objetivos')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'podcast_roteiro', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro'),0)+1, 'rascunho', $T1$Roteiro de podcast$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'podcast_roteiro', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro'),0)+1, 'rascunho', $T1$Roteiro de podcast$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Roteiro de podcast: "xABCDE: o que mudou e o que a evidência sustenta"
 
@@ -5705,7 +5705,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 8 a 10 minuto
 **RESIDENTE:** Até lá!
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='podcast_roteiro' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Roteiro de podcast: "xABCDE: o que mudou e o que a evidência sustenta"
 
@@ -5942,7 +5942,7 @@ SELECT a.artefato_id, 'D4', $af$No pré-hospitalar, a hemorragia externa maciça
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='podcast_roteiro' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='podcast_roteiro')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'protocolo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo'),0)+1, 'rascunho', $T1$Protocolo assistencial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'protocolo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo'),0)+1, 'rascunho', $T1$Protocolo assistencial$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Protocolo assistencial: avaliação inicial do traumatizado
 
@@ -6018,7 +6018,7 @@ Preenchimento do formulário; registro da via aérea [A14]; temperatura medida n
 Camada 1: Carmont, história do ATLS, Postgrad Med J 2005 [H1]. Camada 2: Mattox, Trauma 9ª ed., capítulos 10, 13, 15, 16, 44, 48 e 57; ATLS, edição atual (anúncio oficial do ACS, 2025) [D44]. Camada 3: Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versão preliminar de agosto de 2026 (em validação) [P1]. Camada 4: artigos A1 a A47 da síntese de evidência do T001. Camada 5: diretriz europeia de sangramento maior no trauma, 6ª edição (Rossaint et al., Crit Care 2023;27:80) [G1].
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='protocolo' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Protocolo assistencial: avaliação inicial do traumatizado
 
@@ -6399,7 +6399,7 @@ SELECT a.artefato_id, 'P15', $af$Pan-TC não é sinônimo de qualquer trauma.$af
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='protocolo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='protocolo')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'resumo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo'),0)+1, 'rascunho', $T1$Resumo executivo$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'resumo', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo'),0)+1, 'rascunho', $T1$Resumo executivo$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo executivo
 
@@ -6446,7 +6446,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 5. Fazer a avaliação terciária: a sala de trauma não encerra o diagnóstico.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo executivo
 
@@ -6668,7 +6668,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='resumo' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='resumo')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'resumo_basico', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico'),0)+1, 'rascunho', $T1$Resumo básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'resumo_basico', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico'),0)+1, 'rascunho', $T1$Resumo básico$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
@@ -6707,7 +6707,7 @@ Um líder, de preferência o cirurgião do trauma, coordena e fica com a visão 
 4. Reavaliar sempre: lesão escondida aparece depois.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='resumo_basico' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
@@ -6896,7 +6896,7 @@ SELECT a.artefato_id, 'D31', $af$A avaliação terciária deve ser feita depois 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='resumo_basico' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='resumo_basico')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'sintese_evidencia', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia'),0)+1, 'rascunho', $T1$Síntese de evidência$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'sintese_evidencia', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia'),0)+1, 'rascunho', $T1$Síntese de evidência$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
@@ -6943,7 +6943,7 @@ Tempo de leitura: cerca de 10 minutos. Base nas cinco camadas: história do ATLS
 4. **Classificar o choque:** a tabela do ATLS ainda serve [A32, A33]?
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='sintese_evidencia' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Síntese de evidência: consenso, disputa, lacunas e controvérsias
 
@@ -7345,7 +7345,7 @@ SELECT a.artefato_id, 'H5', $af$O conhecimento cai seis meses depois do curso, m
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='sintese_evidencia' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='sintese_evidencia')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'slides', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides'),0)+1, 'rascunho', $T1$Slides da aula$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'slides', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides'),0)+1, 'rascunho', $T1$Slides da aula$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Slides da aula
 Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresentação visual é projetada na reunião.
@@ -7591,7 +7591,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 > **Nota do apresentador:** Retome a votação do início e peça que alguém explique por que a resposta é B [A2, A4]. Feche com as cinco mensagens. Em seguida: discussão de 10 minutos e o caso clínico em pequenos grupos.
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='slides' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Slides da aula
 Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresentação visual é projetada na reunião.
@@ -8217,7 +8217,7 @@ SELECT a.artefato_id, 'P2', $af$A pan-TC é indicada quando há pelo menos um de
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='slides' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='slides')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1'),0)+1, 'rascunho', $T1$Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_1', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1'),0)+1, 'rascunho', $T1$Pré-teste inicial$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste inicial
 
@@ -8416,7 +8416,7 @@ Tempo estimado: cerca de 10 minutos. Múltipla escolha, 5 alternativas, uma corr
 - E) O checklist aumenta a mortalidade
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_1' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste inicial
 
@@ -8805,7 +8805,7 @@ SELECT a.artefato_id, 'D29', $af$Treinandos podem liderar a equipe sob supervis�
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_1' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_1')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2'),0)+1, 'rascunho', $T1$Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_2', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2'),0)+1, 'rascunho', $T1$Pré-teste após o conhecimento básico$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste após o conhecimento básico
 
@@ -9074,7 +9074,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) A avaliação terciária é desnecessária
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_2' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pré-teste após o conhecimento básico
 
@@ -9513,7 +9513,7 @@ SELECT a.artefato_id, 'D30', $af$No paciente de UTI, a avaliação terciária e 
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_2' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_2')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3'),0)+1, 'rascunho', $T1$Pós-teste D0$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_3', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3'),0)+1, 'rascunho', $T1$Pós-teste D0$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D0
 
@@ -9782,7 +9782,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Custo zero comprovado
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_3' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D0
 
@@ -10171,7 +10171,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_3' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_3')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4'),0)+1, 'rascunho', $T1$Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_4', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4'),0)+1, 'rascunho', $T1$Pós-teste D+15$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+15
 
@@ -10440,7 +10440,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Só para colher sangue
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_4' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+15
 
@@ -10814,7 +10814,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_4' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_4')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5'),0)+1, 'rascunho', $T1$Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_5', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5'),0)+1, 'rascunho', $T1$Pós-teste D+45$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+45
 
@@ -11083,7 +11083,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) TC para todos, dispensando a terciária
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_5' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+45
 
@@ -11417,7 +11417,7 @@ SELECT a.artefato_id, 'D32', $af$A hipotensão após a ressuscitação é sangra
  WHERE replace(t.codigo,'-','')='T001' AND a.tipo='teste_5' AND a.versao=(SELECT max(versao) FROM conteudo.artefato x WHERE x.tema_id=a.tema_id AND x.tipo='teste_5')
 ON CONFLICT (artefato_id, codigo) DO NOTHING;
 INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
-SELECT t.tema_id, 'teste_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6'),0)+1, 'rascunho', $T1$Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+SELECT t.tema_id, 'teste_6', COALESCE((SELECT MAX(versao) FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6'),0)+1, 'rascunho', $T1$Pós-teste D+90$T1$, $T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+90
 
@@ -11686,7 +11686,7 @@ Tempo estimado: 10 a 15 minutos. Múltipla escolha, 5 alternativas, uma correta.
 - E) Só há dano
 $T1$, false
   FROM app.tema t WHERE replace(t.codigo,'-','')='T001'
-   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6' AND a.corpo=$T1$> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
+   AND NOT EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id=t.tema_id AND a.tipo='teste_6' AND a.corpo=$T1$> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.
 
 # T001 — Pós-teste D+90
 

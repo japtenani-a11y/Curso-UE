@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). Os códigos [A#] remetem às afirmações com trecho literal da fonte e não são lidos na gravação. Trechos marcados **[DOUTRINA – confirmar na camada 2]** devem ser conferidos no livro-texto antes da gravação.
+> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Os códigos [A#] remetem às afirmações com trecho literal da fonte e não são lidos na gravação. Trechos marcados **[DOUTRINA – confirmar na camada 2]** devem ser conferidos no livro-texto antes da gravação.
 
 # T001 — Roteiro de podcast: "xABCDE: o que mudou e o que a evidência sustenta"
 

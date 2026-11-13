@@ -1,6 +1,6 @@
 # T001 — Avaliação inicial do traumatizado: o que mudou no xABCDE (síntese de evidência — RASCUNHO)
 
-Base: revisão sistemática do usuário (75 fontes segmentadas, camada 4). Cada afirmação abaixo traz fonte e trecho literal; números conferidos contra o trecho. Rascunho sujeito à revisão por 3 cirurgiões (tolerância: 5% leve / 0 crítico).
+Base: revisão sistemática do usuário (75 fontes segmentadas, camada 4). Cada afirmação abaixo traz fonte e trecho literal; números conferidos contra o trecho. Rascunho sujeito à revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% leve, zero crítico).
 
 ## 1. Treinamento e protocolos de suporte de vida
 - [A1] Revisão sistemática de 19 estudos / 92.614 pacientes; programas de suporte de vida associaram-se a menor mortalidade (OR 0,60), porém com evidência observacional [A2].

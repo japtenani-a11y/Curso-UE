@@ -1,4 +1,4 @@
-> RASCUNHO para revisão por 3 cirurgiões do trauma (tolerância: 5% erro leve / 0 crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.
+> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.
 
 # T001 — Aula: Avaliação inicial do traumatizado — o que mudou no xABCDE
 

@@ -144,6 +144,8 @@ trocar(p, """            : <span className="ruim">Fora da tolerância (até 5% l
 
 # Leitura: avaliacao, duvida e tempo de uso no fim de cada peca (so para o aluno)
 p = f"{pwa}/pages/aluno/Leitura.tsx"
+trocar(p, "    .filter((l) => !l.startsWith('> RASCUNHO'))\n",
+       "    .filter((l) => !l.startsWith('> RASCUNHO'))\n    .map((l) => l.replace(/\\s*Rascunho sujeito à revisão[^.]*\\./, ''))\n", "Rascunho sujeito")
 trocar(p, "import { Markdown } from '../../lib/md.js';",
        "import { Markdown } from '../../lib/md.js';\nimport { Engajamento } from '../../components/Engajamento.js';", "components/Engajamento.js")
 trocar(p, "            <Markdown texto={limpar(art.corpo, dados.previa)} />\n          )}\n        </div>",
