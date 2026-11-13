@@ -7,39 +7,52 @@ import { Protecao } from './Protecao.js';
 import { GuardaCadastro } from './GuardaCadastro.js';
 import { PrimeiroAcesso } from './PrimeiroAcesso.js';
 
-interface Item { href: string; rotulo: string; icone: string; barra?: boolean }
+interface Item { href: string; rotulo: string; icone: string; barra?: boolean; topo?: boolean }
 
-// Menus por papel. "barra": aparece na barra inferior do celular (as demais ficam em "Mais").
+// Menus por papel.
+//  topo:  aparece direto no menu do computador (o resto fica em "Mais ▾", para o menu caber numa linha).
+//  barra: aparece na barra inferior do celular (o resto fica em "Mais").
 function itensDoPapel(papel: string): Item[] {
   if (REVISORES.includes(papel)) {
     return [
-      { href: '/curador', rotulo: 'Início', icone: '⌂', barra: true },
-      { href: '/curador/revisao/T001', rotulo: 'Revisão', icone: '✎', barra: true },
-      { href: '/curador/duvidas', rotulo: 'Dúvidas', icone: '?', barra: true },
-      { href: '/curador/inscricoes', rotulo: 'Inscrições', icone: '✚' },
-      { href: '/curador/mural', rotulo: 'Mural', icone: '✉' },
-      { href: '/curador/presenca', rotulo: 'Presença', icone: '✓' },
-      { href: '/painel', rotulo: 'Dados', icone: '▤' },
-      { href: '/curador/previa/T001', rotulo: 'Prévia', icone: '◎' },
+      { href: '/curador', rotulo: 'Início', icone: '⌂', barra: true, topo: true },
+      { href: '/curador/revisao/T001', rotulo: 'Revisão', icone: '✎', barra: true, topo: true },
+      { href: '/curador/duvidas', rotulo: 'Dúvidas', icone: '?', barra: true, topo: true },
+      { href: '/curador/inscricoes', rotulo: 'Inscrições', icone: '✚', topo: true },
+      { href: '/curador/mural', rotulo: 'Mural', icone: '✉', topo: true },
+      { href: '/curador/presenca', rotulo: 'Presença', icone: '✓', topo: true },
+      { href: '/painel', rotulo: 'Dados e gráficos', icone: '▤' },
+      { href: '/curador/flashcards', rotulo: 'Flashcards dos alunos', icone: '✦' },
+      { href: '/curador/previa/T001', rotulo: 'Prévia do aluno', icone: '◎' },
+      { href: '/aluno/arvore', rotulo: 'Árvore de temas', icone: '⋔' },
       { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ' },
     ];
   }
-  if (papel === 'pesquisador') return [{ href: '/painel', rotulo: 'Dados e gráficos', icone: '▤', barra: true }, { href: '/pesquisa', rotulo: 'Pesquisa', icone: '⌕', barra: true }];
+  if (papel === 'pesquisador') {
+    return [{ href: '/painel', rotulo: 'Dados e gráficos', icone: '▤', barra: true, topo: true },
+      { href: '/pesquisa', rotulo: 'Pesquisa', icone: '⌕', barra: true, topo: true },
+      { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ', barra: true, topo: true }];
+  }
   if (papel === 'preceptor' || papel === 'docente') {
-    return [{ href: '/preceptor', rotulo: 'Meus residentes', icone: '⌂', barra: true }, { href: '/aluno/calendario', rotulo: 'Calendário', icone: '▦', barra: true },
-      { href: '/aluno/arvore', rotulo: 'Árvore de temas', icone: '⋔', barra: true }, { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ' }];
+    return [{ href: '/preceptor', rotulo: 'Meus residentes', icone: '⌂', barra: true, topo: true },
+      { href: '/aluno/calendario', rotulo: 'Calendário', icone: '▦', barra: true, topo: true },
+      { href: '/aluno/arvore', rotulo: 'Árvore de temas', icone: '⋔', barra: true, topo: true },
+      { href: '/aluno/mural', rotulo: 'Mural', icone: '✉', topo: true },
+      { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ', topo: true }];
   }
   return [
-    { href: '/aluno', rotulo: 'Início', icone: '⌂', barra: true },
-    { href: '/aluno/pendencias', rotulo: 'Pendências', icone: '!', barra: true },
-    { href: '/aluno/calendario', rotulo: 'Calendário', icone: '▦', barra: true },
-    { href: '/aluno/temas', rotulo: 'Temas', icone: '☰' },
-    { href: '/aluno/arvore', rotulo: 'Árvore', icone: '⋔' },
+    { href: '/aluno', rotulo: 'Início', icone: '⌂', barra: true, topo: true },
+    { href: '/aluno/pendencias', rotulo: 'Pendências', icone: '!', barra: true, topo: true },
+    { href: '/aluno/calendario', rotulo: 'Calendário', icone: '▦', barra: true, topo: true },
+    { href: '/aluno/temas', rotulo: 'Temas', icone: '☰', topo: true },
+    { href: '/aluno/estudo', rotulo: 'Estudo dirigido', icone: '✦', topo: true },
+    { href: '/aluno/desempenho', rotulo: 'Desempenho', icone: '↗', topo: true },
+    { href: '/aluno/arvore', rotulo: 'Árvore de temas', icone: '⋔' },
     { href: '/aluno/mural', rotulo: 'Mural', icone: '✉' },
-    { href: '/aluno/desempenho', rotulo: 'Desempenho', icone: '↗' },
     { href: '/aluno/aproveitamento', rotulo: 'Presença e certificado', icone: '✓' },
     { href: '/aluno/duvidas', rotulo: 'Dúvidas', icone: '?' },
     { href: '/cadastro', rotulo: 'Meus dados', icone: '☺' },
+    { href: '/aluno/contato', rotulo: 'Lembretes por e-mail', icone: '⏰' },
     { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ' },
   ];
 }
@@ -59,8 +72,16 @@ export function Layout(props: { children: ReactNode; papeis?: string[]; proteger
   const { sessao, carregando } = useSessao();
   const local = useLocation();
   const [mais, setMais] = useState(false);
+  const [maisTopo, setMaisTopo] = useState(false);
   const [letra, trocarLetra] = useTamanhoLetra();
-  useEffect(() => setMais(false), [local.pathname]);
+  useEffect(() => { setMais(false); setMaisTopo(false); }, [local.pathname]);
+  useEffect(() => {
+    if (!maisTopo && !mais) return undefined;
+    const fechar = (e: KeyboardEvent) => { if (e.key === 'Escape') { setMaisTopo(false); setMais(false); } };
+    const fora = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest('.mais-topo, .folha-mais, .barra-inferior')) { setMaisTopo(false); setMais(false); } };
+    window.addEventListener('keydown', fechar); window.addEventListener('mousedown', fora);
+    return () => { window.removeEventListener('keydown', fechar); window.removeEventListener('mousedown', fora); };
+  }, [maisTopo, mais]);
   if (carregando) return <p className="carregando">Carregando…</p>;
   if (!sessao) return <Navigate to={`/login?volta=${encodeURIComponent(local.pathname)}`} replace />;
   if (props.papeis && !props.papeis.includes(sessao.papel)) return <Navigate to="/" replace />;
@@ -80,12 +101,22 @@ export function Layout(props: { children: ReactNode; papeis?: string[]; proteger
         <div className="topo-interno">
           <a className="marca" href="/"><img src="/icone.svg" alt="" /><span>Cirurgia de Urgência e Trauma<small>HCFMRP-USP · Programa de reuniões</small></span></a>
           <nav className="nav" aria-label="Principal">
-            {itens.map((i) => <a key={i.href} href={i.href} className={ativo(i.href) ? 'ativo' : ''} aria-current={ativo(i.href) ? 'page' : undefined}>{i.rotulo}</a>)}
+            {itens.filter((i) => i.topo).map((i) => <a key={i.href} href={i.href} className={ativo(i.href) ? 'ativo' : ''} aria-current={ativo(i.href) ? 'page' : undefined}>{i.rotulo}</a>)}
+            {itens.some((i) => !i.topo) && (
+              <div className="mais-topo">
+                <button type="button" className={itens.some((i) => !i.topo && ativo(i.href)) ? 'ativo' : ''} aria-expanded={maisTopo} aria-haspopup="true" onClick={() => setMaisTopo(!maisTopo)}>Mais ▾</button>
+                {maisTopo && (
+                  <div className="menu-mais" role="menu">
+                    {itens.filter((i) => !i.topo).map((i) => <a key={i.href} role="menuitem" href={i.href} className={ativo(i.href) ? 'ativo' : ''}><span aria-hidden="true">{i.icone}</span>{i.rotulo}</a>)}
+                  </div>
+                )}
+              </div>
+            )}
           </nav>
           <div className="usuario">
             <button type="button" className="botao discreto letra" onClick={trocarLetra} aria-label={`Tamanho da letra: ${['normal', 'grande', 'maior'][letra]}. Clique para mudar.`} title="Tamanho da letra">A{letra ? '+'.repeat(letra) : ''}</button>
             <span>{sessao.nome_completo.split(' ')[0]}</span>
-            <button type="button" className="botao discreto" onClick={sair}>Sair</button>
+            <button type="button" className="botao discreto sair-topo" onClick={sair}>Sair</button>
           </div>
         </div>
       </header>

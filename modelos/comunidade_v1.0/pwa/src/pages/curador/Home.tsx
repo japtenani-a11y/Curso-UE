@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
 interface Resumo { inscricoes_pendentes: number; alunos_ativos: number; duvidas_pendentes: number; rascunhos: number; publicados: number;
+  questoes_alerta?: number; flashcards_novos?: number; respostas_mural?: number; sem_acesso_14d?: number;
   proximas_aulas: { codigo: string; titulo: string; data_hora: string }[] }
 const quando = (s: string) => new Date(s).toLocaleString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 
@@ -25,11 +26,15 @@ export function CuradorHome() {
           {cartao('Dúvidas', r.duvidas_pendentes, '/curador/duvidas', 'sem resposta', r.duvidas_pendentes > 0)}
           {cartao('Revisão', `${r.rascunhos} rascunhos`, '/curador/revisao/T001', `${r.publicados} peças publicadas`)}
           {cartao('Alunos', r.alunos_ativos, '/painel', 'inscritos aprovados · ver dados')}
+          {cartao('Sem acesso', r.sem_acesso_14d ?? 0, '/painel', 'alunos sem entrar há 14 dias', (r.sem_acesso_14d ?? 0) > 0)}
+          {cartao('Questões', r.questoes_alerta ?? 0, '/painel', 'com alerta na análise de itens', (r.questoes_alerta ?? 0) > 0)}
+          {cartao('Flashcards dos alunos', r.flashcards_novos ?? 0, '/curador/flashcards', 'compartilhados nos últimos 7 dias')}
+          {cartao('Mural', r.respostas_mural ?? 0, '/curador/mural', 'respostas a questionários em 7 dias')}
         </div>
         <div className="grade-inicio duas" style={{ marginTop: 16 }}>
           <article className="cartao-app">
             <span className="rotulo">Próximas aulas</span>
-            {r.proximas_aulas.length === 0 ? <p>A agenda ainda não foi gravada (rode o 48 quando for abrir o curso).</p> : (
+            {r.proximas_aulas.length === 0 ? <p>A agenda das aulas ainda não foi gravada no sistema (script 48, na abertura do curso).</p> : (
               <ul className="lista-temas">{r.proximas_aulas.map((a) => (
                 <li key={a.codigo}><a href={`/curador/presenca/${a.codigo.replace('-', '')}`}><span className="cod">{quando(a.data_hora)}</span><span className="tit">{a.codigo} {a.titulo}</span><span className="selo nuclear">presença</span><span className="sit" /></a></li>))}</ul>
             )}
@@ -40,6 +45,7 @@ export function CuradorHome() {
             <ul className="lista-curta">
               <li><a href="/curador/mural">Publicar aviso, questionário ou documento</a></li>
               <li><a href="/curador/presenca">Código de presença e relatório do Meet</a></li>
+              <li><a href="/curador/flashcards">Flashcards feitos pelos alunos</a></li>
               <li><a href="/curador/inscricoes">Regras de aprovação automática e preceptores</a></li>
               <li><a href="/painel">Dados, gráficos e análise das questões</a></li>
               <li><a href="/aluno/arvore">Árvore de temas</a> · <a href="/aluno/calendario">Calendário</a></li>

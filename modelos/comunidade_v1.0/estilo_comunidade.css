@@ -74,9 +74,26 @@ tr.alerta td { background: var(--acento-suave); }
 @media print { body * { visibility: hidden; } .certificado, .certificado * { visibility: visible; } .certificado { position: absolute; inset: 0; border-width: 8px; } .sem-impressao { display: none; } @page { size: A4 landscape; margin: 10mm; } }
 /* celular: barra inferior */
 .barra-inferior, .folha-mais { display: none; }
+/* menu do computador: itens principais numa linha + "Mais ▾" */
+.nav { flex-wrap: nowrap; align-items: center; }
+.nav a { white-space: nowrap; }
+.mais-topo { position: relative; }
+.mais-topo > button { padding: 6px 10px; border-radius: 8px; border: 0; background: none; color: var(--texto-2); font: inherit; font-size: .95rem; cursor: pointer; white-space: nowrap; }
+.mais-topo > button:hover, .mais-topo > button[aria-expanded=true] { background: var(--superficie-2); color: var(--texto); }
+.mais-topo > button.ativo { background: var(--primaria); color: var(--primaria-texto); }
+.menu-mais { position: absolute; right: 0; top: calc(100% + 6px); z-index: 40; min-width: 240px; display: grid; gap: 2px; padding: 6px;
+  background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; box-shadow: var(--sombra); }
+.menu-mais a { display: flex; gap: 10px; align-items: center; padding: 9px 10px; border-radius: 8px; color: var(--texto); text-decoration: none; }
+.menu-mais a:hover { background: var(--superficie-2); }
+.menu-mais a.ativo { background: #e3ecf6; color: var(--primaria); font-weight: 600; }
+.menu-mais span { width: 18px; text-align: center; }
+@media (max-width: 1100px) and (min-width: 721px) { .marca small { display: none; } .marca span { font-size: .9rem; } }
 @media (max-width: 720px) {
   .topo .nav { display: none; }
-  .usuario span { display: none; }
+  .usuario span, .usuario .sair-topo { display: none; }
+  .topo-interno { flex-wrap: nowrap; padding: 8px 12px; }
+  .marca { min-width: 0; } .marca span { font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .usuario { margin-left: auto; }
   .barra-inferior { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--superficie); border-top: 1px solid var(--borda);
     padding: 4px 4px calc(4px + env(safe-area-inset-bottom)); justify-content: space-around; }
   .barra-inferior a, .barra-inferior button { flex: 1; display: grid; justify-items: center; gap: 2px; padding: 6px 2px; font: 600 .7rem var(--fonte); color: var(--texto-2);
@@ -92,3 +109,10 @@ tr.alerta td { background: var(--acento-suave); }
   .grade-inicio, .grade-inicio.duas { grid-template-columns: 1fr; }
   .certificado { padding: 20px; } .cert-temas ol { columns: 1; }
 }
+
+.resumo-progresso { margin: -6px 0 14px; color: var(--texto-2); }
+.resumo-progresso a { color: inherit; text-decoration: none; }
+.resumo-progresso a:hover { text-decoration: underline; }
+.entradas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { .entradas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .entradas .cartao-app.entrada > span:last-child { display: none; } }

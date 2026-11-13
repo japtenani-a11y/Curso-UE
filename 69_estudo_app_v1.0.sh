@@ -20,7 +20,19 @@ API="$RAIZ/api/src"; PWA="$RAIZ/pwa/src"
 cp "$M/api/src/routes/estudo.ts" "$API/routes/"
 cp "$M/pwa/src/pages/aluno/Estudo.tsx" "$PWA/pages/aluno/"
 cp "$M/pwa/src/pages/curador/Flashcards.tsx" "$PWA/pages/curador/"
-grep -q "estudo dirigido (simulados e flashcards)" "$PWA/estilo.css" || cat "$M/estilo_estudo.css" >> "$PWA/estilo.css"
+python3 - "$PWA/estilo.css" "$M/estilo_estudo.css" "estudo dirigido (simulados e flashcards)" <<'PY'
+# troca o bloco de estilo desta parte pela versao nova (em vez de so acrescentar uma vez)
+import sys
+css, novo, marca = sys.argv[1], open(sys.argv[2]).read(), sys.argv[3]
+s = open(css).read()
+i = s.find("/* ---------- " + marca)
+if i < 0:
+    s = s.rstrip("\n") + "\n" + novo
+else:
+    j = s.find("/* ---------- ", i + 10)
+    s = s[:i].rstrip("\n") + "\n" + novo.lstrip("\n").rstrip("\n") + "\n" + ("\n" + s[j:] if j >= 0 else "")
+open(css, "w").write(s)
+PY
 echo "copiados: routes/estudo.ts, Estudo (aluno), Flashcards (curador)"
 
 python3 - "$API" "$PWA" <<'PY'

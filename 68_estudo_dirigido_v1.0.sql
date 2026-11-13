@@ -272,5 +272,26 @@ GRANT EXECUTE ON FUNCTION app.opcoes_estudo(), app.montar_simulado(JSONB), app.s
   app.montar_deck(JSONB), app.revisar_card(TEXT, BOOLEAN), app.salvar_flashcard(JSONB), app.meus_flashcards(), app.apagar_flashcard(BIGINT),
   app.flashcards_compartilhados(), app.ocultar_flashcard(BIGINT, BOOLEAN), app.painel_estudo(), app.flashcards_liberados(BIGINT, BIGINT), app.minha_assinatura(), app.salvar_apelido(TEXT) TO api_rw;
 
+-- Inicio da coordenacao: o resumo ganha o que pede atencao na semana (substitui o do 66, mesma assinatura).
+CREATE OR REPLACE FUNCTION app.resumo_coordenacao() RETURNS JSONB
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
+  SELECT jsonb_build_object(
+    'inscricoes_pendentes', (SELECT count(*) FROM app.ficha_aluno WHERE status = 'pendente'),
+    'alunos_ativos', (SELECT count(*) FROM app.ficha_aluno WHERE status = 'aprovado'),
+    'duvidas_pendentes', (SELECT count(*) FROM app.mensagem_aluno WHERE tipo = 'duvida' AND resposta IS NULL),
+    'rascunhos', (SELECT count(*) FROM conteudo.artefato WHERE status = 'rascunho'),
+    'publicados', (SELECT count(*) FROM conteudo.artefato WHERE status = 'publicado'),
+    'questoes_alerta', (SELECT count(*) FROM app.painel_questoes() q WHERE q.alerta IS NOT NULL AND q.alerta <> '' AND q.alerta <> 'poucas respostas'),
+    'flashcards_novos', (SELECT count(*) FROM app.flashcard_aluno WHERE compartilhado AND NOT oculto AND criado_em > now() - interval '7 days'),
+    'respostas_mural', (SELECT count(*) FROM app.mural_resposta WHERE em > now() - interval '7 days'),
+    'sem_acesso_14d', (SELECT count(*) FROM app.ficha_aluno f WHERE f.status = 'aprovado'
+                         AND NOT EXISTS (SELECT 1 FROM app.sessao s WHERE s.pessoa_id = f.pessoa_id AND s.emitida_em > now() - interval '14 days')),
+    'proximas_aulas', coalesce((SELECT jsonb_agg(jsonb_build_object('codigo', t.codigo, 'titulo', t.titulo, 'data_hora', a.data_hora) ORDER BY a.data_hora)
+                                FROM (SELECT * FROM app.agenda_aula WHERE data_hora > now() - interval '3 hours' ORDER BY data_hora LIMIT 4) a
+                                JOIN app.tema t ON t.tema_id = a.tema_id), '[]'))
+  WHERE app.eh_revisor() $$;
+REVOKE EXECUTE ON FUNCTION app.resumo_coordenacao() FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION app.resumo_coordenacao() TO api_rw;
+
 COMMIT;
 \echo 'estudo dirigido (simulados sob medida e flashcards): pronto'

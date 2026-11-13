@@ -26,7 +26,19 @@ cp "$M/pwa/src/pages/aluno/"*.tsx "$PWA/pages/aluno/"
 cp "$M/pwa/src/pages/curador/"*.tsx "$PWA/pages/curador/"
 cp "$M/pwa/src/pages/preceptor/Home.tsx" "$PWA/pages/preceptor/Home.tsx"
 cp "$M/pwa/src/pages/Ajuda.tsx" "$M/pwa/src/pages/Certificado.tsx" "$PWA/pages/"
-grep -q "comunidade (inicios, mural" "$PWA/estilo.css" || cat "$M/estilo_comunidade.css" >> "$PWA/estilo.css"
+python3 - "$PWA/estilo.css" "$M/estilo_comunidade.css" "comunidade (inicios, mural" <<'PY'
+# troca o bloco de estilo desta parte pela versao nova (em vez de so acrescentar uma vez)
+import sys
+css, novo, marca = sys.argv[1], open(sys.argv[2]).read(), sys.argv[3]
+s = open(css).read()
+i = s.find("/* ---------- " + marca)
+if i < 0:
+    s = s.rstrip("\n") + "\n" + novo
+else:
+    j = s.find("/* ---------- ", i + 10)
+    s = s[:i].rstrip("\n") + "\n" + novo.lstrip("\n").rstrip("\n") + "\n" + ("\n" + s[j:] if j >= 0 else "")
+open(css, "w").write(s)
+PY
 echo "copiados: rotas /com e /publico extra, Layout, PrimeiroAcesso, Instalar, ResgatarPresenca, inicios, mural, presenca, arvore, ajuda, certificado"
 
 python3 - "$API" "$PWA" <<'PY'

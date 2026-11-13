@@ -27,6 +27,27 @@
     A coordenação vê todos em /curador/flashcards e pode ocultar um card se houver erro grave.
   - O painel de dados ganhou o uso do estudo dirigido (`app.painel_estudo()`).
 
+## Menus e telas iniciais revisados
+- **Computador:** o menu cabe numa linha só. Ficam à vista os itens principais; o resto vai para **Mais ▾**.
+- **Celular:** o topo ocupa uma linha (o Sair fica em "Mais"). A barra de baixo continua com os 3 atalhos principais.
+- **Aluno:**
+  - Resumo do progresso logo abaixo do "Olá" (temas concluídos, horas e presença).
+  - O calendário vazio agora explica que as datas aparecem quando a coordenação publicar.
+  - 8 entradas em grade: Temas, Estudo dirigido, Árvore, Desempenho, Presença, Dúvidas, Meus dados e Ajuda.
+- **Coordenação (curador, admin e data steward):**
+  - 8 indicadores: inscrições, dúvidas, revisão, alunos, alunos sem acesso há 14 dias, questões com alerta,
+    flashcards dos alunos e respostas no mural.
+  - Atalho para os flashcards dos alunos.
+- **Preceptor:**
+  - 4 indicadores: residentes, abaixo do esperado, com pendências e sem acesso.
+  - Linhas em destaque na tabela; menu com Mural e Ajuda.
+- **Pesquisador:** Ajuda no menu.
+
+## Árvore de temas: 147 temas conferidos
+A lista oficial (BUSCAS_PUBMED_147_temas, 32 módulos) tem **147 temas**. A numeração vai até T150, mas os códigos
+**T136, T137 e T138 não existem** na lista: o módulo 32 termina no T135 e o 29 começa no T143.
+Os 147 estão todos na árvore: 139 com relações mãe→filho (178 relações) e 8 órfãos.
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).
