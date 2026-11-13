@@ -11,7 +11,13 @@ const hora = (s: string) => new Date(s).toLocaleTimeString('pt-BR', { hour: '2-d
 export function Calendario() {
   const [aulas, setAulas] = useState<Aula[] | null>(null);
   const [passadas, setPassadas] = useState(false);
-  useEffect(() => { apiGet<{ aulas: Aula[] }>('/jornada/calendario').then((d) => setAulas(d.aulas)).catch(() => setAulas([])); }, []);
+  const [agenda, setAgenda] = useState<{ token: string; meet: string } | null>(null);
+  useEffect(() => {
+    apiGet<{ aulas: Aula[] }>('/jornada/calendario').then((d) => setAulas(d.aulas)).catch(() => setAulas([]));
+    apiGet<{ token: string; meet: string }>('/com/agenda/link').then(setAgenda).catch(() => undefined);
+  }, []);
+  const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
+  const urlIcs = agenda ? new URL(`${BASE}/publico/agenda/${agenda.token}.ics`, window.location.origin).toString() : null;
   const meses = useMemo(() => {
     const agora = Date.now() - 6 * 3600_000;
     const m = new Map<string, Aula[]>();
@@ -26,6 +32,17 @@ export function Calendario() {
     <section>
       <h1>Calendário de aulas</h1>
       <p>Reuniões às quintas, 20h, pelo Google Meet. Em destaque, os temas opcionais que você agendou. Clique no tema para abrir.</p>
+      {agenda && (
+        <div className="cartao-app agenda-acoes">
+          <p><strong>Sala fixa das aulas:</strong> <a href={agenda.meet} target="_blank" rel="noopener noreferrer">{agenda.meet}</a></p>
+          <p style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {urlIcs && <a className="botao" href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(urlIcs.replace(/^https?:/, 'webcal:'))}`} target="_blank" rel="noopener noreferrer">Adicionar ao Google Agenda</a>}
+            {urlIcs && <a className="botao discreto" href={urlIcs.replace(/^https?:/, 'webcal:')}>Adicionar ao iPhone/Outlook</a>}
+            {urlIcs && <a className="botao discreto" href={urlIcs} download="programa-cut.ics">Baixar arquivo .ics</a>}
+          </p>
+          <small>A agenda se atualiza sozinha quando você agenda um tema opcional. O link é pessoal: não compartilhe.</small>
+        </div>
+      )}
       <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
         <input type="checkbox" checked={passadas} onChange={(e) => setPassadas(e.target.checked)} /> Mostrar aulas que já passaram
       </label>

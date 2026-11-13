@@ -13,6 +13,9 @@ const CONSULTAS: Record<string, string> = {
   avaliacoes: 'SELECT * FROM app.painel_avaliacoes()',
   mensagens: 'SELECT * FROM app.painel_mensagens()',
   uso: 'SELECT * FROM app.painel_uso()',
+  questoes: 'SELECT * FROM app.painel_questoes()',
+  presenca: 'SELECT * FROM app.painel_presenca()',
+  estudo: 'SELECT * FROM app.painel_estudo()',
 };
 
 function csv(linhas: Record<string, unknown>[]): string {

@@ -18,6 +18,37 @@ const fone = (v: string | null) => { const m = /^\+55(\d{2})(\d{4,5})(\d{4})$/.e
 const SIT: Record<string, string> = { graduacao: 'Graduação', residencia: 'Residência', formado: 'Médico formado' };
 
 // Inscricoes dos alunos: aprovar ou recusar (o aluno recebe e-mail).
+function Regras() {
+  const [dom, setDom] = useState(''); const [em, setEm] = useState(''); const [msg, setMsg] = useState<string | null>(null); const [aberto, setAberto] = useState(false);
+  useEffect(() => { apiGet<{ regras: { tipo: string; valor: string }[] }>('/com/regras').then((d) => {
+    setDom(d.regras.filter((r) => r.tipo === 'dominio').map((r) => r.valor).join('\n')); setEm(d.regras.filter((r) => r.tipo === 'email').map((r) => r.valor).join('\n')); }).catch(() => undefined); }, []);
+  async function salvar() { try { const r = await apiPost<{ regras: number }>('/com/regras', { dominios: dom, emails: em }); setMsg(`${r.regras} regras salvas.`); } catch { setMsg('Não foi possível salvar.'); } }
+  return (
+    <article className="cartao-app ficha" style={{ margin: '12px 0' }}>
+      <h2 style={{ margin: 0 }}><button type="button" className="botao discreto" aria-expanded={aberto} onClick={() => setAberto(!aberto)}>{aberto ? '−' : '+'} Aprovação automática</button></h2>
+      {aberto && (<>
+        <p>Inscrições destes domínios ou e-mails são aprovadas sem passar por você (as demais continuam aqui).</p>
+        <label>Domínios institucionais (um por linha, ex.: usp.br, hcrp.usp.br)<textarea rows={3} value={dom} onChange={(e) => setDom(e.target.value)} /></label>
+        <label>Lista de e-mails de residentes (um por linha ou separados por vírgula; pode colar de uma planilha)<textarea rows={5} value={em} onChange={(e) => setEm(e.target.value)} /></label>
+        <p><button type="button" className="botao" onClick={salvar}>Salvar regras</button> {msg && <span role="status">{msg}</span>}</p>
+      </>)}
+    </article>
+  );
+}
+
+function Preceptor(props: { aluno: number }) {
+  const [lista, setLista] = useState<{ pessoa_id: number; nome: string }[]>([]); const [ok, setOk] = useState<string | null>(null);
+  useEffect(() => { apiGet<{ preceptores: { pessoa_id: number; nome: string }[] }>('/com/preceptores').then((d) => setLista(d.preceptores)).catch(() => undefined); }, []);
+  if (!lista.length) return null;
+  return (
+    <label className="preceptor-sel">Preceptor
+      <select defaultValue="" onChange={async (e) => { await apiPost('/com/preceptores/vinculo', { aluno: props.aluno, preceptor: e.target.value || null }); setOk('vinculado'); }}>
+        <option value="">— sem preceptor —</option>{lista.map((p) => <option key={p.pessoa_id} value={p.pessoa_id}>{p.nome}</option>)}
+      </select>{ok && <small> {ok}</small>}
+    </label>
+  );
+}
+
 export function CuradorInscricoes() {
   const [filtro, setFiltro] = useState('pendente');
   const [lista, setLista] = useState<Inscricao[] | null>(null);
@@ -36,6 +67,7 @@ export function CuradorInscricoes() {
     <section>
       <h1>Inscrições</h1>
       <p>Cada inscrição nova chega por e-mail para os curadores. A aprovação libera o curso; o ano de residência, a especialidade e a turma passam a valer para testes, ranking e painel.</p>
+      <Regras />
       <div className="etapas" role="tablist">{FILTROS.map(([k, r]) => <button key={k} type="button" className={`etapa${filtro === k ? ' atual' : ''}`} onClick={() => setFiltro(k)}>{r}</button>)}</div>
       {msg && <p className="faixa-aviso" role="status">{msg}</p>}
       {!lista ? <p className="carregando">Carregando…</p> : lista.length === 0 ? <p>Nenhuma inscrição aqui.</p> : lista.map((i) => (
@@ -58,6 +90,7 @@ export function CuradorInscricoes() {
             <div className="decisao">
               <input className="busca" placeholder="Motivo (obrigatório para recusar)" value={motivo[i.pessoa_id] ?? ''} onChange={(e) => setMotivo({ ...motivo, [i.pessoa_id]: e.target.value })} />
               {i.ficha.status !== 'aprovado' && <button type="button" className="botao" onClick={() => decidir(i, true)}>Aprovar</button>}
+              {i.ficha.status === 'aprovado' && <Preceptor aluno={i.pessoa_id} />}
               {i.ficha.status !== 'recusado' && <button type="button" className="botao discreto" onClick={() => decidir(i, false)}>{i.ficha.status === 'aprovado' ? 'Suspender acesso' : 'Recusar'}</button>}
             </div>
           )}

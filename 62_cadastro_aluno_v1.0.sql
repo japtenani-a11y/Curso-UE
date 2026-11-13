@@ -46,6 +46,31 @@ CREATE POLICY pol_ficha_propria ON app.ficha_aluno FOR SELECT TO api_rw USING (p
 GRANT SELECT ON app.ficha_aluno TO api_rw;
 
 -- ---------- termos ----------
+ALTER TABLE app.ficha_aluno ADD COLUMN IF NOT EXISTS confirmado_em TIMESTAMPTZ;
+COMMENT ON COLUMN app.ficha_aluno.confirmado_em IS 'ultima vez que o aluno salvou/confirmou a ficha (confirmacao anual em marco)';
+
+-- Regras de aprovacao automatica: dominio de e-mail (ex.: usp.br) ou e-mail exato (lista de residentes).
+CREATE TABLE IF NOT EXISTS app.regra_aprovacao (
+  tipo  TEXT NOT NULL CHECK (tipo IN ('dominio','email')),
+  valor TEXT NOT NULL CHECK (valor = lower(valor) AND length(valor) BETWEEN 3 AND 200),
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY (tipo, valor));
+GRANT SELECT ON app.regra_aprovacao TO api_rw;
+
+-- Confirmacao anual: a partir de 1o de marco, quem nao confirmou a ficha no ano corrente precisa confirmar.
+CREATE OR REPLACE FUNCTION app.precisa_confirmar_ano(p_pessoa BIGINT) RETURNS BOOLEAN
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
+  SELECT coalesce((SELECT f.status = 'aprovado'
+                      AND current_date >= make_date(extract(year FROM current_date)::int, 3, 1)
+                      AND coalesce(f.confirmado_em, f.decidido_em, f.enviado_em) < make_date(extract(year FROM current_date)::int, 3, 1)
+                     FROM app.ficha_aluno f WHERE f.pessoa_id = p_pessoa), false) $$;
+
+CREATE OR REPLACE FUNCTION app.aprovacao_automatica(p_email TEXT) RETURNS BOOLEAN
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
+  SELECT EXISTS (SELECT 1 FROM app.regra_aprovacao r
+                  WHERE (r.tipo = 'email' AND r.valor = lower(p_email))
+                     OR (r.tipo = 'dominio' AND (lower(p_email) LIKE '%@' || r.valor OR lower(p_email) LIKE '%.' || r.valor))) $$;
+
 CREATE TABLE IF NOT EXISTS app.termo (
   codigo      TEXT NOT NULL CHECK (codigo IN ('uso','privacidade','pesquisa','divulgacao')),
   versao      TEXT NOT NULL,
@@ -190,6 +215,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
     WHEN EXISTS (SELECT 1 FROM app.designacao d WHERE d.pessoa_id = app.pessoa_atual()
                   AND d.vigencia_inicio <= current_date AND (d.vigencia_fim IS NULL OR d.vigencia_fim >= current_date)) THEN true
     ELSE coalesce((SELECT f.status = 'aprovado' FROM app.ficha_aluno f WHERE f.pessoa_id = app.pessoa_atual()), false)
+         AND NOT app.precisa_confirmar_ano(app.pessoa_atual())
          AND NOT EXISTS (SELECT 1 FROM app.termo t WHERE t.vigente AND t.obrigatorio
                           AND NOT app.aceite_vigente(app.pessoa_atual(), t.codigo))
   END $$;
@@ -236,6 +262,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
     'precisa_ficha', NOT EXISTS (SELECT 1 FROM app.designacao d WHERE d.pessoa_id = p.pessoa_id
                                   AND d.vigencia_inicio <= current_date AND (d.vigencia_fim IS NULL OR d.vigencia_fim >= current_date)),
     'cadastro_ok', app.cadastro_ok(),
+    'confirmar_ano', app.precisa_confirmar_ano(p.pessoa_id),
     'termos', (SELECT jsonb_agg(jsonb_build_object('codigo', t.codigo, 'versao', t.versao, 'titulo', t.titulo, 'resumo', t.resumo,
                                                    'texto', t.texto, 'obrigatorio', t.obrigatorio,
                                                    'aceito', app.aceite_vigente(p.pessoa_id, t.codigo),
@@ -299,7 +326,7 @@ BEGIN
     celular = EXCLUDED.celular, situacao = EXCLUDED.situacao, semestre = EXCLUDED.semestre, ano_formatura = EXCLUDED.ano_formatura,
     faculdade = EXCLUDED.faculdade, especialidade = EXCLUDED.especialidade, especialidade_outra = EXCLUDED.especialidade_outra,
     instituicao_residencia = EXCLUDED.instituicao_residencia, ano_ingresso_residencia = EXCLUDED.ano_ingresso_residencia,
-    termino_previsto = EXCLUDED.termino_previsto, atualizado_em = now(),
+    termino_previsto = EXCLUDED.termino_previsto, atualizado_em = now(), confirmado_em = now(),
     status = CASE WHEN app.ficha_aluno.status = 'aprovado' THEN 'aprovado' ELSE 'pendente' END,
     enviado_em = CASE WHEN app.ficha_aluno.status = 'aprovado' THEN app.ficha_aluno.enviado_em ELSE now() END;
 
@@ -311,6 +338,21 @@ BEGIN
       VALUES (v_id, t.codigo, t.versao, (p->'aceites'->>t.codigo)::boolean, p_ip, left(p_ua, 300));
     END IF;
   END LOOP;
+
+  UPDATE app.ficha_aluno SET confirmado_em = now() WHERE pessoa_id = v_id;
+
+  -- aprovacao automatica (dominio ou e-mail cadastrado pela coordenacao)
+  IF v_novo AND app.aprovacao_automatica((SELECT email_primario::text FROM app.pessoa WHERE pessoa_id = v_id)) THEN
+    UPDATE app.ficha_aluno SET status = 'aprovado', decidido_em = now(), motivo_status = 'aprovação automática' WHERE pessoa_id = v_id;
+    PERFORM app.atualizar_posicao(v_id);
+    INSERT INTO app.notificacao_saida (inscricao_pessoa_id, pessoa_id, canal, destino, assunto, corpo, parametros)
+    SELECT v_id, v_id, 'email', p2.email_primario::text, 'Inscrição aprovada — Programa de Cirurgia de Urgência e Trauma',
+           'Sua inscrição foi aprovada. Você já pode acessar o calendário, os temas e os testes.',
+           jsonb_build_object('caminho', '/aluno', 'rotulo_link', 'Abrir o curso',
+                              'rodape', 'Você recebe esta mensagem porque se inscreveu no Programa de Cirurgia de Urgência e Trauma.')
+      FROM app.pessoa p2 WHERE p2.pessoa_id = v_id;
+    v_novo := false;
+  END IF;
 
   -- se ja aprovado, mantem ano/especialidade em dia
   IF v_status = 'aprovado' THEN PERFORM app.atualizar_posicao(v_id); END IF;

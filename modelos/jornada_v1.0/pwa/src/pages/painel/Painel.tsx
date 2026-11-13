@@ -3,10 +3,11 @@ import { apiGet } from '../../lib/api.js';
 
 const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 type Linha = Record<string, string | number | boolean | null>;
-type Conjunto = 'notas' | 'avaliacoes' | 'mensagens' | 'uso';
+type Conjunto = 'notas' | 'avaliacoes' | 'mensagens' | 'uso' | 'questoes' | 'presenca' | 'estudo';
 const ABAS: { id: 'graficos' | Conjunto; rotulo: string }[] = [
   { id: 'graficos', rotulo: 'Desempenho e evolução' }, { id: 'avaliacoes', rotulo: 'Avaliações (NPS)' },
-  { id: 'notas', rotulo: 'Notas' }, { id: 'mensagens', rotulo: 'Dúvidas e feedback' }, { id: 'uso', rotulo: 'Uso do material' },
+  { id: 'notas', rotulo: 'Notas' }, { id: 'questoes', rotulo: 'Análise das questões' }, { id: 'presenca', rotulo: 'Presença' }, { id: 'estudo', rotulo: 'Estudo dirigido' },
+  { id: 'mensagens', rotulo: 'Dúvidas e feedback' }, { id: 'uso', rotulo: 'Uso do material' },
 ];
 const GRUPOS: { id: string; rotulo: string }[] = [
   { id: 'turma', rotulo: 'Turma (ano de entrada)' }, { id: 'especialidade', rotulo: 'Especialidade' },

@@ -40,8 +40,9 @@ export function Tema() {
   const [erro, setErro] = useState<string | null>(null);
   const [d0, setD0] = useState('');
   const [msg, setMsg] = useState<string | null>(null);
+  const [rel, setRel] = useState<{ maes: { codigo: string; titulo: string; concluido: boolean }[]; filhos: { codigo: string; titulo: string }[] } | null>(null);
   const carregar = () => apiGet<Jornada>(`/jornada/temas/${codigo}`).then(setJ).catch(() => setErro('Tema não encontrado.'));
-  useEffect(() => { carregar(); }, []);
+  useEffect(() => { carregar(); apiGet<typeof rel>(`/jornada/temas/${codigo}/relacoes`).then(setRel).catch(() => undefined); }, []);
 
   async function agendar() {
     if (!d0) return;
@@ -69,11 +70,19 @@ export function Tema() {
         {j.d0 && <span><strong>Aula (D0):</strong> {quando(j.d0)}</span>}
       </p>
       {msg && <p className="faixa-aviso" role="status">{msg}</p>}
+      {j.etapa === 0 && rel && (
+        <p className="faixa-erro" role="status">Tema bloqueado: conclua antes {rel.maes.filter((m) => !m.concluido).map((m, i) => <span key={m.codigo}>{i ? ', ' : ''}<a href={`/aluno/tema/${m.codigo.replace('-', '')}`}>{m.codigo} {m.titulo}</a></span>)} (pós-teste D0 enviado).</p>
+      )}
+      {rel && (rel.maes.length > 0 || rel.filhos.length > 0) && (
+        <p className="relacoes"><small>{rel.maes.length > 0 && <>Depende de: {rel.maes.map((m, i) => <span key={m.codigo}>{i ? ', ' : ''}<a href={`/aluno/tema/${m.codigo.replace('-', '')}`}>{m.codigo}</a>{m.concluido ? ' ✓' : ''}</span>)}. </>}
+          {rel.filhos.length > 0 && <>Libera: {rel.filhos.map((f, i) => <span key={f.codigo}>{i ? ', ' : ''}<a href={`/aluno/tema/${f.codigo.replace('-', '')}`}>{f.codigo}</a></span>)}. </>}
+          <a href="/aluno/arvore">Ver a árvore</a></small></p>
+      )}
 
       {!j.agendado && j.papel === 'nuclear' && (
         <p className="faixa-aviso">Este tema ainda não abriu. {j.d0 ? `A aula é em ${quando(j.d0)}; o pré-teste inicial abre 15 dias antes e você recebe um aviso.` : 'A data da aula ainda será definida.'}</p>
       )}
-      {j.pode_agendar && (
+      {j.pode_agendar && j.etapa !== 0 && (
         <div className="cartao-app">
           <h3 style={{ marginTop: 0 }}>{j.agendado ? 'Mudar a minha data' : 'Agendar este tema'}</h3>
           <p>Escolha o dia e a hora em que você quer estudar a aula (D0). Todo o resto segue essa data:

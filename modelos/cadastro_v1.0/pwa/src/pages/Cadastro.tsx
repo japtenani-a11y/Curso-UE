@@ -11,7 +11,7 @@ interface Ficha {
   semestre?: number | null; ano_formatura?: number | null; faculdade?: string | null; especialidade?: string | null; especialidade_outra?: string | null;
   instituicao_residencia?: string | null; ano_ingresso_residencia?: number | null; termino_previsto?: string | null;
 }
-interface Dados { nome: string; email: string; data_nascimento: string | null; ficha: Ficha; precisa_ficha: boolean; cadastro_ok: boolean; termos: Termo[] }
+interface Dados { nome: string; email: string; data_nascimento: string | null; ficha: Ficha; precisa_ficha: boolean; cadastro_ok: boolean; confirmar_ano?: boolean; termos: Termo[] }
 
 const ESPECIALIDADES: [string, string][] = [
   ['cirurgia_geral', 'Cirurgia geral'], ['cirurgia_urgencia_trauma', 'Cirurgia de urgência e trauma'],
@@ -110,7 +110,8 @@ export function Cadastro() {
       <p className={st === 'recusado' ? 'faixa-erro' : 'faixa-aviso'} role="status">
         {STATUS[st]}{st === 'recusado' && d.ficha.motivo_status ? ` Motivo: ${d.ficha.motivo_status}. Corrija e envie de novo.` : ''}
       </p>
-      {st === 'aprovado' && !d.cadastro_ok && <p className="faixa-erro">Há termo obrigatório novo ou revogado: aceite-o abaixo para continuar usando o curso.</p>}
+      {st === 'aprovado' && d.confirmar_ano && <p className="faixa-erro">Confirmação anual: confira o seu ano de residência, a especialidade e os demais dados e clique em “Salvar alterações” para continuar usando o curso.</p>}
+      {st === 'aprovado' && !d.cadastro_ok && !d.confirmar_ano && <p className="faixa-erro">Há termo obrigatório novo ou revogado: aceite-o abaixo para continuar usando o curso.</p>}
       {ok && <p className="faixa-aviso" role="status">{ok}</p>}
       {erro && <p className="faixa-erro" role="alert">{erro.texto}</p>}
       {st === 'aprovado' && d.cadastro_ok && <p><a className="botao" href="/aluno">Ir para o curso</a></p>}
@@ -120,7 +121,7 @@ export function Cadastro() {
           <legend>Dados pessoais</legend>
           <label>Nome completo<input required autoComplete="name" {...campo('nome')} /></label>
           <label>E-mail (da sua conta Google)<input value={d.email} readOnly /></label>
-          <label>Data de nascimento<input type="date" required {...campo('data_nascimento')} /></label>
+          <label>Data de nascimento (usamos também para lembrar o seu aniversário)<input type="date" required {...campo('data_nascimento')} /></label>
           <label>Celular para contato<input type="tel" inputMode="tel" placeholder="(16) 99999-0000" required autoComplete="tel" {...campo('celular')} /></label>
         </fieldset>
 

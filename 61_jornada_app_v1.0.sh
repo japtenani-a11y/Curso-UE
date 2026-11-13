@@ -24,7 +24,7 @@ cp "$M/api/src/routes/jornada.ts" "$M/api/src/routes/painel.ts" "$API/routes/"
 mkdir -p "$PWA/pages/painel"
 cp "$M/pwa/src/pages/aluno/Tema.tsx" "$M/pwa/src/pages/aluno/Calendario.tsx" "$M/pwa/src/pages/aluno/Pendencias.tsx" "$M/pwa/src/pages/aluno/Home.tsx" "$PWA/pages/aluno/"
 cp "$M/pwa/src/pages/painel/Painel.tsx" "$PWA/pages/painel/"
-cp "$M/pwa/src/components/Comparativo.tsx" "$PWA/components/"
+cp "$M/pwa/src/components/Comparativo.tsx" "$M/pwa/src/components/Contagem.tsx" "$PWA/components/"
 grep -q "jornada (modulos, tema" "$PWA/estilo.css" || cat "$M/estilo_jornada.css" >> "$PWA/estilo.css"
 echo "copiados: routes/jornada.ts, routes/painel.ts, Tema, Calendario, Pendencias, Home (aluno), Painel"
 

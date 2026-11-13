@@ -98,7 +98,8 @@ REVOKE EXECUTE ON FUNCTION app.agendar_tema_opcional(TEXT, TIMESTAMPTZ) FROM PUB
 GRANT EXECUTE ON FUNCTION app.agendar_tema_opcional(TEXT, TIMESTAMPTZ) TO api_rw;
 
 -- Catalogo dos temas para a pessoa logada.
-CREATE OR REPLACE FUNCTION app.catalogo_temas()
+DROP FUNCTION IF EXISTS app.catalogo_temas();  -- o 65 acrescenta colunas
+CREATE FUNCTION app.catalogo_temas()
 RETURNS TABLE (codigo TEXT, titulo TEXT, modulo TEXT, dificuldade SMALLINT, papel TEXT, ordem SMALLINT,
                data_d0 TIMESTAMPTZ, d0_proprio BOOLEAN, etapa INT, testes_feitos INT, tem_conteudo BOOLEAN)
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$

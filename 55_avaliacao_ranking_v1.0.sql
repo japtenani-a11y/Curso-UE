@@ -205,10 +205,13 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
          OR (p_filtro = 'ano' AND b.ano IS NOT DISTINCT FROM eu.ano)
          OR (p_filtro = 'subgrupo' AND b.ano IS NOT DISTINCT FROM eu.ano AND b.especialidade IS NOT DISTINCT FROM eu.especialidade)))
   SELECT rank() OVER (ORDER BY f.media DESC, f.testes DESC), count(*) OVER (),
-         split_part(p.nome_completo, ' ', 1) || coalesce(' ' || left(nullif(split_part(p.nome_completo, ' ', 2), ''), 1) || '.', ''),
-         f.ano, f.especialidade, round(f.media, 1), f.testes, f.pessoa_id = app.pessoa_atual()
+         -- privacidade: nome, media e numero de testes so da propria pessoa; dos colegas, so posicao e perfil
+         CASE WHEN f.pessoa_id = app.pessoa_atual() THEN p.nome_completo END,
+         f.ano, f.especialidade,
+         CASE WHEN f.pessoa_id = app.pessoa_atual() THEN round(f.media, 1) END,
+         CASE WHEN f.pessoa_id = app.pessoa_atual() THEN f.testes END, f.pessoa_id = app.pessoa_atual()
     FROM filtrado f JOIN app.pessoa p ON p.pessoa_id = f.pessoa_id
-   ORDER BY 1, 3 $$;
+   ORDER BY 1, f.pessoa_id = app.pessoa_atual() DESC $$;
 REVOKE EXECUTE ON FUNCTION app.ranking(TEXT, TEXT), app.calcular_nota(BIGINT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION app.ranking(TEXT, TEXT) TO api_rw;
 

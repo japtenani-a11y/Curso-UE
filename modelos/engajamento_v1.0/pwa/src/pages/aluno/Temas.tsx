@@ -2,13 +2,14 @@ import { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
 interface Tema { codigo: string; titulo: string; modulo: string | null; dificuldade: number; papel: string; ordem: number | null;
-  data_d0: string | null; d0_proprio: boolean; etapa: number; testes_feitos: number; tem_conteudo: boolean }
+  data_d0: string | null; d0_proprio: boolean; etapa: number; testes_feitos: number; tem_conteudo: boolean; faltam?: string[]; orfao?: boolean }
 
 const dia = (s: string) => new Date(s).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 const PAPEL: Record<string, string> = { nuclear: 'principal', complementar: 'recomendado', eletivo: 'opcional' };
 
 function situacao(t: Tema): string {
   if (t.testes_feitos >= 6) return 'concluído';
+  if (t.faltam && t.faltam.length) return `bloqueado · falta ${t.faltam.join(', ')}`;
   if (t.testes_feitos > 0) return `em andamento · ${t.testes_feitos}/6 testes`;
   if (t.data_d0 && (t.papel === 'nuclear' || t.d0_proprio)) return `aula em ${dia(t.data_d0)}`;
   return t.papel === 'nuclear' ? 'data a definir' : 'escolha a sua data';
@@ -37,7 +38,7 @@ export function Temas() {
     <section>
       <h1>Temas por módulo</h1>
       <p>Escolha o módulo e depois o tema. Os <strong>principais</strong> têm data de aula do grupo (quintas, 20h).
-        Nos <strong>opcionais</strong> você escolhe a sua data (D0) dentro do tema. Também dá para entrar pelo <a href="/aluno/calendario">calendário de aulas</a>.</p>
+        Nos <strong>opcionais</strong> você escolhe a sua data (D0) dentro do tema. Também dá para entrar pelo <a href="/aluno/calendario">calendário de aulas</a> ou pela <a href="/aluno/arvore">árvore de temas</a>.</p>
       <input className="busca" placeholder="Buscar tema ou módulo" value={filtro} onChange={(e) => setFiltro(e.target.value)} aria-label="Buscar tema" />
       <div className="modulos">
         {modulos.map(([mod, lista]) => {

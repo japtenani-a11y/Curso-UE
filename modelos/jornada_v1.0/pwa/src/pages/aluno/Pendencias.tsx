@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 import { Avaliacao } from '../../components/Engajamento.js';
+import { Contagem } from '../../components/Contagem.js';
 
 interface Pendencia { codigo: string; titulo: string; tipo: 'teste' | 'avaliacao'; item: string; nome: string; prazo: string | null; d0: string | null }
 
@@ -32,6 +33,7 @@ export function Pendencias() {
             {itens.filter((p) => p.tipo === 'teste').map((p) => (
               <li key={p.item}>
                 <span className="item-nome">{p.nome}{p.prazo && <small> · até {quando(p.prazo)}</small>}</span>
+                <Contagem ate={p.prazo} />
                 <a className="botao" href={`/aluno/testes/${cod.replace('-', '')}`}>Responder</a>
               </li>
             ))}

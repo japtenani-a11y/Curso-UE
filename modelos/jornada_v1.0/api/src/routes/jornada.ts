@@ -43,3 +43,13 @@ jornadaRouter.get('/comparativo', async (req, res, next) => {
     res.json({ linhas });
   } catch (err) { next(err); }
 });
+
+// Arvore de temas mae/filho da pessoa logada, e relacoes de um tema.
+jornadaRouter.get('/arvore', async (_req, res, next) => {
+  try { res.json(await withMaestro(null, async (c) => (await c.query('SELECT app.arvore_temas() AS a')).rows[0]?.a ?? { nos: [], arestas: [] })); }
+  catch (err) { next(err); }
+});
+jornadaRouter.get('/temas/:codigo/relacoes', async (req, res, next) => {
+  try { res.json(await withMaestro(null, async (c) => (await c.query('SELECT app.relacoes_tema($1) AS r', [String(req.params.codigo).slice(0, 12)])).rows[0]?.r ?? { maes: [], filhos: [] })); }
+  catch (err) { next(err); }
+});

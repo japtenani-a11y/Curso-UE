@@ -3,7 +3,7 @@ import { apiGet } from '../../lib/api.js';
 import { Avaliacao } from '../../components/Engajamento.js';
 
 interface Nota { tema: string; titulo: string; teste_num: number; acertos: number; total: number; pct: string; nota_ponderada: string; submetida_em: string }
-interface Linha { posicao: number; participantes: number; nome: string; ano: string | null; especialidade: string | null; media: string; testes: number; eu: boolean }
+interface Linha { posicao: number; participantes: number; nome: string | null; ano: string | null; especialidade: string | null; media: string | null; testes: number | null; eu: boolean }
 const NOMES = ['', 'Pré-teste inicial', 'Pré-teste 2', 'Pós-teste D0', 'Pós-teste D+15', 'Pós-teste D+45', 'Pós-teste D+90'];
 const FILTROS: [string, string][] = [['geral', 'Todos'], ['especialidade', 'Minha especialidade'], ['ano', 'Meu ano (todas as especialidades)'], ['subgrupo', 'Meu ano e especialidade']];
 
@@ -22,11 +22,11 @@ export function Desempenho() {
         {FILTROS.map(([k, r]) => <button key={k} type="button" role="tab" aria-selected={filtro === k} className={`etapa${filtro === k ? ' atual' : ''}`} onClick={() => setFiltro(k)}>{r}</button>)}
       </div>
       <p>{eu ? <strong>Você está em {eu.posicao}º de {eu.participantes} · média {eu.media}</strong> : 'Você entra no ranking ao enviar o primeiro teste.'}
-        {' '}A nota de cada teste pondera as questões pela dificuldade; o ranking usa a média de todos os testes enviados.</p>
+        {' '}A nota de cada teste pondera as questões pela dificuldade; o ranking usa a média de todos os testes enviados. Dos colegas aparecem só a posição, o ano e a especialidade.</p>
       <div className="tabela-rolavel"><table className="tabela">
-        <thead><tr><th>Posição</th><th>Nome</th><th>Ano</th><th>Especialidade</th><th>Média</th><th>Testes</th></tr></thead>
+        <thead><tr><th>Posição</th><th>Participante</th><th>Ano</th><th>Especialidade</th></tr></thead>
         <tbody>{linhas.slice(0, 50).map((l, i) => (
-          <tr key={i} className={l.eu ? 'eu' : ''}><td>{l.posicao}º</td><td>{l.nome}</td><td>{l.ano ?? '—'}</td><td>{l.especialidade ?? '—'}</td><td>{l.media}</td><td>{l.testes}</td></tr>))}</tbody>
+          <tr key={i} className={l.eu ? 'eu' : ''}><td>{l.posicao}º</td><td>{l.eu ? `Você · média ${l.media} em ${l.testes} testes` : 'Colega'}</td><td>{l.ano ?? '—'}</td><td>{l.especialidade ?? '—'}</td></tr>))}</tbody>
       </table></div>
       <h2>Minhas notas</h2>
       {!notas ? <p className="carregando">Carregando…</p> : notas.length === 0 ? <p>Nenhum teste enviado ainda.</p> : (
