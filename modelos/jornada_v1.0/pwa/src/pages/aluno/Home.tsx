@@ -63,7 +63,8 @@ export function AlunoHome() {
           <li><strong>D0:</strong> na hora da aula, abrem o material da aula (aula e caso) e o pós-teste D0.</li>
           <li><strong>Pós-aula:</strong> ao enviar o pós-teste D0, chegam síntese, resumo executivo, mapa, flashcards, protocolo, checklists e simulados; os pós-testes voltam em D+15, D+45 e D+90.</li>
         </ol>
-        <p>O gabarito comentado de cada teste aparece logo depois que você o envia.</p>
+        <p>O gabarito comentado de cada teste aparece logo depois que você o envia, com a sua nota comparada à nota esperada para o seu perfil e à média dos colegas.</p>
+        <p><a href="/aluno/contato">Configurar lembretes por e-mail</a></p>
       </article>
     </section>
   );

@@ -5,7 +5,7 @@ const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 const LOGIN_TESTE = import.meta.env.VITE_LOGIN_TESTE === '1';
 
 const ERROS: Record<string, string> = {
-  nao_cadastrado: 'Este e-mail não está cadastrado no programa. Fale com a coordenação.',
+  nao_cadastrado: 'As inscrições estão fechadas no momento e este e-mail não está cadastrado. Fale com a coordenação.',
   email_nao_verificado: 'O Google não confirmou este e-mail.',
   google_nao_configurado: 'O login com Google ainda não foi configurado neste computador. Ele funciona no servidor de revisão (passo 8). No teste local, use o campo abaixo.',
 };
@@ -33,7 +33,7 @@ export function Login() {
           Entrar com o Google
         </a>
         {erro && <p className="faixa-erro" role="alert">{erro}</p>}
-        <p style={{ fontSize: '.8rem', color: 'var(--texto-2)' }}>Só entram e-mails cadastrados pela coordenação. O acesso é pessoal.</p>
+        <p style={{ fontSize: '.8rem', color: 'var(--texto-2)' }}>Primeiro acesso? Entre com a sua conta Google para fazer a inscrição; a coordenação aprova o acesso. O acesso é pessoal e intransferível.</p>
         {LOGIN_TESTE && (
           <form onSubmit={entrarTeste} style={{ marginTop: 16, borderTop: '1px solid var(--borda)', paddingTop: 12 }}>
             <p className="rotulo">Teste local</p>

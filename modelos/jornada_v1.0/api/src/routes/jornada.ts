@@ -34,3 +34,12 @@ jornadaRouter.get('/pendencias', async (_req, res, next) => {
     res.json({ pendencias });
   } catch (err) { next(err); }
 });
+
+// Nota real x esperada x media de todos x media do subgrupo (mesmo ano e especialidade), por teste.
+jornadaRouter.get('/comparativo', async (req, res, next) => {
+  try {
+    const tema = typeof req.query.tema === 'string' && req.query.tema ? req.query.tema.slice(0, 12) : null;
+    const linhas = await withMaestro(null, async (c) => (await c.query('SELECT * FROM app.meu_comparativo($1)', [tema])).rows);
+    res.json({ linhas });
+  } catch (err) { next(err); }
+});

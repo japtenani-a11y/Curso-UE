@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { apiGet, apiPost } from '../../lib/api.js';
 import { Avaliacao } from '../../components/Engajamento.js';
+import { EvolucaoAluno } from '../../components/Comparativo.js';
 
 interface Teste { num: number; nome: string; abre: string | null; fecha: string | null; liberado: boolean; respondivel: boolean;
   feito: boolean; perdido: boolean; nota: number | null; avaliado: boolean }
@@ -121,6 +122,7 @@ export function Tema() {
         })}
       </ol>
       {!temMaterial && <p className="faixa-aviso">O material deste tema ainda está em revisão; os testes e o calendário já valem.</p>}
+      {j.testes.some((t) => t.feito) && <div style={{ marginTop: 16 }}><EvolucaoAluno tema={j.codigo} /></div>}
       {j.testes.find((t) => t.num === 3)?.feito && (
         <div style={{ marginTop: 16 }}>
           <Avaliacao tema={j.codigo} ferramenta="tema" titulo={`o tema ${j.codigo}`} modo="tema" aoSalvar={carregar} />

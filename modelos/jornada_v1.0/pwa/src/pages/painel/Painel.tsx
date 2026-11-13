@@ -26,7 +26,8 @@ const media = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.
 const fmt = (v: number | null, casas = 0) => (v === null ? '—' : v.toFixed(casas));
 const rotuloGrupo = (l: Linha, g: string) => String(l[g] ?? 'não informado');
 
-function GraficoLinhas(props: { series: { nome: string; valores: (number | null)[] }[] }) {
+interface Serie { nome: string; valores: (number | null)[]; cor?: string; tracejado?: boolean }
+function GraficoLinhas(props: { series: Serie[] }) {
   const W = 640, H = 280, E = 44, D = 16, T = 16, B = 34;
   const x = (i: number) => E + (i * (W - E - D)) / (TESTES.length - 1);
   const y = (v: number) => T + ((100 - v) * (H - T - B)) / 100;
@@ -38,11 +39,11 @@ function GraficoLinhas(props: { series: { nome: string; valores: (number | null)
       {TESTES.map((t, i) => <text key={t} x={x(i)} y={H - 12} textAnchor="middle" fontSize="11" fill="#4a5568">{t}</text>)}
       {props.series.map((s, k) => {
         const pts = s.valores.map((v, i) => (v === null ? null : [x(i), y(v)] as const));
-        const d = pts.reduce((acc, p, i) => (p ? `${acc}${acc && pts[i - 1] ? 'L' : 'M'}${p[0]},${p[1]}` : acc), '');
-        const cor = CORES[k % CORES.length];
+        const d = pts.filter((p): p is readonly [number, number] => p !== null).map((p, i) => `${i ? 'L' : 'M'}${p[0]},${p[1]}`).join('');
+        const cor = s.cor ?? CORES[k % CORES.length];
         return (
           <g key={s.nome}>
-            <path d={d} fill="none" stroke={cor} strokeWidth={2.5} />
+            <path d={d} fill="none" stroke={cor} strokeWidth={s.tracejado ? 2 : 2.5} strokeDasharray={s.tracejado ? '6 4' : undefined} />
             {pts.map((p, i) => p && <circle key={i} cx={p[0]} cy={p[1]} r={4} fill={cor}><title>{`${s.nome} · ${TESTES[i]}: ${fmt(s.valores[i] ?? null, 1)}%`}</title></circle>)}
           </g>
         );
@@ -148,6 +149,13 @@ export function Painel() {
     return { nome: NOME_ESCALA[k] ?? k, valor: media(xs) ?? 0, n: xs.length };
   }).filter((e) => e.n > 0), [avals, tema]);
 
+  const referencias = useMemo(() => {
+    const f = notas.filter((n) => !tema || n.tema === tema);
+    const por = (k: string) => [1, 2, 3, 4, 5, 6].map((t) => media(f.filter((n) => Number(n.teste_num) === t && n[k] !== null).map((n) => Number(n[k]))));
+    return [{ nome: 'Média de todos', valores: por('pct'), cor: '#9ca3af', tracejado: true },
+            { nome: 'Nota esperada (média)', valores: por('esperado'), cor: '#b45309', tracejado: true }];
+  }, [notas, tema]);
+
   if (erro) return <p role="alert">{erro}</p>;
   const mostrar = evolucao.slice(0, grupo === 'aluno' ? 8 : 12);
   return (
@@ -166,8 +174,9 @@ export function Painel() {
           {!dados.notas ? <p className="carregando">Carregando…</p> : notas.length === 0 ? <p>Ainda não há testes respondidos.</p> : (
             <article className="cartao-app">
               <h2 style={{ marginTop: 0 }}>Evolução da média de acertos: pré-testes → pós-testes</h2>
-              <GraficoLinhas series={mostrar} />
-              <div className="legenda">{mostrar.map((s, k) => <span key={s.nome}><i style={{ background: CORES[k % CORES.length] }} />{s.nome}</span>)}</div>
+              <GraficoLinhas series={[...mostrar, ...referencias]} />
+              <div className="legenda">{mostrar.map((s, k) => <span key={s.nome}><i style={{ background: CORES[k % CORES.length] }} />{s.nome}</span>)}
+                {referencias.map((r) => <span key={r.nome}><i style={{ background: r.cor, opacity: 0.7 }} />{r.nome} (tracejada)</span>)}</div>
               {evolucao.length > mostrar.length && <p><small>O gráfico mostra os {mostrar.length} primeiros grupos; a tabela abaixo tem todos.</small></p>}
               <div className="tabela-rolavel"><table className="tabela compacta">
                 <thead><tr><th>{GRUPOS.find((g) => g.id === grupo)?.rotulo}</th><th>n</th>{TESTES.map((t) => <th key={t}>{t}</th>)}<th title="D0 menos pré-teste inicial">Ganho</th><th title="D+90 menos D0">Retenção</th></tr></thead>

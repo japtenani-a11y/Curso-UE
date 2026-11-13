@@ -24,6 +24,7 @@ cp "$M/api/src/routes/jornada.ts" "$M/api/src/routes/painel.ts" "$API/routes/"
 mkdir -p "$PWA/pages/painel"
 cp "$M/pwa/src/pages/aluno/Tema.tsx" "$M/pwa/src/pages/aluno/Calendario.tsx" "$M/pwa/src/pages/aluno/Pendencias.tsx" "$M/pwa/src/pages/aluno/Home.tsx" "$PWA/pages/aluno/"
 cp "$M/pwa/src/pages/painel/Painel.tsx" "$PWA/pages/painel/"
+cp "$M/pwa/src/components/Comparativo.tsx" "$PWA/components/"
 grep -q "jornada (modulos, tema" "$PWA/estilo.css" || cat "$M/estilo_jornada.css" >> "$PWA/estilo.css"
 echo "copiados: routes/jornada.ts, routes/painel.ts, Tema, Calendario, Pendencias, Home (aluno), Painel"
 
@@ -89,6 +90,18 @@ trocar(p, "<h1>{dados.tema.codigo} — {dados.tema.titulo}</h1>",
 p = f"{pwa}/components/Lembretes.tsx"
 trocar(p, "            : `${NOMES[l.teste_num]} de ${l.tema} pendente há ${l.dias_apos} dias.`}{' '}\n          <a href={`/aluno/testes/${l.tema.replace('-', '')}`}>Responder agora</a>{' '}",
        "            : l.dias_apos === 0\n              ? `${l.tema}: ${NOMES[l.teste_num]} disponível${l.teste_num === 3 ? ' — material da aula liberado' : l.teste_num === 1 ? ' — tema aberto' : ''}.`\n              : `${NOMES[l.teste_num]} de ${l.tema} pendente há ${l.dias_apos} dias.`}{' '}\n          <a href={`/aluno/tema/${l.tema.replace('-', '')}`}>{l.dias_apos === 0 ? 'Abrir o tema' : 'Responder agora'}</a>{' '}", "l.dias_apos === 0")
+
+# Testes: depois do gabarito, nota real x esperada x todos x subgrupo
+p = f"{pwa}/pages/aluno/Testes.tsx"
+trocar(p, "import { Avaliacao, Pergunta } from '../../components/Engajamento.js';",
+       "import { Avaliacao, Pergunta } from '../../components/Engajamento.js';\nimport { ComparativoTeste } from '../../components/Comparativo.js';", "ComparativoTeste }")
+trocar(p, "          <div className=\"engajamento\">\n            <Avaliacao tema={lista.tema.codigo}",
+       "          <ComparativoTeste tema={lista.tema.codigo} teste={lista.testes.find((t) => t.onda_id === gab.ondaId)?.teste_num ?? 0} />\n          <div className=\"engajamento\">\n            <Avaliacao tema={lista.tema.codigo}", "<ComparativoTeste tema")
+# Desempenho: grafico de evolucao com as quatro linhas
+p = f"{pwa}/pages/aluno/Desempenho.tsx"
+trocar(p, "import { Avaliacao } from '../../components/Engajamento.js';",
+       "import { Avaliacao } from '../../components/Engajamento.js';\nimport { EvolucaoAluno } from '../../components/Comparativo.js';", "EvolucaoAluno }")
+trocar(p, "      <h1>Meu desempenho</h1>\n", "      <h1>Meu desempenho</h1>\n      <EvolucaoAluno comSeletor />\n", "<EvolucaoAluno comSeletor")
 PY
 echo "atualizados: main.ts (/jornada, /painel), leitura.ts (simulados), App, Layout (menus), Leitura (?peca=)"
 echo "=== jornada do aluno e painel instalados ==="

@@ -71,3 +71,11 @@
   .lista-temas .cod { grid-column: 1 / -1; }
   .lista-temas .sit { grid-column: 1 / -1; text-align: left; }
 }
+.comparativo-barras { display: grid; gap: 8px; margin: 8px 0; }
+.cmp-linha { display: grid; grid-template-columns: minmax(180px, 280px) 1fr 110px; gap: 10px; align-items: center; font-size: .9rem; }
+.cmp-valor { text-align: right; font-weight: 600; }
+.cmp-valor small { font-weight: 400; color: var(--texto-2); }
+.cmp-msg { font-weight: 600; color: var(--acento); }
+.cmp-msg.ok { color: var(--ok); }
+.tst .comparativo { font-family: var(--fonte); text-align: left; margin: 16px 0; }
+@media (max-width: 720px) { .cmp-linha { grid-template-columns: 1fr 70px; } .cmp-linha .cmp-nome { grid-column: 1 / -1; } }
