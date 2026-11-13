@@ -3,17 +3,29 @@ import { apiGet, apiPost } from '../lib/api.js';
 
 const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 
-// Escalas do questionario (1 a 5).
-const ESCALAS: { chave: string; rotulo: string; baixo: string; alto: string }[] = [
+// Escalas do questionario (1 a 5). O 3 das escalas "de dosagem" significa adequado.
+interface Escala { chave: string; rotulo: string; baixo: string; alto: string; meio?: string }
+const QUALIDADE: Escala[] = [
+  { chave: 'conteudo', rotulo: 'Qualidade do material', baixo: 'ruim', alto: 'ótima' },
   { chave: 'apresentacao', rotulo: 'Apresentação', baixo: 'ruim', alto: 'ótima' },
-  { chave: 'conteudo', rotulo: 'Conteúdo', baixo: 'ruim', alto: 'ótimo' },
-  { chave: 'objetividade', rotulo: 'Objetividade', baixo: 'pouca', alto: 'muita' },
   { chave: 'clareza', rotulo: 'Clareza', baixo: 'confuso', alto: 'claro' },
-  { chave: 'complexidade', rotulo: 'Complexidade', baixo: 'fácil demais', alto: 'difícil demais' },
-  { chave: 'tempo_gasto', rotulo: 'Tempo exigido', baixo: 'pouco', alto: 'excessivo' },
-  { chave: 'importancia', rotulo: 'Importância para o seu aprendizado', baixo: 'nenhuma', alto: 'muita' },
+  { chave: 'objetividade', rotulo: 'Objetividade', baixo: 'pouca', alto: 'muita' },
+  { chave: 'adequacao', rotulo: 'Adequação ao seu nível', baixo: 'inadequado', alto: 'muito adequado' },
+  { chave: 'importancia', rotulo: 'Importância para a sua prática', baixo: 'nenhuma', alto: 'muita' },
 ];
-const ESCALA_TESTES = { chave: 'frequencia_testes', rotulo: 'Frequência dos testes', baixo: 'poucos', alto: 'excessivos' };
+const DOSAGEM: Escala[] = [
+  { chave: 'dificuldade', rotulo: 'Grau de dificuldade', baixo: 'muito fácil', alto: 'muito difícil', meio: 'adequado' },
+  { chave: 'complexidade', rotulo: 'Profundidade', baixo: 'superficial', alto: 'aprofundado demais', meio: 'adequada' },
+  { chave: 'tempo_gasto', rotulo: 'Tempo exigido', baixo: 'pouco', alto: 'excessivo', meio: 'adequado' },
+];
+const FREQUENCIA: Escala = { chave: 'frequencia_testes', rotulo: 'Frequência dos testes', baixo: 'poucos', alto: 'excessivos', meio: 'adequada' };
+const MATERIAIS: [string, string][] = [
+  ['objetivos', 'Objetivos'], ['resumo_basico', 'Resumo básico'], ['podcast_roteiro', 'Podcast'], ['caso_base', 'Caso base'],
+  ['aula', 'Aula'], ['slides', 'Slides'], ['caso', 'Caso da aula'], ['sintese_evidencia', 'Síntese de evidência'],
+  ['resumo', 'Resumo executivo'], ['mapa', 'Mapa conceitual'], ['flashcard', 'Flashcards'], ['protocolo', 'Protocolo'],
+  ['checklist', 'Checklists'], ['simulado', 'Simulados'], ['testes', 'Testes e gabaritos'],
+];
+export type ModoAvaliacao = 'peca' | 'teste' | 'tema' | 'curso';
 
 type Valores = Record<string, number | string | null>;
 
@@ -39,52 +51,80 @@ export function useTempoDeUso(tema: string, tipo: string) {
   }, [tema, tipo]);
 }
 
-export function Avaliacao(props: { tema: string | null; ferramenta: string; titulo: string; curso?: boolean }) {
-  const [aberto, setAberto] = useState(false);
+export function Avaliacao(props: { tema: string | null; ferramenta: string; titulo: string; curso?: boolean; modo?: ModoAvaliacao;
+  aberto?: boolean; aoSalvar?: () => void }) {
+  const modo: ModoAvaliacao = props.modo ?? (props.curso ? 'curso' : props.ferramenta.startsWith('teste_') ? 'teste' : 'peca');
+  const [aberto, setAberto] = useState(props.aberto ?? false);
   const [v, setV] = useState<Valores>({});
+  const [mats, setMats] = useState<string[]>([]);
   const [salvo, setSalvo] = useState<string | null>(null);
   useEffect(() => {
     if (!aberto) return;
-    apiGet<{ avaliacoes: Valores[] }>(`/eng/avaliacoes?tema=${props.tema ?? ''}`)
-      .then((d) => { const a = d.avaliacoes.find((x) => x.ferramenta === props.ferramenta); if (a) setV(a); })
+    apiGet<{ avaliacoes: (Valores & { materiais_usados?: string[] | null })[] }>(`/eng/avaliacoes?tema=${props.tema ?? ''}`)
+      .then((d) => {
+        const a = d.avaliacoes.find((x) => x.ferramenta === props.ferramenta);
+        if (a) { const { materiais_usados: m, ...resto } = a; setV(resto as Valores); setMats(m ?? []); }
+      })
       .catch(() => undefined);
   }, [aberto, props.tema, props.ferramenta]);
 
   async function salvar() {
-    try { await apiPost('/eng/avaliacoes', { ...v, tema: props.tema, ferramenta: props.ferramenta }); setSalvo('Avaliação salva. Obrigado!'); }
-    catch { setSalvo('Não foi possível salvar agora.'); }
+    try {
+      await apiPost('/eng/avaliacoes', { ...v, materiais_usados: modo === 'tema' || modo === 'curso' ? mats : null, tema: props.tema, ferramenta: props.ferramenta });
+      setSalvo('Avaliação salva. Obrigado!'); props.aoSalvar?.();
+    } catch { setSalvo('Não foi possível salvar agora.'); }
   }
-  const escalas = props.curso ? [...ESCALAS, ESCALA_TESTES] : ESCALAS;
-  if (!aberto) return <button type="button" className="botao discreto" onClick={() => setAberto(true)}>Avaliar {props.curso ? 'o curso' : 'esta peça'}</button>;
+  const escalas = [...QUALIDADE, ...DOSAGEM, ...(modo === 'peca' ? [] : [FREQUENCIA])];
+  const alvo = modo === 'curso' ? 'este curso' : modo === 'tema' ? 'este tema' : modo === 'teste' ? 'este teste' : 'esta peça';
+  if (!aberto) return <button type="button" className="botao discreto" onClick={() => setAberto(true)}>Avaliar {alvo}</button>;
+  const escala = (e: Escala) => (
+    <div key={e.chave} className="escala">
+      <span>{e.rotulo}</span>
+      <div role="radiogroup" aria-label={e.rotulo}>
+        {[1, 2, 3, 4, 5].map((n) => (
+          <button key={n} type="button" role="radio" aria-checked={v[e.chave] === n} className={v[e.chave] === n ? 'sel' : ''}
+            title={n === 1 ? e.baixo : n === 5 ? e.alto : n === 3 && e.meio ? e.meio : ''}
+            onClick={() => setV({ ...v, [e.chave]: n })}>{n}</button>
+        ))}
+      </div>
+      <small>1 = {e.baixo}{e.meio ? ` · 3 = ${e.meio}` : ''} · 5 = {e.alto}</small>
+    </div>
+  );
   return (
     <div className="cartao-app avaliacao">
       <h3 style={{ marginTop: 0 }}>Avaliação: {props.titulo}</h3>
-      <p className="nota-escala">De 0 a 10, quanto você recomendaria {props.curso ? 'este curso' : 'esta peça'} a um colega?</p>
+      <p className="nota-escala">De 0 a 10, quanto você recomendaria {alvo} a um colega?</p>
       <div className="nps" role="radiogroup" aria-label="Nota de 0 a 10">
         {Array.from({ length: 11 }, (_, n) => (
           <button key={n} type="button" role="radio" aria-checked={v.nps === n} className={v.nps === n ? 'sel' : ''} onClick={() => setV({ ...v, nps: n })}>{n}</button>
         ))}
       </div>
-      {escalas.map((e) => (
-        <div key={e.chave} className="escala">
-          <span>{e.rotulo}</span>
-          <div role="radiogroup" aria-label={e.rotulo}>
-            {[1, 2, 3, 4, 5].map((n) => (
-              <button key={n} type="button" role="radio" aria-checked={v[e.chave] === n} className={v[e.chave] === n ? 'sel' : ''}
-                title={n === 1 ? e.baixo : n === 5 ? e.alto : n === 3 && ['complexidade', 'tempo_gasto', 'frequencia_testes'].includes(e.chave) ? 'adequado' : ''}
-                onClick={() => setV({ ...v, [e.chave]: n })}>{n}</button>
-            ))}
-          </div>
-          <small>1 = {e.baixo} · 5 = {e.alto}</small>
+      <div className="escala">
+        <span>{modo === 'teste' ? 'O teste e o gabarito foram úteis?' : 'Foi útil para você?'}</span>
+        <div role="radiogroup" aria-label="Utilidade">
+          {([[1, 'Sim'], [2, 'Em parte'], [3, 'Não']] as [number, string][]).map(([n, r]) => (
+            <button key={n} type="button" role="radio" aria-checked={v.utilidade === n} className={v.utilidade === n ? 'sel' : ''}
+              style={{ width: 'auto', padding: '0 12px' }} onClick={() => setV({ ...v, utilidade: n })}>{r}</button>
+          ))}
         </div>
-      ))}
-      <label className="escala"><span>Minutos que você gastou</span>
+      </div>
+      {escalas.map(escala)}
+      {(modo === 'tema' || modo === 'curso') && (
+        <fieldset className="materiais">
+          <legend>Quais materiais você usou?</legend>
+          {MATERIAIS.map(([k, r]) => (
+            <label key={k}><input type="checkbox" checked={mats.includes(k)}
+              onChange={(ev) => setMats(ev.target.checked ? [...mats, k] : mats.filter((x) => x !== k))} /> {r}</label>
+          ))}
+        </fieldset>
+      )}
+      <label className="escala"><span>{modo === 'teste' ? 'Minutos que levou para resolver' : 'Minutos que você gastou'}</span>
         <input type="number" min={0} max={600} value={(v.minutos_gastos as number | null) ?? ''} onChange={(ev) => setV({ ...v, minutos_gastos: ev.target.value === '' ? null : Number(ev.target.value) })} />
       </label>
       <textarea placeholder="Comentário (opcional)" value={(v.comentario as string | null) ?? ''} onChange={(ev) => setV({ ...v, comentario: ev.target.value })} />
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 8 }}>
         <button type="button" className="botao" onClick={salvar}>Salvar avaliação</button>
-        <button type="button" className="botao discreto" onClick={() => setAberto(false)}>Fechar</button>
+        {props.aberto === undefined && <button type="button" className="botao discreto" onClick={() => setAberto(false)}>Fechar</button>}
         {salvo && <span role="status">{salvo}</span>}
       </div>
     </div>

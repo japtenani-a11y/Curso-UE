@@ -57,7 +57,7 @@ command -v ngrok >/dev/null || falhar "ngrok nao instalado. Veja docs/servidor_r
 
 SQL="psql postgresql://postgres:$PW@$HOST:$PORTA/programa -v ON_ERROR_STOP=1 -q"
 echo "[1/5] Cadastrando revisores e registro de acesso..."
-for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql; do
+for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql; do
   $SQL -f $f >> "$RABS/logs/srv_banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/srv_banco.log"
 done
 grep -E "@" "$RABS/logs/srv_banco.log" | sed 's/^/      /'

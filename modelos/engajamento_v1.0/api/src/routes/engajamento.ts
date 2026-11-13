@@ -8,7 +8,10 @@ export const engajamentoRouter = Router();
 
 const pessoa = (req: Request) => (req as Request & { pessoaId?: number }).pessoaId ?? null;
 const FERRAMENTA = /^[a-z_0-9]{2,40}$/;
-const ESCALAS = ['apresentacao', 'complexidade', 'conteudo', 'objetividade', 'clareza', 'tempo_gasto', 'frequencia_testes', 'importancia'] as const;
+const ESCALAS = ['apresentacao', 'complexidade', 'conteudo', 'objetividade', 'clareza', 'tempo_gasto', 'frequencia_testes', 'importancia',
+  'adequacao', 'dificuldade'] as const;
+const MATERIAIS = ['objetivos', 'resumo_basico', 'podcast_roteiro', 'caso_base', 'aula', 'slides', 'caso', 'sintese_evidencia',
+  'resumo', 'mapa', 'flashcard', 'protocolo', 'checklist', 'simulado', 'testes'];
 const FILTROS = ['geral', 'especialidade', 'ano', 'subgrupo'];
 export const VERSAO_TCLE = 'tcle-v1 (12/11/2026)';
 
@@ -50,7 +53,8 @@ engajamentoRouter.get('/avaliacoes', async (req, res, next) => {
     const tema = String(req.query.tema ?? '');
     const rows = await withMaestro(null, async (c) => (await c.query(
       `SELECT a.ferramenta, a.nps, a.apresentacao, a.complexidade, a.conteudo, a.objetividade, a.clareza, a.tempo_gasto,
-              a.frequencia_testes, a.importancia, a.minutos_gastos, a.comentario
+              a.frequencia_testes, a.importancia, a.adequacao, a.dificuldade, a.utilidade, a.materiais_usados,
+              a.minutos_gastos, a.comentario
          FROM app.avaliacao a LEFT JOIN app.tema t ON t.tema_id = a.tema_id
         WHERE ($1 = '' AND a.tema_id IS NULL) OR upper(replace(t.codigo,'-','')) = upper(replace($1,'-',''))`, [tema])).rows);
     res.json({ avaliacoes: rows });
@@ -67,19 +71,24 @@ engajamentoRouter.post('/avaliacoes', async (req, res, next) => {
     const minutos = int(b.minutos_gastos, 0, 600);
     const comentario = typeof b.comentario === 'string' ? b.comentario.slice(0, 2000) : null;
     const tema = typeof b.tema === 'string' && b.tema ? b.tema : null;
+    const utilidade = int(b.utilidade, 1, 3);
+    const materiais = Array.isArray(b.materiais_usados)
+      ? [...new Set((b.materiais_usados as unknown[]).map(String).filter((m) => MATERIAIS.includes(m)))] : null;
     await withMaestro(null, async (c) => {
       await c.query(
         `INSERT INTO app.avaliacao (pessoa_id, tema_id, ferramenta, nps, apresentacao, complexidade, conteudo, objetividade,
-                                    clareza, tempo_gasto, frequencia_testes, importancia, minutos_gastos, comentario)
+                                    clareza, tempo_gasto, frequencia_testes, importancia, adequacao, dificuldade,
+                                    minutos_gastos, comentario, utilidade, materiais_usados)
          SELECT app.pessoa_atual(), (SELECT tema_id FROM app.tema WHERE upper(replace(codigo,'-','')) = upper(replace($1,'-',''))),
-                $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13
+                $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17
          ON CONFLICT (pessoa_id, coalesce(tema_id, 0), ferramenta) DO UPDATE SET
            nps = EXCLUDED.nps, apresentacao = EXCLUDED.apresentacao, complexidade = EXCLUDED.complexidade,
            conteudo = EXCLUDED.conteudo, objetividade = EXCLUDED.objetividade, clareza = EXCLUDED.clareza,
            tempo_gasto = EXCLUDED.tempo_gasto, frequencia_testes = EXCLUDED.frequencia_testes,
-           importancia = EXCLUDED.importancia, minutos_gastos = EXCLUDED.minutos_gastos,
-           comentario = EXCLUDED.comentario, atualizado_em = now()`,
-        [tema ?? '', ferramenta, nps, ...valores, minutos, comentario]);
+           importancia = EXCLUDED.importancia, adequacao = EXCLUDED.adequacao, dificuldade = EXCLUDED.dificuldade,
+           minutos_gastos = EXCLUDED.minutos_gastos, comentario = EXCLUDED.comentario,
+           utilidade = EXCLUDED.utilidade, materiais_usados = EXCLUDED.materiais_usados, atualizado_em = now()`,
+        [tema ?? '', ferramenta, nps, ...valores, minutos, comentario, utilidade, materiais]);
     });
     res.json({ ok: true });
   } catch (err) { next(err); }

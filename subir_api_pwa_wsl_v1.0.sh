@@ -53,6 +53,7 @@ if [ -f 44_lembretes_app_v1.0.sh ]; then bash 44_lembretes_app_v1.0.sh "$RAIZ" >
 if [ -f 46_notificacoes_app_v1.0.sh ]; then bash 46_notificacoes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "46_notificacoes_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 51_acabamento_app_v1.0.sh ]; then bash 51_acabamento_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "51_acabamento_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 56_engajamento_app_v1.0.sh ]; then bash 56_engajamento_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "56_engajamento_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 61_jornada_app_v1.0.sh ]; then bash 61_jornada_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "61_jornada_app falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
@@ -62,7 +63,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
@@ -107,6 +108,8 @@ if [ -f 56_engajamento_app_v1.0.sh ]; then
   DC=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" "http://localhost:3000/curadoria/duvidas")
   PB=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" -H "Content-Type: application/json" -d '{}' "http://localhost:3000/revisao/artefatos/0/publicar")
   echo "      curador abrindo as duvidas dos alunos: $DC (esperado 200) | publicar sem peca valida: $PB (esperado 400)"
+  PN=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" "http://localhost:3000/painel/notas?formato=csv")
+  [ -f 61_jornada_app_v1.0.sh ] && echo "      curador baixando as notas do painel (CSV): $PN (esperado 200)"
 fi
 S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T001)
 echo "      sem login a mesma pagina responde $S (esperado 403)"
@@ -134,6 +137,12 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then
     echo "      temas no catalogo do aluno: $NC (esperado 147) | ranking: $RK (esperado 200)"
     DV=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/curadoria/duvidas")
     echo "      aluno abrindo as duvidas da curadoria: $DV (esperado 403)"
+  fi
+  if [ -f 61_jornada_app_v1.0.sh ]; then
+    JT=$(curl -s -b "$CA" "http://localhost:3000/jornada/temas/T001" | grep -o '"num"' | wc -l)
+    PD=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/jornada/pendencias")
+    PA=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/painel/notas")
+    echo "      tela do tema T001: $JT testes (esperado 6) | pendencias: $PD (esperado 200) | aluno no painel: $PA (esperado 403)"
   fi
   rm -f "$CA"
 fi
