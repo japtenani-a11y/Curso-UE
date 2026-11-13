@@ -261,7 +261,8 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
          (SELECT x.especialidade FROM app.posicao_anual x WHERE x.pessoa_id = p_pessoa AND x.especialidade IS NOT NULL ORDER BY x.ano_letivo DESC LIMIT 1),
          (SELECT min(x.ano_letivo) FROM app.posicao_anual x WHERE x.pessoa_id = p_pessoa) $$;
 
-CREATE OR REPLACE FUNCTION app.painel_notas()
+DROP FUNCTION IF EXISTS app.painel_notas();  -- o 64 acrescenta a coluna esperado
+CREATE FUNCTION app.painel_notas()
 RETURNS TABLE (aluno TEXT, ano TEXT, especialidade TEXT, turma SMALLINT, tema TEXT, teste_num SMALLINT, teste TEXT,
                acertos SMALLINT, total SMALLINT, pct NUMERIC, nota_ponderada NUMERIC, tempo_s INT, submetida_em TIMESTAMPTZ)
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$

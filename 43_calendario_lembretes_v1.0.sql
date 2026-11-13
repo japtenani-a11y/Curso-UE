@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS app.lembrete (
   UNIQUE (pessoa_id, onda_id, dias_apos));
 -- dias_apos: 7/14/28/60 = pos-teste atrasado; -1 = pre-teste 2 fecha em menos de 24 horas
 ALTER TABLE app.lembrete DROP CONSTRAINT IF EXISTS lembrete_dias_apos_check;
-ALTER TABLE app.lembrete ADD CONSTRAINT lembrete_dias_apos_check CHECK (dias_apos IN (-1, 7, 14, 28, 60));
+ALTER TABLE app.lembrete ADD CONSTRAINT lembrete_dias_apos_check CHECK (dias_apos IN (-1, 0, 7, 14, 28, 60));  -- 0 = aviso de abertura (60)
 ALTER TABLE app.lembrete ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS pol_lembrete_proprio ON app.lembrete;
 CREATE POLICY pol_lembrete_proprio ON app.lembrete FOR SELECT TO api_rw USING (pessoa_id = app.pessoa_atual());
