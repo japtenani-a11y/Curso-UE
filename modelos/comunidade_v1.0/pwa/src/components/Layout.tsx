@@ -23,6 +23,7 @@ function itensDoPapel(papel: string): Item[] {
       { href: '/curador/presenca', rotulo: 'Presença', icone: '✓', topo: true },
       { href: '/painel', rotulo: 'Dados e gráficos', icone: '▤' },
       { href: '/curador/flashcards', rotulo: 'Flashcards dos alunos', icone: '✦' },
+      { href: '/curador/pesquisa', rotulo: 'Interesse em pesquisa', icone: '⚗' },
       { href: '/curador/previa/T001', rotulo: 'Prévia do aluno', icone: '◎' },
       { href: '/aluno/arvore', rotulo: 'Árvore de temas', icone: '⋔' },
       { href: '/ajuda', rotulo: 'Ajuda', icone: 'ℹ' },

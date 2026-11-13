@@ -160,7 +160,8 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
   WITH eu AS (SELECT app.pessoa_atual() AS id),
   temas AS (SELECT t.tema_id, t.codigo FROM app.tema t, eu
              WHERE (jsonb_array_length(coalesce(p->'temas', '[]')) = 0 OR replace(t.codigo,'-','') IN (SELECT replace(upper(x),'-','') FROM jsonb_array_elements_text(p->'temas') x))),
-  fontes AS (SELECT coalesce(array(SELECT jsonb_array_elements_text(p->'fontes')), ARRAY['oficiais','meus','colegas']) AS f),
+  fontes AS (SELECT CASE WHEN jsonb_typeof(p->'fontes') = 'array' AND jsonb_array_length(p->'fontes') > 0
+                         THEN array(SELECT jsonb_array_elements_text(p->'fontes')) ELSE ARRAY['oficiais','meus','colegas'] END AS f),
   cards AS (
     SELECT 'oficial:' || t.codigo || ':' || o.n AS chave, t.codigo AS tema, o.frente, o.verso, 'oficial' AS origem, NULL::text AS autor
       FROM temas t, eu, fontes, LATERAL app.flashcards_oficiais(t.tema_id) o

@@ -70,6 +70,33 @@
 - Correção: rodar o `subir` de novo sobre uma instalação existente falhava no 56 e no 61 (eles tentavam ajustar
   telas que o 67 já tinha trocado). Agora pulam esse ajuste.
 
+## Fila de produção, pesquisa, repetição espaçada, certificado por módulo e coleta (73 + 74)
+- **Fila de produção de 1 a 150:** fica no aplicativo (Dados → Fila de produção) e se atualiza sozinha. A cópia de hoje
+  está em `docs/fila_producao_150.md`. A ordem é:
+  1. os 39 principais, na ordem das aulas;
+  2. os opcionais com maior taxa de "Avise-me";
+  3. o resto por importância: relevância no plantão (1 a 5, por incidência e gravidade), temas que libera na árvore
+     e se é recomendado.
+
+  Para ajustar a relevância de um tema: `SELECT app.definir_relevancia('T048', 5);`. O ajuste não é sobrescrito.
+- **"Tenho interesse em pesquisar este tema"** aparece no fim da síntese de evidência. O residente escolhe uma das 5 ideias
+  e autoriza o contato. A coordenação recebe um e-mail e acompanha tudo em `/curador/pesquisa` (situação, orientador,
+  anotações e CSV). O residente vê o andamento na própria síntese.
+- **Repetição espaçada:** "Revisão do dia" no Estudo dirigido.
+  - Acertou: o card volta em 1 dia, depois em 3, depois em intervalos cada vez maiores.
+  - Errou: o card volta em 10 minutos.
+- **Certificado por módulo:** fica em Presença e certificado. Sai quando todos os temas do módulo estão concluídos e tem
+  verificação pública, como o certificado geral.
+- **Coleta de dados:**
+  - tempo de leitura por peça (só com a tela visível; para depois de 3 minutos parado);
+  - confiança declarada antes de cada teste (0 a 100%), para calcular a calibração (confiança − nota);
+  - aplicabilidade na prática 30 dias depois do pós-teste D0: uso no plantão, mudança de conduta, segurança de 1 a 5,
+    exemplo e barreira. Aparece em Pendências.
+
+  No painel, ficam nas abas "Calibração e aplicabilidade" e "Tempo de leitura".
+- **Buscas PubMed:** o arquivo ganhou a seção "Como nomear os PDFs da curadoria manual"
+  (`T001_A07_2023_Silva_PMID37123456.pdf`).
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).

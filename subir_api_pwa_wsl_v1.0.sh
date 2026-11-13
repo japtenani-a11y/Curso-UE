@@ -57,6 +57,7 @@ if [ -f 61_jornada_app_v1.0.sh ]; then bash 61_jornada_app_v1.0.sh "$RAIZ" >> "$
 if [ -f 63_cadastro_app_v1.0.sh ]; then bash 63_cadastro_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "63_cadastro_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 67_comunidade_app_v1.0.sh ]; then bash 67_comunidade_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "67_comunidade_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 69_estudo_app_v1.0.sh ]; then bash 69_estudo_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "69_estudo_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 74_extras_app_v1.0.sh ]; then bash 74_extras_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "74_extras_app falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
@@ -66,7 +67,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")

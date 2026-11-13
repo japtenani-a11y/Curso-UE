@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiGet } from '../lib/api.js';
 
 interface Cert { codigo: string; emitido_em: string; nome: string; temas_concluidos: number; horas: number; presenca_pct: number | null;
-  aulas_presentes: number; aulas_realizadas: number; lista_temas: string[]; perfil?: { ano: string | null; especialidade: string | null } }
+  aulas_presentes: number; aulas_realizadas: number; lista_temas: string[]; modulo?: string; perfil?: { ano: string | null; especialidade: string | null } }
 
 // Certificado (publico, para verificacao): /certificado/CODIGO. Imprimir ou salvar como PDF pelo navegador.
 export function Certificado() {
@@ -18,11 +18,11 @@ export function Certificado() {
       <article className="certificado">
         <img src="/icone.svg" alt="" className="cert-icone" />
         <p className="cert-instituicao">Programa de Cirurgia de Urgência e Trauma · HCFMRP-USP</p>
-        <h1>Certificado de participação</h1>
-        <p className="cert-texto">Certificamos que <strong>{c.nome}</strong>{c.perfil?.ano ? ` (${c.perfil.ano}${c.perfil.especialidade ? `, ${c.perfil.especialidade}` : ''})` : ''} participou do Programa de Cirurgia de Urgência e Trauma,
+        <h1>{c.modulo ? 'Certificado de conclusão de módulo' : 'Certificado de participação'}</h1>
+        <p className="cert-texto">Certificamos que <strong>{c.nome}</strong>{c.perfil?.ano ? ` (${c.perfil.ano}${c.perfil.especialidade ? `, ${c.perfil.especialidade}` : ''})` : ''} {c.modulo ? <> concluiu o módulo <strong>{c.modulo}</strong> do Programa de Cirurgia de Urgência e Trauma,</> : ' participou do Programa de Cirurgia de Urgência e Trauma,'}
           concluindo <strong>{c.temas_concluidos} {c.temas_concluidos === 1 ? 'tema' : 'temas'}</strong>, com carga horária de <strong>{c.horas} horas</strong>
-          {c.presenca_pct !== null ? <> e <strong>{c.presenca_pct}% de presença</strong> nas aulas ao vivo ({c.aulas_presentes} de {c.aulas_realizadas})</> : null}.</p>
-        <details className="cert-temas" open={c.lista_temas.length <= 12}><summary>Temas concluídos</summary><ol>{c.lista_temas.map((t) => <li key={t}>{t}</li>)}</ol></details>
+          {c.presenca_pct !== null ? <> e <strong>{c.presenca_pct}% de presença</strong> nas aulas ao vivo{c.aulas_realizadas ? ` (${c.aulas_presentes} de ${c.aulas_realizadas})` : ''}</> : null}.</p>
+        <details className="cert-temas" open={c.lista_temas.length <= 12}><summary>{c.modulo ? 'Temas do módulo' : 'Temas concluídos'}</summary><ol>{c.lista_temas.map((t) => <li key={t}>{t}</li>)}</ol></details>
         <div className="cert-assinatura"><span>Coordenação do Programa de Cirurgia de Urgência e Trauma</span></div>
         <p className="cert-verif">Emitido em {new Date(c.emitido_em).toLocaleDateString('pt-BR')} · Código de verificação <strong>{c.codigo}</strong> · {url}</p>
       </article>

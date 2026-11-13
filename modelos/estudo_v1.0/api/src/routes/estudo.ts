@@ -62,7 +62,7 @@ estudoRouter.post('/deck', async (req, res, next) => {
     const b = (req.body ?? {}) as Record<string, unknown>;
     const p = { temas: Array.isArray(b.temas) ? b.temas.map(String).slice(0, 200) : [],
       fontes: Array.isArray(b.fontes) ? b.fontes.map(String).filter((f) => ['oficiais', 'meus', 'colegas'].includes(f)) : ['oficiais', 'meus', 'colegas'],
-      quantidade: Number(b.quantidade) || 20, so_dificeis: b.so_dificeis === true };
+      quantidade: Number(b.quantidade) || 20, so_dificeis: b.so_dificeis === true, modo: b.modo === 'devidos' ? 'devidos' : undefined };
     res.json({ cards: await um('SELECT app.montar_deck($1::jsonb) AS r', [JSON.stringify(p)]) });
   } catch (e) { erro(e, res, next); }
 });

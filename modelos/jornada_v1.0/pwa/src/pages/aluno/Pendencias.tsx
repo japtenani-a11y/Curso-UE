@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 import { Avaliacao } from '../../components/Engajamento.js';
 import { Contagem } from '../../components/Contagem.js';
+import { Aplicabilidade } from '../../components/Aplicabilidade.js';
 
 interface Pendencia { codigo: string; titulo: string; tipo: 'teste' | 'avaliacao'; item: string; nome: string; prazo: string | null; d0: string | null }
 
@@ -55,6 +56,7 @@ export function Pendencias() {
           </ul>
         </article>
       ))}
+      <Aplicabilidade />
     </section>
   );
 }

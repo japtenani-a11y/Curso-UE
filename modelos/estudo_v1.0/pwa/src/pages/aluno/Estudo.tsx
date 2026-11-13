@@ -190,10 +190,12 @@ function AbaDeck({ op, irCriar }: { op: Opcoes; irCriar: () => void }) {
   const [placar, setPlacar] = useState({ sei: 0, nao: 0 });
   const [msg, setMsg] = useState<string | null>(null);
 
-  async function montar() {
+  const [devidos, setDevidos] = useState<{ vencidos: number; novos: number } | null>(null);
+  useEffect(() => { apiGet<{ vencidos: number; novos: number }>('/extra/flashcards/devidos').then(setDevidos).catch(() => undefined); }, [deck]);
+  async function montar(modo?: 'devidos') {
     setMsg(null);
-    const r = await apiPost<{ cards: Card[] }>('/estudo/deck', { temas, fontes, quantidade: qtd, so_dificeis: dificeis }).catch(() => null);
-    if (!r || r.cards.length === 0) { setMsg(dificeis ? 'Nenhum card marcado como difícil com esses filtros.' : 'Nenhum card com esses filtros.'); return; }
+    const r = await apiPost<{ cards: Card[] }>('/estudo/deck', modo ? { modo, quantidade: 40 } : { temas, fontes, quantidade: qtd, so_dificeis: dificeis }).catch(() => null);
+    if (!r || r.cards.length === 0) { setMsg(modo ? 'Nada para revisar agora. Volte amanhã!' : dificeis ? 'Nenhum card marcado como difícil com esses filtros.' : 'Nenhum card com esses filtros.'); return; }
     setDeck(r.cards); setI(0); setVirado(false); setPlacar({ sei: 0, nao: 0 });
     setTimeout(() => document.querySelector('.estudo progress')?.scrollIntoView({ block: 'start', behavior: 'smooth' }), 60);
   }
@@ -248,7 +250,14 @@ function AbaDeck({ op, irCriar }: { op: Opcoes; irCriar: () => void }) {
   const marca = (f: string) => setFontes(fontes.includes(f) ? fontes.filter((x) => x !== f) : [...fontes, f]);
   const tot = (k: 'oficiais' | 'meus' | 'colegas') => op.flashcards.filter((t) => temas.length === 0 || temas.includes(t.codigo)).reduce((s, t) => s + t[k], 0);
   return (
-    <article className="cartao-app">
+    <>
+    <article className="cartao-app destaque revisao-dia">
+      <h2>Revisão do dia</h2>
+      <p>Repetição espaçada: cada card volta no momento certo. Acertou, o intervalo cresce (1 dia, 3 dias, depois cada vez mais); errou, ele volta ainda hoje.</p>
+      <p><strong>{devidos ? `${devidos.vencidos} para revisar · ${devidos.novos} novos` : '…'}</strong></p>
+      <button type="button" className="botao" disabled={!devidos || devidos.vencidos + devidos.novos === 0} onClick={() => montar('devidos')}>Começar a revisão do dia</button>
+    </article>
+    <article className="cartao-app" style={{ marginTop: 16 }}>
       <h2>Montar um deck</h2>
       <SeletorTemas rotulo="1. Temas" temas={op.flashcards.map((t) => ({ codigo: t.codigo, titulo: t.titulo, n: t.oficiais + t.meus + t.colegas }))} sel={temas} mudar={setTemas} />
       <fieldset className="campo-estudo">
@@ -263,9 +272,10 @@ function AbaDeck({ op, irCriar }: { op: Opcoes; irCriar: () => void }) {
         <div className="chips">{[10, 20, 40, 80].map((n) => <button key={n} type="button" className={`botao discreto ${qtd === n ? 'sel' : ''}`} aria-pressed={qtd === n} onClick={() => setQtd(n)}>{n}</button>)}</div>
       </fieldset>
       {msg && <p role="alert">{msg}</p>}
-      <button type="button" className="botao" disabled={fontes.length === 0} onClick={montar}>Embaralhar e começar</button>{' '}
+      <button type="button" className="botao" disabled={fontes.length === 0} onClick={() => montar()}>Embaralhar e começar</button>{' '}
       <button type="button" className="botao discreto" onClick={irCriar}>Criar um card</button>
     </article>
+    </>
   );
 }
 
