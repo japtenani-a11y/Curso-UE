@@ -6,8 +6,8 @@
 # Reprovado => nada e gravado e o job tenta de novo (limite do ciclo). Aprovado => artefato 'rascunho'.
 # USO: bash 28_executor_modelo_verificadores_v1.0.sh ./programa-cut
 # PRE-REQUISITOS: 22b_patch_executor_v1.1, 28_texto_integral_fontes_v1.0.sql
-# ENV do executor: ANTHROPIC_API_KEY, ANTHROPIC_MODEL
-# Payload do job: {"tipo":"<tipo do artefato>","titulo":"..."}; fontes com texto_integral no tema.
+# ENV do executor: ANTHROPIC_API_KEY, ANTHROPIC_MODEL, NCBI_API_KEY (opcional)
+# Payload do job: {"tipo":"<tipo do artefato>","titulo":"...","termos":"<palavras-chave em ingles, opcional>"}; fontes com texto_integral no tema.
 # ============================================================
 set -euo pipefail
 RAIZ="${1:-./programa-cut}"
@@ -98,9 +98,9 @@ export async function verificarPmidDoi(
 // Buscador real (NCBI esummary + Crossref). Exige rede; usado so no executor.
 export const buscadorReal: Buscador = async ({ pmid, doi }) => {
   if (pmid) {
-    const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`);
+    const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json${process.env.NCBI_API_KEY ? `&api_key=${process.env.NCBI_API_KEY}` : ''}`);
     if (!res.ok) throw new Error(`NCBI HTTP ${res.status}`);
-    const j: any = await res.json();
+    const j: any = (await res.json()) as any;
     const d = j?.result?.[pmid];
     if (!d || d.error) return { existe: false };
     const tipos: string[] = (d.pubtype ?? []).map((x: string) => x.toLowerCase());
@@ -109,7 +109,7 @@ export const buscadorReal: Buscador = async ({ pmid, doi }) => {
   const res = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi!)}`);
   if (res.status === 404) return { existe: false };
   if (!res.ok) throw new Error(`Crossref HTTP ${res.status}`);
-  const m: any = (await res.json()).message;
+  const m: any = ((await res.json()) as any).message;
   const upd = JSON.stringify(m?.relation ?? {}) + JSON.stringify(m?.['update-to'] ?? []);
   return { existe: true, titulo: (m?.title ?? [])[0], retratado: /retract/i.test(upd) };
 };
@@ -120,6 +120,7 @@ export interface RespostaModelo {
   modelo: string;
   tokensEntrada: number;
   tokensSaida: number;
+  parou: string;
 }
 
 export async function chamarModelo(p: {
@@ -142,9 +143,9 @@ export async function chamarModelo(p: {
     }),
   });
   if (!res.ok) throw new Error(`API do modelo HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const j: any = await res.json();
+  const j: any = (await res.json()) as any;
   const texto = (j.content ?? []).filter((b: any) => b.type === 'text').map((b: any) => b.text).join('');
-  return { texto, modelo: j.model ?? modelo, tokensEntrada: j.usage?.input_tokens ?? 0, tokensSaida: j.usage?.output_tokens ?? 0 };
+  return { texto, modelo: j.model ?? modelo, tokensEntrada: j.usage?.input_tokens ?? 0, tokensSaida: j.usage?.output_tokens ?? 0, parou: j.stop_reason ?? '' };
 }
 EOF_modelo
 cat > "$M/avaliar.ts" <<'EOF_avaliar'
@@ -187,6 +188,7 @@ import { logger } from './logger.js';
 import { chamarModelo } from './modelo.js';
 import { avaliarGates } from './gate.js';
 import { lerSaida } from './avaliar.js';
+import { selecionarFontes } from './selecao.js';
 
 interface Job {
   job_id: number;
@@ -199,7 +201,7 @@ interface Job {
 export async function executarJob(job: Job): Promise<void> {
   const inicio = Date.now();
   if (job.tema_id == null) throw new Error('job sem tema_id');
-  const payload = (job.payload ?? {}) as { tipo?: string; titulo?: string };
+  const payload = (job.payload ?? {}) as { tipo?: string; titulo?: string; termos?: string };
   if (!payload.tipo) throw new Error('payload.tipo ausente (tipo do artefato a gerar)');
 
   const { rows: pr } = await pool.query(
@@ -219,14 +221,15 @@ export async function executarJob(job: Job): Promise<void> {
     'Responda SOMENTE com JSON: {"corpo": "<texto do artefato>", "afirmacoes": [{"texto": "<afirmacao clinica ou numero usado>", ' +
     '"fonte_id": <id>, "trecho_literal": "<trecho copiado sem alteracao da fonte que sustenta a afirmacao>"}]}. ' +
     'Toda afirmacao clinica e todo numero do corpo deve constar em afirmacoes. Use apenas as fontes fornecidas. Sem trecho literal, nao afirme.';
+  const vistas = selecionarFontes(fontes, `${payload.tipo} ${payload.titulo ?? ''} ${payload.termos ?? ''}`, Number(process.env.ORCAMENTO_CHARS ?? 400_000));
   const user =
-    `FONTES:\n` + fontes.map((f: any) => `[fonte_id=${f.fonte_id}] ${f.titulo}\n${f.texto_integral}`).join('\n\n---\n\n') +
+    `FONTES:\n` + vistas.map((f) => `[fonte_id=${f.fonte_id}] ${f.titulo}\n${f.texto}`).join('\n\n---\n\n') +
     `\n\nTAREFA (${payload.tipo}):\n${JSON.stringify(job.payload)}`;
 
   const r = await chamarModelo({
     system: prompt.conteudo + '\n\n' + contrato,
     user,
-    maxTokens: prompt.max_tokens ?? 8000,
+    maxTokens: Math.max(prompt.max_tokens ?? 0, Number(process.env.MIN_TOKENS_SAIDA ?? 16000)),
     temperatura: prompt.temperatura ?? 0.2,
   });
 
@@ -236,6 +239,7 @@ export async function executarJob(job: Job): Promise<void> {
     [job.job_id, job.tema_id, job.fase, job.skill_codigo, r.modelo, r.tokensEntrada, r.tokensSaida, Date.now() - inicio],
   );
 
+  if (r.parou === 'max_tokens') throw new Error('saida do modelo truncada (max_tokens); aumente MIN_TOKENS_SAIDA');
   const saida = lerSaida(r.texto);
   const aprovado = await avaliarGates(job, saida.afirmacoes, fontes);
   if (!aprovado) throw new Error('gate de evidencia reprovou o artefato; nada foi gravado');
@@ -248,6 +252,48 @@ export async function executarJob(job: Job): Promise<void> {
   logger.info({ job_id: job.job_id, afirmacoes: saida.afirmacoes.length }, 'artefato gerado como rascunho');
 }
 EOF_motor
+cat > "$M/selecao.ts" <<'EOF_selecao'
+// Seleciona e recorta fontes para caber no contexto do modelo. A citacao literal continua sendo
+// verificada contra o texto integral no banco; aqui so se decide o que o modelo ve.
+export interface FonteSel { fonte_id: number; titulo: string; texto_integral: string | null; }
+
+const PARADA = new Set(['de','da','do','das','dos','a','o','e','em','para','com','por','the','of','and','in','to','for','with','on','tipo','titulo']);
+
+export function termos(consulta: string): string[] {
+  return [...new Set(consulta.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').split(/[^a-z0-9]+/).filter((t) => t.length > 2 && !PARADA.has(t)))];
+}
+
+function pontuar(texto: string, ts: string[]): number {
+  const t = texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  let p = 0;
+  for (const k of ts) { let i = 0, n = 0; while ((i = t.indexOf(k, i)) !== -1 && n < 50) { n++; i += k.length; } p += Math.log1p(n); }
+  return p;
+}
+
+// Recorta uma fonte em paragrafos e mantem os mais relevantes (na ordem original) ate maxChars.
+export function recortar(texto: string, ts: string[], maxChars: number): string {
+  if (texto.length <= maxChars) return texto;
+  const par = texto.split(/\n\s*\n/).map((x, i) => ({ x, i, p: pontuar(x, ts) }));
+  const ord = [...par].sort((a, b) => b.p - a.p || a.i - b.i);
+  const mant = new Set<number>(); let tot = 0;
+  for (const q of ord) { if (tot + q.x.length > maxChars) continue; mant.add(q.i); tot += q.x.length; }
+  return par.filter((q) => mant.has(q.i)).map((q) => q.x).join('\n\n');
+}
+
+export function selecionarFontes<T extends FonteSel>(fontes: T[], consulta: string, orcamentoChars = 400_000, maxPorFonte = 8_000): { fonte_id: number; titulo: string; texto: string }[] {
+  const ts = termos(consulta);
+  const rank = fontes
+    .map((f) => ({ f, p: pontuar(f.titulo, ts) * 3 + pontuar((f.texto_integral ?? '').slice(0, 20_000), ts) }))
+    .sort((a, b) => b.p - a.p || a.f.fonte_id - b.f.fonte_id);
+  const out: { fonte_id: number; titulo: string; texto: string }[] = []; let tot = 0;
+  for (const { f } of rank) {
+    const t = recortar(f.texto_integral ?? '', ts, maxPorFonte);
+    if (tot + t.length > orcamentoChars) continue;
+    out.push({ fonte_id: f.fonte_id, titulo: f.titulo, texto: t }); tot += t.length;
+  }
+  return out;
+}
+EOF_selecao
 cat > "$M/gate.ts" <<'EOF_gate'
 import { pool } from './pool.js';
 import { logger } from './logger.js';
@@ -327,4 +373,34 @@ test('lerSaida tolera cerca de codigo', () => {
   assert.throws(() => lerSaida('sem json'));
 });
 EOF_t
-echo "OK. Teste: cd $RAIZ/executor && npx tsc && node --test dist/test/"
+cat > "$RAIZ/executor/tsconfig.teste.json" <<'EOF_tc'
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "rootDir": ".", "outDir": "dist-test" },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}
+EOF_tc
+cat > "$RAIZ/executor/test/selecao.test.ts" <<'EOF_ts'
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { selecionarFontes, recortar, termos } from '../src/maestro/selecao.js';
+
+test('termos ignora palavras vazias e acentos', () => {
+  assert.deepEqual(termos('Avaliação inicial do trauma'), ['avaliacao', 'inicial', 'trauma']);
+});
+test('recortar mantem paragrafos relevantes dentro do limite', () => {
+  const t = ['irrelevante '.repeat(50), 'primary survey xabcde importante', 'outro '.repeat(50)].join('\n\n');
+  const r = recortar(t, ['xabcde'], 100);
+  assert.ok(r.includes('xabcde') && r.length <= 100);
+});
+test('selecionarFontes respeita orcamento e prioriza relevantes', () => {
+  const fs = [
+    { fonte_id: 1, titulo: 'Burn care', texto_integral: 'queimadura '.repeat(1000) },
+    { fonte_id: 2, titulo: 'ATLS primary survey xABCDE', texto_integral: 'primary survey xabcde '.repeat(1000) },
+  ];
+  const r = selecionarFontes(fs, 'avaliacao inicial xABCDE primary survey', 10_000, 6_000);
+  assert.equal(r[0].fonte_id, 2);
+  assert.ok(r.reduce((s, x) => s + x.texto.length, 0) <= 10_000);
+});
+EOF_ts
+echo "OK. Teste: cd $RAIZ/executor && npx tsc && npx tsc -p tsconfig.teste.json && node --test dist-test/test/*.test.js"

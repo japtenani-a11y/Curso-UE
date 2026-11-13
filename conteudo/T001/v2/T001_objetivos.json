@@ -1,0 +1,257 @@
+{
+ "tema": "T001",
+ "tipo": "objetivos",
+ "titulo": "Objetivos de aprendizagem por perfil",
+ "status": "rascunho",
+ "versao_padrao": "guia v0.1 (12/11/2026)",
+ "gerado_por": "Claude, geração manual fora do executor",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.\n\n# T001 — Objetivos de aprendizagem por perfil\n\nCada objetivo tem verbo observável, condição e critério, e um tipo: conhecimento (C), habilidade (H), atitude (A) ou raciocínio clínico (R). O perfil de cima é pré-requisito do de baixo.\n\n## Graduação (4º a 6º ano)\n\n1. (C) **Descrever** a sequência ABCDE e quando a circulação vem antes da via aérea [D2, D3], em uma pergunta oral, sem omitir etapas.\n2. (H) **Aplicar** compressão direta em sangramento externo em simulação, antes de qualquer outra medida [D6].\n3. (C) **Reconhecer** os sinais de via aérea pérvia e a indicação de via aérea definitiva por Glasgow [D10, D11], em caso escrito, com acerto.\n4. (H) **Colher** a história AMPLA completa em paciente simulado [D21].\n5. (A) **Manter** o paciente coberto e aquecido após o exame [D19], em toda simulação.\n\n## R1\n\n1. (H) **Executar** a avaliação primária completa em simulação, verbalizando cada etapa, com reavaliação após cada intervenção [D1, D5].\n2. (R) **Decidir** entre ABCDE e CAB diante de hemorragia externa ou paciente em extremis [D2, D3, D4], em caso escrito, justificando.\n3. (H) **Obter** acesso intraósseo em simulador quando o venoso falhar [D15].\n4. (C) **Explicar** por que a agitação pode ser sinal de choque e por que o aparelho automático de pressão engana no choque [D14, D17].\n5. (A) **Registrar** a avaliação no formulário estruturado de admissão em todo atendimento [A13, A14].\n6. (H) **Realizar** a avaliação secundária completa e documentá-la [D20].\n\n## R2\n\n1. (R) **Interpretar** eFAST e radiografias como adjuntos, sabendo que um eFAST negativo não exclui pneumotórax [A29, A30], em casos com imagens.\n2. (R) **Indicar** torniquete, cinta pélvica ou compressão conforme a lesão, conhecendo o risco de amputação associado ao torniquete [D7, D9, A24].\n3. (R) **Avaliar** o estado hemodinâmico sem depender só da classe de choque [A32, A33], em casos escritos.\n4. (H) **Realizar** a avaliação terciária e revisar as imagens do paciente internado [D30, D31].\n5. (A) **Comunicar** achados ao líder em voz alta e de forma concisa durante a simulação.\n\n## R3\n\n1. (H) **Liderar** a equipe de trauma em simulação, distribuindo funções antes da chegada [D22, D29].\n2. (H) **Conduzir** a passagem do pré-hospitalar no formato MIST em até 1 minuto [D23, D24].\n3. (R) **Decidir** o destino do paciente instável (centro cirúrgico, radiologia intervencionista ou TC) [D27, A12, A39].\n4. (R) **Justificar** a indicação de TC de corpo inteiro com base na evidência [A12, A40].\n5. (A) **Conduzir** o debriefing da equipe após atendimento real ou simulado [A18].\n\n## R+ (R4 a R6, egressos e preceptores)\n\n1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist e torniquete, separando associação de causa [A2, A4, A23].\n2. (R) **Propor** ajustes ao protocolo institucional de avaliação inicial com base nas lacunas identificadas [A7, A37].\n3. (H) **Ensinar** a avaliação inicial em simulação in situ com debriefing [A18, A44].\n4. (R) **Auditar** indicadores de processo da sala de trauma (registro da via aérea, temperatura, lesões tardias) [A14, A42].\n5. (A) **Supervisionar** treinandos na liderança da equipe sem assumir o comando sem necessidade [D29].\n",
+ "afirmacoes": [
+  {
+   "id": "A2",
+   "texto": "Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)"
+  },
+  {
+   "id": "A4",
+   "texto": "Os autores afirmam que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes, motivando um novo ensaio pragmático.",
+   "fonte_arquivo": "2026_26",
+   "trecho_literal": "there is no high-quality evidence that it can improve patient outcomes"
+  },
+  {
+   "id": "A7",
+   "texto": "A revisão sistemática sobre checklist na ressuscitação identificou 625 artigos e incluiu apenas estudos do tipo antes-e-depois.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "Three of the 625 identified articles were included, which all used a before-and-after study design"
+  },
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A18",
+   "texto": "Treinamento mensal em equipe, in situ, com debriefing em vídeo reduziu significativamente o tempo de ressuscitação na sala de emergência.",
+   "fonte_arquivo": "2018_55",
+   "trecho_literal": "Monthly video assisted team based in situ training with video debriefing significantly reduces resuscitation time in the emergency bay."
+  },
+  {
+   "id": "A23",
+   "texto": "Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A37",
+   "texto": "Não há abordagem baseada em evidência para manejo da hipotermia no trauma, ao contrário da acidose e do sangramento.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "there is no evidence-based approach to managing hypothermia in trauma patients"
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "A40",
+   "texto": "Entre 3976 pacientes com TC de corpo inteiro, 120 (3,02%) tinham avaliação primária sem alterações e nenhum teve lesão à imagem.",
+   "fonte_arquivo": "2024_48",
+   "trecho_literal": "From 3976 patients treated with WBCT, 120 patients (3.02%) showed an inconspicuous primary survey."
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  },
+  {
+   "id": "A44",
+   "texto": "Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.",
+   "fonte_arquivo": "2026_10",
+   "trecho_literal": "Checklist- and algorithm-based formats produced similar short-term gains."
+  },
+  {
+   "id": "D1",
+   "texto": "O objetivo da avaliação inicial é identificar e tratar rapidamente as lesões que ameaçam a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "The goal of the initial assessment is the rapid identification and treatment of life-threatening injuries."
+  },
+  {
+   "id": "D2",
+   "texto": "Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação é avaliada e tratada antes da via aérea (CAB).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "circulation evaluation and treatment will come before airway (ie, CAB [circulation, airway, breathing])"
+  },
+  {
+   "id": "D3",
+   "texto": "No paciente que chega em extremis, a circulação tem precedência (CABDE).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "where circulation takes precedence (ie, CABDE)"
+  },
+  {
+   "id": "D4",
+   "texto": "No pré-hospitalar, a hemorragia externa maciça é tratada primeiro.",
+   "fonte_arquivo": "Mattox9_cap10_pre_hospitalar",
+   "trecho_literal": "In the event of external massive hemorrhage, bleeding should be addressed first."
+  },
+  {
+   "id": "D5",
+   "texto": "Embora ensinada passo a passo, boa parte da avaliação primária pode ser feita simultaneamente.",
+   "fonte_arquivo": "Mattox9_cap10_pre_hospitalar",
+   "trecho_literal": "many aspects of this evaluation can be done simultaneously"
+  },
+  {
+   "id": "D6",
+   "texto": "O sangramento externo ativo é tratado primeiro com compressão direta.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Treatment for active external bleeding identified through these exams should begin with direct pressure."
+  },
+  {
+   "id": "D7",
+   "texto": "No trauma de extremidade, o torniquete pode salvar a vida.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "For extremity trauma, placement of a tourniquet can be lifesaving."
+  },
+  {
+   "id": "D9",
+   "texto": "Nos pacientes de alto risco para sangramento pélvico, a cinta pélvica deve ser colocada imediatamente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a pelvic binder should be immediately placed in high-risk patients"
+  },
+  {
+   "id": "D10",
+   "texto": "O paciente que fala com voz normal não tem obstrução de via aérea.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a patient who is able to speak in his or her normal voice does not have airway obstruction"
+  },
+  {
+   "id": "D11",
+   "texto": "A via aérea deve ser assegurada no paciente com alteração importante do nível de consciência (Glasgow ≤8).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Airway stabilization should also be performed in the patient with a significant alteration in mental status (Glasgow Coma Scale [GCS] score ≤8)"
+  },
+  {
+   "id": "D14",
+   "texto": "O medidor automático de pressão pode errar no paciente em choque; se for medir, medir manualmente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "noninvasive blood pressure devices may be erroneous in patients in shock"
+  },
+  {
+   "id": "D15",
+   "texto": "Sem acesso venoso imediato, considerar o acesso intraósseo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "consideration should be made to perform intraosseous access"
+  },
+  {
+   "id": "D17",
+   "texto": "Agitação e agressividade também são sinais clássicos de choque classe III e IV.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "generalized agitation and combativeness are also classic symptoms of class III and IV shock"
+  },
+  {
+   "id": "D19",
+   "texto": "Terminado o exame, manter o paciente aquecido é prioridade: mantas aquecidas, manta de ar forçado e fluidos aquecidos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "warm blankets, forced hot air blankets, and warm intravenous fluids"
+  },
+  {
+   "id": "D20",
+   "texto": "A avaliação secundária é uma história e exame completos, cujo objetivo é identificar todas as demais lesões.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "whose aim is to identify all other injuries"
+  },
+  {
+   "id": "D21",
+   "texto": "A história segue o AMPLE (em português, AMPLA): alergias, medicações, doenças prévias, última refeição e eventos/mecanismo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "ATLS suggests using AMPLE (allergies, medications, past illnesses, last meal, events/environment/mechanism)"
+  },
+  {
+   "id": "D22",
+   "texto": "No centro de trauma, o líder da equipe deve ser o cirurgião do trauma.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "In a trauma center, this should be the trauma surgeon."
+  },
+  {
+   "id": "D23",
+   "texto": "A passagem do pré-hospitalar segue um formato estruturado, como o MIST: mecanismo, lesões suspeitas, sinais vitais e sintomas, tratamentos.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "MIST (mechanism, injuries suspected, vital signs and symptoms, treatments)"
+  },
+  {
+   "id": "D24",
+   "texto": "A passagem do pré-hospitalar não deve durar mais que 45 segundos a 1 minuto.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the prehospital report should not take more than 45 seconds to 1 minute"
+  },
+  {
+   "id": "D27",
+   "texto": "A mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40%.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the mortality rate of patients presenting with a systolic blood pressure of less than 90 mm Hg who require an emergent laparotomy is greater than 40%"
+  },
+  {
+   "id": "D29",
+   "texto": "Treinandos podem liderar a equipe sob supervisão próxima do assistente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "opportunities should be made for them to be team leader under the close supervision of the attending"
+  },
+  {
+   "id": "D30",
+   "texto": "No paciente de UTI, a avaliação terciária e a revisão cuidadosa das imagens reduzem o risco de lesão não identificada.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Trauma patients in the ICU should undergo a tertiary survey and careful review of imaging results to reduce the risk of missed injury."
+  },
+  {
+   "id": "D31",
+   "texto": "A avaliação terciária deve ser feita depois de completadas a ressuscitação inicial e as intervenções cirúrgicas.",
+   "fonte_arquivo": "Mattox9_cap44_membro_inferior",
+   "trecho_literal": "A “tertiary survey” should be completed after the initial resuscitation and operative interventions are complete"
+  }
+ ]
+}

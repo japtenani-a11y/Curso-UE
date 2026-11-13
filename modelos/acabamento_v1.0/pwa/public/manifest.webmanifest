@@ -1,0 +1,10 @@
+{
+  "name": "Cirurgia de Urgência e Trauma · HCFMRP",
+  "short_name": "Trauma HCFMRP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f4",
+  "theme_color": "#1f4e79",
+  "lang": "pt-BR",
+  "icons": [{ "src": "/icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

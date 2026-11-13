@@ -1,0 +1,76 @@
+{
+ "tema": "T001",
+ "tipo": "checklist",
+ "titulo": "Checklist de procedimento",
+ "status": "rascunho",
+ "gerado_por": "Claude (geracao manual fora do executor), 2026-11-12",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.\n\n# T001 — Checklist da sala de trauma (PROPOSTA para validação)\n\n**Antes da chegada**\n- [ ] Líder definido e papéis distribuídos [A21]\n- [ ] Sala aquecida; manta/fluido aquecido disponíveis [A36]\n- [ ] Formulário de admissão do trauma em mãos [A13]\n\n**Avaliação primária**\n- [ ] x — Hemorragia externa controlada; horário do torniquete registrado [A24]\n- [ ] A — Via aérea avaliada e registrada [A14]\n- [ ] B — SpO2 medida; O2 conforme SpO2 [A27]\n- [ ] B — eFAST realizado; se negativo com suspeita clínica, investigação mantida [A30]\n- [ ] C — Sinais vitais + avaliação por ultrassom (FAST/RUSH); pelve avaliada [A34, A35]\n- [ ] D — Avaliação neurológica registrada **[DOUTRINA – confirmar na camada 2]**\n- [ ] E — Exposição completa; temperatura medida; aquecimento iniciado [A36]\n\n**Antes de sair da sala**\n- [ ] Indicação de TC discutida pela equipe [A12]\n- [ ] Pendências comunicadas em voz alta\n\n**Em até 24 h** (prazo: **[DOUTRINA – confirmar na camada 2]**)\n- [ ] Avaliação terciária realizada e registrada [A42]\n",
+ "afirmacoes": [
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A27",
+   "texto": "Em pesquisa com respondentes, 73 % (IC 95% 70 a 76 %) não apoiaram oxigênio suplementar sempre para todo traumatizado grave sem considerar a SpO2.",
+   "fonte_arquivo": "2025_12",
+   "trecho_literal": "A majority of respondents (73 % [95 % CI: 70 to 76 %]) did not support that supplemental oxygen should always be provided to all severely injured trauma patients"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  }
+ ]
+}

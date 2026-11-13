@@ -1,0 +1,136 @@
+{
+ "tema": "T001",
+ "tipo": "caso",
+ "titulo": "Caso clínico",
+ "status": "rascunho",
+ "gerado_por": "Claude (geracao manual fora do executor), 2026-11-12; caso reescrito em Situacao/Discussao",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.\n\n# T001 — Caso clínico (fictício, para discussão em pequenos grupos)\n\nHomem, 34 anos, colisão moto × automóvel. Chega pelo pré-hospitalar com torniquete em coxa esquerda, aplicado por ferimento com sangramento volumoso. Está agitado, FC 128, PA 92/58, SpO2 91% em ar ambiente, temperatura 34,9 °C. *(Dados inventados; nenhum paciente real.)*\n\n**Ponto de decisão 1 — Por onde começar?**\nSituação: O paciente acaba de entrar na sala de trauma. O curativo sob o torniquete está encharcado de sangue.\nDiscussão: Sequência xABCDE, com reavaliação do controle da hemorragia externa primeiro **[DOUTRINA – confirmar na camada 2]**. Evidência para debate: torniquete com redução de mortalidade não significativa (RR 0,70) [A23] e mais amputações iniciais (RR 2,07) [A24] — o que isso significa (confusão por gravidade? tempo de torniquete?). Se a equipe optar por curativo compressivo: a pressão real é muito variável e a autoavaliação de quem aplica não é confiável [A25, A26].\n\n**Ponto de decisão 2 — Oxigênio e tórax**\nSituação: Hemorragia externa controlada. SpO2 mantém 91% em ar ambiente. O eFAST não mostra sinais de pneumotórax.\nDiscussão: Com SpO2 91% há indicação de oxigênio guiada pela saturação — diferente do uso indiscriminado, que 73 % dos profissionais não apoiam [A27]. O eFAST negativo não encerra a investigação: os estudos têm resultados conflitantes de sensibilidade [A29, A30].\n\n**Ponto de decisão 3 — Está \"estável\"?**\nSituação: Após as primeiras medidas: FC 118, PA 98/60. Um colega diz que o paciente \"estabilizou\".\nDiscussão: O grupo deve definir o que chama de estabilidade e perceber que a literatura não tem consenso [A33] e que a classificação clássica de choque tem limitações [A32]. Ferramentas à beira-leito: RUSH [A34]; FAST-PLUS para alargamento pélvico [A35].\n\n**Ponto de decisão 4 — Temperatura**\nSituação: A temperatura medida na admissão foi 34,9 °C. O paciente está descoberto para o exame.\nDiscussão: Hipotermia é frequente e subvalorizada [A36]; não há protocolo baseado em evidência [A37]; fluido aquecido a 39 °C pode não chegar ao paciente acima de 37 °C [A38]. O que a equipe fará na prática?\n\n**Ponto de decisão 5 — TC de corpo inteiro?**\nSituação: O paciente respondeu à ressuscitação inicial. A tomografia está disponível e fica a poucos minutos da sala.\nDiscussão: O benefício da TC de corpo inteiro em mortalidade é incerto [A12]; em pacientes em choque, ela não aumentou a mortalidade precoce [A39]. A decisão depende da resposta à ressuscitação e da logística local **[definir no protocolo institucional]**.\n\n**Ponto de decisão 6 — No dia seguinte**\nSituação: A TC de corpo inteiro não mostrou outras lesões. No primeiro dia de internação, o paciente queixa-se de dor no punho direito.\nDiscussão: Lesões de diagnóstico tardio ocorreram em 13,9 % dos pacientes mesmo com TC de corpo inteiro [A42]. A avaliação terciária é obrigatória — e nem ela é infalível: lesão potencialmente letal apareceu depois dela em 0,26% dos graves [A41].\n\n**Perguntas de fechamento**\n(1) Qual ferramenta estruturada teria ajudado a equipe? [A8, A13] (2) Quem liderou o atendimento e como isso afeta o risco de lesões não identificadas? [A21]\n",
+ "afirmacoes": [
+  {
+   "id": "A8",
+   "texto": "O uso de checklist pode melhorar a adesão ao ATLS e o fluxo de trabalho durante a ressuscitação do trauma.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "The application of a checklist may improve ATLS adherence and workflow during trauma resuscitation."
+  },
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A23",
+   "texto": "Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A25",
+   "texto": "Nos conjuntos de dados válidos, a pressão máxima média dos curativos compressivos foi 169,35 ± 84,33 mmHg (variação de 50–412 mmHg).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "Mean maximum pressure was 169.35 ± 84.33 mmHg (range 50–412 mmHg)"
+  },
+  {
+   "id": "A26",
+   "texto": "Não houve correlação entre a autoavaliação subjetiva e a pressão objetiva medida (p = 0,541).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "No correlation was found between subjective self-assessment and objective pressure measurements (p = 0.541)"
+  },
+  {
+   "id": "A27",
+   "texto": "Em pesquisa com respondentes, 73 % (IC 95% 70 a 76 %) não apoiaram oxigênio suplementar sempre para todo traumatizado grave sem considerar a SpO2.",
+   "fonte_arquivo": "2025_12",
+   "trecho_literal": "A majority of respondents (73 % [95 % CI: 70 to 76 %]) did not support that supplemental oxygen should always be provided to all severely injured trauma patients"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A37",
+   "texto": "Não há abordagem baseada em evidência para manejo da hipotermia no trauma, ao contrário da acidose e do sangramento.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "there is no evidence-based approach to managing hypothermia in trauma patients"
+  },
+  {
+   "id": "A38",
+   "texto": "Fluido pré-aquecido a 39 °C só permanece acima de 37 °C no paciente com alto fluxo e alta temperatura ambiente, em equipo não isolado de 175 cm.",
+   "fonte_arquivo": "2024_07",
+   "trecho_literal": "preheated to 39 °C is to remain above 37 °C when it reaches the patient using a 175-cm-long uninsulated infusion set"
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "A41",
+   "texto": "Apesar do algoritmo da sala de trauma, lesão potencialmente letal surgiu depois da avaliação terciária em 0,26% dos pacientes graves.",
+   "fonte_arquivo": "2022_17",
+   "trecho_literal": "In seven patients (0.26%; mean age 50.4 years, range 18–90; mean ISS 39.7, range 34–50), a life-threatening injury occurred in the further course"
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  }
+ ]
+}

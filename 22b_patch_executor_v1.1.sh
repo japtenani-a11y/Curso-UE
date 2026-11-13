@@ -113,8 +113,8 @@ export async function ciclo(): Promise<void> {
 
       await pool.query(
         `UPDATE maestro.job
-            SET estado = $2,
-                concluido_em = CASE WHEN $2 = 'falhou' THEN now() ELSE NULL END
+            SET estado = $2::app.status_job,
+                concluido_em = CASE WHEN $2::text = 'falhou' THEN now() ELSE NULL END
           WHERE job_id = $1`,
         [job.job_id, novoEstado],
       );

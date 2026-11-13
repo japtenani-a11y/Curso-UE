@@ -1,0 +1,33 @@
+arquivo,pmid,doi,tipo_no_pubmed,retratado,observacao
+2016_01,27095272,10.1186/s13054-016-1271-z,Revisão,não,
+2017_15,27900417,10.1007/s00068-016-0744-8,Revisão sistemática,não,
+2017_75,28513531,10.5249/jivr.v9i2.874,Revisão sistemática e meta-análise,não,3 coortes retrospectivas; autores concluem evidência insuficiente
+2018_03,29784591,10.1016/j.cjtee.2017.06.009,Estudo transversal prospectivo,não,DOI ausente no catálogo; 100 pacientes de um centro no Egito
+2018_23,28661260,10.1177/0300060517717401,Artigo original,não,
+2018_55,29879979,10.1186/s12909-018-1243-x,Estudo de avaliação,não,
+2019_31,31420058,10.1186/s13049-019-0657-8,Observacional multicêntrico,não,
+2019_35,31686355,10.1007/s40477-019-00410-4,Artigo original,não,
+2020_18,31788784,10.1111/anae.14895,Coorte retrospectiva multicêntrica,não,PMID ausente no catálogo
+2020_27,31392359,10.1007/s00068-019-01181-7,Revisão sistemática,não,
+2020_40,32931975,10.1016/j.ijsu.2020.08.050,Estudo qualitativo,não,DOI ausente no catálogo
+2020_70,38272956,10.1038/s41598-024-52657-5,Observacional,não,publicado em 2024 (arquivo nomeado 2020)
+2021_19,32519303,10.1007/s40477-020-00483-6,Artigo original,não,
+2022_17,34327544,10.1007/s00068-021-01754-5,Artigo original,não,
+2022_65,36171543,10.1186/s12873-022-00724-3,Artigo original,não,
+2023_60,37612450,10.1093/bjs/znad253,Ensaio randomizado (stepped-wedge por conglomerados),não,CORRIGIDO: o material descrevia como antes-e-depois; hospitais não terciários de Gana
+2023_62,36600301,10.1186/s13017-022-00472-6,Revisão de revisões,não,
+2024_07,38609897,10.1186/s12873-024-00969-0,Artigo original,não,
+2024_11,38261076,10.1007/s00068-023-02437-z,Observacional de validação,não,
+2024_16,38171970,10.1016/j.injury.2023.111304,Coorte retrospectiva,não,DOI ausente no catálogo; centro nível 1 holandês
+2024_43,39859075,10.3390/medicina61010093,Revisão sistemática e meta-análise,não,publicado em 2025 (arquivo nomeado 2024)
+2024_47,39304444,10.1016/j.surg.2024.08.013,Observacional prospectivo,não,DOI ausente no catálogo; só trauma torácico FECHADO (ISS médio 6)
+2024_48,38635088,10.1007/s00068-024-02511-0,Artigo original,não,
+2024_57,39456099,10.1186/s13049-024-01276-0,Artigo original (simulação),não,
+2024_64,38627690,10.1186/s12873-024-00977-0,Observacional,não,
+2025_12,39379198,10.1016/j.injury.2024.111929,Pesquisa transversal,não,DOI ausente no catálogo; respondentes majoritariamente da Dinamarca
+2025_36,41371733,10.1136/bmjopen-2025-099020,Ensaio piloto randomizado por conglomerados,não,DOI do catálogo estava incompleto
+2026_10,41925867,10.1007/s00068-026-03161-0,Ensaio randomizado multicêntrico,não,
+2026_24,41559794,10.1186/s13049-026-01549-w,Revisão sistemática e meta-análise,não,
+2026_26,41630085,10.1186/s13063-026-09491-z,Protocolo de ensaio,não,
+2026_42,42269563,10.1016/j.injury.2026.113433,Revisão de escopo,não,DOI ausente no catálogo
+2026_71,42295369,10.1007/s00068-026-03247-9,Observacional (simulação),não,

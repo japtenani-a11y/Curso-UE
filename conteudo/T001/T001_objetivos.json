@@ -1,0 +1,160 @@
+{
+ "tema": "T001",
+ "tipo": "objetivos",
+ "titulo": "Objetivos de aprendizagem",
+ "status": "rascunho",
+ "gerado_por": "Claude (geracao manual fora do executor), 2026-11-12",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.\n\n# T001 — Objetivos de aprendizagem\n\nAo final do tema, o residente será capaz de:\n\n1. **Descrever** (lembrar/compreender) a sequência xABCDE e justificar a prioridade do controle da hemorragia exsanguinante. **[DOUTRINA – confirmar na camada 2]**\n2. **Interpretar** (analisar) a força da evidência dos programas de suporte de vida no trauma: associação com menor mortalidade (OR 0,60) em estudos observacionais [A2] e ausência de evidência de alta qualidade [A4].\n3. **Aplicar** ferramentas estruturadas (checklist, formulário de admissão) na avaliação primária, reconhecendo ganhos de processo [A8, A13, A14] e limites da evidência [A7, A10].\n4. **Avaliar** criticamente os instrumentos de avaliação da circulação: limites da classificação clássica de choque [A32], heterogeneidade do conceito de estabilidade hemodinâmica [A33] e papel do ultrassom (RUSH, FAST-PLUS) [A34, A35].\n5. **Julgar** a acurácia do ultrassom torácico para pneumotórax diante de resultados conflitantes [A29, A30].\n6. **Decidir** sobre intervenções de controle de hemorragia externa conhecendo o balanço benefício/risco do torniquete [A23, A24] e a variabilidade do curativo compressivo [A25, A26].\n7. **Reconhecer** a hipotermia como problema frequente e subvalorizado [A36, A37] e planejar medidas de prevenção.\n8. **Planejar** reavaliações seriadas (avaliação terciária), sabendo que lesões com diagnóstico tardio ocorrem mesmo com TC de corpo inteiro [A41, A42].\n9. **Atuar** em equipe com liderança definida e treinamento por simulação [A17, A18, A19, A21].\n\n| Objetivo | Nível (Bloom) | Avaliado em |\n|---|---|---|\n| 1 | Compreender | itens 1; flashcards |\n| 2 | Analisar | itens 2; simulado |\n| 3 | Aplicar | itens 3, 4; checklist |\n| 4 | Avaliar | itens 5; caso |\n| 5 | Avaliar | item 6; caso |\n| 6 | Avaliar | item 7; caso |\n| 7 | Compreender | item 8; flashcards |\n| 8 | Aplicar | simulado; caso |\n| 9 | Aplicar | simulado; aula síncrona |\n",
+ "afirmacoes": [
+  {
+   "id": "A2",
+   "texto": "Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)"
+  },
+  {
+   "id": "A4",
+   "texto": "Os autores afirmam que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes, motivando um novo ensaio pragmático.",
+   "fonte_arquivo": "2026_26",
+   "trecho_literal": "there is no high-quality evidence that it can improve patient outcomes"
+  },
+  {
+   "id": "A7",
+   "texto": "A revisão sistemática sobre checklist na ressuscitação identificou 625 artigos e incluiu apenas estudos do tipo antes-e-depois.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "Three of the 625 identified articles were included, which all used a before-and-after study design"
+  },
+  {
+   "id": "A8",
+   "texto": "O uso de checklist pode melhorar a adesão ao ATLS e o fluxo de trabalho durante a ressuscitação do trauma.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "The application of a checklist may improve ATLS adherence and workflow during trauma resuscitation."
+  },
+  {
+   "id": "A10",
+   "texto": "Um estudo mostrou maior incidência de pneumonia no grupo com checklist (aOR 1,69; IC 95% 1,03–2,80).",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "the incidence of pneumonia was higher in the group where a checklist was applied [adjusted odds ratio (aOR) 1.69, 95% Confidence Interval (CI 1.03–2.80)]"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A17",
+   "texto": "O treinamento de equipe por simulação pode reduzir o tempo até exames de sangue, tomografia e hemostasia.",
+   "fonte_arquivo": "2018_23",
+   "trecho_literal": "Simulation team training could help reduce time to blood routine reports, scans and hemostasis."
+  },
+  {
+   "id": "A18",
+   "texto": "Treinamento mensal em equipe, in situ, com debriefing em vídeo reduziu significativamente o tempo de ressuscitação na sala de emergência.",
+   "fonte_arquivo": "2018_55",
+   "trecho_literal": "Monthly video assisted team based in situ training with video debriefing significantly reduces resuscitation time in the emergency bay."
+  },
+  {
+   "id": "A19",
+   "texto": "Com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor (p = 0,03).",
+   "fonte_arquivo": "2022_65",
+   "trecho_literal": "the mean total resuscitation time was 259 seconds shorter (p = 0.03)"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A23",
+   "texto": "Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A25",
+   "texto": "Nos conjuntos de dados válidos, a pressão máxima média dos curativos compressivos foi 169,35 ± 84,33 mmHg (variação de 50–412 mmHg).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "Mean maximum pressure was 169.35 ± 84.33 mmHg (range 50–412 mmHg)"
+  },
+  {
+   "id": "A26",
+   "texto": "Não houve correlação entre a autoavaliação subjetiva e a pressão objetiva medida (p = 0,541).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "No correlation was found between subjective self-assessment and objective pressure measurements (p = 0.541)"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A37",
+   "texto": "Não há abordagem baseada em evidência para manejo da hipotermia no trauma, ao contrário da acidose e do sangramento.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "there is no evidence-based approach to managing hypothermia in trauma patients"
+  },
+  {
+   "id": "A41",
+   "texto": "Apesar do algoritmo da sala de trauma, lesão potencialmente letal surgiu depois da avaliação terciária em 0,26% dos pacientes graves.",
+   "fonte_arquivo": "2022_17",
+   "trecho_literal": "In seven patients (0.26%; mean age 50.4 years, range 18–90; mean ISS 39.7, range 34–50), a life-threatening injury occurred in the further course"
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  }
+ ]
+}

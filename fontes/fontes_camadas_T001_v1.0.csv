@@ -1,0 +1,5 @@
+codigo,camada,fonte_arquivo,referencia,link,acesso
+H1-H6,1,Carmont2005_historia_ATLS,"Carmont MR. The Advanced Trauma Life Support course: a history of its development and review of related literature. Postgrad Med J 2005;81:87-91",https://doi.org/10.1136/pgmj.2004.021543,acesso aberto (PMC1743195)
+D44,2,ACS_ATLS11_anuncio_2025,"American College of Surgeons. Trauma Care Gets Major Upgrade with Launch of ATLS 11. ACS Brief, 16/09/2025",https://www.facs.org/for-medical-professionals/news-publications/news-and-articles/acs-brief/september-16-2025-issue/trauma-care-gets-major-upgrade-with-launch-of-atls-11/,texto publico do ACS; o manual ATLS 11 nao e carregado (licenca)
+P1-P15,3,HCFMRP_protocolo_imagem_politrauma_v2026-08,"Protocolo de Imagem no Politrauma da UE-HCFMRP-USP, versao preliminar, agosto/2026",(documento interno),so trechos curtos no repositorio
+G1-G13,5,Diretriz_europeia_sangramento_2023,"Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care 2023;27:80",https://doi.org/10.1186/s13054-023-04327-7,acesso aberto
