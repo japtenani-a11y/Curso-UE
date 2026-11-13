@@ -387,6 +387,14 @@ BEGIN
   RETURN v;
 END $$;
 
+-- Textos vigentes para as paginas publicas (/privacidade, /termos, /pesquisa), sem login.
+CREATE OR REPLACE FUNCTION app.termos_publicos()
+RETURNS TABLE (codigo TEXT, versao TEXT, titulo TEXT, resumo TEXT, texto TEXT, obrigatorio BOOLEAN, desde TIMESTAMPTZ)
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
+  SELECT t.codigo, t.versao, t.titulo, t.resumo, t.texto, t.obrigatorio, t.criado_em FROM app.termo t WHERE t.vigente
+   ORDER BY array_position(ARRAY['uso','privacidade','pesquisa','divulgacao'], t.codigo) $$;
+GRANT EXECUTE ON FUNCTION app.termos_publicos() TO api_rw;
+
 REVOKE EXECUTE ON FUNCTION app.aceite_vigente(BIGINT, TEXT), app.minha_ficha(), app.salvar_ficha(JSONB, INET, TEXT),
   app.atualizar_posicao(BIGINT), app.inscricoes(TEXT), app.decidir_inscricao(BIGINT, BOOLEAN, TEXT), app.cadastro_ok() FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION app.minha_ficha(), app.salvar_ficha(JSONB, INET, TEXT), app.inscricoes(TEXT),

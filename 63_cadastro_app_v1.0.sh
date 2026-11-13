@@ -8,6 +8,8 @@
 #    e copia para baixar, aceite obrigatorio (uso/seguranca e privacidade) e opcional (pesquisa e divulgacao),
 #    e pedidos LGPD (copia, correcao, exclusao).
 #  - Aluno sem inscricao aprovada nao abre material, testes, temas nem avaliacoes (tela e API).
+#  - Paginas publicas (sem login): /sobre (pagina inicial), /privacidade, /termos e /pesquisa (TCLE),
+#    para o cadastro do aplicativo no Google; "/" sem login mostra a pagina inicial.
 #  - Tela /curador/inscricoes: aprovar, recusar (com motivo) ou suspender; e-mail ao aluno.
 # USO: bash 63_cadastro_app_v1.0.sh ./programa-cut
 # PRE-REQUISITO: 61 (script) e, no banco, 62_cadastro_aluno_v1.0.sql. Pode ser rodado mais de uma vez.
@@ -19,9 +21,9 @@ M="$AQUI/modelos/cadastro_v1.0"
 API="$RAIZ/api/src"; PWA="$RAIZ/pwa/src"
 [ -f "$API/routes/jornada.ts" ] || { echo "ERRO: rode antes o 61_jornada_app_v1.0.sh"; exit 1; }
 
-cp "$M/api/src/routes/cadastro.ts" "$M/api/src/routes/inscricoes.ts" "$API/routes/"
+cp "$M/api/src/routes/cadastro.ts" "$M/api/src/routes/inscricoes.ts" "$M/api/src/routes/publico.ts" "$API/routes/"
 cp "$M/api/src/middleware/cadastro.ts" "$API/middleware/cadastro.ts"
-cp "$M/pwa/src/pages/Cadastro.tsx" "$PWA/pages/Cadastro.tsx"
+cp "$M/pwa/src/pages/Cadastro.tsx" "$M/pwa/src/pages/Publico.tsx" "$PWA/pages/"
 cp "$M/pwa/src/pages/curador/Inscricoes.tsx" "$PWA/pages/curador/Inscricoes.tsx"
 cp "$M/pwa/src/components/GuardaCadastro.tsx" "$PWA/components/GuardaCadastro.tsx"
 cp "$M/pwa/src/lib/instituicoes.ts" "$PWA/lib/instituicoes.ts"
@@ -49,6 +51,11 @@ for r, de, para in [
     ("jornada", "app.use('/jornada', limite('jornada', 240, 60_000), jornadaRouter);", "app.use('/jornada', limite('jornada', 240, 60_000), exigirCadastro, jornadaRouter);")]:
     trocar(m, de, para, para)
 
+trocar(m, "import { exigirCadastro } from './middleware/cadastro.js';",
+       "import { exigirCadastro } from './middleware/cadastro.js';\nimport { publicoRouter } from './routes/publico.js';", "publicoRouter }")
+trocar(m, "app.use('/cadastro', limite('cadastro', 60, 60_000), cadastroRouter);",
+       "app.use('/cadastro', limite('cadastro', 60, 60_000), cadastroRouter);\napp.use('/publico', limite('publico', 120, 60_000), publicoRouter);", "app.use('/publico'")
+
 # Login com Google: e-mail novo vira inscricao
 p = f"{api}/routes/auth.ts"
 trocar(p, "'SELECT app.fn_sessao_google($1, $2::inet, $3) AS token',\n        [dados.email, req.ip ?? null, req.get('user-agent') ?? ''],",
@@ -60,6 +67,19 @@ trocar(a, "import { Painel } from './pages/painel/Painel.js';",
        "import { Painel } from './pages/painel/Painel.js';\nimport { Cadastro } from './pages/Cadastro.js';\nimport { CuradorInscricoes } from './pages/curador/Inscricoes.js';", "pages/Cadastro.js")
 trocar(a, '<Route path="/aluno/tema/*"',
        '<Route path="/cadastro" element={<Layout proteger={false} semGuarda><Cadastro /></Layout>} />\n        <Route path="/curador/inscricoes" element={<Layout papeis={REVISORES} proteger={false}><CuradorInscricoes /></Layout>} />\n        <Route path="/aluno/tema/*"', 'path="/cadastro"')
+trocar(a, "import { Cadastro } from './pages/Cadastro.js';",
+       "import { Cadastro } from './pages/Cadastro.js';\nimport { PaginaInicial, PaginaTermo } from './pages/Publico.js';", "PaginaInicial, PaginaTermo }")
+trocar(a, '<Route path="/cadastro"',
+       '<Route path="/sobre" element={<PaginaInicial />} />\n        <Route path="/privacidade" element={<PaginaTermo codigo="privacidade" />} />\n        <Route path="/termos" element={<PaginaTermo codigo="uso" />} />\n        <Route path="/pesquisa-tcle" element={<PaginaTermo codigo="pesquisa" />} />\n        <Route path="/cadastro"', 'path="/sobre"')
+# "/" sem login: pagina inicial publica
+i = f"{pwa}/pages/Inicio.tsx"
+trocar(i, "import { inicioDoPapel, useSessao } from '../lib/sessao.js';",
+       "import { inicioDoPapel, useSessao } from '../lib/sessao.js';\nimport { PaginaInicial } from './Publico.js';", "PaginaInicial }")
+trocar(i, "  if (!sessao) return <Navigate to=\"/login\" replace />;", "  if (!sessao) return <PaginaInicial />;", "return <PaginaInicial />")
+# Login: links publicos
+g = f"{pwa}/pages/Login.tsx"
+trocar(g, "O acesso é pessoal e intransferível.</p>",
+       "O acesso é pessoal e intransferível.</p>\n        <p style={{ fontSize: '.8rem' }}><a href=\"/sobre\">O programa</a> · <a href=\"/privacidade\">Política de privacidade</a> · <a href=\"/termos\">Termos de uso</a></p>", 'href=\"/privacidade\"')
 l = f"{pwa}/components/Layout.tsx"
 trocar(l, "import { Protecao } from './Protecao.js';", "import { Protecao } from './Protecao.js';\nimport { GuardaCadastro } from './GuardaCadastro.js';", "GuardaCadastro }")
 trocar(l, "export function Layout(props: { children: ReactNode; papeis?: string[]; proteger?: boolean }) {",
