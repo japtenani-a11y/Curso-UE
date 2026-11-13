@@ -6,7 +6,8 @@ const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 export interface Pergunta { ordem: number; texto: string; tipo: 'texto' | 'unica' | 'multipla' | 'escala'; opcoes: string[] | null; obrigatoria: boolean }
 export interface ItemMural { id: number; tipo: 'aviso' | 'questionario' | 'documento'; titulo: string; corpo: string | null; fixado: boolean; publico: string;
   publicado_em: string; expira_em: string | null; arquivo_nome: string | null; lido: boolean; respondido: boolean;
-  minhas_respostas: Record<string, unknown> | null; n_respostas: number | null; perguntas: Pergunta[] | null }
+  minhas_respostas: Record<string, unknown> | null; n_respostas: number | null; perguntas: Pergunta[] | null;
+  categoria?: string | null; tema?: string | null }
 
 export function Questionario(props: { item: ItemMural; aoEnviar: () => void }) {
   const [r, setR] = useState<Record<string, unknown>>(props.item.minhas_respostas ?? {});
@@ -45,6 +46,29 @@ export function Questionario(props: { item: ItemMural; aoEnviar: () => void }) {
 }
 
 // Mural do aluno: avisos, questionarios e documentos da coordenacao.
+// Espaco fixo do mural: temas que acabaram de ser publicados no site.
+function TemasNovos({ itens }: { itens: ItemMural[] }) {
+  const [todos, setTodos] = useState(false);
+  const lista = todos ? itens : itens.slice(0, 6);
+  return (
+    <article className="cartao-app temas-novos" aria-labelledby="temas-novos-t">
+      <span className="rotulo">Espaço fixo</span>
+      <h2 id="temas-novos-t">Temas novos no site</h2>
+      {itens.length === 0 ? <p>Nenhum tema publicado ainda. Abra um tema em produção e clique em <strong>Avise-me</strong> para receber o aviso.</p> : (
+        <ul className="lista-curta">
+          {lista.map((i) => (
+            <li key={i.id} className={!i.lido ? 'novo' : ''}>
+              <a href={`/aluno/tema/${(i.tema ?? '').replace('-', '')}`}>{i.titulo.replace(/^Tema novo no site:\s*/, '')}</a>
+              <small> · {new Date(i.publicado_em).toLocaleDateString('pt-BR')}{!i.lido ? ' · novo' : ''}</small>
+            </li>
+          ))}
+        </ul>
+      )}
+      {itens.length > 6 && <button type="button" className="link" onClick={() => setTodos(!todos)}>{todos ? 'Mostrar menos' : `Ver todos (${itens.length})`}</button>}
+    </article>
+  );
+}
+
 export function Mural() {
   const [itens, setItens] = useState<ItemMural[] | null>(null);
   const carregar = () => apiGet<{ itens: ItemMural[] }>('/com/mural').then((d) => setItens(d.itens)).catch(() => setItens([]));
@@ -55,8 +79,9 @@ export function Mural() {
     <section>
       <h1>Mural</h1>
       <p>Avisos, questionários e documentos da coordenação.</p>
+      <TemasNovos itens={itens.filter((i) => i.categoria === 'novo_tema')} />
       {itens.length === 0 && <p>Nada publicado ainda.</p>}
-      {itens.map((i) => (
+      {itens.filter((i) => i.categoria !== 'novo_tema').map((i) => (
         <article key={i.id} className={`cartao-app mural-item${!i.lido ? ' novo' : ''}`}>
           <span className="rotulo">{i.fixado ? 'Fixado · ' : ''}{i.tipo === 'aviso' ? 'Aviso' : i.tipo === 'questionario' ? 'Questionário' : 'Documento'} · {new Date(i.publicado_em).toLocaleDateString('pt-BR')}
             {i.expira_em ? ` · até ${new Date(i.expira_em).toLocaleDateString('pt-BR')}` : ''}{i.tipo === 'questionario' && i.respondido ? ' · respondido' : ''}</span>

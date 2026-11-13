@@ -161,7 +161,7 @@ trocar(p, "          <button type=\"button\" className=\"sec\" onClick={() => se
 # Inicio do aluno: atalho para o desempenho. O termo de consentimento da pesquisa (TCLE) fica para
 # quando o projeto for ao CEP; por ora o banco so coleta os dados (notas, avaliacoes, uso, mensagens).
 p = f"{pwa}/pages/aluno/Home.tsx"
-trocar(p, "            <h3>Lembretes</h3>",
+if "inicio-aluno" not in open(p).read(): trocar(p, "            <h3>Lembretes</h3>",
        "            <h3>Desempenho e ranking</h3>\n            <p>Suas notas e sua posição entre todos, na sua especialidade, no seu ano e no seu subgrupo.</p>\n            <a className=\"botao discreto\" href=\"/aluno/desempenho\">Ver desempenho</a>\n          </article>\n          <article className=\"cartao-app\">\n            <h3>Lembretes</h3>", "Ver desempenho")
 PY
 echo "atualizados: main.ts (/eng, /curadoria), revisao.ts (publicar), teste.ts (ondas pessoais), App, Layout, Revisao, Leitura, Testes, Home"

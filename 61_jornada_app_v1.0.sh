@@ -24,8 +24,20 @@ cp "$M/api/src/routes/jornada.ts" "$M/api/src/routes/painel.ts" "$API/routes/"
 mkdir -p "$PWA/pages/painel"
 cp "$M/pwa/src/pages/aluno/Tema.tsx" "$M/pwa/src/pages/aluno/Calendario.tsx" "$M/pwa/src/pages/aluno/Pendencias.tsx" "$M/pwa/src/pages/aluno/Home.tsx" "$PWA/pages/aluno/"
 cp "$M/pwa/src/pages/painel/Painel.tsx" "$PWA/pages/painel/"
-cp "$M/pwa/src/components/Comparativo.tsx" "$M/pwa/src/components/Contagem.tsx" "$PWA/components/"
-grep -q "jornada (modulos, tema" "$PWA/estilo.css" || cat "$M/estilo_jornada.css" >> "$PWA/estilo.css"
+cp "$M/pwa/src/components/Comparativo.tsx" "$M/pwa/src/components/Contagem.tsx" "$M/pwa/src/components/EmProducao.tsx" "$PWA/components/"
+python3 - "$PWA/estilo.css" "$M/estilo_jornada.css" "jornada (modulos, tema" <<'PY'
+# troca o bloco de estilo desta parte pela versao nova (em vez de so acrescentar uma vez)
+import sys
+css, novo, marca = sys.argv[1], open(sys.argv[2]).read(), sys.argv[3]
+s = open(css).read()
+i = s.find("/* ---------- " + marca)
+if i < 0:
+    s = s.rstrip("\n") + "\n" + novo
+else:
+    j = s.find("/* ---------- ", i + 10)
+    s = s[:i].rstrip("\n") + "\n" + novo.lstrip("\n").rstrip("\n") + "\n" + ("\n" + s[j:] if j >= 0 else "")
+open(css, "w").write(s)
+PY
 echo "copiados: routes/jornada.ts, routes/painel.ts, Tema, Calendario, Pendencias, Home (aluno), Painel"
 
 python3 - "$API" "$PWA" <<'PY'
@@ -60,8 +72,9 @@ trocar(a, '<Route path="/aluno/temas"',
 
 # PWA: navegacao
 l = f"{pwa}/components/Layout.tsx"; s = open(l).read()
+novo_layout = "icone: string; barra?: boolean" in s   # Layout do 67 ja tem todos os menus
 ini = s.find("  return [\n    { href: '/aluno', rotulo: 'Início' },")
-if "'/aluno/pendencias'" not in s:
+if not novo_layout and "'/aluno/pendencias'" not in s:
     if ini < 0: sys.exit("ERRO: nao encontrei o menu do aluno em Layout.tsx")
     fim = s.index("  ];\n}", ini)
     s = s[:ini] + """  return [
@@ -77,7 +90,7 @@ s = s.replace("      { href: '/curador', rotulo: 'Painel' },\n", "      { href: 
 s = s.replace("if (papel === 'pesquisador') return [{ href: '/pesquisa', rotulo: 'Pesquisa' }];",
               "if (papel === 'pesquisador') return [{ href: '/painel', rotulo: 'Dados e gráficos' }, { href: '/pesquisa', rotulo: 'Pesquisa' }];", 1)
 open(l, "w").write(s)
-for x in ("'/aluno/pendencias'", "href: '/painel', rotulo: 'Dados e gráficos' },\n      { href: '/curador'"):
+for x in (() if novo_layout else ("'/aluno/pendencias'", "href: '/painel', rotulo: 'Dados e gráficos' },\n      { href: '/curador'")):
     if x not in s: sys.exit(f"ERRO: nao consegui ajustar o menu ({x[:30]})")
 
 # Leitura: abrir direto na peca pedida (?peca=tipo)

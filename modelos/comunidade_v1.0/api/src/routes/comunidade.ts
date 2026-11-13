@@ -112,6 +112,9 @@ comunidadeRouter.get('/agenda/link', async (_req, res, next) => {
 comunidadeRouter.get('/coordenacao/resumo', requireRole(REVISORES), async (_req, res, next) => {
   try { res.json((await q<{ r: unknown }>('SELECT app.resumo_coordenacao() AS r'))[0]?.r ?? {}); } catch (e) { erro(e, res, next); }
 });
+comunidadeRouter.get('/producao/resumo', requireRole(REVISORES), async (_req, res, next) => {
+  try { res.json((await q<{ r: unknown }>('SELECT app.resumo_producao() AS r'))[0]?.r ?? {}); } catch (e) { erro(e, res, next); }
+});
 comunidadeRouter.get('/regras', requireRole(REVISORES), async (_req, res, next) => {
   try { res.json({ regras: (await q<{ r: unknown }>('SELECT app.regras_aprovacao() AS r'))[0]?.r ?? [] }); } catch (e) { erro(e, res, next); }
 });

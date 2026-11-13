@@ -8,7 +8,7 @@ import { ResgatarPresenca } from '../../components/ResgatarPresenca.js';
 interface Aula { data_hora: string; codigo: string; titulo: string; papel: string; proprio: boolean; testes_feitos: number; etapa: number }
 interface Pendencia { codigo: string; titulo: string; tipo: string; nome: string; prazo: string | null }
 interface Aprov { temas_concluidos: number; horas: number; presenca_pct: number | null }
-interface Mural { id: number; titulo: string; tipo: string; lido: boolean; respondido: boolean; fixado: boolean }
+interface Mural { id: number; titulo: string; tipo: string; lido: boolean; respondido: boolean; fixado: boolean; categoria?: string | null; tema?: string | null }
 
 const quando = (s: string) => new Date(s).toLocaleString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 
@@ -73,7 +73,7 @@ export function AlunoHome() {
         <article className="cartao-app">
           <span className="rotulo">Mural</span>
           <h2><a href="/aluno/mural">{naoLidos.length ? `${naoLidos.length} ${naoLidos.length === 1 ? 'novidade' : 'novidades'}` : 'Tudo lido'}</a></h2>
-          <ul className="lista-curta">{naoLidos.slice(0, 3).map((m) => <li key={m.id}><a href="/aluno/mural">{m.tipo === 'questionario' ? 'Questionário: ' : m.tipo === 'documento' ? 'Documento: ' : ''}{m.titulo}</a></li>)}</ul>
+          <ul className="lista-curta">{naoLidos.slice(0, 3).map((m) => <li key={m.id}><a href={m.categoria === 'novo_tema' && m.tema ? `/aluno/tema/${m.tema.replace('-', '')}` : '/aluno/mural'}>{m.tipo === 'questionario' ? 'Questionário: ' : m.tipo === 'documento' ? 'Documento: ' : ''}{m.titulo}</a></li>)}</ul>
         </article>
       </div>
 

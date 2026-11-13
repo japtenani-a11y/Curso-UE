@@ -66,7 +66,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
@@ -137,7 +137,7 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then
   if [ -f 56_engajamento_app_v1.0.sh ]; then
     NC=$(curl -s -b "$CA" "http://localhost:3000/eng/catalogo" | grep -o '"codigo"' | wc -l)
     RK=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/eng/ranking?filtro=subgrupo")
-    echo "      temas no catalogo do aluno: $NC (esperado 147) | ranking: $RK (esperado 200)"
+    echo "      temas no catalogo do aluno: $NC (esperado 150) | ranking: $RK (esperado 200)"
     DV=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/curadoria/duvidas")
     echo "      aluno abrindo as duvidas da curadoria: $DV (esperado 403)"
   fi
@@ -153,7 +153,7 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then
       if [ -f 67_comunidade_app_v1.0.sh ]; then
         AR=$(curl -s -b "$CA" "http://localhost:3000/jornada/arvore" | grep -o '"codigo"' | wc -l)
         MU=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/com/mural")
-        echo "      arvore de temas: $AR temas (esperado 147) | mural do aluno: $MU (esperado 200)"
+        echo "      arvore de temas: $AR temas (esperado 150) | mural do aluno: $MU (esperado 200)"
         if [ -f 69_estudo_app_v1.0.sh ]; then
           ES=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/estudo/opcoes")
           echo "      estudo dirigido do aluno: $ES (esperado 200)"

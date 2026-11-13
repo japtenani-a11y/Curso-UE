@@ -8,6 +8,7 @@ const dia = (s: string) => new Date(s).toLocaleDateString('pt-BR', { day: '2-dig
 const PAPEL: Record<string, string> = { nuclear: 'principal', complementar: 'recomendado', eletivo: 'opcional' };
 
 function situacao(t: Tema): string {
+  if (!t.tem_conteudo) return 'em produção';
   if (t.testes_feitos >= 6) return 'concluído';
   if (t.faltam && t.faltam.length) return `bloqueado · falta ${t.faltam.join(', ')}`;
   if (t.testes_feitos > 0) return `em andamento · ${t.testes_feitos}/6 testes`;
@@ -58,7 +59,7 @@ export function Temas() {
                         <span className="cod">{t.codigo}</span>
                         <span className="tit">{t.titulo}</span>
                         <span className={`selo ${t.papel}`}>{PAPEL[t.papel] ?? t.papel}</span>
-                        <span className="sit">{situacao(t)}</span>
+                        <span className={`sit${t.tem_conteudo ? '' : ' producao'}`}>{situacao(t)}</span>
                       </a>
                     </li>
                   ))}

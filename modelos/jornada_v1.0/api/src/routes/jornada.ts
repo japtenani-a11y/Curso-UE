@@ -53,3 +53,22 @@ jornadaRouter.get('/temas/:codigo/relacoes', async (req, res, next) => {
   try { res.json(await withMaestro(null, async (c) => (await c.query('SELECT app.relacoes_tema($1) AS r', [String(req.params.codigo).slice(0, 12)])).rows[0]?.r ?? { maes: [], filhos: [] })); }
   catch (err) { next(err); }
 });
+
+// Tema ainda sem material publicado: situacao e "Avise-me quando publicar".
+jornadaRouter.get('/temas/:codigo/producao', async (req, res, next) => {
+  try {
+    const r = await withMaestro(null, async (c) =>
+      (await c.query('SELECT app.situacao_producao($1) AS r', [String(req.params.codigo).slice(0, 12)])).rows[0]?.r ?? null);
+    if (!r) { res.status(404).json({ erro: 'tema_nao_encontrado' }); return; }
+    res.json(r);
+  } catch (err) { next(err); }
+});
+jornadaRouter.post('/temas/:codigo/avisar', async (req, res, next) => {
+  try {
+    await withMaestro(null, async (c) => c.query('SELECT app.avisar_tema($1, $2)', [String(req.params.codigo).slice(0, 12), (req.body as { ativo?: boolean })?.ativo !== false]));
+    res.json({ ok: true });
+  } catch (err) {
+    if (String((err as Error).message).includes('tema_nao_encontrado')) { res.status(404).json({ erro: 'tema_nao_encontrado' }); return; }
+    next(err);
+  }
+});

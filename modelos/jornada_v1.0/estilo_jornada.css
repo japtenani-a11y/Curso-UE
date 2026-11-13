@@ -79,3 +79,10 @@
 .cmp-msg.ok { color: var(--ok); }
 .tst .comparativo { font-family: var(--fonte); text-align: left; margin: 16px 0; }
 @media (max-width: 720px) { .cmp-linha { grid-template-columns: 1fr 70px; } .cmp-linha .cmp-nome { grid-column: 1 / -1; } }
+
+/* tema ainda sem material publicado */
+.em-producao { margin: 16px 0; padding: 28px 24px; border: 2px dashed #d6b35c; border-radius: 16px; background: #fffaf0; text-align: center; }
+.em-producao h2 { margin: 6px 0 10px; }
+.em-producao p { max-width: 640px; margin-left: auto; margin-right: auto; }
+.em-producao-icone { font-size: 2.4rem; }
+@media (prefers-color-scheme: dark) { .em-producao { background: #2a2414; border-color: #6b5a26; } }

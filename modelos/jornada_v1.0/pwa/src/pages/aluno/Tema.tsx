@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiGet, apiPost } from '../../lib/api.js';
 import { Avaliacao } from '../../components/Engajamento.js';
 import { EvolucaoAluno } from '../../components/Comparativo.js';
+import { EmProducao } from '../../components/EmProducao.js';
 
 interface Teste { num: number; nome: string; abre: string | null; fecha: string | null; liberado: boolean; respondivel: boolean;
   feito: boolean; perdido: boolean; nota: number | null; avaliado: boolean }
@@ -79,10 +80,11 @@ export function Tema() {
           <a href="/aluno/arvore">Ver a árvore</a></small></p>
       )}
 
-      {!j.agendado && j.papel === 'nuclear' && (
+      {!temMaterial && <EmProducao codigo={j.codigo} titulo={j.titulo} maes={rel?.maes} />}
+      {temMaterial && !j.agendado && j.papel === 'nuclear' && (
         <p className="faixa-aviso">Este tema ainda não abriu. {j.d0 ? `A aula é em ${quando(j.d0)}; o pré-teste inicial abre 15 dias antes e você recebe um aviso.` : 'A data da aula ainda será definida.'}</p>
       )}
-      {j.pode_agendar && j.etapa !== 0 && (
+      {temMaterial && j.pode_agendar && j.etapa !== 0 && (
         <div className="cartao-app">
           <h3 style={{ marginTop: 0 }}>{j.agendado ? 'Mudar a minha data' : 'Agendar este tema'}</h3>
           <p>Escolha o dia e a hora em que você quer estudar a aula (D0). Todo o resto segue essa data:
@@ -94,7 +96,7 @@ export function Tema() {
         </div>
       )}
 
-      <ol className="fases">
+      {temMaterial && <ol className="fases">
         {FASES.map((f) => {
           const atual = j.agendado && j.etapa === f.etapa;
           const feita = j.agendado && j.etapa > f.etapa;
@@ -129,8 +131,7 @@ export function Tema() {
             </li>
           );
         })}
-      </ol>
-      {!temMaterial && <p className="faixa-aviso">O material deste tema ainda está em revisão; os testes e o calendário já valem.</p>}
+      </ol>}
       {j.testes.some((t) => t.feito) && <div style={{ marginTop: 16 }}><EvolucaoAluno tema={j.codigo} /></div>}
       {j.testes.find((t) => t.num === 3)?.feito && (
         <div style={{ marginTop: 16 }}>

@@ -4,7 +4,7 @@
 --  - app.agendar_tema_opcional(codigo, d0): cria as 6 ondas do residente logado
 --      pre-teste inicial: abre agora (ou D-15, se for mais tarde) | pre-teste 2: fecha 1 hora antes do D0
 --      pos-teste D0, D+15, D+45, D+90 | tudo aberto ate D+180 | pode reagendar enquanto nao respondeu nada
---  - app.catalogo_temas(): os 147 temas com data (aula do grupo ou D0 escolhido) e a etapa da pessoa
+--  - app.catalogo_temas(): os 150 temas com data (aula do grupo ou D0 escolhido) e a etapa da pessoa
 --  - prazo e lembretes passam a considerar as ondas pessoais
 -- Pre-requisito: 38, 43 e 53. Pode ser rodado mais de uma vez.
 \set ON_ERROR_STOP on

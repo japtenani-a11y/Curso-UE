@@ -45,6 +45,8 @@ INSERT INTO req VALUES
 ('T053','T011'),('T054','T053'),('T055','T004'),('T056','T055'),('T057','T089'),('T087','T086'),
 ('T088','T086'),('T091','T086'),('T090','T089'),('T092','T089 T056'),('T093','T050'),('T083','T093'),
 ('T094','T005'),
+-- Temas que entraram em 13/11/2026 (opcionais)
+('T136','T001 T021'),('T137','T001 T012'),('T138','T001 T004 T095'),
 -- Imagem e procedimentos
 ('T079','T003'),('T080','T079'),('T110','T003'),('T111','T002'),('T081','T013 T002'),('T146','T013'),
 ('T147','T009 T081'),('T148','T081'),('T149','T002 T081'),('T150','T081 T131'),
@@ -125,7 +127,7 @@ CREATE TRIGGER tg_bloquear_agendamento BEFORE INSERT ON app.onda_instancia FOR E
 
 -- Arvore inteira para a pessoa logada: nos (com situacao) e arestas.
 CREATE OR REPLACE FUNCTION app.arvore_temas() RETURNS JSONB
-LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
+LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, conteudo AS $$
   WITH RECURSIVE p AS (SELECT app.pessoa_atual() AS id),
   prof(tema_id, nivel) AS (
     SELECT t.tema_id, 0 FROM app.tema t WHERE NOT EXISTS (SELECT 1 FROM app.tema_requisito r WHERE r.tema_id = t.tema_id)
@@ -138,7 +140,8 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
         'orfao', NOT EXISTS (SELECT 1 FROM app.tema_requisito r WHERE r.tema_id = t.tema_id OR r.requisito_id = t.tema_id),
         'concluido', app.tema_concluido(p.id, t.tema_id),
         'iniciado', app.teste_submetido(p.id, t.tema_id, 1::smallint),
-        'faltam', app.maes_pendentes(p.id, t.tema_id)) ORDER BY n.nivel, t.modulo, t.codigo)
+        'faltam', app.maes_pendentes(p.id, t.tema_id),
+        'publicado', EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id = t.tema_id AND a.status = 'publicado')) ORDER BY n.nivel, t.modulo, t.codigo)
       FROM app.tema t JOIN niv n ON n.tema_id = t.tema_id, p),
     'arestas', (SELECT jsonb_agg(jsonb_build_object('de', m.codigo, 'para', f.codigo))
       FROM app.tema_requisito r JOIN app.tema f ON f.tema_id = r.tema_id JOIN app.tema m ON m.tema_id = r.requisito_id))

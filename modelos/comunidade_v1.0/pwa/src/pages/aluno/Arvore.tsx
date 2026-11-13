@@ -1,17 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../lib/api.js';
 
-interface No { codigo: string; titulo: string; modulo: string | null; papel: string; nivel: number; orfao: boolean; concluido: boolean; iniciado: boolean; faltam: string[] }
+interface No { codigo: string; titulo: string; modulo: string | null; papel: string; nivel: number; orfao: boolean; concluido: boolean; iniciado: boolean; faltam: string[]; publicado?: boolean }
 interface Aresta { de: string; para: string }
 
 const LARG = 210, ALT = 46, GX = 70, GY = 10, MARGEM = 12;
 function estado(n: No): string {
   if (n.concluido) return 'concluido';
+  if (n.publicado === false) return 'producao';
   if (n.faltam.length) return 'bloqueado';
   if (n.iniciado) return 'andamento';
   return 'liberado';
 }
-const LEGENDA: [string, string][] = [['concluido', 'Concluído'], ['andamento', 'Em andamento'], ['liberado', 'Liberado'], ['bloqueado', 'Bloqueado (falta tema mãe)']];
+const LEGENDA: [string, string][] = [['concluido', 'Concluído'], ['andamento', 'Em andamento'], ['liberado', 'Liberado'], ['bloqueado', 'Bloqueado (falta tema mãe)'], ['producao', 'Em produção']];
 
 // Arvore dos temas: cada coluna e um nivel; setas vao do tema mae para o filho. Clique para ver o caminho.
 export function Arvore() {
@@ -65,7 +66,7 @@ export function Arvore() {
       {noSel && (
         <div className="cartao-app arvore-sel" role="status">
           <strong>{noSel.codigo} — {noSel.titulo}</strong>
-          <p>{noSel.faltam.length ? `Bloqueado: falta concluir ${noSel.faltam.join(', ')}.` : noSel.concluido ? 'Concluído.' : 'Liberado.'}
+          <p>{noSel.publicado === false ? 'Conteúdo em produção. ' : ''}{noSel.faltam.length ? `Bloqueado: falta concluir ${noSel.faltam.join(', ')}.` : noSel.concluido ? 'Concluído.' : 'Liberado.'}
             {' '}Mães: {maes(noSel.codigo).join(', ') || 'nenhuma'} · Libera: {filhos(noSel.codigo).join(', ') || 'nenhum'}</p>
           <a className="botao discreto" href={`/aluno/tema/${noSel.codigo.replace('-', '')}`}>Abrir o tema</a>
         </div>

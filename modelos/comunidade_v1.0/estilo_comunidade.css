@@ -116,3 +116,10 @@ tr.alerta td { background: var(--acento-suave); }
 .entradas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 900px) { .entradas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .entradas .cartao-app.entrada > span:last-child { display: none; } }
+
+/* temas em producao (arvore, lista) e espaco "Temas novos" no mural */
+.arvore .no.producao rect { fill: #fffaf0; stroke: #d6b35c; stroke-dasharray: 2 3; }
+.cor-producao { background: #fffaf0; border: 1px dashed #d6b35c; }
+.lista-temas .sit.producao { color: #8a6400; font-style: italic; }
+.temas-novos { border-left: 6px solid #d6b35c; margin-bottom: 16px; }
+.temas-novos li.novo a { font-weight: 700; }

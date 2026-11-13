@@ -1,5 +1,6 @@
 -- 53_temas_programa_v1.0.sql
--- Carrega os 147 temas do programa (lista do Drive: BUSCAS_PUBMED_147_temas, 32 modulos) com o grau de dificuldade.
+-- Carrega os 150 temas do programa (lista: BUSCAS_PUBMED_150_temas, 32 modulos) com o grau de dificuldade.
+-- T136, T137 e T138 entraram em 13/11/2026 (temas opcionais).
 --  nuclear      = 39 temas principais, dados nas 39 quintas do ciclo, em ordem de dificuldade (ordem_principal)
 --                 (essenciais menos trauma do idoso/perioperatorio do idoso e abdome agudo na gestante)
 --  complementar = os demais temas essenciais: opcionais, recomendados
@@ -151,6 +152,9 @@ SELECT (SELECT ciclo_id FROM app.tema WHERE replace(codigo,'-','') = 'T001'), v.
 ('T-133','Currículo por competências: marcos de progressão, entrustable professional activities e avaliação por observação direta','Ensino, preceptoria e avaliação',5,'eletivo',NULL),
 ('T-134','Ensino de procedimentos e habilidades: laboratório, simulação e transferência para o ambiente real','Ensino, preceptoria e avaliação',3,'eletivo',NULL),
 ('T-135','Desenvolvimento docente, mentoria e prevenção de burnout no preceptor e no residente','Ensino, preceptoria e avaliação',4,'eletivo',NULL),
+('T-136','Trauma penetrante: balística, ferimento por arma branca e manejo não operatório seletivo','Trauma abdominal',4,'complementar',NULL),
+('T-137','Trauma no idoso e no paciente anticoagulado: queda da própria altura, reversão e limites de investimento','Reanimação e via aérea no trauma',3,'complementar',NULL),
+('T-138','Trauma na gestante: prioridades maternas, avaliação fetal e cesárea perimortem','Ginecologia e obstetrícia na urgência',4,'eletivo',NULL),
 ('T-139','Isquemia mesentérica aguda: diagnóstico precoce e decisão de ressecção','Interfaces, urgência vascular e isquemia visceral',5,'nuclear',36),
 ('T-140','Hérnia incisional na urgência: estrangulamento, tela e decisão','Hérnias e parede abdominal',4,'complementar',NULL),
 ('T-141','Técnicas de fechamento de parede e prevenção de hérnia incisional','Hérnias e parede abdominal',3,'complementar',NULL),

@@ -3,7 +3,7 @@
 ## Como instalar
 1. Copie o zip `T001_v2l.zip` de Downloads para `~/Curso-UE` e descompacte por cima (`unzip -o`).
 2. Rode `bash subir_api_pwa_wsl_v1.0.sh` como sempre. Ele aplica os SQL novos (65, 66, 68) e os scripts do app (67, 69).
-3. Confira no fim: `arvore de temas: 147`, `mural do aluno: 200`, `estudo dirigido do aluno: 200`.
+3. Confira no fim: `arvore de temas: 150`, `mural do aluno: 200`, `estudo dirigido do aluno: 200`.
 4. Apague à mão, se ainda existirem, os arquivos antigos `57_configurar_ia*`.
 
 ## O que entrou
@@ -43,10 +43,32 @@
   - Linhas em destaque na tabela; menu com Mural e Ajuda.
 - **Pesquisador:** Ajuda no menu.
 
-## Árvore de temas: 147 temas conferidos
-A lista oficial (BUSCAS_PUBMED_147_temas, 32 módulos) tem **147 temas**. A numeração vai até T150, mas os códigos
-**T136, T137 e T138 não existem** na lista: o módulo 32 termina no T135 e o 29 começa no T143.
-Os 147 estão todos na árvore: 139 com relações mãe→filho (178 relações) e 8 órfãos.
+## 150 temas, árvore e produção
+- **T136, T137 e T138 propostos** (opcionais, aprovação pendente; os títulos mudam só no `53_temas_programa_v1.0.sql`):
+  - T136 Trauma penetrante: balística, ferimento por arma branca e manejo não operatório seletivo
+    (módulo Trauma abdominal, recomendado, grau 4). Mães: T001 e T021.
+  - T137 Trauma no idoso e no paciente anticoagulado: queda da própria altura, reversão e limites de investimento
+    (módulo Reanimação, recomendado, grau 3). Mães: T001 e T012.
+  - T138 Trauma na gestante: prioridades maternas, avaliação fetal e cesárea perimortem
+    (módulo Ginecologia e obstetrícia, opcional, grau 4). Mães: T001, T004 e T095.
+- Árvore: 150 temas, 185 relações e 8 órfãos. Os 39 principais ficam iguais, portanto o calendário de quintas não muda.
+- Buscas PubMed: arquivo único `BUSCAS_PUBMED_150_temas` (txt e pdf). As 147 linhas antigas foram mantidas sem mudança.
+  As 3 novas foram validadas em 13/11/2026 (421, 847 e 3.697 registros).
+- **Tema em produção:** o residente que abre um tema sem material publicado vê a tela "Conteúdo em produção", com:
+  - o botão **Avise-me quando publicar**, que manda e-mail no dia;
+  - os temas-mãe que ele já pode adiantar.
+
+  Na lista de temas e na árvore, esses temas aparecem como "em produção".
+- **Mural, espaço fixo "Temas novos no site":** quando um tema recebe a primeira peça publicada, o aviso sai sozinho.
+- **Fila de produção:** fica em Dados → Fila de produção e no início da coordenação. A ordem é:
+  1. os principais, pela data da aula;
+  2. os opcionais, pela quantidade de alunos esperando (Avise-me e agendados);
+  3. em seguida, pela quantidade de temas que cada um libera na árvore.
+- **Síntese de evidência:** ganhou a 5ª seção "Sugestões de temas para trabalho científico/artigos", com 5 ideias
+  (modelo do estudo + sugestão). O padrão para os próximos temas está em `docs/padrao_sintese_evidencia_v1.1.md`;
+  o T001 recebeu a seção pelo `72`.
+- Correção: rodar o `subir` de novo sobre uma instalação existente falhava no 56 e no 61 (eles tentavam ajustar
+  telas que o 67 já tinha trocado). Agora pulam esse ajuste.
 
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
