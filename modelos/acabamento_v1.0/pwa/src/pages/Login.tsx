@@ -7,6 +7,7 @@ const LOGIN_TESTE = import.meta.env.VITE_LOGIN_TESTE === '1';
 const ERROS: Record<string, string> = {
   nao_cadastrado: 'Este e-mail não está cadastrado no programa. Fale com a coordenação.',
   email_nao_verificado: 'O Google não confirmou este e-mail.',
+  google_nao_configurado: 'O login com Google ainda não foi configurado neste computador. Ele funciona no servidor de revisão (passo 8). No teste local, use o campo abaixo.',
 };
 
 export function Login() {

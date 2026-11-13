@@ -10,26 +10,44 @@ O aplicativo roda no seu computador (WSL) e fica acessível pela internet por um
 
 > Cada e-mail precisa ser uma Conta Google. Um e-mail que não é Gmail vira Conta Google em accounts.google.com → "Criar conta" → "Usar meu endereço de e-mail atual". Se o Jorge ou a Aline preferirem um Gmail, troque o e-mail no `49_revisores_v1.0.sql` e rode de novo.
 
-## Passo 1 — ngrok (uma vez)
+## Passo 1 — ngrok (uma vez, ~10 min)
 
-1. Crie uma conta gratuita em ngrok.com.
-2. No painel, em **Domains**, pegue o domínio estático gratuito (algo como `nome-escolhido.ngrok-free.app`).
-3. No WSL, instale e registre o token:
+O ngrok cria um endereço HTTPS fixo na internet que aponta para o seu computador.
+
+1. Crie uma conta gratuita em **dashboard.ngrok.com/signup** (pode entrar com a própria Conta Google).
+2. No painel, menu **Universal Gateway → Domains** (em contas novas aparece também como "Your dev domain"): copie o domínio gratuito fixo, algo como `nome-sorteado.ngrok-free.app`. É ele que vai no `DOMINIO`.
+3. No painel, menu **Getting Started → Your Authtoken**: copie o token (não cole em lugar nenhum além do comando abaixo).
+4. No WSL (Ubuntu), instale e registre o token:
    ```bash
    curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
    echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main" | sudo tee /etc/apt/sources.list.d/ngrok.list
    sudo apt update && sudo apt install -y ngrok
-   ngrok config add-authtoken SEU_TOKEN_DO_PAINEL
+   ngrok config add-authtoken COLE_O_TOKEN_AQUI
+   ngrok version          # deve mostrar a versão instalada
    ```
+   O token fica em `~/.config/ngrok/ngrok.yml`, só no seu computador.
 
-## Passo 2 — credencial do Google (uma vez)
+## Passo 2 — credencial do Google (uma vez, ~15 min)
 
-1. Em console.cloud.google.com, crie um projeto (ex.: "Programa CUT").
-2. **APIs e serviços → Tela de consentimento OAuth**: tipo **Externo**, nome do app, seu e-mail de suporte. Em **Usuários de teste**, adicione os três e-mails acima (enquanto o app estiver "Em teste", só eles entram, o que é o que queremos).
-3. **Credenciais → Criar credenciais → ID do cliente OAuth → Aplicativo da Web**:
-   - Origens JavaScript autorizadas: `https://SEU-DOMINIO.ngrok-free.app`
-   - URIs de redirecionamento autorizados: `https://SEU-DOMINIO.ngrok-free.app/api/auth/callback`
-4. Copie o **ID do cliente** e a **Chave secreta**.
+Faça logado como **japtenani@gmail.com**, em **console.cloud.google.com**. (O Google renomeou os menus: se você vir "Google Auth Platform", use os nomes entre parênteses.)
+
+1. No topo, **Selecionar projeto → Novo projeto** → nome "Programa CUT" → Criar. Confira que ele ficou selecionado.
+2. Menu ☰ → **APIs e serviços → Tela de consentimento OAuth** (ou **Google Auth Platform → Branding**) → **Começar**:
+   - Nome do app: `Programa de Cirurgia de Urgência e Trauma`; e-mail de suporte: o seu.
+   - Público (Audience): **Externo**.
+   - Contato do desenvolvedor: o seu e-mail → Criar.
+3. **Público-alvo / Audience → Usuários de teste → Adicionar usuários**: `japtenani@gmail.com`, `aline@sardow.com`, `jorge.carnesecca@hotmail.com` → Salvar. Deixe o app **Em teste**: assim só esses três conseguem entrar (até 100 usuários de teste, sem verificação do Google).
+4. **Credenciais → Criar credenciais → ID do cliente OAuth** (ou **Clients → Create client**):
+   - Tipo: **Aplicativo da Web**; nome: `Servidor de revisão`.
+   - **Origens JavaScript autorizadas**: `https://SEU-DOMINIO.ngrok-free.app`
+   - **URIs de redirecionamento autorizados**: `https://SEU-DOMINIO.ngrok-free.app/api/auth/callback`
+   - (troque `SEU-DOMINIO...` pelo domínio do passo 1, exatamente igual, com `https://` e sem barra no fim)
+   - Criar.
+5. Na janela que abre, copie o **ID do cliente** (termina em `.apps.googleusercontent.com`) e a **Chave secreta do cliente** (começa com `GOCSPX-`). Se fechar a janela, a chave pode ser vista ou recriada em Credenciais → o cliente → "Chaves secretas".
+
+Se ao entrar aparecer **"Erro 400: redirect_uri_mismatch"**, o endereço do item 4 não está idêntico ao `DOMINIO`. Se aparecer **"Acesso bloqueado: o app não concluiu a verificação"**, o e-mail não está na lista de usuários de teste.
+
+> No teste local (`localhost:5173`) o botão do Google não funciona de propósito: não há credencial lá. Ele mostra um aviso e você entra pelo campo de e-mail de teste. O login do Google funciona no endereço do ngrok.
 
 ## Passo 3 — arquivo de configuração (uma vez, fora do repositório)
 
@@ -45,7 +63,7 @@ GOOGLE_CLIENT_SECRET=....
 ```
 Nunca coloque esses valores no repositório nem no chat.
 
-## Passo 4 — e-mail dos lembretes pelo seu Gmail (uma vez)
+## Passo 4 — e-mail pelo seu Gmail (uma vez): lembretes, dúvidas e respostas
 
 1. Em myaccount.google.com → Segurança, ligue a **verificação em duas etapas**.
 2. Em myaccount.google.com/apppasswords, crie uma **senha de app** ("Programa CUT").
@@ -60,6 +78,18 @@ bash 50_servidor_revisao_v1.0.sh SUA_SENHA_DO_BANCO    # coloca no ar em https:/
 bash 50_servidor_revisao_v1.0.sh parar       # tira do ar
 ```
 O computador precisa ficar ligado (e o WSL aberto) enquanto os revisores trabalham. Na primeira visita, o ngrok gratuito mostra uma página de aviso: é só clicar em **Visit Site**.
+
+## Revisão e publicação
+
+- Basta **1 revisor**: quando todas as afirmações de uma peça tiverem parecer, sem erro crítico, com até 5% de erro leve e sem parecer geral crítico, o botão **Aprovar e publicar** (tela Revisão) libera. Peça sem afirmações (ex.: caso base) precisa só do parecer geral "Correto".
+- Se outro revisor marcar erro crítico, a publicação fica bloqueada até corrigir o parecer ou o texto.
+- Publicar arquiva a versão publicada anterior da mesma peça.
+
+## Dúvidas dos alunos
+
+- Cada dúvida nova gera um e-mail para você, Aline e Jorge (admin e curadores), com o texto e o link.
+- A resposta é escrita por vocês na tela **Dúvidas** (menu do curador), depois da avaliação; não há resposta automática.
+- O aluno vê a resposta na tela Dúvidas dele e recebe por e-mail se autorizou e-mails em Lembretes.
 
 ## O que protege o conteúdo
 

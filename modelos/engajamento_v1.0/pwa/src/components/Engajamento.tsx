@@ -100,14 +100,14 @@ export function Pergunta(props: { tema: string | null; ferramenta: string | null
     try {
       await apiPost('/eng/mensagens', { tema: props.tema, ferramenta: props.ferramenta, tipo, texto });
       setTexto('');
-      setMsg(tipo === 'duvida' ? 'Dúvida enviada. A resposta aparece em "Dúvidas" em alguns minutos.' : 'Feedback registrado. Obrigado!');
+      setMsg(tipo === 'duvida' ? 'Dúvida enviada à coordenação. A resposta aparece em "Dúvidas" e, se você autorizou, chega por e-mail.' : 'Feedback registrado. Obrigado!');
     } catch { setMsg('Escreva pelo menos algumas palavras.'); }
   }
   if (!aberto) return <button type="button" className="botao discreto" onClick={() => setAberto(true)}>Enviar dúvida ou feedback</button>;
   return (
     <div className="cartao-app">
       <div className="etapas" role="radiogroup" aria-label="Tipo">
-        <button type="button" className={`etapa${tipo === 'duvida' ? ' atual' : ''}`} onClick={() => setTipo('duvida')}>Dúvida (respondida pela IA)</button>
+        <button type="button" className={`etapa${tipo === 'duvida' ? ' atual' : ''}`} onClick={() => setTipo('duvida')}>Dúvida para a coordenação</button>
         <button type="button" className={`etapa${tipo === 'feedback' ? ' atual' : ''}`} onClick={() => setTipo('feedback')}>Feedback para a coordenação</button>
       </div>
       <textarea value={texto} onChange={(e) => setTexto(e.target.value)} placeholder={tipo === 'duvida' ? 'Qual é a sua dúvida sobre este material?' : 'O que funcionou, o que mudaria?'} />

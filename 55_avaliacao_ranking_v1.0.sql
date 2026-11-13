@@ -256,7 +256,7 @@ CREATE OR REPLACE VIEW pesquisa.vw_estudo_uso AS
    GROUP BY 1, 2, 3;
 CREATE OR REPLACE VIEW pesquisa.vw_estudo_mensagens AS
   SELECT pesquisa.codigo_participante(m.pessoa_id) AS participante, t.codigo AS tema, m.ferramenta, m.tipo,
-         m.texto, m.resposta_ia, m.util, m.criado_em
+         m.texto, m.resposta, m.util, m.criado_em
     FROM app.mensagem_aluno m LEFT JOIN app.tema t ON t.tema_id = m.tema_id
     JOIN app.consentimento_pesquisa c ON c.pessoa_id = m.pessoa_id AND c.aceito;
 -- NPS por ferramenta (promotores 9-10 menos detratores 0-6), para o painel do coordenador.

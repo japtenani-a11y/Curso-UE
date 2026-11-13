@@ -17,7 +17,7 @@ AQUI="$(pwd)"
 falhar() { echo; echo "ERRO: $*"; exit 1; }
 
 parar() {
-  for n in api pwa notificador respondedor; do
+  for n in api pwa notificador respondedor; do  # respondedor: so para desligar o de versoes antigas
     if [ -f "$RAIZ/logs/$n.pid" ]; then
       kill "$(cat "$RAIZ/logs/$n.pid")" 2>/dev/null && echo "parado: $n"
       rm -f "$RAIZ/logs/$n.pid"
@@ -62,7 +62,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql; do
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
@@ -103,6 +103,11 @@ if(!d.artefatos){console.log("      resposta inesperada: "+JSON.stringify(d).sli
 const af=d.artefatos.reduce((s,a)=>s+a.afirmacoes.length,0);
 console.log("      curador enxerga "+d.artefatos.length+" rascunhos e "+af+" afirmacoes");
 process.exit(d.artefatos.length>=12?0:1)' "$RAIZ/logs/revisao_T001.json" || falhar "o curador nao enxergou os 12 rascunhos; veja $RAIZ/logs/revisao_T001.json"
+if [ -f 56_engajamento_app_v1.0.sh ]; then
+  DC=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" "http://localhost:3000/curadoria/duvidas")
+  PB=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" -H "Content-Type: application/json" -d '{}' "http://localhost:3000/revisao/artefatos/0/publicar")
+  echo "      curador abrindo as duvidas dos alunos: $DC (esperado 200) | publicar sem peca valida: $PB (esperado 400)"
+fi
 S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T001)
 echo "      sem login a mesma pagina responde $S (esperado 403)"
 if [ -f 34_leitura_aluno_v1.0.sh ]; then
@@ -127,6 +132,8 @@ if [ -f 34_leitura_aluno_v1.0.sh ]; then
     NC=$(curl -s -b "$CA" "http://localhost:3000/eng/catalogo" | grep -o '"codigo"' | wc -l)
     RK=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/eng/ranking?filtro=subgrupo")
     echo "      temas no catalogo do aluno: $NC (esperado 147) | ranking: $RK (esperado 200)"
+    DV=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/curadoria/duvidas")
+    echo "      aluno abrindo as duvidas da curadoria: $DV (esperado 403)"
   fi
   rm -f "$CA"
 fi
@@ -138,13 +145,6 @@ if [ -f "$RAIZ/api/src/notificador.ts" ]; then
   else echo "      ligando o enviador de lembretes em modo SIMULADO (configure o e-mail com 52_configurar_email_v1.0.sh)"; fi
   ( set -a; [ -f "$EM" ] && . "$EM"; set +a; cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=teste_local NOTIFICAR_MODO="${NOTIFICAR_MODO:-simular}" \
     APP_URL=http://localhost:5173 LOG_LEVEL=info nohup setsid npx tsx src/notificador.ts > "$RABS/logs/notificador.log" 2>&1 & echo $! > "$RABS/logs/notificador.pid" )
-fi
-
-IA="$HOME/.config/curso-ue/ia.env"
-if [ -f "$RAIZ/api/src/respondedor.ts" ]; then
-  if [ -f "$IA" ]; then echo "      ligando o respondedor de duvidas (IA)"; else echo "      respondedor de duvidas sem chave: as duvidas ficam na fila (configure com 57_configurar_ia_v1.0.sh)"; fi
-  ( set -a; [ -f "$IA" ] && . "$IA"; set +a; cd "$RAIZ/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=teste_local LOG_LEVEL=info \
-    nohup setsid npx tsx src/respondedor.ts > "$RABS/logs/respondedor.log" 2>&1 & echo $! > "$RABS/logs/respondedor.pid" )
 fi
 
 echo "[7/7] Ligando o PWA (porta 5173)..."

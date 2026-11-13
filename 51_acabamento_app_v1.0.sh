@@ -2,7 +2,7 @@
 # ============================================================
 # 51_acabamento_app_v1.0.sh
 # OBJETIVO: acabamento do aplicativo e da API antes da revisao externa.
-#  - Visual: casca unica (topo com navegacao por papel, rodape), paleta dos slides, modo escuro,
+#  - Visual: casca unica (topo com navegacao por papel, rodape), paleta dos slides, tema sempre claro,
 #    telas responsivas (celular), pagina inicial do aluno com as etapas do tema, login com Google.
 #  - Fluidez: "/" leva cada papel a sua tela; aplicativo instalavel (manifest + service worker que
 #    guarda so a casca, nunca o conteudo).
@@ -74,6 +74,10 @@ if "middleware/protecao.js" not in s:
     open(p, "w").write(s)
     for x in ("trust proxy", "limite('auth'", "conteudoProtegido, revisaoRouter", "conteudoProtegido, leituraRouter", "conteudoProtegido, testeRouter"):
         if x not in s: sys.exit(f"ERRO: nao consegui ajustar main.ts ({x})")
+# Login Google sem credencial: volta para a tela de login com aviso, em vez de mostrar erro cru.
+p = f"{api}/routes/auth.ts"; s = open(p).read()
+s = s.replace("res.status(503).json({ erro: 'google_nao_configurado' });", "res.redirect(`${config.appUrl}/login?erro=google_nao_configurado`);")
+open(p, "w").write(s)
 # Revisao: pecas na ordem pedagogica.
 p = f"{api}/routes/revisao.ts"; s = open(p).read()
 ordem = ("ARRAY['objetivos','resumo_basico','podcast_roteiro','caso_base','sintese_evidencia','resumo','mapa','flashcard',"

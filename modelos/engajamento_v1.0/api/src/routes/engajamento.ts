@@ -88,8 +88,8 @@ engajamentoRouter.post('/avaliacoes', async (req, res, next) => {
 engajamentoRouter.get('/mensagens', async (_req, res, next) => {
   try {
     const rows = await withMaestro(null, async (c) => (await c.query(
-      `SELECT m.mensagem_id, t.codigo AS tema, m.ferramenta, m.tipo, m.texto, m.status, m.resposta_ia, m.util,
-              m.revisao_preceptor, m.criado_em, m.respondida_em
+      `SELECT m.mensagem_id, t.codigo AS tema, m.ferramenta, m.tipo, m.texto, m.status, m.resposta, m.util,
+              m.criado_em, m.respondida_em
          FROM app.mensagem_aluno m LEFT JOIN app.tema t ON t.tema_id = m.tema_id
         ORDER BY m.criado_em DESC LIMIT 200`)).rows);
     res.json({ mensagens: rows });

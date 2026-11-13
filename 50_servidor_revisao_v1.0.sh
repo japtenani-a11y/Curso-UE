@@ -57,7 +57,7 @@ command -v ngrok >/dev/null || falhar "ngrok nao instalado. Veja docs/servidor_r
 
 SQL="psql postgresql://postgres:$PW@$HOST:$PORTA/programa -v ON_ERROR_STOP=1 -q"
 echo "[1/5] Cadastrando revisores e registro de acesso..."
-for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql; do
+for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql; do
   $SQL -f $f >> "$RABS/logs/srv_banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/srv_banco.log"
 done
 grep -E "@" "$RABS/logs/srv_banco.log" | sed 's/^/      /'
@@ -79,17 +79,13 @@ L=$(curl -s -o /dev/null -w "%{http_code}" -H "Content-Type: application/json" -
 [ "$L" = "404" ] || falhar "o login de teste ainda responde ($L); a API nao esta em modo producao."
 echo "      ok (login de teste desligado)"
 
-echo "[4/5] Ligando o gateway (porta 8080) e o enviador de lembretes..."
+echo "[4/5] Ligando o gateway (porta 8080) e o enviador de e-mails (lembretes, duvidas e respostas)..."
 ( nohup setsid node "$RABS/servidor/gateway.mjs" "$RABS/pwa/dist" 8080 http://127.0.0.1:3000 > "$RABS/logs/srv_gateway.log" 2>&1 & echo $! > "$RABS/logs/srv_gateway.pid" )
 sleep 1; curl -s http://127.0.0.1:8080/api/health | grep -q ok || falhar "o gateway nao respondeu; veja $RAIZ/logs/srv_gateway.log"
 ( set -a; [ -f "$EM" ] && . "$EM"; set +a; cd "$RABS/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=production \
   NOTIFICAR_MODO="${NOTIFICAR_MODO:-simular}" APP_URL="https://$DOMINIO" GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" GOOGLE_CLIENT_SECRET="$GOOGLE_CLIENT_SECRET" \
   GOOGLE_REDIRECT_URI="https://$DOMINIO/api/auth/callback" CORS_ORIGINS="https://$DOMINIO" LOG_LEVEL=info \
   nohup setsid npx tsx src/notificador.ts > "$RABS/logs/srv_notificador.log" 2>&1 & echo $! > "$RABS/logs/srv_notificador.pid" )
-IA="$HOME/.config/curso-ue/ia.env"
-( set -a; [ -f "$IA" ] && . "$IA"; set +a; cd "$RABS/api" && DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" NODE_ENV=production LOG_LEVEL=info \
-  GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" GOOGLE_CLIENT_SECRET="$GOOGLE_CLIENT_SECRET" GOOGLE_REDIRECT_URI="https://$DOMINIO/api/auth/callback" CORS_ORIGINS="https://$DOMINIO" \
-  nohup setsid npx tsx src/respondedor.ts > "$RABS/logs/srv_respondedor.log" 2>&1 & echo $! > "$RABS/logs/srv_respondedor.pid" )
 echo "      ok"
 
 echo "[5/5] Abrindo o tunel HTTPS (ngrok) em https://$DOMINIO ..."
