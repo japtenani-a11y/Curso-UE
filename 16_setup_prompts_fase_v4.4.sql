@@ -23,7 +23,7 @@ BEGIN;
 -- 6 PROMPTS DE FASE
 INSERT INTO conteudo.prompt (slug, familia, skill_codigo, conteudo, max_tokens, temperatura) VALUES
 ('fase_evidencia', 'fase', 'SK-01',
- 'Voce e um pesquisador senior em cirurgia de urgencia e trauma. Localize fontes nas cinco camadas: (1) diretriz internacional, (2) diretriz nacional, (3) revisao sistematica, (4) ensaio clinico, (5) consenso de sociedade. Para cada fonte, registre titulo, autores, ano, DOI ou PMID e um trecho literal que sustente a afirmacao. Nao invente referencia. Se nao encontrar fonte em uma camada, declare a ausencia.',
+ 'Voce e um pesquisador senior em cirurgia de urgencia e trauma. Localize fontes nas cinco camadas: (1) historico (textos classicos e edicoes antigas, como ATLS de edicoes anteriores), (2) livro-texto (Mattox/Trauma, Sabiston, Birolini, ATLS vigente), (3) protocolo institucional (HCFMRP/UE), (4) revisao da literatura dos ultimos 10 anos (revisoes sistematicas, ensaios, coortes), (5) diretriz (de sociedades nacionais e internacionais). Para cada fonte, registre titulo, autores, ano, DOI ou PMID e um trecho literal que sustente a afirmacao. Nao invente referencia. Se nao encontrar fonte em uma camada, declare a ausencia.',
  4000, 0.2),
 
 ('fase_objetivos', 'fase', 'SK-04',

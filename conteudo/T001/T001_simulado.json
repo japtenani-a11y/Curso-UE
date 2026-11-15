@@ -1,0 +1,88 @@
+{
+ "tema": "T001",
+ "tipo": "simulado",
+ "titulo": "Simulado",
+ "status": "rascunho",
+ "gerado_por": "Claude (geracao manual fora do executor), 2026-11-12",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.\n\n# T001 — Simulado (10 questões, 15 minutos)\n\nInstruções: uma alternativa correta por questão. Itens distintos do banco principal.\n\n**1.** Em parada cardíaca extra-hospitalar traumática, o uso de adrenalina associou-se a:\n\n- A) Maior sobrevida em 7 dias\n- B) Menor sobrevida em 7 dias (OR 0,20)\n- C) Nenhuma diferença de sobrevida\n- D) Maior sobrevida em 30 dias\n\n_Objetivo 4_\n\n**2.** Com cirurgião de trauma presente no local, o tempo total de ressuscitação foi:\n\n- A) 259 segundos menor\n- B) 259 segundos maior\n- C) Igual\n- D) Não mensurado\n\n_Objetivo 9_\n\n**3.** Meta-análise comparando líder de equipe cirurgião vs. não cirurgião mostrou:\n\n- A) Maior sobrevida com líder não cirurgião\n- B) Sem diferença de sobrevida (OR 0,82) e menos lesões não identificadas com líder cirurgião (OR 0,48)\n- C) Maior mortalidade com líder cirurgião\n- D) Mais lesões perdidas com líder cirurgião\n\n_Objetivo 9_\n\n**4.** Sobre oxigênio suplementar no traumatizado grave, pesquisa com profissionais mostrou que a maioria:\n\n- A) Apoia oxigênio sempre, independentemente da SpO2\n- B) Não apoia oferecer oxigênio sempre a todos sem considerar a SpO2 (73 %)\n- C) Contraindica oxigênio no trauma\n- D) Não tem opinião\n\n_Objetivo 1_\n\n**5.** A TC de corpo inteiro de rotina, segundo revisão de revisões:\n\n- A) Reduz claramente a mortalidade\n- B) Parece ter pouco ou nenhum efeito em mortalidade e tempo na sala de emergência\n- C) Aumenta a mortalidade\n- D) Deve substituir a avaliação primária\n\n_Objetivo 8_\n\n**6.** Curativos compressivos aplicados por profissionais tiveram pressão média de 169,35 mmHg, com variação de 50–412 mmHg. A autoavaliação do aplicador:\n\n- A) Correlacionou-se fortemente com a pressão medida\n- B) Não se correlacionou com a pressão medida (p = 0,541)\n- C) Superestimou sempre a pressão\n- D) Não foi estudada\n\n_Objetivo 6_\n\n**7.** O teste SILENT para lesões de membro inferior apresentou:\n\n- A) Sensibilidade 99% e especificidade 75%\n- B) Sensibilidade 75% e especificidade 99%\n- C) Sensibilidade e especificidade de 50%\n- D) Sensibilidade 100%\n\n_Objetivo 8_\n\n**8.** No FAST-PLUS, a avaliação ultrassonográfica da sínfise púbica identificou alargamento crítico em:\n\n- A) 7,5% dos pacientes\n- B) 50% dos pacientes\n- C) Nenhum paciente\n- D) Todos os pacientes\n\n_Objetivo 4_\n\n**9.** A via aérea cirúrgica de emergência (front-of-neck) em coorte japonesa ocorreu em:\n\n- A) 0,24% dos pacientes\n- B) 24% dos pacientes\n- C) 10% dos pacientes\n- D) 2,4% dos pacientes\n\n_Objetivo 1_\n\n**10.** Treinamento in situ baseado em checklist comparado ao baseado em algoritmo produziu, nos modelos mentais compartilhados da equipe:\n\n- A) Ganhos de curto prazo semelhantes\n- B) Superioridade clara do algoritmo\n- C) Superioridade clara do checklist\n- D) Piora em ambos\n\n_Objetivo 9_\n\n\n---\n## Gabarito comentado\n\n1. **B** — [A31] — estudo observacional; não prova causalidade.\n2. **A** — [A19].\n3. **B** — [A20, A21].\n4. **B** — [A27] — trata-se de opinião de profissionais, não de desfecho clínico.\n5. **B** — [A12]. Em pacientes em choque, não aumentou a mortalidade precoce (17,4% vs. 27,6%; p = 0,21) [A39].\n6. **B** — [A25, A26].\n7. **B** — [A43] — útil para confirmar, insuficiente para excluir.\n8. **A** — [A35].\n9. **A** — [A28].\n10. **A** — [A44].\n",
+ "afirmacoes": [
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A19",
+   "texto": "Com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor (p = 0,03).",
+   "fonte_arquivo": "2022_65",
+   "trecho_literal": "the mean total resuscitation time was 259 seconds shorter (p = 0.03)"
+  },
+  {
+   "id": "A20",
+   "texto": "Meta-análise de coortes retrospectivas: sem diferença de sobrevida entre líder cirurgião e não cirurgião (OR 0,82; IC 95% 0,61-1,10).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "no difference in survival [odds ratio (OR): 0.82, 95% confidence interval (CI) 0.61-1.10, P=0.19]"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A25",
+   "texto": "Nos conjuntos de dados válidos, a pressão máxima média dos curativos compressivos foi 169,35 ± 84,33 mmHg (variação de 50–412 mmHg).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "Mean maximum pressure was 169.35 ± 84.33 mmHg (range 50–412 mmHg)"
+  },
+  {
+   "id": "A26",
+   "texto": "Não houve correlação entre a autoavaliação subjetiva e a pressão objetiva medida (p = 0,541).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "No correlation was found between subjective self-assessment and objective pressure measurements (p = 0.541)"
+  },
+  {
+   "id": "A27",
+   "texto": "Em pesquisa com respondentes, 73 % (IC 95% 70 a 76 %) não apoiaram oxigênio suplementar sempre para todo traumatizado grave sem considerar a SpO2.",
+   "fonte_arquivo": "2025_12",
+   "trecho_literal": "A majority of respondents (73 % [95 % CI: 70 to 76 %]) did not support that supplemental oxygen should always be provided to all severely injured trauma patients"
+  },
+  {
+   "id": "A28",
+   "texto": "A cricotireoidostomia/via aérea cirúrgica de emergência ocorreu em 467 pacientes (0,24%) de uma coorte retrospectiva japonesa.",
+   "fonte_arquivo": "2020_18",
+   "trecho_literal": "emergency front-of-neck airway occurred in 467 patients (0.24%)"
+  },
+  {
+   "id": "A31",
+   "texto": "Na parada cardíaca extra-hospitalar traumática, a adrenalina associou-se a menor sobrevida em 7 dias (OR 0,20; IC 95% 0,08–0,48).",
+   "fonte_arquivo": "2019_31",
+   "trecho_literal": "The use of epinephrine was significantly associated with decreased 7-day survival (odds ratio = 0.20; 95% CI = 0.08–0.48; P < 0.01)"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "A43",
+   "texto": "O teste SILENT (membro inferior) teve sensibilidade de 75% (IC 95% 64 a 84%) e especificidade de 99% (IC 95% 97 a 100%).",
+   "fonte_arquivo": "2024_11",
+   "trecho_literal": "Overall sensitivity was 75% (95%CI 64 to 84%), and overall specificity was 99% (95%CI 97 to 100%)."
+  },
+  {
+   "id": "A44",
+   "texto": "Treinamento in situ baseado em checklist e baseado em algoritmo produziu ganhos de curto prazo semelhantes nos modelos mentais compartilhados da equipe.",
+   "fonte_arquivo": "2026_10",
+   "trecho_literal": "Checklist- and algorithm-based formats produced similar short-term gains."
+  }
+ ]
+}

@@ -1,0 +1,937 @@
+BUSCA PUBMED POR TEMA - EDICAO CONSOLIDADA
+Programa de Cirurgia de Urgencia e Trauma - 150 temas - 32 modulos
+Atualizada em 13/11/2026 (substitui BUSCAS_PUBMED_147_temas e as partes 1 a 4)
+
+O QUE MUDOU NESTA EDICAO
+- Entraram 3 temas: T136 (modulo 5), T137 (modulo 1) e T138 (modulo 16).
+- As 147 buscas anteriores foram mantidas sem alteracao (a linha nao muda entre edicoes).
+- As 3 buscas novas foram validadas no PubMed em 13/11/2026: 421, 847 e 3.697 registros.
+- T138 usa a combinacao de MeSH pregnancy + wounds and injuries: faca a triagem pelo titulo,
+  como em T016, T104 e T148 (ver AUDITORIA_vocabulario).
+
+COMO USAR
+1. Copie a linha do tema e cole no campo de busca do PubMed.
+2. Rode duas vezes: sem filtro (varredura ampla) e com o bloco de desenho no fim.
+3. Exporte em .nbib (Send to > Citation manager).
+4. Registre no FONTES.md do tema: data, numero de resultados e a query translation.
+
+FILTROS JA EMBUTIDOS EM CADA LINHA: 2016:2026[dp] + ingles/portugues/espanhol + humanos
+BLOCO DE DESENHO (2a passada):
+AND ("randomized controlled trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR guideline[ti])
+
+COMO NOMEAR OS PDFs DA CURADORIA MANUAL
+Depois da triagem, salve o PDF completo de cada artigo escolhido com este nome:
+
+  T001_A07_2023_Silva_PMID37123456.pdf
+  |    |   |    |     +-- PMID do PubMed (sem PMID: DOI trocando / por -, ex.: DOI10.1016-j.injury.2023.01.002)
+  |    |   |    +-------- sobrenome do primeiro autor, sem acento e sem espaco (ex.: DaSilva, Mendez)
+  |    |   +------------- ano de publicacao
+  |    +----------------- camada + numero de 2 digitos, na ordem em que voce incluiu o artigo
+  +---------------------- tema com 3 digitos e sem hifen (T001 ... T150)
+
+Letras da camada (as mesmas dos codigos [A#], [G#], [P#] do material):
+  A = artigo da revisao (resultado desta busca no PubMed)
+  G = diretriz de sociedade (guideline)
+  P = protocolo institucional da UE-HCFMRP (ex.: T001_P01_2025_UE-HCFMRP_ProtocoloImagem.pdf)
+  H = texto historico (edicoes antigas, relatos de origem)
+
+Regras:
+  1. O numero, uma vez dado, nao muda (T001_A07 sempre sera o mesmo artigo). Artigo descartado depois: nao
+     reaproveite o numero; marque como excluido no FONTES.md.
+  2. Material suplementar do mesmo artigo: acrescente _sup1, _sup2 (T001_A07_2023_Silva_PMID37123456_sup1.pdf).
+  3. Uma pasta por tema, a que ja existe no Drive (ex.: "T001 Avaliacao inicial..."), com a subpasta fontes_pdf.
+  4. No FONTES.md do tema, uma linha por arquivo: codigo, referencia, PMID/DOI, desenho do estudo, data da busca.
+  5. Livro-texto (camada D) nao entra como PDF: registre so capitulo e paginas no FONTES.md.
+     O ATLS nao entra no material de nenhuma forma.
+  6. Os PDFs ficam no Drive. Nunca vao para o GitHub (direitos autorais).
+  7. Sem dados de pacientes reais em nenhum arquivo.
+  8. Para a producao do tema, envie a pasta fontes_pdf inteira (ou um zip com o nome T001_fontes.zip).
+
+REGRA QUE TORNA ISSO UTIL A LONGO PRAZO:
+a linha NAO muda entre edicoes. So a data de corte muda.
+Em 2028 rode a mesma linha com 2026:2028[dp] e voce sabe o que entrou de novo.
+
+AS 150 BUSCAS: nenhuma acima de 10.000, nenhuma abaixo de 80. Faixa 122 a 9.601. Mediana: 1.185 registros.
+(147 validadas em 09/11/2026; 3 novas em 13/11/2026.)
+
+
+MODULO 1 - REANIMACAO E VIA AEREA NO TRAUMA
+estabilizar o doente nas primeiras horas
+
+T001 Avaliacao inicial do traumatizado: o que mudou no xABCDE
+Grau 1 - 510 registros
+
+("advanced trauma life support"[tiab] OR "ATLS"[tiab] OR "primary survey"[tiab] OR "xABCDE"[tiab] OR "ABCDE approach"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T002 Via aerea no trauma: falha, cricotireoidostomia e via aerea cirurgica
+Grau 2 - 3208 registros
+
+("airway management"[mh] OR cricothyroidotomy[tiab] OR cricothyrotomy[tiab] OR "surgical airway"[tiab] OR "rapid sequence intubation"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T003 Exames adjuntos ao trauma: laboratorio, TC e FAST
+Grau 2 - 145 registros
+
+("focused assessment with sonography"[tiab] OR eFAST[tiab] OR FAST[ti] OR "computed tomography"[ti]) AND ("abdominal trauma"[tiab] OR "blunt abdominal trauma"[tiab] OR "multiple trauma"[mh]) AND (diagnosis[ti] OR "diagnostic imaging"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T004 Choque hemorragico: fisiologia e metas de ressuscitacao
+Grau 3 - 5361 registros
+
+("hemorrhagic shock"[mh] OR "hemorrhagic shock"[tiab] OR "damage control resuscitation"[tiab] OR "permissive hypotension"[tiab] OR "resuscitation"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T005 Coagulopatia do trauma, diamante letal, TXA e transfusao
+Grau 3 - 4732 registros
+
+("blood coagulation disorders"[mh] OR coagulopathy[tiab] OR "lethal triad"[tiab] OR "tranexamic acid"[tiab] OR "massive transfusion"[tiab] OR "whole blood"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T006 Profilaxia de TEV em trauma
+Grau 2 - 1562 registros
+
+("venous thromboembolism"[mh] OR "venous thromboembolism"[tiab] OR "chemoprophylaxis"[tiab] OR "low molecular weight heparin"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T137 Trauma no idoso e no paciente anticoagulado: queda da propria altura, reversao e limites de investimento
+Grau 3 - 847 registros
+
+("geriatric trauma"[tiab] OR "older trauma"[tiab] OR "elderly trauma"[tiab] OR ("ground level fall"[tiab] OR "ground-level fall"[tiab]) OR ("anticoagulation"[tiab] AND "trauma"[ti])) AND (management[tiab] OR mortality[tiab] OR reversal[tiab] OR frailty[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 2 - CONTROLE DE DANOS E ABDOME ABERTO
+abreviar a cirurgia e conduzir o abdome que nao fecha
+
+T007 Cirurgia de controle de danos: indicacao e timing de reoperacao
+Grau 3 - 1095 registros
+
+("damage control"[tiab] OR "damage control surgery"[tiab] OR "planned reoperation"[tiab] OR "abbreviated laparotomy"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T008 Sindrome compartimental abdominal
+Grau 3 - 1323 registros
+
+("intra-abdominal hypertension"[mh] OR "abdominal compartment syndrome"[tiab] OR "intra-abdominal pressure"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T009 Peritoneostomia: cuidados, fechamento mediado por tela e abdome aberto prolongado
+Grau 3 - 508 registros
+
+("open abdomen"[tiab] OR "peritoneostomy"[tiab] OR "laparostomy"[tiab] OR "temporary abdominal closure"[tiab] OR "mesh-mediated fascial traction"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T010 Fistula enteroatmosferica e hipertensao intra-abdominal
+Grau 3 - 554 registros
+
+("intestinal fistula"[tiab] OR "enteroatmospheric fistula"[tiab] OR "enteroatmospheric"[tiab] OR "intra-abdominal hypertension"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 3 - TRAUMA DE PAREDE TORACICA E PLEURAL
+drenar e manejar o espaco pleural
+
+T011 Trauma toracico fechado: contusao pulmonar e insuficiencia respiratoria
+Grau 3 - 299 registros
+
+("lung contusion"[tiab] OR "pulmonary contusion"[tiab] OR "blunt chest trauma"[tiab] OR "chest trauma"[tiab]) AND (respiratory[tiab] OR "respiratory insufficiency"[tiab] OR ventilation[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T012 Fratura de arcos costais: analgesia, ventilacao e fixacao
+Grau 3 - 1753 registros
+
+("rib fractures"[mh] OR "rib fracture"[tiab] OR "flail chest"[tiab] OR "rib fixation"[tiab] OR "surgical stabilization of rib fractures"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T013 Pneumotorax e drenagem toracica: tecnica e manejo do dreno
+Grau 2 - 8876 registros
+
+("pneumothorax"[mh] OR pneumothorax[tiab] OR "chest tube"[tiab] OR "thoracostomy"[tiab] OR "tube thoracostomy"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T014 Hemotorax retido: VATS, fibrinolise e timing
+Grau 3 - 132 registros
+
+("retained hemothorax"[tiab] OR "hemothorax"[mh] OR hemothorax[tiab]) AND ("video-assisted"[tiab] OR "VATS"[tiab] OR thoracoscopy[tiab] OR fibrinolysis[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T018 Lesao em transicao toracoabdominal e lesao de diafragma
+Grau 3 - 516 registros
+
+("diaphragmatic injury"[tiab] OR "diaphragm rupture"[tiab] OR "thoracoabdominal"[tiab] OR "diaphragmatic hernia"[mh]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T020 Empiema e decorticacao pulmonar: indicacao e pleurostomia
+Grau 3 - 1650 registros
+
+("empyema"[mh] OR empyema[tiab] OR "decortication"[tiab] OR "pleural drainage"[tiab]) AND (thoracic[tiab] OR pleural[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 4 - TRAUMA CARDIACO E DE GRANDES VASOS
+abrir o torax e reparar a lesao central
+
+T015 Toracotomia de reanimacao: indicacao, tecnica e desfechos
+Grau 5 - 283 registros
+
+("resuscitative thoracotomy"[tiab] OR "emergency department thoracotomy"[tiab] OR "thoracotomy"[tiab]) AND (resuscitation[tiab] OR "cardiac arrest"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T016 Trauma cardiaco: janela pericardica, sutura e tamponamento
+Grau 4 - 851 registros
+
+("cardiac injury"[tiab] OR "cardiac tamponade"[tiab] OR "penetrating cardiac"[tiab] OR "blunt cardiac injury"[tiab] OR "pericardial window"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T017 Trauma de grandes vasos toracicos
+Grau 4 - 795 registros
+
+("thoracic aorta"[tiab] OR "aortic injury"[tiab] OR "great vessel"[tiab] OR "traumatic aortic rupture"[tiab] OR "subclavian artery"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T019 Trauma esofagico: cervical, toracico e abdominal
+Grau 4 - 1147 registros
+
+("esophageal injury"[tiab] OR "esophageal perforation"[tiab] OR "esophageal trauma"[tiab] OR "oesophageal"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh] OR perforation[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 5 - TRAUMA ABDOMINAL
+decidir operar ou observar o abdome traumatizado
+
+T021 Trauma abdominal fechado: laparotomia versus manejo nao operatorio
+Grau 4 - 3852 registros
+
+("abdominal trauma"[tiab] OR "blunt abdominal trauma"[tiab] OR "nonoperative management"[tiab] OR "laparotomy"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T022 Trauma hepatico e de via biliar: graus, packing e complicacoes
+Grau 4 - 477 registros
+
+("liver injury"[tiab] OR "hepatic trauma"[tiab] OR "liver trauma"[tiab] OR "biliary injury"[tiab] OR "hepatic packing"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T023 Trauma esplenico: preservacao, embolizacao seletiva e esplenectomia
+Grau 4 - 1062 registros
+
+("splenic injury"[tiab] OR "spleen trauma"[tiab] OR "splenic trauma"[tiab] OR "angioembolization"[tiab] OR splenectomy[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T024 Trauma de viscera oca: estomago, duodeno, delgado, colon e reto
+Grau 3 - 475 registros
+
+("hollow viscus"[tiab] OR "bowel injury"[tiab] OR "intestinal injury"[tiab] OR "colon injury"[tiab] OR "rectal injury"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T025 Trauma de pancreas e duodeno: exposicao retroperitoneal e reconstrucao
+Grau 4 - 245 registros
+
+("pancreatic trauma"[tiab] OR "pancreatic injury"[tiab] OR "duodenal injury"[tiab] OR "pancreaticoduodenal"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T026 Trauma vascular abdominal: zonas retroperitoneais, REBOA e endovascular
+Grau 5 - 537 registros
+
+("abdominal vascular injury"[tiab] OR "retroperitoneal hematoma"[tiab] OR "REBOA"[tiab] OR "resuscitative endovascular balloon occlusion"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T136 Trauma penetrante: balistica, ferimento por arma branca e manejo nao operatorio seletivo
+Grau 4 - 421 registros
+
+("penetrating trauma"[tiab] OR "gunshot wound"[tiab] OR "stab wound"[tiab] OR "ballistic"[tiab]) AND (abdominal[tiab] OR "selective nonoperative"[tiab] OR "nonoperative management"[tiab] OR laparotomy[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 6 - TRAUMA DE EXTREMIDADE, PELVE E VASCULAR
+salvar ou amputar a extremidade ameacada
+
+T028 Trauma vascular periferico: salvageability e sindrome compartimental
+Grau 4 - 4423 registros
+
+("peripheral vascular injury"[tiab] OR "vascular trauma"[tiab] OR "compartment syndrome"[mh] OR "limb salvage"[tiab] OR fasciotomy[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T029 Fratura exposta, MESS, amputacao primaria e Morel-Lavallee
+Grau 3 - 1565 registros
+
+("open fracture"[tiab] OR "MESS"[tiab] OR "mangled extremity"[tiab] OR "primary amputation"[tiab] OR "Morel-Lavallee"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T030 Trauma ortopedico e controle de danos ortopedico
+Grau 3 - 4140 registros
+
+("orthopedic trauma"[tiab] OR "orthopaedic trauma"[tiab] OR "damage control orthopedics"[tiab] OR "pelvic fracture"[tiab] OR "extremity fracture"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 7 - NEUROTRAUMA
+manter a perfusao cerebral e saber quando operar ou acionar
+
+T031 TCE grave: metas de PIC, PPC e manejo de primeira e segunda linha
+Grau 4 - 205 registros
+
+("traumatic brain injury"[tiab] OR "brain injuries, traumatic"[mh]) AND ("intracranial pressure"[ti] OR "cerebral perfusion pressure"[ti] OR "decompressive craniectomy"[ti] OR hyperosmolar[ti]) AND (severe[ti] OR management[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T032 Trauma raquimedular: estabilizacao, timing e prognostico
+Grau 4 - 1000 registros
+
+("spinal cord injury"[mh] OR "spinal cord injury"[tiab] OR "spinal trauma"[tiab] OR "spine injury"[tiab]) AND (timing[tiab] OR stabilization[tiab] OR prognosis[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T105 Neurocirurgia de urgencia para o cirurgiao geral
+Grau 4 - 2473 registros
+
+("neurosurgery"[tiab] OR "craniotomy"[tiab] OR "decompressive craniectomy"[tiab]) AND (emergency[tiab] OR "general surgeon"[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 8 - CABECA E PESCOCO
+garantir a via aerea e tratar a lesao aerodigestiva
+
+T033 Trauma de face, ocular e otorrinolaringologico: prioridades e quando nao operar
+Grau 3 - 2954 registros
+
+("facial injury"[tiab] OR "facial trauma"[tiab] OR "maxillofacial trauma"[tiab] OR "ocular trauma"[tiab] OR "orbital fracture"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T034 Trauma cervical penetrante e lesao de estruturas aerodigestivas
+Grau 4 - 2002 registros
+
+("penetrating neck trauma"[tiab] OR "cervical trauma"[tiab] OR "aerodigestive"[tiab] OR "tracheal injury"[tiab] OR "pharyngoesophageal"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T035 Infeccao cervical profunda e mediastinite descendente
+Grau 4 - 687 registros
+
+("deep neck infection"[tiab] OR "cervical abscess"[tiab] OR "descending mediastinitis"[tiab] OR "mediastinitis"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 9 - ABDOME AGUDO INFLAMATORIO E OBSTRUTIVO
+decidir o timing cirurgico do abdome agudo
+
+T036 Apendicite aguda: antibiotico versus cirurgia
+Grau 2 - 2739 registros
+
+("appendicitis"[mh] OR appendicitis[tiab]) AND (antibiotic[tiab] OR "non-operative"[tiab] OR "nonoperative"[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T037 Colecistite aguda: timing e via de acesso
+Grau 2 - 1541 registros
+
+("cholecystitis"[mh] OR cholecystitis[tiab]) AND (timing[tiab] OR laparoscopic[tiab] OR cholecystostomy[tiab] OR "early surgery"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T038 Pancreatite aguda grave: estratificacao e momento da intervencao
+Grau 4 - 4829 registros
+
+("pancreatitis"[mh] OR "acute pancreatitis"[tiab]) AND (severe[tiab] OR "necrosis"[tiab] OR "step-up"[tiab] OR timing[tiab] OR fluid[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T039 Ictericia obstrutiva e colangite: drenagem e timing
+Grau 3 - 2690 registros
+
+("cholangitis"[mh] OR cholangitis[tiab] OR "obstructive jaundice"[tiab] OR "biliary drainage"[tiab]) AND (drainage[tiab] OR timing[tiab] OR ERCP[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T040 Diverticulite complicada: abscesso, peritonite e cirurgia
+Grau 3 - 1168 registros
+
+("diverticulitis"[mh] OR diverticulitis[tiab]) AND (abscess[tiab] OR peritonitis[tiab] OR surgery[tiab] OR Hinchey[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T041 Abdome agudo obstrutivo: aderencia, hernia e criterios de cirurgia
+Grau 3 - 5940 registros
+
+("intestinal obstruction"[mh] OR "bowel obstruction"[tiab] OR "small bowel obstruction"[tiab] OR adhesiolysis[tiab]) AND (surgery[tiab] OR management[tiab] OR criteria[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T042 Abdome agudo perfurativo: ulcera, lavado e fechamento
+Grau 3 - 1474 registros
+
+("peptic ulcer perforation"[tiab] OR "perforated ulcer"[tiab] OR "hollow viscus perforation"[tiab] OR "peritonitis"[tiab]) AND (surgery[tiab] OR laparoscopic[tiab] OR lavage[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 10 - HERNIAS E PAREDE ABDOMINAL
+reparar a hernia e reconstruir a parede
+
+T043 Hernia inguinal e femoral encarcerada e estrangulada: via e momento
+Grau 3 - 386 registros
+
+("inguinal hernia"[mh] OR "femoral hernia"[tiab] OR "incarcerated hernia"[tiab] OR "strangulated hernia"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T140 Hernia incisional na urgencia: estrangulamento, tela e decisao
+Grau 4 - 1900 registros
+
+("incisional hernia"[mh] OR "incisional hernia"[tiab] OR "ventral hernia"[tiab]) AND (emergency[tiab] OR strangulation[tiab] OR mesh[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T141 Tecnicas de fechamento de parede e prevencao de hernia incisional
+Grau 3 - 1758 registros
+
+("abdominal wall reconstruction"[tiab] OR "fascial closure"[tiab] OR "small bites"[tiab] OR "component separation"[tiab] OR "prophylactic mesh"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T142 Hernia traumatica de parede abdominal: diagnostico e quando reparar
+Grau 3 - 673 registros
+
+("traumatic abdominal wall hernia"[tiab] OR "abdominal wall hernia"[tiab] OR "traumatic hernia"[tiab] OR "abdominal wall disruption"[tiab] OR "seat belt"[tiab]) AND (trauma[tiab] OR injury[tiab] OR abdominal[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 11 - HEMORRAGIA DIGESTIVA E COLORRETAL
+estratificar o sangramento e decidir endoscopia, radiologia ou cirurgia
+
+T044 Hemorragia digestiva alta nao varicosa: risco, endoscopia e timing
+Grau 3 - 4860 registros
+
+("gastrointestinal hemorrhage"[mh] OR "upper gastrointestinal bleeding"[tiab] OR "nonvariceal"[tiab]) AND (endoscopy[tiab] OR timing[tiab] OR risk[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T045 Hemorragia varicosa: controle do sangramento e prevencao da recidiva
+Grau 4 - 1151 registros
+
+("esophageal and gastric varices"[mh] OR "variceal bleeding"[tiab] OR "variceal hemorrhage"[tiab]) AND (management[tiab] OR TIPS[tiab] OR prevention[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T046 Hemorragia digestiva baixa: localizacao e decisao cirurgica
+Grau 3 - 718 registros
+
+("lower gastrointestinal bleeding"[tiab] OR "lower gastrointestinal hemorrhage"[tiab] OR hematochezia[tiab]) AND (diagnosis[tiab] OR management[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T047 Sangramento digestivo em uso de anticoagulante e antiagregante
+Grau 4 - 731 registros
+
+("anticoagulant"[tiab] OR "antiplatelet"[tiab] OR "direct oral anticoagulant"[tiab]) AND ("gastrointestinal bleeding"[tiab] OR "gastrointestinal hemorrhage"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T048 Coloproctologia urgente: doenca hemorroidaria, abscesso e fissura
+Grau 2 - 362 registros
+
+("hemorrhoids"[mh] OR "anorectal abscess"[tiab] OR "anal fissure"[tiab] OR "perianal abscess"[tiab]) AND (emergency[tiab] OR urgent[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T049 Sindrome de Fournier e urgencias orifiais
+Grau 4 - 538 registros
+
+("Fournier gangrene"[mh] OR "Fournier"[tiab] OR "necrotizing fasciitis"[tiab]) AND (perineal[tiab] OR genital[tiab] OR debridement[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T066 Urgencias oncologicas
+Grau 3 - 171 registros
+
+("oncologic emergency"[tiab] OR "oncological emergency"[tiab] OR "malignant obstruction"[tiab] OR "cancer emergency"[tiab]) AND (surgery[tiab] OR acute[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T067 Neoplasia colorretal na urgencia
+Grau 3 - 2927 registros
+
+("colorectal neoplasms"[mh] OR "colorectal cancer"[tiab]) AND (obstruction[tiab] OR perforation[tiab] OR emergency[tiab] OR stent[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 12 - INFECCAO E SEPSE CIRURGICA
+controlar o foco e conduzir a sepse cirurgica
+
+T050 Sepse de foco abdominal
+Grau 3 - 7648 registros
+
+("sepsis"[tiab] OR "septic shock"[tiab] OR "intra-abdominal infection"[tiab]) AND ("source control"[tiab] OR abdominal[tiab] OR antibiotic[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T051 Infecoes de pele e partes moles: fasceite necrotizante
+Grau 4 - 836 registros
+
+("necrotizing fasciitis"[mh] OR "necrotizing fasciitis"[tiab] OR "skin and soft tissue infection"[tiab]) AND (surgery[tiab] OR debridement[tiab] OR mortality[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T052 Peritonite terciaria e falencia de controle do foco
+Grau 4 - 288 registros
+
+("tertiary peritonitis"[tiab] OR "tertiary peritonitis"[mh] OR "persistent peritonitis"[tiab] OR "open abdomen"[tiab]) AND (mortality[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 13 - INTENSIVISMO CIRURGICO
+conduzir o pos-operatorio critico
+
+T053 Ventilacao mecanica no pos-operatorio
+Grau 3 - 640 registros
+
+("mechanical ventilation"[ti] OR "respiration, artificial"[mh] OR weaning[ti] OR extubation[ti]) AND (postoperative[ti] OR "abdominal surgery"[ti] OR "surgical intensive care"[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T054 SDRA no paciente cirurgico
+Grau 3 - 2027 registros
+
+("respiratory distress syndrome"[mh] OR "ARDS"[tiab] OR "acute respiratory distress syndrome"[tiab]) AND (prone[tiab] OR PEEP[tiab] OR surgical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T055 Suporte hemodinamico: vasopressor e responsividade
+Grau 3 - 3320 registros
+
+("vasoconstrictor agents"[mh] OR vasopressor[tiab] OR noradrenaline[tiab] OR norepinephrine[tiab] OR "fluid responsiveness"[tiab]) AND (shock[tiab] OR critical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T056 Lesao renal aguda e terapia substitutiva
+Grau 3 - 8803 registros
+
+("acute kidney injury"[mh] OR "acute kidney injury"[tiab] OR "renal replacement therapy"[tiab]) AND (surgery[tiab] OR critical[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T057 Disturbios metabolicos e nutricionais
+Grau 3 - 3235 registros
+
+("refeeding syndrome"[tiab] OR "nutritional support"[tiab] OR "enteral nutrition"[tiab] OR "parenteral nutrition"[tiab]) AND (surgical[tiab] OR critical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T058 Delirium, sedacao e analgesia
+Grau 3 - 617 registros
+
+("delirium"[mh] OR delirium[ti]) AND (surgery[ti] OR postoperative[ti] OR "intensive care"[ti]) AND (prevention[ti] OR risk[ti] OR outcome[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 14 - QUEIMADURAS
+repor volume, proteger a via aerea e descomprimir
+
+T059 Reposicao volemica, internacao e escarotomia
+Grau 3 - 1202 registros
+
+("burns"[mh] OR "burn"[tiab]) AND ("fluid resuscitation"[tiab] OR "Parkland"[tiab] OR escharotomy[tiab] OR admission[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T060 Queimadura de via aerea e lesao inalatoria
+Grau 4 - 451 registros
+
+("inhalation injury"[mh] OR "inhalation injury"[tiab] OR "airway burn"[tiab]) AND (burns[tiab] OR intubation[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T061 Queimadura eletrica e trauma de partes moles
+Grau 5 - 1058 registros
+
+("electric burns"[mh] OR "electrical injury"[tiab] OR "electrical burn"[tiab] OR "high-voltage"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 15 - UROLOGIA E GENITURINARIO
+reconhecer e conduzir a urgencia urologica
+
+T062 Trauma renal
+Grau 2 - 5859 registros
+
+("kidney"[tiab] OR renal[tiab]) AND (trauma[tiab] OR injury[tiab]) AND (management[tiab] OR nonoperative[tiab] OR embolization[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T063 Trauma geniturinario: bexiga, uretra, ureter, penis e testiculo
+Grau 3 - 1163 registros
+
+("bladder injury"[tiab] OR "urethral injury"[tiab] OR "ureteral injury"[tiab] OR "testicular trauma"[tiab] OR "genitourinary trauma"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T064 Escroto agudo
+Grau 1 - 794 registros
+
+("acute scrotum"[tiab] OR "testicular torsion"[mh] OR "testicular torsion"[tiab] OR "testicular trauma"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T065 Urolitiase na urgencia
+Grau 2 - 2493 registros
+
+("urolithiasis"[mh] OR "renal colic"[tiab] OR ureterolithiasis[tiab] OR "ureteral stone"[tiab]) AND (emergency[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 16 - GINECOLOGIA E OBSTETRICIA NA URGENCIA
+conduzir o abdome agudo na gestante e a hemorragia obstetrica
+
+T095 Abdome agudo na gestante: diagnostico diferencial e imagem
+Grau 4 - 5890 registros
+
+("pregnancy"[tiab] OR pregnant[tiab]) AND ("acute abdomen"[tiab] OR "abdominal surgery"[tiab] OR appendicitis[tiab] OR cholecystitis[tiab] OR imaging[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T096 Emergencias obstetricas hemorragicas: reconhecimento do choque
+Grau 4 - 2552 registros
+
+("postpartum hemorrhage"[mh] OR "postpartum hemorrhage"[tiab] OR "obstetric hemorrhage"[tiab]) AND (shock[tiab] OR management[tiab] OR mortality[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T097 Ectopica rota e hemoperitonio
+Grau 3 - 1392 registros
+
+("ectopic pregnancy"[mh] OR "ectopic pregnancy"[tiab] OR "ruptured ectopic"[tiab]) AND (diagnosis[tiab] OR management[tiab] OR fertility[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T098 Emergencias ginecologicas nao obstetricas: torcao anexial e abscesso
+Grau 3 - 444 registros
+
+("ovarian torsion"[tiab] OR "adnexal torsion"[tiab] OR "tubo-ovarian abscess"[tiab]) AND (diagnosis[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T138 Trauma na gestante: prioridades maternas, avaliacao fetal e cesarea perimortem
+Grau 4 - 3697 registros
+
+("pregnant trauma"[tiab] OR "trauma in pregnancy"[tiab] OR "perimortem cesarean"[tiab] OR "resuscitative hysterotomy"[tiab] OR ("pregnancy"[mh] AND "wounds and injuries"[mh])) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 17 - CIRURGIA PEDIATRICA DE URGENCIA
+reconhecer que a crianca nao e adulto pequeno
+
+T099 Abdome agudo no lactente e na crianca: apendicite, intussuscepcao, Meckel e hernia encarcerada
+Grau 3 - 733 registros
+
+("intussusception"[tiab] OR "Meckel"[tiab] OR ("appendicitis"[tiab] AND child[tiab]) OR "pediatric hernia"[tiab]) AND (management[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T100 Trauma na crianca: particularidades anatomicas e manejo nao operatorio
+Grau 4 - 1000 registros
+
+("pediatric trauma"[tiab] OR "paediatric trauma"[tiab] OR "injured child"[tiab]) AND (management[tiab] OR "nonoperative"[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 18 - ENDOSCOPIA DIGESTIVA NA URGENCIA
+executar a hemostasia endoscopica e responder pela complicacao
+
+T101 Endoscopia digestiva alta diagnostica e terapeutica na urgencia
+Grau 3 - 3897 registros
+
+("endoscopy, digestive system"[mh] OR "upper endoscopy"[tiab] OR gastroscopy[tiab]) AND (emergency[tiab] OR urgent[tiab] OR "therapeutic"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T102 Colonoscopia diagnostica e terapeutica na urgencia
+Grau 3 - 2034 registros
+
+("colonoscopy"[mh] OR colonoscopy[tiab]) AND (emergency[tiab] OR urgent[tiab] OR bleeding[tiab] OR decompression[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T103 Complicacoes de procedimentos endoscopicos
+Grau 4 - 5072 registros
+
+("endoscopic complication"[tiab] OR perforation[tiab] OR "post-polypectomy"[tiab] OR "bleeding"[tiab]) AND (endoscopy[tiab] OR colonoscopy[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 19 - INTERFACES, URGENCIA VASCULAR E ISQUEMIA VISCERAL
+reconhecer, estabilizar e acionar com prazo
+
+T104 Interface com radiologia intervencionista: quando embolizacao, drenagem e stent sao primeira escolha
+Grau 4 - 1527 registros
+
+("interventional radiology"[tiab] OR "transcatheter arterial embolization"[tiab] OR angioembolization[tiab] OR "percutaneous drainage"[tiab]) AND (emergency[tiab] OR trauma[tiab] OR hemorrhage[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T107 Cirurgia endocrina na urgencia
+Grau 4 - 1914 registros
+
+("endocrine surgical procedures"[mh] OR thyroidectomy[tiab] OR adrenalectomy[tiab] OR "thyroid crisis"[tiab] OR pheochromocytoma[tiab]) AND (emergency[tiab] OR urgent[tiab] OR complication[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T111 Epistaxe grave, hematoma de septo e obstrucao de via aerea alta
+Grau 2 - 1079 registros
+
+("epistaxis"[mh] OR epistaxis[tiab] OR "septal hematoma"[tiab] OR "nasal packing"[tiab]) AND (severe[tiab] OR management[tiab] OR emergency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T112 Toxicologia e exposicoes especiais com interface cirurgica
+Grau 3 - 2813 registros
+
+("poisoning"[mh] OR toxicology[tiab] OR "caustic ingestion"[tiab] OR "corrosive"[tiab]) AND (surgery[tiab] OR emergency[tiab] OR endoscopy[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T139 Isquemia mesenterica aguda: diagnostico precoce e decisao de resseccao
+Grau 5 - 930 registros
+
+("mesenteric ischemia"[mh] OR "mesenteric ischemia"[tiab] OR "mesenteric infarction"[tiab] OR "bowel ischemia"[tiab]) AND (diagnosis[tiab] OR management[tiab] OR resection[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T027 Trauma vascular cervical
+Grau 4 - 528 registros
+
+("cervical vascular injury"[tiab] OR "carotid injury"[tiab] OR "vertebral artery injury"[tiab] OR "neck trauma"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 20 - PROCEDIMENTOS A BEIRA-LEITO
+executo a tecnica e reconheco a minha complicacao
+
+T081 Procedimentos a beira-leito com metrica de aquisicao
+Grau 2 - 439 registros
+
+("bedside procedure"[tiab] OR "tube thoracostomy"[tiab] OR "central venous catheter"[tiab] OR "procedural competency"[tiab] OR "intraosseous"[tiab]) AND (training[tiab] OR competency[tiab] OR metric[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T146 Retirada de dreno, paracentese e toracocentese: tecnica e complicacao
+Grau 2 - 1378 registros
+
+("paracentesis"[tiab] OR "thoracentesis"[tiab] OR "chest tube removal"[tiab] OR "drain removal"[tiab]) AND (complication*[tiab] OR techniqu*[tiab] OR ultrasound[tiab] OR safety[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T147 Peritoneostomia como procedimento: instalacao, manejo e retirada
+Grau 3 - 427 registros
+
+("open abdomen"[tiab] OR "laparostomy"[tiab] OR "peritoneostomy"[tiab] OR "temporary abdominal closure"[tiab]) AND (management[tiab] OR complication*[tiab] OR closure[tiab] OR nursing[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T148 Acesso vascular dificil: intraosseo, ecoguiado e dissecção
+Grau 3 - 508 registros
+
+("difficult venous access"[tiab] OR "intraosseous access"[tiab] OR "vascular access"[ti] OR "ultrasound-guided"[ti]) AND (emergency[tiab] OR resuscitation[tiab] OR trauma[tiab] OR critical[tiab]) AND (technique[tiab] OR complication*[tiab] OR success[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T149 Traqueostomia percutanea e manejo da via aerea definitiva
+Grau 3 - 1627 registros
+
+("percutaneous tracheostomy"[tiab] OR "tracheostomy"[mh] OR "surgical airway"[tiab]) AND (technique[tiab] OR complication*[tiab] OR timing[tiab] OR emergency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T150 Certificacao de competencia procedimental: como se mede habilidade
+Grau 4 - 934 registros
+
+("procedural competence"[tiab] OR "procedural competency"[tiab] OR "entrustable professional"[tiab] OR "skills assessment"[tiab] OR "simulation-based assessment"[tiab]) AND (surgery[tiab] OR surgical[tiab] OR residency[tiab] OR certification[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 21 - IMAGEM PELO CIRURGIAO
+interpreto o que eu mesmo pedi
+
+T079 Ultrassom point-of-care do cirurgiao: pulmonar, cardiaco focado, vascular e avaliacao hemodinamica
+Grau 3 - 9601 registros
+
+("point-of-care"[tiab] OR POCUS[tiab] OR "ultrasonography"[mh]) AND (surgeon[tiab] OR "emergency"[tiab] OR trauma[tiab] OR "focused cardiac"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T080 Protocolos focados e integracao do POCUS a decisao cirurgica: eFAST seriado, RUSH e volemia
+Grau 3 - 742 registros
+
+("eFAST"[tiab] OR "RUSH"[tiab] OR "focused assessment"[tiab] OR "volume status"[tiab]) AND (protocol[tiab] OR decision[tiab] OR ultrasound[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T110 Radiologia de urgencia interpretada pelo cirurgiao: leitura sistematica
+Grau 3 - 187 registros
+
+("radiology"[tiab] OR "computed tomography"[tiab]) AND (interpretation[tiab] OR "reading"[tiab] OR "emergency"[tiab]) AND surgeon[tiab] AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 22 - MIS E CIRURGIA ESPECIALIZADA NA URGENCIA
+escolho a via e reconheco a complicacao dela
+
+T106 Cirurgia bariatrica e metabolica na urgencia
+Grau 4 - 3156 registros
+
+("bariatric surgery"[mh] OR "bariatric surgery"[tiab] OR "metabolic surgery"[tiab]) AND (complication[tiab] OR emergency[tiab] OR leak[tiab] OR "internal hernia"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T108 Complicacoes de cirurgia videolaparoscopica e robotica
+Grau 4 - 1679 registros
+
+("laparoscopic"[tiab] OR robotic[tiab]) AND (complication[tiab] OR "bile duct injury"[tiab] OR "thermal injury"[tiab] OR "port-site hernia"[tiab]) AND (emergency[tiab] OR urgent[tiab] OR bowel[tiab] OR biliary[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T109 Laparoscopia no abdome agudo nao traumatico e videolaparoscopia no trauma
+Grau 3 - 1013 registros
+
+("laparoscopy"[tiab]) AND ("acute abdomen"[tiab] OR "abdominal trauma"[tiab] OR "diagnostic laparoscopy"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 23 - AVALIACAO DE RISCO PERIOPERATORIO
+estratifico o risco antes de operar
+
+T086 Avaliacao perioperatoria e estratificacao de risco cirurgico no paciente adulto
+Grau 3 - 9017 registros
+
+("preoperative evaluation"[tiab] OR "risk assessment"[tiab] OR "surgical risk"[tiab]) AND (emergency[tiab] OR urgent[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T087 Cuidados perioperatorios no paciente idoso: fragilidade, polifarmacia e delirium
+Grau 3 - 2306 registros
+
+("frailty"[mh] OR frailty[tiab] OR "polypharmacy"[tiab]) AND ("perioperative"[tiab] OR surgery[tiab]) AND (elderly[tiab] OR aged[tiab] OR older[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T088 Cuidados perioperatorios no paciente pediatrico
+Grau 3 - 224 registros
+
+(child[ti] OR pediatric[ti] OR paediatric[ti]) AND (perioperative[ti] OR "emergency surgery"[ti] OR appendicitis[ti] OR intussusception[ti]) AND (management[ti] OR outcome[ti] OR anesthesia[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T091 Cardiopatia no paciente cirurgico de urgencia
+Grau 4 - 6238 registros
+
+("cardiac disease"[tiab] OR cardiopathy[tiab] OR "coronary artery disease"[tiab] OR "heart failure"[tiab]) AND ("noncardiac surgery"[tiab] OR emergency[tiab] OR perioperative[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 24 - SUPORTE PERIOPERATORIO E FARMACOLOGIA
+protejo os orgaos e racionalizo os farmacos
+
+T089 Fluidoterapia, eletrolitos e equilibrio acido-base no perioperatorio
+Grau 3 - 2171 registros
+
+("fluid therapy"[mh] OR "fluid therapy"[tiab] OR "acid-base"[tiab] OR electrolyte[tiab]) AND (perioperative[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T090 Nutricao enteral e parenteral no paciente cirurgico
+Grau 3 - 3178 registros
+
+("enteral nutrition"[tiab] OR "parenteral nutrition"[tiab] OR "nutritional support"[tiab]) AND (surgery[tiab] OR surgical[tiab] OR postoperative[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T092 Injuria renal perioperatoria: nefroprotecao e dialise de urgencia
+Grau 3 - 5443 registros
+
+("acute kidney injury"[tiab] OR "contrast nephropathy"[tiab] OR "renal protection"[tiab]) AND (perioperative[tiab] OR surgery[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T093 Antibioticoterapia racional e stewardship em cirurgia de urgencia
+Grau 3 - 3404 registros
+
+("antimicrobial stewardship"[tiab] OR "antibiotic prophylaxis"[tiab] OR "antibiotic stewardship"[tiab]) AND (surgery[tiab] OR emergency[tiab] OR surgical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T094 Farmacologia do paciente cirurgico de urgencia: anticoagulacao, antiagregacao e reversao
+Grau 4 - 2455 registros
+
+("anticoagulation reversal"[tiab] OR "andexanet"[tiab] OR "idarucizumab"[tiab] OR "prothrombin complex concentrate"[tiab] OR "vitamin K antagonists"[tiab]) AND (surgery[tiab] OR emergency[tiab] OR bleeding[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 25 - FIM DE VIDA E DECISAO COMPARTILHADA
+reconhecer o limite terapeutico e conduzir a decisao compartilhada
+
+T068 Psiquiatria e cirurgia de urgencia e trauma
+Grau 4 - 380 registros
+
+(psychiatry[ti] OR "mental disorder"[ti] OR "self-harm"[ti] OR "decision-making capacity"[ti]) AND ("emergency service, hospital"[mh] OR "trauma centers"[mh] OR "surgical procedures, operative"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T069 Cuidados paliativos e cirurgia de urgencia e trauma
+Grau 4 - 4592 registros
+
+("palliative care"[mh] OR "palliative care"[tiab] OR "goals of care"[tiab] OR "end of life"[tiab]) AND (surgery[tiab] OR trauma[tiab] OR emergency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T070 Morte encefalica e doacao de orgaos
+Grau 5 - 5672 registros
+
+("brain death"[mh] OR "brain death"[tiab] OR "organ donation"[tiab] OR "donation after brain death"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 26 - SEGURANCA DO PACIENTE E QUALIDADE
+prevenir e responder ao evento adverso
+
+T082 Seguranca do paciente no centro cirurgico de urgencia: checklist, comunicacao e transicao
+Grau 3 - 7547 registros
+
+("patient safety"[mh] OR "checklist"[tiab] OR "handover"[tiab] OR "surgical safety"[tiab]) AND (emergency[tiab] OR operating room[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T083 Infeccao relacionada a assistencia e sitio cirurgico: prevencao e bundles
+Grau 3 - 997 registros
+
+("surgical site infection"[ti] OR "surgical wound infection"[mh]) AND (prevention[ti] OR bundle[ti] OR "colorectal surgery"[ti] OR "emergency surgery"[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T084 Evento adverso, segunda vitima e cultura de seguranca
+Grau 4 - 3354 registros
+
+("second victim"[tiab] OR "adverse event"[tiab] OR "disclosure"[tiab] OR "safety culture"[tiab]) AND (surgeon[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T085 Simulacao realistica, CRM e TeamSTEPPS
+Grau 3 - 1707 registros
+
+("simulation training"[tiab] OR "crisis resource management"[tiab] OR "TeamSTEPPS"[tiab] OR "non-technical skills"[tiab]) AND (emergency[tiab] OR trauma[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 27 - CASOS INTEGRADORES E FECHAMENTO
+resolver o paciente com prioridades concorrentes
+
+T071 Politrauma com TCE e hemorragia: o conflito de metas
+Grau 5 - 243 registros
+
+("polytrauma"[tiab] OR "multiple trauma"[tiab]) AND ("traumatic brain injury"[tiab] OR "hemorrhage"[tiab]) AND (priorities[tiab] OR management[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T072 Pelve instavel com fratura exposta: qual sangramento primeiro
+Grau 5 - 219 registros
+
+("pelvic fracture"[tiab] OR "pelvic ring"[tiab]) AND (hemorrhage[tiab] OR "open fracture"[tiab] OR angioembolization[tiab] OR preperitoneal packing[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T073 Abdome agudo em anticoagulado
+Grau 4 - 178 registros
+
+("anticoagulant"[tiab] OR "anticoagulation"[tiab]) AND ("acute abdomen"[tiab] OR "abdominal surgery"[tiab] OR "emergency surgery"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T074 Hernia encarcerada com isquemia
+Grau 4 - 522 registros
+
+("hernia"[mh] OR hernia[tiab]) AND (incarcerated[tiab] OR strangulated[tiab] OR strangulation[tiab]) AND (emergency[tiab] OR urgent[tiab] OR ischemia[tiab] OR resection[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T075 Trauma de face com via aerea ameacada
+Grau 4 - 401 registros
+
+("facial trauma"[tiab] OR "maxillofacial"[tiab]) AND ("airway"[tiab] OR intubation[tiab] OR "airway management"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T076 Grande queimado com trauma associado
+Grau 5 - 1330 registros
+
+("burns"[tiab] AND trauma[tiab]) OR ("burn patient"[tiab] AND "trauma"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T077 Caso integrador transversal: consolidacao do bloco de trauma
+Grau 5 - 951 registros
+
+("polytrauma"[tiab] OR "multiple injuries"[tiab] OR "trauma team"[tiab]) AND (outcome[tiab] OR performance[tiab] OR audit[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T078 Fechamento do ciclo clinico: sintese e transicao para governanca
+Grau 3 - 247 registros
+
+("trauma system"[ti] OR "trauma center"[ti] OR "quality improvement"[ti] OR "trauma registry"[ti]) AND (governance[ti] OR organization[ti] OR performance[ti] OR outcome[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 28 - AUDITORIA, GOVERNANCA E SISTEMAS
+medir, auditar e aprender institucionalmente
+
+T113 Sistemas de trauma, triagem e gestao de incidente com multiplas vitimas
+Grau 3 - 2210 registros
+
+("mass casualty"[tiab] OR "multiple casualty"[tiab] OR "disaster medicine"[tiab] OR "trauma triage"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T114 Auditoria de protocolos e indicadores de qualidade em urgencia
+Grau 3 - 830 registros
+
+("quality indicator"[tiab] OR "audit"[tiab] OR "performance indicator"[tiab]) AND (trauma[tiab] OR emergency surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T115 Revisao de mortalidade e morbidade: metodo e aprendizado institucional
+Grau 3 - 710 registros
+
+("morbidity and mortality"[ti] OR "mortality review"[ti] OR "surgical audit"[ti] OR "audit"[ti]) AND (surgery[tiab] OR surgical[tiab]) AND (conference[tiab] OR learning[tiab] OR quality[tiab] OR review[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T116 Telemedicina, regulacao e transferencia inter-hospitalar em trauma
+Grau 4 - 3741 registros
+
+("telemedicine"[mh] OR telemedicine[tiab] OR teletrauma[tiab] OR "interhospital transfer"[tiab]) AND (trauma[tiab] OR emergency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 29 - GOVERNANCA COMPARTILHADA E SAUDE DO PROFISSIONAL
+trabalhar em equipe e sustentar o proprio exercicio
+
+T143 Governanca compartilhada em sala de emergencia
+Grau 4 - 178 registros
+
+("emergency department"[tiab] AND ("shared governance"[tiab] OR "teamwork"[tiab] OR "collaboration"[tiab])) AND (surgery[tiab] OR emergency medicine[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T144 Limites de escopo e transferencia de cuidado na urgencia
+Grau 4 - 965 registros
+
+("scope of practice"[tiab] OR "handoff"[tiab] OR "transfer of care"[tiab] OR "care transition"[tiab]) AND (emergency[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T145 Burnout, segunda vitima e apoio institucional
+Grau 4 - 1437 registros
+
+("second victim"[tiab] OR "burnout"[tiab] OR "physician wellness"[tiab]) AND (surgeon[tiab] OR resident[tiab] OR "emergency medicine"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 30 - MEDICINA BASEADA EM EVIDENCIAS - LER E ENTENDER
+entender o que o artigo fez
+
+T117 A pergunta clinica estruturada: PICO e PECO
+Grau 2 - 1049 registros
+
+("PICO"[tiab] OR "clinical question"[tiab] OR "evidence-based medicine"[tiab]) AND (formulation[tiab] OR methodology[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T118 Desenhos de estudo em cirurgia
+Grau 2 - 372 registros
+
+("study design"[ti] OR "randomized controlled trial"[ti] OR cohort[ti] OR "case-control"[ti]) AND (surgical[ti] OR surgery[ti]) AND (methodology[ti] OR bias[ti] OR quality[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T119 Medidas de efeito e de associacao: RR, OR, HR, RAR e NNT
+Grau 3 - 122 registros
+
+("odds ratio"[ti] OR "hazard ratio"[ti] OR "relative risk"[ti] OR "number needed to treat"[ti] OR "absolute risk"[ti]) AND (surgery[tiab] OR surgical[tiab] OR trial[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T120 Erro aleatorio e erro sistematico: IC, poder, valor de p e os seis vieses
+Grau 3 - 282 registros
+
+("confidence interval"[ti] OR "p value"[ti] OR "statistical significance"[ti] OR "power calculation"[ti]) AND (surgery[tiab] OR surgical[tiab] OR "randomized"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 31 - MEDICINA BASEADA EM EVIDENCIAS - JULGAR E APLICAR
+avaliar a qualidade e levar ao paciente
+
+T121 Revisao sistematica e metanalise: heterogeneidade e risco de vies
+Grau 4 - 8355 registros
+
+("systematic review"[tiab] OR "meta-analysis"[tiab]) AND (heterogeneity[tiab] OR "risk of bias"[tiab] OR "forest plot"[tiab]) AND surgery[tiab] AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T122 Sistemas de graduacao da evidencia: GRADE, Oxford e SORT
+Grau 4 - 1674 registros
+
+("GRADE working group"[tiab] OR "GRADE guidelines"[tiab] OR "GRADEpro"[tiab] OR "Grading of Recommendations Assessment, Development and Evaluation"[tiab] OR "certainty of evidence"[ti] OR "levels of evidence"[ti] OR "level of evidence"[ti] OR "Oxford Centre for Evidence-Based Medicine"[tiab] OR ("GRADE"[ti] AND recommend*[ti])) AND (surgery[tiab] OR surgical[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T123 Leitura critica de diretrizes de sociedade: conflito de interesse e discordancia
+Grau 4 - 602 registros
+
+("practice guideline"[tiab] OR "clinical guideline"[tiab]) AND ("conflict of interest"[tiab] OR discordance[tiab] OR methodology[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T124 Leitura critica do livro-texto e do capitulo de referencia
+Grau 2 - 153 registros
+
+("textbook"[tiab] OR "book chapter"[tiab]) AND ("evidence-based"[tiab] OR accuracy[tiab] OR outdated[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T126 Meta-pesquisa cirurgica: CONSORT, PRISMA, STROBE e IDEAL
+Grau 5 - 259 registros
+
+("CONSORT"[ti] OR "PRISMA"[ti] OR "STROBE"[ti] OR "IDEAL"[ti] OR "reporting guideline"[ti]) AND (surgery[ti] OR surgical[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T125 Do artigo a beira do leito: aplicabilidade e populacoes nao representadas
+Grau 4 - 3922 registros
+
+("applicability"[tiab] OR "external validity"[tiab] OR "generalizability"[tiab]) AND ("evidence-based medicine"[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+MODULO 32 - ENSINO, PRECEPTORIA E AVALIACAO
+ensinar e avaliar em ambiente clinico
+
+T127 Principios de aprendizagem do adulto e teorias de ensino
+Grau 2 - 279 registros
+
+("adult learning"[tiab] OR "andragogy"[tiab] OR "learning theory"[tiab]) AND ("medical education"[tiab] OR residency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T128 Estrategias instrucionais: aula expositiva, PBL, TBL e aula invertida
+Grau 3 - 1675 registros
+
+("flipped classroom"[tiab] OR "problem-based learning"[tiab] OR "team-based learning"[tiab] OR "lecture"[tiab]) AND ("medical education"[tiab] OR surgical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T129 Pratica deliberada e feedback: como dar retorno que muda desempenho
+Grau 3 - 3883 registros
+
+("deliberate practice"[tiab] OR "feedback"[tiab]) AND ("medical education"[tiab] OR surgical training[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T130 Aprendizagem em ambiente clinico: preceptoria e autonomia supervisionada
+Grau 4 - 1853 registros
+
+("clinical teaching"[tiab] OR "bedside teaching"[tiab] OR "entrustable"[tiab] OR "supervision"[tiab]) AND (residency[tiab] OR surgical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T134 Ensino de procedimentos e habilidades: laboratorio e simulacao
+Grau 3 - 8266 registros
+
+("procedural training"[tiab] OR "simulation"[tiab] OR "skills laboratory"[tiab]) AND (surgical[tiab] OR transfer[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T135 Desenvolvimento docente, mentoria e prevencao de burnout
+Grau 4 - 3369 registros
+
+("faculty development"[tiab] OR mentoring[tiab] OR burnout[tiab]) AND ("medical education"[tiab] OR surgeon[tiab] OR resident[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T131 Avaliacao formativa e somativa: instrumentos, validade e confiabilidade
+Grau 4 - 232 registros
+
+("formative assessment"[ti] OR "summative assessment"[ti] OR "assessment tool"[ti] OR "validity evidence"[ti]) AND ("medical education"[tiab] OR residency[tiab] OR "surgical training"[tiab] OR clerkship[tiab] OR undergraduate[tiab]) NOT (video*[tiab] OR "social media"[tiab] OR YouTube[tiab] OR Bilibili[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T132 Construcao de questoes e rubricas: mapeamento, distratores e psicometria
+Grau 4 - 1224 registros
+
+("item writing"[tiab] OR "multiple choice question"[tiab] OR "rubric"[tiab] OR "distractor"[tiab]) AND ("medical education"[tiab] OR assessment[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T133 Curriculo por competencias: marcos de progressao e EPA
+Grau 5 - 1397 registros
+
+("competency-based education"[tiab] OR "entrustable professional activities"[tiab] OR "milestones"[tiab]) AND (surgery[tiab] OR residency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+==============================================================================
+FIM - 150 temas em 32 modulos.

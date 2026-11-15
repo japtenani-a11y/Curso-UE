@@ -1,0 +1,137 @@
+{
+ "tema": "T001",
+ "tipo": "gabarito_4",
+ "titulo": "Gabarito comentado — Pós-teste D+15",
+ "status": "rascunho",
+ "versao_padrao": "guia v0.1 (12/11/2026)",
+ "gerado_por": "Claude, geração manual fora do executor",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). [H#] = histórico (camada 1); [D#] = livro-texto: Mattox, Trauma 9ª ed., e ATLS vigente (camada 2); [P#] = protocolo institucional da UE-HCFMRP (camada 3); [A#] = artigo da revisão (camada 4); [G#] = diretriz (camada 5). Casos e dados de pacientes são fictícios.\n\n# T001 — Gabarito comentado: Pós-teste D+15\n\nLiberado ao aluno só depois de ele responder o teste. Para cada questão: resposta, grau de dificuldade, taxa de acerto esperada para o perfil, justificativa de cada alternativa e âncora na fonte.\n\n\n## Perfil Graduação\n\n**1. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora D2, D3, D11\n- A) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.\n- B) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.\n- C) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.\n- D) erro conceitual: Fratura sem sangramento grave não muda a ordem ABCDE.\n- E) **correta**: nesses casos a circulação vem antes da via aérea (CAB, CABDE).\n\n**2. Resposta E** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora D3\n- A) erro conceitual: O AMPLA é da secundária.\n- B) erro de conduta: A TC não vem antes.\n- C) erro técnico: Exame de imagem não vem antes.\n- D) erro de indicação: A exposição não precede a circulação.\n- E) **correta**: no paciente em extremis, a circulação vem primeiro.\n\n**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora D9\n- A) erro de conduta: Esperar atrasa o controle.\n- B) erro técnico: Não é a prioridade.\n- C) **correta**: no alto risco, a cinta pélvica vai imediatamente.\n- D) erro conceitual: Não trata o sangramento pélvico.\n- E) erro de indicação: Não há sangramento de membro.\n\n**4. Resposta A** · grau Média · taxa de acerto esperada 50% a 75% · âncora D15, D28\n- A) **correta**: \n- B) erro de conduta: Atrasa a ressuscitação.\n- C) erro de indicação: Não serve para ressuscitação.\n- D) erro técnico: Atrasa.\n- E) erro conceitual: Não serve.\n\n**5. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D17, D26\n- A) erro técnico: Não.\n- B) erro de indicação: Não deve ser presumido.\n- C) **correta**: alteração do nível de consciência acompanha o choque grave.\n- D) erro de conduta: Não.\n- E) erro conceitual: Não.\n\n**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D26\n- A) erro de conduta: Não.\n- B) erro de indicação: Não isoladamente.\n- C) **correta**: \n- D) erro conceitual: Irrelevante.\n- E) erro técnico: Irrelevante.\n\n**7. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D14\n- A) erro de indicação: Há motivo.\n- B) erro técnico: Não.\n- C) **correta**: \n- D) erro de conduta: Há motivo.\n- E) erro conceitual: Não é o motivo.\n\n\n## Perfil R1\n\n**1. Resposta B** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora D2, D3, D11\n- A) erro conceitual: Fratura sem sangramento grave não muda a ordem ABCDE.\n- B) **correta**: nesses casos a circulação vem antes da via aérea (CAB, CABDE).\n- C) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.\n- D) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.\n- E) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.\n\n**2. Resposta A** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora D9\n- A) **correta**: \n- B) erro conceitual: É justamente indicada.\n- C) erro de indicação: Atraso.\n- D) erro técnico: Não controla o sangramento e atrasa.\n- E) erro de conduta: Atraso.\n\n**3. Resposta C** · grau Fácil · taxa de acerto esperada 75% a 90% · âncora A34, A35\n- A) erro conceitual: Há adjuntos.\n- B) erro de conduta: Transportar paciente instável é arriscado.\n- C) **correta**: adjunto para buscar sangramento intracavitário.\n- D) erro técnico: Não é exame de emergência.\n- E) erro de indicação: Não se aplica.\n\n**4. Resposta D** · grau Média · taxa de acerto esperada 50% a 75% · âncora D27\n- A) erro conceitual: Muito abaixo.\n- B) erro de conduta: Há dados.\n- C) erro de indicação: Abaixo.\n- D) **correta**: \n- E) erro técnico: Não.\n\n**5. Resposta E** · grau Média · taxa de acerto esperada 50% a 75% · âncora D28\n- A) erro de indicação: Não só.\n- B) erro técnico: Serve.\n- C) erro conceitual: Não só.\n- D) erro de conduta: Atraso.\n- E) **correta**: \n\n**6. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D9, A35\n- A) erro conceitual: O FAST-PLUS avalia a sínfise.\n- B) erro de conduta: Atraso no controle do sangramento.\n- C) **correta**: o ultrassom detectou alargamento crítico confirmado na TC, e a cinta vai já no alto risco.\n- D) erro técnico: Retirar expõe a novo sangramento.\n- E) erro de indicação: Laparotomia não trata o sangramento pélvico.\n\n**7. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D26, A39, D22\n- A) erro de conduta: Arriscado.\n- B) erro conceitual: Importa.\n- C) erro técnico: Atraso.\n- D) **correta**: \n- E) erro de indicação: Inadequado.\n\n\n## Perfil R2\n\n**1. Resposta C** · grau Muito fácil · taxa de acerto esperada acima de 90% · âncora D2, D3, D11\n- A) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.\n- B) erro conceitual: Fratura sem sangramento grave não muda a ordem ABCDE.\n- C) **correta**: nesses casos a circulação vem antes da via aérea (CAB, CABDE).\n- D) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.\n- E) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.\n\n**2. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora A34\n- A) erro de conduta: Diagnóstico não substitui tratamento.\n- B) erro técnico: É exame de beira-leito.\n- C) **correta**: teve sensibilidade de 94,2% no politraumatizado instável.\n- D) erro conceitual: Não é essa a função.\n- E) erro de indicação: Foi estudado justamente no instável.\n\n**3. Resposta C** · grau Média · taxa de acerto esperada 50% a 75% · âncora D26, D27\n- A) erro conceitual: Erro de conduta.\n- B) erro de indicação: Inadequado.\n- C) **correta**: sem resposta, a prioridade é controlar o sangramento.\n- D) erro técnico: Atraso.\n- E) erro de conduta: Atraso no instável sem resposta.\n\n**4. Resposta C** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22, D9\n- A) erro técnico: Expõe a novo sangramento.\n- B) erro de conduta: Atraso.\n- C) **correta**: a colaboração próxima associou-se a sobrevida 15,5% maior que a prevista.\n- D) erro conceitual: Não exclui sangramento retroperitoneal ou pélvico.\n- E) erro de indicação: Não trata o sangramento pélvico.\n\n**5. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A32, D17\n- A) erro conceitual: Teve viés.\n- B) erro técnico: Não.\n- C) erro de indicação: Não deve decidir sozinha.\n- D) erro de conduta: Tem utilidade com limites.\n- E) **correta**: \n\n**6. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A35\n- A) erro conceitual: Não.\n- B) erro de indicação: Não.\n- C) **correta**: \n- D) erro técnico: Foi comparado.\n- E) erro de conduta: Não.\n\n**7. Resposta D** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D8\n- A) erro conceitual: Não é o motivo descrito.\n- B) erro técnico: Não é o motivo.\n- C) erro de conduta: Há motivo.\n- D) **correta**: \n- E) erro de indicação: Não.\n\n\n## Perfil R3\n\n**1. Resposta A** · grau Muito fácil · taxa de acerto esperada acima de 90% · âncora D2, D3, D11\n- A) **correta**: nesses casos a circulação vem antes da via aérea (CAB, CABDE).\n- B) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.\n- C) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.\n- D) erro conceitual: Fratura sem sangramento grave não muda a ordem ABCDE.\n- E) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.\n\n**2. Resposta A** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora D22, D3\n- A) **correta**: no extremis, os mais experientes participam ativamente.\n- B) erro conceitual: Desorganiza.\n- C) erro técnico: Não.\n- D) erro de conduta: Não sem supervisão.\n- E) erro de indicação: Não.\n\n**3. Resposta E** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22, D27\n- A) erro de conduta: Não.\n- B) erro técnico: Não controla.\n- C) erro conceitual: Não.\n- D) erro de indicação: Não controla.\n- E) **correta**: \n\n**4. Resposta A** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora A12, D26\n- A) **correta**: a TC de rotina não mostrou efeito em mortalidade e o paciente não respondeu.\n- B) erro técnico: Não.\n- C) erro conceitual: Não comprovado.\n- D) erro de conduta: Atraso.\n- E) erro de indicação: Não.\n\n**5. Resposta B** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D22, D5\n- A) erro de conduta: Não.\n- B) **correta**: \n- C) erro conceitual: Desorganiza.\n- D) erro técnico: Atrasa.\n- E) erro de indicação: Lento.\n\n**6. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora D32\n- A) erro de conduta: Atraso.\n- B) erro técnico: Armadilha descrita.\n- C) erro conceitual: Armadilha.\n- D) **correta**: \n- E) erro de indicação: Não.\n\n**7. Resposta E** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora D27\n- A) erro de conduta: Não.\n- B) erro técnico: Há.\n- C) erro de indicação: Não.\n- D) erro conceitual: Não.\n- E) **correta**: \n\n\n## Perfil R+\n\n**1. Resposta B** · grau Muito fácil · taxa de acerto esperada acima de 90% · âncora D2, D3, D11\n- A) erro conceitual: Fratura sem sangramento grave não muda a ordem ABCDE.\n- B) **correta**: nesses casos a circulação vem antes da via aérea (CAB, CABDE).\n- C) erro de indicação: Glasgow ≤8 indica via aérea definitiva; não inverte a ordem para a circulação.\n- D) erro de conduta: O mecanismo penetrante não inverte a ordem; o que inverte é a hemorragia com risco de vida ou o extremis.\n- E) erro técnico: A radiografia é adjunta; a prioridade não espera exame de imagem.\n\n**2. Resposta D** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A34, A35\n- A) erro conceitual: Não.\n- B) erro de conduta: Não.\n- C) erro de indicação: Não.\n- D) **correta**: \n- E) erro técnico: Há.\n\n**3. Resposta B** · grau Difícil · taxa de acerto esperada 30% a 50% · âncora A22\n- A) erro de conduta: Não.\n- B) **correta**: \n- C) erro técnico: Não há essa restrição.\n- D) erro de indicação: Relevante.\n- E) erro conceitual: Desenho não permite.\n\n**4. Resposta E** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D3, D22\n- A) erro de conduta: Atraso.\n- B) erro técnico: Não.\n- C) erro conceitual: Há exceção.\n- D) erro de indicação: Não no extremis.\n- E) **correta**: \n\n**5. Resposta C** · grau Muito difícil · taxa de acerto esperada 15% a 30% · âncora D27, D3\n- A) erro de conduta: Não.\n- B) erro de indicação: Indireto.\n- C) **correta**: ligado à mortalidade acima de 40% e à prioridade da circulação.\n- D) erro técnico: Não.\n- E) erro conceitual: Não.\n\n**6. Resposta B** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora A32, A33\n- A) erro conceitual: Não.\n- B) **correta**: \n- C) erro de indicação: Não.\n- D) erro de conduta: Não.\n- E) erro técnico: Não.\n\n**7. Resposta D** · grau Extrema · taxa de acerto esperada abaixo de 15% · âncora D28, D15\n- A) erro de indicação: Não.\n- B) erro conceitual: Não.\n- C) erro de conduta: Não.\n- D) **correta**: \n- E) erro técnico: Não.\n",
+ "afirmacoes": [
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A22",
+   "texto": "A sobrevida no grupo com colaboração próxima entre radiologia intervencionista e cirurgia foi 15,5% maior que a prevista (IC 95% 7,5–23,6%).",
+   "fonte_arquivo": "2024_64",
+   "trecho_literal": "the survival rate in the CG was 15.5% higher than the Ps (95% CI: 7.5–23.6%; p < 0.001)"
+  },
+  {
+   "id": "A32",
+   "texto": "A comparação clássica entre déficit de base e parâmetros do ATLS sofreu viés metodológico que superestimou a classe de choque dos parâmetros tradicionais.",
+   "fonte_arquivo": "2024_57",
+   "trecho_literal": "caused a systematic overestimation of shock class for traditional ATLS parameters, favoring the association between BD and transfusion"
+  },
+  {
+   "id": "A33",
+   "texto": "Revisão de 222 artigos: 67 elegíveis; a estabilidade hemodinâmica foi definida em 70% deles, sem consenso nos pontos de corte.",
+   "fonte_arquivo": "2017_15",
+   "trecho_literal": "Out of a total of 222, 67 articles were found to be eligible for inclusion. HD stability was defined in 70% of these articles."
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A35",
+   "texto": "No FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica.",
+   "fonte_arquivo": "2021_19",
+   "trecho_literal": "5/67 patients (7.5%) with a critical pubic SW"
+  },
+  {
+   "id": "A39",
+   "texto": "Em pacientes em choque circulatório, a TC de corpo inteiro não alterou a mortalidade precoce em 24 h (17,4% vs. 27,6%; p = 0,21).",
+   "fonte_arquivo": "2020_70",
+   "trecho_literal": "no difference in early (24 h) mortality was observed (WBCT, 23 (17.4%) and no-WBCT, 8 (27.6%); p = 0.21)"
+  },
+  {
+   "id": "D2",
+   "texto": "Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação é avaliada e tratada antes da via aérea (CAB).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "circulation evaluation and treatment will come before airway (ie, CAB [circulation, airway, breathing])"
+  },
+  {
+   "id": "D3",
+   "texto": "No paciente que chega em extremis, a circulação tem precedência (CABDE).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "where circulation takes precedence (ie, CABDE)"
+  },
+  {
+   "id": "D5",
+   "texto": "Embora ensinada passo a passo, boa parte da avaliação primária pode ser feita simultaneamente.",
+   "fonte_arquivo": "Mattox9_cap10_pre_hospitalar",
+   "trecho_literal": "many aspects of this evaluation can be done simultaneously"
+  },
+  {
+   "id": "D8",
+   "texto": "O pinçamento às cegas de feridas profundas deve ser evitado.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Blind clamping of deep wounds is discouraged"
+  },
+  {
+   "id": "D9",
+   "texto": "Nos pacientes de alto risco para sangramento pélvico, a cinta pélvica deve ser colocada imediatamente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "a pelvic binder should be immediately placed in high-risk patients"
+  },
+  {
+   "id": "D11",
+   "texto": "A via aérea deve ser assegurada no paciente com alteração importante do nível de consciência (Glasgow ≤8).",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Airway stabilization should also be performed in the patient with a significant alteration in mental status (Glasgow Coma Scale [GCS] score ≤8)"
+  },
+  {
+   "id": "D14",
+   "texto": "O medidor automático de pressão pode errar no paciente em choque; se for medir, medir manualmente.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "noninvasive blood pressure devices may be erroneous in patients in shock"
+  },
+  {
+   "id": "D15",
+   "texto": "Sem acesso venoso imediato, considerar o acesso intraósseo.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "consideration should be made to perform intraosseous access"
+  },
+  {
+   "id": "D17",
+   "texto": "Agitação e agressividade também são sinais clássicos de choque classe III e IV.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "generalized agitation and combativeness are also classic symptoms of class III and IV shock"
+  },
+  {
+   "id": "D22",
+   "texto": "No centro de trauma, o líder da equipe deve ser o cirurgião do trauma.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "In a trauma center, this should be the trauma surgeon."
+  },
+  {
+   "id": "D26",
+   "texto": "A alteração fisiológica é o maior determinante do desfecho.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "that is the greatest determinant of outcome"
+  },
+  {
+   "id": "D27",
+   "texto": "A mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40%.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "the mortality rate of patients presenting with a systolic blood pressure of less than 90 mm Hg who require an emergent laparotomy is greater than 40%"
+  },
+  {
+   "id": "D28",
+   "texto": "O acesso intraósseo para iniciar a ressuscitação pode salvar vidas no choque.",
+   "fonte_arquivo": "Mattox9_cap13_avaliacao_inicial",
+   "trecho_literal": "Initiating the resuscitation with intraosseous access can be lifesaving in patients in shock."
+  },
+  {
+   "id": "D32",
+   "texto": "A hipotensão após a ressuscitação é sangramento até prova em contrário.",
+   "fonte_arquivo": "Mattox9_cap57_uti",
+   "trecho_literal": "Any patient developing hypotension postresuscitation is bleeding until proven otherwise"
+  }
+ ]
+}

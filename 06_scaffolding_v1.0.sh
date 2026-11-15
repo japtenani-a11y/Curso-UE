@@ -106,7 +106,7 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import pinoHttp from 'pino-http';
+import { pinoHttp } from 'pino-http';
 import { logger } from './db/logger.js';
 import { pool } from './db/pool.js';
 import { erroHandler } from './middleware/erro.js';

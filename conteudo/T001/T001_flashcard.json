@@ -1,0 +1,124 @@
+{
+ "tema": "T001",
+ "tipo": "flashcard",
+ "titulo": "Flashcards",
+ "status": "rascunho",
+ "gerado_por": "Claude (geracao manual fora do executor), 2026-11-12",
+ "corpo": "> RASCUNHO para revisão: basta a aprovação de 1 cirurgião do trauma (tolerância: 5% de erro leve, zero crítico). Códigos [A#] remetem às afirmações com trecho literal da fonte. Trechos marcados **[DOUTRINA – confirmar na camada 2]** não vêm da revisão de artigos e devem ser conferidos no livro-texto (Mattox) antes da publicação.\n\n# T001 — Flashcards (18)\n\n| # | Frente | Verso |\n|---|---|---|\n| 1 | O que significa a associação OR 0,60 entre treinamento em suporte de vida e mortalidade? | Menor mortalidade associada ao treinamento, porém em estudos observacionais — não prova causalidade [A2]. |\n| 2 | Existe evidência de alta qualidade de que o ATLS melhora desfechos? | Não, segundo os autores do ensaio ADVANCE TRAUMA [A4]. |\n| 3 | Que tipo de estudo sustenta o uso de checklist na ressuscitação? | Estudos antes-e-depois [A7]. |\n| 4 | Efeito adverso associado a checklist em um estudo? | Maior incidência de pneumonia (aOR 1,69) [A10]. |\n| 5 | Quantos indicadores melhoraram com o formulário de admissão (TIF)? | 14 de 16 [A13]. |\n| 6 | Avaliação de via aérea antes e depois do TIF? | 72,9% → 98,4% [A14]. |\n| 7 | Torniquete pré-hospitalar e mortalidade? | RR 0,70 (IC 95% 0,46–1,07): redução não significativa [A23]. |\n| 8 | Torniquete e amputação inicial? | Mais frequente: 19,32% vs. 6,4% (RR 2,07) [A24]. |\n| 9 | A percepção de quem aplica o curativo compressivo é confiável? | Não: sem correlação com a pressão medida (p = 0,541) [A26]. |\n| 10 | E-FAST para pneumotórax: melhor resultado publicado? | Sensibilidade 93,6% e especificidade 99,8% [A29] — mas há estudo com baixa sensibilidade [A30]. |\n| 11 | Adrenalina na parada traumática extra-hospitalar? | Associada a menor sobrevida em 7 dias (OR 0,20) [A31]. |\n| 12 | Sensibilidade do RUSH em politraumatizados instáveis? | 94,2% [A34]. |\n| 13 | Frequência de hipotermia no trauma grave? | Até dois terços dos pacientes [A36]. |\n| 14 | TC de corpo inteiro de rotina reduz mortalidade? | Parece ter pouco ou nenhum efeito [A12]. |\n| 15 | Lesões com diagnóstico tardio mesmo com TC de corpo inteiro? | 13,9 % dos pacientes [A42]. |\n| 16 | SILENT: sensibilidade e especificidade? | 75% e 99% [A43]. |\n| 17 | Efeito da presença do cirurgião de trauma no tempo de ressuscitação? | 259 segundos a menos [A19]. |\n| 18 | Líder cirurgião vs. não cirurgião: lesões não identificadas? | Menos com cirurgião (OR 0,48) [A21]. |\n",
+ "afirmacoes": [
+  {
+   "id": "A2",
+   "texto": "Programas de treinamento em suporte de vida no trauma associaram-se a menor mortalidade (OR 0,60; IC 95% 0,48–0,75), mas a evidência é observacional.",
+   "fonte_arquivo": "2026_24",
+   "trecho_literal": "Trauma life support training programmes were associated with reduced mortality at an odds ratio of 0.60 (95% CI 0.48–0.75)"
+  },
+  {
+   "id": "A4",
+   "texto": "Os autores afirmam que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes, motivando um novo ensaio pragmático.",
+   "fonte_arquivo": "2026_26",
+   "trecho_literal": "there is no high-quality evidence that it can improve patient outcomes"
+  },
+  {
+   "id": "A7",
+   "texto": "A revisão sistemática sobre checklist na ressuscitação identificou 625 artigos e incluiu apenas estudos do tipo antes-e-depois.",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "Three of the 625 identified articles were included, which all used a before-and-after study design"
+  },
+  {
+   "id": "A10",
+   "texto": "Um estudo mostrou maior incidência de pneumonia no grupo com checklist (aOR 1,69; IC 95% 1,03–2,80).",
+   "fonte_arquivo": "2020_27",
+   "trecho_literal": "the incidence of pneumonia was higher in the group where a checklist was applied [adjusted odds ratio (aOR) 1.69, 95% Confidence Interval (CI 1.03–2.80)]"
+  },
+  {
+   "id": "A12",
+   "texto": "A TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na redução da mortalidade e do tempo na sala de emergência.",
+   "fonte_arquivo": "2023_62",
+   "trecho_literal": "The use of routine WBCT seems to offer little to no effects in reducing mortality and time spent in emergency room or department"
+  },
+  {
+   "id": "A13",
+   "texto": "Após o formulário de admissão do trauma (TIF), houve melhora em 14 de 16 indicadores da avaliação primária e do cuidado inicial.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "There was improvement in 14 of 16 primary survey and initial care KPIs after TIF introduction"
+  },
+  {
+   "id": "A14",
+   "texto": "A avaliação das vias aéreas subiu de 72,9% para 98,4% após a introdução do TIF.",
+   "fonte_arquivo": "2023_60",
+   "trecho_literal": "Airway assessment increased from 72.9 to 98.4 per cent"
+  },
+  {
+   "id": "A19",
+   "texto": "Com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor (p = 0,03).",
+   "fonte_arquivo": "2022_65",
+   "trecho_literal": "the mean total resuscitation time was 259 seconds shorter (p = 0.03)"
+  },
+  {
+   "id": "A21",
+   "texto": "Houve menos lesões não identificadas quando a equipe era liderada por cirurgião (OR 0,48; IC 95% 0,25-0,92).",
+   "fonte_arquivo": "2017_75",
+   "trecho_literal": "fewer injuries were missed when the trauma team was led by a surgeon (OR: 0.48, 95% CI 0.25-0.92, P=0.03)"
+  },
+  {
+   "id": "A23",
+   "texto": "Revisão sistemática de torniquete pré-hospitalar: redução de mortalidade não significativa (4,02% vs. 6,43%; RR 0,70; IC 95% 0,46–1,07).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "a non-statistically significant reduction in mortality risk with tourniquet application (4.02% vs. 6.43%, RR 0.70, 95% CI 0.46–1.07)"
+  },
+  {
+   "id": "A24",
+   "texto": "A amputação inicial foi mais frequente com torniquete (19,32% vs. 6,4%; RR 2,07; IC 95% 1,21–3,52).",
+   "fonte_arquivo": "2024_43",
+   "trecho_literal": "initial amputation in the tourniquet group (19.32% vs. 6.4%, RR 2.07, 95% CI 1.21–3.52)"
+  },
+  {
+   "id": "A26",
+   "texto": "Não houve correlação entre a autoavaliação subjetiva e a pressão objetiva medida (p = 0,541).",
+   "fonte_arquivo": "2026_71",
+   "trecho_literal": "No correlation was found between subjective self-assessment and objective pressure measurements (p = 0.541)"
+  },
+  {
+   "id": "A29",
+   "texto": "O E-FAST para pneumotórax teve sensibilidade de 93,6% e especificidade de 99,8%.",
+   "fonte_arquivo": "2019_35",
+   "trecho_literal": "The overall sensitivity of E-FAST for PNX detection was 93.6% (1244/1328), the specificity of E-FAST was 99.8% (5312/5322)"
+  },
+  {
+   "id": "A30",
+   "texto": "Em estudo prospectivo, a ultrassonografia torácica na avaliação inicial teve baixa sensibilidade para pneumotórax, com muitos falsos negativos.",
+   "fonte_arquivo": "2024_47",
+   "trecho_literal": "Chest ultrasonography performed on initial trauma evaluation has low sensitivity with a high rate of false negative examinations."
+  },
+  {
+   "id": "A31",
+   "texto": "Na parada cardíaca extra-hospitalar traumática, a adrenalina associou-se a menor sobrevida em 7 dias (OR 0,20; IC 95% 0,08–0,48).",
+   "fonte_arquivo": "2019_31",
+   "trecho_literal": "The use of epinephrine was significantly associated with decreased 7-day survival (odds ratio = 0.20; 95% CI = 0.08–0.48; P < 0.01)"
+  },
+  {
+   "id": "A34",
+   "texto": "O RUSH teve sensibilidade de 94,2% no diagnóstico de politraumatizados instáveis.",
+   "fonte_arquivo": "2018_03",
+   "trecho_literal": "RUSH had 94.2% sensitivity in the diagnosis of unstable polytrauma patients"
+  },
+  {
+   "id": "A36",
+   "texto": "A hipotermia está presente em até dois terços dos pacientes com trauma grave, embora muitas vezes seja desconsiderada na ressuscitação inicial.",
+   "fonte_arquivo": "2016_01",
+   "trecho_literal": "Hypothermia is present in up to two-thirds of patients with severe injury, although it is often disregarded during the initial resuscitation."
+  },
+  {
+   "id": "A42",
+   "texto": "Mesmo com TC de corpo inteiro na avaliação primária, houve lesões com diagnóstico tardio em 13,9 % dos pacientes.",
+   "fonte_arquivo": "2024_16",
+   "trecho_literal": "Delayed diagnosed injuries were found in 97 patients (13.9 %)"
+  },
+  {
+   "id": "A43",
+   "texto": "O teste SILENT (membro inferior) teve sensibilidade de 75% (IC 95% 64 a 84%) e especificidade de 99% (IC 95% 97 a 100%).",
+   "fonte_arquivo": "2024_11",
+   "trecho_literal": "Overall sensitivity was 75% (95%CI 64 to 84%), and overall specificity was 99% (95%CI 97 to 100%)."
+  }
+ ]
+}
