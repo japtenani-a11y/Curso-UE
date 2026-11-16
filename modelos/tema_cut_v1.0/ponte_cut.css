@@ -36,3 +36,6 @@ h1, h2, h3, h4 { font-family: var(--cut-font); font-weight: 800; letter-spacing:
 .faixa-neutra { background: var(--cut-surface-raised); border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-md); padding: 10px 14px; margin: 12px 0; }
 /* topo do computador: o primeiro nome sai antes de o menu apertar, o perfil atual continua visivel */
 @media (max-width: 1400px) { .usuario > span { display: none; } }
+/* passo a passo numerado (Instalar, Ajuda): o numero fica a esquerda e o texto corre normal, com negritos no meio da frase */
+.passos li { display: block; position: relative; padding-left: 46px; min-height: 32px; line-height: 1.5; }
+.passos li::before { position: absolute; left: 0; top: -2px; background: var(--cut-action); color: var(--cut-on-action); }

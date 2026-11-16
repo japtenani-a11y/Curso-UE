@@ -200,3 +200,17 @@
   5. No Google Cloud (credencial OAuth e tela de consentimento), troque o endereço do ngrok pelo novo:
      origem, `…/api/auth/callback`, página inicial, privacidade, termos e domínio autorizado.
      Ajuste também `APP_URL` e `CORS_ORIGINS` no .env.
+
+## Sequência de entrega do material (81) e textos revisados (80) — CUT_v2n
+
+- D-15: só o pré-teste 1.
+- Ao enviar o pré-teste 1: objetivos de aprendizagem (abre na parte do ano do aluno), resumo básico, podcast (roteiro e
+  áudio), caso base, síntese de evidência, mapa conceitual e pré-teste 2.
+- Com o pré-teste 2 enviado e na hora da aula: aula, slides, caso da aula e pós-teste D0. Quem perdeu o prazo do
+  pré-teste 2 (1 hora antes da aula) recebe esta etapa na hora da aula.
+- Ao enviar o pós-teste D0: resumo executivo, protocolo assistencial, checklists, flashcards e banco de questões.
+- D+15, D+45 e D+90: os pós-testes seguintes, nas datas.
+- "Pré-teste inicial" passa a "Pré-teste 1"; "Simulados" passa a "Banco de questões".
+- Áudio do podcast: veja `docs/podcast_audio.md`.
+- 80 aplica `modelos/textos_v1.0/textos.json` (textos das telas em linguagem mais simples).
+- A seção "Instalar" da Ajuda deixou de quebrar o texto em pedaços (CSS `.passos`).
