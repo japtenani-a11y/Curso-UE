@@ -388,30 +388,32 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 1, um torniquete é aplicado e controla o sangramento. O que a evidência mostra sobre o torniquete pré-hospitalar?",
   "alternativas": [
-   "Mortalidade menor, sem mudança na taxa de amputação",
-   "Mortalidade sem queda significativa e mais amputação inicial",
-   "Queda significativa da mortalidade, sem efeito sobre a amputação",
+   "Benefício comprovado por ensaios randomizados, sem efeito na amputação",
+   "Resultados controversos: meta-análises divergem sobre mortalidade e amputação",
+   "Aumento comprovado da mortalidade com o torniquete",
    "Benefício restrito às lesões do membro superior",
-   "Aumento da mortalidade nos pacientes com torniquete"
+   "Nenhum estudo avaliou o torniquete pré-hospitalar"
   ],
   "correta": "B",
   "justificativas": [
-   "A amputação inicial foi mais frequente no grupo torniquete.",
-   "Correta: RR 0,70 não significativo para mortalidade e RR 2,07 para amputação inicial.",
-   "A redução (RR 0,70) não foi estatisticamente significativa.",
-   "Não há essa restrição; o torniquete serve para o trauma de membro.",
-   "Não houve aumento de mortalidade."
+   "Não há ensaio randomizado; os estudos são observacionais.",
+   "Correta: uma meta-análise não mostrou redução significativa e mostrou mais amputação inicial; outra mostrou menor mortalidade sem aumento de amputação, com certeza muito baixa.",
+   "Nenhuma meta-análise mostrou aumento de mortalidade.",
+   "Não há essa restrição.",
+   "Há pelo menos duas meta-análises."
   ],
   "categorias": [
-   "erro de indicação",
-   "correta",
    "erro conceitual",
-   "erro técnico",
-   "erro de conduta"
+   "correta",
+   "erro de conduta",
+   "erro de indicação",
+   "erro técnico"
   ],
   "ancoras": [
    "A23",
    "A24",
+   "A57",
+   "A58",
    "D7"
   ]
  },
@@ -621,7 +623,8 @@
   ],
   "ancoras": [
    "D26",
-   "A39"
+   "D52",
+   "P9"
   ]
  },
  {
@@ -675,15 +678,15 @@
    "Não se sabe: ainda não há dados publicados sobre o tema",
    "Sim: a redução da mortalidade é significativa e comprovada por ensaios",
    "Só salva vidas quando é colocado dentro do hospital",
-   "Pode salvar, mas a revisão não mostrou queda significativa de mortes"
+   "Pode salvar: a evidência é controversa e de certeza muito baixa"
   ],
   "correta": "E",
   "justificativas": [
-   "Não houve aumento de mortalidade.",
-   "Há revisão sistemática sobre o tema.",
-   "A redução de mortalidade não foi significativa (RR 0,70).",
-   "A revisão estudou o torniquete pré-hospitalar.",
-   "Correta: há conflito entre doutrina e evidência observacional, que precisa ser interpretado."
+   "Nenhuma meta-análise mostrou aumento de mortalidade.",
+   "Há duas meta-análises sobre o tema.",
+   "Não há ensaio randomizado; uma meta-análise não mostrou redução significativa.",
+   "As meta-análises estudaram o torniquete pré-hospitalar.",
+   "Correta: uma meta-análise sem redução significativa (RR 0,70) e outra com menor mortalidade (OR 0,48), certeza muito baixa."
   ],
   "categorias": [
    "erro de conduta",
@@ -695,7 +698,8 @@
   "ancoras": [
    "D7",
    "A23",
-   "A24"
+   "A24",
+   "A57"
   ]
  },
  {
@@ -1607,7 +1611,7 @@
   "teste": 2,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 2, qual estratégia de treinamento da equipe reduz o tempo de ressuscitação, segundo estudo?",
+  "enunciado": "No caso 2, qual estratégia de treinamento da equipe associou-se a menor tempo entre a chegada e a tomografia, em estudo antes-e-depois?",
   "alternativas": [
    "Avaliação escrita da equipe a cada semestre",
    "Nenhuma: nenhuma estratégia mostrou efeito",
@@ -1807,7 +1811,6 @@
   "ancoras": [
    "A2",
    "A4",
-   "A5",
    "A6"
   ]
  },
@@ -2484,7 +2487,7 @@
   "justificativas": [
    "Arriscado.",
    "Inadequado.",
-   "Correta: no choque, a TC não aumentou a mortalidade precoce, mas a decisão depende da resposta.",
+   "Correta: o instável não vai à tomografia; a TC cabe em quem está estável ou respondeu, com critério do protocolo.",
    "Atraso.",
    "Faltam diagnósticos."
   ],
@@ -2496,8 +2499,9 @@
    "erro conceitual"
   ],
   "ancoras": [
-   "A39",
-   "D26"
+   "D26",
+   "D52",
+   "P9"
   ]
  },
  {
@@ -2507,31 +2511,33 @@
   "teste": 3,
   "grau": 3,
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 3, em pacientes em choque, a TC de corpo inteiro aumentou a mortalidade em 24 h?",
+  "enunciado": "No caso 3, o paciente respondeu à reposição e está estável. Segundo o protocolo de imagem do serviço, quando indicar a TC de corpo inteiro?",
   "alternativas": [
-   "Não: 17,4% com TC e 27,6% sem, p = 0,21",
-   "Não se sabe: não há estudos sobre o tema",
-   "Sim: a mortalidade dobrou com a tomografia",
-   "Sim, com diferença significativa (p < 0,05)",
-   "Só nos idosos, e não nos demais pacientes"
+   "Em todo paciente que chega à sala de trauma",
+   "Com ao menos um grupo: mecanismo, clínica ou TCE",
+   "Só quando o FAST for positivo na sala",
+   "Só após creatinina e jejum de 6 horas",
+   "Nunca em quem já respondeu à reposição"
   ],
-  "correta": "A",
+  "correta": "B",
   "justificativas": [
-   "Correta.",
-   "Há estudo.",
-   "Não.",
-   "Não houve significância.",
-   "Não há esse dado."
+   "Pan-TC não é sinônimo de qualquer trauma.",
+   "Correta: basta um dos três grupos de critérios.",
+   "O FAST não é o critério de indicação da pan-TC.",
+   "O protocolo diz para não esperar creatinina nem jejum.",
+   "Quem respondeu e tem critério vai à TC."
   ],
   "categorias": [
-   "correta",
-   "erro técnico",
-   "erro conceitual",
    "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro técnico",
    "erro de conduta"
   ],
   "ancoras": [
-   "A39"
+   "P2",
+   "P15",
+   "P12"
   ]
  },
  {
@@ -3293,8 +3299,9 @@
   ],
   "ancoras": [
    "D26",
-   "A39",
-   "D22"
+   "D22",
+   "D52",
+   "P9"
   ]
  },
  {
@@ -4603,7 +4610,8 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "A18"
+   "A18",
+   "D73"
   ]
  },
  {
@@ -5673,7 +5681,8 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "A18"
+   "A18",
+   "D73"
   ]
  },
  {
@@ -5995,7 +6004,7 @@
   "id": "T3-Graduação-7",
   "fixa": false,
   "grau": 2,
-  "enunciado": "Na chegada, o paciente tem pulso femoral palpável e pulso radial ausente. Qual é a pressão sistólica mais provável?",
+  "enunciado": "Na chegada, o paciente tem pulso femoral palpável e pulso radial ausente. Que faixa de pressão sistólica é mais provável?",
   "alternativas": [
    "Acima de 120 mmHg",
    "Não é possível estimar",

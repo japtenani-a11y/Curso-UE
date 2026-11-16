@@ -24,7 +24,7 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 ## R2
 
 1. (R) **Interpretar** eFAST e radiografias como adjuntos, sabendo que um eFAST negativo não exclui pneumotórax e que o FAST negativo no hipotenso é repetido [A29, A30, D63].
-2. (R) **Indicar** torniquete, tamponamento da ferida, agente hemostático ou cinta pélvica conforme a região anatômica da lesão [D7, D9, D45, D62, A24].
+2. (R) **Indicar** torniquete, tamponamento da ferida, agente hemostático ou cinta pélvica conforme a região anatômica da lesão [D7, D9, D45, D62, A24, A58].
 3. (R) **Avaliar** o estado hemodinâmico sem depender só da classe de choque [A32, A33].
 4. (H) **Realizar** a avaliação terciária e revisar as imagens do paciente internado [D30, D31].
 5. (A) **Comunicar** achados ao líder em alça fechada durante a simulação [D70].
@@ -34,14 +34,14 @@ Cada objetivo tem verbo observável, condição e critério, e um tipo: conhecim
 
 1. (H) **Liderar** a equipe de trauma em simulação, com briefing antes da chegada e plano alternativo [D22, D29, D71].
 2. (H) **Conduzir** a passagem do pré-hospitalar no formato MIST em até 1 minuto [D23, D24].
-3. (R) **Decidir** o destino do paciente instável (centro cirúrgico, radiologia intervencionista ou TC) [D27, D52, A12, A39].
+3. (R) **Decidir** o destino do paciente instável (centro cirúrgico, radiologia intervencionista ou TC) [D27, D52, A12, P2].
 4. (R) **Justificar** a indicação de TC de corpo inteiro com base no ensaio randomizado e no protocolo do serviço [A48, A49, P2].
 5. (A) **Conduzir** o debriefing da equipe após atendimento real ou simulado [A18, D73].
 6. (R, aula) **Decidir** o momento da intubação no paciente exsanguinante, pesando o risco de colapso na indução [D47, G1, G7].
 
 ## R+ (R4 a R6, egressos e preceptores)
 
-1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist, torniquete e a ordem CAB, separando associação de causa [A2, A4, A23, G2, G3].
+1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist, torniquete e a ordem CAB, separando associação de causa [A2, A4, A23, A57, G2, G3].
 2. (R) **Propor** ajustes ao protocolo institucional de avaliação inicial com base nas lacunas identificadas [A7, A37].
 3. (H) **Ensinar** a avaliação inicial em simulação in situ com debriefing [A18, A44].
 4. (R) **Auditar** indicadores de processo da sala de trauma (acionamento do time, registro da via aérea, temperatura, lesões tardias) [A14, A42, A53, G11].

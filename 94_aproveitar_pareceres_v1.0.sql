@@ -1,8 +1,8 @@
 -- ============================================================
 -- 94_aproveitar_pareceres_v1.0.sql
 -- OBJETIVO: depois de importar uma versão nova de um tema, aproveitar os pareceres já dados.
---   1. Copia cada parecer de afirmação das versões anteriores do tema para a afirmação idêntica (mesmo texto e mesma
---      fonte) das peças em rascunho, em nome do mesmo revisor, com a origem anotada no comentário. Só copia onde esse
+--   1. Copia cada parecer de afirmação de qualquer versão do tema (publicada ou rascunho anterior) para a afirmação
+--      idêntica (mesmo texto e mesma fonte) das peças em rascunho, em nome do mesmo revisor, com a origem anotada no comentário. Só copia onde esse
 --      revisor ainda não deu parecer.
 --   2. Remove as questões de exemplo da instalação (sem código, sem perfil, sem teste e nunca respondidas), que podiam
 --      entrar nas ondas de teste.
@@ -23,7 +23,7 @@ SELECT count(*) AS afirmacoes_em_rascunho,
   FROM conteudo.afirmacao f JOIN conteudo.artefato a USING (artefato_id) JOIN _tema t USING (tema_id)
  WHERE a.status::text = 'rascunho';
 
--- 1. pareceres das versoes anteriores -> afirmacoes identicas em rascunho
+-- 1. pareceres de qualquer versao (publicada ou rascunho anterior) -> afirmacoes identicas em rascunho
 -- (o gatilho de replicacao repete o parecer nas outras copias do mesmo texto; ON CONFLICT evita duplicar)
 WITH origem AS (
   SELECT DISTINCT ON (f.texto, coalesce(f.fonte_arquivo, ''), p.pessoa_id)
@@ -33,7 +33,6 @@ WITH origem AS (
     JOIN conteudo.afirmacao f ON f.artefato_id = p.artefato_id AND f.codigo = p.afirmacao_codigo
     JOIN conteudo.artefato a ON a.artefato_id = p.artefato_id
     JOIN _tema t ON t.tema_id = a.tema_id
-   WHERE a.status::text <> 'rascunho'
    ORDER BY f.texto, coalesce(f.fonte_arquivo, ''), p.pessoa_id, p.criado_em DESC),
 destino AS (
   SELECT f.artefato_id, f.codigo, f.texto, coalesce(f.fonte_arquivo, '') AS fonte

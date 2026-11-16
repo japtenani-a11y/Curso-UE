@@ -81,3 +81,26 @@ python3 gerar_podcast_audio_v1.0.py T001 --slides
 - Os trechos do Mattox não são conferidos pelo importador (o livro não está no banco): o revisor confere no capítulo.
 - A extrapolação do consenso de 2025 ao trauma fechado com possível TCE está marcada no caso da aula como ponto de cautela.
 - Gruen 2006 e Teixeira 2007 têm mais de dez anos.
+
+## Correções depois da auditoria de 16/11 (CUT_v2z7)
+
+- **Vetos da coordenação:**
+  - A39 (TC de corpo inteiro no choque) e A5 (tamanho do ensaio ADVANCE TRAUMA) saíram do material e das questões. A questão T3-R3-2 foi trocada por uma sobre os critérios de pan-TC do protocolo [P2].
+  - Torniquete (A23, A24) passou a controvérsia, com a segunda meta-análise (Ko 2024, A57 e A58; PMID 38504263).
+  - Hemotórax (D68): o critério de volume vale para o paciente estável; no instável, decide a clínica [D26, P9].
+  - P5: os critérios completos de TCE moderado a grave do protocolo de imagem.
+- **Erros leves corrigidos no texto das peças:** A11, A18, A22, A32, D44, D46, D75, P13.
+- **Pré-revisões "ajustar" aplicadas:**
+  - Aula: indutor e dose no choque [D78, D79], janelas abdominais do FAST [D80], passos e material da cricotireoidostomia [D76, D77], atividade do R+ sobre o minuto do erro, menos repetição da teoria. A técnica da drenagem e os marcos do intraósseo foram remetidos aos temas T-013 e T-081.
+  - Caso da aula: 4 pontos em 15 minutos, dicas sem a resposta, supervisão à distância.
+  - Caso base: 25 minutos, sinais de choque, perguntas sobre cinta, exposição e AMPLA, e "Onde está a resposta".
+  - Checklist: itens de uma ação só, MIST, Glasgow ≤8, reavaliação e avaliação secundária.
+  - Flashcards: 4 cartões de evidência (R+) e o resto de conduta.
+  - Banco de questões: refeito a partir das questões atuais (contagem por teste, faixas sem sobreposição, sem "ATLS vigente").
+- **Publicar** tira a faixa "RASCUNHO" do início dos testes e gabaritos (97).
+- **Script 94** aproveita os pareceres de qualquer versão anterior, inclusive rascunho, para as afirmações idênticas da versão nova.
+- **Slides:** 6 (torniquete) e 11 (tórax) com as fontes novas; imagens refeitas.
+
+Instalar: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois
+`PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql`.
+Os agentes revisam só os textos novos ou alterados. O áudio do podcast precisa ser gerado de novo.

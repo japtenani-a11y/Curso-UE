@@ -10,16 +10,15 @@ mindmap
       Evidência observacional G3
     Evidência do treinamento
       OR 0,60 observacional A2
-      Sem alta qualidade A4
-      Ensaio em andamento A5
+      Sem alta qualidade, ensaio em curso A4
     Estrutura
       Checklist adesão A8
       Ficha 14 de 16 indicadores A13
       Acionamento do time 51 a 82 por cento A53
     x Hemorragia
       Compressão e tamponamento D45
-      Torniquete RR 0,70 NS A23
-      Amputação RR 2,07 A24
+      Torniquete e mortalidade: controverso A23 A57
+      Torniquete e amputação: controverso A24 A58
       Cinta nos trocânteres D54
     A B
       Intubar pode colapsar D47

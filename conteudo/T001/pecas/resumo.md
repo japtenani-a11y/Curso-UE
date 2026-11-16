@@ -10,7 +10,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 
 - Hemorragia que mata ou extremis: circulação antes da via aérea [D2, D3]. O consenso de 2025 recomenda controlar a hemorragia e repor sangue antes da via aérea invasiva [G1], com evidência só observacional [G3]. Obstrução e hipóxia grave mantêm a via aérea na frente [G4].
 - Estruturar funciona para o processo: a ficha de admissão melhorou 14 de 16 indicadores [A13]; checklist melhora a adesão [A8], com efeito em mortalidade incerto [A9, A10].
-- Torniquete pré-hospitalar: mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR 2,07) [A23, A24].
+- Torniquete pré-hospitalar, controvérsia: numa meta-análise, mortalidade sem redução significativa (RR 0,70) e mais amputação inicial (RR combinado 2,07) [A23, A24]; noutra, menor mortalidade (OR 0,48) sem aumento de amputação, certeza muito baixa [A57, A58].
 - eFAST para pneumotórax: resultados conflitantes [A29, A30].
 - TC de corpo inteiro imediata: sem redução de mortalidade em ensaio randomizado [A48]; lesões tardias em 13,9 % mesmo com ela [A42].
 - Hipotermia em até dois terços dos graves [A36], sem manejo baseado em evidência [A37].
@@ -23,7 +23,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 3. Sangramento externo: compressão; no membro, torniquete proximal à lesão, fora da articulação, com hora anotada e limite de 90 minutos [D6, D59, D60]; na região juncional, hemostático e tamponamento [D62, D45].
 4. Pelve de alto risco: cinta nos trocânteres maiores, aperto moderado até a radiografia [D9, D54, D55].
 5. Via aérea: voz normal = pérvia; Glasgow ≤8 = via aérea definitiva [D10, D11]. No exsanguinante, oxigênio, aspiração e cânula enquanto o sangue entra [G6]; material de intubação pronto.
-6. Circulação: pulsos [D44]; pressão manual se houver dúvida [D14]; sem veia, intraósseo no úmero proximal [D15, D46]; sangue e plasma antes de cristaloide [D39]; escore ABC de 2 ou mais ativa o protocolo de transfusão maciça [P16].
+6. Circulação: pulsos, estimativa pouco estudada [D44]; pressão manual se houver dúvida [D14]; sem veia, intraósseo; o úmero proximal pode ser o melhor local [D15, D46]; sangue e plasma antes de cristaloide [D39]; escore ABC de 2 ou mais ativa o protocolo de transfusão maciça [P16].
 7. Tórax: murmúrio ausente é hemotórax ou pneumotórax até prova em contrário; em extremis, drenagem bilateral [D48].
 8. Glasgow repetido; despir e aquecer [D16, D18, D19].
 9. Adjuntos: radiografia de tórax e pelve, eFAST [D53]. FAST negativo no hipotenso: repetir em 15 a 30 minutos [D63].

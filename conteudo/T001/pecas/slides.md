@@ -37,7 +37,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 > **Nota do apresentador:** A correspondência entre pulso e pressão é pouco estudada, segundo o próprio livro [D44]. Consenso WSES-PTS 2025: hemorragia exsanguinante, circulação primeiro [G1]; obstrução e hipóxia grave mantêm a via aérea na frente [G4]; via aérea não invasiva nesse intervalo [G6], que é o plano A da ficha do serviço [P20].
 
-> **Fala:** Na chegada, ele tem pulso femoral e não tem radial. Isso sugere pressão sistólica entre setenta e noventa [D44]. Está agitado e frio. A via aérea está livre e ele satura noventa e três por cento com máscara. O que mata primeiro é o sangramento, e a circulação passa na frente [G1]. A via aérea só continuaria em primeiro lugar com obstrução ou hipóxia grave [G4]. Enquanto o sangue entra, oxigênio, aspiração e cânula bastam [G6].
+> **Fala:** Na chegada, ele tem pulso femoral e não tem radial. Isso sugere uma pressão sistólica provavelmente entre setenta e noventa, numa estimativa pouco estudada [D44]. Está agitado e frio. A via aérea está livre e ele satura noventa e três por cento com máscara. O que mata primeiro é o sangramento, e a circulação passa na frente [G1]. A via aérea só continuaria em primeiro lugar com obstrução ou hipóxia grave [G4]. Enquanto o sangue entra, oxigênio, aspiração e cânula bastam [G6].
 
 ### Slide 4. Por que adiar o tubo, e o risco de adiar
 - Indução + pressão positiva: perda da vasoconstrição
@@ -71,13 +71,13 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 - Onde não: articulação, proeminência óssea
 - Quanto: até ocluir o fluxo
 - Quanto tempo: hora anotada, limite de 90 minutos
-- Antes da angio-TC do membro: afrouxar ou retirar
+- Angio-TC do membro: conduta com o torniquete ainda pendente no protocolo
 
-*T001 · Técnica · Fontes: D59, D60, D61, A24, P13*
+*T001 · Técnica · Fontes: D59, D60, D61, A24, A58, P13*
 
-> **Nota do apresentador:** Posição [D59], pressão [D61], tempo e nervo [D60]. A amputação inicial mais frequente com torniquete (RR 2,07) [A24] já foi lida na síntese: aqui ela vira cuidado de técnica. Protocolo de imagem do serviço [P13].
+> **Nota do apresentador:** Posição [D59], pressão [D61], tempo e nervo [D60]. O efeito em mortalidade e amputação é controverso, já lido na síntese [A24, A58]: aqui ele vira cuidado de técnica. Protocolo de imagem do serviço, versão preliminar, conduta ainda pendente [P13].
 
-> **Fala:** O torniquete pede quatro decisões. Onde: acima da lesão, mas o mais perto dela possível, para não deixar tecido são sem sangue [D59]. Onde não: sobre articulação ou proeminência óssea. Quanto apertar: até o fluxo parar [D61]. Quanto tempo: anote a hora; o limite é noventa minutos, por causa do nervo [D60]. Você leu que o torniquete se associa a mais amputação [A24]. Na mesa, a resposta a isso é técnica correta e controle definitivo rápido.
+> **Fala:** O torniquete pede quatro decisões. Onde: acima da lesão, mas o mais perto dela possível, para não deixar tecido são sem sangue [D59]. Onde não: sobre articulação ou proeminência óssea. Quanto apertar: até o fluxo parar [D61]. Quanto tempo: anote a hora; o limite é noventa minutos, por causa do nervo [D60]. Você leu que o efeito do torniquete na amputação é controverso [A24, A58]. Na mesa, a resposta a isso é técnica correta e controle definitivo rápido.
 
 ### Slide 7. Pelve: o que sangra
 - Anel: sacro + dois inominados
@@ -101,7 +101,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Técnica · Fontes: D9, D54, D55, D56, D75*
 
-> **Nota do apresentador:** Indicação imediata no alto risco [D9]. Erro mais comum: cinta alta, que aumenta a pressão abdominal e estabiliza pouco [D54]. Compressão lateral: a cinta apertada pode aumentar o sangramento [D55]. Lençol [D56]. Segunda radiografia para confirmar a redução [D75]. Demonstrar em voluntário ou manequim.
+> **Nota do apresentador:** Indicação imediata no alto risco [D9]. Erro mais comum: cinta alta, que aumenta a pressão abdominal e estabiliza pouco [D54]. Compressão lateral: a cinta apertada pode aumentar o sangramento [D55]. Lençol [D56]. Segunda radiografia para confirmar a redução, prática do serviço dos autores [D75]. Demonstrar em voluntário ou manequim.
 
 > **Fala:** No paciente do caso, a cinta vai já [D9]. O erro mais comum é colocá-la alta. A referência são os trocânteres maiores, e não a crista ilíaca: alta, ela aperta o abdome e segura pouco [D54]. Passe por baixo da lombar e desça até as nádegas. Antes da radiografia, aperte com moderação. O aperto forte só cabe no livro aberto; na compressão lateral, pode aumentar o sangramento [D55]. Sem cinta, um lençol torcido resolve [D56].
 
@@ -140,9 +140,9 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 - Subxifoide: apontar para a cabeça, ver as duas paredes
 - Em extremis: drenagem bilateral
 
-*T001 · Técnica · Fontes: A55, D49, D64, D65, D66, D48, D68*
+*T001 · Técnica · Fontes: A55, D49, D64, D65, D66, D48, D68, P9*
 
-> **Nota do apresentador:** Óbito na primeira hora: tórax 17%, abdome 11%, crânio 7% [A55]. Tubo seletivo [D49]. Técnica do eFAST [D64, D65]. Radiografia em decúbito dorsal com cerca de 50% de sensibilidade para pneumotórax [D66]. Drenagem bilateral presuntiva [D48]. Critério cirúrgico do hemotórax: 1.200 a 1.500 mL ou 200 mL/h por 2 a 4 horas [D68]. Se houver aparelho, obter as janelas ao vivo.
+> **Nota do apresentador:** Óbito na primeira hora: tórax 17%, abdome 11%, crânio 7% [A55]. Tubo seletivo [D49]. Técnica do eFAST [D64, D65]. Radiografia em decúbito dorsal com cerca de 50% de sensibilidade para pneumotórax [D66]. Drenagem bilateral presuntiva [D48]. Hemotórax: no instável decide a clínica [P9]; no estável, 1.200 a 1.500 mL ou 200 mL/h por 2 a 4 horas indicam cirurgia [D68]. Se houver aparelho, obter as janelas ao vivo.
 
 > **Fala:** Entre os que chegam vivos, o tórax grave é o que mais mata na primeira hora [A55]. Murmúrio ausente é sangue ou ar na pleura. No intubado, ausente à esquerda, confira antes a profundidade do tubo [D49]. No ultrassom, o transdutor fica longitudinal na linha hemiclavicular: procure o deslizamento da pleura [D64]. Na janela subxifoide, aponte para a cabeça e veja as duas paredes do coração [D65]. No paciente em extremis, drene os dois lados [D48].
 

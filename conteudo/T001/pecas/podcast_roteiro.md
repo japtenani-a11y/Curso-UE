@@ -12,7 +12,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 10 a 12 minut
 
 **RESIDENTE:** Zero vírgula sessenta parece muito bom.
 
-**PRECEPTOR:** Parece. Só que são estudos observacionais. Hospitais que treinam mais também costumam ter mais recursos, mais organização. Os próprios pesquisadores que estão conduzindo um grande ensaio na Índia escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes [A4]. Esse ensaio vai incluir pelo menos 4320 pacientes [A5]. Então a resposta definitiva ainda está por vir.
+**PRECEPTOR:** Parece. Só que são estudos observacionais. Hospitais que treinam mais também costumam ter mais recursos, mais organização. Os próprios pesquisadores que estão conduzindo um grande ensaio pragmático escrevem que não há evidência de alta qualidade de que o ATLS melhore desfechos de pacientes [A4]. Então a resposta definitiva ainda está por vir.
 
 **RESIDENTE:** Entendi. A gente ensina porque faz sentido e porque há associação, mas com humildade sobre o tamanho do efeito.
 
@@ -24,11 +24,11 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 10 a 12 minut
 
 **RESIDENTE:** Imagino que reduz mortalidade, não?
 
-**PRECEPTOR:** Uma revisão sistemática de torniquete pré-hospitalar encontrou mortalidade de 4,02% com torniquete contra 6,43% sem. Risco relativo de 0,70, mas o intervalo de confiança cruza o um. Ou seja: a redução não foi estatisticamente significativa [A23].
+**PRECEPTOR:** Uma revisão sistemática de torniquete pré-hospitalar encontrou mortalidade de 4,02% com torniquete contra 6,43% sem. Risco relativo de 0,70, mas o intervalo de confiança cruza o um. Ou seja: a redução não foi estatisticamente significativa [A23]. Só que outra meta-análise, em civis com lesão vascular de extremidade, achou o contrário: menor mortalidade, com razão de chances de 0,48, e certeza da evidência muito baixa [A57]. É um ponto controverso.
 
 **RESIDENTE:** E tem algum lado negativo?
 
-**PRECEPTOR:** Amputação inicial foi mais frequente no grupo torniquete: 19,32% contra 6,4%, risco relativo de 2,07 [A24]. Mas cuidado com a interpretação: quem recebe torniquete provavelmente tem lesão mais grave. É dado observacional. Não dá para dizer que o torniquete causou a amputação.
+**PRECEPTOR:** Amputação inicial foi mais frequente no grupo torniquete: 19,32% contra 6,4%, risco relativo combinado de 2,07, sem diferença na amputação tardia [A24]. A outra meta-análise não viu aumento de amputação [A58]. Cuidado com a interpretação: quem recebe torniquete provavelmente tem lesão mais grave. É dado observacional. Não dá para dizer que o torniquete causou a amputação.
 
 **RESIDENTE:** E o curativo compressivo? Esse eu faço toda semana.
 
@@ -52,7 +52,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 10 a 12 minut
 
 **RESIDENTE:** Decorei para a prova. Classe um, dois, três, quatro.
 
-**PRECEPTOR:** Pois a comparação clássica entre o déficit de base e esses parâmetros tradicionais teve um viés metodológico, que superestimou a classe de choque dos parâmetros tradicionais [A32]. E tem mais: uma revisão foi atrás da definição de "estabilidade hemodinâmica". Ela só estava definida em 70% dos artigos, e sem consenso nos pontos de corte [A33].
+**PRECEPTOR:** Pois um estudo de simulação mostrou que o jeito de agrupar os pacientes no estudo clássico, que comparou o déficit de base com esses parâmetros, superestimou a classe de choque pelos parâmetros tradicionais [A32]. E tem mais: uma revisão foi atrás da definição de "estabilidade hemodinâmica". Ela só estava definida em 70% dos artigos, e sem consenso nos pontos de corte [A33].
 
 **RESIDENTE:** Então quando alguém diz "o paciente está estável"...
 
@@ -80,7 +80,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 10 a 12 minut
 
 **RESIDENTE:** Então o atendimento não acaba quando o paciente sai da sala de trauma.
 
-**PRECEPTOR:** Não acaba. E para fazer tudo isso bem, duas coisas ajudam. A primeira é estrutura: um formulário de admissão do trauma melhorou 14 de 16 indicadores da avaliação primária [A13]; o registro da avaliação de vias aéreas subiu de 72,9% para 98,4% [A14]. A segunda é equipe: treinamento mensal no próprio local de trabalho, com debriefing em vídeo, reduziu o tempo de ressuscitação [A18]. E quando o líder era cirurgião, houve menos lesões não identificadas [A21].
+**PRECEPTOR:** Não acaba. E para fazer tudo isso bem, duas coisas ajudam. A primeira é estrutura: um formulário de admissão do trauma melhorou 14 de 16 indicadores da avaliação primária [A13]; o registro da avaliação de vias aéreas subiu de 72,9% para 98,4% [A14]. A segunda é equipe: treinamento mensal no próprio local de trabalho, com debriefing em vídeo, associou-se a menor tempo entre a chegada e a tomografia, num estudo antes-e-depois [A18]. E quando o líder era cirurgião, houve menos lesões não identificadas [A21].
 
 **RESIDENTE:** Antes do resumo: saiu um consenso novo sobre pôr a circulação na frente da via aérea. Isso muda o que eu faço?
 

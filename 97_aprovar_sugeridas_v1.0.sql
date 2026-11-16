@@ -50,6 +50,27 @@ BEGIN
     (SELECT count(*)::int FROM app.proposta_agente pa WHERE pa.status = 'aguardando' AND (p_agente IS NULL OR pa.agente = p_agente));
 END $$;
 
+-- Publicar tira a faixa "RASCUNHO para revisão (...)" do início da peça (testes e gabaritos gerados pelo importador
+-- começam por ela); a legenda das fontes que vem depois fica.
+CREATE OR REPLACE FUNCTION app.publicar_artefato(p_artefato BIGINT) RETURNS TEXT
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public, app, conteudo AS $$
+DECLARE v_tema BIGINT; v_tipo TEXT; v_status TEXT; v_ok BOOLEAN;
+BEGIN
+  IF NOT app.eh_revisor() THEN RAISE EXCEPTION 'proibido'; END IF;
+  SELECT a.tema_id, a.tipo, a.status::text INTO v_tema, v_tipo, v_status FROM conteudo.artefato a WHERE a.artefato_id = p_artefato;
+  IF v_tema IS NULL THEN RAISE EXCEPTION 'artefato_nao_encontrado'; END IF;
+  IF v_status <> 'rascunho' THEN RAISE EXCEPTION 'artefato_nao_e_rascunho'; END IF;
+  SELECT s.pode_publicar INTO v_ok FROM app.situacao_revisao(p_artefato) s;
+  IF NOT v_ok THEN RAISE EXCEPTION 'revisao_incompleta_ou_fora_da_tolerancia'; END IF;
+  UPDATE conteudo.artefato SET status = 'arquivado'
+   WHERE tema_id = v_tema AND tipo = v_tipo AND status = 'publicado';
+  UPDATE conteudo.artefato
+     SET checklist_conforme = true, revisado_em = now(), status = 'publicado',
+         corpo = regexp_replace(corpo, '^\s*>\s*RASCUNHO[^(\n]*\([^)\n]*\)\.?[ \t]*', '> ')
+   WHERE artefato_id = p_artefato;
+  RETURN 'publicado';
+END $$;
+
 REVOKE EXECUTE ON FUNCTION app.aprovar_sugeridas(TEXT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION app.aprovar_sugeridas(TEXT) TO api_rw;
 GRANT EXECUTE ON FUNCTION app.proposta_sugere_liberar(app.proposta_agente) TO api_rw;
