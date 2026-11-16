@@ -94,7 +94,7 @@ Nenhum arquivo tinha dado de paciente: as planilhas de registro e de ISS/TRISS s
 | 071_Coluna.pdf | 2 | T-032, T-114 |
 | 072_DCR_GUIDELINES_AAST.pdf | 5 | T-005, T-004, T-007, T-071 |
 | 073_Externo_pele.pdf | 2 | T-059, T-061, T-114 |
-| 074_Extremidade_inferior.pdf | 2 | T-030, T-072, T-028, T-114 |
+| 074_Extremidade_inferior.txt | 2 | T-030, T-072, T-028, T-114 |
 | 075_Extremidade_superior.pdf | 2 | T-030, T-114 |
 | 076_Face.pdf | 2 | T-033, T-114 |
 | 077_Ficha_1_Sala_de_Trauma.docx | 3 | T-001, T-143 |
@@ -126,7 +126,7 @@ Nenhum arquivo tinha dado de paciente: as planilhas de registro e de ISS/TRISS s
 | 106_acs_tqp_best_practices_for_transfusion.pdf | 5 | T-005, T-004, T-137, T-047 |
 | 108_acute_pain_guidelines_1.pdf | 5 | T-058, T-012 |
 | 110_annualReport2025.pdf | 4 | T-113, T-114 |
-| 111_best_practices_guidelines_geriatric_trauma.pdf | 5 | T-137, T-087, T-069 |
+| 111_best_practices_guidelines_geriatric_trauma.txt | 5 | T-137, T-087, T-069 |
 | 112_best_practices_guidelines_traumatic_brain_injury.pdf | 5 | T-031, T-071, T-105, T-137 |
 | 113_cureus_0016_00000074102.pdf | 4 | T-150, T-131, T-085 |
 | 115_download_1.pdf | 4 | T-114, T-115 |

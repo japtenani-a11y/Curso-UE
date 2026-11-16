@@ -178,6 +178,12 @@ BEGIN
                                     WHERE y.tema_id = a.tema_id AND y.status::text IN ('publicado', 'rascunho') AND app.etapa_do_material(y.tipo::text) = 2
                                     ORDER BY y.tipo, y.versao DESC) u CROSS JOIN LATERAL app.tempo_peca(u.artefato_id) t WHERE t.nivel = 'essencial'),
              'formato', app.formato_peca(a.artefato_id), 'tempo', (SELECT to_jsonb(x) FROM app.tempo_peca(a.artefato_id) x),
+             -- peça da aula (aula, slides, caso): o material de antes da aula, para conferir que a aula não o repete
+             'material_antes_da_aula', CASE WHEN app.etapa_do_material(a.tipo::text) = 3 THEN (
+                SELECT jsonb_agg(jsonb_build_object('tipo', u.tipo, 'corpo', left(u.corpo, 15000)) ORDER BY u.tipo)
+                  FROM (SELECT DISTINCT ON (y.tipo) y.tipo::text AS tipo, y.corpo FROM conteudo.artefato y
+                         WHERE y.tema_id = a.tema_id AND y.status::text IN ('publicado', 'rascunho') AND app.etapa_do_material(y.tipo::text) = 2
+                         ORDER BY y.tipo, y.versao DESC) u) END,
              'publicada_anterior', (SELECT left(p.corpo, 40000) FROM conteudo.artefato p WHERE p.tema_id = a.tema_id AND p.tipo = a.tipo
                                      AND p.status::text = 'publicado' ORDER BY p.versao DESC LIMIT 1))
              ORDER BY (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = a.tema_id AND o.teste_num = 3 AND o.pessoa_id IS NULL) NULLS LAST,

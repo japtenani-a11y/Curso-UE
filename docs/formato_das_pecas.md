@@ -15,6 +15,26 @@ Versão 1.0 · 16/11/2026 · Conferido pelo banco em `conteudo.conferir_formato(
   - nenhum número de prontuário, registro ou CPF (é erro).
   - A faixa "RASCUNHO" na primeira linha gera aviso: tire-a depois da revisão.
 
+## O que cada momento ensina (decisão de 16/11/2026)
+
+| Momento | Peças | Papel |
+|---|---|---|
+| Antes da aula | objetivos, resumo básico, podcast, caso base, síntese de evidência, mapa | A fonte teórica do tema. Tudo o que o aluno precisa saber de base chega aqui. |
+| Aula | aula (texto), slides, caso da aula | Não repete a teoria de antes da aula. Parte do pressuposto de que o aluno a leu e vai além: discussão de caso clínico, decisão em cada ponto, técnica cirúrgica passo a passo, anatomia cirúrgica, armadilhas e complicações. |
+| Depois da aula | resumo executivo, protocolo, checklist, flashcards | Consolida e leva à prática: o que fazer no plantão. |
+
+**Na aula, o que pode voltar da teoria:** só a frase que serve de ponte para a discussão, citando a peça em que ela está ("como no resumo básico, ..."). Um slide que só reexplica um conceito do resumo básico é retrabalho e sai.
+
+**O que a aula precisa ter:**
+- pelo menos um caso clínico com pontos de decisão;
+- a técnica operatória do procedimento central do tema: indicação, posicionamento, acesso, passos, controle e fechamento;
+- a anatomia cirúrgica que o cirurgião usa no procedimento (relações, marcos, planos, o que não lesar);
+- as complicações e armadilhas, e como evitá-las.
+
+Em temas sem procedimento cirúrgico (gestão, ensino, pesquisa), a técnica é substituída pelo como fazer na prática do serviço, com exemplo real e anonimizado.
+
+O agente de pré-revisão recebe, junto com cada peça da aula, o material de antes da aula do mesmo tema. Ele aponta o trecho repetido como problema e propõe o aprofundamento no lugar.
+
 ## Por peça
 
 | Peça | Formato obrigatório (erro se faltar) | Recomendado (aviso se faltar) |

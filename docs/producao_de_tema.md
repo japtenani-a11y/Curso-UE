@@ -14,6 +14,7 @@ Versão 1.0 · 16/11/2026 · `importar_tema_v1.0.sh` e `ferramentas/importar_tem
    - A coordenação acrescenta a sua seleção de artigos, com o texto integral (PDF), como no T001.
    - Os dois conjuntos vão para `fontes/`.
 2. **Produção.** O Claude escreve as peças, as afirmações e as questões na pasta do tema, no formato abaixo (skill `producao-de-tema-ue-trauma`).
+   - O material de antes da aula é a fonte teórica. A aula (texto, slides e caso) não repete essa teoria: aprofunda em discussão de caso clínico, técnica cirúrgica e anatomia cirúrgica (`docs/formato_das_pecas.md`, "O que cada momento ensina").
 3. **Conferência.** Rode `bash importar_tema_v1.0.sh T002 SENHA`. Ela confere tudo sem gravar nada e lista erros e avisos.
 4. **Gravação.** Rode `bash importar_tema_v1.0.sh T002 SENHA --aplicar`.
    - As peças entram em rascunho, com as afirmações e o trecho da fonte de cada uma.

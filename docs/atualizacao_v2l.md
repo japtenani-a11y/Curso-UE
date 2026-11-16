@@ -347,3 +347,4 @@
   - 129 arquivos recebidos (MVPEP, Atuais, Bibliografias e sugestões): 103 guardados e 26 recusados (versões antigas, cópias, administrativos, catálogo AIS licenciado);
   - 66 fontes do T001 reaproveitadas em outros temas;
   - 169 propostas na aba "Para revisar".
+- **A aula não repete a teoria** (decisão de 16/11/2026): o material de antes da aula é a fonte teórica; aula, slides e caso aprofundam em caso clínico, técnica cirúrgica e anatomia cirúrgica (`docs/formato_das_pecas.md`). O agente de pré-revisão recebe, com cada peça da aula, o material de antes da aula do tema para apontar a repetição.
