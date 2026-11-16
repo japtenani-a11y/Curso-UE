@@ -20,7 +20,7 @@ coordenacaoRouter.get('/propostas', async (req, res, next) => {
 });
 
 const ERROS = ['so_coordenacao', 'proposta_nao_encontrada', 'proposta_ja_decidida', 'decisao_invalida', 'motivo_obrigatorio',
-  'escolha_a_decisao', 'lembrete_sem_texto', 'resposta_curta'];
+  'escolha_a_decisao', 'lembrete_sem_texto', 'resposta_curta', 'fonte_nao_encontrada'];
 
 coordenacaoRouter.post('/propostas/:id/decidir', async (req, res, next) => {
   try {

@@ -338,3 +338,12 @@
 - **O triador** (tarefa agendada às 4h47 e às 17h47) propõe a referência, a camada e todos os temas em que a fonte serve.
 - **A aprovação** na aba "Para revisar" grava a fonte em cada tema.
 - **`fontes_do_tema_v1.0.sh`** traz as fontes de um tema para a produção; o importador as reconhece.
+
+## Fonte já guardada em outro tema e primeira triagem (89) — CUT_v2y
+
+- **Proposta de fonte pelo código do arquivo (sha256).** O triador passa a poder propor uma fonte que já está no banco, como as do T001, para outros temas. Ao aprovar, ela é gravada nos temas novos com o mesmo texto integral, sem precisar do PDF de novo.
+- **Arquivo que ainda não chegou.** Se a proposta for aprovada antes de a ponte registrar o arquivo, a tela avisa "a fonte ainda não chegou pela ponte" e a proposta continua aguardando.
+- **Primeira triagem** (`docs/triagem_fontes_2026-11-16.md`):
+  - 129 arquivos recebidos (MVPEP, Atuais, Bibliografias e sugestões): 103 guardados e 26 recusados (versões antigas, cópias, administrativos, catálogo AIS licenciado);
+  - 66 fontes do T001 reaproveitadas em outros temas;
+  - 169 propostas na aba "Para revisar".

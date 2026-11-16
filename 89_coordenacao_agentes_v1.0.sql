@@ -277,6 +277,7 @@ BEGIN
           ORDER BY r.recebido_em)
           FROM (SELECT * FROM app.fonte_recebida WHERE status = 'nova'
                    AND NOT app.coord_tem_proposta('fontes', 'fonte_recebida_id', fonte_recebida_id::text)
+                   AND NOT app.coord_tem_proposta('fontes', 'sha256', sha256)
                  ORDER BY recebido_em LIMIT 15) r), '[]'),
       'catalogo_temas', (SELECT jsonb_agg(jsonb_build_object('tema', t.codigo, 'titulo', t.titulo, 'modulo', t.modulo,
           'papel', t.papel_curricular, 'aula', (SELECT ap.data FROM app.aula_planejada ap WHERE ap.tema_id = t.tema_id),
@@ -343,6 +344,7 @@ DECLARE
   f JSONB;
   dec TEXT;
   pid BIGINT;
+  v_sha TEXT; v_texto TEXT; v_arquivo TEXT; v_nome TEXT;
 BEGIN
   IF app.role_atual() NOT IN ('admin', 'curador', 'data_steward') THEN RAISE EXCEPTION 'so_coordenacao' USING ERRCODE = '42501'; END IF;
   SELECT * INTO pr FROM app.proposta_agente WHERE proposta_id = p_id FOR UPDATE;
@@ -391,26 +393,35 @@ BEGIN
      WHERE EXISTS (SELECT 1 FROM app.push_inscricao pi WHERE pi.pessoa_id = pid AND pi.ativo);
 
   ELSIF pr.tipo = 'fonte' THEN
+    -- alvo: a fonte recebida (fonte_recebida_id) ou um arquivo pelo sha256: recebido pela ponte ou ja guardado em
+    -- outro tema (por exemplo, as fontes do T001 que servem a outros temas)
+    v_sha := coalesce((SELECT r.sha256 FROM app.fonte_recebida r WHERE r.fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint),
+                      pr.alvo ->> 'sha256');
     IF coalesce((f ->> 'recusar')::boolean, false) THEN
       -- recusada (dado de paciente, ilegivel ou fora do escopo): o texto e apagado
-      UPDATE app.fonte_recebida SET status = 'recusada', texto = NULL, triado_em = now()
-       WHERE fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint;
+      UPDATE app.fonte_recebida SET status = 'recusada', texto = NULL, triado_em = now() WHERE sha256 = v_sha;
     ELSE
+      SELECT r.texto, 'RECEBIDAS/' || r.arquivo, r.nome_original INTO v_texto, v_arquivo, v_nome FROM app.fonte_recebida r WHERE r.sha256 = v_sha;
+      IF NOT FOUND THEN
+        SELECT x.texto_integral, x.arquivo_origem, x.titulo INTO v_texto, v_arquivo, v_nome
+          FROM conteudo.fonte x WHERE x.sha256 = v_sha ORDER BY x.texto_integral IS NULL, x.fonte_id LIMIT 1;
+        IF NOT FOUND THEN
+          RAISE EXCEPTION 'fonte_nao_encontrada: o arquivo ainda nao chegou pela ponte (aguarde 10 minutos) ou nao esta no banco';
+        END IF;
+      END IF;
       INSERT INTO conteudo.fonte (tema_id, camada, titulo, autores, ano, doi, pmid, url, texto_integral, arquivo_origem, sha256,
                                   camada_confirmada, tema_confirmado)
-      SELECT t.tema_id, (f ->> 'camada')::smallint, left(coalesce(f ->> 'titulo', r.nome_original), 500), left(f ->> 'autores', 500),
+      SELECT t.tema_id, (f ->> 'camada')::smallint, left(coalesce(f ->> 'titulo', v_nome), 500), left(f ->> 'autores', 500),
              nullif(f ->> 'ano', '')::smallint, nullif(f ->> 'doi', ''), nullif(f ->> 'pmid', ''), nullif(f ->> 'url', ''),
-             r.texto, 'RECEBIDAS/' || r.arquivo, r.sha256, true, true
-        FROM app.fonte_recebida r
-        CROSS JOIN LATERAL (SELECT DISTINCT upper(trim(x)) AS cod FROM unnest(
+             v_texto, v_arquivo, v_sha, true, true
+        FROM (SELECT DISTINCT upper(trim(x)) AS cod FROM unnest(
                CASE WHEN f ? 'temas_texto' THEN regexp_split_to_array(f ->> 'temas_texto', '[,;\s]+')
                     ELSE ARRAY(SELECT e ->> 'tema' FROM jsonb_array_elements(f -> 'temas') e) END) x WHERE trim(x) <> '') c
         JOIN app.tema t ON replace(t.codigo, '-', '') = replace(c.cod, '-', '')
-       WHERE r.fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint
-         AND NOT EXISTS (SELECT 1 FROM conteudo.fonte x WHERE x.tema_id = t.tema_id AND x.sha256 = r.sha256);
+       WHERE NOT EXISTS (SELECT 1 FROM conteudo.fonte x WHERE x.tema_id = t.tema_id AND x.sha256 = v_sha);
       UPDATE app.fonte_recebida r SET status = 'guardada', triado_em = now(),
              temas = (SELECT array_agg(DISTINCT t.codigo ORDER BY t.codigo) FROM conteudo.fonte x JOIN app.tema t ON t.tema_id = x.tema_id WHERE x.sha256 = r.sha256)
-       WHERE r.fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint;
+       WHERE r.sha256 = v_sha;
     END IF;
 
   ELSIF pr.tipo = 'lancamento' THEN
@@ -449,9 +460,16 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, 
            WHEN 'pre_revisao' THEN (SELECT jsonb_build_object('tema', t.codigo, 'peca', app.nome_material(a.tipo::text), 'versao', a.versao,
                                   'revisao', '/curador/revisao/' || replace(t.codigo, '-', ''))
                                   FROM conteudo.artefato a JOIN app.tema t ON t.tema_id = a.tema_id WHERE a.artefato_id = (pa.alvo ->> 'artefato_id')::bigint)
-           WHEN 'fonte' THEN (SELECT jsonb_build_object('arquivo', r.nome_original, 'ref', r.ref, 'caracteres', r.caracteres,
+           WHEN 'fonte' THEN coalesce(
+               (SELECT jsonb_build_object('arquivo', r.nome_original, 'ref', r.ref, 'caracteres', r.caracteres,
                                   'ja_no_banco_em', (SELECT jsonb_agg(DISTINCT t.codigo) FROM conteudo.fonte x JOIN app.tema t ON t.tema_id = x.tema_id WHERE x.sha256 = r.sha256))
-                                  FROM app.fonte_recebida r WHERE r.fonte_recebida_id = (pa.alvo ->> 'fonte_recebida_id')::bigint)
+                  FROM app.fonte_recebida r WHERE r.fonte_recebida_id = (pa.alvo ->> 'fonte_recebida_id')::bigint
+                     OR r.sha256 = pa.alvo ->> 'sha256' LIMIT 1),
+               (SELECT jsonb_build_object('arquivo', regexp_replace(min(x.arquivo_origem), '^.*/', ''), 'ref', 'já guardada no banco',
+                                  'caracteres', max(length(x.texto_integral)),
+                                  'ja_no_banco_em', jsonb_agg(DISTINCT t.codigo))
+                  FROM conteudo.fonte x JOIN app.tema t ON t.tema_id = x.tema_id WHERE x.sha256 = pa.alvo ->> 'sha256' HAVING count(*) > 0),
+               jsonb_build_object('arquivo', 'ainda não chegou pela ponte (aguarde 10 minutos)'))
            WHEN 'lembrete' THEN (SELECT jsonb_build_object('aluno', app.aluno_painel(p.pessoa_id), 'ano', (app.perfil_aluno(p.pessoa_id)).ano)
                                   FROM app.pessoa p WHERE p.pessoa_id = (pa.alvo ->> 'pessoa_id')::bigint)
            ELSE '{}'::jsonb END

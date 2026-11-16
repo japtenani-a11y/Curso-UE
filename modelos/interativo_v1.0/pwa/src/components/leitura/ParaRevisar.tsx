@@ -78,6 +78,7 @@ function Cartao(props: { p: Proposta; decidido: () => void }) {
       : e === 'proposta_ja_decidida' ? 'Esta proposta já foi decidida por outra pessoa da coordenação.'
       : e === 'so_coordenacao' ? 'Só a coordenação decide as propostas.'
       : e === 'resposta_curta' || e === 'lembrete_sem_texto' ? 'O texto está curto demais.'
+      : e === 'fonte_nao_encontrada' ? 'O arquivo desta fonte ainda não chegou ao sistema. Tente de novo em 10 minutos.'
       : 'Não foi possível registrar agora. Tente de novo.');
   }
 
