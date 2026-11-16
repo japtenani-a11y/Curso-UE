@@ -135,6 +135,17 @@
 - Todas as telas usam as cores e a fonte do CUT (script 77).
 - Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 76 (banco) e o 76_certeza_app (aplicativo).
 
+## Perfis e funções da equipe (78), 15/11/2026
+
+- **Ao entrar:** quem tem mais de um perfil escolhe com qual quer usar o aplicativo. O administrador pode usar qualquer perfil (administrador, curador, preceptor, pesquisador, responsável pelos dados, aluno). A equipe também pode ver o aplicativo como aluno.
+- **Trocar de perfil:** a qualquer momento, em "Meu perfil", que fica no perfil atual ao lado do seu nome, no alto da tela (no celular, em "Mais").
+- **Funções da equipe** (em Meu perfil, usando o perfil de Administrador):
+  - buscar a pessoa por nome ou e-mail (ela precisa ter entrado ao menos uma vez);
+  - atribuir curador, preceptor, pesquisador, responsável pelos dados ou administrador;
+  - encerrar uma função. Encerrar não apaga: a função fica no histórico com data de fim, e o curso nunca fica sem administrador.
+- **Segurança:** trocar de perfil nunca dá mais acesso do que a pessoa tem; usando o perfil de aluno, você vê só o que um aluno vê.
+- **Google Cloud com o nome CUT:** veja `docs/google_cloud_cut.md`.
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).

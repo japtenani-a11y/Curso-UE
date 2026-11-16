@@ -1,0 +1,33 @@
+/* ---------- perfis (meu perfil, escolha ao entrar, funcoes da equipe) ---------- */
+.perfil-cut { font-family: var(--cut-font); color: var(--cut-text); max-width: var(--cut-content-max); margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.perfil-cut h1 { margin: 2px 0 4px; font: 800 24px/30px var(--cut-font); }
+.perfil-cut h2 { margin: 0 0 6px; font: 800 18px/24px var(--cut-font); }
+.perfil-rot { font: 600 12px/16px var(--cut-font); letter-spacing: 1.5px; text-transform: uppercase; color: var(--cut-text-muted); }
+.perfil-meta { display: block; margin: 0; font-size: 14px; color: var(--cut-text-muted); }
+.perfil-aviso { margin: 0; background: var(--cut-surface-sunken); border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-md); padding: 10px 12px; }
+.perfil-bloco { background: var(--cut-surface-raised); border: 1px solid var(--cut-line); border-radius: var(--cut-r-lg); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.perfil-opcoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.perfil-opcao { text-align: left; display: flex; flex-direction: column; gap: 4px; min-height: var(--cut-tap); padding: 12px; border-radius: var(--cut-r-md); border: 1px solid var(--cut-line-strong); background: var(--cut-surface); color: var(--cut-text); cursor: pointer; font-family: var(--cut-font); }
+.perfil-opcao strong { font-size: 15px; }
+.perfil-opcao span { font-size: 13px; color: var(--cut-text-muted); }
+.perfil-opcao small { font-size: 12px; color: var(--cut-text-muted); }
+.perfil-opcao[aria-checked="true"] { border: 2px solid var(--cut-action); background: var(--cut-surface-sunken); }
+.perfil-btn { align-self: flex-start; min-height: var(--cut-tap); padding: 8px 18px; border-radius: var(--cut-r-md); border: 1px solid var(--cut-line-strong); background: var(--cut-surface); color: var(--cut-text); font: 600 15px var(--cut-font); cursor: pointer; }
+.perfil-btn.prim { background: var(--cut-action); color: var(--cut-on-action); border-color: var(--cut-action); }
+.perfil-btn:disabled { opacity: .45; cursor: not-allowed; }
+.perfil-atribuir { display: grid; grid-template-columns: 2fr 1fr auto; gap: 10px; align-items: end; position: relative; }
+.perfil-campo { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--cut-text-muted); }
+.perfil-campo input, .perfil-campo select { min-height: var(--cut-tap); border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-md); background: var(--cut-surface); color: var(--cut-text); padding: 8px 10px; font: 400 15px var(--cut-font); }
+.perfil-achados { list-style: none; margin: 0; padding: 4px; position: absolute; top: 72px; left: 0; width: min(520px, 100%); z-index: 10; background: var(--cut-surface-raised); border: 1px solid var(--cut-line); border-radius: var(--cut-r-md); box-shadow: var(--cut-sombra); }
+.perfil-achados button { width: 100%; text-align: left; border: 0; background: none; padding: 10px; border-radius: var(--cut-r-sm); cursor: pointer; font: 600 14px var(--cut-font); color: var(--cut-text); }
+.perfil-achados button:hover { background: var(--cut-surface-sunken); }
+.perfil-achados small { font-weight: 400; color: var(--cut-text-muted); margin-left: 6px; }
+.perfil-lista { display: flex; flex-direction: column; }
+.perfil-pessoa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 10px 0; border-top: 1px solid var(--cut-line); }
+.perfil-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.perfil-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--cut-line-strong); border-radius: 999px; padding: 2px 4px 2px 12px; font-size: 13px; font-weight: 600; }
+.perfil-x { border: 0; background: none; color: var(--cut-text-muted); text-decoration: underline; cursor: pointer; font: 500 12px var(--cut-font); min-height: 32px; padding: 0 8px; }
+.perfil-x.conf { color: var(--cut-incorrect); font-weight: 700; }
+.papel-chip { display: inline-flex; align-items: center; min-height: 32px; padding: 2px 10px; border: 1px solid var(--cut-line-strong); border-radius: 999px; font: 600 12px var(--cut-font); color: var(--cut-text); text-decoration: none; white-space: nowrap; }
+.papel-chip:hover { background: var(--cut-surface-sunken); }
+@media (max-width: 640px) { .perfil-atribuir { grid-template-columns: 1fr; } .perfil-achados { top: 72px; } }
