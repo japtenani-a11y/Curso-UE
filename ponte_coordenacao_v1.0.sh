@@ -80,7 +80,8 @@ rodada() {
   for f in "$COORD_DIR"/propostas/*.json; do
     # arquivo ainda sendo gravado pelo agente: espera a proxima rodada
     if [ $(( $(date +%s) - $(stat -c %Y "$f") )) -lt 20 ]; then continue; fi
-    if n=$("${PSQL[@]}" -v j="$(cat "$f")" 2>"$f.erro.txt" <<< "SELECT app.coord_receber(:'j'::jsonb);"); then
+    # o JSON entra pela entrada do psql (\set com crase), sem o limite de tamanho de argumento do Linux
+    if n=$(printf '\\set j `cat %s`\nSELECT app.coord_receber(:'"'"'j'"'"'::jsonb);\n' "'$f'" | "${PSQL[@]}" 2>"$f.erro.txt"); then
       rm -f "$f.erro.txt"; mv -f "$f" "$COORD_DIR/processadas/"; rec=$((rec + n))
     else
       mv -f "$f" "$COORD_DIR/com_erro/"; mv -f "$f.erro.txt" "$COORD_DIR/com_erro/$(basename "$f").erro.txt"; err=$((err + 1))
