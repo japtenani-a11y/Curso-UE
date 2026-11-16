@@ -76,6 +76,8 @@ Cada peça recebe as afirmações que cita no texto. Cada teste e cada gabarito 
 
 A seleção da coordenação entra aqui do mesmo jeito: basta pôr o PDF em `fontes/` e uma linha no `fontes.csv`.
 
+Uma fonte que o triador guardou em outro tema pode ser citada pelo código (F e oito letras) em `fonte_arquivo`: ao gravar, o importador a guarda também neste tema.
+
 O ATLS 11 não entra como fonte com texto: é citado só pela seção.
 
 Nunca coloque nesta pasta arquivo com dado de paciente.
@@ -134,3 +136,4 @@ Nunca coloque nesta pasta arquivo com dado de paciente.
 - Uma peça igual à que já está no banco não vira versão nova.
 - Uma questão que já tem resposta de aluno não é alterada.
 - Nada é apagado.
+- As questões novas entram nas ondas de teste que o tema já tem; as que já estavam não mudam de ordem.

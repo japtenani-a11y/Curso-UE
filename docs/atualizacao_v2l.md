@@ -353,3 +353,12 @@
 
 - A ponte aprova sozinha, a cada rodada, as propostas de fonte cujo arquivo já chegou. A fonte fica guardada nos temas indicados, sem passar pela aba "Para revisar".
 - O `estado.json` passa a mostrar `fontes_aprovadas` na última rodada.
+
+## T001 atualizado e importador (CUT_v2z2)
+
+- **T001:** nova versão de todo o material na pasta `conteudo/T001/` (`docs/T001_atualizacao_2026-11-16.md`).
+- **Importador:**
+  - fonte guardada em outro tema e citada pelo código F... passa a valer também no tema importado;
+  - questões novas entram nas ondas de teste já criadas;
+  - as questões antigas do T001 passam a usar o código no padrão do importador.
+- **Ponte:** arquivo de propostas de qualquer tamanho (v2z1).

@@ -226,6 +226,16 @@ SELECT a.artefato_id, '{cod}', {dq(a['texto'])}, {lit(a['fonte_arquivo'])}, {lit
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.tipo::text = '{tipo}'
    AND a.versao = (SELECT max(x.versao) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo = a.tipo)
 ON CONFLICT (artefato_id, codigo) DO UPDATE SET texto = EXCLUDED.texto, fonte_arquivo = EXCLUDED.fonte_arquivo, trecho_literal = EXCLUDED.trecho_literal;""")
+# questoes carregadas antes do importador (T001): passam a usar o codigo no padrao <tema>-<id>
+L.append(f"""UPDATE app.item i SET codigo = '{tema}-' || i.codigo FROM app.tema t
+ WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo ~ '^T[1-6]-';
+UPDATE app.item i SET codigo = '{tema}-FIXA-1' FROM app.tema t WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo = '{tema}-FIXA';""")
+# fonte guardada em outro tema (triador de fontes) e citada aqui pelo codigo F<8 letras>: passa a valer tambem neste tema
+for ref in sorted({a['fonte_arquivo'] for a in afirm.values() if re.fullmatch(r'F[0-9a-f]{8}', a['fonte_arquivo'] or '')}):
+    L.append(f"""INSERT INTO conteudo.fonte (tema_id, camada, titulo, autores, ano, doi, pmid, url, texto_integral, arquivo_origem, sha256, camada_confirmada, tema_confirmado)
+SELECT t.tema_id, x.camada, x.titulo, x.autores, x.ano, x.doi, x.pmid, x.url, x.texto_integral, x.arquivo_origem, x.sha256, true, true
+  FROM app.tema t, LATERAL (SELECT * FROM conteudo.fonte f WHERE f.sha256 LIKE '{ref[1:]}%' AND f.texto_integral IS NOT NULL ORDER BY f.fonte_id LIMIT 1) x
+ WHERE {TEMA_SQL} AND NOT EXISTS (SELECT 1 FROM conteudo.fonte y WHERE y.tema_id = t.tema_id AND y.sha256 = x.sha256);""")
 # fontes
 for f in fontes:
     L.append(f"""INSERT INTO conteudo.fonte (tema_id, camada, titulo, autores, ano, doi, pmid, texto_integral, arquivo_origem, sha256, camada_confirmada, tema_confirmado)
@@ -268,6 +278,15 @@ SELECT alvo.item_id, v.ordem, v.texto, v.correta, v.cat, v.just FROM alvo, (VALU
   {vals}) v(ordem, texto, correta, cat, just);""")
 L.append(f"UPDATE app.item i SET gabarito_alternativa_id = a.alternativa_id FROM app.alternativa a, app.tema t WHERE a.item_id = i.item_id AND a.eh_correta "
          f"AND i.gabarito_alternativa_id IS NULL AND i.tema_id = t.tema_id AND {TEMA_SQL};")
+# as questoes novas entram nas ondas de teste que o tema ja tem (as que ja estavam nao mudam de ordem)
+L.append(f"""INSERT INTO app.item_selecionado (onda_id, item_id, ordem_apresentada)
+SELECT o.onda_id, i.item_id,
+       (coalesce((SELECT max(s.ordem_apresentada) FROM app.item_selecionado s WHERE s.onda_id = o.onda_id), 0)
+        + row_number() OVER (PARTITION BY o.onda_id ORDER BY i.fixa DESC, i.perfil, i.codigo))::smallint
+  FROM app.onda_instancia o JOIN app.tema t ON t.tema_id = o.tema_id
+  JOIN app.item i ON i.tema_id = o.tema_id AND (i.fixa OR i.teste_num = o.teste_num)
+ WHERE {TEMA_SQL} AND i.codigo IS NOT NULL
+   AND NOT EXISTS (SELECT 1 FROM app.item_selecionado s WHERE s.onda_id = o.onda_id AND s.item_id = i.item_id);""")
 L += ["\\echo 'resultado:'",
       f"""SELECT (SELECT count(DISTINCT a.tipo) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.status::text IN ('rascunho','publicado')) AS pecas,
        (SELECT count(*) FROM conteudo.afirmacao f JOIN conteudo.artefato a USING (artefato_id) JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL}) AS afirmacoes,
