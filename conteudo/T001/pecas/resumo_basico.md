@@ -29,7 +29,7 @@ A avaliação secundária é a história (AMPLA: alergias, medicamentos, passado
 
 ## A equipe
 
-Um líder, de preferência o cirurgião do trauma, coordena e fica com a visão do todo [D22, D43]. Quando há aviso antes da chegada, a equipe faz o briefing: cada um diz o nome, combina-se o plano e o que fazer se o paciente chegar mais grave [D71]. A equipe do pré-hospitalar passa o caso em menos de um minuto, num formato fixo como o MIST: mecanismo, lesões, sinais vitais e sintomas, tratamentos já feitos [D23, D24]. Quem recebe uma ordem a repete em voz alta e avisa quando terminou [D70]. Fichas e checklists ajudam a não esquecer etapas [A8, A13].
+Um líder coordena e fica com a visão do todo [D43]. No serviço, é o cirurgião; na impossibilidade, o médico mais experiente presente lidera até o cirurgião assumir [D22, P22]. Quando há aviso antes da chegada, a equipe faz o briefing: cada um diz o nome, combina-se o plano e o que fazer se o paciente chegar mais grave [D71]. A equipe do pré-hospitalar passa o caso em menos de um minuto, num formato fixo como o MIST: mecanismo, lesões, sinais vitais e sintomas, tratamentos já feitos [D23, D24]. Quem recebe uma ordem a repete em voz alta e avisa quando terminou [D70]. Fichas e checklists ajudam a não esquecer etapas [A8, A13].
 
 ## Leve para o plantão
 

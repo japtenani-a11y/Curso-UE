@@ -41,4 +41,14 @@ Somando os 30 testes (5 perfis × 6 ondas), são 280 questões aplicadas; cada a
 
 Total: 190 questões de caso e 3 âncoras. O simulado opcional de cada aluno é formado pelas questões dos outros perfis, que ele não recebe nos testes.
 
-As âncoras têm o mesmo enunciado em todas as ondas. O grau mostrado nos gabaritos (Média ou Difícil) é uma referência única: o mesmo enunciado é mais fácil para quem tem mais experiência, e o grau de cada âncora por perfil será calibrado com os dados das primeiras ondas. Pendência do aplicativo: as alternativas das âncoras ainda aparecem na mesma ordem em todas as ondas; até o aplicativo embaralhá-las, a comparação entre ondas pode ser inflada por quem lembra a letra do gabarito.
+As âncoras têm o mesmo enunciado em todas as ondas. A ordem das alternativas muda de uma onda para outra (o aplicativo e os testes em texto usam a mesma regra), para que o aluno não acerte pela letra que viu no gabarito anterior. O grau da âncora é por perfil, porque o mesmo enunciado é mais fácil para quem tem mais experiência; o aplicativo mostra no gabarito o grau do perfil do aluno:
+
+| Perfil | Grau das âncoras | Taxa de acerto esperada |
+| --- | --- | --- |
+| Graduação | Média | de 50% a menos de 75% |
+| R1 | Fácil | de 75% a menos de 90% |
+| R2 | Muito fácil | 90% ou mais |
+| R3 | Muito fácil | 90% ou mais |
+| R+ | Muito fácil | 90% ou mais |
+
+Os gabaritos em texto mostram um só grau para cada âncora (Média ou Difícil, o da Graduação); vale a tabela acima para os outros perfis. Os graus serão calibrados com os dados das primeiras ondas.

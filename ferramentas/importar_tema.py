@@ -179,6 +179,18 @@ if erros:
 # ---------- testes e gabaritos gerados ----------
 FAIXA = (f'> RASCUNHO para revisão (tolerância: 5% de erro leve, zero crítico). [H#] histórico; [D#] livro-texto; [P#] protocolo '
          f'institucional; [A#] artigo; [G#] diretriz. Casos e dados de pacientes são fictícios.\n\n')
+import hashlib
+def ordem_da_onda(q, n):
+    """Ancoras: alternativas em ordem diferente em cada onda, pela mesma regra do aplicativo (98_embaralhar_ancoras_app):
+    md5('<codigo>:<ordem 1-5>:<teste>'). Questoes de caso ficam como estao."""
+    if not q.get('fixa'): return q
+    cod = f"{tema}-FIXA-{fixas.index(q) + 1}"
+    idx = sorted(range(len(q['alternativas'])), key=lambda k: hashlib.md5(f"{cod}:{k + 1}:{n}".encode()).hexdigest())
+    r = dict(q)
+    for campo in ('alternativas', 'justificativas', 'categorias'):
+        r[campo] = [q[campo][k] for k in idx]
+    r['correta'] = LET[idx.index(LET.index(q['correta']))]
+    return r
 for n in range(1, 7):
     ct, cx = casos[n]
     prova = [f'# {tema[0]}-{tema[1:]} — {NOMES[n]}\n',
@@ -191,6 +203,7 @@ for n in range(1, 7):
         prova.append(f'\n## Perfil {p}\n'); gab.append(f'\n## Perfil {p}\n')
         lista = fixas + [q for q in questoes if not q.get('fixa') and q.get('teste') == n and q.get('perfil') == p]
         for k, q in enumerate(lista, 1):
+            q = ordem_da_onda(q, n)
             prova.append(f"**{k}.** {q['enunciado']}\n" + '\n'.join(f'- {LET[i]}) {a}' for i, a in enumerate(q['alternativas'])) + '\n')
             gab.append(f"**{k}. Resposta {q['correta']}** · grau {GRAUS[q['grau'] - 1]} · taxa de acerto esperada {q.get('taxa_esperada') or TAXA[q['grau'] - 1]}"
                        f" · âncora {', '.join(q.get('ancoras', [])) or '—'}\n"

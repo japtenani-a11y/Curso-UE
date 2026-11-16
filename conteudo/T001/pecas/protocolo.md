@@ -24,7 +24,7 @@ Toda vítima de trauma admitida na sala vermelha (seção 3).
 Nenhum. Pacientes em extremis seguem o fluxo CAB (CABDE) [D3].
 
 ## 7. Avaliação inicial
-1. Antes da chegada: líder (cirurgião do trauma [D22]; na ausência dele, quem o serviço designar, ver Pendências) e funções definidos: posições A (via aérea e neurológico), B (ventilação) e C (choque e hemorragia) [P18]. Briefing com o plano alternativo [D71]. O time completo é acionado sempre que houver critério [A53, A54].
+1. Antes da chegada: líder (cirurgião do trauma [D22]; na impossibilidade, o médico mais experiente presente, até o cirurgião assumir [P22]) e funções definidos: posições A (via aérea e neurológico), B (ventilação) e C (choque e hemorragia) [P18]. Briefing com o plano alternativo [D71]. O time completo é acionado sempre que houver critério [A53, A54].
 2. Passagem MIST em até 1 minuto [D23, D24].
 3. Registro na ficha da sala de trauma [A13, A14, P18], com a pausa de segurança anotada [P21].
 
@@ -68,7 +68,6 @@ Avaliações primária e secundária concluídas e registradas; destino definido
 Acionamento do time completo nos pacientes com critério [A53]; preenchimento da ficha; registro da via aérea [A14]; cinta pélvica na fratura instável e reaquecimento na hipotermia [G11]; temperatura medida na admissão; tempo porta-tomografia (meta de 30 minutos a validar [P14]); tempo até acionar o protocolo de transfusão maciça; pacientes instáveis levados à tomografia; lesões de diagnóstico tardio [A42].
 
 ## 15. Pendências para validação
-- Líder na ausência do cirurgião do trauma: definir quem o serviço designa.
 - Transfusão maciça: anexar o protocolo vigente do HCFMRP e alinhar os critérios com a hemoterapia.
 - Radiologia intervencionista: tempo de acionamento e uso de sala híbrida.
 - UTI: critérios de admissão, sem fonte carregada; validar com a UTI.

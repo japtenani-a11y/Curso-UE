@@ -10,7 +10,7 @@ Na chegada, a pergunta é: este paciente, agora, morre primeiro de quê? A regra
 - **Pulso e pressão.** O pulso permite estimar uma faixa de PAS. Palpe radial, femoral e carotídeo; se o aparelho automático e a clínica discordarem, meça a pressão manualmente [D14].
 - **Sinais de que a via aérea continua na frente:** obstrução (sangue, vômito, queda da língua, estridor) e hipóxia grave que não cede com oxigênio [G4].
 - **O que fazer com a via aérea enquanto se trata a circulação:** oxigênio, aspiração, cânula e bolsa-válvula-máscara [G6]. É o plano A da ficha do serviço [P20].
-- **Por que adiar o tubo:** o porquê está no resumo básico [G7, D47]. Quando a intubação vier, com sangue e plasma já correndo [D39], deixe à mão a aspiração, as medicações e o plano B da ficha [P20]. Indutor: etomidato ou cetamina são os mais adequados na sequência rápida [D78]; no hipotenso, considere reduzir a dose em até 50% [D79].
+- **Por que adiar o tubo:** o porquê está no resumo básico [G7, D47]. Quando a intubação vier, com sangue e plasma já correndo [D39], deixe à mão a aspiração, as medicações e o plano B da ficha [P20]. Indutor: etomidato ou cetamina são os mais adequados na sequência rápida [D78]; no hipotenso, considere reduzir a dose em até 50% (o livro usa índice de choque acima de 0,8) [D79].
 - **O risco oposto:** a falha em assegurar a via aérea esteve em 16% dos óbitos com erro [A51]. Adiar exige material pronto, pessoa designada e gatilho combinado ("se saturar abaixo de 90% com máscara, intubamos").
 
 ## 2. Hemorragia externa: a técnica muda com a anatomia

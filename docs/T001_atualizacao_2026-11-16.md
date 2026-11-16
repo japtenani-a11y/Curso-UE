@@ -159,3 +159,12 @@ Correções das pré-revisões das 18h48 (aula, banco, checklist, flashcards, ga
 - **Checklist:** a letra x explicada no topo; itens condicionais começam por "Se" e aceitam "não se aplica".
 - **Banco de questões:** tabela de graus com a contagem real; nota sobre repetições e sobre as âncoras (o aplicativo ainda não embaralha as alternativas delas).
 - **Resumo básico, flashcards e slides:** pulso radial "pelo menos 90 a 100 mmHg" [D44]; cartão 11 sem ambiguidade; slide 9 sem "duas tentativas".
+
+### CUT_v2z14
+
+Decisões da coordenação de 16/11, 20h52, aplicadas.
+
+- **D21 (AMPLA):** aceita, citando o ATLS 11 pela seção (história da avaliação secundária).
+- **Líder (P22, decisão da coordenação):** todo atendimento é liderado pelo cirurgião; na impossibilidade, pelo médico mais experiente presente, até o cirurgião assumir. Entrou no protocolo (sai da lista de pendências), no resumo básico e no mapa de respostas do caso base.
+- **Âncoras embaralhadas por onda:** novo script `98_embaralhar_ancoras_app_v1.0.sh`, chamado pelo subir. As alternativas das três âncoras mudam de ordem em cada teste (1 a 6), iguais no teste e no gabarito da mesma onda; as respostas continuam gravadas pela alternativa, então nada muda nas respostas já dadas. O importador usa a mesma regra nos testes e gabaritos em texto. O banco de questões ganhou a tabela do grau das âncoras por perfil, que o aplicativo já usava.
+- **Conferidos na fonte:** D78 e D79 (Mattox, cap. 14; a aula agora diz que o livro usa índice de choque acima de 0,8), D60 (90 minutos como limite), D24 (45 segundos a 1 minuto), G2 (6 estudos, 11.855 pacientes, OR 3,65, I² 92%) e A51 (16% e 16%). Na questão do A51, o enunciado passou a dizer que os 16% são dos 64 óbitos com erro, não dos 2.594.

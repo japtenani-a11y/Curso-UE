@@ -6763,7 +6763,7 @@
   "id": "T4-R+-7",
   "fixa": false,
   "grau": 5,
-  "enunciado": "Na revisão de 2.594 óbitos de um centro de trauma, quais foram os dois padrões de erro mais frequentes?",
+  "enunciado": "Na revisão de 2.594 óbitos de um centro de trauma, 64 tiveram erro que contribuiu para a morte. Quais foram os dois padrões de erro mais frequentes?",
   "alternativas": [
    "Hipotermia e coagulopatia não tratadas",
    "Diagnóstico tardio de lesão de víscera oca",

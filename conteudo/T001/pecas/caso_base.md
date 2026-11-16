@@ -21,7 +21,7 @@ Tempo: cerca de 35 minutos (3 minutos por pergunta). Caso fictício para testar 
 
 **Onde está a resposta** (no resumo básico)
 
-- 1 e 7: "A equipe" [D22, D23, D24, D71].
+- 1 e 7: "A equipe" [D22, P22, D23, D24, D71].
 - 2 e 6: "A ordem" e "Letra por letra", sangramento externo [D2, D6, D7].
 - 3 e 4: "Letra por letra", circulação e neurológico [D14, D17].
 - 5: "Letra por letra", via aérea [G6]; a síntese de evidência traz o debate sobre oxigênio para todos [A27].
