@@ -14,7 +14,7 @@ Cartões de conduta para o plantão. Os cinco marcados R+ trazem evidência para
 | 8 | Um eFAST negativo exclui pneumotórax? | Não: houve estudo com baixa sensibilidade e muitos falsos negativos [A30]. |
 | 9 | Terminado o exame com o paciente despido, o que fazer quanto à temperatura? | Manter o paciente aquecido: mantas, manta de ar forçado e fluidos aquecidos [D19]. |
 | 10 | Que comportamento sugere choque classe III ou IV? | Agitação e agressividade [D17]. |
-| 11 | O aparelho automático de pressão é confiável no choque? | Pode errar; se for medir, meça manualmente [D14]. |
+| 11 | O aparelho automático de pressão é confiável no choque? | Pode errar; na dúvida, meça manualmente [D14]. |
 | 12 | O que o consenso WSES-PTS de 2025 recomenda na hemorragia exsanguinante? | Ressuscitação e controle da hemorragia antes da via aérea invasiva [G1]. |
 | 13 | Segundo o consenso WSES-PTS de 2025, quando a via aérea continua em primeiro lugar? | Na obstrução da via aérea e na hipóxia grave [G4]. |
 | 14 | Hipotenso antes da intubação: e a dose do indutor? | Considerar reduzir em até 50% [D79]. |

@@ -148,3 +148,14 @@ Correções das pré-revisões "ajustar" de todas as peças do T001 (rodadas das
   - Novas questões de decisão: PACE (D72), momento da intubação no exsanguinante (G1, G7, D47), cinta pélvica com sínfise alargada (A35, D9, D54), torniquete no antebraço (D59, D60), MIST montado a partir do caso, alça fechada (D70), choque com pressão automática normal (D14, D17).
   - Palavras absolutas tiradas de 167 distratores; 38 corretas encurtadas.
 - **Peças:** objetivos com condição e critério; síntese com desenho de cada estudo em todas as seções, A4 como ensaio proposto e o estudo com dados dos alunos condicionado à coordenação e ao comitê de ética; podcast reescrito (números por extenso, um ponto por fala, blocos de TC juntos); protocolo com seção de pendências para validação; resumos, aula, checklist, flashcards, mapa, caso base e slides ajustados. Imagens dos slides 1, 4, 8 e 11 refeitas.
+
+### CUT_v2z13
+
+Correções das pré-revisões das 18h48 (aula, banco, checklist, flashcards, gabaritos 1 a 5) e resposta da coordenação sobre a TC.
+
+- **Caso 5:** a TC de corpo inteiro do serviço é crânio, coluna total, tórax, abdome e pelve, sem os pés. A dor nova passou do pé para as costelas, que estão no campo da TC; a lição do caso (lesão tardia mesmo com TC) continua correta.
+- **Questões:** cerca de 35 reescritas ou ajustadas. Saíram as repetições do mesmo fato para o mesmo perfil (aparelho automático no R1, voz normal na Graduação, MIST duas vezes no mesmo teste, aquecer, cinta, 13,9%), as questões fora dos objetivos (adrenalina na parada, RUSH e FAST-PLUS, oxigênio por opinião, sangramento pela boca) e a oxigenoterapia que o caso 2 não descreve. Entraram questões de objetivos que estavam sem item: compressão até alguém assumir, pulsos e faixa de pressão, ficha da sala (P18), reavaliação após cada intervenção, adjuntos da primária, FAST negativo no hipotenso (D63), treino in situ, supervisão do residente que lidera, auditoria do acionamento do time (A53). "Duas tentativas" de veia virou "sem acesso venoso imediato", como diz o D15. Graus corrigidos onde a questão se resolvia por exclusão. A correta mais longa caiu de 38% para 26% das questões de caso.
+- **Aula:** exceção da coordenação registrada (complicações da via aérea cirúrgica no T002; intraósseo e drenagem no T-081 e T-013); passo do torniquete na angio-TC como decisão com o assistente; ausculta e eFAST com ponte para o resumo básico e foco na armadilha do intubado; duas frases de efeito retiradas.
+- **Checklist:** a letra x explicada no topo; itens condicionais começam por "Se" e aceitam "não se aplica".
+- **Banco de questões:** tabela de graus com a contagem real; nota sobre repetições e sobre as âncoras (o aplicativo ainda não embaralha as alternativas delas).
+- **Resumo básico, flashcards e slides:** pulso radial "pelo menos 90 a 100 mmHg" [D44]; cartão 11 sem ambiguidade; slide 9 sem "duas tentativas".

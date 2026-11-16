@@ -108,7 +108,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 ## 3. Acesso e tórax
 
 ### Slide 9. Sem veia: onde furar
-- Duas tentativas falharam: intraósseo
+- Sem veia de imediato: intraósseo
 - Úmero proximal: mais perto do coração
 - Esterno: atrapalha toracotomia e massagem
 - Tíbia: alternativa
@@ -118,7 +118,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 > **Nota do apresentador:** Intraósseo quando o venoso não é imediato [D15]; local [D46]. Sangue e plasma cedo [D39]. Escore ABC de 2 ou mais ativa o protocolo do Hospital de Base [P16]; primeira caixa com 2 concentrados e 2 plasmas [P17]. Ácido tranexâmico em até 3 horas [G8]. Mostrar o kit e os pontos de referência no manequim.
 
-> **Fala:** Duas tentativas de veia falharam. Não insista: faça o acesso intraósseo [D15]. No traumatizado, o melhor local pode ser o úmero proximal, que está mais perto do coração. O esterno atrapalha a toracotomia e a massagem, e a tíbia é a alternativa [D46]. Por esse acesso corre sangue e plasma, antes ou em vez de soro [D39]. No nosso protocolo, dois pontos no escore ABC ativam a transfusão maciça [P16].
+> **Fala:** A veia não veio de imediato. Não insista: faça o acesso intraósseo [D15]. No traumatizado, o melhor local pode ser o úmero proximal, que está mais perto do coração. O esterno atrapalha a toracotomia e a massagem, e a tíbia é a alternativa [D46]. Por esse acesso corre sangue e plasma, antes ou em vez de soro [D39]. No nosso protocolo, dois pontos no escore ABC ativam a transfusão maciça [P16].
 
 ### Slide 10. Acesso arterial femoral e REBOA
 - Hipotenso por sangramento abdominal ou pélvico: pensar cedo
