@@ -20,7 +20,16 @@ if [ -z "${COORD_DIR:-}" ]; then
   if [ -n "$WINHOME" ] && command -v wslpath >/dev/null; then COORD_DIR="$(wslpath "$WINHOME")/CUT_coordenacao"
   else COORD_DIR="$HOME/CUT_coordenacao"; fi
 fi
-mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios}
+mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia}
+AQUI="$(cd "$(dirname "$0")" && pwd)"
+# regras que os agentes consultam (copiadas a cada ligacao da ponte, para ficarem sempre na versao instalada)
+for d in formato_das_pecas.md coordenacao_agentes.md; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
+# modelo da planilha de indicadores: so totais do mes
+[ -f "$COORD_DIR/indicadores/MODELO_totais.csv" ] || printf '%s\n' \
+  'mes;indicador;numerador;denominador;fonte' \
+  '2026-12;via_aerea_registrada;;;registro de trauma' '2026-12;temperatura_admissao;;;registro de trauma' \
+  '2026-12;aquecimento_iniciado;;;registro de trauma' '2026-12;terciaria_registrada;;;registro de trauma' \
+  '2026-12;lider_definido;;;registro de trauma' '2026-12;torniquete_horario;;;registro de trauma' > "$COORD_DIR/indicadores/MODELO_totais.csv"
 PSQL=(psql "$DATABASE_URL" -X -q -At -v ON_ERROR_STOP=1)
 
 if [ ! -f "$COORD_DIR/LEIA-ME.txt" ]; then
@@ -31,9 +40,10 @@ entrada\      o CUT grava aqui, a cada 10 minutos, o que cada agente precisa (na
 propostas\    os agentes gravam aqui as propostas; o CUT leva para a aba "Para revisar" do painel.
 processadas\  propostas ja levadas ao painel.
 com_erro\     propostas recusadas (fora do formato); o motivo esta no arquivo .erro.txt ao lado.
-indicadores\  salve aqui a planilha do mes SO COM TOTAIS (numero de casos e total de admissoes).
+indicadores\  salve aqui a planilha do mes SO COM TOTAIS, copiando o MODELO_totais.csv (mes;indicador;numerador;denominador;fonte).
               Nunca nome, prontuario, data de nascimento ou qualquer dado de paciente.
-relatorios\   resumos que os agentes deixam para leitura.
+relatorios\   resumos que os agentes deixam para leitura (o resumo do dia sai as 7h30).
+referencia\   regras que os agentes consultam (formato das pecas, rotina da coordenacao). Nao edite.
 
 Os agentes nunca mudam nada sozinhos: tudo passa pela sua decisao no painel (Aprovar, Aprovar com a alteracao, Vetar).
 Esta pasta fica fora do OneDrive de proposito. Nao compartilhe.

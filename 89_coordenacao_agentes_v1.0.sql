@@ -50,7 +50,7 @@ LANGUAGE sql IMMUTABLE AS $$
 CREATE OR REPLACE FUNCTION app.coord_retorno(p_agente TEXT) RETURNS JSONB
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, app AS $$
   SELECT coalesce(jsonb_agg(x ORDER BY x->>'decidido_em' DESC), '[]'::jsonb) FROM (
-    SELECT jsonb_build_object('tipo', tipo, 'titulo', titulo, 'status', status, 'motivo', motivo, 'decidido_em', decidido_em,
+    SELECT jsonb_build_object('tipo', tipo, 'alvo', alvo, 'titulo', titulo, 'status', status, 'motivo', motivo, 'decidido_em', decidido_em,
              'proposta', proposta, 'versao_final', CASE WHEN status = 'alterada' THEN decisao END) AS x
       FROM app.proposta_agente WHERE agente = p_agente AND status IN ('aprovada', 'alterada', 'vetada')
      ORDER BY (status <> 'aprovada') DESC, decidido_em DESC LIMIT 40) s $$;
@@ -88,6 +88,10 @@ BEGIN
                   AND tipo::text IN ('objetivos', 'resumo_basico', 'resumo', 'sintese_evidencia', 'protocolo', 'aula', 'caso')
                 ORDER BY tema_id, tipo, versao DESC) a JOIN app.tema tm ON tm.tema_id = a.tema_id
          WHERE a.tema_id IN (SELECT tema_id FROM d)), '[]'),
+      'sem_resposta_24h', (SELECT count(*) FROM app.mensagem_aluno m WHERE m.tipo = 'duvida' AND m.resposta IS NULL
+                             AND m.criado_em < now() - interval '24 hours'),
+      'catalogo_temas', coalesce((SELECT jsonb_agg(jsonb_build_object('tema', tm.codigo, 'titulo', tm.titulo) ORDER BY tm.codigo)
+          FROM app.tema tm WHERE EXISTS (SELECT 1 FROM conteudo.artefato a WHERE a.tema_id = tm.tema_id AND a.status::text = 'publicado')), '[]'),
       'respondidas_antes', coalesce((SELECT jsonb_agg(jsonb_build_object('tema', t.codigo, 'pergunta', m.texto, 'resposta', m.resposta))
           FROM (SELECT * FROM app.mensagem_aluno WHERE tipo = 'duvida' AND resposta IS NOT NULL AND tema_id IN (SELECT tema_id FROM d)
                  ORDER BY respondida_em DESC LIMIT 15) m LEFT JOIN app.tema t ON t.tema_id = m.tema_id), '[]'))
@@ -97,10 +101,17 @@ BEGIN
     SELECT jsonb_build_object('pecas', coalesce(jsonb_agg(jsonb_build_object(
              'artefato_id', a.artefato_id, 'tema', tm.codigo, 'titulo_tema', tm.titulo, 'tipo', a.tipo, 'versao', a.versao, 'titulo', a.titulo,
              'nome_material', app.nome_material(a.tipo::text), 'corpo', left(a.corpo, 40000),
+             'aula_em', (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = a.tema_id AND o.teste_num = 3 AND o.pessoa_id IS NULL),
+             'objetivos_do_tema', (SELECT left(x.corpo, 12000) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo::text = 'objetivos'
+                                    AND x.status::text IN ('publicado', 'rascunho') ORDER BY x.versao DESC LIMIT 1),
+             'essencial_antes_da_aula_min', (SELECT sum(t.minutos) FROM (SELECT DISTINCT ON (y.tipo) y.artefato_id, y.tipo FROM conteudo.artefato y
+                                    WHERE y.tema_id = a.tema_id AND y.status::text IN ('publicado', 'rascunho') AND app.etapa_do_material(y.tipo::text) = 2
+                                    ORDER BY y.tipo, y.versao DESC) u CROSS JOIN LATERAL app.tempo_peca(u.artefato_id) t WHERE t.nivel = 'essencial'),
              'formato', app.formato_peca(a.artefato_id), 'tempo', (SELECT to_jsonb(x) FROM app.tempo_peca(a.artefato_id) x),
              'publicada_anterior', (SELECT left(p.corpo, 40000) FROM conteudo.artefato p WHERE p.tema_id = a.tema_id AND p.tipo = a.tipo
                                      AND p.status::text = 'publicado' ORDER BY p.versao DESC LIMIT 1))
-             ORDER BY tm.codigo, a.tipo), '[]'))
+             ORDER BY (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = a.tema_id AND o.teste_num = 3 AND o.pessoa_id IS NULL) NULLS LAST,
+                      tm.codigo, a.tipo), '[]'))
       INTO dados
       FROM (SELECT DISTINCT ON (tema_id, tipo) * FROM conteudo.artefato WHERE status::text = 'rascunho' ORDER BY tema_id, tipo, versao DESC) a
       JOIN app.tema tm ON tm.tema_id = a.tema_id

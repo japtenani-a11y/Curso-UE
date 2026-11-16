@@ -32,7 +32,7 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 - **Arquivo recusado.** Um arquivo de proposta fora do formato vai para `com_erro\`, com o motivo ao lado.
 - **Dados que os agentes nunca recebem:** e-mail, nome completo, telefone, notas individuais com nome e dados de paciente.
 
-## Os cinco agentes
+## Os seis agentes
 
 | Agente | Quando roda | Entrada | O que propõe | Ao aprovar |
 |---|---|---|---|---|
@@ -41,6 +41,7 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 | Pré-revisão das peças | Todo dia, 5h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo e a versão publicada anterior | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
 | Alunos atrasados | Segunda-feira, 7h10 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
 | Indicadores clínicos | Dia 5 de cada mês, 8h20 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
+| Supervisor | Todo dia, 7h30 (resumo do dia); sexta, 16h10 (auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios | Não propõe: escreve o resumo do dia (o que decidir primeiro) e a auditoria semanal da qualidade de cada agente, com a mudança sugerida na skill dele | — |
 
 ## Prazos da coordenação
 
@@ -70,5 +71,10 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 | lancamento | indicador, mes (AAAA-MM-01) | numerador, denominador, fonte, nome |
 | pendencia | mes | texto |
 
-As skills de cada agente detalham o modo de trabalho: `cut-agente-duvidas`, `cut-agente-revisor-conteudo`,
-`cut-agente-pecas`, `cut-agente-atrasados` e `cut-agente-indicadores`.
+As skills detalham o modo de trabalho:
+- `cut-agente-duvidas`;
+- `cut-agente-revisao` (revisor de conteúdo e pré-revisão das peças);
+- `cut-agente-acompanhamento` (atrasados, indicadores e supervisor).
+
+Os agentes consultam as regras do curso em `CUT_coordenacao\referencia\`, que a ponte atualiza a cada instalação. A
+planilha de indicadores segue o `CUT_coordenacao\indicadores\MODELO_totais.csv`.
