@@ -374,3 +374,12 @@
 - **Google:** erro no retorno (entrada demorada, aberta em outra aba, e-mail não confirmado) volta para a tela de entrada com a explicação, em vez de uma página com código.
 - **Pareceres** (`94_aproveitar_pareceres_v1.0.sql`): copia os pareceres das versões anteriores para as afirmações idênticas da versão nova e remove as questões de exemplo da instalação.
 - **T001:** baralho visual dos 15 slides novos em `conteudo/T001/slides/imagens_v3/`.
+
+## Servidor de produção para as três opções (96) — CUT_v2z4
+
+- **`96_producao_v1.0.sh`:** põe o CUT no ar em modo produção no Google Cloud, num servidor do HC/USP ou no seu computador. Lê `~/.config/curso-ue/producao.env` (endereço, forma de acesso, Google). Em servidor, cada parte vira serviço do sistema e volta sozinha depois de reiniciar; no WSL, roda em segundo plano. Remove o login de teste do banco e confere o endereço de fora no fim. `parar` e `conferir` também.
+- **Acesso:** `caddy` (servidor com IP público, certificado https automático), `cloudflare` ou `ngrok` (túnel, sem porta aberta), `local` (o servidor web da instituição repassa).
+- **Endereço provisório:** IP com traços seguido de `.sslip.io` nos servidores; o domínio do ngrok no seu computador. Trocar depois é mudar uma linha e rodar de novo.
+- **`96_migrar_banco_v1.0.sh`:** leva o banco do seu computador para o servidor num arquivo criptografado; o banco que já estava lá fica guardado.
+- **`96_backup_producao_v1.0.sh`:** cópia diária no servidor e cópia das cópias para a pasta do Drive no seu computador.
+- **Passo a passo, custos e o que pedir à informática:** `docs/producao_v1.0.md`.
