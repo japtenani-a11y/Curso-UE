@@ -1,0 +1,26 @@
+/* ---------- ponte CUT (telas antigas) ---------- */
+/* Liga as variaveis antigas do aplicativo as do Design System CUT (bloco "tema CUT").
+   Todas as telas que usam var(--primaria), var(--borda) etc. passam a usar as cores do CUT. */
+:root {
+  --fundo: var(--cut-surface-sunken); --superficie: var(--cut-surface-raised); --superficie-2: var(--cut-surface-sunken);
+  --texto: var(--cut-text); --texto-2: var(--cut-text-muted); --borda: var(--cut-line);
+  --primaria: var(--cut-action); --primaria-texto: var(--cut-on-action);
+  --acento: var(--cut-incorrect); --acento-suave: var(--cut-incorrect-bg);
+  --ok: var(--cut-correct); --ok-suave: var(--cut-correct-bg);
+  --erro: var(--cut-incorrect); --erro-suave: var(--cut-incorrect-bg); --aviso-suave: var(--cut-incorrect-bg);
+  --sombra: 0 1px 2px rgba(14, 23, 38, .06), 0 4px 16px rgba(14, 23, 38, .06);
+  --raio: var(--cut-r-md);
+  --fonte: var(--cut-font); --fonte-titulo: var(--cut-font);
+  /* graficos antigos que usam --cor-* */
+  --cor-neutro-100: var(--cut-surface-raised); --cor-neutro-700: var(--cut-text-muted);
+  --cor-primaria: var(--cut-action); --cor-acento: var(--cut-line-strong);
+}
+h1, h2, h3, h4 { font-family: var(--cut-font); font-weight: 800; letter-spacing: -.01em; }
+:focus-visible { outline: 2px solid var(--cut-focus); outline-offset: 2px; }
+/* rotulos e destaques neutros: no CUT, laranja so sinaliza erro ou alerta */
+.rotulo { color: var(--cut-text-muted); letter-spacing: 1.5px; font-weight: 600; }
+.md blockquote { border-left-color: var(--cut-line-strong); background: var(--cut-surface-sunken); }
+.tabela tr.eu td, .lista-temas li.proprio a { background: var(--cut-surface-sunken); }
+.selo.complementar { background: var(--cut-surface-sunken); color: var(--cut-text); }
+.estado.futuro { background: var(--cut-surface-sunken); color: var(--cut-text-muted); }
+.nav a.ativo, .botao:not(.secundario):not(.discreto) { background: var(--cut-action); border-color: var(--cut-action); color: var(--cut-on-action); }

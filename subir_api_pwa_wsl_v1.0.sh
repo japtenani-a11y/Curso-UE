@@ -60,6 +60,7 @@ if [ -f 69_estudo_app_v1.0.sh ]; then bash 69_estudo_app_v1.0.sh "$RAIZ" >> "$RA
 if [ -f 74_extras_app_v1.0.sh ]; then bash 74_extras_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "74_extras_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 75_arvore_app_v1.0.sh ]; then bash 75_arvore_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "75_arvore_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 76_certeza_app_v1.0.sh ]; then bash 76_certeza_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "76_certeza_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 77_tema_cut_app_v1.0.sh ]; then bash 77_tema_cut_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "77_tema_cut_app falhou; veja $RAIZ/logs/gerar.log"; fi
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."

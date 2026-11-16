@@ -153,15 +153,15 @@ export function Testes() {
                   </button>
                 ))}
               </div>
-              <fieldset className="tst2-certeza" disabled={!marcadas[i.item_id]}>
-                <legend>Qual a sua certeza nesta resposta?</legend>
-                <div className="opcoes">
+              <div className="tst2-certeza">
+                <span className="legenda" id={`cert${i.item_id}`}>Qual a sua certeza nesta resposta?</span>
+                <div className="opcoes" role="radiogroup" aria-labelledby={`cert${i.item_id}`}>
                   {CERTEZAS.map(([v, r]) => (
-                    <button key={v} type="button" aria-pressed={certezas[i.item_id] === v} onClick={() => marcarCerteza(i.item_id, v)}>{r}</button>
+                    <button key={v} type="button" role="radio" aria-checked={certezas[i.item_id] === v} disabled={!marcadas[i.item_id]} onClick={() => marcarCerteza(i.item_id, v)}>{r}</button>
                   ))}
                 </div>
                 {!marcadas[i.item_id] && <span className="tst2-meta">Escolha uma alternativa primeiro.</span>}
-              </fieldset>
+              </div>
             </article>
             <div className="tst2-nav">
               <button type="button" className="tst2-btn" disabled={idx === 0} onClick={() => setIdx(idx - 1)}>← Anterior</button>
