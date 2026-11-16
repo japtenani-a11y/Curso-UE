@@ -69,6 +69,10 @@ s = trocar(s, """  const [ativo, setAtivo] = useState(0);
 s = trocar(s, "{art.tipo === 'podcast_roteiro' && <Podcast key={`p${dados.tema.codigo}`} codigo={dados.tema.codigo} />}",
            "{art.tipo === 'podcast_roteiro' && (dados.previa ? <Podcast key={`p${dados.tema.codigo}`} codigo={dados.tema.codigo} /> : <PodcastPlayer key={`p${dados.tema.codigo}`} codigo={dados.tema.codigo} />)}",
            '<PodcastPlayer', 'Leitura.tsx')
+# sem o audio gravado, o podcast le o roteiro com a voz do aparelho: o player recebe o texto do roteiro
+s = trocar(s, "<PodcastPlayer key={`p${dados.tema.codigo}`} codigo={dados.tema.codigo} />",
+           "<PodcastPlayer key={`p${dados.tema.codigo}`} codigo={dados.tema.codigo} roteiro={art.corpo} />",
+           'roteiro={art.corpo}', 'Leitura.tsx')
 s = trocar(s, "          ) : art.tipo === 'flashcard' && cartoes(art.corpo).length > 0 ? (", """          ) : art.tipo === 'caso' && !dados.previa && partesDoCaso(art.corpo).pontos.length > 0 ? (
             <CasoInterativo key={`c${art.artefato_id}`} codigo={dados.tema.codigo} corpo={limpar(art.corpo, false)} />
           ) : art.tipo === 'caso_base' && !dados.previa ? (

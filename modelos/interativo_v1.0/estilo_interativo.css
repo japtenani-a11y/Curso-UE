@@ -224,3 +224,7 @@
 .pr-alerta { color: var(--cut-incorrect); font-weight: 600; }
 .pr-msg { color: var(--cut-incorrect); }
 .pr-vazio { color: var(--cut-text-muted); }
+/* podcast sem audio gravado: leitura do roteiro pela voz do aparelho */
+.pod-voz { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.pod-voz button { min-height: var(--cut-tap); padding: 6px 14px; border-radius: var(--cut-r-md); border: 1px solid var(--cut-line-strong); background: var(--cut-surface); color: var(--cut-text); font: 600 14px var(--cut-font); cursor: pointer; }
+.pod-voz button:first-child { background: var(--cut-action); color: var(--cut-on-action); border-color: var(--cut-action); }
