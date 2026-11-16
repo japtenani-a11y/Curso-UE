@@ -52,7 +52,7 @@ fi
 
 rodada() {
   local ok=0 rec=0 err=0 a f n
-  for a in duvidas pecas conteudo atrasados indicadores; do
+  for a in duvidas pecas conteudo atrasados indicadores supervisor; do
     if "${PSQL[@]}" -c "SELECT app.coord_pacote('$a')" > "$COORD_DIR/entrada/.$a.tmp" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
       mv -f "$COORD_DIR/entrada/.$a.tmp" "$COORD_DIR/entrada/$a.json"; ok=$((ok + 1))
     else rm -f "$COORD_DIR/entrada/.$a.tmp"; fi

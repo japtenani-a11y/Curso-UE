@@ -69,6 +69,42 @@ LANGUAGE sql IMMUTABLE AS $$
   SELECT CASE WHEN p_texto IS NULL OR length(q) < 10 OR position(q IN lower(t)) = 0 THEN NULL
               ELSE substr(t, greatest(1, position(q IN lower(t)) - 1200), 2800) END FROM n $$;
 
+-- ---------- revisao uma vez por texto (decisao da coordenacao, 16/11/2026) ----------
+-- O parecer dado a uma afirmacao vale para as copias identicas (mesmo texto e mesma fonte) nas outras pecas do mesmo tema,
+-- em nome da mesma pessoa, com a origem anotada no comentario. Vale para o revisor na tela de revisao e para a
+-- coordenacao ao aprovar a sugestao do agente.
+CREATE OR REPLACE FUNCTION conteudo.fn_parecer_replica() RETURNS trigger
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, conteudo, app AS $fn$
+BEGIN
+  IF pg_trigger_depth() > 1 OR coalesce(NEW.afirmacao_codigo, '') = '' THEN RETURN NEW; END IF;
+  INSERT INTO conteudo.parecer_revisao (artefato_id, afirmacao_codigo, pessoa_id, decisao, comentario)
+  SELECT f2.artefato_id, f2.codigo, NEW.pessoa_id, NEW.decisao,
+         left(concat_ws(' ', NEW.comentario, '[mesmo parecer dado em ' || app.nome_material(a.tipo::text) || ', ' || NEW.afirmacao_codigo || ']'), 4000)
+    FROM conteudo.afirmacao f JOIN conteudo.artefato a ON a.artefato_id = f.artefato_id
+    JOIN conteudo.artefato a2 ON a2.tema_id = a.tema_id AND a2.status::text IN ('rascunho', 'publicado')
+    JOIN conteudo.afirmacao f2 ON f2.artefato_id = a2.artefato_id AND f2.texto = f.texto
+                              AND coalesce(f2.fonte_arquivo, '') = coalesce(f.fonte_arquivo, '')
+   WHERE f.artefato_id = NEW.artefato_id AND f.codigo = NEW.afirmacao_codigo
+     AND NOT (f2.artefato_id = NEW.artefato_id AND f2.codigo = NEW.afirmacao_codigo)
+  ON CONFLICT (artefato_id, afirmacao_codigo, pessoa_id)
+  DO UPDATE SET decisao = EXCLUDED.decisao, comentario = EXCLUDED.comentario, criado_em = now();
+  RETURN NEW;
+END $fn$;
+DROP TRIGGER IF EXISTS tg_parecer_replica ON conteudo.parecer_revisao;
+CREATE TRIGGER tg_parecer_replica AFTER INSERT OR UPDATE OF decisao, comentario ON conteudo.parecer_revisao
+  FOR EACH ROW EXECUTE FUNCTION conteudo.fn_parecer_replica();
+
+-- Data da aula do tema: a agenda planejada (92_prazos_producao) ou, sem ela, a abertura do pos-teste D0.
+CREATE OR REPLACE FUNCTION app.data_aula_planejada(p_tema BIGINT) RETURNS TIMESTAMPTZ
+LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path = pg_catalog, app AS $fn$
+DECLARE d TIMESTAMPTZ;
+BEGIN
+  IF to_regclass('app.aula_planejada') IS NOT NULL THEN
+    EXECUTE 'SELECT (data + time ''20:00'') AT TIME ZONE ''America/Sao_Paulo'' FROM app.aula_planejada WHERE tema_id = $1' INTO d USING p_tema;
+  END IF;
+  RETURN coalesce(d, (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = p_tema AND o.teste_num = 3 AND o.pessoa_id IS NULL));
+END $fn$;
+
 -- ---------- pacote de cada agente ----------
 CREATE OR REPLACE FUNCTION app.coord_pacote(p_agente TEXT) RETURNS JSONB
 LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, conteudo AS $$
@@ -118,29 +154,47 @@ BEGIN
      WHERE NOT app.coord_tem_proposta('pecas', 'artefato_id', a.artefato_id::text);
 
   ELSIF p_agente = 'conteudo' THEN
+    -- Uma entrada por TEXTO de afirmacao (a mesma afirmacao aparece em varias pecas do tema): o parecer dado a ela vale
+    -- para todas as copias (gatilho tg_parecer_replica). Ate 120 textos por rodada, do tema com aula mais proxima.
     WITH pend AS (
-      SELECT f.*, a.tema_id, a.tipo, a.versao, a.status::text AS status_peca, tm.codigo AS tema
+      SELECT f.*, a.tema_id, a.tipo, a.versao, a.status::text AS status_peca, tm.codigo AS tema,
+             app.data_aula_planejada(a.tema_id) AS aula
         FROM conteudo.afirmacao f JOIN conteudo.artefato a ON a.artefato_id = f.artefato_id
         JOIN app.tema tm ON tm.tema_id = a.tema_id
        WHERE a.status::text IN ('rascunho', 'publicado')
-         AND NOT EXISTS (SELECT 1 FROM conteudo.parecer_revisao p WHERE p.artefato_id = f.artefato_id AND p.afirmacao_codigo = f.codigo)
-         AND NOT EXISTS (SELECT 1 FROM app.proposta_agente pa WHERE pa.agente = 'conteudo' AND pa.alvo ->> 'artefato_id' = f.artefato_id::text
-                            AND pa.alvo ->> 'afirmacao_codigo' = f.codigo AND pa.status IN ('aguardando', 'aprovada', 'alterada'))
-       ORDER BY (a.status::text = 'rascunho') DESC, tm.codigo, a.artefato_id, f.codigo LIMIT 40)
+         AND NOT EXISTS (SELECT 1 FROM conteudo.parecer_revisao p WHERE p.artefato_id = f.artefato_id AND p.afirmacao_codigo = f.codigo)),
+    grupo AS (
+      SELECT DISTINCT ON (tema_id, texto, coalesce(fonte_arquivo, '')) *,
+             count(*) OVER (PARTITION BY tema_id, texto, coalesce(fonte_arquivo, '')) AS ocorrencias,
+             (SELECT array_agg(DISTINCT app.nome_material(x.tipo::text)) FROM pend x
+               WHERE x.tema_id = pend.tema_id AND x.texto = pend.texto AND coalesce(x.fonte_arquivo, '') = coalesce(pend.fonte_arquivo, '')) AS pecas
+        FROM pend
+       ORDER BY tema_id, texto, coalesce(fonte_arquivo, ''), (status_peca = 'rascunho') DESC, artefato_id),
+    escolha AS (
+      SELECT g.* FROM grupo g
+       WHERE NOT EXISTS (
+         SELECT 1 FROM app.proposta_agente pa
+           JOIN conteudo.afirmacao f2 ON f2.artefato_id = (pa.alvo ->> 'artefato_id')::bigint AND f2.codigo = pa.alvo ->> 'afirmacao_codigo'
+           JOIN conteudo.artefato a2 ON a2.artefato_id = f2.artefato_id
+          WHERE pa.agente = 'conteudo' AND pa.status IN ('aguardando', 'aprovada', 'alterada')
+            AND a2.tema_id = g.tema_id AND f2.texto = g.texto AND coalesce(f2.fonte_arquivo, '') = coalesce(g.fonte_arquivo, ''))
+       ORDER BY g.aula NULLS LAST, g.tema, g.codigo LIMIT 120)
     SELECT jsonb_build_object(
+      'textos_pendentes_total', (SELECT count(*) FROM grupo),
       'afirmacoes', coalesce((SELECT jsonb_agg(jsonb_build_object(
-          'artefato_id', p.artefato_id, 'tema', p.tema, 'peca', app.nome_material(p.tipo::text), 'versao', p.versao, 'status_peca', p.status_peca,
+          'artefato_id', p.artefato_id, 'tema', p.tema, 'aula_em', p.aula, 'peca', app.nome_material(p.tipo::text), 'versao', p.versao,
+          'status_peca', p.status_peca, 'ocorrencias', p.ocorrencias, 'aparece_em', to_jsonb(p.pecas),
           'afirmacao_codigo', p.codigo, 'texto', p.texto, 'fonte_arquivo', p.fonte_arquivo, 'trecho_literal', p.trecho_literal,
           'fonte', (SELECT jsonb_build_object('titulo', fo.titulo, 'autores', fo.autores, 'ano', fo.ano, 'doi', fo.doi, 'pmid', fo.pmid,
                             'camada', fo.camada, 'arquivo', fo.arquivo_origem,
                             'contexto', app.coord_trecho_fonte(fo.texto_integral, p.trecho_literal),
                             'trecho_encontrado', app.coord_trecho_fonte(fo.texto_integral, p.trecho_literal) IS NOT NULL)
                       FROM conteudo.fonte fo
-                     WHERE fo.tema_id = p.tema_id AND fo.arquivo_origem ILIKE '%' || p.fonte_arquivo || '%' LIMIT 1))
-          ORDER BY p.tema, p.artefato_id, p.codigo) FROM pend p), '[]'),
+                     WHERE fo.tema_id = p.tema_id AND p.fonte_arquivo <> '' AND fo.arquivo_origem ILIKE '%' || p.fonte_arquivo || '%' LIMIT 1))
+          ORDER BY p.aula NULLS LAST, p.tema, p.codigo) FROM escolha p), '[]'),
       'referencias_do_tema', coalesce((SELECT jsonb_agg(jsonb_build_object('tema', tm.codigo, 'camada', fo.camada, 'titulo', fo.titulo,
           'ano', fo.ano, 'doi', fo.doi, 'pmid', fo.pmid, 'arquivo', fo.arquivo_origem, 'tem_texto', fo.texto_integral IS NOT NULL))
-          FROM conteudo.fonte fo JOIN app.tema tm ON tm.tema_id = fo.tema_id WHERE fo.tema_id IN (SELECT tema_id FROM pend)), '[]'))
+          FROM conteudo.fonte fo JOIN app.tema tm ON tm.tema_id = fo.tema_id WHERE fo.tema_id IN (SELECT tema_id FROM escolha)), '[]'))
       INTO dados;
 
   ELSIF p_agente = 'atrasados' THEN
@@ -178,6 +232,22 @@ BEGIN
                         'denominador', denominador, 'fonte', fonte) ORDER BY indicador, mes) FROM app.indicador_clinico), '[]'),
       'mes_a_lancar', to_char(date_trunc('month', now()) - interval '1 month', 'YYYY-MM-01'),
       'inicio_da_serie', '2026-12-01')
+      INTO dados;
+  ELSIF p_agente = 'supervisor' THEN
+    -- Prazos dos temas (92) e o placar de cada agente: o supervisor nao propoe, so avisa.
+    SELECT jsonb_build_object(
+      'prazos', CASE WHEN to_regprocedure('app.prazos_temas_base()') IS NULL THEN '[]'::jsonb ELSE
+        (SELECT coalesce(jsonb_agg(to_jsonb(x) ORDER BY x.aula), '[]') FROM app.prazos_temas_base() x
+          WHERE x.situacao <> 'publicado' AND (x.aula <= current_date + 120 OR x.situacao LIKE '%atrasada%')) END,
+      'placar_7_dias', (SELECT coalesce(jsonb_object_agg(g.ag, jsonb_build_object(
+          'aguardando', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'aguardando'),
+          'mais_antiga_horas', (SELECT round(extract(epoch FROM now() - min(p.criado_em)) / 3600) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'aguardando'),
+          'aprovadas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'aprovada' AND p.decidido_em > now() - interval '7 days'),
+          'alteradas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'alterada' AND p.decidido_em > now() - interval '7 days'),
+          'vetadas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'vetada' AND p.decidido_em > now() - interval '7 days'))), '{}')
+          FROM unnest(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores']) g(ag)),
+      'duvidas_sem_resposta_24h', (SELECT count(*) FROM app.mensagem_aluno m WHERE m.tipo = 'duvida' AND m.resposta IS NULL
+                                    AND m.criado_em < now() - interval '24 hours'))
       INTO dados;
   ELSE
     RAISE EXCEPTION 'agente_desconhecido';
@@ -297,7 +367,9 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, 
                                    FROM app.mensagem_aluno m LEFT JOIN app.tema t ON t.tema_id = m.tema_id WHERE m.mensagem_id = (pa.alvo ->> 'mensagem_id')::bigint)
            WHEN 'alerta' THEN (SELECT jsonb_build_object('pergunta', m.texto) FROM app.mensagem_aluno m WHERE m.mensagem_id = (pa.alvo ->> 'mensagem_id')::bigint)
            WHEN 'parecer' THEN (SELECT jsonb_build_object('tema', t.codigo, 'peca', app.nome_material(a.tipo::text), 'versao', a.versao,
-                                  'afirmacao', f.texto, 'trecho_literal', f.trecho_literal, 'fonte_arquivo', f.fonte_arquivo)
+                                  'afirmacao', f.texto, 'trecho_literal', f.trecho_literal, 'fonte_arquivo', f.fonte_arquivo,
+                                  'copias', (SELECT count(*) FROM conteudo.afirmacao f3 JOIN conteudo.artefato a3 ON a3.artefato_id = f3.artefato_id
+                                              WHERE a3.tema_id = a.tema_id AND a3.status::text IN ('rascunho', 'publicado') AND f3.texto = f.texto))
                                   FROM conteudo.afirmacao f JOIN conteudo.artefato a ON a.artefato_id = f.artefato_id JOIN app.tema t ON t.tema_id = a.tema_id
                                  WHERE f.artefato_id = (pa.alvo ->> 'artefato_id')::bigint AND f.codigo = pa.alvo ->> 'afirmacao_codigo' LIMIT 1)
            WHEN 'pre_revisao' THEN (SELECT jsonb_build_object('tema', t.codigo, 'peca', app.nome_material(a.tipo::text), 'versao', a.versao,
@@ -333,7 +405,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, app AS $$
    WHERE app.role_atual() IN ('admin', 'curador', 'data_steward')
    GROUP BY g.ag ORDER BY array_position(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores'], g.ag) $$;
 
-GRANT EXECUTE ON FUNCTION app.coord_pacote(TEXT), app.coord_receber(JSONB), app.decidir_proposta(BIGINT, TEXT, JSONB, TEXT),
+GRANT EXECUTE ON FUNCTION app.data_aula_planejada(BIGINT), app.coord_pacote(TEXT), app.coord_receber(JSONB), app.decidir_proposta(BIGINT, TEXT, JSONB, TEXT),
   app.painel_propostas(TEXT), app.painel_agentes(), app.coord_tipo_valido(TEXT, TEXT), app.coord_retorno(TEXT),
   app.coord_tem_proposta(TEXT, TEXT, TEXT), app.coord_trecho_fonte(TEXT, TEXT) TO api_rw;
 

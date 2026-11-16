@@ -74,6 +74,9 @@ p = os.path.join(raiz, 'api/src/routes/painel.ts'); s = ler(p)
 s = trocar(s, "  indicadores: 'SELECT * FROM app.painel_indicadores()',",
   "  indicadores: 'SELECT * FROM app.painel_indicadores()',\n  conferencia: 'SELECT * FROM app.painel_conferencia()',",
   'app.painel_conferencia()', 'painel.ts')
+s = trocar(s, "  conferencia: 'SELECT * FROM app.painel_conferencia()',",
+  "  conferencia: 'SELECT * FROM app.painel_conferencia()',\n  prazos: 'SELECT * FROM app.painel_prazos()',",
+  'app.painel_prazos()', 'painel.ts')
 gravar(p, s)
 
 # PWA: material do aluno
@@ -126,10 +129,13 @@ gravar(p, tokens(s))
 # PWA: painel
 p = os.path.join(raiz, 'pwa/src/pages/painel/Painel.tsx'); s = ler(p)
 s = trocar(s, "| 'base' | 'itens' | 'indicadores';", "| 'base' | 'itens' | 'indicadores' | 'conferencia' | 'revisar';", "| 'revisar'", 'Painel.tsx')
+s = trocar(s, "| 'conferencia' | 'revisar';", "| 'conferencia' | 'revisar' | 'prazos';", "| 'prazos';", 'Painel.tsx')
 s = trocar(s, "  { id: 'graficos', rotulo: 'Desempenho e evolução' },",
   "  { id: 'revisar', rotulo: 'Para revisar' }, { id: 'graficos', rotulo: 'Desempenho e evolução' },", "rotulo: 'Para revisar'", 'Painel.tsx')
 s = trocar(s, "{ id: 'producao', rotulo: 'Fila de produção' },",
   "{ id: 'producao', rotulo: 'Fila de produção' }, { id: 'conferencia', rotulo: 'Conferência dos temas' },", "rotulo: 'Conferência dos temas'", 'Painel.tsx')
+s = trocar(s, "{ id: 'conferencia', rotulo: 'Conferência dos temas' },",
+  "{ id: 'conferencia', rotulo: 'Conferência dos temas' }, { id: 'prazos', rotulo: 'Prazos de produção' },", "rotulo: 'Prazos de produção'", 'Painel.tsx')
 s = trocar(s, "    const precisa: Conjunto[] = aba === 'graficos' ? ['notas', 'avaliacoes'] : [aba];",
   "    const precisa: Conjunto[] = aba === 'graficos' ? ['notas', 'avaliacoes'] : aba === 'revisar' ? [] : [aba];", "aba === 'revisar' ? []", 'Painel.tsx')
 s = trocar(s, "      {aba !== 'graficos' && (dados[aba] ?",

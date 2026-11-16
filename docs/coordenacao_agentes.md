@@ -37,7 +37,7 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 | Agente | Quando roda | Entrada | O que propõe | Ao aprovar |
 |---|---|---|---|---|
 | Dúvidas dos alunos | Todo dia, 6h40 | Dúvidas sem resposta, material publicado do tema, respostas anteriores | Resposta (`resposta`) ou alerta (`alerta`: dado de paciente, pergunta fora do escopo, conduta de caso real) | A resposta é publicada e o aluno é avisado |
-| Revisor de conteúdo | Todo dia, 5h50 | Até 40 afirmações sem parecer, cada uma com o trecho citado e o contexto da fonte; referências do tema | Parecer sugerido por afirmação: aprovar, conferir melhor ou reprovar (`parecer`) | O parecer entra na revisão em seu nome, marcado como sugerido pelo agente |
+| Revisor de conteúdo | Todo dia, 5h50 | Até 120 textos de afirmação sem parecer (cada texto vale para todas as peças em que aparece), do tema com aula mais próxima, com o trecho citado e o contexto da fonte; referências do tema | Parecer sugerido por afirmação: aprovar, conferir melhor ou reprovar (`parecer`) | O parecer entra na revisão em seu nome, marcado como sugerido pelo agente |
 | Pré-revisão das peças | Todo dia, 5h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo e a versão publicada anterior | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
 | Alunos atrasados | Segunda-feira, 7h10 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
 | Indicadores clínicos | Dia 5 de cada mês, 8h20 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
@@ -78,3 +78,10 @@ As skills detalham o modo de trabalho:
 
 Os agentes consultam as regras do curso em `CUT_coordenacao\referencia\`, que a ponte atualiza a cada instalação. A
 planilha de indicadores segue o `CUT_coordenacao\indicadores\MODELO_totais.csv`.
+
+## Revisão uma vez por texto (decisão de 16/11/2026)
+
+A mesma afirmação aparece em várias peças do tema: no T001, 809 afirmações eram só 103 textos diferentes. O parecer dado
+a uma afirmação vale para as cópias idênticas (mesmo texto e mesma fonte) nas outras peças do mesmo tema, em nome da
+mesma pessoa, com a origem anotada no comentário. Isso vale para o revisor na tela de revisão e para a coordenação ao
+aprovar a sugestão do agente (gatilho `tg_parecer_replica`, SQL 89).

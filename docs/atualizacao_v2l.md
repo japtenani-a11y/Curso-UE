@@ -310,3 +310,20 @@
   - ponte com a pasta `CUT_coordenacao` do Windows;
   - aba "Para revisar" do painel, com aprovar, aprovar com alteração e vetar, e o desempenho de cada agente.
 - Python: os avisos do pandas (FutureWarning) no relatório foram retirados.
+
+## Revisão por texto, prazos, importador de temas e limpeza (89, 92, 93) — CUT_v2w
+
+- **Revisão uma vez por texto:**
+  - o parecer vale para as cópias idênticas da afirmação nas outras peças do tema;
+  - o revisor de conteúdo passa a 120 textos por dia.
+- **Prazos de produção** (92):
+  - calendário das 39 aulas;
+  - produção pronta 6 semanas antes e revisão 3 semanas antes;
+  - aba "Prazos de produção" no painel;
+  - aviso diário do supervisor.
+- **Importador genérico de temas** (`importar_tema_v1.0.sh`, `docs/producao_de_tema.md`):
+  - confere e carrega peças, afirmações, fontes com texto integral, casos dos testes e questões com âncoras;
+  - gera os testes e os gabaritos.
+- **Limpeza** (`93_apagar_respostas_teste_v1.0.sh`):
+  - apaga todas as respostas e atividades de teste e as pessoas simuladas;
+  - faz antes uma cópia do banco.
