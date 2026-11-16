@@ -43,6 +43,39 @@ bash importar_tema_v1.0.sh T001 SENHA --aplicar
 
 As peças entram em rascunho, como versão nova. O que está publicado continua valendo até a revisão e a publicação.
 
+## Depois de gravar
+
+**Aproveitar os pareceres e limpar as questões de exemplo** (`94_aproveitar_pareceres_v1.0.sql`):
+
+```
+PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql
+```
+
+- Copia cada parecer já dado nas versões anteriores para a afirmação idêntica (mesmo texto e mesma fonte) da versão nova, em nome do mesmo revisor. Sobram para revisar só as afirmações novas ou alteradas.
+- Remove as questões de exemplo da instalação ("Item 1: qual a conduta inicial..."), se nunca foram respondidas.
+
+**Imagens dos slides novos.** O baralho visual dos 15 slides está em `conteudo/T001/slides/imagens_v3/` (gerado por `ferramentas/T001/gerar_deck_v3.py`). Os slides 3, 6, 8 e 12 têm esquemas (pulsos e pressão, posição do torniquete, cinta pélvica, membrana cricotireóidea). As imagens só vão para o aplicativo depois de a peça de slides nova ser publicada, porque o número de cada imagem precisa bater com o slide:
+
+```
+mkdir -p ~/Curso-UE/programa-cut/slides/T001
+rm -f ~/Curso-UE/programa-cut/slides/T001/slide_*.png
+cp ~/Curso-UE/conteudo/T001/slides/imagens_v3/slide_*.png ~/Curso-UE/programa-cut/slides/T001/
+```
+
+**Áudio do podcast e das falas dos slides** (precisa da chave do Google em `~/.config/curso-ue/tts.env`; ver `docs/podcast_audio.md`):
+
+```
+python3 gerar_podcast_audio_v1.0.py T001 --rascunho            # ouvir antes de publicar (T001_rascunho.mp3)
+python3 gerar_podcast_audio_v1.0.py T001 --slides --rascunho   # falas dos slides, para conferir
+```
+
+Depois de publicar o roteiro e os slides, gerar as versões que o aplicativo mostra:
+
+```
+python3 gerar_podcast_audio_v1.0.py T001
+python3 gerar_podcast_audio_v1.0.py T001 --slides
+```
+
 ## Pendências para a revisão
 
 - Os trechos do Mattox não são conferidos pelo importador (o livro não está no banco): o revisor confere no capítulo.

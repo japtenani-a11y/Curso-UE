@@ -362,3 +362,15 @@
   - questões novas entram nas ondas de teste já criadas;
   - as questões antigas do T001 passam a usar o código no padrão do importador.
 - **Ponte:** arquivo de propostas de qualquer tamanho (v2z1).
+
+## Entrada por e-mail, pareceres aproveitados e baralho novo do T001 (94, 95) — CUT_v2z3
+
+- **Entrada sem conta Google** (`95_entrada_por_email_v1.0.sql`, `95_entrada_email_app_v1.0.sh`):
+  - na tela de entrada, "Sem conta Google? Entre pelo e-mail": a pessoa recebe um link de uso único, válido por 20 minutos, sem senha;
+  - o link abre a tela "Entrar", que pede um toque (o leitor de links do e-mail não gasta o link);
+  - vale a mesma regra do Google: e-mail cadastrado entra; e-mail novo só se as inscrições estiverem abertas, e segue para a ficha, os termos e a aprovação da coordenação;
+  - a resposta da tela é sempre a mesma, para não revelar quem está cadastrado; limite de 3 links por e-mail a cada 15 minutos e 20 por endereço de rede por hora;
+  - o e-mail sai pela conta configurada no `52_configurar_email_v1.0.sh`; sem ela, no teste local, o link aparece na própria tela.
+- **Google:** erro no retorno (entrada demorada, aberta em outra aba, e-mail não confirmado) volta para a tela de entrada com a explicação, em vez de uma página com código.
+- **Pareceres** (`94_aproveitar_pareceres_v1.0.sql`): copia os pareceres das versões anteriores para as afirmações idênticas da versão nova e remove as questões de exemplo da instalação.
+- **T001:** baralho visual dos 15 slides novos em `conteudo/T001/slides/imagens_v3/`.
