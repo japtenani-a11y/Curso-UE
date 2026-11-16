@@ -246,3 +246,14 @@
   - as imagens do deck (`conteudo/T001/slides/imagens`) entram no aplicativo.
 - Nome: "CUT" no lugar do nome antigo do programa, no material (todas as versões), nas telas e nos scripts. Os termos
   já aceitos e os e-mails já enviados ficam como estavam, porque são registro histórico.
+
+## Dados simulados (90 e 91) — CUT_v2q
+
+- `90_simulacao_5_residentes_v1.0.sql`: 5 residentes fictícios (nomes "SIMULADO …", e-mails @simulado.local), com o
+  T001 inteiro e aula em 13/08/2026. Não entra no subir; roda à mão. Perfis:
+  - Ana, R1, estudiosa;
+  - Bruno, R1, faz o pré-teste 2 depois da aula, responde rápido demais e não faz o D+90;
+  - Carla, R2, confiante demais, refaz o caso;
+  - Diego, R3, estável;
+  - Elisa, R4, muito boa mas insegura, e não aceita a pesquisa.
+- `91_apagar_simulacao_v1.0.sql`: apaga tudo o que é simulado. Rodar antes de abrir o curso.
