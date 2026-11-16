@@ -129,3 +129,7 @@ A v2z9 inclui tudo da v2z7 e da v2z8; quem ainda não instalou nenhuma das duas 
 - **Importação:** ao gravar, as pré-revisões que esperam decisão sobre uma versão antiga da mesma peça passam a "substituída", com o motivo registrado. Não são vetadas, porque veto vira regra para o agente. Os pareceres de conteúdo continuam valendo e são copiados pelo script 94.
 
 Instalar como na v2z7: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois o script 94.
+
+### CUT_v2z10
+
+- **Erro na importação ("duplicate key ... uq_item_tema_codigo").** O subir recarregava o banco de questões antigo do T001 (37) e as ondas de teste (39) a cada vez, recriando as questões antigas ao lado das novas. Agora o subir pula esses dois quando o T001 já passou pelo importador, e o importador apaga as cópias antigas que ninguém respondeu, tirando-as também das ondas.

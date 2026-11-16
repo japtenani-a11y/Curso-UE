@@ -227,7 +227,19 @@ SELECT a.artefato_id, '{cod}', {dq(a['texto'])}, {lit(a['fonte_arquivo'])}, {lit
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.tipo::text = '{tipo}'
    AND a.versao = (SELECT max(x.versao) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo = a.tipo)
 ON CONFLICT (artefato_id, codigo) DO UPDATE SET texto = EXCLUDED.texto, fonte_arquivo = EXCLUDED.fonte_arquivo, trecho_literal = EXCLUDED.trecho_literal;""")
-# questoes carregadas antes do importador (T001): passam a usar o codigo no padrao <tema>-<id>
+# questoes carregadas antes do importador (T001): passam a usar o codigo no padrao <tema>-<id>.
+# Se a copia antiga voltou (o subir antigo recarregava o banco de questoes de 37), e ninguem a respondeu, ela sai,
+# junto com a sua posicao nas ondas, e fica a do importador.
+L.append(f"""CREATE TEMP TABLE _velhas ON COMMIT DROP AS
+SELECT i.item_id FROM app.item i JOIN app.tema t ON t.tema_id = i.tema_id
+ WHERE {TEMA_SQL} AND (i.codigo ~ '^T[1-6]-' OR i.codigo = '{tema}-FIXA')
+   AND EXISTS (SELECT 1 FROM app.item n WHERE n.tema_id = i.tema_id
+                AND n.codigo = CASE WHEN i.codigo = '{tema}-FIXA' THEN '{tema}-FIXA-1' ELSE '{tema}-' || i.codigo END)
+   AND NOT EXISTS (SELECT 1 FROM app.resposta r WHERE r.item_id = i.item_id);
+UPDATE app.item SET gabarito_alternativa_id = NULL WHERE item_id IN (SELECT item_id FROM _velhas);
+DELETE FROM app.item_selecionado WHERE item_id IN (SELECT item_id FROM _velhas);
+DELETE FROM app.alternativa WHERE item_id IN (SELECT item_id FROM _velhas);
+DELETE FROM app.item WHERE item_id IN (SELECT item_id FROM _velhas);""")
 L.append(f"""UPDATE app.item i SET codigo = '{tema}-' || i.codigo FROM app.tema t
  WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo ~ '^T[1-6]-';
 UPDATE app.item i SET codigo = '{tema}-FIXA-1' FROM app.tema t WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo = '{tema}-FIXA';""")
