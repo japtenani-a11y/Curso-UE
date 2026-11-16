@@ -92,3 +92,18 @@ do T001 foram escritas para quem apresenta ("peça que cada residente vote"). Pa
 uma linha `> **Fala:**` em cada slide antes de gerar o áudio.
 
 Nada disso vai para o GitHub (pastas `programa-cut/podcast` e `programa-cut/slides`).
+
+## O caso da aula narrado
+
+Para o aluno acompanhar o caso depois, como se estivesse na reunião: a peça "Caso da aula" ganhou o quadro
+"Acompanhar o caso como na aula (com áudio)". São 10 passos no T001: a abertura; para cada ponto de decisão, a situação
+com a pergunta da turma (voz do residente) e, só quando o aluno pede, a discussão (voz do preceptor); e o desfecho. O áudio
+para depois de cada pergunta, para o aluno decidir antes de ouvir a resposta.
+
+```bash
+python3 gerar_podcast_audio_v1.0.py T001 --caso --so-texto     # confere o texto (não gasta nada)
+python3 gerar_podcast_audio_v1.0.py T001 --caso --rascunho     # para ouvir antes de publicar (slides/T001_rascunho/caso_NN.mp3)
+python3 gerar_podcast_audio_v1.0.py T001 --caso                # a partir do caso publicado (slides/T001/caso_NN.mp3)
+```
+
+Sem os arquivos de áudio, o aplicativo lê o caso, e também o roteiro do podcast, com a voz do aparelho do aluno, e avisa isso na tela.

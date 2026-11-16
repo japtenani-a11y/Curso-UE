@@ -8,7 +8,7 @@ import { withMaestro } from '../db/transaction.js';
 //   PUT  /leitura/estado/:codigo/:peca    grava o estado de uma peca ({ estado, em }); regras no banco (82)
 //   GET  /leitura/continuar               ultima peca estudada (cartao "Continuar de onde parou" do Inicio)
 //   GET  /leitura/slides/:codigo          quais imagens e audios de slide existem para o tema
-//   GET  /leitura/slides/:codigo/:arquivo slide_NN.png ou slide_NN.mp3 (so com login e com a aula liberada)
+//   GET  /leitura/slides/:codigo/:arquivo slide_NN.png, slide_NN.mp3 ou caso_NN.mp3 (caso narrado; so com login e com a aula liberada)
 //   GET  /leitura/proxima-acao            a proxima acao do aluno (Inicio)
 //   GET  /leitura/calibracao              acerto por nivel de certeza do aluno (Desempenho)
 // Imagens e audios ficam em programa-cut/slides/<CODIGO>/ (fora do GitHub e fora da pasta publica do aplicativo).
@@ -92,9 +92,9 @@ export function registrarInterativo(router: Router): void {
       if (!(await podeVerSlides(r.pessoaId, r.papel, codigo))) { res.status(403).json({ erro: 'nao_liberado' }); return; }
       const dir = pastaSlides(codigo);
       const nomes = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
-      const num = (ext: string) => nomes.map((n) => n.match(new RegExp(`^slide_(\\d{2,3})\\.${ext}$`))?.[1]).filter(Boolean).map(Number).sort((a, b) => a - b);
+      const num = (ext: string, pre = 'slide') => nomes.map((n) => n.match(new RegExp(`^${pre}_(\\d{2,3})\\.${ext}$`))?.[1]).filter(Boolean).map(Number).sort((a, b) => a - b);
       res.setHeader('Cache-Control', 'no-store');
-      res.json({ imagens: num('png'), audios: num('mp3') });
+      res.json({ imagens: num('png'), audios: num('mp3'), caso: num('mp3', 'caso') });
     } catch (err) { next(err); }
   });
 
@@ -104,7 +104,7 @@ export function registrarInterativo(router: Router): void {
       if (!r.pessoaId) { res.status(401).end(); return; }
       const codigo = cod(req.params.codigo);
       const arquivo = String(req.params.arquivo);
-      if (!/^slide_\d{2,3}\.(png|mp3)$/.test(arquivo)) { res.status(400).end(); return; }
+      if (!/^(slide_\d{2,3}\.(png|mp3)|caso_\d{2,3}\.mp3)$/.test(arquivo)) { res.status(400).end(); return; }
       if (!(await podeVerSlides(r.pessoaId, r.papel, codigo))) { res.status(403).end(); return; }
       const arq = path.join(pastaSlides(codigo), arquivo);
       if (!fs.existsSync(arq)) { res.status(404).end(); return; }

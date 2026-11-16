@@ -104,7 +104,7 @@ function VozDoAparelho(props: { codigo: string; roteiro: string; vel: number }) 
       <strong>Ouvir o episódio</strong>
       <small className="int-nota">O áudio gravado deste episódio ainda não existe. O aplicativo lê o roteiro com a voz do seu aparelho, que pode soar artificial.</small>
       <div className="pod-voz">
-        {estadoVoz === 'parado' && <button type="button" onClick={() => falarDesde(atual)}>{atual > 0 ? `Continuar da fala ${atual + 1} de ${total}` : 'Ouvir com a voz do aparelho'}</button>}
+        {estadoVoz === 'parado' && <button type="button" className="pod-principal" onClick={() => falarDesde(atual)}>{atual > 0 ? `Continuar da fala ${atual + 1} de ${total}` : 'Ouvir com a voz do aparelho'}</button>}
         {estadoVoz === 'parado' && atual > 0 && <button type="button" onClick={() => falarDesde(0)}>Ouvir do começo</button>}
         {estadoVoz === 'falando' && <button type="button" onClick={pausar}>Pausar</button>}
         {estadoVoz === 'pausado' && <button type="button" onClick={continuar}>Continuar</button>}

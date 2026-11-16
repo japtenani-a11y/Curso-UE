@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Markdown } from '../../lib/md.js';
 import { useEstado, TextoSituacao } from './progresso.js';
+import { CasoAula } from './CasoAula.js';
 
 // Caso da aula interativo. Em cada ponto de decisao: o aluno escreve a conduta e marca a certeza; so entao abre a
 // discussao; depois compara a propria conduta com a discussao. A resposta de um ponto fica registrada (nao muda
@@ -70,6 +71,7 @@ export function CasoInterativo(props: { codigo: string; corpo: string; perfil?: 
 
   return (
     <div className="int-caso" ref={topo}>
+      <CasoAula codigo={props.codigo} corpo={props.corpo} />
       <details className="int-paciente" open={atual === 0 && !fim}>
         <summary>O caso: dados do paciente</summary>
         <Markdown texto={caso.abertura} />

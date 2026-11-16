@@ -133,3 +133,8 @@ Instalar como na v2z7: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (co
 ### CUT_v2z10
 
 - **Erro na importação ("duplicate key ... uq_item_tema_codigo").** O subir recarregava o banco de questões antigo do T001 (37) e as ondas de teste (39) a cada vez, recriando as questões antigas ao lado das novas. Agora o subir pula esses dois quando o T001 já passou pelo importador, e o importador apaga as cópias antigas que ninguém respondeu, tirando-as também das ondas.
+
+### CUT_v2z11
+
+- **Caso da aula narrado:** quadro "Acompanhar o caso como na aula (com áudio)" na peça do caso, com 10 passos; o áudio para depois de cada pergunta e a discussão só toca quando o aluno pede. Gerar com `python3 gerar_podcast_audio_v1.0.py T001 --caso` (ver docs/podcast_audio.md).
+- **Podcast sem áudio gravado:** o aplicativo lê o roteiro com a voz do aparelho, com duas vozes quando houver, e retoma da fala em que o aluno parou.

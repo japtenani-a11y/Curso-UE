@@ -15,6 +15,9 @@
 #   python3 gerar_podcast_audio_v1.0.py T001 --slides   (audio da fala de cada slide da aula e do caso:
 #                                                        programa-cut/slides/T001/slide_01.mp3, slide_02.mp3...)
 #   A fala de cada slide vem da linha "> **Fala:**" do slide; sem ela, da "> **Nota do apresentador:**".
+#   python3 gerar_podcast_audio_v1.0.py T001 --caso    (o caso da aula narrado como na reuniao: abertura, cada ponto de
+#                                                        decisao com a pergunta da turma, a pausa para decidir e a
+#                                                        discussao, e o desfecho: programa-cut/slides/T001/caso_01.mp3...)
 #   Os slides do caso clinico sao montados a partir da peca "Caso da aula", na mesma ordem que o aplicativo mostra.
 # VOZES (opcional, no mesmo tts.env): VOZ_PRECEPTOR=pt-BR-Neural2-B  VOZ_RESIDENTE=pt-BR-Neural2-C
 # BANCO: usa as mesmas variaveis do subir (PGHOST, PGPORT; padrao localhost:5432) e o usuario postgres.
@@ -115,6 +118,61 @@ def gerar_slides(codigo, rascunho, so_texto, c):
         print(f"\r{codigo}: slide {i} de {len(lista)}", end='', flush=True)
     print(f"\n{codigo}: audios dos slides em {pasta}")
 
+# Caso da aula narrado (mesma divisao da tela CasoAula.tsx): 1 abertura; para cada ponto de decisao, a pergunta
+# (situacao, pergunta da turma e o convite a decidir) e a discussao; no fim, o desfecho. Cada passo vira caso_NN.mp3.
+def partes_do_caso(corpo):
+    blocos, abertura = [], []
+    for l in corpo.split('\n'):
+        m = re.match(r'^\*\*((?:Ponto de decisão|Perguntas de fechamento|Desfecho)[^*]*)\*\*\s*(.*)$', l)
+        if m: blocos.append([re.sub(r'[.:]\s*$', '', m.group(1)).strip(), [m.group(2)] if m.group(2) else []]); continue
+        if blocos: blocos[-1][1].append(l)
+        elif not l.startswith('# ') and not re.match(r'^Duração:', l.strip(), re.I) and not l.startswith('>'): abertura.append(l)
+    pontos, desfecho = [], ''
+    for tit, ls in blocos:
+        t = '\n'.join(ls).strip()
+        if tit.startswith('Desfecho'): desfecho = t; continue
+        i = t.find('Discussão:')
+        antes = (t[:i] if i >= 0 else t).split('\n')
+        dica = ' '.join(re.sub(r'^Dica:\s*', '', x.strip(), flags=re.I) for x in antes if re.match(r'^\s*Dica:', x, re.I))
+        sit = re.sub(r'^Situação:\s*', '', '\n'.join(x for x in antes if not re.match(r'^\s*Dica:', x, re.I)), flags=re.M).strip()
+        pontos.append({'titulo': tit, 'situacao': sit, 'dica': dica, 'discussao': t[i + len('Discussão:'):].strip() if i >= 0 else ''})
+    return '\n'.join(abertura).strip(), pontos, desfecho
+
+def passos_do_caso(corpo):
+    abertura, pontos, desfecho = partes_do_caso(corpo)
+    if not pontos: return []
+    p = [[('PRECEPTOR', 'Caso da aula. ' + falar(abertura))]]
+    for pt in pontos:
+        fala = [('PRECEPTOR', falar(f"{pt['titulo']}. {pt['situacao']}"))]
+        if pt['dica']: fala.append(('RESIDENTE', falar('Uma pergunta da turma: ' + pt['dica'])))
+        fala.append(('PRECEPTOR', 'Pause aqui e decida a sua conduta. Quando tiver decidido, siga para a discussão.'))
+        p.append(fala)
+        p.append([('PRECEPTOR', falar('Discussão. ' + pt['discussao']))])
+    if desfecho: p.append([('PRECEPTOR', falar('Desfecho. ' + desfecho))])
+    return p
+
+def gerar_caso(codigo, rascunho, so_texto, c):
+    corpo = peca(codigo, 'caso', rascunho)
+    if not corpo.strip(): print(f"{codigo}: sem caso da aula {'em rascunho' if rascunho else 'publicado'}; nada feito."); return
+    lista = passos_do_caso(corpo)
+    if not lista: print(f"{codigo}: o caso nao tem pontos de decisao no formato **Ponto de decisão N**; nada feito."); return
+    if so_texto:
+        for i, fala in enumerate(lista, 1): print(f"[caso {i:02d}] " + ' | '.join(f"{v}: {x}" for v, x in fala))
+        print(f"\n{codigo}: {len(lista)} passos, {sum(len(x) for f in lista for _, x in f)} caracteres."); return
+    chave = c.get('GOOGLE_TTS_KEY') or sys.exit(f"ERRO: falta GOOGLE_TTS_KEY em {ENV} (veja docs/podcast_audio.md).")
+    vozes = {'PRECEPTOR': c.get('VOZ_PRECEPTOR', 'pt-BR-Neural2-B'), 'RESIDENTE': c.get('VOZ_RESIDENTE', 'pt-BR-Neural2-C')}
+    pasta = os.path.join(os.path.dirname(PASTA), 'slides', codigo + ('_rascunho' if rascunho else ''))
+    os.makedirs(pasta, exist_ok=True)
+    for n in os.listdir(pasta):
+        if re.match(r'^caso_\d{2,3}\.mp3$', n): os.remove(os.path.join(pasta, n))
+    for i, fala in enumerate(lista, 1):
+        destino = os.path.join(pasta, f'caso_{i:02d}.mp3')
+        with open(destino + '.parcial', 'wb') as f:
+            for v, x in fala: f.write(sintetizar(x, vozes[v], chave))
+        os.replace(destino + '.parcial', destino)
+        print(f"\r{codigo}: caso, passo {i} de {len(lista)}", end='', flush=True)
+    print(f"\n{codigo}: audios do caso em {pasta}")
+
 def temas_sem_audio():
     cods = psql("""SELECT DISTINCT upper(replace(t.codigo,'-','')) FROM conteudo.artefato a JOIN app.tema t ON t.tema_id = a.tema_id
                     WHERE a.tipo = 'podcast_roteiro' AND a.status = 'publicado' ORDER BY 1""").split()
@@ -178,5 +236,6 @@ if __name__ == '__main__':
     cods = temas_sem_audio() if '--todos' in a else [x.replace('-', '').upper() for x in a if not x.startswith('--')]
     if not cods: print('Nenhum tema para gerar.')
     for cod in cods:
-        if '--slides' in a: gerar_slides(cod, rasc, txt, c)
+        if '--caso' in a: gerar_caso(cod, rasc, txt, c)
+        elif '--slides' in a: gerar_slides(cod, rasc, txt, c)
         else: gerar(cod, rasc, txt, c)
