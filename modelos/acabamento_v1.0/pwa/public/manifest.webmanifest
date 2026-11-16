@@ -1,10 +1,35 @@
 {
-  "name": "Cirurgia de Urgência e Trauma · HCFMRP",
-  "short_name": "Trauma HCFMRP",
+  "name": "CUT · Curso de Cirurgia Geral, Urgência e Trauma",
+  "short_name": "CUT",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f7f4",
-  "theme_color": "#1f4e79",
+  "background_color": "#F4F5F7",
+  "theme_color": "#0E1726",
   "lang": "pt-BR",
-  "icons": [{ "src": "/icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "icons": [
+    {
+      "src": "/icone-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icone-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icone-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }

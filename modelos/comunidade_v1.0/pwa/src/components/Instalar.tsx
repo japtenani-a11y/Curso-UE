@@ -54,7 +54,7 @@ export function PassosInstalar(props: { qual?: 'iphone' | 'android' | 'computado
       {qual === 'computador' && (
         <ol className="passos">
           <li>Abra o site no <strong>Chrome</strong> ou no <strong>Edge</strong>.</li>
-          <li>Na barra de endereço, à direita, clique no ícone de <strong>instalar</strong> (um monitor com uma seta) ou no menu ⋮ → <strong>“Instalar Programa de Cirurgia…”</strong>.</li>
+          <li>Na barra de endereço, à direita, clique no ícone de <strong>instalar</strong> (um monitor com uma seta) ou no menu ⋮ → <strong>“Instalar CUT”</strong>.</li>
           <li>Confirme. O curso abre numa janela própria e ganha um atalho na área de trabalho.</li>
         </ol>
       )}

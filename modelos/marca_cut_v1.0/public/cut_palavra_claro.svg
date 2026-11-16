@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="33.2 11.5 320.8 121.2" width="321" height="121"><title>CUT · Curso de Cirurgia Geral, Urgência e Trauma</title><g transform="translate(51,20)"><g transform="skewX(-8)"><defs><clipPath id="abpclaro"><polygon points="-2845.03,-861.70 3095.92,957.02 3912.64,-1929.67 -2028.30,-3748.39"></polygon></clipPath><clipPath id="bepclaro"><polygon points="-2883.03,-727.37 3130.14,836.05 2313.42,3722.74 -3699.76,2159.32"></polygon></clipPath>
+<mask id="mpclaro" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="3000" height="3000"><rect x="-1000" y="-1000" width="3000" height="3000" fill="black"></rect><g fill="none" stroke="white" stroke-width="22" stroke-linecap="butt">
+<path d="M75.07 20.13 A39 39 0 1 0 75.07 79.87"></path>
+<path d="M108 0 V60 A29 29 0 0 0 166 60 V0"></path>
+<path d="M187 11 H267 M227 11 V100"></path></g></mask></defs>
+<g clip-path="url(#bepclaro)"><g fill="none" stroke="#0E1726" stroke-width="22" stroke-linecap="butt">
+<path d="M75.07 20.13 A39 39 0 1 0 75.07 79.87"></path>
+<path d="M108 0 V60 A29 29 0 0 0 166 60 V0"></path>
+<path d="M187 11 H267 M227 11 V100"></path></g></g><g clip-path="url(#abpclaro)"><g transform="translate(5.77,1.63)"><g fill="none" stroke="#0E1726" stroke-width="22" stroke-linecap="butt">
+<path d="M75.07 20.13 A39 39 0 1 0 75.07 79.87"></path>
+<path d="M108 0 V60 A29 29 0 0 0 166 60 V0"></path>
+<path d="M187 11 H267 M227 11 V100"></path></g></g></g>
+<polygon points="-34.55,1.47 246.38,84.98 246.11,85.91 -36.92,9.86" fill="#D7263D" mask="url(#mpclaro)"></polygon><polygon points="242.15,83.73 308.00,102.92 241.85,84.76" fill="#D7263D"></polygon></g></g></svg>

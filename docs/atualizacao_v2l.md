@@ -151,6 +151,19 @@
 - Quem está no curso, inclusive a equipe usando o perfil de Aluno, responde os testes normalmente. O nível das questões vem do ano de residência do cadastro; sem ano cadastrado, as questões são as de R+ (antes, os testes ficavam indisponíveis).
 - Cadastro: nova opção de especialidade, "Outra especialidade não cirúrgica", que também pede "Qual especialidade?".
 
+## Identidade do CUT em todo o sistema, 15/11/2026
+
+- **Nome:** "CUT · Curso de Cirurgia Geral, Urgência e Trauma" no título, no app instalado (nome curto "CUT"), no login, no topo, na página pública, no certificado, no calendário assinado e nos e-mails (remetente "CUT").
+- **Logos do Design System:**
+  - ícone pequeno e a palavra CUT no topo;
+  - logo vertical no login;
+  - logo horizontal no certificado;
+  - ícones PNG para instalar no celular.
+  O app instalado troca o ícone sozinho na próxima abertura, porque o cache foi renovado.
+- **Termos na versão v2-2026-11 com o nome CUT.** A versão anterior deixa de valer e cada pessoa aceita de novo os termos obrigatórios no próximo acesso. Como ainda não há residentes, ninguém da turma precisa reaceitar.
+- **O conteúdo do tema T001** (roteiro do podcast, rodapés) fica como está: é material do curso. Para trocar, edite a próxima versão do material.
+- **E-mail:** o remetente só muda se você rodar de novo o `52_configurar_email_v1.0.sh`.
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).

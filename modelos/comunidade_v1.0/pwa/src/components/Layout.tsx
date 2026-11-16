@@ -100,7 +100,7 @@ export function Layout(props: { children: ReactNode; papeis?: string[]; proteger
       <a className="pular" href="#conteudo">Pular para o conteúdo</a>
       <header className="topo">
         <div className="topo-interno">
-          <a className="marca" href="/"><img src="/icone.svg" alt="" /><span>Cirurgia de Urgência e Trauma<small>HCFMRP-USP · Programa de reuniões</small></span></a>
+          <a className="marca" href="/"><img src="/icone_pequeno.svg" alt="" className="marca-icone" /><span className="marca-nome"><img src="/cut_palavra_claro.svg" alt="CUT" className="marca-palavra" /><small>Curso de Cirurgia Geral, Urgência e Trauma</small></span></a>
           <nav className="nav" aria-label="Principal">
             {itens.filter((i) => i.topo).map((i) => <a key={i.href} href={i.href} className={ativo(i.href) ? 'ativo' : ''} aria-current={ativo(i.href) ? 'page' : undefined}>{i.rotulo}</a>)}
             {itens.some((i) => !i.topo) && (

@@ -1,4 +1,4 @@
-/* Programa de Cirurgia de Urgência e Trauma — estilo do aplicativo (v1.0)
+/* CUT · Curso de Cirurgia Geral, Urgência e Trauma — estilo do aplicativo (v1.0)
    Mesma paleta dos slides: azul-marinho, azul, âmbar e fundo marfim. Tema sempre claro. */
 :root {
   --fundo: #f6f7f4;
@@ -113,7 +113,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.35rem; } h3 { font-size: 1.15rem; } 
 }
 @media print {
   .protegido, .marca-dagua, .topo { display: none !important; }
-  body::after { content: "Conteúdo protegido do Programa de Cirurgia de Urgência e Trauma (HCFMRP-USP). Impressão não permitida."; display: block; padding: 40px; font: 16px sans-serif; }
+  body::after { content: "Conteúdo protegido do CUT · Curso de Cirurgia Geral, Urgência e Trauma (HCFMRP-USP). Impressão não permitida."; display: block; padding: 40px; font: 16px sans-serif; }
 }
 
 /* ---------- login ---------- */

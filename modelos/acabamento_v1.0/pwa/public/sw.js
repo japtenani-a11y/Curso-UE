@@ -1,6 +1,6 @@
 // Service worker: guarda so a casca do aplicativo. Nada que venha de /api e guardado (conteudo protegido).
-const CACHE = 'casca-v1';
-self.addEventListener('install', (e) => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/icone.svg', '/manifest.webmanifest']))); });
+const CACHE = 'casca-v2-cut';
+self.addEventListener('install', (e) => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/icone.svg', '/icone_pequeno.svg', '/cut_palavra_claro.svg', '/manifest.webmanifest']))); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);

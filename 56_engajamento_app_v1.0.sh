@@ -80,8 +80,8 @@ revisaoRouter.post('/artefatos/:id/publicar', async (req, res, next) => {
 
 # Enviador de e-mails: rodape e rotulo do link proprios para avisos de duvida (curadores) e respostas (aluno)
 p = f"{api}/notificador.ts"
-trocar(p, "text: `${m.corpo}\\n\\nResponder agora: ${link(m)}\\n\\n—\\nVocê recebe este aviso porque autorizou lembretes por e-mail no Programa de Cirurgia de Urgência e Trauma. Para parar, desmarque em ${APP_URL}/aluno/contato`,",
-       "text: `${m.corpo}\\n\\n${String(m.parametros.rotulo_link ?? 'Responder agora')}: ${link(m)}\\n\\n—\\n${String(m.parametros.rodape ?? `Você recebe este aviso porque autorizou lembretes por e-mail no Programa de Cirurgia de Urgência e Trauma. Para parar, desmarque em ${APP_URL}/aluno/contato`)}`,", "rotulo_link")
+trocar(p, "text: `${m.corpo}\\n\\nResponder agora: ${link(m)}\\n\\n—\\nVocê recebe este aviso porque autorizou lembretes por e-mail no CUT (Curso de Cirurgia Geral, Urgência e Trauma). Para parar, desmarque em ${APP_URL}/aluno/contato`,",
+       "text: `${m.corpo}\\n\\n${String(m.parametros.rotulo_link ?? 'Responder agora')}: ${link(m)}\\n\\n—\\n${String(m.parametros.rodape ?? `Você recebe este aviso porque autorizou lembretes por e-mail no CUT (Curso de Cirurgia Geral, Urgência e Trauma). Para parar, desmarque em ${APP_URL}/aluno/contato`)}`,", "rotulo_link")
 
 # API: teste por pessoa (ondas pessoais dos temas opcionais)
 p = f"{api}/routes/teste.ts"; s = open(p).read()

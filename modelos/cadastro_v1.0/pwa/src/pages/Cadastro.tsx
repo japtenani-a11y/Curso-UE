@@ -107,12 +107,12 @@ export function Cadastro() {
   return (
     <section className="cadastro">
       <h1>{st === 'aprovado' ? 'Meus dados' : 'Inscrição no curso'}</h1>
-      <p className={st === 'recusado' ? 'faixa-erro' : 'faixa-aviso'} role="status">
+      <p className={st === 'recusado' ? 'faixa-erro' : st === 'aprovado' ? 'faixa-neutra' : 'faixa-aviso'} role="status">
         {STATUS[st]}{st === 'recusado' && d.ficha.motivo_status ? ` Motivo: ${d.ficha.motivo_status}. Corrija e envie de novo.` : ''}
       </p>
       {st === 'aprovado' && d.confirmar_ano && <p className="faixa-erro">Confirmação anual: confira o seu ano de residência, a especialidade e os demais dados e clique em “Salvar alterações” para continuar usando o curso.</p>}
       {st === 'aprovado' && !d.cadastro_ok && !d.confirmar_ano && <p className="faixa-erro">Há termo obrigatório novo ou revogado: aceite-o abaixo para continuar usando o curso.</p>}
-      {ok && <p className="faixa-aviso" role="status">{ok}</p>}
+      {ok && <p className="faixa-neutra" role="status">{ok}</p>}
       {erro && <p className="faixa-erro" role="alert">{erro.texto}</p>}
       {st === 'aprovado' && d.cadastro_ok && <p><a className="botao" href="/aluno">Ir para o curso</a></p>}
 

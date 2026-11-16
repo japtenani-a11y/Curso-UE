@@ -24,3 +24,15 @@ h1, h2, h3, h4 { font-family: var(--cut-font); font-weight: 800; letter-spacing:
 .selo.complementar { background: var(--cut-surface-sunken); color: var(--cut-text); }
 .estado.futuro { background: var(--cut-surface-sunken); color: var(--cut-text-muted); }
 .nav a.ativo, .botao:not(.secundario):not(.discreto) { background: var(--cut-action); border-color: var(--cut-action); color: var(--cut-on-action); }
+/* marca CUT: icone + palavra no topo; logo vertical no login; logo horizontal no certificado */
+.marca .marca-icone { width: 32px; height: 32px; flex: none; }
+.marca .marca-nome { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.marca .marca-palavra { height: 20px; width: auto; align-self: flex-start; }
+.marca .marca-nome small { font-size: 11px; font-weight: 500; color: var(--cut-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.login .login-logo { width: min(240px, 80%); height: auto; display: block; margin: 0 auto 8px; }
+.so-leitor { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.certificado .cert-logo { width: 260px; max-width: 70%; height: auto; display: block; margin: 0 auto 6px; }
+@media (max-width: 640px) { .marca .marca-nome small { display: none; } }
+.faixa-neutra { background: var(--cut-surface-raised); border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-md); padding: 10px 14px; margin: 12px 0; }
+/* topo do computador: o primeiro nome sai antes de o menu apertar, o perfil atual continua visivel */
+@media (max-width: 1400px) { .usuario > span { display: none; } }

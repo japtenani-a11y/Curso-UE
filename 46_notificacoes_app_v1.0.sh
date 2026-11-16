@@ -131,13 +131,13 @@ async function enviarEmail(m: Msg): Promise<void> {
   if (!transporte) throw new Error('SMTP nao configurado');
   await transporte.sendMail({
     from: env.SMTP_FROM, to: m.destino, subject: m.assunto,
-    text: `${m.corpo}\n\nResponder agora: ${link(m)}\n\n—\nVocê recebe este aviso porque autorizou lembretes por e-mail no Programa de Cirurgia de Urgência e Trauma. Para parar, desmarque em ${APP_URL}/aluno/contato`,
+    text: `${m.corpo}\n\nResponder agora: ${link(m)}\n\n—\nVocê recebe este aviso porque autorizou lembretes por e-mail no CUT (Curso de Cirurgia Geral, Urgência e Trauma). Para parar, desmarque em ${APP_URL}/aluno/contato`,
   });
 }
 
 // Mensagem iniciada pela instituicao no WhatsApp exige modelo (template) aprovado pela Meta.
 // Modelo sugerido (4 variaveis, idioma pt_BR), ver docs/notificacoes_v1.0.md:
-//   "Lembrete do Programa de Cirurgia de Urgência e Trauma: {{1}} do tema {{2}}. {{3}} Responda em: {{4}}"
+//   "Lembrete do CUT (Curso de Cirurgia Geral, Urgência e Trauma): {{1}} do tema {{2}}. {{3}} Responda em: {{4}}"
 async function enviarWhatsapp(m: Msg): Promise<void> {
   const versao = env.WHATSAPP_API_VERSAO ?? 'v21.0';
   const pr = m.parametros;
@@ -185,7 +185,7 @@ async function principal(): Promise<void> {
   if (iTeste > 0) {
     const para = process.argv[iTeste + 1] ?? env.SMTP_USER ?? '';
     try {
-      await enviarEmail({ notificacao_id: 0, canal: 'email', destino: para, assunto: 'Teste de envio do Programa de Cirurgia de Urgência e Trauma',
+      await enviarEmail({ notificacao_id: 0, canal: 'email', destino: para, assunto: 'Teste de envio do CUT (Curso de Cirurgia Geral, Urgência e Trauma)',
         corpo: 'Se você recebeu esta mensagem, o envio de lembretes por e-mail está funcionando.', parametros: { caminho: '/aluno' } });
       console.log(`e-mail de teste enviado para ${para}`);
       process.exit(0);
