@@ -114,6 +114,23 @@
 - O estilo.css ganhou o bloco "tema CUT (Design System)" com as variáveis --cut-*. É o primeiro passo do arquivo de tema: as telas novas usam só essas variáveis.
 - Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 65 e o 75. Para voltar à tela antiga, rode de novo o 67.
 
+## Certeza em cada questão e nova tela de testes (76), 15/11/2026
+
+- Decisão da coordenação: em cada questão das ondas, o residente marca "Chutei", "Acho que sim" ou "Tenho certeza" antes de ver o gabarito. O teste só é enviado com alternativa e certeza em todas.
+- A confiança única de 0 a 100% por teste deixou de ser pedida. Os dados já coletados continuam no painel "Calibração e aplicabilidade".
+- Tela de testes no padrão do Design System CUT:
+  - uma questão por tela, com "questão 3 de 7" e barra de progresso;
+  - cada resposta é salva na hora, e o teste retoma de onde parou;
+  - revisão antes de enviar.
+- Gabarito:
+  - acerto em azul (✓) e erro em laranja (✕), sempre com texto;
+  - mostra a certeza marcada e o acerto por nível de certeza;
+  - destaca no alto os erros com "tenho certeza".
+- As respostas definitivas continuam imutáveis. Enquanto o teste está aberto, elas ficam num rascunho (app.resposta_rascunho) e só vão para app.resposta no envio.
+- Painel: nova aba "Certeza por questão", com acerto por nível de certeza e erros com alta certeza, por aluno, tema e teste.
+- Corrigido: a contagem de acertos do gabarito comparava códigos em formatos diferentes (texto e número) e podia mostrar zero.
+- Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 76 (banco) e o 76_certeza_app (aplicativo).
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).
