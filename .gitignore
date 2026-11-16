@@ -4,3 +4,5 @@ __pycache__/
 podcast/
 programa-cut/podcast/
 *.mp3
+slides/
+programa-cut/slides/

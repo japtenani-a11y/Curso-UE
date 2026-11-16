@@ -214,3 +214,18 @@
 - Áudio do podcast: veja `docs/podcast_audio.md`.
 - 80 aplica `modelos/textos_v1.0/textos.json` (textos das telas em linguagem mais simples).
 - A seção "Instalar" da Ajuda deixou de quebrar o texto em pedaços (CSS `.passos`).
+
+## Material interativo (82) — CUT_v2o
+
+- Caso da aula: em cada ponto de decisão, o aluno escreve a conduta e marca a certeza antes de abrir a discussão. A
+  resposta daquele ponto fica registrada. Depois ele compara ("parecida", "em parte", "diferente"). Conduta diferente
+  marcada com "tenho certeza" recebe destaque. No fim: desfecho e resumo das respostas.
+- Caso base: respostas às perguntas do fim, salvas no site; podem mudar até a hora da aula. Depois da aula ficam só
+  para leitura, com um campo ao lado para "o que eu responderia agora".
+- Mapa conceitual: ramos em cartões que abrem e fecham, com o modo "Testar-me" (esconde os itens até o aluno tocar).
+- Checklist: itens clicáveis, com contagem; as marcações ficam salvas.
+- Slides: aula e caso, com fala em texto e áudio por slide, avanço automático sincronizado e velocidade de 1x a 2x.
+  Imagens do deck e áudios: `docs/podcast_audio.md`.
+- Podcast: velocidade de 1x a 2x e retomada do ponto em que parou.
+- Onde parou: peça aberta, posição do texto, ponto do caso, slide e tempo do áudio, guardados no aparelho e no
+  servidor. Sem internet, vão quando a conexão volta. O Início mostra "Continuar de onde parou".

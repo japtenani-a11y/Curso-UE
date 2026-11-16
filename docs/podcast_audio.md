@@ -61,3 +61,35 @@ de gerar os 150 temas.
 
 **Revisão.** O áudio repete o roteiro como ele está. Corrija o roteiro e publique antes de gerar. O roteiro do T001 ainda
 fala "Programa de Cirurgia de Urgência e Trauma" e precisa passar para "CUT".
+
+# Slides da aula e do caso: imagens e áudio da fala
+
+A peça "Slides da aula" mostra os slides da aula e, em seguida, os do caso clínico. Os slides do caso são montados a partir
+do "Caso da aula" quando a peça de slides ainda não os traz. Cada slide tem um roteiro de fala. O aluno pode:
+- passar os slides à mão;
+- ler a fala;
+- usar "Apresentar com áudio", que toca a fala e passa sozinho para o próximo slide ao terminar, de 1x a 2x.
+
+O aplicativo guarda o slide e o ponto do áudio em que o aluno parou.
+
+**Imagens.** Sem imagem, o slide é desenhado a partir do texto. Para mostrar o deck de verdade, exporte-o em PDF, com a
+aula e depois o caso, na mesma ordem da tela, e rode:
+
+```bash
+sudo apt install -y poppler-utils        # uma vez só
+bash preparar_slides_pdf_v1.0.sh T001 /mnt/c/Users/japt7/Downloads/T001_slides.pdf
+```
+
+**Áudio da fala.** Sem áudio gravado, a fala é lida pela voz do aparelho (a qualidade varia de um celular para outro).
+Para gerar o áudio de cada slide com a mesma chave do podcast:
+
+```bash
+python3 gerar_podcast_audio_v1.0.py T001 --slides --so-texto   # confere as falas (não gasta nada)
+python3 gerar_podcast_audio_v1.0.py T001 --slides              # grava programa-cut/slides/T001/slide_01.mp3 ...
+```
+
+A fala de cada slide vem da linha `> **Fala:**` do slide e, na falta dela, da `> **Nota do apresentador:**`. As notas
+do T001 foram escritas para quem apresenta ("peça que cada residente vote"). Para o aluno ouvir sozinho, vale escrever
+uma linha `> **Fala:**` em cada slide antes de gerar o áudio.
+
+Nada disso vai para o GitHub (pastas `programa-cut/podcast` e `programa-cut/slides`).
