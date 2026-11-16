@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS app.ficha_aluno (
   semestre              SMALLINT CHECK (semestre BETWEEN 7 AND 12),
   ano_formatura         SMALLINT CHECK (ano_formatura BETWEEN 1960 AND 2100),
   faculdade             TEXT CHECK (length(faculdade) <= 200),
-  especialidade         TEXT CHECK (especialidade IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica')),
+  especialidade         TEXT,
   especialidade_outra   TEXT CHECK (length(especialidade_outra) <= 120),
   instituicao_residencia TEXT CHECK (length(instituicao_residencia) <= 200),
   ano_ingresso_residencia SMALLINT CHECK (ano_ingresso_residencia BETWEEN 1990 AND 2100),
@@ -40,6 +40,16 @@ CREATE TABLE IF NOT EXISTS app.ficha_aluno (
   enviado_em            TIMESTAMPTZ,
   criado_em             TIMESTAMPTZ NOT NULL DEFAULT now(),
   atualizado_em         TIMESTAMPTZ NOT NULL DEFAULT now());
+-- Especialidades aceitas (15/11/2026: entrou "outra especialidade nao cirurgica"). Recriada a cada execucao.
+DO $$ DECLARE c TEXT; BEGIN
+  FOR c IN SELECT conname FROM pg_constraint WHERE conrelid = 'app.ficha_aluno'::regclass AND contype = 'c'
+            AND pg_get_constraintdef(oid) LIKE '%especialidade%' AND pg_get_constraintdef(oid) LIKE '%cirurgia_geral%' LOOP
+    EXECUTE format('ALTER TABLE app.ficha_aluno DROP CONSTRAINT %I', c);
+  END LOOP;
+  ALTER TABLE app.ficha_aluno ADD CONSTRAINT ficha_aluno_especialidade_chk CHECK (especialidade IN
+    ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica','outra_nao_cirurgica'));
+END $$;
+
 ALTER TABLE app.ficha_aluno ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS pol_ficha_propria ON app.ficha_aluno;
 CREATE POLICY pol_ficha_propria ON app.ficha_aluno FOR SELECT TO api_rw USING (pessoa_id = app.pessoa_atual());
@@ -224,6 +234,7 @@ CREATE OR REPLACE FUNCTION app.rotulo_especialidade(p TEXT, p_outra TEXT) RETURN
   SELECT CASE p WHEN 'cirurgia_geral' THEN 'Cirurgia Geral' WHEN 'cirurgia_urgencia_trauma' THEN 'Cirurgia de Urgência e Trauma'
                 WHEN 'medicina_emergencia' THEN 'Medicina de Emergência'
                 WHEN 'outra_cirurgica' THEN coalesce('Outra cirúrgica: ' || nullif(trim(p_outra), ''), 'Outra especialidade cirúrgica')
+                WHEN 'outra_nao_cirurgica' THEN coalesce('Outra não cirúrgica: ' || nullif(trim(p_outra), ''), 'Outra especialidade não cirúrgica')
                 ELSE NULL END $$;
 
 -- Grau (R1...R6, graduacao, egresso) a partir da ficha.
@@ -291,9 +302,9 @@ BEGIN
   IF v_sit = 'residencia' AND length(trim(coalesce(p->>'instituicao_residencia', ''))) < 3 THEN RAISE EXCEPTION 'campo:instituicao_residencia'; END IF;
   IF v_sit <> 'graduacao' AND coalesce((p->>'ano_formatura')::int, 0) NOT BETWEEN 1960 AND extract(year FROM current_date)::int THEN
     RAISE EXCEPTION 'campo:ano_formatura'; END IF;
-  IF v_sit <> 'graduacao' AND coalesce(p->>'especialidade', '') NOT IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica') THEN
+  IF v_sit <> 'graduacao' AND coalesce(p->>'especialidade', '') NOT IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica','outra_nao_cirurgica') THEN
     RAISE EXCEPTION 'campo:especialidade'; END IF;
-  IF v_sit <> 'graduacao' AND p->>'especialidade' = 'outra_cirurgica' AND length(trim(coalesce(p->>'especialidade_outra', ''))) < 3 THEN
+  IF v_sit <> 'graduacao' AND p->>'especialidade' IN ('outra_cirurgica','outra_nao_cirurgica') AND length(trim(coalesce(p->>'especialidade_outra', ''))) < 3 THEN
     RAISE EXCEPTION 'campo:especialidade_outra'; END IF;
   IF v_sit = 'residencia' THEN
     IF coalesce((p->>'ano_ingresso_residencia')::int, 0) NOT BETWEEN 1990 AND extract(year FROM current_date)::int + 1 THEN
@@ -317,7 +328,7 @@ BEGIN
           CASE WHEN v_sit <> 'graduacao' THEN (p->>'ano_formatura')::smallint END,
           nullif(left(trim(coalesce(p->>'faculdade', '')), 200), ''),
           CASE WHEN v_sit <> 'graduacao' THEN p->>'especialidade' END,
-          CASE WHEN v_sit <> 'graduacao' AND p->>'especialidade' = 'outra_cirurgica' THEN left(trim(p->>'especialidade_outra'), 120) END,
+          CASE WHEN v_sit <> 'graduacao' AND p->>'especialidade' IN ('outra_cirurgica','outra_nao_cirurgica') THEN left(trim(p->>'especialidade_outra'), 120) END,
           CASE WHEN v_sit IN ('residencia','formado') THEN nullif(left(trim(coalesce(p->>'instituicao_residencia', '')), 200), '') END,
           CASE WHEN v_sit = 'residencia' THEN (p->>'ano_ingresso_residencia')::smallint END,
           CASE WHEN v_sit = 'residencia' THEN v_term END,

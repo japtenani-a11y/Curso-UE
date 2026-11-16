@@ -60,7 +60,7 @@ export function Perfil(props: { escolha?: boolean }) {
               <button key={p} type="button" role="radio" aria-checked={escolhido === p} className="perfil-opcao" onClick={() => setEscolhido(p)}>
                 <strong>{NOME_PAPEL[p] ?? p}{sessao.papel === p && !props.escolha ? ' · atual' : ''}</strong>
                 <span>{DESCRICAO[p] ?? ''}</span>
-                {p === 'aluno' && papeis.length > 1 && <small>Para responder testes como aluno é preciso ter um ano (R1 a R+) no cadastro; sem ele, as telas abrem mas os testes ficam indisponíveis.</small>}
+                {p === 'aluno' && papeis.length > 1 && <small>Você responde os testes como qualquer aluno; sem ano de residência no cadastro, as questões são as de R+.</small>}
               </button>
             ))}
           </div>

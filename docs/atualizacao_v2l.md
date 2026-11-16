@@ -146,6 +146,11 @@
 - **Segurança:** trocar de perfil nunca dá mais acesso do que a pessoa tem; usando o perfil de aluno, você vê só o que um aluno vê.
 - **Google Cloud com o nome CUT:** veja `docs/google_cloud_cut.md`.
 
+## Parte do aluno para todos e especialidade não cirúrgica (79 + 62), 15/11/2026
+
+- Quem está no curso, inclusive a equipe usando o perfil de Aluno, responde os testes normalmente. O nível das questões vem do ano de residência do cadastro; sem ano cadastrado, as questões são as de R+ (antes, os testes ficavam indisponíveis).
+- Cadastro: nova opção de especialidade, "Outra especialidade não cirúrgica", que também pede "Qual especialidade?".
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).

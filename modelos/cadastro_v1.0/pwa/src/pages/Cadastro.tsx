@@ -15,13 +15,13 @@ interface Dados { nome: string; email: string; data_nascimento: string | null; f
 
 const ESPECIALIDADES: [string, string][] = [
   ['cirurgia_geral', 'Cirurgia geral'], ['cirurgia_urgencia_trauma', 'Cirurgia de urgência e trauma'],
-  ['medicina_emergencia', 'Medicina de emergência'], ['outra_cirurgica', 'Outra especialidade cirúrgica'],
+  ['medicina_emergencia', 'Medicina de emergência'], ['outra_cirurgica', 'Outra especialidade cirúrgica'], ['outra_nao_cirurgica', 'Outra especialidade não cirúrgica'],
 ];
 const CAMPOS: Record<string, string> = {
   nome: 'Informe o nome completo (nome e sobrenome).', data_nascimento: 'Confira a data de nascimento.',
   celular: 'Informe o celular com DDD, por exemplo (16) 99999-0000.', situacao: 'Escolha a sua situação atual.',
   semestre: 'Escolha o semestre da graduação (7º a 12º).', ano_formatura: 'Informe o ano de formatura.',
-  especialidade: 'Escolha a especialidade.', especialidade_outra: 'Diga qual é a outra especialidade cirúrgica.',
+  especialidade: 'Escolha a especialidade.', especialidade_outra: 'Diga qual é a outra especialidade.',
   ano_ingresso_residencia: 'Informe o ano de ingresso na residência.', faculdade: 'Informe a faculdade de medicina (escolha da lista ou digite).',
   instituicao_residencia: 'Informe o local da residência (escolha da lista ou digite).', termino_previsto: 'Informe a data prevista de término (depois do ingresso).',
 };
@@ -141,7 +141,7 @@ export function Cadastro() {
           {(sit === 'residencia' || sit === 'formado') && (<>
             <label>Ano de formatura na faculdade<input type="number" min={1960} max={new Date().getFullYear()} {...campo('ano_formatura')} /></label>
             <label>Especialidade<select {...campo('especialidade')}><option value="">escolha</option>{ESPECIALIDADES.map(([k, r]) => <option key={k} value={k}>{r}</option>)}</select></label>
-            {f.especialidade === 'outra_cirurgica' && <label>Qual especialidade?<input {...campo('especialidade_outra')} /></label>}
+            {(f.especialidade === 'outra_cirurgica' || f.especialidade === 'outra_nao_cirurgica') && <label>Qual especialidade?<input {...campo('especialidade_outra')} /></label>}
           </>)}
           {sit === 'formado' && (
             <label>Onde você fez a residência (se fez)<input list="lista-residencias" placeholder="deixe em branco se não fez residência" {...campo('instituicao_residencia')} /></label>
