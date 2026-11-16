@@ -16,7 +16,7 @@ interface Agente {
 }
 
 const NOME: Record<string, string> = {
-  duvidas: 'Dúvidas dos alunos', conteudo: 'Revisor de conteúdo', pecas: 'Pré-revisão das peças',
+  duvidas: 'Dúvidas dos alunos', conteudo: 'Revisor de conteúdo', pecas: 'Pré-revisão das peças', fontes: 'Triador de fontes',
   atrasados: 'Alunos atrasados', indicadores: 'Indicadores clínicos',
 };
 const SUGESTAO: Record<string, string> = { aprovar: 'Sugere aprovar', conferir: 'Sugere conferir melhor', reprovar: 'Sugere reprovar' };
@@ -29,7 +29,7 @@ const data = (v: string | null) => (v ? new Date(v).toLocaleString('pt-BR', { da
 // Campos que a coordenacao pode editar em cada tipo de proposta
 const EDITAVEIS: Record<string, string[]> = {
   resposta: ['texto'], parecer: ['decisao', 'comentario'], lembrete: ['assunto', 'texto'],
-  lancamento: ['numerador', 'denominador', 'fonte'], pre_revisao: ['resumo'], relatorio: ['texto'], pendencia: ['texto'], alerta: ['texto'],
+  lancamento: ['numerador', 'denominador', 'fonte'], pre_revisao: ['resumo'], fonte: ['temas_texto', 'camada'], relatorio: ['texto'], pendencia: ['texto'], alerta: ['texto'],
 };
 
 function Fontes(props: { fontes: unknown[] }) {
@@ -48,12 +48,16 @@ function Fontes(props: { fontes: unknown[] }) {
 function Cartao(props: { p: Proposta; decidido: () => void }) {
   const { p } = props;
   const campos = EDITAVEIS[p.tipo] ?? [];
-  const [ed, setEd] = useState<J>(() => Object.fromEntries(campos.map((c) => [c, p.proposta[c] ?? ''])));
+  // fonte: os temas viram uma lista editavel ("T-004, T-005")
+  const base: J = p.tipo === 'fonte'
+    ? { ...p.proposta, temas_texto: Array.isArray(p.proposta.temas) ? (p.proposta.temas as J[]).map((t) => s(t.tema)).join(', ') : '' }
+    : p.proposta;
+  const [ed, setEd] = useState<J>(() => Object.fromEntries(campos.map((c) => [c, base[c] ?? ''])));
   const [motivo, setMotivo] = useState('');
   const [vetando, setVetando] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const [enviando, setEnviando] = useState(false);
-  const mudou = campos.some((c) => s(ed[c]) !== s(p.proposta[c] ?? ''));
+  const mudou = campos.some((c) => s(ed[c]) !== s(base[c] ?? ''));
   const ctx = p.contexto ?? {};
   const aberta = p.status === 'aguardando';
 
@@ -61,7 +65,7 @@ function Cartao(props: { p: Proposta; decidido: () => void }) {
     setMsg(null);
     if (decisao === 'vetar' && motivo.trim().length < 5) { setMsg('Escreva o motivo do veto: o agente usa isso para não repetir o erro.'); return; }
     const final: J = {};
-    if (decisao === 'alterar') for (const c of campos) final[c] = ['numerador', 'denominador'].includes(c) ? Number(ed[c]) : ed[c];
+    if (decisao === 'alterar') for (const c of campos) final[c] = ['numerador', 'denominador', 'camada'].includes(c) ? Number(ed[c]) : ed[c];
     setEnviando(true);
     const r = await fetch(`${API}/coordenacao/propostas/${p.proposta_id}/decidir`, {
       method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
@@ -145,6 +149,29 @@ function Cartao(props: { p: Proposta; decidido: () => void }) {
           {campoTexto('fonte', 'Fonte', 1)}
         </div>
       )}
+
+      {p.tipo === 'fonte' && (() => {
+        const q = p.proposta;
+        const link = q.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${s(q.pmid)}/` : q.doi ? `https://doi.org/${s(q.doi)}` : '';
+        return (<>
+          <p className="pr-contexto">Arquivo: {s(ctx.arquivo)} · código {s(ctx.ref)} · {s(ctx.caracteres)} caracteres de texto
+            {Array.isArray(ctx.ja_no_banco_em) && (ctx.ja_no_banco_em as string[]).length > 0 ? ` · já está como fonte em ${(ctx.ja_no_banco_em as string[]).join(', ')}` : ''}</p>
+          {q.recusar ? <p className="pr-sugestao reprovar">Sugere recusar: {s(q.motivo_recusa)}</p> : <>
+            <blockquote className="pr-pergunta">{s(q.titulo)}{q.autores ? ` · ${s(q.autores)}` : ''}{q.ano ? ` · ${s(q.ano)}` : ''}
+              {link && <> · <a href={link} target="_blank" rel="noreferrer">{q.pmid ? `PMID ${s(q.pmid)}` : 'DOI'}</a></>}</blockquote>
+            <p className="pr-contexto">{s(q.tipo_de_fonte)}{q.desenho ? ` · ${s(q.desenho)}` : ''} · camada sugerida {s(q.camada)}</p>
+            {q.resumo ? <p className="pr-texto">{s(q.resumo)}</p> : null}
+            {Array.isArray(q.temas) && <ul className="pr-itens">{(q.temas as J[]).map((t, i) => (
+              <li key={i}><strong>{s(t.tema)}</strong> <span className="pr-tipo">{s(t.relevancia)}</span> {s(t.motivo)}</li>))}</ul>}
+            {aberta ? (<>
+              <label className="pr-campo">Temas em que a fonte fica guardada (separe por vírgula)
+                <input value={s(ed.temas_texto)} onChange={(e) => setEd({ ...ed, temas_texto: e.target.value })} /></label>
+              <label className="pr-campo">Camada (1 histórico, 2 livro-texto, 3 protocolo, 4 literatura, 5 diretriz)
+                <input type="number" min={1} max={5} value={s(ed.camada)} onChange={(e) => setEd({ ...ed, camada: e.target.value })} /></label>
+            </>) : <p>Guardada em: {s((p.decisao ?? base).temas_texto) || (Array.isArray(q.temas) ? (q.temas as J[]).map((t) => s(t.tema)).join(', ') : '')}</p>}
+          </>}
+        </>);
+      })()}
 
       {['relatorio', 'pendencia', 'alerta'].includes(p.tipo) && (<>
         {ctx.pergunta ? <blockquote className="pr-pergunta">{s(ctx.pergunta)}</blockquote> : null}

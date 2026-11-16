@@ -18,7 +18,7 @@ BEGIN;
 
 CREATE TABLE IF NOT EXISTS app.proposta_agente (
   proposta_id   BIGSERIAL PRIMARY KEY,
-  agente        TEXT NOT NULL CHECK (agente IN ('duvidas', 'pecas', 'conteudo', 'atrasados', 'indicadores')),
+  agente        TEXT NOT NULL,
   tipo          TEXT NOT NULL,
   alvo          JSONB NOT NULL DEFAULT '{}'::jsonb,
   titulo        TEXT NOT NULL,
@@ -35,6 +35,9 @@ CREATE TABLE IF NOT EXISTS app.proposta_agente (
   decidido_em   TIMESTAMPTZ,
   erro_execucao TEXT
 );
+ALTER TABLE app.proposta_agente DROP CONSTRAINT IF EXISTS proposta_agente_agente_check;
+ALTER TABLE app.proposta_agente ADD CONSTRAINT proposta_agente_agente_check
+  CHECK (agente IN ('duvidas', 'pecas', 'conteudo', 'atrasados', 'indicadores', 'fontes'));
 CREATE INDEX IF NOT EXISTS ix_proposta_status ON app.proposta_agente (status, agente, criado_em);
 CREATE INDEX IF NOT EXISTS ix_proposta_alvo ON app.proposta_agente USING gin (alvo);
 REVOKE ALL ON app.proposta_agente FROM PUBLIC;
@@ -44,7 +47,7 @@ CREATE OR REPLACE FUNCTION app.coord_tipo_valido(p_agente TEXT, p_tipo TEXT) RET
 LANGUAGE sql IMMUTABLE AS $$
   SELECT (p_agente, p_tipo) IN (('duvidas', 'resposta'), ('duvidas', 'alerta'), ('pecas', 'pre_revisao'),
           ('conteudo', 'parecer'), ('atrasados', 'relatorio'), ('atrasados', 'lembrete'),
-          ('indicadores', 'lancamento'), ('indicadores', 'pendencia')) $$;
+          ('indicadores', 'lancamento'), ('indicadores', 'pendencia'), ('fontes', 'fonte')) $$;
 
 -- Ultimas decisoes sobre o agente: o retorno que ele le antes de trabalhar
 CREATE OR REPLACE FUNCTION app.coord_retorno(p_agente TEXT) RETURNS JSONB
@@ -103,6 +106,37 @@ BEGIN
     EXECUTE 'SELECT (data + time ''20:00'') AT TIME ZONE ''America/Sao_Paulo'' FROM app.aula_planejada WHERE tema_id = $1' INTO d USING p_tema;
   END IF;
   RETURN coalesce(d, (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = p_tema AND o.teste_num = 3 AND o.pessoa_id IS NULL));
+END $fn$;
+
+-- ---------- fontes recebidas (triador de fontes) ----------
+-- A coordenacao solta PDFs em CUT_coordenacao\fontes_novas. A ponte extrai o texto, confere se ha dado de paciente,
+-- guarda o PDF em fontes_recebidas\F<8 letras do sha>_nome.pdf e registra aqui. O triador le, identifica a referencia
+-- (PubMed), a camada e TODOS os temas em que a fonte serve (inclusive os que ainda serao produzidos). Aprovada a
+-- triagem, a fonte entra em conteudo.fonte uma vez para cada tema, com o texto integral.
+CREATE TABLE IF NOT EXISTS app.fonte_recebida (
+  fonte_recebida_id BIGSERIAL PRIMARY KEY,
+  sha256        TEXT NOT NULL UNIQUE,
+  ref           TEXT NOT NULL UNIQUE,      -- F + 8 primeiros caracteres do sha: o codigo que as afirmacoes citam
+  nome_original TEXT NOT NULL,
+  arquivo       TEXT NOT NULL,             -- nome em fontes_recebidas
+  texto         TEXT,
+  caracteres    INT,
+  recebido_em   TIMESTAMPTZ NOT NULL DEFAULT now(),
+  status        TEXT NOT NULL DEFAULT 'nova' CHECK (status IN ('nova', 'guardada', 'recusada')),
+  temas         TEXT[],
+  triado_em     TIMESTAMPTZ);
+REVOKE ALL ON app.fonte_recebida FROM PUBLIC;
+
+CREATE OR REPLACE FUNCTION app.coord_registrar_fonte(p_sha TEXT, p_nome TEXT, p_arquivo TEXT, p_texto TEXT) RETURNS TEXT
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, app AS $fn$
+DECLARE r TEXT;
+BEGIN
+  SELECT ref INTO r FROM app.fonte_recebida WHERE sha256 = p_sha;
+  IF r IS NOT NULL THEN RETURN r || ' (ja recebida)'; END IF;
+  r := 'F' || left(p_sha, 8);
+  INSERT INTO app.fonte_recebida (sha256, ref, nome_original, arquivo, texto, caracteres)
+  VALUES (p_sha, r, left(p_nome, 300), left(p_arquivo, 300), nullif(p_texto, ''), length(p_texto));
+  RETURN r;
 END $fn$;
 
 -- ---------- pacote de cada agente ----------
@@ -233,6 +267,23 @@ BEGIN
       'mes_a_lancar', to_char(date_trunc('month', now()) - interval '1 month', 'YYYY-MM-01'),
       'inicio_da_serie', '2026-12-01')
       INTO dados;
+  ELSIF p_agente = 'fontes' THEN
+    SELECT jsonb_build_object(
+      'fontes', coalesce((SELECT jsonb_agg(jsonb_build_object(
+          'fonte_recebida_id', r.fonte_recebida_id, 'ref', r.ref, 'nome_original', r.nome_original,
+          'arquivo', 'fontes_recebidas/' || r.arquivo, 'caracteres', r.caracteres, 'recebido_em', r.recebido_em,
+          'inicio', left(r.texto, 12000), 'fim', CASE WHEN length(r.texto) > 16000 THEN right(r.texto, 4000) END,
+          'ja_no_banco_em', (SELECT jsonb_agg(DISTINCT t.codigo) FROM conteudo.fonte f JOIN app.tema t ON t.tema_id = f.tema_id WHERE f.sha256 = r.sha256))
+          ORDER BY r.recebido_em)
+          FROM (SELECT * FROM app.fonte_recebida WHERE status = 'nova'
+                   AND NOT app.coord_tem_proposta('fontes', 'fonte_recebida_id', fonte_recebida_id::text)
+                 ORDER BY recebido_em LIMIT 15) r), '[]'),
+      'catalogo_temas', (SELECT jsonb_agg(jsonb_build_object('tema', t.codigo, 'titulo', t.titulo, 'modulo', t.modulo,
+          'papel', t.papel_curricular, 'aula', (SELECT ap.data FROM app.aula_planejada ap WHERE ap.tema_id = t.tema_id),
+          'fontes_atuais', (SELECT count(*) FROM conteudo.fonte f WHERE f.tema_id = t.tema_id)) ORDER BY t.codigo)
+          FROM app.tema t),
+      'fontes_novas_total', (SELECT count(*) FROM app.fonte_recebida WHERE status = 'nova'))
+      INTO dados;
   ELSIF p_agente = 'supervisor' THEN
     -- Prazos dos temas (92) e o placar de cada agente: o supervisor nao propoe, so avisa.
     SELECT jsonb_build_object(
@@ -245,7 +296,7 @@ BEGIN
           'aprovadas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'aprovada' AND p.decidido_em > now() - interval '7 days'),
           'alteradas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'alterada' AND p.decidido_em > now() - interval '7 days'),
           'vetadas', (SELECT count(*) FROM app.proposta_agente p WHERE p.agente = g.ag AND p.status = 'vetada' AND p.decidido_em > now() - interval '7 days'))), '{}')
-          FROM unnest(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores']) g(ag)),
+          FROM unnest(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores', 'fontes']) g(ag)),
       'duvidas_sem_resposta_24h', (SELECT count(*) FROM app.mensagem_aluno m WHERE m.tipo = 'duvida' AND m.resposta IS NULL
                                     AND m.criado_em < now() - interval '24 hours'))
       INTO dados;
@@ -265,7 +316,7 @@ DECLARE
   x JSONB;
   n INT := 0;
 BEGIN
-  IF ag IS NULL OR ag NOT IN ('duvidas', 'pecas', 'conteudo', 'atrasados', 'indicadores') OR jsonb_typeof(p -> 'propostas') <> 'array' THEN
+  IF ag IS NULL OR ag NOT IN ('duvidas', 'pecas', 'conteudo', 'atrasados', 'indicadores', 'fontes') OR jsonb_typeof(p -> 'propostas') <> 'array' THEN
     RAISE EXCEPTION 'arquivo_de_propostas_invalido: agente desconhecido ou sem a lista "propostas"';
   END IF;
   FOR x IN SELECT * FROM jsonb_array_elements(p -> 'propostas') LOOP
@@ -339,6 +390,29 @@ BEGIN
            jsonb_build_object('caminho', '/aluno/testes', 'proposta_id', p_id)
      WHERE EXISTS (SELECT 1 FROM app.push_inscricao pi WHERE pi.pessoa_id = pid AND pi.ativo);
 
+  ELSIF pr.tipo = 'fonte' THEN
+    IF coalesce((f ->> 'recusar')::boolean, false) THEN
+      -- recusada (dado de paciente, ilegivel ou fora do escopo): o texto e apagado
+      UPDATE app.fonte_recebida SET status = 'recusada', texto = NULL, triado_em = now()
+       WHERE fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint;
+    ELSE
+      INSERT INTO conteudo.fonte (tema_id, camada, titulo, autores, ano, doi, pmid, url, texto_integral, arquivo_origem, sha256,
+                                  camada_confirmada, tema_confirmado)
+      SELECT t.tema_id, (f ->> 'camada')::smallint, left(coalesce(f ->> 'titulo', r.nome_original), 500), left(f ->> 'autores', 500),
+             nullif(f ->> 'ano', '')::smallint, nullif(f ->> 'doi', ''), nullif(f ->> 'pmid', ''), nullif(f ->> 'url', ''),
+             r.texto, 'RECEBIDAS/' || r.arquivo, r.sha256, true, true
+        FROM app.fonte_recebida r
+        CROSS JOIN LATERAL (SELECT DISTINCT upper(trim(x)) AS cod FROM unnest(
+               CASE WHEN f ? 'temas_texto' THEN regexp_split_to_array(f ->> 'temas_texto', '[,;\s]+')
+                    ELSE ARRAY(SELECT e ->> 'tema' FROM jsonb_array_elements(f -> 'temas') e) END) x WHERE trim(x) <> '') c
+        JOIN app.tema t ON replace(t.codigo, '-', '') = replace(c.cod, '-', '')
+       WHERE r.fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint
+         AND NOT EXISTS (SELECT 1 FROM conteudo.fonte x WHERE x.tema_id = t.tema_id AND x.sha256 = r.sha256);
+      UPDATE app.fonte_recebida r SET status = 'guardada', triado_em = now(),
+             temas = (SELECT array_agg(DISTINCT t.codigo ORDER BY t.codigo) FROM conteudo.fonte x JOIN app.tema t ON t.tema_id = x.tema_id WHERE x.sha256 = r.sha256)
+       WHERE r.fonte_recebida_id = (pr.alvo ->> 'fonte_recebida_id')::bigint;
+    END IF;
+
   ELSIF pr.tipo = 'lancamento' THEN
     PERFORM app.salvar_indicador(pr.alvo ->> 'indicador', (pr.alvo ->> 'mes')::date, (f ->> 'numerador')::int, (f ->> 'denominador')::int,
                                  coalesce(f ->> 'fonte', 'agente de indicadores'));
@@ -375,13 +449,16 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, 
            WHEN 'pre_revisao' THEN (SELECT jsonb_build_object('tema', t.codigo, 'peca', app.nome_material(a.tipo::text), 'versao', a.versao,
                                   'revisao', '/curador/revisao/' || replace(t.codigo, '-', ''))
                                   FROM conteudo.artefato a JOIN app.tema t ON t.tema_id = a.tema_id WHERE a.artefato_id = (pa.alvo ->> 'artefato_id')::bigint)
+           WHEN 'fonte' THEN (SELECT jsonb_build_object('arquivo', r.nome_original, 'ref', r.ref, 'caracteres', r.caracteres,
+                                  'ja_no_banco_em', (SELECT jsonb_agg(DISTINCT t.codigo) FROM conteudo.fonte x JOIN app.tema t ON t.tema_id = x.tema_id WHERE x.sha256 = r.sha256))
+                                  FROM app.fonte_recebida r WHERE r.fonte_recebida_id = (pa.alvo ->> 'fonte_recebida_id')::bigint)
            WHEN 'lembrete' THEN (SELECT jsonb_build_object('aluno', app.aluno_painel(p.pessoa_id), 'ano', (app.perfil_aluno(p.pessoa_id)).ano)
                                   FROM app.pessoa p WHERE p.pessoa_id = (pa.alvo ->> 'pessoa_id')::bigint)
            ELSE '{}'::jsonb END
     FROM app.proposta_agente pa
    WHERE app.role_atual() IN ('admin', 'curador', 'data_steward')
      AND ((p_status = 'aguardando' AND pa.status = 'aguardando') OR (p_status = 'decididas' AND pa.status IN ('aprovada', 'alterada', 'vetada')))
-   ORDER BY CASE pa.agente WHEN 'duvidas' THEN 1 WHEN 'conteudo' THEN 2 WHEN 'pecas' THEN 3 WHEN 'atrasados' THEN 4 ELSE 5 END,
+   ORDER BY CASE pa.agente WHEN 'duvidas' THEN 1 WHEN 'conteudo' THEN 2 WHEN 'pecas' THEN 3 WHEN 'fontes' THEN 4 WHEN 'atrasados' THEN 5 ELSE 6 END,
             pa.criado_em
    LIMIT 300 $$;
 
@@ -400,12 +477,12 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, app AS $$
          CASE WHEN g.ag = 'duvidas' THEN (SELECT count(*) FROM app.mensagem_aluno m WHERE m.tipo = 'duvida' AND m.resposta IS NULL
                                             AND m.criado_em < now() - interval '24 hours')::int END,
          (SELECT max(p.criado_em) FROM app.proposta_agente p WHERE p.agente = g.ag)
-    FROM unnest(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores']) AS g(ag)
+    FROM unnest(ARRAY['duvidas', 'conteudo', 'pecas', 'fontes', 'atrasados', 'indicadores']) AS g(ag)
     LEFT JOIN app.proposta_agente d ON d.agente = g.ag AND d.status IN ('aprovada', 'alterada', 'vetada') AND d.decidido_em > now() - interval '60 days'
    WHERE app.role_atual() IN ('admin', 'curador', 'data_steward')
-   GROUP BY g.ag ORDER BY array_position(ARRAY['duvidas', 'conteudo', 'pecas', 'atrasados', 'indicadores'], g.ag) $$;
+   GROUP BY g.ag ORDER BY array_position(ARRAY['duvidas', 'conteudo', 'pecas', 'fontes', 'atrasados', 'indicadores'], g.ag) $$;
 
-GRANT EXECUTE ON FUNCTION app.data_aula_planejada(BIGINT), app.coord_pacote(TEXT), app.coord_receber(JSONB), app.decidir_proposta(BIGINT, TEXT, JSONB, TEXT),
+GRANT EXECUTE ON FUNCTION app.coord_registrar_fonte(TEXT, TEXT, TEXT, TEXT), app.data_aula_planejada(BIGINT), app.coord_pacote(TEXT), app.coord_receber(JSONB), app.decidir_proposta(BIGINT, TEXT, JSONB, TEXT),
   app.painel_propostas(TEXT), app.painel_agentes(), app.coord_tipo_valido(TEXT, TEXT), app.coord_retorno(TEXT),
   app.coord_tem_proposta(TEXT, TEXT, TEXT), app.coord_trecho_fonte(TEXT, TEXT) TO api_rw;
 

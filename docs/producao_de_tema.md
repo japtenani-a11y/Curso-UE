@@ -4,6 +4,11 @@ Versão 1.0 · 16/11/2026 · `importar_tema_v1.0.sh` e `ferramentas/importar_tem
 
 ## O fluxo
 
+0. **Fontes já guardadas.**
+   - A coordenação solta os PDFs, a qualquer momento, em `CUT_coordenacao\fontes_novas`.
+   - O triador de fontes indica todos os temas em que cada um serve, mesmo os que ainda não foram produzidos. Aprovada a triagem, a fonte fica guardada nesses temas.
+   - Antes de produzir, rode `bash fontes_do_tema_v1.0.sh T002 SENHA`. O comando traz para `conteudo/T002/fontes_banco/` o texto de cada fonte e o catálogo `fontes_banco.csv`, com o código para citar (F... ou AAAA_NN).
+   - O importador reconhece essas fontes e não as carrega de novo.
 1. **Busca e seleção das fontes.**
    - O Claude faz a busca completa: PubMed, diretrizes e livros-texto, nas cinco camadas.
    - A coordenação acrescenta a sua seleção de artigos, com o texto integral (PDF), como no T001.

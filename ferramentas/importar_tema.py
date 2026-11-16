@@ -95,11 +95,17 @@ else:
         for arq in sorted(os.listdir(dir_fontes)):
             if arq not in listados and not arq.startswith('.'): aviso(f'fontes/{arq} não está no fontes.csv e não será carregado')
 
+# fontes ja guardadas no banco para o tema (fontes_do_tema_v1.0.sh): reconhecidas, nao sao carregadas de novo
+dir_banco = os.path.join(pasta, 'fontes_banco')
+banco = []
+if os.path.isdir(dir_banco):
+    for arq in sorted(os.listdir(dir_banco)):
+        if arq.endswith('.txt'): banco.append({'arquivo': arq, 'texto': open(os.path.join(dir_banco, arq), encoding='utf-8', errors='ignore').read()})
 # trechos literais nas fontes
 sem_arquivo = {}
 for cod, a in afirm.items():
     if not a['fonte_arquivo']: continue
-    alvo = [f for f in fontes if f['arquivo'] and a['fonte_arquivo'].lower() in f['arquivo'].lower()]
+    alvo = [f for f in fontes + banco if f['arquivo'] and a['fonte_arquivo'].lower() in f['arquivo'].lower()]
     if not alvo:
         if cod.startswith('A'): sem_arquivo.setdefault(a['fonte_arquivo'], []).append(cod)
         continue
@@ -107,7 +113,7 @@ for cod, a in afirm.items():
         aviso(f'{cod}: o trecho literal não foi achado no texto de {alvo[0]["arquivo"]}')
 
 for fo, cs in sorted(sem_arquivo.items()):
-    aviso(f'fonte "{fo}" sem arquivo em fontes/ ({", ".join(cs)}): o revisor confere à mão')
+    aviso(f'fonte "{fo}" sem arquivo em fontes/ nem em fontes_banco/ ({", ".join(cs)}): o revisor confere à mão')
 # ---------- casos e questoes ----------
 casos = {}
 fc = os.path.join(pasta, 'casos_teste.json')

@@ -327,3 +327,14 @@
 - **Limpeza** (`93_apagar_respostas_teste_v1.0.sh`):
   - apaga todas as respostas e atividades de teste e as pessoas simuladas;
   - faz antes uma cópia do banco.
+
+## Triador de fontes (89, ponte, fontes_do_tema) — CUT_v2x
+
+- **Pasta de entrada.** A coordenação solta os PDFs em `CUT_coordenacao\fontes_novas`.
+- **A ponte:**
+  - extrai o texto;
+  - recusa o que tem cara de dado de paciente;
+  - guarda o arquivo com o código F... e registra a fonte.
+- **O triador** (tarefa agendada às 4h47 e às 17h47) propõe a referência, a camada e todos os temas em que a fonte serve.
+- **A aprovação** na aba "Para revisar" grava a fonte em cada tema.
+- **`fontes_do_tema_v1.0.sh`** traz as fontes de um tema para a produção; o importador as reconhece.

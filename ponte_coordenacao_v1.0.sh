@@ -20,7 +20,7 @@ if [ -z "${COORD_DIR:-}" ]; then
   if [ -n "$WINHOME" ] && command -v wslpath >/dev/null; then COORD_DIR="$(wslpath "$WINHOME")/CUT_coordenacao"
   else COORD_DIR="$HOME/CUT_coordenacao"; fi
 fi
-mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia}
+mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia,fontes_novas,fontes_recebidas,fontes_recusadas}
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 # regras que os agentes consultam (copiadas a cada ligacao da ponte, para ficarem sempre na versao instalada)
 for d in formato_das_pecas.md coordenacao_agentes.md; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
@@ -44,6 +44,9 @@ indicadores\  salve aqui a planilha do mes SO COM TOTAIS, copiando o MODELO_tota
               Nunca nome, prontuario, data de nascimento ou qualquer dado de paciente.
 relatorios\   resumos que os agentes deixam para leitura (o resumo do dia sai as 7h30).
 referencia\   regras que os agentes consultam (formato das pecas, rotina da coordenacao). Nao edite.
+fontes_novas\ SOLTE AQUI os PDFs (artigos, diretrizes, capitulos, protocolos, fichas EM BRANCO) para o triador de fontes.
+              Ele indica todos os temas em que cada um serve; voce aprova no painel e a fonte fica guardada para esses temas.
+fontes_recebidas\  os arquivos ja registrados (F + codigo). fontes_recusadas\  os recusados, com o motivo ao lado.
 
 Os agentes nunca mudam nada sozinhos: tudo passa pela sua decisao no painel (Aprovar, Aprovar com a alteracao, Vetar).
 Esta pasta fica fora do OneDrive de proposito. Nao compartilhe.
@@ -52,12 +55,28 @@ fi
 
 rodada() {
   local ok=0 rec=0 err=0 a f n
-  for a in duvidas pecas conteudo atrasados indicadores supervisor; do
+  shopt -s nullglob
+  # fontes soltas pela coordenacao: texto extraido, dado de paciente recusado, PDF guardado e registrado para o triador
+  for f in "$COORD_DIR"/fontes_novas/*; do
+    [ -f "$f" ] || continue
+    if [ $(( $(date +%s) - $(stat -c %Y "$f") )) -lt 30 ]; then continue; fi
+    SAIDA_F="$(python3 -I "$AQUI/ferramentas/registrar_fonte.py" "$f" 2>>"$COORD_DIR/entrada/.ponte_erros.log")"
+    case "$(printf '%s' "$SAIDA_F" | head -1 | cut -f1)" in
+      REGISTRAR)
+        DEST="$(printf '%s' "$SAIDA_F" | head -1 | cut -f2)"
+        if printf '%s\n' "$SAIDA_F" | tail -n +2 | "${PSQL[@]}" >/dev/null 2>>"$COORD_DIR/entrada/.ponte_erros.log"; then
+          mv -f "$f" "$COORD_DIR/fontes_recebidas/$DEST"
+        fi ;;
+      RECUSAR)
+        mv -f "$f" "$COORD_DIR/fontes_recusadas/"
+        printf '%s\n' "$(printf '%s' "$SAIDA_F" | head -1 | cut -f2)" > "$COORD_DIR/fontes_recusadas/$(basename "$f").motivo.txt" ;;
+    esac
+  done
+  for a in duvidas pecas conteudo atrasados indicadores supervisor fontes; do
     if "${PSQL[@]}" -c "SELECT app.coord_pacote('$a')" > "$COORD_DIR/entrada/.$a.tmp" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
       mv -f "$COORD_DIR/entrada/.$a.tmp" "$COORD_DIR/entrada/$a.json"; ok=$((ok + 1))
     else rm -f "$COORD_DIR/entrada/.$a.tmp"; fi
   done
-  shopt -s nullglob
   for f in "$COORD_DIR"/propostas/*.json; do
     # arquivo ainda sendo gravado pelo agente: espera a proxima rodada
     if [ $(( $(date +%s) - $(stat -c %Y "$f") )) -lt 20 ]; then continue; fi
