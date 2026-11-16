@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// Painel > Para revisar: o que os agentes da coordenacao prepararam. Nada chega ao aluno sem uma decisao aqui.
+// Revisao > Para revisar: o que os agentes da coordenacao prepararam. Nada chega ao aluno sem uma decisao aqui.
 // Aprovar executa como veio; Alterar aplica o que voce editou; Vetar exige o motivo, que o agente le na proxima rodada.
 const API = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
 
@@ -22,6 +22,11 @@ const NOME: Record<string, string> = {
 const SUGESTAO: Record<string, string> = { aprovar: 'Sugere aprovar', conferir: 'Sugere conferir melhor', reprovar: 'Sugere reprovar' };
 const DECISAO: [string, string][] = [['correto', 'Correto'], ['erro_leve', 'Erro leve'], ['erro_critico', 'Erro crítico']];
 const VEREDITO: Record<string, string> = { pronta: 'Pronta para a revisão de conteúdo', ajustar: 'Ajustar antes', refazer: 'Refazer' };
+
+// mesma regra do banco (app.proposta_sugere_liberar, 97): o agente sugere liberar
+const sugereLiberar = (p: Proposta) => p.status === 'aguardando' && (
+  (p.tipo === 'parecer' && p.proposta.sugestao === 'aprovar' && (!p.proposta.decisao || p.proposta.decisao === 'correto'))
+  || (p.tipo === 'pre_revisao' && p.proposta.veredito === 'pronta'));
 
 const s = (v: unknown) => (v === null || v === undefined ? '' : String(v));
 const data = (v: string | null) => (v ? new Date(v).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : '');
@@ -121,7 +126,7 @@ function Cartao(props: { p: Proposta; decidido: () => void }) {
       </>)}
 
       {p.tipo === 'pre_revisao' && (<>
-        <p className="pr-contexto">{s(ctx.tema)} · {s(ctx.peca)} (versão {s(ctx.versao)}) · <a href={s(ctx.revisao)}>abrir na revisão</a></p>
+        <p className="pr-contexto">{s(ctx.tema)} · {s(ctx.peca)} (versão {s(ctx.versao)}) · <a href={`${s(ctx.revisao)}?aba=rascunhos`}>abrir a peça</a></p>
         <p className={`pr-sugestao ${s(p.proposta.veredito)}`}>{VEREDITO[s(p.proposta.veredito)] ?? s(p.proposta.veredito)}</p>
         {Array.isArray(p.proposta.itens) && (
           <ol className="pr-itens">{(p.proposta.itens as J[]).map((it, i) => (
@@ -209,6 +214,8 @@ export function ParaRevisar() {
   const [filtro, setFiltro] = useState<string>('');
   const [d, setD] = useState<{ propostas: Proposta[]; agentes: Agente[] } | null>(null);
   const [erro, setErro] = useState<string | null>(null);
+  const [confirmando, setConfirmando] = useState(false);
+  const [lote, setLote] = useState<{ enviando: boolean; msg: string | null }>({ enviando: false, msg: null });
   const carregar = () => {
     fetch(`${API}/coordenacao/propostas?status=${modo}`, { credentials: 'include' })
       .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
@@ -219,6 +226,21 @@ export function ParaRevisar() {
   if (erro) return <p role="alert">{erro}</p>;
   if (!d) return <p className="carregando">Carregando…</p>;
   const lista = d.propostas.filter((p) => !filtro || p.agente === filtro);
+  const sugeridas = modo === 'aguardando' ? lista.filter(sugereLiberar) : [];
+  const nPar = sugeridas.filter((p) => p.tipo === 'parecer').length;
+  const nPec = sugeridas.length - nPar;
+  async function aprovarLote() {
+    setLote({ enviando: true, msg: null });
+    const r = await fetch(`${API}/coordenacao/propostas/aprovar-sugeridas`, {
+      method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ agente: filtro || undefined }),
+    }).catch(() => null);
+    setConfirmando(false);
+    if (!r?.ok) { setLote({ enviando: false, msg: 'Não foi possível aprovar agora. Nada foi alterado; tente de novo.' }); return; }
+    const j = (await r.json()) as { aprovadas: number; com_erro: number; ficaram: number };
+    setLote({ enviando: false, msg: `${j.aprovadas} aprovada(s) como o agente sugeriu.${j.com_erro ? ` ${j.com_erro} não entrou(aram) e continua(m) na lista.` : ''} Ficaram ${j.ficaram} para você conferir.` });
+    carregar();
+  }
   return (
     <section className="pr">
       <p className="pr-intro">O que os agentes da coordenação prepararam. Nada chega ao aluno nem entra na revisão sem a sua decisão.</p>
@@ -239,6 +261,19 @@ export function ParaRevisar() {
         <button type="button" role="tab" aria-selected={modo === 'aguardando'} className={`botao discreto${modo === 'aguardando' ? ' sel' : ''}`} onClick={() => setModo('aguardando')}>Aguardando sua decisão</button>
         <button type="button" role="tab" aria-selected={modo === 'decididas'} className={`botao discreto${modo === 'decididas' ? ' sel' : ''}`} onClick={() => setModo('decididas')}>Já decididas</button>
       </div>
+      {modo === 'aguardando' && sugeridas.length > 0 && (
+        <div className="pr-lote">
+          {!confirmando
+            ? <button type="button" className="botao" onClick={() => setConfirmando(true)}>Aprovar o que os agentes sugerem aprovar ({sugeridas.length})</button>
+            : <>
+                <p>Vou aprovar como vieram {nPar ? `${nPar} parecer(es) de conteúdo com sugestão "aprovar" (entram como correto)` : ''}{nPar && nPec ? ' e ' : ''}{nPec ? `${nPec} peça(s) com veredito "pronta"` : ''}{filtro ? `, só de ${NOME[filtro] ?? filtro}` : ''}.
+                  Continuam aqui para você conferir: "conferir melhor", "reprovar", peças "ajustar" ou "refazer", respostas a dúvidas, lembretes e lançamentos.</p>
+                <button type="button" className="botao" disabled={lote.enviando} onClick={aprovarLote}>{lote.enviando ? 'Aprovando…' : 'Confirmar'}</button>
+                <button type="button" className="botao discreto" disabled={lote.enviando} onClick={() => setConfirmando(false)}>Cancelar</button>
+              </>}
+        </div>
+      )}
+      {lote.msg && <p role="status" className="pr-msg">{lote.msg}</p>}
       {lista.length === 0
         ? <p className="pr-vazio">{modo === 'aguardando' ? 'Nada aguardando revisão.' : 'Nenhuma decisão registrada ainda.'}</p>
         : lista.map((p) => <Cartao key={p.proposta_id} p={p} decidido={carregar} />)}

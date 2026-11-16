@@ -383,3 +383,10 @@
 - **`96_migrar_banco_v1.0.sh`:** leva o banco do seu computador para o servidor num arquivo criptografado; o banco que já estava lá fica guardado.
 - **`96_backup_producao_v1.0.sh`:** cópia diária no servidor e cópia das cópias para a pasta do Drive no seu computador.
 - **Passo a passo, custos e o que pedir à informática:** `docs/producao_v1.0.md`.
+
+## Revisão: propostas dos agentes no menu Revisão e aprovação em lote (97) — CUT_v2z5
+
+- **"Para revisar" saiu do Painel** e foi para o menu **Revisão**, ao lado dos rascunhos do tema: a tela abre em "Para revisar (N)" e o outro botão leva aos "Rascunhos do T001". O link "abrir a peça" de uma proposta abre direto nos rascunhos.
+- **Botão "Aprovar o que os agentes sugerem aprovar (N)"**: aprova de uma vez, como vieram, os pareceres de conteúdo com sugestão "aprovar" (entram como "correto") e as peças com veredito "pronta". Pede confirmação e diz o que vai aprovar. Respeita o filtro por agente.
+- **Continuam uma a uma:** pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer", respostas a dúvidas, lembretes e lançamentos de indicadores (estes chegam ao aluno ou ao registro, por isso não entram no lote).
+- Cada aprovação em lote fica registrada com o motivo "aprovada em lote: o agente sugeriu aprovar".

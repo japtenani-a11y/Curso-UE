@@ -22,6 +22,21 @@ coordenacaoRouter.get('/propostas', async (req, res, next) => {
 const ERROS = ['so_coordenacao', 'proposta_nao_encontrada', 'proposta_ja_decidida', 'decisao_invalida', 'motivo_obrigatorio',
   'escolha_a_decisao', 'lembrete_sem_texto', 'resposta_curta', 'fonte_nao_encontrada'];
 
+// Aprova de uma vez o que o agente sugere liberar (parecer "aprovar", peca "pronta"); o resto fica para conferir.
+// Regra no banco: app.proposta_sugere_liberar e app.aprovar_sugeridas (97).
+coordenacaoRouter.post('/propostas/aprovar-sugeridas', async (req, res, next) => {
+  try {
+    const b = (req.body ?? {}) as Record<string, unknown>;
+    const agente = typeof b.agente === 'string' && /^[a-z_]{2,30}$/.test(b.agente) ? b.agente : null;
+    const r = await withMaestro(null, async (c) => (await c.query('SELECT * FROM app.aprovar_sugeridas($1)', [agente])).rows[0]);
+    res.json({ ok: true, aprovadas: r?.aprovadas ?? 0, com_erro: r?.com_erro ?? 0, ficaram: r?.ficaram ?? 0 });
+  } catch (err) {
+    const m = (err as { message?: string }).message ?? '';
+    if (m.includes('so_coordenacao')) { res.status(403).json({ erro: 'so_coordenacao' }); return; }
+    next(err);
+  }
+});
+
 coordenacaoRouter.post('/propostas/:id/decidir', async (req, res, next) => {
   try {
     const id = Number(req.params.id);

@@ -191,6 +191,13 @@
 .pr-filtro { background: none; border: 0; padding: 0; font: inherit; font-weight: 600; color: var(--cut-action); cursor: pointer; text-decoration: underline; min-height: 24px; }
 .pr-filtro.sel { color: var(--cut-text); text-decoration: none; }
 .pr-modo { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+.pr-lote { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 4px 0 12px; padding: 10px 12px; border: 1px solid var(--cut-line); border-radius: 8px; background: var(--cut-surface-sunken); }
+.pr-lote p { flex-basis: 100%; margin: 0 0 4px; }
+/* Revisao: troca entre as propostas dos agentes e os rascunhos do tema (97) */
+.rv-troca { display: flex; gap: 6px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; padding: 16px 16px 0; }
+.rv-troca .botao { min-height: 44px; }
+.rv-troca .sel { background: var(--cut-action); color: var(--cut-on-action); border-color: var(--cut-action); }
+.rv-propostas { max-width: 1100px; margin: 0 auto; padding: 0 16px 16px; }
 .pr-cartao { border: 1px solid var(--cut-line); border-radius: var(--cut-r-md); background: var(--cut-surface-raised); color: var(--cut-text); padding: 14px 16px; margin: 0 0 14px; }
 .pr-cartao.vetada { border-left: 4px solid var(--cut-incorrect); }
 .pr-cartao.aprovada, .pr-cartao.alterada { border-left: 4px solid var(--cut-correct); }
