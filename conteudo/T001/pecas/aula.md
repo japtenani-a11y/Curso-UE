@@ -75,7 +75,7 @@ O detalhe do procedimento é do tema T002.
 ## 7. Para onde, e com quem
 
 - **Adjuntos da primária:** radiografia de tórax e de pelve, FAST ou eFAST e aspiração peritoneal [D53]. Com eles se localiza o sangramento em tórax, abdome ou pelve.
-- **FAST negativo no hipotenso:** repetir em 15 a 30 minutos ou aspirar [D63].
+- **FAST negativo no hipotenso com trauma fechado:** repetir em 15 a 30 minutos ou aspirar o peritônio [D63].
 - **Tomografia:** só para quem está estável ou respondeu [D52, P9]. Quem vai à TC de corpo inteiro no serviço: pelo menos um dos três grupos do protocolo, mecanismo, critério clínico ou TCE moderado a grave [P2]. Exemplo: capotamento [P3] com Glasgow 11 aferido antes da sedação [P5] vai, se estável.
 - **Tempo:** os óbitos de tórax e abdome se concentram entre 1 e 6 horas [A56]; o erro que mais se repete é o atraso [A51, A52]. Em um centro, chegar ao centro cirúrgico em menos de 10 minutos associou-se a maior sobrevida no ferimento por arma de fogo do tronco [D69].
 - **Equipe:** briefing com plano B [D71]; ordem dada pelo nome e repetida por quem recebe [D70]; qualquer um pode parar o atendimento, em degraus: perguntar, alertar, contestar, agir [D72]. Debriefing não punitivo depois [D73].

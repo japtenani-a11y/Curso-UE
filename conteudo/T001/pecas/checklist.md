@@ -32,7 +32,7 @@ Para uso à beira do leito. Cada item se responde com sim ou não. Proposta do c
 - [ ] Reavaliar A, B e C depois de cada intervenção [D5]
 
 **Antes de sair da sala**
-- [ ] Repetir o FAST se o paciente segue hipotenso e o primeiro foi negativo [D63]
+- [ ] Trauma fechado com hipotensão e FAST negativo: repetir em 15 a 30 minutos ou aspirar o peritônio [D63]
 - [ ] Confirmar que o instável não vai à tomografia [D52]
 - [ ] Fazer a avaliação secundária e colher a AMPLA [D20, D21]
 - [ ] Discutir a indicação de TC pelos critérios do protocolo [P2]

@@ -194,7 +194,8 @@ for n in range(1, 7):
             prova.append(f"**{k}.** {q['enunciado']}\n" + '\n'.join(f'- {LET[i]}) {a}' for i, a in enumerate(q['alternativas'])) + '\n')
             gab.append(f"**{k}. Resposta {q['correta']}** · grau {GRAUS[q['grau'] - 1]} · taxa de acerto esperada {q.get('taxa_esperada') or TAXA[q['grau'] - 1]}"
                        f" · âncora {', '.join(q.get('ancoras', [])) or '—'}\n"
-                       + '\n'.join(f"- {LET[i]}) {'**correta**' if c == 'correta' else c}: {j}" for i, (j, c) in enumerate(zip(q['justificativas'], q['categorias']))) + '\n')
+                       + '\n'.join(f"- {LET[i]}) {'**correta**' if c == 'correta' else c}: {re.sub(r'^Correta[:.;]?\s*', '', j) if c == 'correta' else j}"
+                                   for i, (j, c) in enumerate(zip(q['justificativas'], q['categorias']))) + '\n')
             anc.update(q.get('ancoras', []))
     pecas[f'teste_{n}'] = {'titulo': NOMES[n], 'corpo': FAIXA + '\n'.join(prova), 'anc': anc}
     pecas[f'gabarito_{n}'] = {'titulo': f'Gabarito comentado — {NOMES[n]}', 'corpo': FAIXA + '\n'.join(gab), 'anc': anc}
@@ -287,6 +288,16 @@ SELECT o.onda_id, i.item_id,
   JOIN app.item i ON i.tema_id = o.tema_id AND (i.fixa OR i.teste_num = o.teste_num)
  WHERE {TEMA_SQL} AND i.codigo IS NOT NULL
    AND NOT EXISTS (SELECT 1 FROM app.item_selecionado s WHERE s.onda_id = o.onda_id AND s.item_id = i.item_id);""")
+# Pré-revisões que esperam decisão sobre uma versão que acabou de ganhar versão nova ficam "substituídas" (não vetadas:
+# veto vira regra para o agente). O agente de peças revisa a versão nova na rodada seguinte. Pareceres de conteúdo
+# não entram aqui: valem para o mesmo texto em qualquer versão (script 94).
+L.append(f"""UPDATE app.proposta_agente p SET status = 'substituida', decidido_em = now(),
+       motivo = 'a peça ganhou versão nova na importação; o agente revisa a versão nova'
+  FROM conteudo.artefato a JOIN app.tema t USING (tema_id)
+ WHERE p.status = 'aguardando' AND p.tipo = 'pre_revisao' AND {TEMA_SQL}
+   AND (p.alvo ->> 'artefato_id') ~ '^[0-9]+$' AND a.artefato_id = (p.alvo ->> 'artefato_id')::bigint
+   AND EXISTS (SELECT 1 FROM conteudo.artefato n WHERE n.tema_id = a.tema_id AND n.tipo = a.tipo AND n.versao > a.versao
+                AND n.status::text IN ('rascunho', 'publicado'));""")
 L += ["\\echo 'resultado:'",
       f"""SELECT (SELECT count(DISTINCT a.tipo) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.status::text IN ('rascunho','publicado')) AS pecas,
        (SELECT count(*) FROM conteudo.afirmacao f JOIN conteudo.artefato a USING (artefato_id) JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL}) AS afirmacoes,

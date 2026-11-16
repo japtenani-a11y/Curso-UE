@@ -104,3 +104,28 @@ python3 gerar_podcast_audio_v1.0.py T001 --slides
 Instalar: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois
 `PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql`.
 Os agentes revisam só os textos novos ou alterados. O áudio do podcast precisa ser gerado de novo.
+
+## Banco de questões e peças depois da pré-revisão (CUT_v2z8)
+
+Este pacote inclui tudo da v2z7. Quem ainda não instalou a v2z7 instala só este.
+
+- **Questões (questoes.json), 169 de 193 reescritas:**
+  - as alternativas absurdas ("Nada", "Nenhum", "Zero", "Esperar", "Punição", "Endoscopia") viraram erros plausíveis;
+  - toda alternativa, certa ou errada, tem explicação de uma ou duas frases com o código da fonte, e as âncoras de cada questão são os códigos citados;
+  - a letra da correta foi embaralhada para ficar equilibrada dentro de cada teste e perfil (antes, havia testes com a mesma letra em 6 de 10 questões e perfis sem nenhuma resposta E);
+  - T5-Graduação-4, que repetia a T5-Graduação-1, virou uma questão sobre o reexame completo [D18, D19, D30];
+  - T4-R2-5 citava uma concordância com a TC que não está nas fontes; passou a perguntar a proporção de alargamento da sínfise [A35];
+  - saíram números sem fonte em três questões (T5-R+-7, T5-R3-7 e T6-R+-7).
+- **Gabaritos:** o importador não repete mais "Correta:" depois de "correta".
+- **Objetivos:** cada objetivo agora tem condição e critério.
+- **Síntese de evidência:** saiu a marcação interna sobre o ATLS 11, cada item da disputa mostra o desenho do estudo, e o tempo de leitura bate com o do sistema.
+- **Resumo, resumo básico e protocolo:**
+  - tempo de leitura corrigido (6, 5 e o calculado pelo sistema);
+  - FAST negativo no hipotenso com trauma fechado: repetir ou aspirar [D63];
+  - escores de transfusão maciça: "por ora, a experiência provavelmente decide melhor" [D34];
+  - a frase sem fonte sobre murmúrio ausente saiu do resumo básico;
+  - as referências do protocolo passam a listar G4, G6 e G11.
+- **Aula e checklist:** a mesma correção do FAST [D63].
+- **Importação:** ao gravar, as pré-revisões que esperam decisão sobre uma versão antiga da mesma peça passam a "substituída", com o motivo registrado. Não são vetadas, porque veto vira regra para o agente. Os pareceres de conteúdo continuam valendo e são copiados pelo script 94.
+
+Instalar como na v2z7: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois o script 94.

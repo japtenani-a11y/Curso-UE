@@ -1,10 +1,10 @@
 # T001 — Resumo básico: avaliação inicial do traumatizado
 
-Tempo de leitura: cerca de 12 minutos. Para quem chega ao tema sem base. Este texto é a teoria do tema: a aula não vai repeti-lo, vai partir dele.
+Tempo de leitura: cerca de 5 minutos. Para quem chega ao tema sem base. Este texto é a teoria do tema: a aula não vai repeti-lo, vai partir dele.
 
 ## Para que serve
 
-A avaliação inicial existe para achar e tratar, rapidamente, o que pode matar o paciente agora [D1]. Ela não é um questionário: cada problema encontrado é tratado na hora, antes de seguir. O que mais define se o paciente vai bem não é a quantidade de lesões, e sim o quanto a fisiologia dele está alterada [D26].
+A avaliação inicial existe para achar e tratar, rapidamente, o que pode matar o paciente agora [D1]. Cada problema encontrado é tratado na hora, antes de passar à letra seguinte. A alteração da fisiologia é o que mais pesa no desfecho [D26].
 
 ## A ordem
 
@@ -18,14 +18,14 @@ Na prática, uma equipe faz várias etapas ao mesmo tempo [D5, D42].
 
 - **Sangramento externo:** comprima diretamente o ponto que sangra [D6]. Se não parar, a ferida é preenchida com gaze sob pressão (tamponamento) [D45]. No braço ou na perna, o torniquete pode salvar a vida [D7]. Não pince às cegas dentro de feridas profundas [D8]. Se houver suspeita de fratura de bacia com sangramento, a cinta pélvica vai já [D9].
 - **Via aérea:** se o paciente fala com voz normal, a via aérea está pérvia [D10]. Se o Glasgow for 8 ou menos, ele precisa de via aérea definitiva [D11], e o exame neurológico é feito antes de sedar [D12]. No paciente em choque grave, a intubação pode derrubar a pressão [D47, G7]: enquanto o sangramento é controlado, oxigênio, cânula e máscara podem bastar [G6].
-- **Respiração:** examine o tórax. Murmúrio ausente costuma ser sangue ou ar na pleura. O ultrassom ajuda, mas um exame negativo nem sempre exclui pneumotórax [A30].
+- **Respiração:** examine o tórax e veja a saturação. Achado positivo no exame quase sempre indica lesão e pede ação [D25]. O ultrassom ajuda, mas um exame negativo nem sempre exclui pneumotórax [A30], e a radiografia feita com o paciente deitado mostra só cerca de metade deles [D66].
 - **Circulação:** veja pulso, pele e consciência. Pulso radial palpável sugere pressão sistólica de pelo menos 90 mmHg, numa estimativa pouco estudada [D44]. O aparelho automático de pressão pode errar no choque [D14]. Sem veia, o acesso intraósseo é uma saída [D15].
 - **Neurológico:** Glasgow na chegada e de novo durante o atendimento [D16]. Agitação pode ser choque, não só bebida ou trauma de crânio [D17].
 - **Exposição:** tire toda a roupa para ver o corpo inteiro [D18] e depois aqueça o paciente [D19]. Hipotermia é comum e esquecida [A36].
 
 ## Depois da primária
 
-A avaliação secundária é a história (AMPLA: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. O paciente instável não vai à tomografia [D52]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Isso importa: mesmo com tomografia, lesões são descobertas depois [A42].
+A avaliação secundária é a história (AMPLA: alergias, medicações, doenças, última refeição, eventos) e o exame da cabeça aos pés [D20, D21]. O paciente instável não vai à tomografia [D52]. Mais tarde, com o paciente estabilizado, vem a avaliação terciária, que busca o que passou despercebido [D31]. Mesmo com tomografia, há lesões que só são descobertas depois [A42].
 
 ## A equipe
 

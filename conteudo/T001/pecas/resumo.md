@@ -1,6 +1,6 @@
 # T001 — Resumo executivo
 
-Tempo de leitura: cerca de 10 minutos. Para depois da aula: junta a teoria do material prévio com a técnica vista no encontro.
+Tempo de leitura: cerca de 6 minutos. Para depois da aula: junta a teoria do material prévio com a técnica vista no encontro.
 
 ## 1. Por que importa
 
@@ -26,7 +26,7 @@ O objetivo é identificar e tratar rapidamente o que ameaça a vida [D1], e a fi
 6. Circulação: pulsos, estimativa pouco estudada [D44]; pressão manual se houver dúvida [D14]; sem veia, intraósseo; o úmero proximal pode ser o melhor local [D15, D46]; sangue e plasma antes de cristaloide [D39]; escore ABC de 2 ou mais ativa o protocolo de transfusão maciça [P16].
 7. Tórax: murmúrio ausente é hemotórax ou pneumotórax até prova em contrário; em extremis, drenagem bilateral [D48].
 8. Glasgow repetido; despir e aquecer [D16, D18, D19].
-9. Adjuntos: radiografia de tórax e pelve, eFAST [D53]. FAST negativo no hipotenso: repetir em 15 a 30 minutos [D63].
+9. Adjuntos: radiografia de tórax e pelve, eFAST [D53]. No trauma fechado com hipotensão, FAST negativo: repetir em 15 a 30 minutos ou aspirar o peritônio [D63].
 10. Destino: instável vai ao controle do sangramento, não à tomografia [D52, D40].
 11. Secundária com AMPLA; terciária depois [D21, D31].
 
