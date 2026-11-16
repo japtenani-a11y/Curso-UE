@@ -101,9 +101,9 @@ def main():
     partes.append('<h3>Por participante</h3>' + tabela(g.reset_index(), 0))
     # presenca irregular: quem faz mais ondas acerta diferente de quem faz menos?
     feitas = df.groupby('participante').apply(lambda d: pd.Series({'ondas feitas': d[['tema', 'onda']].drop_duplicates().shape[0],
-        'acerto médio (%)': 100 * d['correta'].mean()}), include_groups=False).reset_index()
+        'acerto médio (%)': 100 * d['correta'].mean()})).reset_index()
     feitas['ondas feitas'] = feitas['ondas feitas'].astype(int)
-    rho = stats.spearmanr(feitas['ondas feitas'], feitas['acerto médio (%)']).statistic if len(feitas) >= 4 and feitas['ondas feitas'].nunique() > 1 else np.nan
+    rho = stats.spearmanr(feitas['ondas feitas'], feitas['acerto médio (%)'])[0] if len(feitas) >= 4 and feitas['ondas feitas'].nunique() > 1 else np.nan
     partes.append('<h3>Ondas feitas e acerto</h3><p>Com presença irregular, quem faz mais ondas pode ser diferente de quem faz menos. '
                   f'Correlação de Spearman entre ondas feitas e acerto médio: {"—" if np.isnan(rho) else f"{rho:.2f}"}.</p>' + tabela(feitas, 0))
     testes = []
@@ -122,7 +122,7 @@ def main():
     cal['certeza'] = cal['certeza'].map(nomes); cal['mean'] *= 100; cal.columns = ['certeza marcada', 'respostas', 'acerto (%)']
     gp = c.groupby('participante').apply(lambda d: pd.Series({'respostas': len(d), 'gamma (certeza × acerto)': gamma(d['certeza'].values, d['correta'].values),
         'acerto com "tenho certeza" (%)': 100 * d.loc[d['certeza'] == 3, 'correta'].mean() if (d['certeza'] == 3).any() else np.nan,
-        'erros com "tenho certeza"': int(((d['certeza'] == 3) & ~d['correta']).sum())}), include_groups=False).reset_index()
+        'erros com "tenho certeza"': int(((d['certeza'] == 3) & ~d['correta']).sum())})).reset_index()
     gp['respostas'] = gp['respostas'].astype(int); gp['erros com "tenho certeza"'] = gp['erros com "tenho certeza"'].astype(int)
     fig, ax = plt.subplots(figsize=(5.5, 3))
     ax.bar(cal['certeza marcada'], cal['acerto (%)'], color=[COR2, '#64748b', COR]); ax.set_ylim(0, 100); ax.set_ylabel('% de acerto')
@@ -132,7 +132,7 @@ def main():
                   + fig_b64(fig) + tabela(cal) + tabela(gp, 2))
     # calibracao ao longo do curso: antes da aula (ondas 1-2) x depois (3-6)
     c['fase'] = np.where(c['onda'] <= 2, 'antes da aula', 'depois da aula')
-    gf = c.groupby(['participante', 'fase']).apply(lambda d: gamma(d['certeza'].values, d['correta'].values), include_groups=False).unstack('fase')
+    gf = c.groupby(['participante', 'fase']).apply(lambda d: gamma(d['certeza'].values, d['correta'].values)).unstack('fase')
     partes.append('<h3>A calibração muda depois da aula?</h3>' + tabela(gf.reset_index(), 2))
 
     # ---------- 4. hipercorrecao (exploratoria): questao repetida em todas as ondas ----------
@@ -174,7 +174,7 @@ def main():
     df['resto'] = (tot - df['correta']) / (n - 1).clip(lower=1)
     it = df.groupby(['onda', 'item']).apply(lambda d: pd.Series({'respostas': len(d), 'acerto (%)': 100 * d['correta'].mean(),
         'discriminação (r ponto-bisserial)': d['correta'].astype(int).corr(d['resto']) if d['correta'].nunique() > 1 and d['resto'].nunique() > 1 else np.nan,
-        'tempo mediano (s)': d['tempo_s'].median()}), include_groups=False).reset_index()
+        'tempo mediano (s)': d['tempo_s'].median()})).reset_index()
     it['onda'] = it['onda'].map(lambda o: CURTO[o - 1]); it['respostas'] = it['respostas'].astype(int)
     partes.append('<h2>6. Questões</h2><p>Questões com menos de 10 respostas não permitem julgar dificuldade nem discriminação.</p>' + tabela(it, 2))
     escrever(a, partes, simulado=a.so_simulados)

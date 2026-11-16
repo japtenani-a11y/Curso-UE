@@ -284,3 +284,12 @@
   - dicionário de dados (`docs/dicionario_dados_pesquisa.md`);
   - plano de análise (`docs/plano_analise_preregistro.md`);
   - script de análise (`analise/`).
+
+## Relatório de análise no painel (87) — CUT_v2s
+
+- `instalar_python_analise_v1.0.sh`: instala o Python com pandas, scipy e matplotlib (pelo apt, pede a senha do WSL) e
+  testa o relatório. Rodar uma vez.
+- Painel, primeira aba, cartão "Relatório de análise":
+  - "Gerar com os dados válidos": monta a base atual e roda o plano de análise, com o modelo principal;
+  - "Ensaio com os dados simulados".
+- O relatório abre numa aba nova. Quem tem perfil de pesquisador recebe só quem consentiu, por código.

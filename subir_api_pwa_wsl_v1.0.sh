@@ -67,6 +67,8 @@ if [ -f 81_sequencia_app_v1.0.sh ]; then bash 81_sequencia_app_v1.0.sh "$RAIZ" >
 if [ -f 82_interativo_app_v1.0.sh ]; then bash 82_interativo_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "82_interativo_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 83_ajustes_app_v1.0.sh ]; then bash 83_ajustes_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "83_ajustes_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 85_estudo_app_v1.0.sh ]; then bash 85_estudo_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "85_estudo_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 87_analise_painel_app_v1.0.sh ]; then bash 87_analise_painel_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "87_analise_painel_app falhou; veja $RAIZ/logs/gerar.log"; fi
+python3 -c "import pandas, scipy, matplotlib" 2>/dev/null || echo "      aviso: o relatorio de analise do painel precisa do Python com pandas, scipy e matplotlib. Rode uma vez: bash instalar_python_analise_v1.0.sh"
 # Conferencia: a tela gerada tem de ser a do CUT (se aparecer a antiga, faltou o git pull ou algum script nao rodou)
 grep -q "CUT · Curso" "$RAIZ/pwa/index.html" || falhar "a tela nova do CUT nao foi gerada; descompacte o zip mais novo por cima da pasta e rode de novo este script"
 echo "versao instalada: $(cat VERSAO.txt 2>/dev/null || git log -1 --format='%h %cd' --date=format:'%d/%m %H:%M' 2>/dev/null || echo 'desconhecida')"
