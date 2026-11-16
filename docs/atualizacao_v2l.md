@@ -348,3 +348,8 @@
   - 66 fontes do T001 reaproveitadas em outros temas;
   - 169 propostas na aba "Para revisar".
 - **A aula não repete a teoria** (decisão de 16/11/2026): o material de antes da aula é a fonte teórica; aula, slides e caso aprofundam em caso clínico, técnica cirúrgica e anatomia cirúrgica (`docs/formato_das_pecas.md`). O agente de pré-revisão recebe, com cada peça da aula, o material de antes da aula do tema para apontar a repetição.
+
+## Fontes aprovadas automaticamente (89, ponte) — CUT_v2z
+
+- A ponte aprova sozinha, a cada rodada, as propostas de fonte cujo arquivo já chegou. A fonte fica guardada nos temas indicados, sem passar pela aba "Para revisar".
+- O `estado.json` passa a mostrar `fontes_aprovadas` na última rodada.

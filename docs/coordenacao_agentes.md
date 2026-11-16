@@ -41,7 +41,7 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 | Pré-revisão das peças | Todo dia, 5h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo, a versão publicada anterior e, para as peças da aula, o material de antes da aula | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção, incluindo a teoria repetida na aula (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
 | Alunos atrasados | Segunda-feira, 7h10 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
 | Indicadores clínicos | Dia 5 de cada mês, 8h20 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
-| Triador de fontes | Todo dia, 4h47 e 17h47 | PDFs soltos em `CUT_coordenacao\fontes_novas` (a ponte extrai o texto, recusa o que tem cara de dado de paciente e registra) e o catálogo dos 150 temas | Referência conferida no PubMed, camada e todos os temas em que a fonte serve, inclusive os ainda não produzidos (`fonte`), ou recusa | A fonte fica guardada com o texto integral em cada tema aprovado (`conteudo.fonte`) |
+| Triador de fontes | Todo dia, 4h47 e 17h47 | PDFs soltos em `CUT_coordenacao\fontes_novas` (a ponte extrai o texto, recusa o que tem cara de dado de paciente e registra) e o catálogo dos 150 temas | Referência conferida no PubMed, camada e todos os temas em que a fonte serve, inclusive os ainda não produzidos (`fonte`), ou recusa | Aprovação automática: assim que o arquivo chega, a fonte fica guardada com o texto integral em cada tema indicado (`conteudo.fonte`). A coordenação não precisa decidir |
 | Supervisor | Todo dia, 7h30 (resumo do dia); sexta, 16h10 (auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios | Não propõe: escreve o resumo do dia (o que decidir primeiro) e a auditoria semanal da qualidade de cada agente, com a mudança sugerida na skill dele | — |
 
 ## Prazos da coordenação
@@ -87,3 +87,10 @@ A mesma afirmação aparece em várias peças do tema: no T001, 809 afirmações
 a uma afirmação vale para as cópias idênticas (mesmo texto e mesma fonte) nas outras peças do mesmo tema, em nome da
 mesma pessoa, com a origem anotada no comentário. Isso vale para o revisor na tela de revisão e para a coordenação ao
 aprovar a sugestão do agente (gatilho `tg_parecer_replica`, SQL 89).
+
+## Fontes aprovadas automaticamente (decisão de 16/11/2026)
+
+As propostas do triador de fontes não esperam a coordenação. A cada rodada, a ponte aprova como veio toda proposta de fonte
+cujo arquivo já chegou (`app.coord_aprovar_fontes`, SQL 89), e a fonte fica guardada nos temas indicados. Elas aparecem
+em "decididas", com a nota "aprovada automaticamente". Uma fonte guardada num tema errado não prejudica o aluno: ela só
+entra no material depois de citada numa peça e revisada.

@@ -511,4 +511,33 @@ GRANT EXECUTE ON FUNCTION app.coord_registrar_fonte(TEXT, TEXT, TEXT, TEXT), app
   app.coord_tem_proposta(TEXT, TEXT, TEXT), app.coord_trecho_fonte(TEXT, TEXT) TO api_rw;
 
 COMMIT;
+-- Fontes: aprovacao automatica (decisao da coordenacao de 16/11/2026). A ponte chama esta funcao a cada rodada:
+-- toda proposta de fonte cujo arquivo ja chegou e aprovada como veio, e a fonte fica guardada nos temas indicados.
+CREATE OR REPLACE FUNCTION app.coord_aprovar_fontes()
+RETURNS INT
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public, app, conteudo AS $$
+DECLARE
+  r RECORD; n INT := 0; v_role TEXT := current_setting('app.role', true);
+BEGIN
+  PERFORM set_config('app.role', 'curador', true);
+  FOR r IN SELECT p.proposta_id FROM app.proposta_agente p
+            WHERE p.agente = 'fontes' AND p.tipo = 'fonte' AND p.status = 'aguardando'
+              AND (EXISTS (SELECT 1 FROM app.fonte_recebida x
+                            WHERE x.fonte_recebida_id::text = p.alvo ->> 'fonte_recebida_id' OR x.sha256 = p.alvo ->> 'sha256')
+                   OR EXISTS (SELECT 1 FROM conteudo.fonte x WHERE x.sha256 = p.alvo ->> 'sha256'))
+            ORDER BY p.proposta_id LOOP
+    BEGIN
+      PERFORM app.decidir_proposta(r.proposta_id, 'aprovar', NULL, NULL);
+      UPDATE app.proposta_agente SET motivo = 'aprovada automaticamente (regra da coordenação de 16/11/2026)' WHERE proposta_id = r.proposta_id;
+      n := n + 1;
+    EXCEPTION WHEN OTHERS THEN
+      RAISE WARNING 'fonte % nao aprovada: %', r.proposta_id, SQLERRM;
+    END;
+  END LOOP;
+  PERFORM set_config('app.role', coalesce(v_role, ''), true);
+  RETURN n;
+END $$;
+REVOKE ALL ON FUNCTION app.coord_aprovar_fontes() FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION app.coord_aprovar_fontes() TO api_rw;
+
 SELECT 'coordenacao com agentes (89): pronto' AS situacao;

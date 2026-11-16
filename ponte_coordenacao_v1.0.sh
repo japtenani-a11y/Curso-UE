@@ -86,8 +86,10 @@ rodada() {
       mv -f "$f" "$COORD_DIR/com_erro/"; mv -f "$f.erro.txt" "$COORD_DIR/com_erro/$(basename "$f").erro.txt"; err=$((err + 1))
     fi
   done
-  printf '{"ultima_rodada":"%s","pacotes_gravados":%s,"propostas_recebidas":%s,"arquivos_com_erro":%s}\n' \
-    "$(date -Iseconds)" "$ok" "$rec" "$err" > "$COORD_DIR/entrada/estado.json"
+  # fontes: aprovadas automaticamente quando o arquivo ja chegou (decisao da coordenacao de 16/11/2026)
+  fa=$("${PSQL[@]}" -c "SELECT app.coord_aprovar_fontes()" 2>> "$COORD_DIR/entrada/.ponte_erros.log" || echo 0)
+  printf '{"ultima_rodada":"%s","pacotes_gravados":%s,"propostas_recebidas":%s,"arquivos_com_erro":%s,"fontes_aprovadas":%s}\n' \
+    "$(date -Iseconds)" "$ok" "$rec" "$err" "${fa:-0}" > "$COORD_DIR/entrada/estado.json"
 }
 
 if [ "${1:-}" = "--uma-vez" ]; then rodada; cat "$COORD_DIR/entrada/estado.json"; echo "pasta: $COORD_DIR"; exit 0; fi
