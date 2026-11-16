@@ -189,7 +189,7 @@ CREATE FUNCTION app.pesquisa_respostas()
 RETURNS TABLE (participante TEXT, ano TEXT, especialidade TEXT, turma SMALLINT, tema TEXT, teste_num SMALLINT, teste TEXT,
                dias_da_aula NUMERIC, item TEXT, perfil_item TEXT, dificuldade SMALLINT, correta BOOLEAN, certeza SMALLINT,
                tempo_s NUMERIC, rapida BOOLEAN, apos_aula BOOLEAN, aula TEXT, equipe BOOLEAN, simulado BOOLEAN,
-               consentiu BOOLEAN, valida BOOLEAN, enviada_em TIMESTAMPTZ)
+               consentiu BOOLEAN, valida BOOLEAN, enviada_em TIMESTAMPTZ, fixa BOOLEAN)
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
   SELECT app.aluno_painel(t.pessoa_id), pf.ano, pf.especialidade, pf.turma, tm.codigo, o.teste_num, app.nome_teste(o.teste_num),
          round(extract(epoch FROM t.submetida_em - app.d0_da_pessoa(t.pessoa_id, o.tema_id)) / 86400, 1),
@@ -199,7 +199,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app A
          coalesce(c.aceito, false),
          NOT coalesce(r.tempo_resposta_ms < 3000, false) AND NOT t.apos_aula AND NOT app.eh_equipe(t.pessoa_id)
            AND NOT app.eh_simulado(t.pessoa_id) AND coalesce(c.aceito, false),
-         t.submetida_em
+         t.submetida_em, i.fixa   -- fixa: questao ancora, igual nas seis ondas e para todos os anos
     FROM app.resposta r JOIN app.tentativa t ON t.tentativa_id = r.tentativa_id AND t.submetida_em IS NOT NULL
     JOIN app.onda_instancia o ON o.onda_id = t.onda_id JOIN app.tema tm ON tm.tema_id = o.tema_id
     JOIN app.item i ON i.item_id = r.item_id JOIN app.alternativa a ON a.alternativa_id = r.alternativa_id

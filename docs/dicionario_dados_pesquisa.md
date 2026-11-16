@@ -57,6 +57,7 @@ Base: `app.pesquisa_respostas()`, que corresponde à aba "Base de análise" do p
 | aula | Como viu a aula: "ao vivo" (presença registrada), "depois" (abriu a aula ou os slides) ou "sem registro" | Presença e leitura | S (covariável) |
 | valida | Resposta usada na análise primária: não rápida, não depois da aula, não da equipe, não simulada, com consentimento | Regra acima | Filtro |
 | enviada_em | Data e hora do envio | Sistema | S |
+| fixa | Questão âncora: igual nas seis ondas e para todos os anos | Banco de questões | S (análise de sensibilidade) |
 
 ## 3. Notas por teste (uma linha por teste enviado)
 

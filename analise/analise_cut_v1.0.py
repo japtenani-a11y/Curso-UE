@@ -25,11 +25,18 @@ CURTO = ['Pré 1', 'Pré 2', 'D0', 'D+15', 'D+45', 'D+90']
 COR = '#1f3a5f'; COR2 = '#b45309'
 RNG = np.random.default_rng(2027)
 
+def por_grupo(gb, f):
+    # groupby.apply sem os avisos do pandas: include_groups so existe a partir do pandas 2.2
+    try: return gb.apply(f, include_groups=False)
+    except TypeError: return gb.apply(f)
+
 def ler(caminho):
     df = pd.read_csv(caminho, sep=';', encoding='utf-8-sig')
-    for c in ['correta', 'rapida', 'apos_aula', 'equipe', 'simulado', 'consentiu', 'valida']:
+    for c in ['correta', 'rapida', 'apos_aula', 'equipe', 'simulado', 'consentiu', 'valida', 'fixa']:
         if c in df: df[c] = df[c].astype(str).str.lower().isin(['t', 'true', 'sim', '1'])
     df['onda'] = df['teste_num'].astype(int)
+    if 'fixa' not in df:   # base antiga, sem a coluna: a questao ancora e a que nao tem perfil
+        df['fixa'] = df['perfil_item'].isna() | (df['perfil_item'].astype(str) == '')
     return df
 
 def fig_b64(fig):
@@ -100,7 +107,7 @@ def main():
     g['ganho (D0 − pré 1)'] = g['D0'] - g['pré 1']; g['retido no D+90 (D+90 − pré 1)'] = g['D+90'] - g['pré 1']; g['perda (D0 − D+90)'] = g['D0'] - g['D+90']
     partes.append('<h3>Por participante</h3>' + tabela(g.reset_index(), 0))
     # presenca irregular: quem faz mais ondas acerta diferente de quem faz menos?
-    feitas = df.groupby('participante').apply(lambda d: pd.Series({'ondas feitas': d[['tema', 'onda']].drop_duplicates().shape[0],
+    feitas = por_grupo(df.groupby('participante'), lambda d: pd.Series({'ondas feitas': d[['tema', 'onda']].drop_duplicates().shape[0],
         'acerto médio (%)': 100 * d['correta'].mean()})).reset_index()
     feitas['ondas feitas'] = feitas['ondas feitas'].astype(int)
     rho = stats.spearmanr(feitas['ondas feitas'], feitas['acerto médio (%)'])[0] if len(feitas) >= 4 and feitas['ondas feitas'].nunique() > 1 else np.nan
@@ -120,7 +127,7 @@ def main():
     nomes = {1: 'chutei', 2: 'acho que sim', 3: 'tenho certeza'}
     cal = c.groupby('certeza')['correta'].agg(['count', 'mean']).reset_index()
     cal['certeza'] = cal['certeza'].map(nomes); cal['mean'] *= 100; cal.columns = ['certeza marcada', 'respostas', 'acerto (%)']
-    gp = c.groupby('participante').apply(lambda d: pd.Series({'respostas': len(d), 'gamma (certeza × acerto)': gamma(d['certeza'].values, d['correta'].values),
+    gp = por_grupo(c.groupby('participante'), lambda d: pd.Series({'respostas': len(d), 'gamma (certeza × acerto)': gamma(d['certeza'].values, d['correta'].values),
         'acerto com "tenho certeza" (%)': 100 * d.loc[d['certeza'] == 3, 'correta'].mean() if (d['certeza'] == 3).any() else np.nan,
         'erros com "tenho certeza"': int(((d['certeza'] == 3) & ~d['correta']).sum())})).reset_index()
     gp['respostas'] = gp['respostas'].astype(int); gp['erros com "tenho certeza"'] = gp['erros com "tenho certeza"'].astype(int)
@@ -132,11 +139,11 @@ def main():
                   + fig_b64(fig) + tabela(cal) + tabela(gp, 2))
     # calibracao ao longo do curso: antes da aula (ondas 1-2) x depois (3-6)
     c['fase'] = np.where(c['onda'] <= 2, 'antes da aula', 'depois da aula')
-    gf = c.groupby(['participante', 'fase']).apply(lambda d: gamma(d['certeza'].values, d['correta'].values)).unstack('fase')
+    gf = por_grupo(c.groupby(['participante', 'fase']), lambda d: gamma(d['certeza'].values, d['correta'].values)).unstack('fase')
     partes.append('<h3>A calibração muda depois da aula?</h3>' + tabela(gf.reset_index(), 2))
 
     # ---------- 4. hipercorrecao (exploratoria): questao repetida em todas as ondas ----------
-    fixa = df[df['perfil_item'].isna() | (df['perfil_item'].astype(str) == '')].sort_values(['participante', 'onda'])
+    fixa = df[df['fixa']].sort_values(['participante', 'onda'])
     linhas = []
     for (p, it), d in fixa.groupby(['participante', 'item']):
         d = d.reset_index(drop=True)
@@ -165,6 +172,14 @@ def main():
         sec.append('<details><summary>Todos os termos do modelo</summary>' + tabela(todos, 2) + '</details>')
         ret, _ = modelo_cut.modelo_retencao(df)
         if ret is not None: sec.append('<h3>H4: retenção do D0 ao D+90</h3><p>Razão de chances por 30 dias desde a aula (abaixo de 1 = esquecimento).</p>' + tabela(ret, 2))
+        # sensibilidade do plano: so as questoes ancora, iguais nas seis ondas (elimina a diferenca entre as formas das ondas)
+        anc = df[df['fixa']]
+        if anc['participante'].nunique() >= 2 and anc['onda'].nunique() >= 2:
+            ca, _, Ga, oka = modelo_cut.modelo_principal(anc)
+            sec.append(f'<h3>Sensibilidade: só as questões âncora</h3><p>{len(anc)} respostas a {anc["item"].nunique()} questão(ões) âncora, '
+                       'iguais nas seis ondas e para todos os anos. Se o efeito aqui for parecido com o de cima, a diferença entre as questões '
+                       'de cada onda não explica o resultado. Com poucas âncoras por tema, o intervalo é largo.</p>' + tabela(ca, 2)
+                       + ('' if oka else '<p><b>O ajuste não convergiu.</b></p>'))
         cer, _ = modelo_cut.modelo_certeza(df)
         if cer is not None: sec.append('<h3>H5: certeza e acerto</h3><p>Chance de acertar quando o aluno marca mais certeza, comparada a "chutei", ajustada por onda, ano e dificuldade.</p>' + tabela(cer, 2))
     partes.append(''.join(sec))
@@ -172,7 +187,7 @@ def main():
     # ---------- 6. questoes ----------
     tot = df.groupby(['participante', 'onda'])['correta'].transform('sum'); n = df.groupby(['participante', 'onda'])['correta'].transform('count')
     df['resto'] = (tot - df['correta']) / (n - 1).clip(lower=1)
-    it = df.groupby(['onda', 'item']).apply(lambda d: pd.Series({'respostas': len(d), 'acerto (%)': 100 * d['correta'].mean(),
+    it = por_grupo(df.groupby(['onda', 'item']), lambda d: pd.Series({'respostas': len(d), 'acerto (%)': 100 * d['correta'].mean(),
         'discriminação (r ponto-bisserial)': d['correta'].astype(int).corr(d['resto']) if d['correta'].nunique() > 1 and d['resto'].nunique() > 1 else np.nan,
         'tempo mediano (s)': d['tempo_s'].median()})).reset_index()
     it['onda'] = it['onda'].map(lambda o: CURTO[o - 1]); it['respostas'] = it['respostas'].astype(int)

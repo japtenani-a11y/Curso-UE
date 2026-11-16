@@ -293,3 +293,20 @@
   - "Gerar com os dados válidos": monta a base atual e roda o plano de análise, com o modelo principal;
   - "Ensaio com os dados simulados".
 - O relatório abre numa aba nova. Quem tem perfil de pesquisador recebe só quem consentiu, por código.
+
+## Formato, âncoras, tempo de estudo e agentes da coordenação (88, 89) — CUT_v2u
+
+- **Formato fixo das peças** (`docs/formato_das_pecas.md`):
+  - o banco recusa publicar peça com erro de formato;
+  - a revisão e a prévia mostram a conferência;
+  - aba "Conferência dos temas" no painel.
+- **Questões âncora:**
+  - política de 2 a 3 por tema;
+  - coluna `fixa` na base de análise;
+  - análise de sensibilidade só com as âncoras no relatório.
+- **Tempo de estudo:** cada peça mostra "Essencial" ou "Aprofundamento" e os minutos; cada grupo mostra o tempo essencial.
+- **Telas antigas no Design System:** a tela de lembretes e as telas de leitura e de revisão estão sem cor nem fonte fixas.
+- **Agentes da coordenação** (`docs/coordenacao_agentes.md`):
+  - ponte com a pasta `CUT_coordenacao` do Windows;
+  - aba "Para revisar" do painel, com aprovar, aprovar com alteração e vetar, e o desempenho de cada agente.
+- Python: os avisos do pandas (FutureWarning) no relatório foram retirados.

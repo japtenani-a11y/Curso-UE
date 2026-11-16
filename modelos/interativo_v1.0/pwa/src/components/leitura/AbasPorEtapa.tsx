@@ -20,7 +20,13 @@ const GRUPOS = [
 const SINAL: Record<string, { marca: string; texto: string }> = {
   feito: { marca: '✓', texto: 'feito' }, visto: { marca: '•', texto: 'visto' }, novo: { marca: '', texto: 'novo' },
 };
-interface Peca { tipo: string; titulo: string }
+interface Peca { tipo: string; titulo: string; tempo?: { nivel: string | null; minutos: number | null } | null }
+// "Essencial · 20 min" ou "Aprofundamento · 8 min": o essencial e o que se espera de todos; o resto e para quem quer ir alem.
+export function rotuloTempo(t: Peca['tempo']): string {
+  if (!t) return '';
+  const n = t.nivel === 'essencial' ? 'Essencial' : t.nivel === 'aprofundamento' ? 'Aprofundamento' : '';
+  return [n, t.minutos ? `${t.minutos} min` : ''].filter(Boolean).join(' · ');
+}
 
 export function AbasPorEtapa(props: { pecas: Peca[]; ativo: number; mudar: (i: number) => void; situacao: Record<string, string>; etapa: number; previa: boolean }) {
   const atual = props.pecas[props.ativo]?.tipo ?? '';
@@ -34,6 +40,7 @@ export function AbasPorEtapa(props: { pecas: Peca[]; ativo: number; mudar: (i: n
         const lista = props.pecas.map((p, i) => ({ ...p, i })).filter((p) => (ETAPA_PECA[p.tipo] ?? 4) === g.etapa);
         const aberto = abertos.has(g.etapa);
         const vistas = lista.filter((p) => sit(p.tipo) !== 'novo').length;
+        const essencial = lista.reduce((s, p) => s + (p.tempo?.nivel === 'essencial' ? p.tempo.minutos ?? 0 : 0), 0);
         if (!lista.length) {
           if (props.previa || props.etapa >= g.etapa) return null;
           return (
@@ -47,7 +54,7 @@ export function AbasPorEtapa(props: { pecas: Peca[]; ativo: number; mudar: (i: n
             <button type="button" className="lei-grupo-cab" aria-expanded={aberto}
               onClick={() => setAbertos((a) => { const b = new Set(a); if (b.has(g.etapa)) b.delete(g.etapa); else b.add(g.etapa); return b; })}>
               <span className="lei-grupo-tit">{g.titulo}</span>
-              <span className="lei-grupo-resumo">{vistas} de {lista.length} {lista.length === 1 ? 'vista' : 'vistas'}</span>
+              <span className="lei-grupo-resumo">{vistas} de {lista.length} {lista.length === 1 ? 'vista' : 'vistas'}{essencial > 0 ? ` · essencial: cerca de ${essencial} min` : ''}</span>
               <span aria-hidden="true">{aberto ? '−' : '+'}</span>
             </button>
             {aberto && (
@@ -58,7 +65,8 @@ export function AbasPorEtapa(props: { pecas: Peca[]; ativo: number; mudar: (i: n
                     <button key={p.tipo} type="button" className={`lei-peca ${sit(p.tipo)}${p.i === props.ativo ? ' ativa' : ''}`}
                       aria-current={p.i === props.ativo ? 'page' : undefined} onClick={() => props.mudar(p.i)}>
                       <span className="lei-peca-marca" aria-hidden="true">{s.marca}</span>
-                      <span>{NOME_PECA[p.tipo] ?? p.titulo}</span>
+                      <span className="lei-peca-nome">{NOME_PECA[p.tipo] ?? p.titulo}
+                        {rotuloTempo(p.tempo) && <span className={`lei-peca-tempo ${p.tempo?.nivel ?? ''}`}>{rotuloTempo(p.tempo)}</span>}</span>
                       <span className="so-leitor">, {s.texto}</span>
                     </button>
                   );

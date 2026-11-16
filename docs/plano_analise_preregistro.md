@@ -1,6 +1,6 @@
 # CUT · Plano de análise para pré-registro
 
-Versão 1.1 (decisões da coordenação incorporadas; falta a revisão de um estatístico) · 16/11/2026
+Versão 1.2 (decisões da coordenação incorporadas; falta a revisão de um estatístico) · 16/11/2026
 
 Este plano deve ser registrado (OSF Registries ou equivalente) **antes da abertura do primeiro pré-teste de 2027**, e
 anexado ao protocolo do CEP com o dicionário de dados (`docs/dicionario_dados_pesquisa.md`).
@@ -89,6 +89,11 @@ variáveis. As três comparações são corrigidas por Holm. A diferença é com
 O modelo estima o efeito médio da população, que costuma ser um pouco menor que o efeito "por pessoa" de um modelo de
 efeitos mistos.
 
+**Sensibilidade com as questões âncora.** Cada tema tem de 2 a 3 questões âncora, iguais nas seis ondas e para todos
+os anos (`fixa` na base). O modelo principal é repetido só com elas. Se o efeito for parecido, a diferença entre as
+questões de cada onda não explica o resultado. O aluno vê o gabarito da âncora ao fim de cada onda: isso faz parte da
+intervenção (aprendizagem por testes) e entra nas limitações. Implementado no relatório (seção 5).
+
 **Análise de sensibilidade.** Regressão logística de efeitos mistos (participante, questão e tema como efeitos
 aleatórios), rodada por um estatístico em R, se houver um disponível. Código para o estatístico:
 
@@ -160,7 +165,8 @@ esperado menor, perto de 5 pontos) precisa do ano inteiro. Por isso:
 
 - Sem grupo controle: o ganho do pré-teste ao D0 inclui o efeito de repetir o teste (efeito de testagem), que é parte
   da intervenção.
-- As formas das ondas não são idênticas: cada onda tem questões próprias, além das que se repetem. O efeito aleatório
+- As formas das ondas não são idênticas: cada onda tem questões próprias, além das 2 ou 3 âncoras que se repetem. A
+  âncora repetida, com gabarito visto ao fim de cada onda, mede também a memória da própria questão. O efeito aleatório
   da questão e a análise de itens reduzem esse viés, mas não o eliminam.
 - A aplicabilidade é autorrelatada.
 - Os indicadores clínicos são do serviço como um todo, não só dos residentes do curso, e mudam por outros motivos. Sem

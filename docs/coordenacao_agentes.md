@@ -1,0 +1,74 @@
+# CUT · Rotina da coordenação com agentes
+
+Versão 1.0 · 16/11/2026 · SQL 89, `ponte_coordenacao_v1.0.sh`, aba "Para revisar" do painel.
+
+## O princípio
+
+Os agentes preparam e a coordenação decide. Os agentes não têm acesso ao banco. Eles leem uma pasta e escrevem propostas
+nela. Nada chega ao aluno nem vira parecer sem a decisão de uma pessoa da coordenação (admin, curador ou responsável
+pelos dados) na aba **Para revisar**. Cada proposta tem três saídas:
+
+| Decisão | O que acontece |
+|---|---|
+| Aprovar | O sistema executa como veio: publica a resposta, registra o parecer, envia o lembrete ou lança o indicador. |
+| Aprovar com a alteração | Executa a versão que você editou. A diferença fica guardada. |
+| Vetar | Não executa nada. O motivo é obrigatório e o agente o lê na rodada seguinte. |
+
+A tabela no alto da aba mostra, por agente:
+- o que está aguardando e há quanto tempo;
+- quanto foi aprovado como veio, alterado ou vetado nos últimos 60 dias.
+
+Esse é o termômetro de qualidade: um agente bom tem muita aprovação como veio e pouco veto.
+
+## Como os dados andam
+
+```
+banco do CUT (WSL) --ponte, a cada 10 min--> C:\Users\<você>\CUT_coordenacao\entrada\<agente>.json
+agente (tarefa agendada no computador) lê entrada\ e grava propostas\<agente>_<data>.json
+ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --> execução
+```
+
+- **Onde fica a pasta.** Fora do OneDrive de propósito, porque tem texto das dúvidas e o primeiro nome dos alunos.
+- **Arquivo recusado.** Um arquivo de proposta fora do formato vai para `com_erro\`, com o motivo ao lado.
+- **Dados que os agentes nunca recebem:** e-mail, nome completo, telefone, notas individuais com nome e dados de paciente.
+
+## Os cinco agentes
+
+| Agente | Quando roda | Entrada | O que propõe | Ao aprovar |
+|---|---|---|---|---|
+| Dúvidas dos alunos | Todo dia, 6h40 | Dúvidas sem resposta, material publicado do tema, respostas anteriores | Resposta (`resposta`) ou alerta (`alerta`: dado de paciente, pergunta fora do escopo, conduta de caso real) | A resposta é publicada e o aluno é avisado |
+| Revisor de conteúdo | Todo dia, 5h50 | Até 40 afirmações sem parecer, cada uma com o trecho citado e o contexto da fonte; referências do tema | Parecer sugerido por afirmação: aprovar, conferir melhor ou reprovar (`parecer`) | O parecer entra na revisão em seu nome, marcado como sugerido pelo agente |
+| Pré-revisão das peças | Todo dia, 5h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo e a versão publicada anterior | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
+| Alunos atrasados | Segunda-feira, 7h10 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
+| Indicadores clínicos | Dia 5 de cada mês, 8h20 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
+
+## Prazos da coordenação
+
+- **Dúvidas.** Resposta publicada em até 24 horas: o agente roda de manhã e a revisão é diária. A aba avisa as dúvidas
+  sem resposta há mais de 24 horas.
+- **Peças e conteúdo.** Revisão diária do que chegou.
+- **Atrasados.** Decisão na segunda-feira, para o lembrete sair no mesmo dia.
+- **Indicadores.** Lançamento até o dia 10 do mês seguinte.
+
+## Formato do arquivo de propostas
+
+```json
+{"agente": "duvidas", "rodada": "2026-11-16 06:40",
+ "propostas": [{"tipo": "resposta", "alvo": {"mensagem_id": 12}, "titulo": "...",
+   "proposta": {"texto": "..."}, "justificativa": "...", "fontes": [{"titulo": "...", "pmid": "...", "trecho": "..."}],
+   "confianca": "alta"}]}
+```
+
+| Tipo | alvo | proposta |
+|---|---|---|
+| resposta | mensagem_id | texto |
+| alerta | mensagem_id | texto |
+| parecer | artefato_id, afirmacao_codigo | sugestao (aprovar, conferir, reprovar), decisao (correto, erro_leve, erro_critico ou vazio), comentario, evidencias |
+| pre_revisao | artefato_id, versao | veredito (pronta, ajustar, refazer), resumo, itens [{tipo, trecho, problema, correcao}] |
+| relatorio | semana | texto |
+| lembrete | pessoa_id, semana | assunto, texto, pendencias |
+| lancamento | indicador, mes (AAAA-MM-01) | numerador, denominador, fonte, nome |
+| pendencia | mes | texto |
+
+As skills de cada agente detalham o modo de trabalho: `cut-agente-duvidas`, `cut-agente-revisor-conteudo`,
+`cut-agente-pecas`, `cut-agente-atrasados` e `cut-agente-indicadores`.

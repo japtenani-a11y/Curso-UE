@@ -164,3 +164,56 @@
 .grade-inicio > * { min-width: 0; }
 .grade-inicio .botao { white-space: normal; }
 .int-cal-linha { grid-template-columns: 120px 1fr 110px; }
+/* tempo de estudo e conferencia de formato (88) */
+.lei-peca-nome { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.2; text-align: left; }
+.lei-peca-tempo { font-size: 12px; font-weight: 400; color: var(--cut-text-muted); }
+.lei-peca-tempo.essencial { color: var(--cut-text); font-weight: 600; }
+.lei-peca.ativa .lei-peca-tempo { color: var(--cut-on-action); }
+.formato { border: 1px solid var(--cut-line-strong); background: var(--cut-surface-sunken); color: var(--cut-text); border-radius: var(--cut-r-md); padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+.formato.erro { border-color: var(--cut-incorrect); background: var(--cut-incorrect-bg); }
+.formato.ok { border: 0; background: none; padding: 0; color: var(--cut-text-muted); }
+.formato ul { margin: 6px 0 0; padding-left: 18px; }
+.formato-tipo { font-weight: 700; margin-right: 4px; }
+/* telas de formulario no padrao do Design System (Contato e outras) */
+.tela-form { max-width: 640px; margin: 0 auto; padding: 16px; color: var(--cut-text); font-family: var(--cut-font); }
+.tela-form h1 { font-size: 20px; }
+.tela-form .campo-rotulo { display: block; margin: 0 0 12px; }
+.tela-form .campo { display: block; width: 100%; min-height: var(--cut-tap, 44px); padding: 8px 10px; font: inherit; font-size: 16px; margin-top: 4px; border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-sm); background: var(--cut-surface-raised); color: var(--cut-text); }
+.tela-form .opcao { display: flex; gap: 8px; align-items: center; min-height: var(--cut-tap, 44px); }
+.tela-form .nota { font-size: 13px; color: var(--cut-text-muted); }
+.tela-form .status { background: var(--cut-surface-sunken); padding: 8px 10px; border-radius: var(--cut-r-sm); }
+.tela-form .acoes { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+/* aba "Para revisar" do painel (89) */
+.pr { max-width: 900px; }
+.pr-intro { color: var(--cut-text-muted); }
+.pr-agentes { border-collapse: collapse; width: 100%; font-size: 14px; margin: 8px 0 16px; }
+.pr-agentes th, .pr-agentes td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--cut-line); vertical-align: top; }
+.pr-filtro { background: none; border: 0; padding: 0; font: inherit; font-weight: 600; color: var(--cut-action); cursor: pointer; text-decoration: underline; min-height: 24px; }
+.pr-filtro.sel { color: var(--cut-text); text-decoration: none; }
+.pr-modo { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+.pr-cartao { border: 1px solid var(--cut-line); border-radius: var(--cut-r-md); background: var(--cut-surface-raised); color: var(--cut-text); padding: 14px 16px; margin: 0 0 14px; }
+.pr-cartao.vetada { border-left: 4px solid var(--cut-incorrect); }
+.pr-cartao.aprovada, .pr-cartao.alterada { border-left: 4px solid var(--cut-correct); }
+.pr-cab h3 { margin: 2px 0 4px; font-size: 16px; }
+.pr-agente { font-size: 12px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--cut-text-muted); }
+.pr-meta, .pr-contexto { font-size: 13px; color: var(--cut-text-muted); margin: 4px 0; }
+.pr-pergunta { margin: 8px 0; padding: 8px 12px; border-left: 3px solid var(--cut-line-strong); background: var(--cut-surface-sunken); white-space: pre-wrap; }
+.pr-trecho span, .pr-corr { font-weight: 600; }
+.pr-sugestao { display: inline-block; font-weight: 700; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--cut-line-strong); margin: 6px 0; }
+.pr-sugestao.aprovar, .pr-sugestao.pronta { border-color: var(--cut-correct); background: var(--cut-correct-bg); }
+.pr-sugestao.reprovar, .pr-sugestao.refazer { border-color: var(--cut-incorrect); background: var(--cut-incorrect-bg); }
+.pr-campo { display: block; margin: 8px 0; font-size: 14px; font-weight: 600; }
+.pr-campo textarea, .pr-campo input { display: block; width: 100%; margin-top: 4px; padding: 8px 10px; font: 400 15px/1.45 var(--cut-font); border: 1px solid var(--cut-line-strong); border-radius: var(--cut-r-sm); background: var(--cut-surface); color: var(--cut-text); }
+.pr-texto { white-space: pre-wrap; font-weight: 400; margin: 4px 0; }
+.pr-decisao { border: 1px solid var(--cut-line); border-radius: var(--cut-r-sm); display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 8px 0; }
+.pr-decisao label { min-height: 32px; display: inline-flex; gap: 6px; align-items: center; }
+.pr-itens { margin: 6px 0; padding-left: 20px; }
+.pr-itens li { margin: 4px 0; }
+.pr-tipo { font-size: 12px; font-weight: 700; color: var(--cut-text-muted); }
+.pr-fontes, .pr-just { font-size: 14px; margin: 6px 0; }
+.pr-acoes { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; margin-top: 10px; }
+.pr-veto { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; width: 100%; }
+.botao.pr-vetar { border-color: var(--cut-incorrect); color: var(--cut-incorrect); background: transparent; }
+.pr-alerta { color: var(--cut-incorrect); font-weight: 600; }
+.pr-msg { color: var(--cut-incorrect); }
+.pr-vazio { color: var(--cut-text-muted); }
