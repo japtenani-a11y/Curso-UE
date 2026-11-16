@@ -105,9 +105,9 @@ Instalar: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--a
 `PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql`.
 Os agentes revisam só os textos novos ou alterados. O áudio do podcast precisa ser gerado de novo.
 
-## Banco de questões e peças depois da pré-revisão (CUT_v2z8)
+## Banco de questões e peças depois da pré-revisão (CUT_v2z8 e CUT_v2z9)
 
-Este pacote inclui tudo da v2z7. Quem ainda não instalou a v2z7 instala só este.
+A v2z9 inclui tudo da v2z7 e da v2z8; quem ainda não instalou nenhuma das duas instala só a v2z9. A v2z9 acrescenta à v2z8 só o nome do curso na abertura do podcast ("CUT, o Curso de Cirurgia Geral, Urgência e Trauma").
 
 - **Questões (questoes.json), 169 de 193 reescritas:**
   - as alternativas absurdas ("Nada", "Nenhum", "Zero", "Esperar", "Punição", "Endoscopia") viraram erros plausíveis;

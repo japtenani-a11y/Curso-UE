@@ -4,7 +4,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 10 a 12 minut
 
 ---
 
-**PRECEPTOR:** Olá, este é o episódio do tema um do Programa de Cirurgia de Urgência e Trauma. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
+**PRECEPTOR:** Olá, este é o episódio do tema um do CUT, o Curso de Cirurgia Geral, Urgência e Trauma. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
 
 **RESIDENTE:** Olá! E eu já chego com uma pergunta que sempre quis fazer: todo mundo faz o ATLS, todo mundo repete o ABCDE... mas isso salva vidas mesmo? Existe prova?
 
