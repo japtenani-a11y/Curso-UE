@@ -129,6 +129,10 @@
 - As respostas definitivas continuam imutáveis. Enquanto o teste está aberto, elas ficam num rascunho (app.resposta_rascunho) e só vão para app.resposta no envio.
 - Painel: nova aba "Certeza por questão", com acerto por nível de certeza e erros com alta certeza, por aluno, tema e teste.
 - Corrigido: a contagem de acertos do gabarito comparava códigos em formatos diferentes (texto e número) e podia mostrar zero.
+- Sem internet: a resposta fica guardada no aparelho e vai ao servidor quando a conexão volta. Um aviso fixo no alto avisa que está sem conexão, e o envio do teste espera a conexão.
+- As mensagens de erro agora dizem o motivo: sem conexão, teste ainda bloqueado, fora do prazo, grau não cadastrado ou sessão expirada.
+- Início: os testes pendentes aparecem num cartão em destaque, com o botão "Responder agora" levando direto ao teste e um aviso quando o prazo está perto do fim.
+- Todas as telas usam as cores e a fonte do CUT (script 77).
 - Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 76 (banco) e o 76_certeza_app (aplicativo).
 
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)

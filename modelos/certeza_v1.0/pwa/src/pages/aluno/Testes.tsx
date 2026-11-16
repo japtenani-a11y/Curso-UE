@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { apiGet, apiPost } from '../../lib/api.js';
+import { apiGet } from '../../lib/api.js';
 import { Avaliacao, Pergunta } from '../../components/Engajamento.js';
 import { ComparativoTeste } from '../../components/Comparativo.js';
 
@@ -31,6 +31,32 @@ function codigoDoTema(): string {
 }
 // o banco devolve alguns codigos como texto e outros como numero: comparar sempre como numero
 const mesmo = (a: unknown, b: unknown) => a != null && b != null && Number(a) === Number(b);
+// Pedido com o codigo de erro da API, para mensagens separadas (sem conexao, prazo, bloqueio, perfil).
+const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
+async function pedir<T>(metodo: 'GET' | 'POST', caminho: string, corpo?: unknown): Promise<{ ok: true; dados: T } | { ok: false; status: number; erro: string; faltam?: number }> {
+  try {
+    const r = await fetch(`${BASE}${caminho}`, { method: metodo, credentials: 'include', headers: corpo ? { 'Content-Type': 'application/json' } : undefined, body: corpo ? JSON.stringify(corpo) : undefined });
+    const j = await r.json().catch(() => ({}));
+    return r.ok ? { ok: true, dados: j as T } : { ok: false, status: r.status, erro: String(j.erro ?? ''), faltam: j.faltam };
+  } catch { return { ok: false, status: 0, erro: 'sem_conexao' }; }
+}
+const MSG: Record<string, string> = {
+  sem_conexao: 'Sem conexão com o servidor. Verifique a internet e tente de novo; suas respostas ficam guardadas neste aparelho.',
+  teste_bloqueado: 'Este teste abre depois que você enviar o teste anterior do tema.',
+  onda_fechada: 'Este teste não está aberto agora: ou ainda não abriu, ou o prazo terminou. Veja a data na lista.',
+  prazo_encerrado: 'O prazo deste teste terminou antes do envio. As respostas não foram enviadas.',
+  perfil_nao_cadastrado: 'Seu grau (R1, R2, R3 ou R+) ainda não está no cadastro. Peça à coordenação para completar.',
+  teste_ja_submetido: 'Este teste já foi enviado. O gabarito está liberado.',
+  gabarito_bloqueado: 'O gabarito só é liberado depois que você envia o teste.',
+  sem_sessao: 'Sua sessão expirou. Entre de novo para continuar; as respostas ficam guardadas neste aparelho.',
+};
+const msg = (erro: string, padrao: string) => MSG[erro] ?? padrao;
+// Respostas ainda nao confirmadas pelo servidor ficam no aparelho (localStorage), por onda.
+type Local = Record<number, { alt: number; cert?: number }>;
+const chave = (onda: number) => `cut_respostas_${onda}`;
+function lerLocal(onda: number): Local { try { return JSON.parse(localStorage.getItem(chave(onda)) ?? '{}') as Local; } catch { return {}; } }
+function gravarLocal(onda: number, l: Local) { try { if (Object.keys(l).length) localStorage.setItem(chave(onda), JSON.stringify(l)); else localStorage.removeItem(chave(onda)); } catch { /* aparelho sem armazenamento */ } }
+
 const acertou = (i: Item) => i.alternativas.some((a) => a.correta && mesmo(a.alternativa_id, i.escolhida));
 
 export function Testes() {
@@ -43,6 +69,12 @@ export function Testes() {
   const [revisar, setRevisar] = useState(false);
   const [salvo, setSalvo] = useState<'' | 'salvando' | 'salvo' | 'falhou'>('');
   const [erro, setErro] = useState<string | null>(null);
+  const [online, setOnline] = useState(() => navigator.onLine);
+  useEffect(() => {
+    const on = () => { setOnline(true); void enviarPendentes(); }, off = () => setOnline(false);
+    window.addEventListener('online', on); window.addEventListener('offline', off);
+    return () => { window.removeEventListener('online', on); window.removeEventListener('offline', off); };
+  });
   const entrouEm = useRef<number>(Date.now());
   const tempos = useRef<Record<number, number>>({});
   const topo = useRef<HTMLElement>(null);
@@ -55,21 +87,26 @@ export function Testes() {
 
   async function abrir(ondaId: number) {
     setErro(null); setGab(null); setRevisar(false); setSalvo('');
-    try {
-      const d = await apiGet<Aberto>(`/teste/ondas/${ondaId}`);
+    {
+      const r = await pedir<Aberto>('GET', `/teste/ondas/${ondaId}`);
+      if (!r.ok) { setErro(msg(r.erro, 'Não foi possível abrir este teste agora. Tente de novo em instantes.')); return; }
+      const d = r.dados;
       const m: Record<number, number> = {}, c: Record<number, number> = {};
       d.itens.forEach((i) => { if (i.resposta) m[i.item_id] = Number(i.resposta); if (i.certeza) c[i.item_id] = Number(i.certeza); });
+      const local = lerLocal(ondaId);
+      Object.entries(local).forEach(([k, v]) => { m[Number(k)] = v.alt; if (v.cert) c[Number(k)] = v.cert; });
       setMarcadas(m); setCertezas(c); tempos.current = {};
       const primeira = d.itens.findIndex((i) => !m[i.item_id] || !c[i.item_id]);
       setIdx(primeira < 0 ? 0 : primeira); setRevisar(primeira < 0 && d.itens.length > 0);
       setAberto({ ondaId, dados: d });
-    } catch { setErro('Este teste não está disponível agora (ainda não liberado, fora do prazo) ou seu perfil (grau) não está cadastrado.'); }
+      if (Object.keys(local).length) void enviarPendentes(ondaId);
+    }
   }
 
   async function verGabarito(ondaId: number) {
     setErro(null); setAberto(null);
-    try { const g = await apiGet<{ itens: Item[] }>(`/teste/ondas/${ondaId}/gabarito`); setGab({ ondaId, itens: g.itens }); }
-    catch { setErro('O gabarito só é liberado depois que você envia o teste.'); }
+    const r = await pedir<{ itens: Item[] }>('GET', `/teste/ondas/${ondaId}/gabarito`);
+    if (r.ok) setGab({ ondaId, itens: r.dados.itens }); else setErro(msg(r.erro, 'Não foi possível abrir o gabarito agora.'));
   }
 
   function tempoDe(itemId: number): number {
@@ -78,11 +115,20 @@ export function Testes() {
   }
   async function salvar(itemId: number, alt: number | undefined, cert: number | undefined) {
     if (!aberto || !alt) return;
+    const onda = aberto.ondaId;
+    const l = lerLocal(onda); l[itemId] = { alt, cert }; gravarLocal(onda, l);
     setSalvo('salvando');
-    try {
-      await apiPost(`/teste/ondas/${aberto.ondaId}/respostas`, { respostas: [{ item_id: itemId, alternativa_id: alt, certeza: cert ?? null, tempo_resposta_ms: tempoDe(itemId) }], submeter: false });
-      setSalvo('salvo');
-    } catch { setSalvo('falhou'); }
+    const r = await pedir('POST', `/teste/ondas/${onda}/respostas`, { respostas: [{ item_id: itemId, alternativa_id: alt, certeza: cert ?? null, tempo_resposta_ms: tempoDe(itemId) }], submeter: false });
+    if (r.ok) { const l2 = lerLocal(onda); if (l2[itemId]?.alt === alt && l2[itemId]?.cert === cert) { delete l2[itemId]; gravarLocal(onda, l2); } setSalvo('salvo'); }
+    else setSalvo('falhou');
+  }
+  // Reenvia o que ficou guardado no aparelho (quando a conexao volta ou ao reabrir o teste).
+  async function enviarPendentes(ondaId = aberto?.ondaId) {
+    if (!ondaId) return;
+    const l = lerLocal(ondaId); const itens = Object.entries(l);
+    if (!itens.length) return;
+    const r = await pedir('POST', `/teste/ondas/${ondaId}/respostas`, { respostas: itens.map(([k, v]) => ({ item_id: Number(k), alternativa_id: v.alt, certeza: v.cert ?? null })), submeter: false });
+    if (r.ok) { gravarLocal(ondaId, {}); setSalvo('salvo'); }
   }
   function escolher(itemId: number, alt: number) { setMarcadas((m) => ({ ...m, [itemId]: alt })); void salvar(itemId, alt, certezas[itemId]); }
   function marcarCerteza(itemId: number, c: number) { setCertezas((x) => ({ ...x, [itemId]: c })); void salvar(itemId, marcadas[itemId], c); }
@@ -91,14 +137,20 @@ export function Testes() {
     if (!aberto) return;
     const faltam = aberto.dados.itens.filter((i) => !marcadas[i.item_id] || !certezas[i.item_id]).length;
     if (faltam > 0) { setErro(`Faltam ${faltam} questão(ões) com alternativa ou certeza.`); return; }
-    try {
-      await apiPost(`/teste/ondas/${aberto.ondaId}/respostas`, {
+    if (!online) { setErro('Sem internet agora. Suas respostas estão guardadas neste aparelho; envie quando a conexão voltar.'); return; }
+    {
+      const r = await pedir('POST', `/teste/ondas/${aberto.ondaId}/respostas`, {
         respostas: aberto.dados.itens.map((i) => ({ item_id: i.item_id, alternativa_id: marcadas[i.item_id], certeza: certezas[i.item_id], tempo_resposta_ms: tempos.current[i.item_id] ?? null })),
         submeter: true,
       });
       const ondaId = aberto.ondaId;
+      if (!r.ok && r.erro !== 'teste_ja_submetido') {
+        setErro(r.erro === 'faltam_respostas' ? `O servidor ainda não tem ${r.faltam ?? 'algumas'} questão(ões) com alternativa e certeza. Confira a revisão e envie de novo.` : msg(r.erro, 'Não foi possível enviar agora. Tente de novo em instantes.'));
+        return;
+      }
+      gravarLocal(ondaId, {});
       setAberto(null); carregar(); await verGabarito(ondaId);
-    } catch { setErro('Falha ao enviar as respostas. Verifique a conexão; se o prazo do teste terminou, ele não aceita mais respostas.'); }
+    }
   }
 
   if (!lista) return <p className="carregando">{erro ?? 'Carregando…'}</p>;
@@ -111,6 +163,7 @@ export function Testes() {
         <h1>{lista.tema.titulo}</h1>
         <a href={`/aluno/leitura/${lista.tema.codigo.replace('-', '')}`}>Material do tema</a>
       </header>
+      {!online && <p className="tst2-offline" role="status">Sem internet. Suas respostas ficam guardadas neste aparelho e são enviadas quando a conexão voltar. Para enviar o teste, é preciso estar conectado.</p>}
       {erro && <p className="tst2-aviso" role="alert">{erro}</p>}
 
       {!aberto && !gab && (
@@ -134,7 +187,7 @@ export function Testes() {
           <div className="tst2-questao">
             <div className="tst2-progresso">
               <span><b>{NOMES[aberto.dados.teste_num]}</b> · questão {idx + 1} de {itens.length}</span>
-              <span className="tst2-meta" aria-live="polite">{salvo === 'salvando' ? 'Salvando…' : salvo === 'salvo' ? 'Resposta salva' : salvo === 'falhou' ? 'Não salvou: verifique a conexão' : `${prontas} de ${itens.length} respondidas`}</span>
+              <span className="tst2-meta" aria-live="polite">{salvo === 'salvando' ? 'Salvando…' : salvo === 'salvo' ? 'Resposta salva' : salvo === 'falhou' ? 'Guardada neste aparelho; vai ao servidor quando a conexão voltar' : `${prontas} de ${itens.length} respondidas`}</span>
               <span className="tst2-barra" aria-hidden="true"><i style={{ width: `${(100 * prontas) / itens.length}%` }} /></span>
             </div>
             {idx >= 1 && aberto.dados.caso && (

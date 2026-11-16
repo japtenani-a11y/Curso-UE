@@ -6,6 +6,7 @@
 .tst2-rot { font: 600 12px/16px var(--cut-font); letter-spacing: 1.5px; text-transform: uppercase; color: var(--cut-text-muted); }
 .tst2-meta { display: block; font-size: 13px; color: var(--cut-text-muted); }
 .tst2-aviso { margin: 0; background: var(--cut-incorrect-bg); border: 1px solid var(--cut-incorrect); border-radius: var(--cut-r-md); padding: 10px 12px; }
+.tst2-offline { position: sticky; top: 8px; z-index: 5; margin: 0; background: var(--cut-surface-raised); box-shadow: var(--cut-sombra); border: 1px dashed var(--cut-line-strong); border-radius: var(--cut-r-md); padding: 10px 12px; font-size: 14px; }
 .tst2-btn { min-height: var(--cut-tap); padding: 8px 18px; border-radius: var(--cut-r-md); border: 1px solid var(--cut-line-strong); background: var(--cut-surface); color: var(--cut-text); font: 600 15px var(--cut-font); cursor: pointer; }
 .tst2-btn.prim { background: var(--cut-action); color: var(--cut-on-action); border-color: var(--cut-action); }
 .tst2-btn:disabled { opacity: .45; cursor: not-allowed; }
@@ -72,3 +73,16 @@
 
 @media (max-width: 560px) { .tst2-resumo { grid-template-columns: repeat(2, 1fr); } .tst2-cartao { padding: 14px; } }
 @media (max-width: 370px) { .tst2-certeza .opcoes { grid-template-columns: 1fr; } }
+/* testes pendentes no Inicio */
+.pend-cut { font-family: var(--cut-font); background: var(--cut-surface-raised); border: 2px solid var(--cut-action); border-radius: var(--cut-r-lg); padding: 14px 16px; margin: 8px 0 14px; display: flex; flex-direction: column; gap: 10px; }
+.pend-rot { font: 600 12px/16px var(--cut-font); letter-spacing: 1.5px; text-transform: uppercase; color: var(--cut-text-muted); }
+.pend-item { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; border-top: 1px solid var(--cut-line); padding-top: 10px; }
+.pend-item:first-of-type { border-top: 0; padding-top: 0; }
+.pend-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 240px; }
+.pend-txt strong { font-size: 16px; color: var(--cut-text); }
+.pend-txt span { font-size: 14px; color: var(--cut-text); }
+.pend-txt small { font-size: 13px; color: var(--cut-text-muted); }
+.pend-item.urgente small { color: var(--cut-incorrect); font-weight: 700; }
+.pend-acoes { display: flex; gap: 8px; align-items: center; }
+.pend-btn { min-height: var(--cut-tap); display: inline-flex; align-items: center; padding: 8px 18px; border-radius: var(--cut-r-md); background: var(--cut-action); color: var(--cut-on-action); font: 600 15px var(--cut-font); text-decoration: none; }
+.pend-dispensar { min-height: var(--cut-tap); padding: 6px 12px; border: 0; background: none; color: var(--cut-text-muted); text-decoration: underline; cursor: pointer; font: 500 14px var(--cut-font); }

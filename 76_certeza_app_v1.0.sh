@@ -7,6 +7,8 @@
 #  - Revisao antes de enviar; o envio exige alternativa e certeza em todas.
 #  - Gabarito em azul (acerto) e laranja (erro), com icone e texto, a certeza marcada e os erros com
 #    "tenho certeza" destacados no alto. Substitui a confianca unica de 0 a 100% por teste.
+#  - Respostas guardadas tambem no aparelho quando a internet cai; aviso de sem conexao; mensagens de erro separadas.
+#  - Inicio: testes pendentes em destaque, com botao direto para responder.
 #  - API (/teste): grava e devolve a certeza. Painel: aba "Certeza por questao" (vem do 61).
 # USO: bash 76_certeza_app_v1.0.sh ./programa-cut
 # PRE-REQUISITO: 40, 56, 61, 74, 75 (scripts) e, no banco, 76_certeza_questao_v1.0.sql. Pode ser rodado mais de uma vez.
@@ -20,6 +22,7 @@ API="$RAIZ/api/src"; PWA="$RAIZ/pwa/src"
 [ -f "$API/routes/teste.ts" ] || { echo "ERRO: rode antes o 40_testes_aluno_v1.0.sh"; exit 1; }
 grep -q -- "--cut-surface" "$PWA/estilo.css" || { echo "ERRO: rode antes o 75_arvore_app_v1.0.sh (tema CUT)"; exit 1; }
 cp "$M/pwa/src/pages/aluno/Testes.tsx" "$PWA/pages/aluno/Testes.tsx"
+cp "$M/pwa/src/components/Lembretes.tsx" "$PWA/components/Lembretes.tsx"
 python3 - "$PWA/estilo.css" "$M/estilo_testes.css" "testes v2 (uma" <<'PY'
 import sys
 css, novo, marca = sys.argv[1], open(sys.argv[2]).read(), sys.argv[3]
