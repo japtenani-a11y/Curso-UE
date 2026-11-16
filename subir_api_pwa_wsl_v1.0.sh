@@ -62,6 +62,9 @@ if [ -f 75_arvore_app_v1.0.sh ]; then bash 75_arvore_app_v1.0.sh "$RAIZ" >> "$RA
 if [ -f 76_certeza_app_v1.0.sh ]; then bash 76_certeza_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "76_certeza_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 77_tema_cut_app_v1.0.sh ]; then bash 77_tema_cut_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "77_tema_cut_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 78_perfis_app_v1.0.sh ]; then bash 78_perfis_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "78_perfis_app falhou; veja $RAIZ/logs/gerar.log"; fi
+# Conferencia: a tela gerada tem de ser a do CUT (se aparecer a antiga, faltou o git pull ou algum script nao rodou)
+grep -q "CUT · Curso" "$RAIZ/pwa/index.html" || falhar "a tela nova do CUT nao foi gerada; rode 'git pull origin executor-v2' e de novo este script"
+echo "versao instalada: $(git log -1 --format='%h %cd' --date=format:'%d/%m %H:%M' 2>/dev/null || echo 'sem git')"
 echo "      ok"
 
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
