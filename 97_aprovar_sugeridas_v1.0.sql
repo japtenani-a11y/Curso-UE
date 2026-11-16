@@ -1,12 +1,14 @@
 -- ============================================================
 -- 97_aprovar_sugeridas_v1.0.sql
--- OBJETIVO: botão "Aprovar o que os agentes sugerem aprovar" na tela Revisão > Para revisar.
--- Aprova de uma vez, como vieram, só as propostas em que o agente sugere liberar:
+-- OBJETIVO: botão "Aprovar tudo o que os agentes sugerem liberar" na tela Revisão > Para revisar.
+-- Aprova de uma vez, como vieram, todas as propostas em que o agente sugere liberar algo:
+--   - respostas a dúvidas, lembretes aos alunos e lançamentos de indicadores (decisão da coordenação, 16/11/2026);
 --   - parecer do revisor de conteúdo com sugestão "aprovar" (o parecer entra como "correto");
---   - pré-revisão das peças com veredito "pronta".
--- Ficam para a coordenação conferir uma a uma: pareceres "conferir melhor" e "reprovar", peças "ajustar" e
--- "refazer", e tudo o que chega ao aluno ou ao banco de indicadores (respostas de dúvidas, lembretes,
--- lançamentos, alertas, relatórios e pendências).
+--   - pré-revisão das peças com veredito "pronta";
+--   - fontes que o triador não sugere recusar.
+-- Ficam para a coordenação, uma a uma: pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer",
+-- fontes com sugestão de recusa, e os avisos que não liberam nada, só pedem leitura (alertas, pendências e
+-- relatórios), para que um alerta sobre um aluno não seja dado como lido sem ninguém ler.
 -- Cada aprovação passa pela mesma função do botão "Aprovar" (app.decidir_proposta): mesma regra de quem pode
 -- decidir e o mesmo registro. Pode ser rodado mais de uma vez.
 -- ============================================================
@@ -17,9 +19,11 @@ BEGIN;
 CREATE OR REPLACE FUNCTION app.proposta_sugere_liberar(p app.proposta_agente)
 RETURNS BOOLEAN LANGUAGE sql IMMUTABLE AS $$
   SELECT p.status = 'aguardando' AND (
-       (p.tipo = 'parecer' AND p.proposta ->> 'sugestao' = 'aprovar'
+       p.tipo IN ('resposta', 'lembrete', 'lancamento')
+    OR (p.tipo = 'parecer' AND p.proposta ->> 'sugestao' = 'aprovar'
                            AND coalesce(nullif(p.proposta ->> 'decisao', ''), 'correto') = 'correto')
-    OR (p.tipo = 'pre_revisao' AND p.proposta ->> 'veredito' = 'pronta'));
+    OR (p.tipo = 'pre_revisao' AND p.proposta ->> 'veredito' = 'pronta')
+    OR (p.tipo = 'fonte' AND lower(coalesce(p.proposta ->> 'recusar', 'false')) NOT IN ('true', 'sim', '1')));
 $$;
 
 CREATE OR REPLACE FUNCTION app.aprovar_sugeridas(p_agente TEXT DEFAULT NULL)

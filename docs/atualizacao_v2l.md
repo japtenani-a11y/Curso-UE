@@ -387,6 +387,6 @@
 ## Revisão: propostas dos agentes no menu Revisão e aprovação em lote (97) — CUT_v2z5
 
 - **"Para revisar" saiu do Painel** e foi para o menu **Revisão**, ao lado dos rascunhos do tema: a tela abre em "Para revisar (N)" e o outro botão leva aos "Rascunhos do T001". O link "abrir a peça" de uma proposta abre direto nos rascunhos.
-- **Botão "Aprovar o que os agentes sugerem aprovar (N)"**: aprova de uma vez, como vieram, os pareceres de conteúdo com sugestão "aprovar" (entram como "correto") e as peças com veredito "pronta". Pede confirmação e diz o que vai aprovar. Respeita o filtro por agente.
-- **Continuam uma a uma:** pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer", respostas a dúvidas, lembretes e lançamentos de indicadores (estes chegam ao aluno ou ao registro, por isso não entram no lote).
+- **Botão "Aprovar tudo o que os agentes sugerem liberar (N)"**: aprova de uma vez, como vieram, as respostas a dúvidas, os lembretes aos alunos, os lançamentos de indicadores, os pareceres de conteúdo com sugestão "aprovar" (entram como "correto"), as peças com veredito "pronta" e as fontes sem sugestão de recusa. Pede confirmação e diz quantas de cada tipo vai aprovar. Respeita o filtro por agente.
+- **Continuam uma a uma:** pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer", fontes com sugestão de recusa, e alertas, pendências e relatórios (não liberam nada, pedem leitura; um alerta sobre um aluno não pode ser dado como lido em lote).
 - Cada aprovação em lote fica registrada com o motivo "aprovada em lote: o agente sugeriu aprovar".

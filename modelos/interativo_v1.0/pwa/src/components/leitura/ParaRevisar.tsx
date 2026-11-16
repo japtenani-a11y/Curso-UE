@@ -25,8 +25,15 @@ const VEREDITO: Record<string, string> = { pronta: 'Pronta para a revisão de co
 
 // mesma regra do banco (app.proposta_sugere_liberar, 97): o agente sugere liberar
 const sugereLiberar = (p: Proposta) => p.status === 'aguardando' && (
-  (p.tipo === 'parecer' && p.proposta.sugestao === 'aprovar' && (!p.proposta.decisao || p.proposta.decisao === 'correto'))
-  || (p.tipo === 'pre_revisao' && p.proposta.veredito === 'pronta'));
+  ['resposta', 'lembrete', 'lancamento'].includes(p.tipo)
+  || (p.tipo === 'parecer' && p.proposta.sugestao === 'aprovar' && (!p.proposta.decisao || p.proposta.decisao === 'correto'))
+  || (p.tipo === 'pre_revisao' && p.proposta.veredito === 'pronta')
+  || (p.tipo === 'fonte' && !p.proposta.recusar));
+const ROTULO_LOTE: Record<string, string> = {
+  resposta: 'resposta(s) a dúvidas (vão para os alunos)', lembrete: 'lembrete(s) aos alunos (saem por e-mail e aviso)',
+  lancamento: 'lançamento(s) de indicadores', parecer: 'parecer(es) de conteúdo "aprovar" (entram como correto)',
+  pre_revisao: 'peça(s) "pronta"', fonte: 'fonte(s) sem sugestão de recusa',
+};
 
 const s = (v: unknown) => (v === null || v === undefined ? '' : String(v));
 const data = (v: string | null) => (v ? new Date(v).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : '');
@@ -227,8 +234,8 @@ export function ParaRevisar() {
   if (!d) return <p className="carregando">Carregando…</p>;
   const lista = d.propostas.filter((p) => !filtro || p.agente === filtro);
   const sugeridas = modo === 'aguardando' ? lista.filter(sugereLiberar) : [];
-  const nPar = sugeridas.filter((p) => p.tipo === 'parecer').length;
-  const nPec = sugeridas.length - nPar;
+  const porTipo = Object.entries(sugeridas.reduce<Record<string, number>>((m, p) => ({ ...m, [p.tipo]: (m[p.tipo] ?? 0) + 1 }), {}))
+    .map(([t, n]) => `${n} ${ROTULO_LOTE[t] ?? t}`).join('; ');
   async function aprovarLote() {
     setLote({ enviando: true, msg: null });
     const r = await fetch(`${API}/coordenacao/propostas/aprovar-sugeridas`, {
@@ -264,10 +271,10 @@ export function ParaRevisar() {
       {modo === 'aguardando' && sugeridas.length > 0 && (
         <div className="pr-lote">
           {!confirmando
-            ? <button type="button" className="botao" onClick={() => setConfirmando(true)}>Aprovar o que os agentes sugerem aprovar ({sugeridas.length})</button>
+            ? <button type="button" className="botao" onClick={() => setConfirmando(true)}>Aprovar tudo o que os agentes sugerem liberar ({sugeridas.length})</button>
             : <>
-                <p>Vou aprovar como vieram {nPar ? `${nPar} parecer(es) de conteúdo com sugestão "aprovar" (entram como correto)` : ''}{nPar && nPec ? ' e ' : ''}{nPec ? `${nPec} peça(s) com veredito "pronta"` : ''}{filtro ? `, só de ${NOME[filtro] ?? filtro}` : ''}.
-                  Continuam aqui para você conferir: "conferir melhor", "reprovar", peças "ajustar" ou "refazer", respostas a dúvidas, lembretes e lançamentos.</p>
+                <p>Vou aprovar como vieram{filtro ? `, só de ${NOME[filtro] ?? filtro}` : ''}: {porTipo}.
+                  Continuam aqui para você conferir: pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer", fontes com sugestão de recusa, e alertas, pendências e relatórios (pedem leitura).</p>
                 <button type="button" className="botao" disabled={lote.enviando} onClick={aprovarLote}>{lote.enviando ? 'Aprovando…' : 'Confirmar'}</button>
                 <button type="button" className="botao discreto" disabled={lote.enviando} onClick={() => setConfirmando(false)}>Cancelar</button>
               </>}

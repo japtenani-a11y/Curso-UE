@@ -22,7 +22,7 @@ coordenacaoRouter.get('/propostas', async (req, res, next) => {
 const ERROS = ['so_coordenacao', 'proposta_nao_encontrada', 'proposta_ja_decidida', 'decisao_invalida', 'motivo_obrigatorio',
   'escolha_a_decisao', 'lembrete_sem_texto', 'resposta_curta', 'fonte_nao_encontrada'];
 
-// Aprova de uma vez o que o agente sugere liberar (parecer "aprovar", peca "pronta"); o resto fica para conferir.
+// Aprova de uma vez o que o agente sugere liberar (respostas, lembretes, lancamentos, parecer "aprovar", peca "pronta", fonte); o resto fica para conferir.
 // Regra no banco: app.proposta_sugere_liberar e app.aprovar_sugeridas (97).
 coordenacaoRouter.post('/propostas/aprovar-sugeridas', async (req, res, next) => {
   try {
