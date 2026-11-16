@@ -88,7 +88,8 @@ def falas_dos_slides(corpo, caso):
             saida.append(falar(' '.join(x for x in abertura if x.strip())))
             for tit, ls in pontos:
                 t = '\n'.join(ls).strip(); i = t.find('Discussão:')
-                sit = re.sub(r'^Situação:\s*', '', t[:i] if i >= 0 else t, flags=re.M).strip()
+                antes = '\n'.join(x for x in (t[:i] if i >= 0 else t).split('\n') if not re.match(r'^\s*Dica:', x, re.I))
+                sit = re.sub(r'^Situação:\s*', '', antes, flags=re.M).strip()
                 disc = t[i + len('Discussão:'):].strip() if i >= 0 else ''
                 nome = re.sub(r'^Ponto de decisão \d+\s*[—-]\s*', '', tit)
                 saida.append(falar(f"{nome}{'' if nome[-1:] in '?!.' else '.'} {sit} Pense na sua conduta. {disc}"))

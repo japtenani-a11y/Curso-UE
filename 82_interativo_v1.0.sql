@@ -60,13 +60,14 @@ BEGIN
       v_novo := (v_novo - 'refazer') || jsonb_build_object('anteriores', v_ant);
     ELSE
       v_novo := (v_novo - 'refazer') || jsonb_build_object('anteriores', v_ant);
-      -- ponto com discussao ja aberta na tentativa atual: conduta e certeza nao mudam mais (so a comparacao)
+      -- ponto com discussao ja aberta na tentativa atual: conduta e certeza nao mudam mais (so a comparacao e a explicacao)
       IF jsonb_typeof(v_old.estado -> 'pontos') = 'object' THEN
         IF jsonb_typeof(v_novo -> 'pontos') IS DISTINCT FROM 'object' THEN v_novo := jsonb_set(v_novo, '{pontos}', '{}'::jsonb); END IF;
         FOR k IN SELECT jsonb_object_keys(v_old.estado -> 'pontos') LOOP
           IF (v_old.estado -> 'pontos' -> k ->> 'revelado') = 'true' THEN
             v_novo := jsonb_set(v_novo, ARRAY['pontos', k],
-                      (v_old.estado -> 'pontos' -> k) || jsonb_strip_nulls(jsonb_build_object('comparacao', v_novo -> 'pontos' -> k -> 'comparacao')));
+                      (v_old.estado -> 'pontos' -> k) || jsonb_strip_nulls(jsonb_build_object('comparacao', v_novo -> 'pontos' -> k -> 'comparacao',
+                                                                         'explicacao', v_novo -> 'pontos' -> k -> 'explicacao')));
           END IF;
         END LOOP;
       END IF;

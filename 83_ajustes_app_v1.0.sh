@@ -47,7 +47,7 @@ s = trocar(s, "  leitura: 'SELECT * FROM app.painel_leitura()',",
   'app.painel_caso()', 'painel.ts')
 gravar(p, s)
 p = os.path.join(raiz, 'pwa/src/pages/painel/Painel.tsx'); s = ler(p)
-s = trocar(s, "| 'certeza' | 'leitura';", "| 'certeza' | 'leitura' | 'caso' | 'caso_base';", "'caso_base';", 'Painel.tsx')
+s = trocar(s, "| 'certeza' | 'leitura';", "| 'certeza' | 'leitura' | 'caso' | 'caso_base';", "| 'caso' | 'caso_base'", 'Painel.tsx')
 s = trocar(s, "  { id: 'mensagens', rotulo: 'Dúvidas e feedback' },",
   "  { id: 'caso', rotulo: 'Caso da aula' }, { id: 'caso_base', rotulo: 'Caso base' },\n  { id: 'mensagens', rotulo: 'Dúvidas e feedback' },",
   "rotulo: 'Caso da aula'", 'Painel.tsx')

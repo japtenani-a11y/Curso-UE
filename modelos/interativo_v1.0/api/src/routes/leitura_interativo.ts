@@ -9,6 +9,8 @@ import { withMaestro } from '../db/transaction.js';
 //   GET  /leitura/continuar               ultima peca estudada (cartao "Continuar de onde parou" do Inicio)
 //   GET  /leitura/slides/:codigo          quais imagens e audios de slide existem para o tema
 //   GET  /leitura/slides/:codigo/:arquivo slide_NN.png ou slide_NN.mp3 (so com login e com a aula liberada)
+//   GET  /leitura/proxima-acao            a proxima acao do aluno (Inicio)
+//   GET  /leitura/calibracao              acerto por nivel de certeza do aluno (Desempenho)
 // Imagens e audios ficam em programa-cut/slides/<CODIGO>/ (fora do GitHub e fora da pasta publica do aplicativo).
 const REVISORES = ['admin', 'data_steward', 'curador', 'preceptor', 'docente'];
 const ERROS: Record<string, number> = { sem_sessao: 401, nao_liberado: 403, tema_nao_encontrado: 404 };
@@ -56,6 +58,22 @@ export function registrarInterativo(router: Router): void {
       const linha = await withMaestro(null, async (c) => (await c.query('SELECT * FROM app.continuar_estudo()')).rows[0] ?? null);
       res.setHeader('Cache-Control', 'no-store');
       res.json({ continuar: linha });
+    } catch (err) { next(err); }
+  });
+
+  // Inicio: a proxima acao; Desempenho: calibracao da certeza
+  router.get('/proxima-acao', async (req, res, next) => {
+    try {
+      if (!(req as { pessoaId?: number }).pessoaId) { res.status(401).json({ erro: 'sem_sessao' }); return; }
+      const a = await withMaestro(null, async (c) => (await c.query('SELECT app.proxima_acao() AS a')).rows[0]?.a ?? null);
+      res.setHeader('Cache-Control', 'no-store'); res.json({ acao: a });
+    } catch (err) { next(err); }
+  });
+  router.get('/calibracao', async (req, res, next) => {
+    try {
+      if (!(req as { pessoaId?: number }).pessoaId) { res.status(401).json({ erro: 'sem_sessao' }); return; }
+      const a = await withMaestro(null, async (c) => (await c.query('SELECT app.minha_calibracao() AS a')).rows[0]?.a ?? null);
+      res.setHeader('Cache-Control', 'no-store'); res.json(a);
     } catch (err) { next(err); }
   });
 

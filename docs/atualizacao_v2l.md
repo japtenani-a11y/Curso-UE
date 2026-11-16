@@ -257,3 +257,30 @@
   - Diego, R3, estável;
   - Elisa, R4, muito boa mas insegura, e não aceita a pesquisa.
 - `91_apagar_simulacao_v1.0.sql`: apaga tudo o que é simulado. Rodar antes de abrir o curso.
+
+## Experiência do aluno, aprendizagem e pesquisa (85, 86) — CUT_v2r
+
+- **Leitura do tema:** peças agrupadas em "Antes da aula", "Aula" e "Depois da aula", com a marca de visto ou feito.
+- **Início:** "O que fazer agora", uma ação em destaque, na ordem:
+  1. aula agora;
+  2. teste com prazo em até 3 dias;
+  3. continuar o que estudou;
+  4. outro teste;
+  5. revisão do dia;
+  6. próxima aula.
+- **Avisos no celular:** veja `docs/avisos_celular.md`.
+- **Acessibilidade:** as telas novas passaram por checagem automática (nome dos controles, contraste, área de toque e
+  largura de 320 px). Foi corrigido o seletor de temas do estudo dirigido, que passava da tela no celular.
+- **Revisão espaçada das questões** (os flashcards já tinham desde o 73): a questão errada volta em 1 dia; depois
+  em 3, 7, 16, 35 e 90 dias. O estudo dirigido ganhou "Revisão do dia" e o simulado misturado.
+- **Desempenho:** "A sua certeza" mostra o acerto em cada nível de certeza, com uma leitura do que fazer.
+- **Caso da aula:**
+  - depois de abrir a discussão, o aluno escreve em uma frase por que a conduta é essa;
+  - graduação, R1 e R2 podem pedir uma dica em cada ponto (dicas do T001 em rascunho, script 86).
+- **Pesquisa:**
+  - base por resposta com as marcas de qualidade;
+  - análise das questões só com dados válidos;
+  - indicadores clínicos mensais;
+  - dicionário de dados (`docs/dicionario_dados_pesquisa.md`);
+  - plano de análise (`docs/plano_analise_preregistro.md`);
+  - script de análise (`analise/`).

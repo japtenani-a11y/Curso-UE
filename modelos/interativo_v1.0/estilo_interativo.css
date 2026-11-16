@@ -110,3 +110,57 @@
 }
 .int-minha.anterior { border-left-style: dashed; opacity: .9; }
 .int-paciente .int-tabela { margin: 8px 0 12px; }
+.int-dica { margin: 0; background: var(--cut-surface-sunken); border-left: 4px solid var(--cut-action); border-radius: 0 var(--cut-r-md) var(--cut-r-md) 0; padding: 8px 12px; }
+.int-explica { display: flex; flex-direction: column; gap: 6px; }
+
+/* leitura: pecas agrupadas por etapa */
+.lei-grupos { display: flex; flex-direction: column; gap: 8px; margin: 12px 0 14px; }
+.lei-grupo { border: 1px solid var(--cut-line); border-radius: var(--cut-r-md); background: var(--cut-surface-raised); }
+.lei-grupo.fechado { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 10px 12px; background: var(--cut-surface-sunken); border-style: dashed; }
+.lei-grupo-cab { width: 100%; min-height: var(--cut-tap); display: flex; gap: 10px; align-items: center; padding: 8px 12px; border: 0; background: none; color: var(--cut-text); font: 600 15px var(--cut-font); cursor: pointer; text-align: left; }
+.lei-grupo-tit { font-weight: 700; }
+.lei-grupo-resumo { font-weight: 400; font-size: 13px; color: var(--cut-text-muted); }
+.lei-grupo-cab > span:last-child { margin-left: auto; font-size: 18px; }
+.lei-pecas { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 12px 12px; }
+.lei-peca { min-height: 40px; display: inline-flex; gap: 6px; align-items: center; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--cut-line-strong); background: var(--cut-surface); color: var(--cut-text); font: 500 14px var(--cut-font); cursor: pointer; }
+.lei-peca-marca { width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 12px; font-weight: 800; border: 1.5px solid var(--cut-line-strong); }
+.lei-peca.feito .lei-peca-marca { background: var(--cut-correct); border-color: var(--cut-correct); color: var(--cut-surface); }
+.lei-peca.visto .lei-peca-marca { border-color: var(--cut-action); color: var(--cut-action); }
+.lei-peca.ativa { background: var(--cut-action); color: var(--cut-on-action); border-color: var(--cut-action); }
+.lei-peca.ativa .lei-peca-marca { border-color: var(--cut-on-action); color: var(--cut-on-action); }
+
+/* inicio: proxima acao */
+.int-proxima { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--cut-text); background: var(--cut-surface-raised); border: 2px solid var(--cut-action); border-radius: var(--cut-r-lg); padding: 14px 16px; margin: 8px 0 12px; }
+.int-proxima.urgente { border-color: var(--cut-incorrect); }
+.int-proxima strong { font-size: 18px; line-height: 24px; }
+.int-proxima small { color: var(--cut-text-muted); }
+.int-proxima .int-prazo { color: var(--cut-incorrect); font-weight: 700; }
+.int-proxima .int-btn { align-self: flex-start; margin-top: 6px; display: inline-flex; align-items: center; }
+.int-push-convite { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; background: var(--cut-surface-sunken); border: 1px solid var(--cut-line); border-radius: var(--cut-r-md); padding: 10px 12px; margin: 0 0 14px; font-size: 14px; }
+.int-push-convite span { flex: 1 1 220px; }
+.int-push { margin-top: 16px; }
+
+/* desempenho: calibracao */
+.int-cal { margin: 18px 0; }
+.int-cal-barras { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.int-cal-linha { display: grid; grid-template-columns: 120px 1fr 90px; gap: 10px; align-items: center; }
+.int-cal-trilho { height: 14px; border-radius: 999px; background: var(--cut-line); overflow: hidden; display: flex; }
+.int-cal-trilho i { background: var(--cut-action); }
+.int-cal-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.int-cal-num small { font-weight: 400; color: var(--cut-text-muted); }
+@media (max-width: 420px) { .int-cal-linha { grid-template-columns: 1fr 70px; } .int-cal-trilho { grid-column: 1 / -1; grid-row: 2; } }
+
+/* estudo: revisao do dia; painel: indicadores */
+.int-rev { margin-bottom: 16px; }
+.int-rev-acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.int-ind { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 14px; align-items: end; margin-bottom: 14px; }
+.int-ind h2, .int-ind p { grid-column: 1 / -1; margin: 0; }
+.int-ind label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.int-ind input, .int-ind select { min-height: 40px; }
+
+/* acessibilidade (revisao de 16/11/2026): o seletor de temas do estudo dirigido quebrava a linha no celular */
+.estudo label.marca { flex-wrap: wrap; min-width: 0; max-width: 100%; white-space: normal; }
+.estudo label.marca span { min-width: 0; overflow-wrap: anywhere; white-space: normal; overflow: visible; text-overflow: clip; font-size: inherit; }
+.grade-inicio > * { min-width: 0; }
+.grade-inicio .botao { white-space: normal; }
+.int-cal-linha { grid-template-columns: 120px 1fr 110px; }
