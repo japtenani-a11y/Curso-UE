@@ -5904,7 +5904,7 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Depois do caso 6, o serviço quer treinar toda a equipe. Qual argumento sobre o ATLS é correto ao planejar o orçamento?",
   "alternativas": [
-   "É o programa mais caro, com benefício observacional",
+   "Foi o mais caro numa revisão de escopo; benefício observacional",
    "O benefício foi provado por ensaio randomizado",
    "Custa o mesmo que os programas para leigos",
    "Treinar não tem efeito, então não vale a pena",
@@ -5912,7 +5912,7 @@
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: o ATLS foi o programa mais caro (USD 1433,5) [A6], com associação observacional a menor mortalidade [A2] e sem evidência de alta qualidade [A4].",
+   "Correta: numa revisão de escopo de 28 estudos, sobretudo de países de baixa e média renda, o ATLS foi o programa de implantação mais cara (USD 1433,5, valores de 2024) [A6]; a associação com menor mortalidade é observacional [A2], sem evidência de alta qualidade [A4].",
    "Não há evidência de alta qualidade de benefício para o paciente [A4].",
    "O programa para leigos custou USD 3,70 [A6].",
    "Há associação com menor mortalidade (OR 0,60), ainda que observacional [A2].",
