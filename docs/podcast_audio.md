@@ -59,8 +59,7 @@ As vozes padrão são `pt-BR-Neural2-B` (preceptor) e `pt-BR-Neural2-C` (residen
 mês, então cerca de 100 episódios por mês saem sem custo. Confira o preço vigente na página da Cloud Text-to-Speech antes
 de gerar os 150 temas.
 
-**Revisão.** O áudio repete o roteiro como ele está. Corrija o roteiro e publique antes de gerar. O roteiro do T001 ainda
-fala "Programa de Cirurgia de Urgência e Trauma" e precisa passar para "CUT".
+**Revisão.** O áudio repete o roteiro como ele está. Corrija o roteiro e publique antes de gerar.
 
 # Slides da aula e do caso: imagens e áudio da fala
 

@@ -1,7 +1,7 @@
 -- ============================================================
 -- 23_correcao_defeitos_v4.6.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Versao 4.6 / 10-11-2026
 --
 -- OBJETIVO: corrigir seis defeitos identificados na auditoria

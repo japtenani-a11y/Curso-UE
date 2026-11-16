@@ -2,7 +2,8 @@
 -- Estado do material por aluno (decisao da coordenacao em 15/11/2026):
 --  - caso da aula interativo: em cada ponto de decisao o aluno escreve a conduta e marca a certeza ANTES de ver a
 --    discussao; depois compara e marca se a conduta dele foi parecida, em parte ou diferente. A resposta de um ponto
---    fica travada depois que a discussao daquele ponto foi aberta;
+--    fica travada depois que a discussao daquele ponto foi aberta. Concluido o caso, ele pode refazer: a tentativa
+--    concluida fica guardada em "anteriores" e nao muda mais;
 --  - caso base: as respostas as perguntas do fim sao salvas e so podem mudar ate a hora da aula; depois da aula ficam
 --    so para leitura, e o aluno pode escrever ao lado "o que eu responderia agora";
 --  - checklist: itens marcados;
@@ -28,7 +29,7 @@ COMMENT ON TABLE app.estado_material IS 'respostas do caso da aula e do caso bas
 CREATE OR REPLACE FUNCTION app.salvar_estado(p_codigo TEXT, p_peca TEXT, p_estado JSONB, p_cliente_em TIMESTAMPTZ)
 RETURNS JSONB LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
 DECLARE v_p BIGINT := app.pessoa_atual(); v_t BIGINT; v_etapa INT; v_old app.estado_material%ROWTYPE; v_novo JSONB := coalesce(p_estado, '{}'::jsonb);
-        k TEXT; v_quando TIMESTAMPTZ := least(coalesce(p_cliente_em, now()), now());
+        k TEXT; v_ant JSONB; v_quando TIMESTAMPTZ := least(coalesce(p_cliente_em, now()), now());
 BEGIN
   IF v_p IS NULL THEN RAISE EXCEPTION 'sem_sessao' USING ERRCODE = '42501'; END IF;
   SELECT tema_id INTO v_t FROM app.tema WHERE upper(replace(codigo, '-', '')) = upper(replace(p_codigo, '-', ''));
@@ -50,15 +51,26 @@ BEGIN
     ELSE
       v_novo := v_novo - 'depois';
     END IF;
-  ELSIF p_peca = 'caso' AND v_old.pessoa_id IS NOT NULL AND jsonb_typeof(v_old.estado -> 'pontos') = 'object' THEN
-    -- ponto com discussao ja aberta: conduta e certeza nao mudam mais (so a comparacao feita depois)
-    IF jsonb_typeof(v_novo -> 'pontos') <> 'object' THEN v_novo := jsonb_set(v_novo, '{pontos}', '{}'::jsonb); END IF;
-    FOR k IN SELECT jsonb_object_keys(v_old.estado -> 'pontos') LOOP
-      IF (v_old.estado -> 'pontos' -> k ->> 'revelado') = 'true' THEN
-        v_novo := jsonb_set(v_novo, ARRAY['pontos', k],
-                  (v_old.estado -> 'pontos' -> k) || jsonb_strip_nulls(jsonb_build_object('comparacao', v_novo -> 'pontos' -> k -> 'comparacao')));
+  ELSIF p_peca = 'caso' THEN
+    -- tentativas anteriores nunca mudam; "refazer" (so com a tentativa atual concluida) arquiva a atual
+    v_ant := coalesce(v_old.estado -> 'anteriores', '[]'::jsonb);
+    IF (v_novo ->> 'refazer') = 'true' AND (v_old.estado ->> 'fim') = 'true' THEN
+      v_ant := v_ant || jsonb_build_array(jsonb_build_object('pontos', coalesce(v_old.estado -> 'pontos', '{}'::jsonb),
+                                                             'concluida_em', v_old.cliente_em));
+      v_novo := (v_novo - 'refazer') || jsonb_build_object('anteriores', v_ant);
+    ELSE
+      v_novo := (v_novo - 'refazer') || jsonb_build_object('anteriores', v_ant);
+      -- ponto com discussao ja aberta na tentativa atual: conduta e certeza nao mudam mais (so a comparacao)
+      IF jsonb_typeof(v_old.estado -> 'pontos') = 'object' THEN
+        IF jsonb_typeof(v_novo -> 'pontos') IS DISTINCT FROM 'object' THEN v_novo := jsonb_set(v_novo, '{pontos}', '{}'::jsonb); END IF;
+        FOR k IN SELECT jsonb_object_keys(v_old.estado -> 'pontos') LOOP
+          IF (v_old.estado -> 'pontos' -> k ->> 'revelado') = 'true' THEN
+            v_novo := jsonb_set(v_novo, ARRAY['pontos', k],
+                      (v_old.estado -> 'pontos' -> k) || jsonb_strip_nulls(jsonb_build_object('comparacao', v_novo -> 'pontos' -> k -> 'comparacao')));
+          END IF;
+        END LOOP;
       END IF;
-    END LOOP;
+    END IF;
   END IF;
 
   INSERT INTO app.estado_material (pessoa_id, tema_id, peca, estado, cliente_em, atualizado_em)

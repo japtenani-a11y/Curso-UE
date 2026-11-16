@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================
 # 27b_seguranca_api_v1.0.sh
-# Programa de Cirurgia de Urgencia e Trauma
+# CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 # Correcoes de seguranca da API (aplicar depois do 07 e do 27 SQL).
 #
 # O QUE FAZ

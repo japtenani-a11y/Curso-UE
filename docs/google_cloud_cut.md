@@ -1,7 +1,7 @@
 # Google Cloud: o que mudar com o nome CUT (15/11/2026)
 
 Hoje (docs/servidor_revisao_v1.0.md): projeto "Programa CUT", tela de consentimento com o nome
-"Programa de Cirurgia de Urgência e Trauma", público **Externo**, app **Em teste** com 3 usuários de teste,
+"CUT", público **Externo**, app **Em teste** com 3 usuários de teste,
 cliente OAuth "Aplicativo da Web" apontando para o domínio do ngrok.
 
 ## Agora (10 minutos, sem risco)

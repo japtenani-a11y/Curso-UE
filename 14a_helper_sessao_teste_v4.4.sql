@@ -2,7 +2,7 @@
 -- ============================================================
 -- 14a_helper_sessao_teste_v4.4.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Versao 4.4 / 10-11-2026
 --
 -- OBJETIVO: criar a funcao fn_sessao_teste, que emite um token

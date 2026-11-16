@@ -5616,7 +5616,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 8 a 10 minuto
 
 ---
 
-**PRECEPTOR:** Olá, este é o episódio do tema um do Programa de Cirurgia de Urgência e Trauma. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
+**PRECEPTOR:** Olá, este é o episódio do tema um do CUT. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
 
 **RESIDENTE:** Olá! E eu já chego com uma pergunta que sempre quis fazer: todo mundo faz o ATLS, todo mundo repete o ABCDE... mas isso salva vidas mesmo? Existe prova?
 
@@ -5713,7 +5713,7 @@ Formato: duas vozes — PRECEPTOR e RESIDENTE. Duração estimada: 8 a 10 minuto
 
 ---
 
-**PRECEPTOR:** Olá, este é o episódio do tema um do Programa de Cirurgia de Urgência e Trauma. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
+**PRECEPTOR:** Olá, este é o episódio do tema um do CUT. Hoje a conversa é sobre a avaliação inicial do traumatizado. Comigo está um residente do primeiro ano.
 
 **RESIDENTE:** Olá! E eu já chego com uma pergunta que sempre quis fazer: todo mundo faz o ATLS, todo mundo repete o ABCDE... mas isso salva vidas mesmo? Existe prova?
 
@@ -7354,7 +7354,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 ## 1. Por que importa: a votação de abertura, o objetivo da avaliação e o que a evidência diz sobre o treinamento.
 
 ### Slide 1. Avaliação inicial do traumatizado
-- Programa de Cirurgia de Urgência e Trauma · T001
+- CUT · T001
 - O que mudou no xABCDE — e quão sólida é a evidência
 
 *Rascunho para revisão pelos preceptores · conteúdo ainda não aprovado*
@@ -7600,7 +7600,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 ## 1. Por que importa: a votação de abertura, o objetivo da avaliação e o que a evidência diz sobre o treinamento.
 
 ### Slide 1. Avaliação inicial do traumatizado
-- Programa de Cirurgia de Urgência e Trauma · T001
+- CUT · T001
 - O que mudou no xABCDE — e quão sólida é a evidência
 
 *Rascunho para revisão pelos preceptores · conteúdo ainda não aprovado*

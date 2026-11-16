@@ -38,7 +38,7 @@ Passos do WhatsApp:
 1. Conta no Meta Business e um número dedicado ao Programa (não pode estar em uso no WhatsApp comum).
 2. Criar o app no Meta for Developers com o produto WhatsApp; anotar o ID do número e gerar um token permanente (usuário de sistema).
 3. Cadastrar e aprovar um modelo de mensagem da categoria **Utilidade**, idioma português (BR), com 4 variáveis no corpo:
-   > Lembrete do Programa de Cirurgia de Urgência e Trauma: {{1}} do tema {{2}}. {{3}} Responda em: {{4}}
+   > Lembrete do CUT: {{1}} do tema {{2}}. {{3}} Responda em: {{4}}
 
    O enviador preenche: {{1}} nome do teste, {{2}} código do tema, {{3}} prazo ou dias de atraso, {{4}} link.
 4. Mensagens iniciadas pela instituição só saem por modelo aprovado; a Meta cobra por conversa.

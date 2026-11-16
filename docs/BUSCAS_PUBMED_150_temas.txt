@@ -1,5 +1,5 @@
 BUSCA PUBMED POR TEMA - EDICAO CONSOLIDADA
-Programa de Cirurgia de Urgencia e Trauma - 150 temas - 32 modulos
+CUT - Curso de Cirurgia Geral, Urgencia e Trauma - 150 temas - 32 modulos
 Atualizada em 13/11/2026 (substitui BUSCAS_PUBMED_147_temas e as partes 1 a 4)
 
 O QUE MUDOU NESTA EDICAO

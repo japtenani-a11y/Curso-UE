@@ -229,3 +229,20 @@
 - Podcast: velocidade de 1x a 2x e retomada do ponto em que parou.
 - Onde parou: peça aberta, posição do texto, ponto do caso, slide e tempo do áudio, guardados no aparelho e no
   servidor. Sem internet, vão quando a conexão volta. O Início mostra "Continuar de onde parou".
+
+## Ajustes CUT_v2p (83, 84)
+
+- Pré-teste 2 fora do prazo: a aula abre no horário mesmo sem ele, e o aluno ainda pode fazer o pré-teste 2 depois
+  (até 180 dias após a aula). O que for enviado depois da hora da aula fica marcado na tentativa e na nota, e aparece
+  no painel de notas, coluna "observacao", como "feito depois da aula (conteúdo já apresentado)".
+- Caso da aula: depois de concluir, o aluno pode refazer. A tentativa anterior fica guardada e aparece ao lado, ponto
+  a ponto.
+- Painel: abas "Caso da aula" (conduta, certeza e comparação por ponto e por tentativa; alerta quando a conduta foi
+  diferente e marcada com "tenho certeza") e "Caso base" (resposta antes e depois da aula). O pesquisador vê o código
+  do participante, e a coordenação vê o nome.
+- Slides do T001:
+  - nova versão em rascunho, com uma "Fala" para o aluno em cada slide (texto em
+    `conteudo/T001/v3/T001_slides_falas.md`; precisa de revisão antes de publicar e de gerar o áudio);
+  - as imagens do deck (`conteudo/T001/slides/imagens`) entram no aplicativo.
+- Nome: "CUT" no lugar do nome antigo do programa, no material (todas as versões), nas telas e nos scripts. Os termos
+  já aceitos e os e-mails já enviados ficam como estavam, porque são registro histórico.

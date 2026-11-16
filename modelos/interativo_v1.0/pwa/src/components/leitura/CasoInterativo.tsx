@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Markdown } from '../../lib/md.js';
 import { useEstado, TextoSituacao } from './progresso.js';
 
@@ -34,12 +34,14 @@ export function partesDoCaso(corpo: string): CasoPartes {
 const CERTEZA = ['', 'Chutei', 'Acho que sim', 'Tenho certeza'];
 const COMPARA: Record<string, string> = { parecida: 'Parecida', em_parte: 'Em parte', diferente: 'Diferente' };
 interface Resp { conduta?: string; certeza?: number; revelado?: boolean; comparacao?: string }
-interface EstadoCaso { atual?: number; pontos?: Record<string, Resp>; fim?: boolean; [k: string]: unknown }
+interface Tentativa { pontos?: Record<string, Resp>; concluida_em?: string }
+interface EstadoCaso { atual?: number; pontos?: Record<string, Resp>; fim?: boolean; anteriores?: Tentativa[]; refazer?: boolean; [k: string]: unknown }
 
 export function CasoInterativo(props: { codigo: string; corpo: string }) {
   const caso = partesDoCaso(props.corpo);
   const { estado, atualizar, situacao } = useEstado<EstadoCaso>(props.codigo, 'caso');
   const topo = useRef<HTMLDivElement>(null);
+  const [confirmar, setConfirmar] = useState(false);
   const total = caso.pontos.length;
   const atual = Math.min(estado?.atual ?? 0, Math.max(0, total - 1));
   const fim = !!estado?.fim;
@@ -51,6 +53,14 @@ export function CasoInterativo(props: { codigo: string; corpo: string }) {
     atualizar((e) => ({ ...e, pontos: { ...(e.pontos ?? {}), [String(i)]: { ...(e.pontos?.[String(i)] ?? {}), ...r } } }), { imediato });
   const ir = (i: number) => atualizar((e) => ({ ...e, atual: i, fim: false }), { imediato: true });
   const revelados = caso.pontos.filter((_, i) => resp(i).revelado).length;
+  const anteriores = estado.anteriores ?? [];
+  const tentativa = anteriores.length + 1;
+  const antes = (i: number): Resp | null => anteriores.length ? anteriores[anteriores.length - 1]!.pontos?.[String(i)] ?? null : null;
+  const refazer = () => {
+    setConfirmar(false);
+    atualizar((e) => ({ atual: 0, fim: false, pontos: {}, refazer: true,
+      anteriores: [...(e.anteriores ?? []), { pontos: e.pontos ?? {}, concluida_em: new Date().toISOString() }] }), { imediato: true });
+  };
 
   return (
     <div className="int-caso" ref={topo}>
@@ -80,7 +90,7 @@ export function CasoInterativo(props: { codigo: string; corpo: string }) {
         const pronto = (r.conduta ?? '').trim().length >= 3 && !!r.certeza;
         return (
           <article className="int-cartao">
-            <span className="int-rot">Ponto {atual + 1} de {total}</span>
+            <span className="int-rot">Ponto {atual + 1} de {total}{tentativa > 1 ? ` · tentativa ${tentativa}` : ''}</span>
             <h3>{p.titulo.replace(/^Ponto de decisão \d+\s*[—-]\s*/, '')}</h3>
             <Markdown texto={p.situacao} />
             {!r.revelado ? (
@@ -110,6 +120,9 @@ export function CasoInterativo(props: { codigo: string; corpo: string }) {
                     <button key={k} type="button" role="radio" aria-checked={r.comparacao === k} onClick={() => mudar(atual, { comparacao: k }, true)}>{v}</button>
                   ))}
                 </div>
+                {antes(atual)?.conduta && (
+                  <div className="int-minha anterior"><span className="int-rot">Na tentativa anterior · {CERTEZA[antes(atual)!.certeza ?? 0]}{antes(atual)!.comparacao ? ` · ${COMPARA[antes(atual)!.comparacao!]}` : ''}</span><p>{antes(atual)!.conduta}</p></div>
+                )}
                 {r.comparacao === 'diferente' && r.certeza === 3 && (
                   <p className="int-alerta"><strong>Diferente, e você tinha certeza.</strong> É o tipo de erro que mais vale corrigir agora: releia a discussão e, se ficou dúvida, leve à reunião.</p>
                 )}
@@ -143,8 +156,27 @@ export function CasoInterativo(props: { codigo: string; corpo: string }) {
               );
             })}
           </div>
-          <p className="int-nota">As suas respostas ficam guardadas aqui para você rever quando quiser.</p>
-          <div className="int-nav"><button type="button" className="int-btn" onClick={() => ir(0)}>Rever do início</button></div>
+          {anteriores.length > 0 && (
+            <details className="int-paciente">
+              <summary>Tentativas anteriores ({anteriores.length})</summary>
+              {anteriores.map((t, n) => (
+                <div key={n} className="int-tabela">
+                  <strong>Tentativa {n + 1}</strong>
+                  {caso.pontos.map((_, i) => { const x = t.pontos?.[String(i)] ?? {}; return (
+                    <div key={i} className={`int-linha${x.comparacao === 'diferente' && x.certeza === 3 ? ' alerta' : ''}`}>
+                      <span><strong>{i + 1}.</strong> {x.conduta || '—'}</span><span>{CERTEZA[x.certeza ?? 0] || '—'}</span><span>{x.comparacao ? COMPARA[x.comparacao] : '—'}</span>
+                    </div>); })}
+                </div>
+              ))}
+            </details>
+          )}
+          <p className="int-nota">As suas respostas ficam guardadas aqui para você rever quando quiser. Se refizer o caso, esta tentativa continua guardada.</p>
+          <div className="int-nav">
+            <button type="button" className="int-btn" onClick={() => ir(0)}>Rever do início</button>
+            {!confirmar
+              ? <button type="button" className="int-btn" onClick={() => setConfirmar(true)}>Refazer o caso</button>
+              : <span className="int-nav"><button type="button" className="int-btn prim" onClick={refazer}>Começar de novo</button><button type="button" className="int-btn" onClick={() => setConfirmar(false)}>Cancelar</button></span>}
+          </div>
         </article>
       )}
     </div>

@@ -1,8 +1,8 @@
 __pycache__/
 
 # audios do podcast (gerados localmente; nao vao para o GitHub)
-podcast/
-programa-cut/podcast/
+/podcast/
+/programa-cut/podcast/
 *.mp3
-slides/
-programa-cut/slides/
+/slides/
+/programa-cut/slides/

@@ -2,7 +2,7 @@
 # ============================================================
 # 17_scaffolding_executor_v1.0.sh
 # Sistema de Producao Curricular e Coleta Cientifica
-# Programa de Cirurgia de Urgencia e Trauma
+# CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 # Versao 1.0 / 10-11-2026
 #
 # OBJETIVO: criar os seis arquivos do executor: main, ciclo,

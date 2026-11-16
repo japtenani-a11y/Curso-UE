@@ -108,3 +108,5 @@
   .int-slide-num { font-size: 26px; }
   .int-slide-sec, .int-slide-rod { font-size: 11px; }
 }
+.int-minha.anterior { border-left-style: dashed; opacity: .9; }
+.int-paciente .int-tabela { margin: 8px 0 12px; }

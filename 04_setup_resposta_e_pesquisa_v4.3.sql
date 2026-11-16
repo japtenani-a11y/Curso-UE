@@ -1,7 +1,7 @@
 -- ============================================================
 -- 04_setup_resposta_e_pesquisa_v4.3.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Versao 4.3 / 10-11-2026
 --
 -- OBJETIVO: criar tentativa e respostas do aluno de teste na

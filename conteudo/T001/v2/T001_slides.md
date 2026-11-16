@@ -7,7 +7,7 @@ Versão em texto dos 17 slides da aula, com as notas do apresentador. A apresent
 ## 1. Por que importa: a votação de abertura, o objetivo da avaliação e o que a evidência diz sobre o treinamento.
 
 ### Slide 1. Avaliação inicial do traumatizado
-- Programa de Cirurgia de Urgência e Trauma · T001
+- CUT · T001
 - O que mudou no xABCDE — e quão sólida é a evidência
 
 *Rascunho para revisão pelos preceptores · conteúdo ainda não aprovado*

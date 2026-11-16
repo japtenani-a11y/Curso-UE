@@ -1,7 +1,7 @@
 -- ============================================================
 -- 05_setup_preceptor_e_curador_v4.4.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Versao 4.4 / 10-11-2026
 --
 -- OBJETIVO: criar preceptor, curador, modulo, vinculo de

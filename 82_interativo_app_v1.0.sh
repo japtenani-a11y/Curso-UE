@@ -22,6 +22,13 @@ M="$AQUI/modelos/interativo_v1.0"
 mkdir -p "$RAIZ/slides" "$RAIZ/pwa/src/components/leitura"
 cp "$M/api/src/routes/leitura_interativo.ts" "$RAIZ/api/src/routes/"
 cp "$M"/pwa/src/components/leitura/*.tsx "$RAIZ/pwa/src/components/leitura/"
+# imagens dos decks que vieram no pacote (conteudo/<TEMA>/slides/imagens): copiadas so se o tema ainda nao tiver
+# imagens proprias (as do preparar_slides_pdf ficam valendo)
+for d in "$AQUI"/conteudo/*/slides/imagens; do
+  [ -d "$d" ] || continue
+  cod="$(basename "$(dirname "$(dirname "$d")")" | tr -d '-' | tr '[:lower:]' '[:upper:]')"
+  if ! ls "$RAIZ/slides/$cod"/slide_*.png >/dev/null 2>&1; then mkdir -p "$RAIZ/slides/$cod" && cp "$d"/slide_*.png "$RAIZ/slides/$cod/"; fi
+done
 python3 - "$RAIZ" "$M/estilo_interativo.css" <<'PY'
 import sys, os
 raiz, css = sys.argv[1], open(sys.argv[2], encoding='utf-8').read()

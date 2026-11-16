@@ -33,7 +33,7 @@ Faça logado como **japtenani@gmail.com**, em **console.cloud.google.com**. (O G
 
 1. No topo, **Selecionar projeto → Novo projeto** → nome "Programa CUT" → Criar. Confira que ele ficou selecionado.
 2. Menu ☰ → **APIs e serviços → Tela de consentimento OAuth** (ou **Google Auth Platform → Branding**) → **Começar**:
-   - Nome do app: `Programa de Cirurgia de Urgência e Trauma`; e-mail de suporte: o seu.
+   - Nome do app: `CUT`; e-mail de suporte: o seu.
    - Público (Audience): **Externo**.
    - Contato do desenvolvedor: o seu e-mail → Criar.
 3. **Público-alvo / Audience → Usuários de teste → Adicionar usuários**: `japtenani@gmail.com`, `aline@sardow.com`, `jorge.carnesecca@hotmail.com` → Salvar. Deixe o app **Em teste**: assim só esses três conseguem entrar (até 100 usuários de teste, sem verificação do Google).
