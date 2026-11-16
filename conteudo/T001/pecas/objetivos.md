@@ -9,13 +9,13 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 3. (C) **Reconhecer** os sinais de via aérea pérvia e a indicação de via aérea definitiva por Glasgow [D10, D11], em caso escrito, acertando a conduta em todos os casos apresentados.
 4. (H) **Colher** a história AMPLA [D21] de um paciente simulado, com os cinco itens, em até 3 minutos.
 5. (A) **Manter** o paciente coberto e aquecido após o exame [D19], em toda simulação, sem que o avaliador precise lembrar.
-6. (C, aula) **Localizar** em modelo os pulsos carotídeo, femoral e radial e dizer a pressão sistólica mínima que cada um sugere [D44], acertando os três.
+6. (C, aula) **Localizar** em modelo os pulsos carotídeo, femoral e radial e dizer a faixa de pressão que cada um sugere e o limite dessa estimativa [D44], acertando os três.
 
 ## R1
 
 1. (H) **Executar** a avaliação primária completa [D1, D5], em simulação, verbalizando cada etapa e reavaliando após cada intervenção, sem pular letra.
 2. (R) **Decidir** entre ABCDE e CAB diante de hemorragia externa ou paciente em extremis [D2, D3, G1, G4], em caso escrito, com justificativa que cite o critério que inverte a ordem.
-3. (H, aula) **Obter** acesso intraósseo em simulador no úmero proximal e na tíbia [D15, D46], na primeira tentativa, dizendo por que o esterno é evitado.
+3. (H) **Obter** acesso intraósseo em simulador no úmero proximal e na tíbia [D15, D46], no laboratório de habilidades (T-081), na primeira tentativa, dizendo por que o esterno é evitado.
 4. (C) **Explicar** por que a agitação pode ser sinal de choque e por que o aparelho automático de pressão pode errar no choque [D14, D17], em pergunta oral, com as duas razões corretas.
 5. (A) **Registrar** a avaliação na ficha da sala de trauma [A13, A14, P18] em todo atendimento real ou simulado, com os campos de via aérea e de horário preenchidos.
 6. (H) **Realizar** a avaliação secundária completa [D20], em paciente simulado, e documentá-la sem omitir segmento do exame.
@@ -28,7 +28,7 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 3. (R) **Avaliar** o estado hemodinâmico pelo conjunto de dados, sem depender só da classe de choque [A32, A33], em caso escrito, descrevendo os parâmetros em vez de rotular "estável".
 4. (H) **Realizar** a avaliação terciária e revisar as imagens [D30, D31] de um paciente internado, depois da ressuscitação e das cirurgias, registrando o que foi revisto.
 5. (A) **Comunicar** achados ao líder em alça fechada [D70], durante a simulação, repetindo cada ordem recebida e avisando quando terminou.
-6. (H, aula) **Obter** as janelas do eFAST na ordem do serviço [D64, D65, D80], em modelo ou voluntário, apontando em cada uma a estrutura que não pode faltar na imagem.
+6. (H, aula) **Obter** as janelas do eFAST na ordem padrão [D64, D65, D80], em modelo ou voluntário, apontando em cada uma a estrutura que não pode faltar na imagem.
 
 ## R3
 
@@ -43,7 +43,7 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 
 1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist, torniquete e a ordem CAB [A2, A4, A23, A57, G2, G3], na discussão de artigo, apontando o desenho de cada estudo e separando associação de causa.
 2. (R) **Propor** ajustes ao protocolo institucional de avaliação inicial [A7, A37], por escrito, com pelo menos uma lacuna identificada e a forma de medir o efeito da mudança.
-3. (H) **Ensinar** a avaliação inicial em simulação in situ com debriefing [A18, A44], conduzindo uma sessão completa com residentes.
+3. (H) **Ensinar** a avaliação inicial em simulação in situ com debriefing [A18, A44], conduzindo uma sessão completa com residentes, com debriefing estruturado que cubra os objetivos da sessão.
 4. (R) **Auditar** indicadores de processo da sala de trauma (acionamento do time, registro da via aérea, temperatura, lesões tardias) [A14, A42, A53, G11], com dados do serviço, comparando com os valores das fontes.
 5. (A) **Supervisionar** treinandos na liderança da equipe [D29], em atendimento real ou simulado, intervindo só quando houver risco ao paciente.
 6. (R, aula) **Analisar** um óbito pelo padrão de erro (atraso, julgamento, diagnóstico não feito) [A50, A51, A52], na atividade da aula, apontando em que momento da avaliação inicial ele poderia ter sido evitado.

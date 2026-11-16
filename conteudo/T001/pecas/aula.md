@@ -1,6 +1,6 @@
 # T001 — Aula: da teoria à mesa. Caso, técnica e anatomia da avaliação inicial
 
-Duração: 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15). Este texto acompanha os slides. Ele não repete o resumo básico nem a síntese de evidência: parte deles. Quem não leu o material de antes da aula deve lê-lo primeiro.
+Duração: 30 minutos de exposição com os slides, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15); a leitura do texto leva menos. Este texto acompanha os slides. Ele não repete o resumo básico nem a síntese de evidência: parte deles. Quem não leu o material de antes da aula deve lê-lo primeiro.
 
 ## 1. O minuto em que se decide a ordem
 
@@ -37,21 +37,21 @@ O que decide a técnica é onde a ferida está.
 1. Indicação: suspeita de fratura instável no paciente de alto risco, já na avaliação primária [D9].
 2. Referência óssea: trocânteres maiores. Na crista ilíaca, a cinta comprime o abdome e estabiliza pouco [D54].
 3. Colocação: passar sob a região lombar e descer até a altura das nádegas [D54].
-4. Aperto: moderado antes da radiografia; forte só no livro aberto [D55].
+4. Aperto: sem aperto forte antes da radiografia; o forte só cabe no livro aberto [D55].
 5. Alternativa: lençol com as pontas amarradas em uma haste, que se torce [D56].
 
 **Armadilha.** Na compressão lateral importante, a cinta apertada pode aumentar o sangramento [D55]. No serviço dos autores do livro-texto, uma segunda radiografia de pelve depois da cinta confirma a redução do livro aberto [D75]; é prática deles, não regra geral.
 
 ## 4. Acesso: onde furar quando não há veia
 
-- **Intraósseo.** Indicado quando o acesso venoso não é imediato [D15]. Local: salvo contraindicação, o úmero proximal pode ser o melhor no traumatizado; a tíbia é a alternativa, e o esterno atrapalha a toracotomia e a massagem [D46]. Os marcos de punção, a confirmação e as complicações seguem o manual do dispositivo usado no serviço e são treinados no laboratório de habilidades (tema T-081).
+- **Intraósseo.** Indicado quando o acesso venoso não é imediato [D15]. Local: salvo contraindicação, o úmero proximal pode ser o melhor no traumatizado; a tíbia é a alternativa, e o esterno atrapalha a toracotomia e a massagem [D46]. Os marcos de punção, a confirmação e as complicações seguem o manual do dispositivo usado no serviço e são treinados no laboratório de habilidades (tema T-081); aqui se decide quando e onde.
 - **Arterial femoral.** No hipotenso por sangramento abdominal ou pélvico, o acesso arterial precoce dá pressão contínua e prepara o REBOA [D50]. Com PAS abaixo de 80 mmHg, a femoral mal se palpa: usar o ultrassom [D51]. Cuidado no trauma torácico associado [D50].
 - **O que entra pelo acesso.** No choque evidente, sangue e plasma antes ou em vez de cristaloide [D39]. Escore ABC de 2 ou mais ativa o protocolo do hospital [P16]; a primeira caixa traz 2 concentrados e 2 plasmas [P17]. Ácido tranexâmico em até 3 horas [G8].
 
 ## 5. Tórax: olhar, ouvir, drenar
 
 - **Por que a pressa.** O trauma torácico grave é o que mais mata na primeira hora entre os que chegam vivos [A55].
-- **Ausculta dirigida.** Murmúrio ausente indica, em geral, hemotórax ou pneumotórax que precisa de tratamento. No intubado, murmúrio ausente à esquerda: conferir primeiro a profundidade do tubo [D49].
+- **Ausculta dirigida.** Murmúrio ausente é achado positivo e pede ação [D25]. No intubado, murmúrio ausente à esquerda: conferir primeiro a profundidade do tubo [D49].
 - **eFAST, técnica.** Sem mudar o transdutor nem a posição do paciente. Abdome: três espaços dependentes, o recesso hepatorrenal (Morison), o esplenorrenal e a pelve ao redor da bexiga [D80]. Tórax: transdutor longitudinal na linha hemiclavicular ou paraesternal, sobre o espaço intercostal; procurar o deslizamento pleural e as caudas de cometa [D64]. Subxifoide: transdutor apontado para a cabeça, coração sob o lobo esquerdo do fígado, parede anterior e posterior visíveis [D65].
 - **Quando eFAST e radiografia discordam.** Os limites de cada um estão na síntese de evidência [D66, A30]. Na mesa, o exame negativo não exclui pneumotórax [A30]; a decisão volta para a clínica do paciente [D26].
 - **Em extremis.** Drenagem bilateral presuntiva: diagnostica e trata [D48]. A técnica da drenagem (local, marcos, passos, fixação) é o tema T-013 e o treino, o T-081.
@@ -70,13 +70,13 @@ A ficha do serviço prevê três planos: A (aspiração, cânula e manobras), B 
 4. Incisão transversal da membrana [D67]; dilatar com o dedo, a pinça ou o cabo do bisturi; o gancho traqueal na cartilagem tireoide ajuda [D77].
 5. Cânula de traqueostomia ou tubo endotraqueal pequeno, tamanho 6 [D76]; a confirmação e a fixação são detalhadas no T002.
 
-O detalhe do procedimento é do tema T002.
+As complicações da via aérea cirúrgica e o seu manejo são do tema T002.
 
 ## 7. Para onde, e com quem
 
-- **Adjuntos da primária:** radiografia de tórax e de pelve, FAST ou eFAST e aspiração peritoneal [D53]. Com eles se localiza o sangramento em tórax, abdome ou pelve.
+- **Adjuntos:** os do resumo básico [D53] servem aqui para uma pergunta só: o sangramento está no tórax, no abdome ou na pelve?
 - **FAST negativo no hipotenso com trauma fechado:** repetir em 15 a 30 minutos ou aspirar o peritônio [D63].
-- **Tomografia:** só para quem está estável ou respondeu [D52, P9]. Quem vai à TC de corpo inteiro no serviço: pelo menos um dos três grupos do protocolo, mecanismo, critério clínico ou TCE moderado a grave [P2]. Exemplo: capotamento [P3] com Glasgow 11 aferido antes da sedação [P5] vai, se estável.
+- **Tomografia:** a regra do resumo básico vale [D52, P9]; a decisão da aula é quem vai. Quem vai à TC de corpo inteiro no serviço: pelo menos um dos três grupos do protocolo, mecanismo, critério clínico ou TCE moderado a grave [P2]. Exemplo: capotamento [P3] com Glasgow 11 aferido antes da sedação [P5] vai, se estável.
 - **Tempo:** os óbitos de tórax e abdome se concentram entre 1 e 6 horas [A56]; o erro que mais se repete é o atraso [A51, A52]. Em um centro, chegar ao centro cirúrgico em menos de 10 minutos associou-se a maior sobrevida no ferimento por arma de fogo do tronco [D69].
 - **Equipe:** briefing com plano B [D71]; ordem dada pelo nome e repetida por quem recebe [D70]; qualquer um pode parar o atendimento, em degraus: perguntar, alertar, contestar, agir [D72]. Debriefing não punitivo depois [D73].
 

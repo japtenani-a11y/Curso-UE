@@ -41,4 +41,4 @@ Somando os 30 testes (5 perfis × 6 ondas), são 280 questões aplicadas; cada a
 
 Total: 190 questões de caso e 3 âncoras. O simulado opcional de cada aluno é formado pelas questões dos outros perfis, que ele não recebe nos testes.
 
-As âncoras têm grau diferente por perfil, porque o mesmo enunciado é mais fácil para quem tem mais experiência.
+As âncoras têm o mesmo enunciado em todas as ondas; a taxa de acerto esperada é por perfil, porque o mesmo enunciado é mais fácil para quem tem mais experiência.

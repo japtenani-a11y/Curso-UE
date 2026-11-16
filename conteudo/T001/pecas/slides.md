@@ -7,13 +7,13 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 ### Slide 1. Da teoria à mesa
 - CUT · T001 · Avaliação inicial do traumatizado
 - Você já leu o que é o xABCDE
-- Hoje: um caso, quatro técnicas, a anatomia de cada uma
+- Hoje: um caso e as técnicas, com a anatomia de cada uma
 
 *T001 · Abertura*
 
 > **Nota do apresentador:** Aula de 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15). Não explicar de novo a sequência nem os números da síntese: perguntar a quem leu. Se a turma não leu, remeter ao resumo básico e seguir.
 
-> **Fala:** Esta aula parte do que você já estudou no resumo básico e na síntese de evidência. Não vamos repetir a sequência da avaliação inicial. Vamos usá-la em um caso e descer ao detalhe de quatro técnicas: o controle do sangramento externo, a cinta pélvica, o acesso quando não há veia e o exame do tórax. Em cada uma, a pergunta é a mesma: onde ponho a mão, e por quê.
+> **Fala:** Esta aula parte do que você já estudou no resumo básico e na síntese de evidência. Não vamos repetir a sequência da avaliação inicial. Vamos usá-la em um caso e descer ao detalhe das técnicas: o controle do sangramento externo, a cinta pélvica, o acesso quando não há veia, o exame do tórax e a via aérea cirúrgica. Em cada uma, a pergunta é a mesma: onde ponho a mão, e por quê.
 
 ### Slide 2. O caso: oito minutos antes
 - Motociclista, 41 anos, colisão com caminhão
@@ -25,7 +25,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 > **Nota do apresentador:** Caso fictício, o mesmo do caso da aula. Deixar a turma responder antes de mostrar o próximo slide. Resposta esperada: briefing com nomes, posições A, B e C da ficha do serviço [P18], líder ao pé da maca [D43], tarefas simultâneas [D42], plano B combinado [D71].
 
-> **Fala:** O SAMU avisa: motociclista de quarenta e um anos, colisão com caminhão, dor na bacia, pressão de oitenta e quatro por cinquenta. Chega em oito minutos. Na sala há um residente do terceiro ano, um do primeiro, dois enfermeiros e um técnico. Antes de seguir, responda: o que essa equipe faz nesses oito minutos? Pense em quem lidera, onde ele fica, quem faz o quê e qual é o plano se o paciente chegar pior do que o aviso [D71].
+> **Fala:** O SAMU avisa: motociclista de quarenta e um anos, colisão com caminhão, dor na bacia, pressão de oitenta e quatro por cinquenta, frequência de cento e vinte e seis. Chega em oito minutos. Na sala há um residente do terceiro ano, um do primeiro, dois enfermeiros e um técnico. Antes de seguir, responda: o que essa equipe faz nesses oito minutos? Pense em quem lidera, onde ele fica, quem faz o quê e qual é o plano se o paciente chegar pior do que o aviso [D71].
 
 ### Slide 3. Circulação ou via aérea: o que olhar
 - Passa a circulação: sangramento ativo, radial ausente, agitação, pele fria
@@ -42,7 +42,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 ### Slide 4. Por que adiar o tubo, e o risco de adiar
 - Indução + pressão positiva: perda da vasoconstrição
 - Colapso após a intubação no paciente em extremis
-- ABC contra CAB: OR 3,65, só estudos observacionais, I² 92%
+- Evidência observacional, sem ensaio randomizado
 - Falha na via aérea: 16% dos óbitos com erro
 - Adiar = material pronto + pessoa designada + gatilho combinado
 
@@ -94,16 +94,16 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 ### Slide 8. Cinta pélvica: técnica e armadilhas
 - Referência: trocânteres maiores, não a crista ilíaca
 - Passar sob a lombar, descer até as nádegas
-- Antes da radiografia: aperto moderado
+- Antes da radiografia: sem aperto forte
 - Aperto forte: só no livro aberto
 - Sem cinta: lençol torcido em haste
-- Depois: segunda radiografia
+- Serviço dos autores: segunda radiografia
 
 *T001 · Técnica · Fontes: D9, D54, D55, D56, D75*
 
 > **Nota do apresentador:** Indicação imediata no alto risco [D9]. Erro mais comum: cinta alta, que aumenta a pressão abdominal e estabiliza pouco [D54]. Compressão lateral: a cinta apertada pode aumentar o sangramento [D55]. Lençol [D56]. Segunda radiografia para confirmar a redução, prática do serviço dos autores [D75]. Demonstrar em voluntário ou manequim.
 
-> **Fala:** No paciente do caso, a cinta vai já [D9]. O erro mais comum é colocá-la alta. A referência são os trocânteres maiores, e não a crista ilíaca: alta, ela aperta o abdome e segura pouco [D54]. Passe por baixo da lombar e desça até as nádegas. Antes da radiografia, aperte com moderação. O aperto forte só cabe no livro aberto; na compressão lateral, pode aumentar o sangramento [D55]. Sem cinta, um lençol torcido resolve [D56].
+> **Fala:** No paciente do caso, a cinta vai já [D9]. O erro mais comum é colocá-la alta. A referência são os trocânteres maiores, e não a crista ilíaca: alta, ela aperta o abdome e segura pouco [D54]. Passe por baixo da lombar e desça até as nádegas. Antes da radiografia, não aperte forte. O aperto forte só cabe no livro aberto; na compressão lateral, pode aumentar o sangramento [D55]. Sem cinta, um lençol torcido resolve [D56]. No serviço dos autores do livro, uma segunda radiografia confirma a redução [D75].
 
 ## 3. Acesso e tórax
 
@@ -134,17 +134,17 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 ### Slide 11. Tórax: ausculta, eFAST e dreno
 - Tórax grave: o que mais mata na primeira hora
-- Murmúrio ausente = hemo ou pneumotórax
+- Murmúrio ausente: achado que pede ação
 - Intubado, ausente à esquerda: conferir o tubo
 - eFAST tórax: transdutor longitudinal, linha hemiclavicular
 - Subxifoide: apontar para a cabeça, ver as duas paredes
 - Em extremis: drenagem bilateral
 
-*T001 · Técnica · Fontes: A55, D49, D64, D65, D66, D48, D68, P9*
+*T001 · Técnica · Fontes: A55, D25, D49, D64, D65, D66, D48, D68, P9*
 
 > **Nota do apresentador:** Óbito na primeira hora: tórax 17%, abdome 11%, crânio 7% [A55]. Tubo seletivo [D49]. Técnica do eFAST [D64, D65]. Radiografia em decúbito dorsal com cerca de 50% de sensibilidade para pneumotórax [D66]. Drenagem bilateral presuntiva [D48]. Hemotórax: no instável decide a clínica [P9]; no estável, 1.200 a 1.500 mL ou 200 mL/h por 2 a 4 horas indicam cirurgia [D68]. Se houver aparelho, obter as janelas ao vivo.
 
-> **Fala:** Entre os que chegam vivos, o tórax grave é o que mais mata na primeira hora [A55]. Murmúrio ausente é sangue ou ar na pleura. No intubado, ausente à esquerda, confira antes a profundidade do tubo [D49]. No ultrassom, o transdutor fica longitudinal na linha hemiclavicular: procure o deslizamento da pleura [D64]. Na janela subxifoide, aponte para a cabeça e veja as duas paredes do coração [D65]. No paciente em extremis, drene os dois lados [D48].
+> **Fala:** Entre os que chegam vivos, o tórax grave é o que mais mata na primeira hora [A55]. Murmúrio ausente é achado positivo e pede ação [D25]. No intubado, ausente à esquerda, confira antes a profundidade do tubo [D49]. No ultrassom, o transdutor fica longitudinal na linha hemiclavicular: procure o deslizamento da pleura [D64]. Na janela subxifoide, aponte para a cabeça e veja as duas paredes do coração [D65]. No paciente em extremis, drene os dois lados [D48].
 
 ### Slide 12. Plano C: a membrana cricotireóidea
 - Entre a tireoide (acima) e a cricoide (abaixo)

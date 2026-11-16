@@ -138,3 +138,13 @@ Instalar como na v2z7: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (co
 
 - **Caso da aula narrado:** quadro "Acompanhar o caso como na aula (com áudio)" na peça do caso, com 10 passos; o áudio para depois de cada pergunta e a discussão só toca quando o aluno pede. Gerar com `python3 gerar_podcast_audio_v1.0.py T001 --caso` (ver docs/podcast_audio.md).
 - **Podcast sem áudio gravado:** o aplicativo lê o roteiro com a voz do aparelho, com duas vozes quando houver, e retoma da fala em que o aluno parou.
+
+### CUT_v2z12
+
+Correções das pré-revisões "ajustar" de todas as peças do T001 (rodadas das 12h09 às 13h26), depois que a coordenação aceitou as propostas.
+
+- **Questões (193):**
+  - 20 questões reescritas na rodada de 13h; mais 30 nesta rodada: SILENT só numa questão (o tema não tem objetivo dele), a paciente do caso 5 fica na enfermaria, o R1 deixa de ter três questões sobre a terciária, a presença do cirurgião e o treino por simulação aparecem como associação, saíram os distratores que desqualificam a paciente ou a equipe e os que ninguém escolheria, e as questões de grau Extrema que se resolviam por exclusão foram regraduadas ou reescritas.
+  - Novas questões de decisão: PACE (D72), momento da intubação no exsanguinante (G1, G7, D47), cinta pélvica com sínfise alargada (A35, D9, D54), torniquete no antebraço (D59, D60), MIST montado a partir do caso, alça fechada (D70), choque com pressão automática normal (D14, D17).
+  - Palavras absolutas tiradas de 167 distratores; 38 corretas encurtadas.
+- **Peças:** objetivos com condição e critério; síntese com desenho de cada estudo em todas as seções, A4 como ensaio proposto e o estudo com dados dos alunos condicionado à coordenação e ao comitê de ética; podcast reescrito (números por extenso, um ponto por fala, blocos de TC juntos); protocolo com seção de pendências para validação; resumos, aula, checklist, flashcards, mapa, caso base e slides ajustados. Imagens dos slides 1, 4, 8 e 11 refeitas.

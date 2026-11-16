@@ -176,21 +176,21 @@
   "teste": 1,
   "grau": 1,
   "taxa_esperada": "acima de 90%",
-  "enunciado": "Por que, no caso 1, a circulação é tratada antes da via aérea?",
+  "enunciado": "No caso 1, a paciente responde às perguntas com voz normal. O que isso indica sobre a via aérea?",
   "alternativas": [
-   "Porque a via aérea nunca é prioridade no trauma",
-   "Porque ela tem mais de 40 anos",
-   "Porque há hemorragia externa com risco de vida",
-   "Porque a FC é o primeiro sinal vital medido",
-   "Porque a fratura é exposta"
+   "Que precisa de intubação, pela FC de 124",
+   "Que precisa de cânula orofaríngea",
+   "Que não há obstrução neste momento",
+   "Nada: só a oximetria avalia a via aérea",
+   "Que a via aérea dispensa nova avaliação"
   ],
   "correta": "C",
   "justificativas": [
-   "A via aérea é prioridade na maioria dos casos; a inversão é a exceção.",
-   "A idade não muda a ordem da avaliação.",
-   "Correta: hemorragia externa com risco de vida inverte a ordem (CAB).",
-   "A ordem de medida dos sinais vitais não define a prioridade.",
-   "O que muda a ordem é o sangramento grave, não o tipo de fratura."
+   "A FC fala da circulação; quem fala com voz normal não tem obstrução [D10].",
+   "A cânula serve ao paciente com rebaixamento e obstrução; ela fala normalmente [D10].",
+   "Correta: o paciente que fala com voz normal não tem obstrução de via aérea [D10]; o quadro pode mudar, e a via aérea é reavaliada.",
+   "A voz normal é o teste mais rápido da via aérea [D10].",
+   "O quadro pode mudar com o choque; a via aérea é reavaliada a cada mudança [D10, D2]."
   ],
   "categorias": [
    "erro de conduta",
@@ -200,6 +200,7 @@
    "erro de indicação"
   ],
   "ancoras": [
+   "D10",
    "D2"
   ]
  },
@@ -215,7 +216,7 @@
    "Lavar a pele com soro em temperatura ambiente antes de cobrir",
    "Deixar o aquecimento para depois da tomografia de corpo inteiro",
    "Manter a paciente descoberta para facilitar a reavaliação",
-   "Aquecer só se a temperatura cair abaixo de 35 °C na sala",
+   "Aquecer quando a temperatura cair abaixo de 35 °C",
    "Cobrir e aquecer com mantas, ar forçado e fluidos aquecidos"
   ],
   "correta": "E",
@@ -248,7 +249,7 @@
   "enunciado": "No caso 1, a compressão direta não controla o sangramento da perna. Qual é a próxima medida?",
   "alternativas": [
    "Pedir angiotomografia antes de agir",
-   "Intubar antes de qualquer outra coisa",
+   "Intubar para proteger a via aérea",
    "Pinçar às cegas dentro da ferida",
    "Elevar o membro e observar por 10 minutos",
    "Aplicar torniquete proximal à lesão"
@@ -283,7 +284,7 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 1, o aparelho automático marca PA 120/80. Como interpretar?",
   "alternativas": [
-   "A frequência cardíaca alta se explica só pela dor da ferida",
+   "A frequência cardíaca alta se explica pela dor da ferida",
    "A pressão normal mostra que a paciente não está em choque",
    "O aparelho pode errar no choque: medir à mão e olhar a clínica",
    "Com essa pressão, a reposição de volume deve ser suspensa",
@@ -357,17 +358,17 @@
   "alternativas": [
    "Facilitar a limpeza da pele antes dos procedimentos",
    "Permitir o exame completo do corpo, em 360 graus",
-   "Cumprir uma regra que só vale no trauma penetrante",
-   "Evitar a hipotermia causada pela roupa molhada",
-   "Facilitar o uso da cinta pélvica em todos os casos"
+   "Cumprir a rotina do trauma penetrante",
+   "Permitir colher os exames de sangue mais rápido",
+   "Facilitar o posicionamento da cinta pélvica"
   ],
   "correta": "B",
   "justificativas": [
-   "Limpeza não é o objetivo da exposição.",
-   "Correta: a exposição completa permite o exame em 360 graus.",
-   "A exposição vale para todo trauma, não só o penetrante.",
-   "Despir favorece a perda de calor; por isso se aquece depois.",
-   "Cinta pélvica é indicada pelo risco, não justifica despir."
+   "A limpeza da pele não é o objetivo da exposição; o objetivo é achar lesões [D18].",
+   "Correta: toda a roupa é retirada para um exame completo em 360 graus [D18]; terminado o exame, aquece-se o paciente [D19].",
+   "A exposição completa vale para todo traumatizado, não só para o penetrante [D18].",
+   "A coleta de sangue depende do acesso, não da exposição do corpo [D18].",
+   "A cinta é indicada pelo risco de sangramento pélvico [D9]; não é o motivo de despir o paciente."
   ],
   "categorias": [
    "erro conceitual",
@@ -378,7 +379,8 @@
   ],
   "ancoras": [
    "D18",
-   "D19"
+   "D19",
+   "D9"
   ]
  },
  {
@@ -393,8 +395,8 @@
    "Aumento da mortalidade nas meta-análises de civis",
    "Benefício restrito às lesões do membro superior",
    "Benefício demonstrado em ensaios randomizados, sem efeito na amputação",
-   "Apenas relatos de caso, sem meta-análise publicada",
-   "Resultados controversos: meta-análises divergem sobre mortalidade e amputação"
+   "Relatos de caso, sem meta-análise publicada",
+   "Controversos: as meta-análises divergem"
   ],
   "correta": "E",
   "justificativas": [
@@ -430,7 +432,7 @@
    "Não decidir por um parâmetro isolado: a classificação tem limites",
    "A tabela de classes de choque basta para decidir a conduta",
    "Com FC abaixo de 140, o choque é no máximo classe II e dispensa sangue",
-   "A lucidez da paciente afasta, por si só, um choque grave",
+   "A lucidez da paciente afasta um choque grave",
    "Esperar a pressão arterial cair para classificar o choque com segurança"
   ],
   "correta": "A",
@@ -498,21 +500,21 @@
   "teste": 1,
   "grau": 4,
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 1, um colega diz que, com a perna controlada, a 'avaliação primária acabou'. O que está errado?",
+  "enunciado": "No caso 1, um colega diz que, com a perna controlada, a avaliação primária acabou. Por que ele está errado?",
   "alternativas": [
-   "Basta repetir a frequência cardíaca e a pressão para encerrar a primária",
-   "Com a perna controlada, é hora de dar alta da sala de trauma",
-   "A primária só termina depois da radiografia de tórax",
-   "A primária segue por todas as letras, com reavaliação a cada passo",
-   "Ele está certo: o sangramento da perna era o único problema"
+   "Porque a primária termina com o FAST",
+   "Porque falta medir a pressão manualmente",
+   "Porque a primária termina com a radiografia de tórax",
+   "A primária segue pelas outras letras",
+   "Porque o torniquete precisa ser trocado antes de seguir"
   ],
   "correta": "D",
   "justificativas": [
-   "A FC sozinha não completa a avaliação.",
-   "Ainda faltam via aérea, respiração, neurológico e exposição.",
-   "A radiografia é adjunta, não o fim da avaliação.",
-   "Correta: a avaliação inicial identifica e trata todas as lesões que ameaçam a vida, seguindo as demais letras.",
-   "Controlar um problema não exclui outros."
+   "O FAST é adjunto da primária [D53], não o seu ponto final.",
+   "Medir a pressão é parte do C, mas não completa a avaliação: faltam as outras letras [D1].",
+   "A radiografia é adjunta [D53]; a primária não termina num exame.",
+   "Correta: a avaliação inicial identifica e trata todas as lesões que ameaçam a vida [D1], seguindo as demais letras e reavaliando após cada intervenção [D5].",
+   "Não há indicação de trocar o torniquete que controlou o sangramento; o que falta é seguir a avaliação [D1, D59]."
   ],
   "categorias": [
    "erro técnico",
@@ -522,8 +524,10 @@
    "erro conceitual"
   ],
   "ancoras": [
+   "D53",
    "D1",
-   "D5"
+   "D5",
+   "D59"
   ]
  },
  {
@@ -535,8 +539,8 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 1, você é o líder. Antes da chegada da paciente, o que deveria ter sido feito?",
   "alternativas": [
-   "Combinar que todos examinem juntos, sem funções fixas",
-   "Distribuir as funções só depois de ver o estado da paciente",
+   "Combinar que a equipe examine junta, sem funções fixas",
+   "Distribuir as funções depois de ver o estado da paciente",
    "Reservar a tomografia e aguardar a chegada para decidir o resto",
    "Deixar o residente mais novo liderar sozinho, como treino",
    "Definir funções e preparar o material, já que houve aviso prévio"
@@ -576,7 +580,7 @@
    "Estruturada (MIST), com a equipe ouvindo, em até 1 minuto",
    "Livre, enquanto a equipe já examina a paciente",
    "Por escrito, para ser lida depois do atendimento",
-   "Longa, com todos os detalhes da cena do acidente",
+   "Detalhada, com a descrição completa da cena",
    "Resumida aos sinais vitais medidos na ambulância e no local do trauma"
   ],
   "correta": "A",
@@ -608,11 +612,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 1, após o torniquete, a paciente segue com FC 124 e pele fria. Qual a decisão do líder?",
   "alternativas": [
-   "Levar à tomografia e reavaliar a paciente só na volta",
-   "Seguir a primária, buscar outro sangramento e decidir pela resposta",
+   "Levar à tomografia e reavaliar a paciente na volta",
+   "Seguir a primária e buscar outro sangramento",
    "Transferir para a enfermaria e reavaliar em uma hora",
    "Encerrar a reposição, porque o torniquete resolveu o problema",
-   "Aguardar lactato e gasometria antes de qualquer conduta"
+   "Aguardar lactato e gasometria para decidir"
   ],
   "correta": "B",
   "justificativas": [
@@ -644,11 +648,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 1, o enfermeiro registra a avaliação em um formulário estruturado. O que a evidência mostra sobre esse tipo de formulário?",
   "alternativas": [
-   "Melhorou o registro, mas não mudou nenhum indicador do cuidado",
-   "Foi testado só em centros de trauma terciários de alta renda",
+   "Melhorou o registro, mas não os indicadores do cuidado",
+   "Foi testado em centros de trauma terciários de alta renda",
    "Aumentou a mortalidade por atrasar o atendimento",
-   "Melhorou indicadores da avaliação primária, como o registro da via aérea",
-   "Reduziu a mortalidade de todos os pacientes, desfecho principal do estudo"
+   "Melhorou indicadores, como o registro da via aérea",
+   "Reduziu a mortalidade geral, desfecho principal do estudo"
   ],
   "correta": "D",
   "justificativas": [
@@ -685,7 +689,7 @@
    "Pode salvar: a evidência é controversa e de certeza muito baixa",
    "Sim: a redução da mortalidade foi significativa em ensaios randomizados",
    "Não se sabe: ainda não há meta-análise publicada sobre o tema",
-   "Só quando é colocado dentro do hospital, não no pré-hospitalar",
+   "Quando é colocado no hospital, não no pré-hospitalar",
    "Não: as meta-análises mostram que ele aumenta a mortalidade"
   ],
   "correta": "A",
@@ -718,7 +722,7 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "Ainda no caso 1: qual afirmação sobre treinamentos como o ATLS é a mais precisa?",
   "alternativas": [
-   "Só se associam a benefício nos países de alta renda",
+   "Associam-se a benefício nos países de alta renda",
    "Associam-se a menor mortalidade, em estudos observacionais",
    "Reduzem a mortalidade, como mostram ensaios randomizados",
    "Não têm associação com a mortalidade no trauma",
@@ -756,8 +760,8 @@
   "alternativas": [
    "Não teve associação com a sobrevida",
    "Associou-se a maior sobrevida em 7 dias",
-   "Deve ser dada antes de qualquer outra medida, como na parada clínica",
-   "Associou-se a menor sobrevida em 7 dias (OR 0,20)",
+   "Deve ser dada primeiro, como na parada clínica",
+   "Associou-se a menor sobrevida em 7 dias",
    "Associou-se a melhor desfecho neurológico em ensaio randomizado"
   ],
   "correta": "D",
@@ -788,19 +792,19 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Você vai propor ao serviço um checklist para a sala de trauma, usando casos como o 1. Qual cautela a evidência impõe?",
   "alternativas": [
-   "Evitar o checklist, que aumentou a mortalidade nos estudos",
+   "Implantar só depois de um ensaio local",
    "Restringir o checklist aos pacientes com ISS abaixo de 25",
    "Os estudos são antes-e-depois: medir desfechos após implantar",
-   "Esperar o primeiro estudo sobre checklist no trauma",
-   "Dispensar a medição, porque os ensaios já comprovaram o benefício"
+   "Adotar um checklist pronto, sem adaptação",
+   "Medir só a adesão, sem desfechos clínicos"
   ],
   "correta": "C",
   "justificativas": [
-   "Um estudo mostrou menor mortalidade no ISS > 25 [A9]; o sinal adverso foi pneumonia, não mortalidade [A10].",
+   "Esperar um ensaio local adia uma medida de processo que pode ajudar; a postura é implantar e medir [A7, A10].",
    "O benefício de mortalidade apareceu justamente no grupo mais grave, ISS > 25 (aOR 0,51) [A9].",
    "Correta: a revisão incluiu só estudos antes-e-depois [A7], e um deles mostrou mais pneumonia com checklist (aOR 1,69) [A10]; implantar e medir os desfechos é a postura coerente.",
-   "Já há revisão sistemática sobre checklist na ressuscitação, com três estudos incluídos [A7].",
-   "Não há ensaio randomizado: os estudos incluídos são todos antes-e-depois [A7]."
+   "A adaptação ao contexto favorece o uso do checklist [A16]; e os efeitos precisam ser medidos [A7].",
+   "Um estudo mostrou menor mortalidade no ISS > 25 [A9] e outro mais pneumonia [A10]: os desfechos clínicos precisam ser medidos."
   ],
   "categorias": [
    "erro de conduta",
@@ -860,18 +864,18 @@
   "enunciado": "No caso 2, a SpO2 é 89%. O oxigênio está indicado?",
   "alternativas": [
    "Sim, guiado pela saturação, que está baixa",
-   "Sim, sempre e no fluxo máximo, independentemente da SpO2",
-   "Só se o eFAST mostrar pneumotórax",
-   "Só se ele evoluir para parada cardíaca",
-   "Só depois da tomografia de tórax"
+   "Sim, e no fluxo máximo, independentemente da SpO2",
+   "Quando o eFAST mostrar pneumotórax",
+   "Quando ele evoluir para parada cardíaca",
+   "Depois da tomografia de tórax"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: a maioria dos profissionais (73%) não apoia oxigênio para todos sem considerar a SpO2 [A27]; aqui a saturação é 89%, e o oxigênio está indicado.",
-   "A prática caminha para oxigênio guiado pela SpO2, e não para todos sempre [A27]; aqui ele está indicado porque a saturação está baixa.",
-   "O critério para oxigênio é a oxigenação do paciente, não o resultado do eFAST [A27].",
-   "Esperar a parada para oferecer oxigênio a quem já está com SpO2 de 89% é erro de conduta.",
-   "Hipoxemia se trata na hora, no B da avaliação primária; não se espera exame de imagem."
+   "Correta: com SpO2 de 89% há hipoxemia, e o oxigênio suplementar faz parte do manejo inicial [G6]; a prática caminha para guiá-lo pela saturação, e não dá-lo a todos sem olhar a SpO2 [A27].",
+   "A prática caminha para oxigênio guiado pela SpO2, e não para o fluxo máximo em todos [A27].",
+   "O critério para oxigênio é a oxigenação do paciente, não o resultado do eFAST [G6].",
+   "Esperar a parada para oferecer oxigênio a quem já está com SpO2 de 89% é erro de conduta [G6].",
+   "Hipoxemia se trata na hora, no B da avaliação primária; não se espera exame de imagem [G6]."
   ],
   "categorias": [
    "correta",
@@ -881,6 +885,7 @@
    "erro de indicação"
   ],
   "ancoras": [
+   "G6",
    "A27"
   ]
  },
@@ -894,10 +899,10 @@
   "enunciado": "No caso 2, o que fazer com a roupa do paciente?",
   "alternativas": [
    "Manter a roupa para proteger o paciente do frio",
-   "Retirar a roupa só depois da tomografia",
-   "Cortar só a camisa, que cobre o ferimento",
+   "Retirar a roupa depois da tomografia",
+   "Cortar a camisa, que cobre o ferimento",
    "Retirar toda a roupa para examinar o corpo inteiro",
-   "Retirar só as peças com sangue visível"
+   "Retirar as peças com sangue visível"
   ],
   "correta": "D",
   "justificativas": [
@@ -1003,8 +1008,8 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, o eFAST não mostra pneumotórax. Isso exclui pneumotórax?",
   "alternativas": [
-   "Só exclui se for repetido três vezes seguidas",
-   "Sim: o eFAST negativo sempre exclui pneumotórax",
+   "Exclui se for repetido três vezes seguidas",
+   "Sim: o eFAST negativo exclui pneumotórax",
    "Sim, desde que o paciente fale com voz normal",
    "Não: um estudo mostrou baixa sensibilidade",
    "Não se aplica: o eFAST não avalia o tórax"
@@ -1041,8 +1046,8 @@
   "enunciado": "No caso 2, como conduzir a passagem do SAMU?",
   "alternativas": [
    "A equipe para e ouve a passagem estruturada (MIST)",
-   "Todos examinam o paciente enquanto o SAMU fala",
-   "Só o enfermeiro ouve e depois repassa ao líder",
+   "A equipe examina o paciente enquanto o SAMU fala",
+   "O enfermeiro ouve e depois repassa ao líder",
    "O SAMU deixa a ficha escrita e sai da sala",
    "A passagem fica para depois da tomografia"
   ],
@@ -1074,21 +1079,21 @@
   "teste": 2,
   "grau": 2,
   "taxa_esperada": "75% a 90%",
-  "enunciado": "No caso 2, quais são os elementos do MIST?",
+  "enunciado": "No caso 2, o SAMU vai passar o caso. Qual passagem segue o MIST?",
   "alternativas": [
-   "Motivo do chamado, informante, situação e telefone",
-   "Mecanismo, intubação, sedação e tipo de transporte",
-   "Mecanismo, lesões suspeitas, sinais e sintomas, tratamentos",
-   "Medicações em uso, idade, sexo e tempo de transporte",
-   "Monitorização, imagem, sangue e tomografia"
+   "Facada no tórax; está ansioso; levamos 15 minutos",
+   "Rapaz de 22 anos, sem alergias, mora perto",
+   "Facada; ferida no tórax à esquerda; SpO2 89%, FC 112; oxigênio",
+   "Ferida no tórax; FC 112; o resto está na ficha",
+   "Facada; demos oxigênio; pedimos a tomografia"
   ],
   "correta": "C",
   "justificativas": [
-   "São dados da central de regulação; o MIST trata do paciente: mecanismo, lesões, sinais e tratamentos [D23].",
-   "Começa certo pelo mecanismo, mas troca lesões, sinais e tratamentos por itens que não fazem parte do MIST [D23].",
-   "Correta: MIST é mecanismo, lesões suspeitas (injuries), sinais vitais e sintomas, e tratamentos feitos [D23].",
-   "Medicações em uso fazem parte da história AMPLA [D21], não do MIST [D23].",
-   "São recursos do hospital, não os itens da passagem do pré-hospitalar [D23]."
+   "Faltam lesões suspeitas, sinais vitais e tratamentos [D23].",
+   "São dados de identificação e de história AMPLA [D21], não do MIST [D23].",
+   "Correta: mecanismo, lesão suspeita, sinais vitais e tratamento feito, em formato curto [D23].",
+   "Faltam mecanismo e tratamentos, e a ficha não substitui a passagem verbal [D23].",
+   "Faltam lesões suspeitas e sinais vitais [D23]."
   ],
   "categorias": [
    "erro de conduta",
@@ -1111,7 +1116,7 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, PA 104/70 no aparelho automático e FC 112. Qual a interpretação correta?",
   "alternativas": [
-   "A frequência alta se explica só pela ansiedade",
+   "A frequência alta se explica pela ansiedade",
    "O aparelho pode errar no choque: medir à mão",
    "Deve-se esperar a pressão cair para agir",
    "A pressão normal dispensa o acesso venoso calibroso",
@@ -1146,9 +1151,9 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, depois da primária, como colher a história?",
   "alternativas": [
-   "Só com a família, depois da internação",
-   "Perguntando só sobre a dor e o local do ferimento",
-   "Perguntando apenas sobre doenças prévias",
+   "Com a família, depois da internação",
+   "Concentrando-se na dor e no local do ferimento",
+   "Pela ficha do SAMU, sem perguntar ao paciente",
    "Com o AMPLA: alergias, remédios, doenças, refeição, eventos",
    "Dispensando a história: no trauma, valem o exame e a imagem"
   ],
@@ -1182,17 +1187,17 @@
   "enunciado": "No caso 2, por que examinar as costas e as axilas do paciente esfaqueado?",
   "alternativas": [
    "Porque a tomografia não mostra as lesões das costas",
-   "Porque é uma exigência apenas legal",
+   "Porque o ferimento da frente já explica o quadro",
    "Porque o eFAST já afastou as lesões da frente",
-   "Não é preciso: o ferimento conhecido é o que importa",
+   "Para palpar a coluna antes de virar o paciente",
    "Porque a exposição completa acha outros ferimentos"
   ],
   "correta": "E",
   "justificativas": [
-   "A tomografia mostra o dorso; o motivo do exame é não perder outro ferimento na avaliação primária, antes de qualquer imagem [D18].",
-   "O exame em 360 graus tem objetivo clínico: achar lesões escondidas [D18].",
+   "A tomografia mostra o dorso; o motivo do exame é não perder outro ferimento na avaliação primária [D18].",
+   "Um ferimento conhecido não exclui outro; no ferimento por faca, um segundo ferimento nas costas ou na axila pode passar despercebido [D18].",
    "O eFAST não exclui outros ferimentos de pele; o exame físico completo é que os encontra [D18].",
-   "No ferimento por faca, um segundo ferimento nas costas ou na axila pode passar despercebido se o exame se limitar ao conhecido [D18].",
+   "Palpar a coluna faz parte do exame, mas a pergunta é por que examinar costas e axilas: para achar outros ferimentos [D18].",
    "Correta: toda a roupa é retirada para um exame completo em 360 graus [D18], o que inclui dorso e axilas."
   ],
   "categorias": [
@@ -1216,10 +1221,10 @@
   "enunciado": "No caso 2, achados positivos no exame físico do tórax devem ser valorizados?",
   "alternativas": [
    "Não: o exame físico tem pouco valor no trauma",
-   "Não: só valem quando confirmados por imagem",
-   "Só no trauma fechado, não no penetrante",
-   "Só se o eFAST mostrar o mesmo achado",
-   "Sim: achado positivo quase sempre indica lesão grave"
+   "Não: valem quando confirmados por imagem",
+   "No trauma fechado, mas não no penetrante",
+   "Quando o eFAST mostrar o mesmo achado",
+   "Sim: achado positivo costuma indicar lesão grave"
   ],
   "correta": "E",
   "justificativas": [
@@ -1281,21 +1286,21 @@
   "teste": 2,
   "grau": 2,
   "taxa_esperada": "75% a 90%",
-  "enunciado": "No caso 2, o eFAST foi negativo e a SpO2 melhora com oxigênio. Como usar esse eFAST negativo na decisão?",
+  "enunciado": "No caso 2, o líder diz: \"Ana, oxigênio por máscara\". Como Ana responde em alça fechada?",
   "alternativas": [
-   "Como dado de apoio, sem descartar pneumotórax",
-   "Para descartar pneumotórax, já que a sensibilidade passa de 99%",
-   "Desconsiderá-lo, porque o ultrassom não avalia o tórax",
-   "Usá-lo para indicar drenagem torácica imediata",
-   "Para liberar o paciente da sala sem reavaliar"
+   "Repete \"oxigênio por máscara\" e avisa quando colocou",
+   "Coloca a máscara em silêncio, para não fazer ruído",
+   "Responde \"ok\" e segue com a tarefa anterior",
+   "Pede a outra pessoa que coloque a máscara",
+   "Anota a ordem na ficha antes de executar"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: a sensibilidade variou de 93,6% em um estudo [A29] a baixa, com muitos falsos negativos, em outro [A30]; o negativo é dado de apoio.",
-   "O 99,8% foi a especificidade, não a sensibilidade [A29]; e outro estudo mostrou baixa sensibilidade [A30].",
-   "O eFAST inclui a avaliação do tórax [D64].",
-   "Um exame negativo não indica drenagem; a drenagem se indica pela clínica ou por exame positivo.",
-   "Sem reavaliação, um pneumotórax não visto pode passar [A30]."
+   "Correta: quem recebe a ordem a repete e avisa quando a tarefa termina [D70].",
+   "Sem resposta, o líder não sabe se a ordem foi ouvida [D70].",
+   "\"Ok\" não confirma o que foi entendido nem avisa o fim da tarefa [D70].",
+   "Repassar sem avisar o líder quebra a alça [D70].",
+   "O registro não substitui a confirmação verbal [D70]."
   ],
   "categorias": [
    "correta",
@@ -1305,9 +1310,7 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "D64",
-   "A29",
-   "A30"
+   "D70"
   ]
  },
  {
@@ -1320,17 +1323,17 @@
   "enunciado": "No caso 2, sem acesso venoso após tentativas, qual a melhor opção?",
   "alternativas": [
    "Adiar a reposição até o centro cirúrgico",
-   "Esperar a tomografia para decidir o acesso",
-   "Insistir na veia periférica por tempo indeterminado",
-   "Hidratar por via oral até conseguir a veia",
+   "Dissecar a veia safena no tornozelo",
+   "Insistir na veia periférica por mais 10 minutos",
+   "Puncionar a veia periférica guiada por ultrassom, sem prazo",
    "Acesso intraósseo"
   ],
   "correta": "E",
   "justificativas": [
    "Adiar a reposição no choque é erro de conduta; o intraósseo permite começar já [D15, D28].",
-   "A tomografia não resolve o acesso, e o paciente em choque não deve ir à TC [D52].",
+   "A dissecção venosa consome tempo que o paciente em choque não tem; o intraósseo é mais rápido [D15].",
    "Insistir atrasa a ressuscitação; sem acesso venoso imediato, considera-se o intraósseo [D15].",
-   "A via oral não serve para ressuscitação no trauma grave.",
+   "O ultrassom pode ajudar, mas, sem prazo, atrasa a ressuscitação; a regra é o intraósseo quando a veia não é imediata [D15].",
    "Correta: sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28]."
   ],
   "categorias": [
@@ -1341,7 +1344,6 @@
    "correta"
   ],
   "ancoras": [
-   "D52",
    "D15",
    "D28"
   ]
@@ -1428,7 +1430,7 @@
   "alternativas": [
    "Observar, porque ele ainda fala",
    "Sedar e paralisar já, sem exame neurológico",
-   "Via aérea definitiva, com exame neurológico breve antes",
+   "Via aérea definitiva, após exame neurológico",
    "Esperar o Glasgow cair mais para decidir",
    "Cricotireoidostomia imediata, sem tentar intubar"
   ],
@@ -1533,18 +1535,18 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, o paciente responde à reposição e segue com SpO2 baixa. A TC de corpo inteiro de rotina reduz mortalidade?",
   "alternativas": [
-   "Dispensa a avaliação terciária",
-   "Aumenta a mortalidade pelo atraso",
-   "Reduz a mortalidade, como mostraram ensaios",
-   "Dispensa a avaliação secundária",
+   "Reduz a mortalidade em cerca de um quarto",
+   "Aumenta a mortalidade pelo tempo fora da sala",
+   "Reduz a mortalidade, como mostrou o REACT-2",
+   "Reduz a mortalidade no trauma fechado",
    "Parece ter pouco ou nenhum efeito na mortalidade"
   ],
   "correta": "E",
   "justificativas": [
-   "Mesmo com TC de corpo inteiro, 13,9% tiveram lesões com diagnóstico tardio; a terciária continua necessária [A42].",
+   "Não há redução desse tamanho nas fontes do tema: a TC de rotina parece ter pouco ou nenhum efeito [A12].",
    "Não houve aumento de mortalidade: foi igual nos dois grupos do REACT-2 [A48].",
-   "O ensaio randomizado REACT-2 não mostrou redução de mortalidade (16% nos dois grupos) [A48].",
-   "A TC não substitui a história e o exame completos da avaliação secundária [D20].",
+   "O ensaio randomizado REACT-2 não mostrou redução: 16% nos dois grupos [A48].",
+   "As fontes do tema não mostram redução em nenhum subgrupo; o efeito geral é pouco ou nenhum [A12, A48].",
    "Correta: a revisão de revisões concluiu que a TC de corpo inteiro de rotina parece ter pouco ou nenhum efeito na mortalidade [A12], e o REACT-2 confirmou [A48]."
   ],
   "categorias": [
@@ -1555,10 +1557,8 @@
    "correta"
   ],
   "ancoras": [
-   "A48",
-   "D20",
-   "A42",
-   "A12"
+   "A12",
+   "A48"
   ]
  },
  {
@@ -1571,8 +1571,8 @@
   "enunciado": "No caso 2, a passagem do SAMU durou 4 minutos com detalhes da cena. Qual a correção?",
   "alternativas": [
    "Deixar a passagem para o fim do atendimento",
-   "Deixar seguir: detalhes da cena são sempre úteis",
-   "Dispensar a passagem verbal e pedir só a ficha",
+   "Deixar seguir: os detalhes da cena são úteis",
+   "Dispensar a passagem verbal e pedir a ficha",
    "O líder conduz e limita a passagem a 1 minuto",
    "Pedir ao SAMU que volte depois para terminar"
   ],
@@ -1607,17 +1607,17 @@
   "enunciado": "No caso 2, quando o residente do primeiro ano pode liderar?",
   "alternativas": [
    "Sob supervisão próxima do assistente",
-   "Só nos atendimentos dos pacientes mais graves",
-   "Nunca, enquanto estiver no primeiro ano",
-   "Sempre que quiser, por iniciativa própria",
-   "Só quando o assistente sair da sala"
+   "Nos atendimentos dos pacientes mais graves",
+   "A partir do segundo ano de residência",
+   "Quando o assistente estiver ocupado em outro caso",
+   "Quando o assistente sair da sala"
   ],
   "correta": "A",
   "justificativas": [
    "Correta: treinandos podem liderar a equipe sob supervisão próxima do assistente [D29].",
    "A gravidade não é o critério; o critério é a supervisão próxima do assistente [D29].",
    "Os treinandos devem ter oportunidade de liderar, sob supervisão [D29].",
-   "Liderar sem supervisão não é o modelo; treinandos lideram sob supervisão próxima [D29].",
+   "Sem o assistente por perto não há supervisão próxima [D29].",
    "Com o assistente fora da sala não há supervisão próxima, condição para o treinando liderar [D29]."
   ],
   "categorias": [
@@ -1674,8 +1674,8 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, discutindo com residentes os dois estudos de eFAST para pneumotórax, qual a síntese correta?",
   "alternativas": [
-   "Resultados conflitantes: negativo não encerra o caso",
-   "O eFAST é sempre sensível para pneumotórax",
+   "Conflitantes: negativo não encerra o caso",
+   "O eFAST é muito sensível para pneumotórax",
    "Os dois estudos chegaram ao mesmo resultado",
    "O eFAST não serve para o tórax",
    "A especificidade foi baixa nos dois estudos"
@@ -1712,7 +1712,7 @@
   "alternativas": [
    "Que não houve maioria entre os profissionais",
    "Que é um ensaio com desfecho de mortalidade",
-   "Que a maioria apoia oxigênio para todo traumatizado",
+   "Que a maioria apoia oxigênio a todo traumatizado grave",
    "Que o oxigênio é contraindicado no trauma grave",
    "Que a maioria (73%) não apoia oxigênio para todos, sempre"
   ],
@@ -1745,9 +1745,9 @@
   "enunciado": "No caso 2, um residente quer intubar porque o paciente 'pode piorar'. Qual a melhor resposta baseada na doutrina?",
   "alternativas": [
    "Intubar já, sem perder tempo com exame neurológico",
-   "Intubar sempre no trauma penetrante de tórax",
-   "Ele fala e tem Glasgow alto: tratar a hipoxemia e reavaliar",
-   "Intubar o paciente, mas só depois de fazer a tomografia de tórax",
+   "Intubar por ser trauma penetrante de tórax",
+   "Tratar a hipoxemia e reavaliar",
+   "Intubar o paciente depois da tomografia de tórax",
    "Nunca intubar um paciente com trauma de tórax"
   ],
   "correta": "C",
@@ -1815,17 +1815,17 @@
   "enunciado": "No caso 2, como interpretar a evidência sobre treinamentos de suporte de vida ao planejar o ensino da equipe?",
   "alternativas": [
    "Sem associação com a mortalidade no trauma",
-   "Benefício comprovado por vários ensaios randomizados",
-   "Custos semelhantes entre os programas estudados",
-   "Associação observacional, com ensaio pragmático em curso",
+   "Benefício comprovado por ensaios randomizados",
+   "Custos semelhantes entre os programas",
+   "Associação observacional, sem ensaio de qualidade",
    "O ATLS foi o programa de menor custo"
   ],
   "correta": "D",
   "justificativas": [
    "Houve associação com menor mortalidade (OR 0,60) [A2].",
-   "Não há ensaio randomizado de alta qualidade concluído; por isso o novo ensaio [A4].",
+   "Não há evidência de alta qualidade de benefício para o paciente; por isso os autores propõem um ensaio pragmático [A4].",
    "Os custos variaram de USD 3,70 a USD 1433,5 [A6].",
-   "Correta: associação com menor mortalidade em estudos observacionais (OR 0,60) [A2]; os autores afirmam faltar evidência de alta qualidade e propõem um ensaio pragmático [A4].",
+   "Correta: associação com menor mortalidade em estudos observacionais (OR 0,60) [A2]; os autores afirmam faltar evidência de alta qualidade e propõem um novo ensaio pragmático [A4].",
    "O ATLS foi o mais caro, USD 1433,5 [A6]."
   ],
   "categorias": [
@@ -1850,19 +1850,19 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, um colega afirma que lesões passam despercebidas só sem TC. Qual dado o contradiz?",
   "alternativas": [
-   "Não há dado publicado sobre essa questão",
+   "O REACT-2, com mortalidade igual nos dois grupos",
    "Diagnóstico tardio em 13,9% mesmo com TC",
-   "As lesões tardias só ocorrem em crianças",
+   "Lesões tardias só ocorrem sem a terciária",
    "A avaliação terciária mostrou-se desnecessária",
-   "A tomografia detecta todas as lesões"
+   "A TC de rotina reduz a mortalidade"
   ],
   "correta": "B",
   "justificativas": [
-   "Há dado que contradiz o colega: 13,9% de lesões tardias mesmo com TC de corpo inteiro [A42].",
+   "O REACT-2 trata de mortalidade [A48], não de lesões que passaram despercebidas.",
    "Correta: mesmo com TC de corpo inteiro na avaliação primária, 13,9% dos pacientes tiveram lesões com diagnóstico tardio [A42].",
-   "Os estudos do tema incluem adultos; não há restrição a crianças [A42].",
+   "Mesmo depois da terciária, 0,26% tiveram lesão potencialmente letal [A41].",
    "A terciária e a revisão das imagens reduzem lesões não identificadas [D30]; mesmo assim, 0,26% tiveram lesão letal depois dela [A41].",
-   "Nenhum estudo do tema mostrou detecção completa; houve lesões tardias apesar da TC [A42]."
+   "A TC de rotina parece ter pouco ou nenhum efeito na mortalidade [A12]; e o dado não trata de lesões despercebidas."
   ],
   "categorias": [
    "erro conceitual",
@@ -1890,7 +1890,7 @@
    "Que o álcool explica o quadro e basta observar",
    "Que a via aérea está protegida, pois ele respira",
    "Que se pode esperar a TC de crânio para decidir",
-   "Necessidade de via aérea definitiva"
+   "Que ele precisa de via aérea definitiva"
   ],
   "correta": "E",
   "justificativas": [
@@ -1923,9 +1923,9 @@
   "alternativas": [
    "Que ele estava bem perfundido e reativo",
    "Choque, além de álcool ou trauma de crânio",
-   "Só dor, pela queda que sofreu",
-   "Só embriaguez, pelo hálito alcoólico evidente",
-   "Apenas reação ao transporte na ambulância"
+   "Dor, pela queda que sofreu",
+   "Embriaguez, pelo hálito alcoólico evidente",
+   "Reação ao transporte na ambulância"
   ],
   "correta": "B",
   "justificativas": [
@@ -1955,7 +1955,7 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 3, temperatura de 35,1 °C. O que fazer?",
   "alternativas": [
-   "Só observar, porque 35,1 °C é temperatura normal",
+   "Observar, porque 35,1 °C é temperatura normal",
    "Retirar as mantas para reexaminar várias vezes",
    "Infundir soro frio para reduzir o metabolismo cerebral",
    "Aquecer: mantas, ar forçado e fluidos aquecidos",
@@ -1991,9 +1991,9 @@
   "enunciado": "No caso 3, quando o Glasgow deve ser avaliado?",
   "alternativas": [
    "Na chegada e de novo durante a ressuscitação",
-   "Só depois da intubação e da sedação",
-   "Só depois da internação na UTI",
-   "Só se houver sinal de fratura de crânio",
+   "Depois da intubação e da sedação",
+   "Depois da internação na UTI",
+   "Quando houver sinal de fratura de crânio",
    "Uma única vez, na chegada à sala"
   ],
   "correta": "A",
@@ -2029,7 +2029,7 @@
    "Sim, a pressão normal exclui choque",
    "Não: o aparelho pode errar no choque",
    "Sim, desde que a medida seja repetida pelo aparelho",
-   "Só se a pele estiver quente e seca"
+   "Sim, se a pele estiver quente e seca"
   ],
   "correta": "C",
   "justificativas": [
@@ -2063,7 +2063,7 @@
    "Começar pelo D, por causa do Glasgow 7",
    "ABCDE",
    "ABC, deixando D e E para depois da tomografia",
-   "Só A e B, porque o problema é a via aérea"
+   "A e B primeiro, porque o problema é a via aérea"
   ],
   "correta": "C",
   "justificativas": [
@@ -2133,18 +2133,18 @@
   "enunciado": "No caso 3, por que medir a pressão manualmente?",
   "alternativas": [
    "Porque o idoso não tem pulso periférico palpável",
-   "Por hábito do serviço, sem motivo técnico",
+   "Porque a medida manual é mais rápida",
    "Porque o aparelho automático pode errar no choque",
-   "Porque a medida manual é sempre mais alta",
-   "Porque o aparelho automático é proibido no trauma"
+   "Porque a medida manual é mais alta",
+   "Porque a hipotermia impede o aparelho de medir"
   ],
   "correta": "C",
   "justificativas": [
    "O idoso tem pulsos; a palpação deles dá inclusive uma estimativa da pressão [D44].",
-   "Há motivo técnico: o aparelho automático pode errar no choque [D14].",
+   "A medida manual não é mais rápida; o motivo é que o aparelho pode errar no choque [D14].",
    "Correta: o medidor automático pode errar no paciente em choque; se for medir, medir manualmente [D14].",
    "A medida manual não é sempre mais alta; o motivo é que o aparelho pode errar no choque [D14].",
-   "O aparelho não é proibido; o livro alerta que ele pode errar no choque [D14]."
+   "A temperatura não é o motivo descrito; o aparelho automático pode errar no choque [D14]."
   ],
   "categorias": [
    "erro técnico",
@@ -2199,21 +2199,21 @@
   "teste": 3,
   "grau": 3,
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 3, após a intubação, qual cuidado com a temperatura?",
+  "enunciado": "No caso 3, com a via aérea assegurada e a primária concluída, o que compõe a avaliação secundária?",
   "alternativas": [
-   "Tratar só abaixo de 32 °C",
-   "Aquecer só depois, na UTI",
-   "Cobrir com lençol simples e seguir",
-   "Resfriar para proteger o cérebro",
-   "Aquecer ativamente e medir a temperatura"
+   "Repetir o ABCDE até o paciente estabilizar",
+   "Fazer a tomografia de corpo inteiro e ler o laudo",
+   "Reexaminar no dia seguinte, depois das cirurgias",
+   "Colher a história e examinar só a cabeça",
+   "História AMPLA e exame completo, da cabeça aos pés"
   ],
   "correta": "E",
   "justificativas": [
-   "Esperar a hipotermia piorar contraria a prevenção, que é a prioridade [D19, A36].",
-   "O aquecimento começa na sala de trauma, logo após o exame [D19].",
-   "A hipotermia é frequente e subvalorizada no trauma grave [A36]; aquecer é prioridade [D19].",
-   "Não há base nas fontes do tema para resfriar o traumatizado; ao contrário, aquecer é prioridade [D19].",
-   "Correta: terminado o exame, manter o paciente aquecido é prioridade [D19]; medir a temperatura mostra o problema, frequente e esquecido [A36]."
+   "Reavaliar o ABCDE é parte da primária [D5]; a secundária busca as demais lesões [D20].",
+   "A tomografia é adjunto, não substitui a história e o exame da secundária [D20, D52].",
+   "Isso descreve a avaliação terciária, feita depois da ressuscitação e das cirurgias [D31].",
+   "O exame da secundária é completo, não só da cabeça [D20].",
+   "Correta: a avaliação secundária é uma história e um exame completos, para identificar todas as demais lesões [D20]; a história segue a AMPLA [D21]. Com Glasgow 7, a história vem de quem acompanha ou do SAMU."
   ],
   "categorias": [
    "erro de conduta",
@@ -2223,8 +2223,11 @@
    "correta"
   ],
   "ancoras": [
-   "D19",
-   "A36"
+   "D5",
+   "D20",
+   "D52",
+   "D31",
+   "D21"
   ]
  },
  {
@@ -2237,7 +2240,7 @@
   "enunciado": "No caso 3, um colega diz que o exame físico normal da barriga dispensa investigação. O que a doutrina diz?",
   "alternativas": [
    "Que o exame normal não exclui lesão abdominal",
-   "Que só a tomografia tem valor no abdome",
+   "Que a tomografia é que tem valor no abdome",
    "Que o exame físico não tem valor no trauma",
    "Que o exame normal permite a alta",
    "Que ele está certo: o exame normal exclui lesão"
@@ -2272,8 +2275,8 @@
   "alternativas": [
    "A hipotermia é comum e esquecida: aquecer já",
    "Concordar: a hipotermia é rara no trauma",
-   "Aquecer só com fluido, sem mantas",
-   "Concordar: só se trata abaixo de 32 °C",
+   "Aquecer com fluido, sem mantas",
+   "Concordar: trata-se abaixo de 32 °C",
    "Resfriar ativamente para proteger o cérebro"
   ],
   "correta": "A",
@@ -2306,7 +2309,7 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 3, por que o aquecimento com fluido aquecido pode ser insuficiente?",
   "alternativas": [
-   "Porque o fluido chega sempre a 39 °C e superaquece",
+   "Porque o fluido chega a 39 °C e superaquece",
    "Porque o fluido aquecido acelera a perda de calor",
    "Porque o fluido aquecido é contraindicado no choque",
    "Porque os hospitais não dispõem de aquecedor de fluido",
@@ -2342,7 +2345,7 @@
   "enunciado": "No caso 3, existe abordagem baseada em evidência para manejar a hipotermia no trauma?",
   "alternativas": [
    "Não, porque a hipotermia não muda o desfecho",
-   "Sim, mas só para pacientes idosos",
+   "Sim, para os pacientes idosos",
    "Não, ao contrário da acidose e do sangramento",
    "Sim, com base em ensaios randomizados definitivos",
    "Sim: resfriar ativamente o paciente"
@@ -2380,7 +2383,7 @@
    "Pela pressão arterial, que está normal",
    "Pela tabela de classes de choque",
    "Pela frequência cardíaca, que está alta",
-   "Pelo conjunto, sem depender de um só parâmetro",
+   "Pelo conjunto dos parâmetros",
    "Pelo Glasgow, que está rebaixado"
   ],
   "correta": "D",
@@ -2417,7 +2420,7 @@
    "Confiar no laudo inicial da tomografia",
    "Avaliação terciária com revisão das imagens",
    "Aceitar que essas lesões são inevitáveis",
-   "Repetir a TC de corpo inteiro em todos",
+   "Repetir a TC de corpo inteiro de rotina",
    "Alta precoce para reduzir a exposição ao hospital"
   ],
   "correta": "B",
@@ -2450,7 +2453,7 @@
   "enunciado": "No caso 3, após intubação, a PA cai. Como interpretar?",
   "alternativas": [
    "Tratar como sangramento até prova em contrário",
-   "Atribuir só ao efeito da sedação",
+   "Atribuir ao efeito da sedação",
    "Atribuir ao álcool ingerido antes da queda",
    "Considerar efeito esperado e passageiro da intubação",
    "Considerar normal no paciente idoso"
@@ -2486,7 +2489,7 @@
   "alternativas": [
    "Ainda pode haver lesão não vista: investigar a queixa",
    "Aguardar 48 horas antes de investigar a queixa",
-   "Pensar só em causa clínica, porque a terciária excluiu lesão",
+   "Pensar em causa clínica, porque a terciária excluiu lesão",
    "Dar alta da UTI, já que a terciária foi normal",
    "Repetir a TC de corpo inteiro sem reexaminar"
   ],
@@ -2521,9 +2524,9 @@
   "alternativas": [
    "Alta da sala de trauma, sem exame de imagem",
    "Manter 6 horas em observação na sala antes de decidir",
-   "UTI direto, sem nenhum exame de imagem",
+   "UTI direto, sem exame de imagem",
    "Decidir pela resposta: a TC cabe em quem respondeu",
-   "Tomografia sempre, mesmo instável e sem resposta"
+   "Tomografia, mesmo instável e sem resposta"
   ],
   "correta": "D",
   "justificativas": [
@@ -2557,11 +2560,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 3, o paciente respondeu à reposição e está estável. Segundo o protocolo de imagem do serviço, quando indicar a TC de corpo inteiro?",
   "alternativas": [
-   "Só após creatinina e jejum de 6 horas",
-   "Em todo paciente que chega à sala de trauma",
-   "Só quando o FAST for positivo na sala",
-   "Só com os três grupos de critérios presentes",
-   "Com ao menos um grupo: mecanismo, clínica ou TCE"
+   "Depois de creatinina e jejum de 6 horas",
+   "Em quem chega à sala de trauma",
+   "Quando o FAST for positivo na sala",
+   "Com os três grupos de critérios presentes",
+   "Com ao menos um dos três grupos"
   ],
   "correta": "E",
   "justificativas": [
@@ -2595,17 +2598,17 @@
   "alternativas": [
    "Esperando o assistente chegar para começar",
    "Com funções definidas pelo líder antes da chegada",
-   "Definindo o líder só depois da chegada",
-   "Com um só médico fazendo todas as etapas",
-   "Com todos fazendo todas as tarefas juntos"
+   "Definindo o líder depois da chegada",
+   "Com o líder executando a via aérea enquanto coordena",
+   "Com a equipe examinando junta, sem funções"
   ],
   "correta": "B",
   "justificativas": [
    "Esperar atrasa; treinandos podem iniciar e liderar sob supervisão [D29].",
-   "Correta: boa parte da avaliação primária pode ser feita simultaneamente [D5], com cada membro na sua tarefa (ressuscitação horizontal) [D42], sob o líder [D22].",
+   "Correta: boa parte da avaliação primária pode ser feita simultaneamente [D5], com cada membro na sua tarefa (ressuscitação horizontal) [D42], definida pelo líder no briefing [D71].",
    "Sem líder definido antes, a equipe perde os primeiros minutos; o briefing é antes da chegada [D71].",
-   "Um só médico faz as etapas em série; a ressuscitação horizontal, com tarefas simultâneas, é a preferida [D42].",
-   "Todos fazendo tudo desorganiza; cada membro executa a sua tarefa ao mesmo tempo [D42]."
+   "Fazer a via aérea tira do líder a visão do todo [D43]; a via aérea é a posição A da equipe [P18].",
+   "Sem funções, todos fazem a mesma coisa; a ressuscitação horizontal funciona porque cada um tem a sua tarefa [D42]."
   ],
   "categorias": [
    "erro técnico",
@@ -2615,11 +2618,12 @@
    "erro conceitual"
   ],
   "ancoras": [
-   "D42",
-   "D71",
    "D29",
    "D5",
-   "D22"
+   "D42",
+   "D71",
+   "D43",
+   "P18"
   ]
  },
  {
@@ -2669,10 +2673,10 @@
   "enunciado": "No caso 3, após a TC, quem deve fazer a avaliação terciária e quando?",
   "alternativas": [
    "A equipe, depois da ressuscitação e das cirurgias",
-   "A equipe da enfermaria, só no dia da alta",
+   "A equipe da enfermaria, no dia da alta",
    "O plantonista, antes da avaliação primária",
    "Ninguém: a tomografia torna a terciária dispensável",
-   "A equipe, só se o paciente tiver alguma queixa"
+   "A equipe, quando o paciente tiver alguma queixa"
   ],
   "correta": "A",
   "justificativas": [
@@ -2702,21 +2706,21 @@
   "teste": 3,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 3, o paciente intubado tem a perna esquerda edemaciada e o teste clínico SILENT é negativo. Como agir?",
+  "enunciado": "No caso 3, ele estava agitado no caminho; agora FC 118, pele fria, e o aparelho automático marca PA 132/84. Como interpretar?",
   "alternativas": [
-   "Considerar o edema esperado no paciente intubado",
-   "Indicar fasciotomia imediata do membro",
-   "Repetir o SILENT até ele ficar positivo",
-   "Excluir a lesão, já que a especificidade é de 99%",
-   "Não excluir lesão: sensibilidade de 75%; fazer imagem"
+   "Agitação explicada pelo álcool, sem choque",
+   "PA de 132/84 afasta o choque",
+   "Hipertensão reativa ao trauma de crânio",
+   "Taquicardia explicada pela hipotermia",
+   "Possível choque; medir a pressão manualmente"
   ],
   "correta": "E",
   "justificativas": [
-   "Achado positivo do exame físico quase sempre indica lesão e exige ação [D25].",
-   "Não há dado no caso que indique síndrome compartimental; a pergunta é sobre excluir lesão vascular [A43].",
-   "Repetir o teste não muda seu desempenho; a sensibilidade é a mesma [A43].",
-   "A especificidade alta serve para confirmar quando positivo, não para excluir quando negativo [A43].",
-   "Correta: com sensibilidade de 75% (IC 64 a 84%), um SILENT negativo não exclui lesão [A43]; achado positivo do exame (edema) exige investigação [D25]."
+   "O hálito alcoólico não explica pele fria e taquicardia; agitação também é sinal de choque [D17].",
+   "O aparelho automático pode errar no choque [D14]; FC 118 e pele fria pedem atenção.",
+   "O quadro de FC 118 e pele fria não é o de resposta ao trauma de crânio; pensar em choque [D17].",
+   "A hipotermia costuma baixar a frequência, não elevá-la; a taquicardia com pele fria sugere choque [D17].",
+   "Correta: agitação é sinal de choque classe III e IV [D17], e o aparelho automático pode errar no choque; medir manualmente [D14]."
   ],
   "categorias": [
    "erro de conduta",
@@ -2726,8 +2730,8 @@
    "correta"
   ],
   "ancoras": [
-   "A43",
-   "D25"
+   "D17",
+   "D14"
   ]
  },
  {
@@ -2741,8 +2745,8 @@
   "alternativas": [
    "Que a comparação com o déficit de base teve viés",
    "Que a classe de choque se define pela idade",
-   "Que a tabela vale só para crianças",
-   "Que o déficit de base nunca foi estudado no trauma",
+   "Que a tabela vale para crianças",
+   "Que o déficit de base não foi estudado no trauma",
    "Que a tabela foi validada e não tem limitações"
   ],
   "correta": "A",
@@ -2775,8 +2779,8 @@
   "alternativas": [
    "Suspender a reposição, já que a pressão está normal",
    "Concordar: a pressão normal define estabilidade",
-   "Usar só a frequência cardíaca para decidir",
-   "Estabilidade não tem definição de consenso: descrever os dados",
+   "Decidir pela frequência cardíaca isolada",
+   "Estabilidade não tem definição: descrever os dados",
    "Confiar no aparelho automático, que é validado"
   ],
   "correta": "D",
@@ -2846,7 +2850,7 @@
   "enunciado": "No caso 3, ao discutir lesões não identificadas, qual a melhor estratégia institucional baseada nas fontes?",
   "alternativas": [
    "Restringir o exame físico completo aos casos graves",
-   "Mais tomografias de rotina para todos",
+   "Mais tomografias de rotina",
    "Avaliação terciária, revisão de imagens e vigilância",
    "Aceitar as lesões tardias como inevitáveis",
    "Alta precoce, para reduzir o tempo de internação"
@@ -2878,15 +2882,15 @@
   "fixa": false,
   "perfil": "R+",
   "teste": 3,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, qual a interpretação correta de 'achados positivos no exame físico quase sempre indicam lesão grave'?",
   "alternativas": [
    "O exame físico tem pouco valor no trauma",
-   "Achado positivo exige ação; exame normal não exclui",
+   "Positivo exige ação; normal não exclui",
    "O exame normal exclui lesão com segurança",
-   "O achado só vale se a tomografia confirmar",
-   "A regra só vale para o exame do tórax"
+   "O achado vale se a tomografia confirmar",
+   "A regra vale para o exame do tórax"
   ],
   "correta": "B",
   "justificativas": [
@@ -2917,18 +2921,18 @@
   "enunciado": "No caso 3, ao revisar o protocolo, o que justificaria manter o aquecimento ativo como item obrigatório, apesar da falta de evidência de manejo?",
   "alternativas": [
    "A hipotermia frequente e a recomendação do livro",
-   "Que o aquecimento é dispensável",
-   "Um ensaio randomizado definitivo sobre o tema",
-   "A redução de mortalidade comprovada com o aquecimento",
-   "O custo baixo comprovado do aquecimento"
+   "A redução de coagulopatia demonstrada em ensaio",
+   "O consenso de 2025 sobre controle de hemorragia",
+   "A redução de mortalidade com o aquecimento ativo",
+   "O resultado do REACT-2 sobre a TC de corpo inteiro"
   ],
   "correta": "A",
   "justificativas": [
    "Correta: a hipotermia está presente em até dois terços dos traumatizados graves [A36], o livro recomenda aquecer [D19], e o reaquecimento é indicador de processo de consenso [G11], mesmo sem evidência de manejo [A37].",
-   "Há razões para manter: frequência alta e recomendação do livro [A36, D19].",
-   "Não existe ensaio definitivo; a falta de evidência de manejo é a lacuna [A37].",
+   "As fontes do tema não trazem ensaio sobre aquecimento e coagulopatia; a falta de evidência de manejo é a lacuna [A37].",
+   "O consenso de 2025 trata da ordem entre circulação e via aérea [G1], não do aquecimento.",
    "Não há comprovação de redução de mortalidade com o aquecimento nas fontes do tema [A37].",
-   "Custo não é o argumento das fontes; o argumento é frequência e recomendação [A36, D19]."
+   "O REACT-2 trata da tomografia [A48], não da temperatura."
   ],
   "categorias": [
    "correta",
@@ -2940,8 +2944,10 @@
   "ancoras": [
    "A36",
    "D19",
+   "G11",
    "A37",
-   "G11"
+   "G1",
+   "A48"
   ]
  },
  {
@@ -2949,23 +2955,23 @@
   "fixa": false,
   "perfil": "Graduação",
   "teste": 4,
-  "grau": 2,
-  "taxa_esperada": "75% a 90%",
-  "enunciado": "No caso 4, o paciente está em choque grave. Qual a ordem da avaliação?",
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, o paciente está em choque grave e sonolento, sem obstrução da via aérea. O que vem antes da intubação?",
   "alternativas": [
-   "Primeiro a história AMPLA, com o paciente",
-   "ABCDE na ordem de sempre, começando pela via aérea",
-   "Primeiro a tomografia de corpo inteiro",
-   "A circulação tem precedência (CABDE)",
-   "Primeiro a radiografia de tórax e de pelve"
+   "A história AMPLA, com o paciente",
+   "Intubar primeiro, pela sonolência",
+   "A tomografia de crânio",
+   "Repor sangue e controlar o sangramento",
+   "A radiografia de tórax e de pelve"
   ],
   "correta": "D",
   "justificativas": [
-   "A história AMPLA é da avaliação secundária [D21]; no choque grave, a circulação vem primeiro [D3].",
-   "A ordem padrão tem exceção: no paciente em extremis, a circulação tem precedência [D3]. Ele fala e a via aérea não está obstruída.",
-   "O paciente fisiologicamente instável não deve ir à tomografia [D52].",
-   "Correta: no paciente que chega em extremis, a circulação tem precedência (CABDE) [D3].",
-   "As radiografias são adjuntos da primária [D53]; não vêm antes de tratar a circulação de quem está em extremis [D3]."
+   "A história é da avaliação secundária [D21]; no choque grave, sangue e controle do sangramento vêm primeiro [G1].",
+   "No sangramento grave, ressuscitação e controle da hemorragia vêm antes da via aérea invasiva [G1]; a via aérea só vem primeiro na obstrução ou na hipóxia grave [G4].",
+   "O paciente instável não deve ir à tomografia [D52].",
+   "Correta: no paciente com hemorragia grave, ressuscitação e controle da hemorragia vêm antes da via aérea invasiva [G1]; a via aérea continua primeiro na obstrução e na hipóxia grave [G4].",
+   "As radiografias são adjuntos [D53]; não vêm antes de tratar a circulação [D3]."
   ],
   "categorias": [
    "erro conceitual",
@@ -2975,8 +2981,8 @@
    "erro técnico"
   ],
   "ancoras": [
-   "D21",
-   "D3",
+   "G1",
+   "G4",
    "D52",
    "D53"
   ]
@@ -2990,8 +2996,8 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 4, há dor na bacia e choque. O que colocar imediatamente?",
   "alternativas": [
-   "Esperar a tomografia antes de qualquer medida",
-   "Colar cervical apenas",
+   "Esperar a tomografia para decidir",
+   "Colar cervical",
    "Cinta pélvica",
    "Sonda vesical para medir a diurese",
    "Torniquete na raiz da coxa"
@@ -3167,7 +3173,7 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 4, ao colocar a cinta pélvica, o que a doutrina recomenda?",
   "alternativas": [
-   "Colocar a cinta só no centro cirúrgico",
+   "Colocar a cinta no centro cirúrgico",
    "Colocá-la de imediato no paciente de alto risco",
    "Evitar a cinta no paciente em choque",
    "Testar a estabilidade da bacia várias vezes antes",
@@ -3202,10 +3208,10 @@
   "enunciado": "No caso 4, qual exame à beira-leito ajuda a buscar sangramento cavitário?",
   "alternativas": [
    "Ultrassom (FAST)",
-   "Ultrassom só depois de estabilizar a pressão",
+   "Ultrassom depois de estabilizar a pressão",
    "Radiografia de abdome em pé",
-   "Lavado peritoneal antes do ultrassom em todos",
-   "Tomografia antes de qualquer conduta"
+   "Lavado peritoneal antes do ultrassom",
+   "Tomografia antes de outra conduta"
   ],
   "correta": "A",
   "justificativas": [
@@ -3236,21 +3242,21 @@
   "teste": 4,
   "grau": 3,
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 4, qual a mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência?",
+  "enunciado": "No caso 4, a PAS segue abaixo de 90 mmHg depois da cinta e do sangue. O que o tempo até o controle do sangramento significa para esse paciente?",
   "alternativas": [
-   "Entre 25% e 30%",
-   "Cerca de 10%",
-   "Entre 15% e 20%",
-   "Acima de 40%",
-   "Abaixo de 5%"
+   "Pouco: o prognóstico é definido pela lesão, não pelo tempo",
+   "Pode-se completar a imagem antes de decidir",
+   "Pode-se aguardar a resposta por algumas horas na sala",
+   "Pesa muito: a mortalidade desse grupo passa de 40%",
+   "Importa se houver sangramento externo visível"
   ],
   "correta": "D",
   "justificativas": [
-   "O valor descrito é acima de 40% [D27].",
-   "O valor descrito é acima de 40%, não cerca de 10% [D27].",
-   "O valor descrito é bem mais alto: acima de 40% [D27].",
-   "Correta: a mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40% [D27].",
-   "O livro descreve mortalidade acima de 40% nesse grupo [D27]."
+   "A alteração fisiológica é o maior determinante do desfecho [D26], e o atraso no tratamento é a principal causa de óbito evitável [A52].",
+   "O paciente instável não deve ir à tomografia [D52]; quem precisa de intervenção vai sem atraso para imagem [D40].",
+   "Quem não responde é priorizado para controle imediato da causa [P9].",
+   "Correta: a mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40% [D27], e o atraso no tratamento é a causa mais frequente de óbito evitável [A52].",
+   "O sangramento pélvico e abdominal não é visível e mata do mesmo modo; o atraso no seu controle é um dos erros mais frequentes [A51]."
   ],
   "categorias": [
    "erro técnico",
@@ -3260,7 +3266,13 @@
    "erro conceitual"
   ],
   "ancoras": [
-   "D27"
+   "D26",
+   "A52",
+   "D52",
+   "D40",
+   "P9",
+   "D27",
+   "A51"
   ]
  },
  {
@@ -3272,11 +3284,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 4, o intraósseo foi obtido. Qual o papel dele?",
   "alternativas": [
-   "Servir só para crianças, não para adultos",
-   "Ser usado só depois da tomografia",
-   "Dar só as medicações da parada cardíaca",
+   "Servir para crianças, não para adultos",
+   "Ser usado depois da tomografia",
+   "Dar as medicações da parada cardíaca",
    "Colher os exames iniciais e nada mais",
-   "Iniciar a ressuscitação no paciente em choque"
+   "Iniciar a ressuscitação no choque"
   ],
   "correta": "E",
   "justificativas": [
@@ -3349,7 +3361,7 @@
    "A ordem entre tomografia e reposição é indiferente",
    "Esperar 2 horas e reavaliar a ida à TC",
    "Depende da resposta: sem resposta, não sai para a TC",
-   "A tomografia vem sempre em primeiro lugar"
+   "A tomografia vem em primeiro lugar"
   ],
   "correta": "D",
   "justificativas": [
@@ -3386,7 +3398,7 @@
    "Definir a classe de choque pela tabela",
    "Buscar a causa do choque sem sair da sala",
    "Ser feito dentro do tomógrafo",
-   "Avaliar apenas pacientes estáveis"
+   "Avaliar pacientes estáveis"
   ],
   "correta": "C",
   "justificativas": [
@@ -3420,7 +3432,7 @@
    "Suspender a reposição e observar a pressão",
    "Transferir para a enfermaria e reavaliar",
    "Manter em observação na sala de trauma",
-   "Controlar o sangramento: cirurgia ou angiografia",
+   "Controlar o sangramento: cirurgia ou angio",
    "TC de corpo inteiro e aguardar o laudo"
   ],
   "correta": "D",
@@ -3455,7 +3467,7 @@
   "enunciado": "No caso 4, o FAST não mostra líquido livre e há suspeita de sangramento pélvico ativo. Qual o próximo passo mais adequado?",
   "alternativas": [
    "Esperar o resultado do lactato",
-   "Acionar cirurgia e radiologia intervencionista juntas",
+   "Acionar cirurgia e radiologia juntas",
    "Laparotomia exploradora de rotina",
    "Concluir que o FAST negativo exclui sangramento",
    "Retirar a cinta para examinar a bacia"
@@ -3494,7 +3506,7 @@
    "Que ela serve de referência, mas tem limites",
    "Que ela está plenamente validada",
    "Que ela define a conduta sozinha",
-   "Que ela só vale para idosos",
+   "Que ela vale para idosos",
    "Que ela não serve e deve sair do ensino"
   ],
   "correta": "A",
@@ -3523,23 +3535,23 @@
   "fixa": false,
   "perfil": "R2",
   "teste": 4,
-  "grau": 5,
-  "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 4, em que proporção dos pacientes o FAST-PLUS encontrou alargamento crítico da sínfise púbica?",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, o ultrassom mostra alargamento crítico da sínfise púbica. Qual é a conduta?",
   "alternativas": [
-   "Em nenhum paciente",
-   "Em todos os pacientes com fratura de pelve",
-   "Em cerca de metade dos pacientes",
-   "Em menos de 1% dos pacientes",
-   "Em 7,5% dos pacientes"
+   "Cinta na cintura, sobre as cristas ilíacas",
+   "Aguardar a radiografia para pôr a cinta",
+   "Levar à TC antes de pôr a cinta",
+   "Repetir o ultrassom em uma hora",
+   "Cinta pélvica centrada nos trocânteres, já"
   ],
   "correta": "E",
   "justificativas": [
-   "O estudo encontrou alargamento crítico da sínfise em uma parcela dos pacientes [A35].",
-   "A proporção foi de 7,5% dos pacientes estudados, não de todos [A35].",
-   "A proporção foi bem menor: 7,5% [A35].",
-   "A proporção foi de 7,5% [A35].",
-   "Correta: no FAST-PLUS, 7,5% dos pacientes tinham alargamento crítico da sínfise púbica [A35]."
+   "A cinta é centrada nos trocânteres; colocada alta, aumenta a pressão abdominal e estabiliza pouco [D54].",
+   "No alto risco de sangramento pélvico, a cinta é colocada de imediato [D9].",
+   "O paciente instável não vai à tomografia [D52].",
+   "Esperar atrasa: no alto risco, a cinta é imediata [D9].",
+   "Correta: alargamento crítico da sínfise, achado em 7,5% no FAST-PLUS [A35], indica alto risco; a cinta é imediata [D9] e centrada nos trocânteres [D54]."
   ],
   "categorias": [
    "erro conceitual",
@@ -3549,7 +3561,9 @@
    "correta"
   ],
   "ancoras": [
-   "A35"
+   "A35",
+   "D9",
+   "D54"
   ]
  },
  {
@@ -3563,9 +3577,9 @@
   "alternativas": [
    "Porque a compressão já resolveu o sangramento",
    "Pelo risco de lesar estruturas e sangrar mais",
-   "Porque o pinçamento só pode ser feito pelo assistente",
+   "Porque o pinçamento é tarefa do assistente",
    "Porque o pinçamento atrasa a tomografia",
-   "Porque o pinçamento nunca funciona"
+   "Porque o pinçamento não funciona"
   ],
   "correta": "B",
   "justificativas": [
@@ -3636,7 +3650,7 @@
   "enunciado": "No caso 4, quais as opções para controlar o sangramento pélvico e abdominal?",
   "alternativas": [
    "Observação clínica rigorosa na sala de trauma",
-   "Só transfusão de hemocomponentes",
+   "Transfusão de hemocomponentes, sem intervenção",
    "Reposição volêmica até a pressão normalizar",
    "Tomografia de corpo inteiro e reavaliação",
    "Centro cirúrgico ou radiologia intervencionista"
@@ -3673,7 +3687,7 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 4, qual o papel da TC de corpo inteiro neste paciente sem resposta à reposição?",
   "alternativas": [
-   "É obrigatória antes de qualquer cirurgia",
+   "É obrigatória antes da cirurgia",
    "Reduz a mortalidade, como mostrou o REACT-2",
    "Deve ser repetida a cada hora na sala",
    "Não é prioridade antes de controlar o sangramento",
@@ -3715,7 +3729,7 @@
    "Cada membro escolhe o que fazer na hora",
    "Conforme a demanda de cada momento, sem plano",
    "Esperando o assistente chegar para definir",
-   "Um só profissional faz todos, em sequência"
+   "Um profissional faz os procedimentos em sequência"
   ],
   "correta": "A",
   "justificativas": [
@@ -3747,19 +3761,19 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 4, após cirurgia, o paciente volta hipotenso na UTI. Como pensar?",
   "alternativas": [
-   "Esperar a manhã seguinte para reavaliar",
+   "Atribuir à hipotermia e aquecer antes de investigar",
    "Sangramento até prova em contrário",
    "Atribuir à perda pela fratura já tratada",
-   "Atribuir só ao efeito da anestesia",
-   "Considerar normal no pós-operatório"
+   "Atribuir à vasodilatação da anestesia e repor volume",
+   "Atribuir à analgesia e reduzir a dose"
   ],
   "correta": "B",
   "justificativas": [
-   "Esperar atrasa o diagnóstico de um novo sangramento [D32].",
+   "A hipotermia deve ser tratada, mas não explica a hipotensão antes de excluir sangramento [D32].",
    "Correta: a hipotensão após a ressuscitação é sangramento até prova em contrário [D32].",
    "Atribuir a uma causa já conhecida, sem investigar, é armadilha [D32].",
-   "A anestesia pode baixar a pressão, mas atribuir só a ela sem investigar é armadilha [D32].",
-   "Hipotensão no pós-operatório do trauma não é normal; é sangramento até prova em contrário [D32]."
+   "A anestesia pode baixar a pressão [G7], mas atribuir só a ela sem investigar sangramento é armadilha [D32].",
+   "Atribuir à analgesia sem investigar é armadilha; a regra é pensar primeiro em sangramento [D32]."
   ],
   "categorias": [
    "erro de conduta",
@@ -3769,7 +3783,8 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "D32"
+   "D32",
+   "G7"
   ]
  },
  {
@@ -3777,23 +3792,23 @@
   "fixa": false,
   "perfil": "R3",
   "teste": 4,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 4, qual a mortalidade a esperar e qual a implicação para a equipe?",
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, o paciente fica mais sonolento enquanto o sangue chega. Como decidir o momento da intubação?",
   "alternativas": [
-   "Acima de 40%: decisão rápida e experiente",
-   "Abaixo de 5%: a decisão pode esperar",
-   "Cerca de 25%: aguardar a resposta à reposição",
-   "Entre 10% e 20%: decidir com calma",
-   "Igual à dos estáveis: não há pressa"
+   "Após iniciar sangue e controle, prontos para o colapso",
+   "Intubar já, antes de qualquer reposição",
+   "Adiar até a chegada ao centro cirúrgico, sem preparar",
+   "Intubar depois da tomografia de crânio",
+   "Decidir pelo Glasgow, sem olhar a pressão"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: a mortalidade dos pacientes com PAS abaixo de 90 mmHg que precisam de laparotomia de emergência passa de 40% [D27]; o tempo até o controle importa [D69].",
-   "O valor descrito é acima de 40% [D27].",
-   "O valor descrito é acima de 40%; e quem não responde é priorizado para controle imediato [D27, P9].",
-   "O valor descrito é acima de 40%, o que exige rapidez [D27].",
-   "A mortalidade desse grupo passa de 40%, muito acima da dos estáveis [D27]."
+   "Correta: no exsanguinante, ressuscitação e controle da hemorragia vêm antes da via aérea invasiva [G1]; indução e pressão positiva desfazem a compensação [G7], e a intubação pode precipitar o colapso [D47].",
+   "Intubar antes de repor pode precipitar o colapso na indução [D47, G7].",
+   "Adiar sem material e pessoa prontos é o padrão de erro da via aérea [A51]; a via aérea vem primeiro se houver obstrução ou hipóxia grave [G4].",
+   "O paciente instável não vai à tomografia [D52].",
+   "No choque, o Glasgow baixo pode ser hipoperfusão [G5]; a decisão pesa a circulação [G1]."
   ],
   "categorias": [
    "correta",
@@ -3803,9 +3818,10 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "D27",
-   "P9",
-   "D69"
+   "G1",
+   "G7",
+   "D47",
+   "G4"
   ]
  },
  {
@@ -3817,11 +3833,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, ao discutir com residentes a avaliação ultrassonográfica, qual síntese das fontes é correta?",
   "alternativas": [
-   "O ultrassom só serve para pneumotórax",
+   "O ultrassom serve para pneumotórax, não para o choque",
    "RUSH sensível no instável; FAST-PLUS vê a sínfise",
    "O ultrassom não tem utilidade no choque",
    "A sensibilidade foi de 100% em todos os estudos",
-   "O ultrassom substitui a tomografia em todos"
+   "O ultrassom substitui a tomografia"
   ],
   "correta": "B",
   "justificativas": [
@@ -3855,7 +3871,7 @@
   "enunciado": "No caso 4, um estudo de colaboração entre cirurgia e radiologia intervencionista mostrou sobrevida maior que a prevista. Como interpretar?",
   "alternativas": [
    "Mostra pior desfecho com a colaboração das equipes",
-   "Vale só para o trauma penetrante",
+   "Vale para o trauma penetrante",
    "Associação favorável, observacional, sem provar causa",
    "Prova causal definitiva do benefício",
    "Não tem relevância para a prática"
@@ -3889,18 +3905,18 @@
   "enunciado": "No caso 4, qual frase resume a doutrina do paciente em extremis?",
   "alternativas": [
    "A circulação tem precedência (CABDE)",
-   "ABCDE sempre, sem exceção",
-   "A exposição completa vem em primeiro lugar",
-   "A via aérea vem sempre em primeiro lugar",
-   "Esperar estabilizar para então decidir"
+   "ABCDE, com intubação antes da reposição",
+   "Via aérea definitiva primeiro, pelo risco de aspiração",
+   "Imagem rápida antes de intervir",
+   "Reposição com cristaloide até a TC"
   ],
   "correta": "A",
   "justificativas": [
    "Correta: no paciente que chega em extremis, a circulação tem precedência (CABDE) [D3]; o consenso de 2025 vai na mesma direção [G1].",
-   "A ordem padrão tem exceção: hemorragia com risco de vida e extremis [D2, D3].",
-   "A exposição é a última letra; não precede a circulação [D3].",
-   "A via aérea continua prioritária na obstrução e na hipóxia grave [G4], mas não no extremis por sangramento [D3, G1].",
-   "Esperar estabilizar o paciente em extremis atrasa justamente o que o mantém vivo [D3]."
+   "No extremis por sangramento, intubar antes da reposição pode precipitar colapso [D47, G7].",
+   "A via aérea vem primeiro na obstrução e na hipóxia grave [G4], não no extremis por sangramento [D3, G1].",
+   "O paciente instável não deve ir à tomografia [D52].",
+   "No choque evidente, sangue e plasma vêm antes ou em vez de cristaloide [D39], e o instável não vai à TC [D52]."
   ],
   "categorias": [
    "correta",
@@ -3911,9 +3927,12 @@
   ],
   "ancoras": [
    "D3",
-   "D2",
+   "G1",
+   "D47",
+   "G7",
    "G4",
-   "G1"
+   "D52",
+   "D39"
   ]
  },
  {
@@ -3960,8 +3979,8 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 4, qual crítica faria a quem decide só pela tabela de classes de choque?",
   "alternativas": [
-   "Que só a frequência cardíaca importa",
-   "Que só a pressão arterial importa",
+   "Que a frequência cardíaca decide",
+   "Que a pressão arterial decide",
    "Que as classes de choque não existem na prática",
    "Que a tabela não tem crítica publicada",
    "Que a comparação clássica teve viés de método"
@@ -3995,21 +4014,21 @@
   "teste": 4,
   "grau": 6,
   "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 4, um residente pergunta sobre o acesso intraósseo no adulto em choque. Qual resposta das fontes?",
+  "enunciado": "No caso 4, um residente propõe intraósseo no esterno, 'mais perto do coração'. Qual a melhor resposta?",
   "alternativas": [
-   "Pode salvar vidas quando a veia falha",
-   "Serve só para crianças pequenas",
-   "É contraindicado no adulto em choque",
-   "Não tem papel no trauma",
-   "Serve só para colher sangue"
+   "Preferir o úmero proximal: o esterno atrapalha a toracotomia",
+   "Aceitar: o esterno é o melhor local no adulto",
+   "Preferir a tíbia nos adultos",
+   "Recusar o intraósseo e insistir na veia periférica",
+   "Aceitar, desde que se use o esterno para coletar sangue"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: sem acesso venoso imediato, considerar o intraósseo [D15]; iniciar a ressuscitação por ele pode salvar vidas no choque [D28].",
-   "O intraósseo é usado no adulto; no traumatizado, o úmero proximal pode ser o melhor local [D46].",
-   "Não é contraindicado; é a alternativa quando falta acesso venoso [D15].",
-   "Tem papel: iniciar a ressuscitação pelo intraósseo pode salvar vidas no choque [D28].",
-   "Colher sangue é possível, mas o papel principal é ressuscitar [D28]."
+   "Correta: salvo contraindicação, o úmero proximal pode ser o melhor local no traumatizado; a tíbia é a alternativa, e o esterno atrapalha a toracotomia e a reanimação [D46].",
+   "O esterno atrapalha a toracotomia e a reanimação [D46].",
+   "A tíbia é a alternativa; o úmero proximal pode ser o melhor local no traumatizado [D46].",
+   "Depois de duas falhas, insistir atrasa a ressuscitação; a alternativa é o intraósseo [D15].",
+   "O problema do esterno não é o uso, é o local: ele atrapalha a toracotomia e a reanimação [D46]."
   ],
   "categorias": [
    "correta",
@@ -4020,8 +4039,7 @@
   ],
   "ancoras": [
    "D46",
-   "D15",
-   "D28"
+   "D15"
   ]
  },
  {
@@ -4034,9 +4052,9 @@
   "enunciado": "No caso 5, a TC foi normal. A dor nova pode ser uma lesão?",
   "alternativas": [
    "Não: a TC normal exclui todas as lesões",
-   "Só se houver febre junto com a dor",
-   "Não: dor no dia seguinte é só contusão muscular",
-   "Só em crianças, não em adultos",
+   "Sim, se houver febre junto com a dor",
+   "Não: dor no dia seguinte é contusão muscular",
+   "Sim, em crianças, mas não em adultos",
    "Sim: lesões aparecem depois, mesmo com a TC"
   ],
   "correta": "E",
@@ -4141,7 +4159,7 @@
    "Examinar por cima da roupa, para não expor a paciente",
    "Pedir nova TC antes de examinar",
    "Retirar toda a roupa e examinar o corpo inteiro",
-   "Examinar só o pé e o ombro, onde dói"
+   "Examinar o pé e o ombro, onde dói"
   ],
   "correta": "D",
   "justificativas": [
@@ -4173,10 +4191,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, o que fazer com as imagens já feitas?",
   "alternativas": [
-   "Revisá-las só se a paciente piorar mais",
+   "Revisá-las se a paciente piorar mais",
    "Revisá-las na avaliação terciária",
    "Arquivá-las: o que vale agora é o exame",
-   "Repetir todas, sem revisar as antigas",
+   "Repetir os exames, sem revisar os antigos",
    "Confiar no primeiro laudo"
   ],
   "correta": "B",
@@ -4212,8 +4230,8 @@
    "Investigar no dia da alta",
    "Não valorizar, porque a TC foi normal",
    "Tratar a dor e reavaliar na semana seguinte",
-   "Achado positivo quase sempre é lesão: investigar",
-   "Só valorizar se houver deformidade visível"
+   "Achado positivo do exame exige investigação",
+   "Valorizar se houver deformidade visível"
   ],
   "correta": "D",
   "justificativas": [
@@ -4244,8 +4262,8 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, quando a avaliação terciária deveria ser feita?",
   "alternativas": [
-   "Só no dia da alta hospitalar",
-   "Só se a tomografia vier alterada",
+   "No dia da alta hospitalar",
+   "Quando a tomografia vier alterada",
    "Depois da ressuscitação e das intervenções",
    "Dispensada quando a TC é normal",
    "Antes da avaliação primária, na chegada"
@@ -4313,21 +4331,21 @@
   "teste": 5,
   "grau": 4,
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 5, qual teste clínico tem especificidade de 99% para lesão de membro inferior?",
+  "enunciado": "No caso 5, ao revisar o atendimento da sala de trauma, o que o registro na ficha estruturada costuma melhorar?",
   "alternativas": [
-   "AMPLA",
-   "RUSH",
-   "FAST",
-   "SILENT",
-   "MIST"
+   "A cobrança do atendimento",
+   "A mortalidade geral dos pacientes",
+   "O tempo de internação",
+   "Indicadores, como o registro da via aérea",
+   "A sensibilidade da tomografia"
   ],
   "correta": "D",
   "justificativas": [
-   "AMPLA é o roteiro da história da avaliação secundária [D21].",
-   "RUSH é protocolo de ultrassom no choque [A34], não teste de membro.",
-   "FAST é ultrassom de abdome e pericárdio [D80], não teste de lesão de membro.",
-   "Correta: o teste SILENT (membro inferior) teve sensibilidade de 75% e especificidade de 99% [A43].",
-   "MIST é o formato de passagem do pré-hospitalar [D23], não um teste clínico."
+   "O formulário melhorou indicadores do cuidado inicial, não só administrativos [A13].",
+   "A queda de mortalidade foi só no subgrupo com fisiologia alterada, desfecho secundário [A15, A46].",
+   "O estudo do formulário não mediu tempo de internação nas fontes do tema [A13].",
+   "Correta: o formulário de admissão melhorou 14 de 16 indicadores [A13], e o registro da via aérea subiu de 72,9% para 98,4% [A14].",
+   "O formulário não muda a tomografia; muda o processo da avaliação primária [A13]."
   ],
   "categorias": [
    "erro de indicação",
@@ -4337,11 +4355,10 @@
    "erro técnico"
   ],
   "ancoras": [
-   "D23",
-   "D21",
-   "A34",
-   "A43",
-   "D80"
+   "A13",
+   "A15",
+   "A46",
+   "A14"
   ]
  },
  {
@@ -4351,21 +4368,21 @@
   "teste": 5,
   "grau": 4,
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 5, o SILENT negativo exclui lesão?",
+  "enunciado": "No caso 5, a PA de 88/56 veio do aparelho automático, e a paciente está agitada. Como interpretar?",
   "alternativas": [
-   "Sim, pela alta especificidade",
-   "Não: a sensibilidade é de 75%",
-   "Sim, desde que a TC seja normal",
-   "Sim, mas só no paciente jovem",
-   "Sim, em qualquer paciente"
+   "Agitação pela dor; a pressão é confiável",
+   "Possível choque; confirmar a pressão manualmente",
+   "Agitação por ansiedade com a internação",
+   "Erro do aparelho; repetir no dia seguinte",
+   "Agitação por abstinência; sedar e observar"
   ],
   "correta": "B",
   "justificativas": [
-   "A especificidade alta (99%) ajuda a confirmar quando positivo, não a excluir quando negativo [A43].",
-   "Correta: com sensibilidade de 75% (IC 64 a 84%), um SILENT negativo não exclui lesão [A43].",
-   "A TC normal não torna o teste negativo confiável para excluir; a sensibilidade segue 75% [A43].",
-   "A idade não muda o desempenho descrito do teste [A43].",
-   "Com sensibilidade de 75%, o teste negativo deixa passar uma em cada quatro lesões [A43]."
+   "A agitação também é sinal de choque [D17], e o aparelho automático pode errar no choque [D14].",
+   "Correta: agitação e agressividade também são sinais de choque classe III e IV [D17]; o aparelho automático pode errar no choque, e a medida manual confirma [D14].",
+   "Atribuir a agitação à ansiedade, com hipotensão, atrasa o diagnóstico de choque [D17, D32].",
+   "Esperar atrasa: a hipotensão após a ressuscitação é sangramento até prova em contrário [D32].",
+   "Sedar sem investigar mascara o sinal de choque [D17]; a hipotensão pede investigação [D32]."
   ],
   "categorias": [
    "erro conceitual",
@@ -4375,7 +4392,9 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "A43"
+   "D17",
+   "D14",
+   "D32"
   ]
  },
  {
@@ -4419,23 +4438,23 @@
   "fixa": false,
   "perfil": "R1",
   "teste": 5,
-  "grau": 5,
-  "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 5, quem atendeu a paciente na UTI deve fazer o quê?",
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, ao reexaminar a paciente pelas dores novas, o que a história deve incluir?",
   "alternativas": [
-   "Ajustar a analgesia e aguardar",
-   "Programar a alta para a enfermaria",
-   "Avaliação terciária e revisão das imagens",
-   "Manter a prescrição do dia, sem reexaminar",
-   "Repetir a TC de corpo inteiro"
+   "Só a intensidade da dor no pé e no ombro",
+   "O nome do motorista do veículo",
+   "Alergias, medicamentos, passado, refeição e evento",
+   "Só os medicamentos em uso",
+   "Nada: a história já foi colhida na chegada"
   ],
   "correta": "C",
   "justificativas": [
-   "Tratar só a dor não investiga a causa [D25].",
-   "Programar alta sem a terciária aumenta o risco de lesão não vista [D30].",
-   "Correta: no paciente de UTI, a avaliação terciária e a revisão cuidadosa das imagens reduzem o risco de lesão não identificada [D30].",
-   "Sem reexame, a lesão não vista segue escondida [D30].",
-   "A recomendação é reexaminar e revisar as imagens, não repetir a TC de rotina [D30]."
+   "A história completa vai além da dor; o objetivo é achar todas as lesões [D20].",
+   "Dado sem utilidade clínica; a história segue o AMPLA [D21].",
+   "Correta: a avaliação secundária é história e exame completos [D20], e a história segue o AMPLA [D21].",
+   "Medicamentos são um item; faltam os outros do AMPLA [D21].",
+   "O reexame inclui rever a história, porque a paciente pode lembrar de dados novos [D20]."
   ],
   "categorias": [
    "erro de indicação",
@@ -4445,8 +4464,8 @@
    "erro técnico"
   ],
   "ancoras": [
-   "D30",
-   "D25"
+   "D20",
+   "D21"
   ]
  },
  {
@@ -4458,18 +4477,18 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, qual a melhor explicação para a lesão só aparecer no dia seguinte?",
   "alternativas": [
-   "A paciente está exagerando o sintoma",
+   "A lesão estava fora do campo da TC",
    "Lesões ocultas são frequentes, mesmo com a TC",
-   "A tomografia sempre vê todas as lesões",
-   "Houve necessariamente erro grosseiro da equipe",
+   "A TC vê todas as lesões; houve erro de laudo",
+   "O exame da chegada foi incompleto",
    "É uma lesão nova, sem relação com o trauma"
   ],
   "correta": "B",
   "justificativas": [
-   "Presumir exagero sem examinar é erro; achado positivo exige ação [D25].",
+   "A TC de corpo inteiro cobre os segmentos; o achado das fontes é que lesões tardias ocorrem mesmo com ela [A42].",
    "Correta: mesmo com TC de corpo inteiro, 13,9% tiveram lesões com diagnóstico tardio [A42]; a terciária e a revisão das imagens existem por isso [D30].",
    "A TC não vê todas as lesões: 13,9% de diagnóstico tardio mesmo com ela [A42].",
-   "Lesão tardia não significa necessariamente erro; ela ocorre mesmo com o algoritmo bem feito [A41, A42].",
+   "O caso diz que as avaliações primária e secundária foram feitas; lesão tardia ocorre mesmo com o algoritmo bem feito [A41, A42].",
    "Dor nova no dia seguinte a um atropelamento deve ser tomada como lesão do trauma até prova em contrário [D25]."
   ],
   "categorias": [
@@ -4493,21 +4512,21 @@
   "teste": 5,
   "grau": 3,
   "taxa_esperada": "50% a 75%",
-  "enunciado": "No caso 5, hipotensão depois da ressuscitação. Qual destas atitudes é a armadilha a evitar?",
+  "enunciado": "No caso 5, hipotensão depois da ressuscitação. Qual é a conduta?",
   "alternativas": [
-   "Reexaminar a paciente por inteiro",
-   "Revisar as imagens já feitas",
-   "Investigar de imediato a hipótese de sangramento",
-   "Chamar o líder para reavaliar a paciente",
-   "Atribuir a queda a outra causa sem investigar"
+   "Atribuir à dor e reforçar a analgesia",
+   "Esperar a próxima medida para confirmar",
+   "Atribuir ao jejum e aumentar a hidratação",
+   "Pedir nova TC de corpo inteiro antes de examinar",
+   "Tratar como sangramento e investigar já"
   ],
   "correta": "E",
   "justificativas": [
-   "Reexaminar por inteiro é conduta correta [D18, D30].",
-   "Revisar as imagens é conduta correta e reduz lesões não identificadas [D30].",
-   "Investigar sangramento é exatamente o que a regra pede [D32].",
-   "Chamar o líder é conduta correta, não armadilha [D22, D32].",
-   "Correta: esta é a armadilha. A hipotensão após a ressuscitação é sangramento até prova em contrário [D32]; atribuí-la a outra causa sem investigar atrasa o diagnóstico."
+   "Atribuir a queda à dor, sem investigar, é a armadilha [D32].",
+   "Esperar atrasa o diagnóstico de um sangramento [D32].",
+   "Presumir desidratação sem excluir sangramento é armadilha [D32].",
+   "A imagem não substitui o reexame; examinar primeiro orienta a imagem [D30].",
+   "Correta: a hipotensão após a ressuscitação é sangramento até prova em contrário [D32]; reexaminar e revisar as imagens [D30]."
   ],
   "categorias": [
    "erro de indicação",
@@ -4517,10 +4536,8 @@
    "correta"
   ],
   "ancoras": [
-   "D22",
    "D32",
-   "D30",
-   "D18"
+   "D30"
   ]
  },
  {
@@ -4534,7 +4551,7 @@
   "alternativas": [
    "Pouco útil: o teste não acrescenta à imagem",
    "Ótimo para excluir lesão do membro",
-   "Sensibilidade 75% e especificidade 99%: confirma, não exclui",
+   "Sensibilidade 75%, especificidade 99%",
    "Sensibilidade de 99%: exclui com segurança",
    "Especificidade de 75%: não serve para confirmar"
   ],
@@ -4566,10 +4583,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "Ao revisar a indicação da TC no caso 5, qual argumento é sustentado pela evidência?",
   "alternativas": [
-   "Com primária normal, nenhum paciente teve lesão na TC",
+   "Num estudo, nenhum dos 120 com primária normal teve lesão à TC",
    "A TC de rotina reduz a mortalidade",
    "A TC de corpo inteiro dispensa a terciária",
-   "A TC achou lesão grave em metade desses pacientes",
+   "Nesse estudo, metade dos 120 teve lesão grave",
    "A TC deve ser repetida a cada 12 horas"
   ],
   "correta": "A",
@@ -4603,7 +4620,7 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 5, como reduzir a chance de nova lesão despercebida até a alta?",
   "alternativas": [
-   "Aceitar o risco, que nenhuma medida reduz",
+   "Aceitar o risco, que é inevitável",
    "Alta precoce, para encurtar a internação",
    "Nova tomografia de rotina, sem exame",
    "Terciária, revisão de imagens e reexame",
@@ -4673,16 +4690,16 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, você revisa o caso com a equipe. Qual mensagem principal?",
   "alternativas": [
-   "A paciente exagerou a dor no pé",
-   "O caso não traz lição: foi azar",
+   "A lesão estava fora do campo da tomografia",
+   "O exame da chegada não incluiu as extremidades",
    "A sala de trauma e a TC não encerram o diagnóstico",
    "A TC de corpo inteiro basta para excluir lesões",
    "Evitar internar pacientes como essa"
   ],
   "correta": "C",
   "justificativas": [
-   "Presumir exagero sem examinar é erro; achado positivo exige ação [D25].",
-   "Há lição: lesões tardias são previsíveis e exigem terciária e revisão das imagens [A42, D30].",
+   "A explicação das fontes não é o campo da imagem; lesões tardias ocorrem mesmo com TC de corpo inteiro [A42].",
+   "O caso diz que a secundária foi feita; lesão tardia ocorre mesmo com o algoritmo bem feito [A41, A42].",
    "Correta: mesmo com TC, 13,9% tiveram diagnóstico tardio [A42]; a terciária e a revisão das imagens reduzem esse risco [D30].",
    "A TC não exclui todas as lesões: 13,9% tardias [A42].",
    "Internar e reexaminar foi o que permitiu achar a lesão; o problema seria não internar [D30]."
@@ -4695,9 +4712,8 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "D30",
    "A42",
-   "D25"
+   "D30"
   ]
  },
  {
@@ -4713,7 +4729,7 @@
    "Identificando o residente que não viu a lesão",
    "Por escrito, alguns meses depois",
    "Com a equipe, logo após, focado no processo",
-   "Só entre os chefes, sem a equipe"
+   "Entre os chefes, sem a equipe"
   ],
   "correta": "D",
   "justificativas": [
@@ -4747,7 +4763,7 @@
    "A TC dispensa a avaliação terciária",
    "A TC reduz as lesões tardias a zero",
    "Ainda não há estudos sobre TC de rotina",
-   "Pouco efeito em mortes; lesões tardias persistem"
+   "Pouco efeito em mortes; lesões tardias seguem"
   ],
   "correta": "E",
   "justificativas": [
@@ -4811,8 +4827,8 @@
   "fixa": false,
   "perfil": "R3",
   "teste": 5,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, hipotensão à tarde. Qual a primeira decisão do líder?",
   "alternativas": [
    "Tratar como sangramento e investigar já",
@@ -4846,22 +4862,22 @@
   "fixa": false,
   "perfil": "R3",
   "teste": 5,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, qual a proporção de lesões tardias após terciária, e o que implica?",
   "alternativas": [
    "Não há dado sobre essa proporção",
    "0,26%: a vigilância continua depois",
-   "0%: a terciária é infalível",
-   "26%: a terciária não serve",
+   "0,026%: risco desprezível",
+   "2,6%: a terciária falha muito",
    "13,9%: tudo depende da tomografia"
   ],
   "correta": "B",
   "justificativas": [
    "Há dado: 0,26% dos pacientes graves [A41].",
    "Correta: lesão potencialmente letal surgiu depois da terciária em 0,26% dos pacientes graves [A41]; a vigilância continua.",
-   "Não é zero: 0,26% tiveram lesão potencialmente letal depois da terciária [A41].",
-   "O valor é 0,26%, não 26% [A41].",
+   "O valor é 0,26% dos graves, dez vezes mais [A41]; e lesão potencialmente letal não é desprezível.",
+   "O valor é 0,26%, dez vezes menor [A41].",
    "13,9% é a proporção de lesões tardias com TC na primária, em outro estudo [A42]."
   ],
   "categorias": [
@@ -4883,13 +4899,13 @@
   "teste": 5,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 5, como você explicaria os 13,9 % de lesões tardias mesmo com TC?",
+  "enunciado": "No caso 5, como você explicaria os 13,9% de lesões tardias mesmo com TC?",
   "alternativas": [
-   "Só acontece em hospitais pequenos",
+   "Acontece em hospitais pequenos",
    "A TC não elimina lesões ocultas",
    "O estudo é inválido pelo desenho",
    "A tomografia não serve no trauma",
-   "É sempre erro de leitura do laudo"
+   "É erro de leitura do laudo"
   ],
   "correta": "B",
   "justificativas": [
@@ -4918,13 +4934,13 @@
   "teste": 5,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 5, o que a doutrina recomenda para o paciente de UTI?",
+  "enunciado": "No caso 5, a paciente está na enfermaria. Se fosse um traumatizado grave na UTI, o que a doutrina recomenda?",
   "alternativas": [
-   "Só exames laboratoriais seriados",
-   "Só os cuidados de rotina da terapia intensiva",
+   "Exames laboratoriais seriados",
+   "Os cuidados de rotina da terapia intensiva",
    "Avaliação terciária e revisão das imagens",
    "Alta precoce da unidade",
-   "Nova tomografia todos os dias"
+   "Nova tomografia diária"
   ],
   "correta": "C",
   "justificativas": [
@@ -4950,23 +4966,23 @@
   "fixa": false,
   "perfil": "R+",
   "teste": 5,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 5, o teste SILENT poderia substituir a imagem?",
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, o estudo que achou 13,9% de lesões tardias mesmo com TC era uma coorte retrospectiva de um centro. O que esse desenho permite concluir?",
   "alternativas": [
-   "Sim, porque a especificidade é de 75%",
-   "Sim, em todos os pacientes",
-   "Ainda não há dados sobre o teste",
-   "Não para excluir: sensibilidade de 75%",
-   "Sim, quando a TC de corpo inteiro foi normal"
+   "A TC causa as lesões tardias",
+   "O número vale para qualquer serviço",
+   "Sem randomização, o dado não serve",
+   "Lesões tardias ocorrem; medir no próprio serviço",
+   "A terciária perde valor quando há TC"
   ],
   "correta": "D",
   "justificativas": [
-   "Os números estão invertidos: a especificidade é 99%, a sensibilidade é 75% [A43].",
-   "Com sensibilidade de 75%, o teste negativo deixa passar lesões [A43].",
-   "Há dados: sensibilidade de 75% e especificidade de 99% [A43].",
-   "Correta: o SILENT confirma bem quando positivo (especificidade 99%), mas não exclui quando negativo (sensibilidade 75%) [A43].",
-   "A TC normal não muda o desempenho do teste [A43]."
+   "Uma coorte descreve frequência; não testa se a TC causa algo [A42].",
+   "Um centro só, em estudo retrospectivo: o número pode variar em outro serviço [A42].",
+   "O dado descritivo serve para estimar frequência e justificar o reexame [A42, D30].",
+   "Correta: a coorte mostra que lesões tardias ocorrem mesmo com TC [A42]; por ser de um centro só, o serviço deve medir a sua própria taxa [A42].",
+   "A terciária e a revisão das imagens reduzem lesões não identificadas [D30]."
   ],
   "categorias": [
    "erro de indicação",
@@ -4976,7 +4992,8 @@
    "erro técnico"
   ],
   "ancoras": [
-   "A43"
+   "A42",
+   "D30"
   ]
  },
  {
@@ -4984,12 +5001,12 @@
   "fixa": false,
   "perfil": "R+",
   "teste": 5,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, ao propor mudança de protocolo, qual seria a base mais sólida?",
   "alternativas": [
-   "Lesões tardias documentadas, a favor do reexame seriado",
-   "A preferência do residente que atendeu",
+   "Lesões tardias documentadas nas fontes",
+   "A experiência dos chefes do serviço",
    "A opinião do membro mais experiente da equipe",
    "O custo da tomografia de corpo inteiro",
    "A mudança em si, para atualizar o protocolo"
@@ -4997,7 +5014,7 @@
   "correta": "A",
   "justificativas": [
    "Correta: lesões tardias em 13,9% mesmo com TC [A42] e lesões letais após a terciária em 0,26% [A41] sustentam o reexame seriado.",
-   "Preferência individual não sustenta protocolo; há dados [A41, A42].",
+   "A experiência conta, mas os dados publicados são base mais sólida para protocolo [A41, A42].",
    "Opinião isolada é a evidência mais fraca; há dados publicados [A41, A42].",
    "O custo não é o foco do problema do caso, que é a lesão não vista [A42].",
    "Mudar sem base não melhora o cuidado; a base existe nos dados de lesões tardias [A41, A42]."
@@ -5023,10 +5040,10 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 5, qual seria o papel de reavaliar a hipotensão tardia na auditoria?",
   "alternativas": [
-   "Só gerar dados para pesquisa",
+   "Gerar dados para a pesquisa, sem mudar a conduta",
    "Confirmar que a conduta inicial estava certa",
    "Apontar o responsável pelo erro",
-   "Só registrar o episódio no prontuário",
+   "Registrar o episódio, sem rever o caso",
    "Achar lesão não vista ou ressangramento"
   ],
   "correta": "E",
@@ -5055,13 +5072,13 @@
   "fixa": false,
   "perfil": "R+",
   "teste": 5,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 5, você revisa o critério de TC de corpo inteiro do serviço. Qual proposta é coerente com as fontes?",
   "alternativas": [
    "Indicar por critérios e manter a avaliação terciária",
    "Evitar TC em atropelados",
-   "Indicar a TC só pela idade",
+   "TC para todos acima de 65 anos",
    "TC para todos, dispensando a terciária",
    "Tornar a TC universal, porque reduz a mortalidade"
   ],
@@ -5171,7 +5188,7 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, o passageiro está inconsciente. O que avaliar logo na via aérea?",
   "alternativas": [
-   "Se está pérvia e se o Glasgow pede via aérea definitiva",
+   "Se está pérvia e qual o Glasgow",
    "A pressão arterial, pelo risco de choque",
    "Esperar o Glasgow cair para decidir",
    "A temperatura, pelo risco de hipotermia",
@@ -5211,7 +5228,7 @@
    "Quem chegar primeiro à sala",
    "O enfermeiro mais antigo",
    "O cirurgião do trauma",
-   "O R3, que está na sala"
+   "O médico mais antigo do plantão"
   ],
   "correta": "D",
   "justificativas": [
@@ -5219,7 +5236,7 @@
    "A ordem de chegada não define o líder [D22].",
    "O enfermeiro tem funções próprias; o líder é o cirurgião do trauma [D22].",
    "Correta: no centro de trauma, o líder da equipe deve ser o cirurgião do trauma [D22].",
-   "O R3 pode liderar sob supervisão próxima [D29], mas com o assistente presente o líder é o cirurgião do trauma [D22]."
+   "A antiguidade não define o líder; no centro de trauma, é o cirurgião do trauma [D22]."
   ],
   "categorias": [
    "erro técnico",
@@ -5243,7 +5260,7 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, como o SAMU deve passar o caso?",
   "alternativas": [
-   "Só para o enfermeiro da sala",
+   "Para o enfermeiro da sala",
    "Depois do atendimento, por escrito",
    "De forma livre e detalhada",
    "Por escrito, deixando a ficha na maca",
@@ -5282,7 +5299,7 @@
    "Aquecê-los",
    "Esperar a temperatura da sala esquentar",
    "Lavá-los com soro em temperatura ambiente",
-   "Cobri-los só se tremerem de frio",
+   "Cobri-los se tremerem de frio",
    "Deixá-los descobertos até a TC"
   ],
   "correta": "A",
@@ -5314,11 +5331,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, o R1 pergunta se pode liderar o atendimento do motorista. Qual a resposta?",
   "alternativas": [
-   "Só se o assistente sair da sala",
+   "Quando o assistente sair da sala",
    "Sim, sozinho, porque o caso é simples",
    "Sim, sob supervisão próxima do assistente",
-   "Só a partir do ano que vem",
-   "Não: R1 nunca lidera atendimento"
+   "A partir do ano que vem",
+   "Não: o R1 não lidera atendimento"
   ],
   "correta": "C",
   "justificativas": [
@@ -5349,7 +5366,7 @@
   "enunciado": "No caso 6, o formulário de admissão do trauma foi associado a quê?",
   "alternativas": [
    "Piora dos indicadores de processo",
-   "Melhora só do registro, sem efeito no cuidado",
+   "Melhora do registro, sem efeito no cuidado",
    "Aumento do número de mortes",
    "Mais tempo de permanência na sala",
    "Melhora de indicadores, como o da via aérea"
@@ -5382,21 +5399,21 @@
   "teste": 6,
   "grau": 4,
   "taxa_esperada": "30% a 50%",
-  "enunciado": "No caso 6, o assistente sugere orientar por telefone, de fora da sala. O que a evidência indica?",
+  "enunciado": "No caso 6, o assistente pergunta se pode orientar por telefone, de fora da sala. O que é mais adequado?",
   "alternativas": [
-   "Deixar o R1 liderar sozinho os dois casos",
-   "Estar presente: a presença encurtou a ressuscitação",
-   "Liderar da porta, sem ver os pacientes",
-   "Vir só se houver parada cardíaca",
-   "Orientar por telefone, que é equivalente"
+   "Orientar por telefone e vir se piorar",
+   "Estar presente na sala desde a chegada",
+   "Ficar disponível no hospital, fora da sala",
+   "Vir depois da avaliação primária",
+   "Vir só para o paciente mais grave"
   ],
   "correta": "B",
   "justificativas": [
-   "Treinandos lideram sob supervisão próxima, que exige o assistente presente [D29].",
-   "Correta: com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor [A19]; treinandos lideram sob supervisão próxima [D29].",
-   "O líder precisa ter visão de todo o atendimento [D43].",
-   "Esperar a parada atrasa; dois pacientes graves pedem o assistente presente [A19, D22].",
-   "Não há dado que sustente equivalência; o dado é de presença no local [A19]."
+   "Não há dado de equivalência para orientar por telefone; o dado é de presença no local [A19], e treinandos lideram sob supervisão próxima [D29].",
+   "Correta: num estudo antes e depois, a presença do cirurgião de trauma no local associou-se a ressuscitação mais curta [A19]; treinandos lideram sob supervisão próxima [D29].",
+   "Fora da sala não há supervisão próxima nem visão do atendimento [D29, D43].",
+   "A primária é a fase de maior risco e de decisões rápidas; a supervisão próxima é desde a chegada [D29].",
+   "Os dois pacientes estão com treinandos; a supervisão próxima vale para os dois [D29]."
   ],
   "categorias": [
    "erro de conduta",
@@ -5406,10 +5423,9 @@
    "erro conceitual"
   ],
   "ancoras": [
-   "A19",
    "D29",
-   "D43",
-   "D22"
+   "A19",
+   "D43"
   ]
  },
  {
@@ -5421,7 +5437,7 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, o passageiro tem Glasgow 6. O que fazer antes de sedar para intubar?",
   "alternativas": [
-   "Exame neurológico breve e completo",
+   "Exame neurológico breve",
    "Colher a história AMPLA",
    "Sedar e intubar sem exame",
    "Tomografia de crânio",
@@ -5453,23 +5469,23 @@
   "fixa": false,
   "perfil": "R1",
   "teste": 6,
-  "grau": 5,
-  "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 6, quais elementos do MIST o SAMU deve trazer?",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a compressão não controla o sangramento do antebraço, e você coloca um torniquete. Onde e o que registrar?",
   "alternativas": [
-   "Os sinais vitais e o tempo de transporte",
-   "Nome, endereço, telefone e convênio",
-   "Só o mecanismo do trauma",
-   "Mecanismo, lesões, sinais e tratamentos",
-   "Só os sinais vitais da cena"
+   "Sobre o cotovelo, e anotar a pressão",
+   "Na raiz do braço, sem anotar",
+   "Abaixo da lesão, e anotar a hora",
+   "Acima da lesão, perto dela, e anotar a hora",
+   "Acima da lesão, e anotar quem colocou"
   ],
   "correta": "D",
   "justificativas": [
-   "Sinais vitais fazem parte, mas faltam mecanismo, lesões e tratamentos [D23].",
-   "São dados de cadastro, não do MIST [D23].",
-   "O mecanismo é um dos quatro itens [D23].",
-   "Correta: MIST é mecanismo, lesões suspeitas, sinais vitais e sintomas, e tratamentos [D23].",
-   "Os sinais vitais são um dos quatro itens [D23]."
+   "O torniquete não vai sobre articulação [D59]; o registro que importa é a hora [D60].",
+   "Deve ficar o mais distal possível, acima da lesão [D59], e a hora é registrada [D60].",
+   "O torniquete é proximal à lesão, não distal [D59].",
+   "Correta: proximal à lesão, mas o mais distal possível, nunca sobre articulação [D59]; a hora é registrada pelo limite de 90 minutos [D60].",
+   "A posição está certa, mas o dado que protege o membro é a hora [D60]."
   ],
   "categorias": [
    "erro de conduta",
@@ -5479,7 +5495,9 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "D23"
+   "D59",
+   "D60",
+   "D7"
   ]
  },
  {
@@ -5491,10 +5509,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, em equipe, a avaliação deve ser feita em sequência rígida por uma pessoa?",
   "alternativas": [
-   "Não: boa parte é feita ao mesmo tempo",
-   "Sim, mas só à noite, com equipe menor",
+   "Não: boa parte é simultânea",
+   "Sim, à noite, com equipe menor",
    "Depende da preferência do líder",
-   "Sim, sempre em sequência rígida",
+   "Sim, em sequência rígida",
    "Sim, quando há dois pacientes"
   ],
   "correta": "A",
@@ -5528,7 +5546,7 @@
   "alternativas": [
    "Mais lesões não identificadas",
    "Diferença em nenhum desfecho",
-   "Menos lesões perdidas, sobrevida igual",
+   "Menos lesões perdidas, mesma sobrevida",
    "Mais mortes na sala de trauma",
    "Sobrevida muito maior"
   ],
@@ -5595,17 +5613,17 @@
   "teste": 6,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 6, treinamento de equipe por simulação mostrou qual efeito?",
+  "enunciado": "No caso 6, a que o treinamento de equipe por simulação se associou?",
   "alternativas": [
-   "Menos tempo até exames, TC e hemostasia",
+   "Menos tempo até exames e hemostasia",
    "Efeito algum sobre os tempos",
    "Mais erros durante o atendimento",
-   "Só maior satisfação da equipe",
+   "Maior satisfação da equipe",
    "Mais tempo de atendimento"
   ],
   "correta": "A",
   "justificativas": [
-   "Correta: o treinamento de equipe por simulação pode reduzir o tempo até exames de sangue, tomografia e hemostasia [A17]; a força do verbo ('pode') importa.",
+   "Correta: num estudo antes e depois, o treinamento de equipe por simulação associou-se a menos tempo até exames de sangue, tomografia e hemostasia [A17]; o desenho não prova causa.",
    "Houve efeito sobre os tempos [A17].",
    "Não há esse achado nas fontes [A17].",
    "A fonte descreve efeito em tempos de processo, não só satisfação [A17].",
@@ -5633,7 +5651,7 @@
   "alternativas": [
    "Intubar já, para proteger a via aérea",
    "Tomografia sem avaliação prévia",
-   "Tratar só o braço e liberar",
+   "Tratar o braço e liberar",
    "Seguir o ABCDE, reavaliando o sangramento",
    "Pular para a avaliação secundária"
   ],
@@ -5664,12 +5682,12 @@
   "fixa": false,
   "perfil": "R2",
   "teste": 6,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, o passageiro chega hipotenso e em extremis. Qual a prioridade?",
   "alternativas": [
    "Exposição completa, antes de tudo",
-   "Circulação (CABDE), com os mais experientes",
+   "Circulação primeiro (CABDE)",
    "Tomografia de corpo inteiro",
    "Radiografia de tórax e pelve",
    "História AMPLA com o SAMU"
@@ -5702,23 +5720,23 @@
   "fixa": false,
   "perfil": "R2",
   "teste": 6,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, onde o líder deve ficar?",
   "alternativas": [
-   "No posto de enfermagem",
-   "Fora da sala, ao telefone",
-   "Junto ao monitor, de costas para os pacientes",
+   "Ao lado do paciente mais grave, ajudando nos procedimentos",
+   "Na cabeceira do paciente mais grave, fazendo a via aérea",
+   "Entre as macas, mas de costas para o monitor",
    "Com visão de toda a sala",
-   "Na cabeceira, fazendo a via aérea"
+   "Junto ao residente mais novo, para supervisioná-lo"
   ],
   "correta": "D",
   "justificativas": [
-   "Do posto, o líder não vê os pacientes [D43].",
-   "Fora da sala, o líder perde o comando [D43].",
-   "De costas, o líder não acompanha a equipe [D43].",
+   "Fazer procedimentos tira do líder a visão do todo [D43].",
+   "Fazer a via aérea ocupa o líder; essa é a posição A da equipe [P18].",
+   "O líder precisa acompanhar o monitor e a equipe [D43].",
    "Correta: o líder se posiciona com visão de todo o atendimento, em geral ao pé da maca [D43]; com dois pacientes, onde veja os dois.",
-   "Fazer a via aérea ocupa o líder; essa é a posição A da equipe [P18]."
+   "Supervisionar é parte do papel [D29], mas a posição do líder é a que dá visão de todo o atendimento [D43]."
   ],
   "categorias": [
    "erro conceitual",
@@ -5729,7 +5747,8 @@
   ],
   "ancoras": [
    "D43",
-   "P18"
+   "P18",
+   "D29"
   ]
  },
  {
@@ -5742,10 +5761,10 @@
   "enunciado": "No caso 6, você lidera. Como distribuir a equipe entre os dois pacientes?",
   "alternativas": [
    "Decidir na hora, conforme a chegada",
-   "Funções antes da chegada; o mais experiente no mais grave",
+   "Funções antes; o experiente no mais grave",
    "Dividir igualmente, sem considerar a gravidade",
-   "Só o R1 atende os dois pacientes",
-   "Todos no primeiro paciente que chegar"
+   "O R1 atende os dois pacientes",
+   "A equipe toda no primeiro paciente que chegar"
   ],
   "correta": "B",
   "justificativas": [
@@ -5778,15 +5797,15 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, a OMS tem um checklist de cuidado ao trauma. O que favorece sua implantação?",
   "alternativas": [
-   "Impor o uso, sem adaptação local",
+   "Uso obrigatório definido pela direção",
    "Distribuir o papel para a equipe",
    "O tempo de uso, sem outra medida",
-   "Usar o checklist só nas auditorias",
-   "Campeão institucional e integração à rotina"
+   "Usar o checklist nas auditorias",
+   "Campeão e integração à rotina"
   ],
   "correta": "E",
   "justificativas": [
-   "A adaptação ao contexto foi um dos fatores favoráveis [A16].",
+   "Os fatores favoráveis foram campeão, adaptação ao contexto e integração à rotina [A16]; a ordem da direção sozinha não aparece.",
    "Distribuir o papel não integra o checklist à rotina [A16].",
    "O tempo, sozinho, não aparece entre os fatores; os fatores foram campeão, adaptação e integração [A16].",
    "Usar só nas auditorias não integra o checklist ao atendimento [A16].",
@@ -5812,18 +5831,18 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, após os atendimentos, qual a melhor prática de equipe?",
   "alternativas": [
-   "Identificar e punir os erros",
-   "Trocar a equipe do plantão",
+   "Revisar os casos que terminaram em óbito",
+   "Revisão dos prontuários na reunião mensal",
    "Debriefing e treino in situ periódico",
-   "Dispensar a revisão, porque deu certo",
-   "Só um relatório escrito do plantão"
+   "Auditoria escrita dos tempos do atendimento",
+   "Um relatório escrito do plantão"
   ],
   "correta": "C",
   "justificativas": [
-   "O debriefing é não punitivo [D73].",
-   "Trocar a equipe não ensina; o debriefing e o treino in situ ensinam [D73, A18].",
+   "O debriefing é feito depois de toda ressuscitação crítica, não só dos óbitos [D73].",
+   "A revisão mensal tem valor, mas não substitui o debriefing logo após a ressuscitação [D73].",
    "Correta: o debriefing é não punitivo e feito logo após a ressuscitação crítica [D73]; o treino mensal in situ com debriefing em vídeo associou-se a menor tempo até a TC [A18].",
-   "Depois de toda ressuscitação crítica, faz-se debriefing [D73].",
+   "A auditoria mede o processo, mas não substitui o debriefing com a equipe [D73].",
    "O relatório escrito não substitui o debriefing com a equipe [D73]."
   ],
   "categorias": [
@@ -5848,10 +5867,10 @@
   "enunciado": "No caso 6, um R2 quer pedir TC de corpo inteiro para os dois de rotina. O que dizer?",
   "alternativas": [
    "Pedir antes da avaliação primária",
-   "Pedir só para o paciente mais jovem",
+   "Pedir para o paciente mais jovem",
    "Nunca pedir TC de corpo inteiro",
    "Indicar por critérios, não por rotina",
-   "Pedir sempre, para os dois"
+   "Pedir para os dois, de rotina"
   ],
   "correta": "D",
   "justificativas": [
@@ -5917,23 +5936,23 @@
   "fixa": false,
   "perfil": "R3",
   "teste": 6,
-  "grau": 6,
-  "taxa_esperada": "abaixo de 15%",
-  "enunciado": "No caso 6, qual efeito da presença do cirurgião de trauma no tempo de ressuscitação?",
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, um estudo antes e depois achou ressuscitação mais curta com o cirurgião de trauma presente. Como usar esse dado no serviço?",
   "alternativas": [
-   "O dobro do tempo",
-   "259 segundos a menos",
-   "Cerca de 30 segundos a menos",
-   "Mais tempo de ressuscitação",
-   "Diferença sem significância estatística"
+   "Como prova de que a presença reduz mortes",
+   "Como associação; medir os tempos no serviço",
+   "Descartar, por ser estudo retrospectivo",
+   "Como regra para tirar o R3 da liderança",
+   "Como argumento para dispensar o briefing"
   ],
   "correta": "B",
   "justificativas": [
-   "O tempo foi menor, em 259 segundos [A19].",
-   "Correta: com cirurgião de trauma presente no local, o tempo total de ressuscitação foi 259 segundos menor (p = 0,03) [A19].",
-   "A diferença foi de 259 segundos [A19].",
-   "O tempo foi menor, não maior [A19].",
-   "Houve efeito: 259 segundos a menos [A19]."
+   "O estudo mediu tempo, não mortalidade, e o desenho não prova causa [A19].",
+   "Correta: no antes e depois, a presença associou-se a menos tempo de ressuscitação [A19]; outros fatores mudaram no período, e medir no próprio serviço mostra se o efeito se repete.",
+   "Estudo retrospectivo tem limite, mas é informação útil para planejar e medir [A19].",
+   "Treinandos lideram sob supervisão próxima [D29]; o dado não diz que o residente não deve liderar.",
+   "O briefing segue indicado antes da chegada [D71]; o dado é sobre presença no local [A19]."
   ],
   "categorias": [
    "erro técnico",
@@ -5943,7 +5962,9 @@
    "erro de indicação"
   ],
   "ancoras": [
-   "A19"
+   "A19",
+   "D29",
+   "D71"
   ]
  },
  {
@@ -5953,13 +5974,13 @@
   "teste": 6,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 6, você vai ensinar a equipe. Qual formato de treino in situ é equivalente no curto prazo?",
+  "enunciado": "No caso 6, que resultado o estudo encontrou ao comparar treino in situ por checklist e por algoritmo?",
   "alternativas": [
-   "Checklist ou algoritmo, com ganhos semelhantes",
-   "Só o treino por algoritmo teve ganho",
-   "Só o treino por checklist teve ganho",
-   "Só a aula teórica teve ganho",
-   "Ganho só no longo prazo, nos dois"
+   "Checklist ou algoritmo: ganhos parecidos",
+   "O treino por algoritmo teve mais ganho",
+   "O treino por checklist teve mais ganho",
+   "A aula teórica teve mais ganho",
+   "Ganho no longo prazo, nos dois"
   ],
   "correta": "A",
   "justificativas": [
@@ -5987,21 +6008,21 @@
   "teste": 6,
   "grau": 5,
   "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 6, como explicar ao serviço o valor de ter o cirurgião como líder?",
+  "enunciado": "No caso 6, a meta-análise de coortes retrospectivas mostrou menos lesões não identificadas com o cirurgião como líder. O que o desenho permite concluir?",
   "alternativas": [
-   "Não há diferença em nenhum desfecho",
-   "Sobrevida muito maior com o cirurgião",
-   "Mais lesões não identificadas",
-   "Menos lesões perdidas, com sobrevida igual",
-   "Mais custo, sem benefício"
+   "Que o cirurgião causa a redução das lesões",
+   "Que só cirurgiões devem liderar a sala",
+   "Que a sobrevida também melhorou",
+   "Associação, com possível confusão entre serviços",
+   "Que o achado não tem utilidade prática"
   ],
   "correta": "D",
   "justificativas": [
-   "Houve diferença em lesões não identificadas (OR 0,48) [A21].",
-   "Não houve diferença de sobrevida [A20].",
-   "Foi o contrário: menos lesões não identificadas (OR 0,48) [A21].",
-   "Correta: menos lesões não identificadas (OR 0,48) [A21], sem diferença de sobrevida (OR 0,82) [A20], em coortes retrospectivas.",
-   "Houve benefício em lesões não identificadas [A21]; custo não foi estudado nas fontes."
+   "Coortes retrospectivas mostram associação; não provam causa [A20, A21].",
+   "A conclusão vai além do dado; treinandos lideram sob supervisão [D29].",
+   "Não houve diferença de sobrevida (OR 0,82) [A20].",
+   "Correta: em coortes retrospectivas, menos lesões não identificadas (OR 0,48) [A21] é associação; serviços com cirurgião líder podem diferir em outros pontos [A20].",
+   "O achado orienta a organização da equipe e o que medir, mesmo sem provar causa [A21]."
   ],
   "categorias": [
    "erro de indicação",
@@ -6011,8 +6032,9 @@
    "erro de conduta"
   ],
   "ancoras": [
+   "A20",
    "A21",
-   "A20"
+   "D29"
   ]
  },
  {
@@ -6024,18 +6046,18 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 6, qual a evidência sobre o formulário de admissão e a mortalidade?",
   "alternativas": [
-   "O ensaio não coletou dado de mortalidade",
-   "Queda de 17,7% para 12,1%, só no subgrupo com fisiologia alterada",
-   "Redução em todos os pacientes de centros de referência",
-   "Queda da mortalidade à metade em todos",
-   "Aumento da mortalidade após o formulário"
+   "Nenhuma mudança de mortalidade no ensaio",
+   "Queda só num subgrupo, desfecho secundário",
+   "Queda em todos os pacientes do ensaio",
+   "Queda nos centros de referência",
+   "Aumento da mortalidade no grupo do formulário"
   ],
   "correta": "B",
   "justificativas": [
-   "O ensaio coletou e relatou a mortalidade: 17,7% para 12,1% no subgrupo com fisiologia alterada [A15].",
-   "Correta: a mortalidade caiu de 17,7% para 12,1% entre 302 pacientes com fisiologia alterada [A15, A46], em hospitais não terciários [A45]; aplicar com cautela num centro de referência.",
-   "O efeito foi num subgrupo e em hospitais não terciários de Gana [A45, A46].",
+   "O ensaio relatou queda de mortalidade no subgrupo com fisiologia alterada [A15].",
+   "Correta: a mortalidade caiu de 17,7% para 12,1% entre 302 pacientes com fisiologia alterada [A15, A46], desfecho secundário, em hospitais não terciários [A45]; aplicar com cautela num centro de referência.",
    "A queda foi só no subgrupo com fisiologia alterada [A46].",
+   "O ensaio foi em hospitais não terciários de Gana [A45].",
    "Não houve aumento; houve queda no subgrupo com fisiologia alterada [A15]."
   ],
   "categorias": [
@@ -6060,15 +6082,15 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 6, como você propõe avaliar o ATLS no seu serviço, dada a evidência?",
   "alternativas": [
-   "Dispensar a avaliação, pois não há o que medir",
-   "Medir só o custo do treinamento",
-   "Medir processo e desfecho, sabendo o limite da evidência",
+   "Medir só a satisfação dos residentes",
+   "Medir o custo, sem processo nem desfecho",
+   "Medir processo e desfecho, com cautela",
    "Abandonar o treinamento da equipe",
    "Assumir o benefício e não medir"
   ],
   "correta": "C",
   "justificativas": [
-   "Há o que medir: indicadores de processo e desfecho [A2, A4].",
+   "Satisfação não mede o efeito no paciente; processo e desfecho são o centro [A2, A4].",
    "O custo é uma parte; processo e desfecho são o centro [A6, A4].",
    "Correta: a associação com menor mortalidade é observacional [A2], e os autores afirmam faltar evidência de alta qualidade [A4]; medir processo e desfecho no serviço é coerente.",
    "Não há base para abandonar: há associação com menor mortalidade [A2].",
@@ -6097,7 +6119,7 @@
   "enunciado": "Após o caso 6, você quer estudar o efeito do treinamento no seu serviço. Que desenho as fontes mostram ser viável e mais informativo?",
   "alternativas": [
    "Série de casos do próprio serviço, sem comparação",
-   "Comparação com outro país, sem ajuste",
+   "Comparar com o período anterior, com ajuste",
    "Antes-e-depois sem controle",
    "Uma pesquisa de opinião da equipe",
    "Ensaio por conglomerados, após um piloto"
@@ -6105,7 +6127,7 @@
   "correta": "E",
   "justificativas": [
    "Série sem comparação não mede efeito do treinamento.",
-   "Comparar com outro país sem ajuste mistura diferenças de sistema e de pacientes com o efeito do treino.",
+   "Mesmo com ajuste, o antes e depois não separa o efeito do treino de outras mudanças no tempo; o ensaio por conglomerados é mais informativo [A7, A3].",
    "Os estudos antes-e-depois são justamente a limitação da evidência atual [A7].",
    "Pesquisa de opinião não mede desfecho [A27].",
    "Correta: um piloto de ensaio randomizado por conglomerados (ATLS, PTC e cuidado padrão), com 376 pacientes e 22 residentes, mostrou a viabilidade [A3]."
@@ -6132,16 +6154,16 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 6, qual seria a principal lacuna a explicar aos residentes sobre checklists?",
   "alternativas": [
-   "Só há estudos antes-e-depois, com sinais mistos",
-   "Os estudos mostram só dano",
+   "Estudos antes-e-depois, com sinais mistos",
+   "Os estudos mostram mais dano que benefício",
    "Ainda não há estudos sobre checklist",
-   "Os estudos mostram só benefício",
+   "Os estudos mostram benefício, sem dano",
    "Já há ensaios definitivos"
   ],
   "correta": "A",
   "justificativas": [
    "Correta: a revisão incluiu só estudos antes-e-depois [A7], com menor mortalidade no ISS > 25 em um [A9] e mais pneumonia em outro [A10].",
-   "Um estudo mostrou menor mortalidade no ISS > 25 [A9].",
+   "Os sinais são mistos: menor mortalidade no ISS > 25 em um [A9], mais pneumonia em outro [A10].",
    "Há revisão sistemática com três estudos [A7].",
    "Um estudo mostrou mais pneumonia [A10].",
    "Não há ensaio; só estudos antes-e-depois [A7]."
@@ -6169,15 +6191,15 @@
    "Entre 70 e 90 mmHg",
    "Acima de 120 mmHg",
    "Abaixo de 40 mmHg",
-   "Não é possível estimar"
+   "Entre 90 e 100 mmHg"
   ],
   "correta": "B",
   "justificativas": [
-   "O pulso radial costuma ser palpável a partir de 90 a 100 mmHg.",
-   "Correta: o femoral pede 70 a 80 mmHg e o radial, 90 a 100 mmHg.",
-   "Com essa pressão, o pulso radial estaria presente.",
-   "Com pressão tão baixa, o pulso femoral não seria palpável.",
-   "Os pulsos dão uma estimativa útil, ainda que pouco estudada."
+   "Com essa pressão, o pulso radial costuma ser palpável (sugere 90 a 100 mmHg ou mais) [D44].",
+   "Correta: o pulso femoral sugere pelo menos 70 a 80 mmHg, e a falta do radial sugere menos de 90 a 100 mmHg [D44]. É uma estimativa pouco estudada, segundo o próprio livro.",
+   "Com essa pressão, o pulso radial estaria presente [D44].",
+   "Com pressão tão baixa, o pulso femoral não seria palpável [D44].",
+   "Na faixa de 90 a 100 mmHg o radial costuma começar a ser palpável; ausente, a pressão provável é menor [D44]."
   ],
   "categorias": [
    "erro conceitual",
@@ -6231,7 +6253,7 @@
   "grau": 2,
   "enunciado": "Um torniquete foi colocado na coxa do paciente. O que precisa ser anotado, e por quê?",
   "alternativas": [
-   "A hora da colocação, pelo limite de 90 minutos",
+   "A hora, pelo limite de 90 minutos",
    "A pressão arterial na hora da colocação",
    "O nome de quem colocou, para a auditoria",
    "A cor do membro, a cada hora",
@@ -6331,21 +6353,21 @@
   "id": "T4-R1-7",
   "fixa": false,
   "grau": 3,
-  "enunciado": "Suspeita de fratura de pelve, ainda sem radiografia. Como deve ser o aperto inicial da cinta pélvica?",
+  "enunciado": "Em que tipo de fratura de pelve a compressão forte da cinta pélvica está indicada?",
   "alternativas": [
-   "Máximo, para fechar qualquer fratura do anel",
-   "Sem aperto: a cinta fica só posicionada",
-   "Máximo, mas só por dez minutos",
-   "Frouxo, para não causar dor",
-   "Moderado, até a radiografia mostrar o tipo"
+   "Na compressão lateral importante",
+   "Em qualquer fratura instável do anel",
+   "Na fratura isolada de ramo púbico",
+   "Na fratura do acetábulo",
+   "Na fratura em livro aberto"
   ],
   "correta": "E",
   "justificativas": [
-   "Na compressão lateral importante, o aperto forte pode aumentar o sangramento [D55].",
-   "Sem aperto, a cinta não estabiliza; a estabilização é desejável na fratura instável [D9].",
-   "O limite do aperto não é de tempo, e sim do tipo de fratura [D55].",
-   "A cinta frouxa não estabiliza o anel pélvico [D54].",
-   "Correta: a compressão forte só cabe na fratura em livro aberto; na compressão lateral importante, pode aumentar o sangramento [D55]. Antes de saber o tipo, aperto moderado, centrado nos trocânteres [D54]."
+   "Na compressão lateral importante, a compressão forte pode aumentar o sangramento [D55].",
+   "A compressão forte não serve a todo tipo de fratura: na compressão lateral pode piorar [D55].",
+   "Os elementos anteriores respondem por cerca de 40% da estabilidade [D58]; fratura isolada de ramo não é a indicação da compressão forte [D55].",
+   "As fontes do tema indicam a compressão forte só no livro aberto [D55].",
+   "Correta: a compressão forte da cinta só cabe na fratura em livro aberto; na compressão lateral importante, pode aumentar o sangramento [D55]."
   ],
   "categorias": [
    "erro técnico",
@@ -6356,8 +6378,7 @@
   ],
   "ancoras": [
    "D55",
-   "D54",
-   "D9"
+   "D58"
   ],
   "perfil": "R1",
   "teste": 4
@@ -6468,9 +6489,9 @@
   "enunciado": "Hemotórax drenado na sala de trauma. Que saída pelo dreno indica cirurgia no paciente estável?",
   "alternativas": [
    "Mais de 3.000 mL em 24 horas",
-   "Qualquer saída de sangue, mesmo pequena",
+   "Saída de sangue, mesmo pequena",
    "500 mL iniciais, sem outro critério",
-   "1.200 a 1.500 mL iniciais, ou 200 mL/h por 2 a 4 h",
+   "1.200 a 1.500 mL, ou 200 mL/h por 2 a 4 h",
    "300 mL na primeira hora"
   ],
   "correta": "D",
@@ -6501,7 +6522,7 @@
   "grau": 4,
   "enunciado": "Por que a cinta pélvica muito apertada pode ser prejudicial em uma fratura por compressão lateral?",
   "alternativas": [
-   "Porque o aperto forte só cabe nessa fratura",
+   "Porque o aperto forte cabe nessa fratura",
    "Porque desloca a cinta para as cristas ilíacas",
    "Porque impede a radiografia da pelve",
    "Porque pode aumentar o desvio e o sangramento",
@@ -6575,7 +6596,7 @@
   "enunciado": "Hemorragia pélvica, PAS de 70 mmHg, Glasgow 10, via aérea livre, SpO2 de 93% com máscara. Um colega propõe intubar já. Qual é a decisão?",
   "alternativas": [
    "Intubar já: Glasgow abaixo de 13 exige tubo",
-   "Intubar só depois da tomografia de crânio",
+   "Intubar depois da tomografia de crânio",
    "Sedar levemente para reduzir a agitação",
    "Repor sangue e controlar o sangramento; via aérea não invasiva",
    "Não preparar a intubação agora, para não tirar pessoas do sangramento"
@@ -6607,22 +6628,22 @@
  {
   "id": "T4-R3-7",
   "fixa": false,
-  "grau": 5,
-  "enunciado": "Hipotenso por provável sangramento pélvico, PAS de 74 mmHg. Você decide obter acesso arterial femoral. Qual é o cuidado técnico?",
+  "grau": 4,
+  "enunciado": "No caso 4, o R2 percebe que o líder vai mandar o paciente com PA 78/50 à tomografia. Pelo formato PACE, qual o primeiro passo do R2?",
   "alternativas": [
-   "Puncionar a veia femoral no lugar da artéria",
-   "Guiar a punção por ultrassom",
-   "Dissecar a artéria braquial",
-   "Puncionar pela palpação, que é mais rápida",
-   "Esperar a PAS subir acima de 100 mmHg"
+   "Agir: impedir o transporte da maca",
+   "Perguntar ao líder sobre a decisão",
+   "Calar, porque a decisão é do líder",
+   "Contestar em voz alta diante de todos",
+   "Ligar para a chefia antes de falar com o líder"
   ],
   "correta": "B",
   "justificativas": [
-   "A veia não dá pressão arterial nem caminho para o balão [D50].",
-   "Correta: a artéria femoral fica difícil de palpar com PAS abaixo de 80 mmHg; a punção deve ser guiada por ultrassom [D51].",
-   "A braquial não serve ao propósito do acesso femoral para eventual REBOA [D50].",
-   "Com PAS abaixo de 80 mmHg, a artéria femoral fica difícil de palpar [D51].",
-   "Esperar a pressão subir anula a vantagem do acesso precoce na hipotensão por sangramento pélvico [D50]."
+   "Agir é o último degrau, para emergência, depois de perguntar, alertar e contestar [D72].",
+   "Correta: o PACE organiza a objeção em quatro degraus: perguntar, alertar, contestar e agir em emergência [D72]; o instável não vai à tomografia [D52].",
+   "O PACE existe para qualquer membro levantar a objeção [D72].",
+   "Contestar é o terceiro degrau [D72].",
+   "O primeiro degrau é com o próprio líder [D72]."
   ],
   "categorias": [
    "erro técnico",
@@ -6632,11 +6653,12 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "D50",
-   "D51"
+   "D72",
+   "D52"
   ],
   "perfil": "R3",
-  "teste": 4
+  "teste": 4,
+  "taxa_esperada": "30% a 50%"
  },
  {
   "id": "T5-R3-7",
@@ -6647,7 +6669,7 @@
    "Redução da mortalidade à metade",
    "Aumento da mortalidade hospitalar",
    "Mortalidade igual, com mais radiação",
-   "Redução da mortalidade só nos mais graves",
+   "Redução da mortalidade nos mais graves",
    "Não comparou a mortalidade entre os grupos"
   ],
   "correta": "C",
@@ -6682,7 +6704,7 @@
    "A decisão do destino do paciente antes mesmo de vê-lo",
    "A leitura do protocolo em voz alta",
    "Nomes, plano e a alternativa se chegar mais grave",
-   "Apenas a distribuição dos procedimentos"
+   "A distribuição dos procedimentos"
   ],
   "correta": "D",
   "justificativas": [
@@ -6715,7 +6737,7 @@
   "enunciado": "Como apresentar aos residentes a evidência do consenso de 2025 que põe a circulação antes da via aérea?",
   "alternativas": [
    "Coorte única, sem grupo de comparação",
-   "Metanálise de estudos observacionais, muito heterogênea",
+   "Metanálise observacional, muito heterogênea",
    "Ensaio randomizado com OR de 3,65",
    "Revisão narrativa, sem busca sistemática",
    "Opinião de especialistas, sem dados"
@@ -6748,19 +6770,19 @@
   "grau": 5,
   "enunciado": "Na revisão de 2.594 óbitos de um centro de trauma, quais foram os dois padrões de erro mais frequentes?",
   "alternativas": [
-   "Infecção de cateter e pneumonia",
-   "Excesso de tomografias e de exposição à radiação",
-   "Erro de medicação e queda do leito",
-   "Alta precoce e reinternação",
+   "Hipotermia e coagulopatia não tratadas",
+   "Diagnóstico tardio de lesão de víscera oca",
+   "Atraso na tomografia e erro de laudo",
+   "Queda da pressão na indução e sedação excessiva",
    "Via aérea e atraso no controle da hemorragia"
   ],
   "correta": "E",
   "justificativas": [
-   "Complicações infecciosas não foram os padrões mais frequentes.",
-   "O estudo não aponta excesso de exames como padrão de erro.",
-   "Esses eventos não estiveram entre os padrões principais.",
-   "O estudo tratou de óbitos na internação.",
-   "Correta: falha na via aérea (16%) e atraso no controle da hemorragia abdominal ou pélvica (16%)."
+   "Não foram os dois padrões mais frequentes descritos [A51].",
+   "Não foi um dos dois padrões mais frequentes [A51].",
+   "Não foram os dois padrões mais frequentes [A51].",
+   "Não foram os dois padrões mais frequentes [A51].",
+   "Correta: falha na via aérea (16%) e atraso no controle da hemorragia abdominal ou pélvica (16%) [A51]."
   ],
   "categorias": [
    "erro conceitual",
