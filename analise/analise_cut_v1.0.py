@@ -3,7 +3,7 @@
 # Analise descritiva e de qualidade da base de respostas do CUT (aba "Base de análise" do painel, ou
 # analise/exportar_base_v1.0.sql). Gera um relatorio HTML com graficos, no padrao do plano de analise
 # (docs/plano_analise_preregistro.md). Os modelos confirmatorios (regressao logistica mista) ficam no script R
-# do plano; aqui vao as tabelas, os graficos e as analises que nao dependem de modelo.
+# do plano (modelo_cut.py: regressao logistica com erro padrao agrupado por participante) entram na secao 5.
 # USO:
 #   python3 analise/analise_cut_v1.0.py analise/base_respostas.csv                 (so respostas validas)
 #   python3 analise/analise_cut_v1.0.py analise/base_respostas.csv --so-simulados  (ensaio com os dados simulados)
@@ -16,6 +16,9 @@ from scipy import stats
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import modelo_cut   # modelo principal do plano (numpy e scipy)
 
 ONDAS = ['Pré-teste 1', 'Pré-teste 2', 'Pós-teste D0', 'Pós-teste D+15', 'Pós-teste D+45', 'Pós-teste D+90']
 CURTO = ['Pré 1', 'Pré 2', 'D0', 'D+15', 'D+45', 'D+90']
@@ -34,6 +37,9 @@ def fig_b64(fig):
     return '<img alt="" style="max-width:100%" src="data:image/png;base64,' + base64.b64encode(b.getvalue()).decode() + '">'
 
 def tabela(df, casas=1):
+    df = df.copy()
+    for c in [c for c in df.columns if str(c).startswith('p ') or c == 'p' or str(c).startswith('p (')]:
+        df[c] = df[c].map(lambda v: '—' if pd.isna(v) else ('< 0,001' if v < 0.001 else f'{v:.3f}'.replace('.', ',')))
     return df.to_html(index=False, float_format=lambda x: f'{x:.{casas}f}', na_rep='—', border=0, classes='t')
 
 def boot_ic(valores_por_part, n=4000):
@@ -93,6 +99,13 @@ def main():
     for o, n in [(1, 'pré 1'), (2, 'pré 2'), (3, 'D0'), (6, 'D+90')]: g[n] = pp[o] if o in pp else np.nan
     g['ganho (D0 − pré 1)'] = g['D0'] - g['pré 1']; g['retido no D+90 (D+90 − pré 1)'] = g['D+90'] - g['pré 1']; g['perda (D0 − D+90)'] = g['D0'] - g['D+90']
     partes.append('<h3>Por participante</h3>' + tabela(g.reset_index(), 0))
+    # presenca irregular: quem faz mais ondas acerta diferente de quem faz menos?
+    feitas = df.groupby('participante').apply(lambda d: pd.Series({'ondas feitas': d[['tema', 'onda']].drop_duplicates().shape[0],
+        'acerto médio (%)': 100 * d['correta'].mean()}), include_groups=False).reset_index()
+    feitas['ondas feitas'] = feitas['ondas feitas'].astype(int)
+    rho = stats.spearmanr(feitas['ondas feitas'], feitas['acerto médio (%)']).statistic if len(feitas) >= 4 and feitas['ondas feitas'].nunique() > 1 else np.nan
+    partes.append('<h3>Ondas feitas e acerto</h3><p>Com presença irregular, quem faz mais ondas pode ser diferente de quem faz menos. '
+                  f'Correlação de Spearman entre ondas feitas e acerto médio: {"—" if np.isnan(rho) else f"{rho:.2f}"}.</p>' + tabela(feitas, 0))
     testes = []
     for nome, x, y in [('Material antes da aula (pré 2 × pré 1)', 'pré 2', 'pré 1'), ('Aula (D0 × pré 1)', 'D0', 'pré 1'), ('Retenção (D+90 × pré 1)', 'D+90', 'pré 1'), ('Esquecimento (D+90 × D0)', 'D+90', 'D0')]:
         par = g[[x, y]].dropna(); dif = par[x] - par[y]
@@ -135,14 +148,35 @@ def main():
         h['mean'] *= 100; h.columns = ['erro com', 'erros', 'corrigidos na onda seguinte (%)']
         partes.append('<h2>4. Correção de erros (exploratória)</h2><p>Questão que se repete em todas as ondas: depois de errar, quantos acertam na onda seguinte, conforme a certeza do erro. A hipótese da hipercorreção é que o erro com certeza se corrige mais.</p>' + tabela(h))
 
-    # ---------- 5. questoes ----------
+    # ---------- 5. modelo principal (plano, secao 5) ----------
+    G = df['participante'].nunique()
+    sec = ['<h2>5. Modelo principal do plano (H1 a H5)</h2>',
+           '<p>Regressão logística do acerto em cada questão, ajustada pelo grupo de ano (R1, R2, R3, R+ e graduação) e pela '
+           'dificuldade da questão, com erro padrão agrupado por participante (as respostas da mesma pessoa não contam como '
+           'independentes). Intervalos e p usam a distribuição t com participantes − 1 graus de liberdade. '
+           'H1 a H3 com correção de Holm. A "diferença" é em pontos percentuais de acerto, na média das outras variáveis; '
+           'o efeito mínimo que importa, definido pela coordenação, é de 10 pontos.</p>']
+    if G < 2:
+        sec.append('<p><b>Menos de 2 participantes: o modelo não pode ser ajustado.</b></p>')
+    else:
+        if G < 20: sec.append(f'<p class="aviso">Só {G} participantes: o erro padrão agrupado fica instável com menos de uns 20. Leia como demonstração do método, não como resultado.</p>')
+        conf, todos, G, ok = modelo_cut.modelo_principal(df)
+        sec.append('<h3>Hipóteses principais</h3>' + tabela(conf, 2) + ('' if ok else '<p><b>O ajuste não convergiu.</b></p>'))
+        sec.append('<details><summary>Todos os termos do modelo</summary>' + tabela(todos, 2) + '</details>')
+        ret, _ = modelo_cut.modelo_retencao(df)
+        if ret is not None: sec.append('<h3>H4: retenção do D0 ao D+90</h3><p>Razão de chances por 30 dias desde a aula (abaixo de 1 = esquecimento).</p>' + tabela(ret, 2))
+        cer, _ = modelo_cut.modelo_certeza(df)
+        if cer is not None: sec.append('<h3>H5: certeza e acerto</h3><p>Chance de acertar quando o aluno marca mais certeza, comparada a "chutei", ajustada por onda, ano e dificuldade.</p>' + tabela(cer, 2))
+    partes.append(''.join(sec))
+
+    # ---------- 6. questoes ----------
     tot = df.groupby(['participante', 'onda'])['correta'].transform('sum'); n = df.groupby(['participante', 'onda'])['correta'].transform('count')
     df['resto'] = (tot - df['correta']) / (n - 1).clip(lower=1)
     it = df.groupby(['onda', 'item']).apply(lambda d: pd.Series({'respostas': len(d), 'acerto (%)': 100 * d['correta'].mean(),
         'discriminação (r ponto-bisserial)': d['correta'].astype(int).corr(d['resto']) if d['correta'].nunique() > 1 and d['resto'].nunique() > 1 else np.nan,
         'tempo mediano (s)': d['tempo_s'].median()}), include_groups=False).reset_index()
     it['onda'] = it['onda'].map(lambda o: CURTO[o - 1]); it['respostas'] = it['respostas'].astype(int)
-    partes.append('<h2>5. Questões</h2><p>Questões com menos de 10 respostas não permitem julgar dificuldade nem discriminação.</p>' + tabela(it, 2))
+    partes.append('<h2>6. Questões</h2><p>Questões com menos de 10 respostas não permitem julgar dificuldade nem discriminação.</p>' + tabela(it, 2))
     escrever(a, partes, simulado=a.so_simulados)
 
 def escrever(a, partes, simulado=False):

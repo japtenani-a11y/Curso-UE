@@ -1,10 +1,16 @@
 # CUT · Plano de análise para pré-registro
 
-Versão 1.0 (rascunho para decisão da coordenação e revisão de um estatístico) · 16/11/2026
+Versão 1.1 (decisões da coordenação incorporadas; falta a revisão de um estatístico) · 16/11/2026
 
 Este plano deve ser registrado (OSF Registries ou equivalente) **antes da abertura do primeiro pré-teste de 2027**, e
-anexado ao protocolo do CEP com o dicionário de dados (`docs/dicionario_dados_pesquisa.md`). As decisões marcadas com
-**[decidir]** dependem da coordenação.
+anexado ao protocolo do CEP com o dicionário de dados (`docs/dicionario_dados_pesquisa.md`).
+
+Decisões da coordenação em 16/11/2026:
+- graduação e egressos entram na análise principal;
+- são esperados cerca de 40 alunos em 2027, com presença irregular nas aulas;
+- o efeito mínimo que importa é de 10 pontos percentuais do pré-teste 1 ao D0;
+- ainda não há meses de 2026 levantados no registro de trauma;
+- o modelo principal roda em Python, integrado ao relatório.
 
 ## 1. Pergunta e desenho
 
@@ -20,9 +26,10 @@ depois? A certeza que o residente marca em cada questão acompanha o acerto?
 
 Cada participante é o próprio controle: a comparação é entre ondas, dentro da mesma pessoa e do mesmo tema.
 
-**Participantes.** Residentes e alunos inscritos no CUT em 2027 que aceitarem o TCLE no aplicativo.
+**Participantes.** Todos os inscritos no CUT em 2027 que aceitarem o TCLE no aplicativo: residentes, alunos da
+graduação e egressos. Todos entram na análise principal, com o grupo de ano como covariável: R1, R2, R3, R+ (R4 a R6,
+egressos e preceptores que fazem o curso como alunos) e graduação.
 - Excluídos: membros da equipe (preceptores, curadores, administradores, pesquisadores) e contas de teste ou simuladas.
-- [decidir] Graduação e egressos entram como grupos à parte ou ficam de fora da análise primária?
 
 ## 2. Hipóteses
 
@@ -58,41 +65,64 @@ Cada participante é o próprio controle: a comparação é entre ondas, dentro 
 
 ## 5. Análise
 
-**Modelo primário (H1, H2, H3).** Regressão logística de efeitos mistos com o acerto da questão como desfecho:
-- efeito fixo da onda (pré-teste 1 como referência) e do ano de residência;
-- efeitos aleatórios do participante, da questão e do tema.
+**Modelo primário (H1, H2, H3).** Regressão logística com o acerto da questão como desfecho:
+- efeito fixo da onda (pré-teste 1 como referência), do grupo de ano (R1 como referência) e do grau de dificuldade da
+  questão;
+- erro padrão robusto agrupado por participante (sanduíche, com correção G/(G−1)), que equivale a uma GEE com
+  correlação de trabalho independente. As respostas da mesma pessoa não contam como independentes.
+- Intervalos de confiança e p pela distribuição t com (número de participantes − 1) graus de liberdade, mais
+  conservadora com poucos participantes.
 
 Contrastes planejados:
 - D0 × pré-teste 1 (H1);
 - D+90 × pré-teste 1 (H2);
 - pré-teste 2 × pré-teste 1 (H3).
 
-Os resultados vêm como razão de chances com IC de 95%. As três comparações são corrigidas por Holm.
+Resultado: razão de chances com IC de 95% e a diferença em pontos percentuais de acerto, na média das outras
+variáveis. As três comparações são corrigidas por Holm. A diferença é comparada com o efeito mínimo de 10 pontos.
+
+**Implementação.** O modelo está em `analise/modelo_cut.py`, só com numpy e scipy, e entra no relatório gerado por
+`analise/analise_cut_v1.0.py` (seção 5). Em 16/11/2026, duas conferências:
+- os coeficientes bateram com os do scikit-learn (diferença menor que 10⁻⁷);
+- com 40 participantes simulados, o erro padrão robusto bateu com o bootstrap por participante.
+
+O modelo estima o efeito médio da população, que costuma ser um pouco menor que o efeito "por pessoa" de um modelo de
+efeitos mistos.
+
+**Análise de sensibilidade.** Regressão logística de efeitos mistos (participante, questão e tema como efeitos
+aleatórios), rodada por um estatístico em R, se houver um disponível. Código para o estatístico:
 
 ```r
 library(lme4); library(emmeans)
 b <- read.csv2("base_respostas.csv")              # aba "Base de análise" do painel
 b <- subset(b, valida == "t")
 b$onda <- factor(b$teste_num, levels = 1:6, labels = c("pre1","pre2","D0","D15","D45","D90"))
-m <- glmer(correta == "t" ~ onda + ano + (1 | participante) + (1 | item) + (1 | tema),
+m <- glmer(correta == "t" ~ onda + ano + dificuldade + (1 | participante) + (1 | item) + (1 | tema),
            data = b, family = binomial, control = glmerControl(optimizer = "bobyqa"))
-emmeans(m, trt.vs.ctrl ~ onda, type = "response", adjust = "holm")   # H1, H2, H3
+emmeans(m, trt.vs.ctrl ~ onda, type = "response", adjust = "holm")
 ```
 
-**Retenção (H4).** Mesmo modelo, só com as ondas D0 a D+90 e os dias desde a aula como variável contínua. A interação
-dias × número de revisões espaçadas feitas no tema é exploratória.
+**Retenção (H4).** Mesmo modelo, só com as ondas D0 a D+90 e os dias desde a aula como variável contínua: razão de
+chances por 30 dias. A interação dias × número de revisões espaçadas feitas no tema é exploratória.
 
 **Calibração (H5).**
-- Acerto por nível de certeza.
+- Acerto por nível de certeza, e a razão de chances de acerto com "acho que sim" e "tenho certeza" em relação a
+  "chutei", no mesmo modelo, ajustado por onda, ano e dificuldade.
 - Gamma de Goodman-Kruskal por participante, comparado com zero pelo teste de Wilcoxon.
 - Mudança do gamma entre as ondas antes e depois da aula: modelo misto com o participante como efeito aleatório.
 
 **Hipercorreção (H6, exploratória).** Nas questões que se repetem entre ondas: depois de um erro, a chance de acertar na
 onda seguinte, conforme a certeza do erro. Regressão logística mista com o participante como efeito aleatório.
 
-**Indicadores clínicos (H7).** Série temporal interrompida (regressão segmentada) da proporção mensal de cada indicador,
-com o corte no mês em que o tema correspondente é dado. São pelo menos 12 meses antes e 12 depois. [decidir] Quais
-meses de 2026 a coordenação consegue levantar no registro de trauma do serviço?
+**Indicadores clínicos (H7, exploratória).** Ainda não há meses de 2026 levantados no registro de trauma. Por isso:
+- a coordenação passa a registrar os totais mensais a partir de dezembro de 2026, no painel (aba "Indicadores
+  clínicos"); os meses antes do início do curso servem de linha de base;
+- como os temas são dados em datas diferentes, cada indicador é comparado antes e depois do tema correspondente (por
+  exemplo, temperatura na admissão antes e depois do T001), usando os indicadores de temas ainda não dados como
+  comparação no mesmo período;
+- com menos de 6 meses antes do tema, a análise é só descritiva (gráfico mensal, sem teste).
+
+H7 passa a ser exploratória.
 
 **Dados faltantes.** Os modelos mistos usam todas as ondas respondidas (ausência aleatória condicional às variáveis do
 modelo). O relatório traz o abandono por onda. Sensibilidade: só quem respondeu as seis ondas do tema.
@@ -104,12 +134,27 @@ ser decidida depois de ver o resultado.
 
 ## 6. Tamanho da amostra
 
-O número de residentes de 2027 é fixo: todos os inscritos que consentirem. [decidir] Estimativa de inscritos.
+São esperados cerca de 40 alunos em 2027, com presença irregular. O poder foi estimado por simulação em 16/11/2026
+(`analise/poder_cut_v1.0.py`), com as hipóteses abaixo:
+- 7 questões por onda;
+- 60% de chance de o aluno fazer cada onda de cada tema;
+- variação entre alunos, temas e questões compatível com testes de múltipla escolha;
+- acerto de 55% no pré-teste 1;
+- teste pareado das médias por aluno, com α de 0,05 dividido por 3 (Holm, no pior caso). É mais conservador que o
+  modelo principal.
 
-O poder vai ser estimado por simulação antes do registro. O script `90_simulacao_5_residentes_v1.0.sql` gera dados no
-formato real. Repetindo a simulação com o número esperado de residentes e o efeito mínimo de interesse, a coordenação
-vê com que frequência o modelo primário detecta o efeito. [decidir] Efeito mínimo de interesse (sugestão: 10 pontos
-percentuais de D0 sobre pré-teste 1).
+| Temas analisados juntos | Poder para 10 pontos (D0 × pré-teste 1) | Poder para 5 pontos |
+|---|---|---|
+| 1 | 0,14 | 0,03 |
+| 3 | 0,35 | 0,08 |
+| 10 | 0,87 | 0,31 |
+| 39 (todos os principais) | 1,00 | 0,90 |
+
+**Consequência para o plano.** Um tema sozinho não tem poder para nada. A análise confirmatória junta todos os temas do
+ano, com o tema no modelo. Com uns 10 temas já se detecta o efeito mínimo de 10 pontos. A retenção no D+90 (efeito
+esperado menor, perto de 5 pontos) precisa do ano inteiro. Por isso:
+- a análise confirmatória acontece ao fim de 2027;
+- análises parciais, tema a tema, são descritivas e não testam hipótese.
 
 ## 7. Limitações declaradas desde já
 
@@ -118,7 +163,12 @@ percentuais de D0 sobre pré-teste 1).
 - As formas das ondas não são idênticas: cada onda tem questões próprias, além das que se repetem. O efeito aleatório
   da questão e a análise de itens reduzem esse viés, mas não o eliminam.
 - A aplicabilidade é autorrelatada.
-- Os indicadores clínicos são do serviço como um todo, não só dos residentes do curso, e mudam por outros motivos.
+- Os indicadores clínicos são do serviço como um todo, não só dos residentes do curso, e mudam por outros motivos. Sem
+  linha de base de 2026, a comparação fica limitada aos meses registrados a partir de dezembro de 2026.
+- O modelo principal estima o efeito médio da população (erro padrão agrupado), não o efeito por pessoa de um modelo
+  de efeitos mistos. O modelo misto entra como sensibilidade, se houver estatístico para rodar.
+- Com presença irregular, quem faz mais ondas pode ser diferente de quem faz menos. O relatório mostra o acerto
+  conforme o número de ondas feitas.
 
 ## 8. O que muda o plano depois do registro
 
@@ -127,7 +177,8 @@ banco), a mudança é registrada com data e motivo e declarada no artigo como de
 
 ## 9. Ensaio com os dados simulados (16/11/2026)
 
-O script `analise/analise_cut_v1.0.py` rodou nos cinco residentes simulados. Ele gera o relatório descritivo deste plano:
+O script `analise/analise_cut_v1.0.py` rodou nos cinco residentes simulados. Ele gera o relatório deste plano, com o
+modelo principal:
 - qualidade dos dados;
 - curva por onda com IC por bootstrap;
 - ganho e retenção por participante;
