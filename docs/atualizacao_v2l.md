@@ -97,6 +97,23 @@
 - **Buscas PubMed:** o arquivo ganhou a seção "Como nomear os PDFs da curadoria manual"
   (`T001_A07_2023_Silva_PMID37123456.pdf`).
 
+## Árvore revisada e nova tela da árvore (65 + 75), 15/11/2026
+
+- A coordenação confirmou os 150 temas e aceitou as 6 sugestões da revisão da árvore. A árvore passou de 185 para 169 ligações:
+  - S1: saíram 16 ligações redundantes (o tema já dependia da mesma mãe por outro caminho; nada muda na liberação);
+  - S2: T074 (hérnia encarcerada com isquemia) deixou de depender de T139 e abre depois da aula 19, não mais da 36. T041 não entrou como mãe nova porque já vem por T043;
+  - S3: T035 (infecção cervical profunda) passou a depender de T002 e T050 e abre depois da aula 22, não mais da 31;
+  - S4: T049 (Fournier) passou a depender de T050 e abre depois da aula 22, não mais da 33;
+  - S5: T058 (delirium, sedação e analgesia) passou a depender de T053. Ficam 7 temas avulsos.
+- A árvore do banco agora informa, para cada tema, a aula e "abre depois da aula N" (S6).
+- Nova tela /aluno/arvore (script 75), com três vistas:
+  - **Mapa:** arrastar e zoom, com o caminho do tema escolhido em azul (antes) e laranja (depois);
+  - **Foco:** o tema no centro, com o que ele exige, o que libera e a ordem de estudo;
+  - **Linha do curso:** cada aula de quinta e os temas que abrem depois dela.
+  No celular a tela abre na Linha do curso.
+- O estilo.css ganhou o bloco "tema CUT (Design System)" com as variáveis --cut-*. É o primeiro passo do arquivo de tema: as telas novas usam só essas variáveis.
+- Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 65 e o 75. Para voltar à tela antiga, rode de novo o 67.
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).

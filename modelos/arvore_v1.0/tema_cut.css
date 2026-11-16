@@ -1,0 +1,20 @@
+/* ---------- tema CUT (Design System) ---------- */
+/* Valores do Design System "CUT". Este é o único lugar do aplicativo com esses números:
+   quando o Design System mudar, muda-se só este bloco. As telas novas usam apenas var(--cut-*).
+   O tema escuro entra quando o aplicativo inteiro tiver modo escuro (data-theme="dark"). */
+:root {
+  --cut-surface: #FFFFFF; --cut-surface-sunken: #F4F5F7; --cut-surface-raised: #FFFFFF;
+  --cut-text: #0E1726; --cut-text-muted: #5B6473; --cut-line: #DDE1E7; --cut-line-strong: #7C8594;
+  --cut-brand: #0E1726; --cut-incision: #D7263D; --cut-action: #0E1726; --cut-on-action: #FFFFFF;
+  --cut-correct: #174A85; --cut-correct-bg: #E8F1FB; --cut-incorrect: #B4440E; --cut-incorrect-bg: #FDEEE4; --cut-focus: #174A85;
+  --cut-font: Inter, "Helvetica Neue", Arial, sans-serif;
+  --cut-r-sm: 6px; --cut-r-md: 10px; --cut-r-lg: 16px; --cut-tap: 44px; --cut-content-max: 720px;
+  --cut-sombra: 0 8px 24px rgba(14, 23, 38, .14);
+}
+:root[data-theme="dark"] {
+  --cut-surface: #0E1726; --cut-surface-sunken: #0A111C; --cut-surface-raised: #1C2333;
+  --cut-text: #F3F5F8; --cut-text-muted: #A9B2C0; --cut-line: #2A3343; --cut-line-strong: #6B7588;
+  --cut-incision: #F25C6B; --cut-action: #F3F5F8; --cut-on-action: #0E1726;
+  --cut-correct: #7AB8F5; --cut-correct-bg: #16273D; --cut-incorrect: #FFB27A; --cut-incorrect-bg: #33231A; --cut-focus: #7AB8F5;
+  --cut-sombra: 0 8px 24px rgba(0, 0, 0, .45);
+}
