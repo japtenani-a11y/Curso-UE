@@ -20,10 +20,12 @@ if [ -z "${COORD_DIR:-}" ]; then
   if [ -n "$WINHOME" ] && command -v wslpath >/dev/null; then COORD_DIR="$(wslpath "$WINHOME")/CUT_coordenacao"
   else COORD_DIR="$HOME/CUT_coordenacao"; fi
 fi
-mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia,fontes_novas,fontes_recebidas,fontes_recusadas}
+mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia,fontes_novas,fontes_recebidas,fontes_recusadas,producao}
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 # regras que os agentes consultam (copiadas a cada ligacao da ponte, para ficarem sempre na versao instalada)
-for d in formato_das_pecas.md coordenacao_agentes.md; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
+for d in formato_das_pecas.md coordenacao_agentes.md producao_de_tema.md agente_produtor.md BUSCAS_PUBMED_150_temas.txt fila_producao_150.md; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
+# o produtor confere a propria pasta com o mesmo importador (sem banco) antes de pedir a importacao
+[ -f "$AQUI/ferramentas/importar_tema.py" ] && cp -f "$AQUI/ferramentas/importar_tema.py" "$COORD_DIR/referencia/"
 # modelo da planilha de indicadores: so totais do mes
 [ -f "$COORD_DIR/indicadores/MODELO_totais.csv" ] || printf '%s\n' \
   'mes;indicador;numerador;denominador;fonte' \
@@ -53,6 +55,44 @@ Esta pasta fica fora do OneDrive de proposito. Nao compartilhe.
 TXT
 fi
 
+# Agente produtor (decisao de 17/11/2026): para cada tema liberado em producao\liberados.csv (TEMA;data da liberacao),
+#  1. a cada 6 horas, grava em producao\<TEMA>\fontes_banco\ o texto das fontes guardadas no banco para o tema;
+#  2. quando o produtor deixa producao\<TEMA>\PRONTO_PARA_IMPORTAR.txt mais novo que a ultima importacao, grava no banco
+#     em RASCUNHO o que estiver pronto (importador em modo parcial: pecas, afirmacoes, testes e gabaritos completos;
+#     questoes, casos e ondas so na importacao completa, pela coordenacao). O resultado fica em importacao_ultima.txt.
+#  Usa o papel maestro_rw (PRODUCAO_URL), que escreve rascunhos e nao publica nada.
+producao() {
+  [ -n "${PRODUCAO_URL:-}" ] || return 0
+  local L="$COORD_DIR/producao/liberados.csv" tema data D agora
+  [ -f "$L" ] || return 0
+  agora=$(date +%s)
+  while IFS=';' read -r tema data _; do
+    tema="$(printf '%s' "$tema" | tr -d ' \r-' | tr 'a-z' 'A-Z')"
+    [[ "$tema" =~ ^T[0-9]{3}$ ]] || continue
+    D="$COORD_DIR/producao/$tema"; mkdir -p "$D/pecas"
+    if [ ! -f "$D/fontes_banco/fontes_banco.csv" ] || [ $(( agora - $(stat -c %Y "$D/fontes_banco/fontes_banco.csv") )) -gt 21600 ]; then
+      if psql "$PRODUCAO_URL" -X -q -At -v ON_ERROR_STOP=1 -c "
+        SELECT coalesce(json_agg(json_build_object('arquivo', regexp_replace(coalesce(nullif(f.arquivo_origem, ''), 'sem_arquivo_' || f.fonte_id), '^.*/', ''),
+               'titulo', f.titulo, 'autores', f.autores, 'ano', f.ano, 'doi', f.doi, 'pmid', f.pmid, 'camada', f.camada, 'texto', f.texto_integral)), '[]')
+          FROM conteudo.fonte f JOIN app.tema t USING (tema_id) WHERE replace(t.codigo, '-', '') = '$tema'" > "$D/.fontes.json" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
+        python3 -I "$AQUI/ferramentas/fontes_banco.py" "$D/.fontes.json" "$D/fontes_banco" > /dev/null 2>> "$COORD_DIR/entrada/.ponte_erros.log"
+      fi
+      rm -f "$D/.fontes.json"
+    fi
+    if [ -f "$D/PRONTO_PARA_IMPORTAR.txt" ] && [ "$D/PRONTO_PARA_IMPORTAR.txt" -nt "$D/.importado" ] \
+       && [ $(( agora - $(stat -c %Y "$D/PRONTO_PARA_IMPORTAR.txt") )) -ge 60 ]; then
+      {
+        echo "importacao parcial de $tema em $(date -Iseconds)"
+        if python3 -I "$AQUI/ferramentas/importar_tema.py" "$D" "$D/.importar.sql" --parcial; then
+          echo "COMMIT;" >> "$D/.importar.sql"
+          if psql "$PRODUCAO_URL" -X -q -v ON_ERROR_STOP=1 -f "$D/.importar.sql"; then echo "GRAVADO EM RASCUNHO"; else echo "ERRO NO BANCO: nada foi gravado"; fi
+        else echo "ERRO NA PASTA: nada foi gravado (corrija os erros acima)"; fi
+      } > "$D/importacao_ultima.txt" 2>&1
+      rm -f "$D/.importar.sql"; touch "$D/.importado"
+    fi
+  done < "$L"
+}
+
 rodada() {
   local ok=0 rec=0 err=0 a f n
   shopt -s nullglob
@@ -72,6 +112,7 @@ rodada() {
         printf '%s\n' "$(printf '%s' "$SAIDA_F" | head -1 | cut -f2)" > "$COORD_DIR/fontes_recusadas/$(basename "$f").motivo.txt" ;;
     esac
   done
+  producao
   for a in duvidas pecas conteudo atrasados indicadores supervisor fontes; do
     if "${PSQL[@]}" -c "SELECT app.coord_pacote('$a')" > "$COORD_DIR/entrada/.$a.tmp" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
       mv -f "$COORD_DIR/entrada/.$a.tmp" "$COORD_DIR/entrada/$a.json"; ok=$((ok + 1))

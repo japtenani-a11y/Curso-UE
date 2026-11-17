@@ -85,7 +85,7 @@ $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
 if [ "$V2" = "0" ]; then $SQL -f 33_carga_afirmacoes_T001_v1.0.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "33_carga_afirmacoes falhou; veja $RAIZ/logs/banco.log"; fi
-for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql 76_certeza_questao_v1.0.sql 78_perfis_v1.0.sql 79_aluno_para_todos_v1.0.sql 81_sequencia_material_v1.0.sql 82_interativo_v1.0.sql 83_ajustes_v2p_v1.0.sql 84_falas_slides_T001_v1.0.sql 85_estudo_pesquisa_v1.0.sql 86_dicas_caso_T001_v1.0.sql 88_formato_tempo_v1.0.sql 89_coordenacao_agentes_v1.0.sql 92_prazos_producao_v1.0.sql 95_entrada_por_email_v1.0.sql 97_aprovar_sugeridas_v1.0.sql; do
+for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1.0.sql 43_calendario_lembretes_v1.0.sql 45_notificacoes_v1.0.sql 47_camadas_evidencia_v1.0.sql 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql 76_certeza_questao_v1.0.sql 78_perfis_v1.0.sql 79_aluno_para_todos_v1.0.sql 81_sequencia_material_v1.0.sql 82_interativo_v1.0.sql 83_ajustes_v2p_v1.0.sql 84_falas_slides_T001_v1.0.sql 85_estudo_pesquisa_v1.0.sql 86_dicas_caso_T001_v1.0.sql 88_formato_tempo_v1.0.sql 89_coordenacao_agentes_v1.0.sql 92_prazos_producao_v1.0.sql 95_entrada_por_email_v1.0.sql 97_aprovar_sugeridas_v1.0.sql 99_producao_agente_v1.0.sql; do
   # depois que o T001 passou pelo importador (questoes com codigo T001-T1-...), o banco de questoes antigo (37) e as
   # ondas de teste (39) nao sao recarregados: recriariam as questoes antigas ao lado das novas
   if [ "$f" = 37_banco_questoes_v1.0.sql ] || [ "$f" = 39_ondas_teste_T001_v1.0.sql ]; then
@@ -202,7 +202,7 @@ fi
 
 if [ -f "$AQUI/ponte_coordenacao_v1.0.sh" ]; then
   echo "      ligando a ponte dos agentes da coordenacao (pasta CUT_coordenacao do Windows, a cada 10 minutos)"
-  ( DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" nohup setsid bash "$AQUI/ponte_coordenacao_v1.0.sh" > "$RABS/logs/ponte.log" 2>&1 & echo $! > "$RABS/logs/ponte.pid" )
+  ( DATABASE_URL="postgresql://api_rw:$PW@$HOST:$PORTA/programa" PRODUCAO_URL="postgresql://maestro_rw:$PW@$HOST:$PORTA/programa" nohup setsid bash "$AQUI/ponte_coordenacao_v1.0.sh" > "$RABS/logs/ponte.log" 2>&1 & echo $! > "$RABS/logs/ponte.pid" )
 fi
 
 echo "[7/7] Ligando o PWA (porta 5173)..."

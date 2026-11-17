@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # importar_tema.py — importador generico de um tema do CUT (pecas, afirmacoes, fontes, casos dos testes e questoes).
-# Uso (pelo importar_tema_v1.0.sh): python3 -I ferramentas/importar_tema.py <pasta do tema> <saida.sql>
+# Uso (pelo importar_tema_v1.0.sh): python3 -I ferramentas/importar_tema.py <pasta do tema> <saida.sql> [--parcial]
+# --parcial (usado pela ponte com o agente produtor): o tema chega aos poucos. Peca, caso ou questao que ainda falta
+#   vira aviso; so entram as pecas prontas e os testes e gabaritos completos (caso, ancora e as cinco faixas). Peca fora
+#   do formato fica de fora (com aviso) em vez de impedir as outras. Questoes, casos e ondas NAO sao gravados no modo
+#   parcial: entram so na importacao completa, feita pela coordenacao.
 # Le a pasta no formato de docs/producao_de_tema.md, confere tudo o que da para conferir sem o banco, gera os
 # testes e gabaritos a partir de questoes.json e escreve um SQL unico. O SQL confere o formato das pecas no banco
 # (conteudo.erros_formato) antes de gravar e termina em ROLLBACK (conferencia) ou COMMIT (com --aplicar).
@@ -35,6 +39,10 @@ def dq(s, tag='cut'):
 def lit(v): return 'NULL' if v in (None, '') else dq(v)
 
 pasta, saida = sys.argv[1], sys.argv[2]
+PARCIAL = '--parcial' in sys.argv[3:]
+def falta(m):
+    (aviso if PARCIAL else erro)(m)
+ID_OK = re.compile(r'[\w+.-]{1,40}')
 tema = os.path.basename(os.path.normpath(pasta)).upper().replace('-', '')
 if not re.fullmatch(r'T\d{3}', tema): sys.exit(f'ERRO: a pasta precisa se chamar como o tema, por exemplo T002 (veio "{tema}").')
 TEMA_SQL = f"replace(t.codigo,'-','')='{tema}'"
@@ -44,7 +52,7 @@ pecas = {}
 for tipo in MATERIAL + OPCIONAIS:
     f = os.path.join(pasta, 'pecas', f'{tipo}.md')
     if not os.path.exists(f):
-        if tipo in MATERIAL: erro(f'falta a peça pecas/{tipo}.md')
+        if tipo in MATERIAL: falta(f'falta a peça pecas/{tipo}.md')
         continue
     corpo = open(f, encoding='utf-8').read().replace('\r\n', '\n')
     m = re.search(r'^# (.+)$', corpo, re.M)
@@ -55,7 +63,7 @@ for tipo in MATERIAL + OPCIONAIS:
 # ---------- afirmacoes ----------
 afirm = {}
 fa = os.path.join(pasta, 'afirmacoes.csv')
-if not os.path.exists(fa): erro('falta afirmacoes.csv (codigo;texto;fonte_arquivo;trecho_literal)')
+if not os.path.exists(fa): falta('falta afirmacoes.csv (codigo;texto;fonte_arquivo;trecho_literal)')
 else:
     for i, r in enumerate(csv.DictReader(open(fa, encoding='utf-8-sig'), delimiter=';'), 2):
         cod = (r.get('codigo') or '').strip()
@@ -121,15 +129,16 @@ if os.path.exists(fc):
     for k, v in json.load(open(fc, encoding='utf-8')).items():
         casos[int(k)] = (v['titulo'], v['texto'])
 for n in range(1, 7):
-    if n not in casos: erro(f'casos_teste.json: falta o caso do teste {n}')
+    if n not in casos and not (PARCIAL and not casos): falta(f'casos_teste.json: falta o caso do teste {n}')
 
 questoes = []
 fq = os.path.join(pasta, 'questoes.json')
-if not os.path.exists(fq): erro('falta questoes.json')
+if not os.path.exists(fq): falta('falta questoes.json')
 else: questoes = json.load(open(fq, encoding='utf-8'))
 cods = set(); longas = []
 for q in questoes:
     qid = q.get('id', '?')
+    if not isinstance(qid, str) or not ID_OK.fullmatch(qid): erro(f'questão {qid!r}: id só com letras, números, +, ponto, hífen ou sublinhado (até 40)'); continue
     if qid in cods: erro(f'questão {qid}: id repetido')
     cods.add(qid)
     if not q.get('enunciado'): erro(f'questão {qid}: sem enunciado')
@@ -154,14 +163,15 @@ for q in questoes:
         aviso(f'questão {qid}: evite "todas" ou "nenhuma das anteriores"')
 if longas: aviso(f'{len(longas)} de {len(questoes)} questões têm a correta bem mais longa que as outras (pista para o aluno): ' + ', '.join(longas[:12]) + (' ...' if len(longas) > 12 else ''))
 fixas = [q for q in questoes if q.get('fixa')]
-if not fixas: erro('nenhuma questão âncora (fixa): a regra é 2 a 3 por tema')
+if PARCIAL and not questoes: pass
+elif not fixas: falta('nenhuma questão âncora (fixa): a regra é 2 a 3 por tema')
 elif len(fixas) < 2: aviso(f'{len(fixas)} questão âncora: a regra é 2 a 3 por tema')
 elif len(fixas) > 3: aviso(f'{len(fixas)} questões âncora: a regra é 2 a 3 por tema')
 for n in range(1, 7):
     for p in PERFIS:
         k = len([q for q in questoes if not q.get('fixa') and q.get('teste') == n and q.get('perfil') == p])
-        if k == 0: erro(f'teste {n}, perfil {p}: nenhuma questão')
-        elif k < 4: aviso(f'teste {n}, perfil {p}: só {k} questões')
+        if k == 0 and not (PARCIAL and not questoes): falta(f'teste {n}, perfil {p}: nenhuma questão')
+        elif 0 < k < 4: aviso(f'teste {n}, perfil {p}: só {k} questões')
 for n in range(1, 7):
     letras = [q['correta'] for q in questoes if q.get('teste') == n and not q.get('fixa')]
     if letras and max(letras.count(l) for l in LET) > 0.4 * len(letras): aviso(f'teste {n}: a mesma letra é a correta em mais de 40% das questões')
@@ -191,7 +201,11 @@ def ordem_da_onda(q, n):
         r[campo] = [q[campo][k] for k in idx]
     r['correta'] = LET[idx.index(LET.index(q['correta']))]
     return r
-for n in range(1, 7):
+def completo(n):
+    return n in casos and bool(fixas) and all(any(not q.get('fixa') and q.get('teste') == n and q.get('perfil') == p for q in questoes) for p in PERFIS)
+gerados = [n for n in range(1, 7) if completo(n)]
+if PARCIAL and len(gerados) < 6: aviso('testes ainda incompletos (não gerados nesta importação): ' + ', '.join(str(n) for n in range(1, 7) if n not in gerados))
+for n in gerados:
     ct, cx = casos[n]
     prova = [f'# {tema[0]}-{tema[1:]} — {NOMES[n]}\n',
              f'Múltipla escolha, 5 alternativas, uma correta. As primeiras questões são as âncoras do tema; as demais partem do {ct.lower()}.\n',
@@ -222,8 +236,10 @@ for tipo, pc in pecas.items():
     L.append(f"INSERT INTO _imp VALUES ('{tipo}', {dq(pc['titulo'])}, {dq(pc['corpo'])});")
 L += ["\\echo 'conferencia de formato das pecas (erros impedem a publicacao):'",
       "SELECT tipo, f.gravidade, f.mensagem FROM _imp CROSS JOIN LATERAL conteudo.conferir_formato(tipo, corpo) f ORDER BY f.gravidade, tipo;",
-      "DO $$ DECLARE e TEXT; BEGIN SELECT string_agg(tipo || ': ' || conteudo.erros_formato(tipo, corpo), ' | ') INTO e FROM _imp WHERE conteudo.erros_formato(tipo, corpo) IS NOT NULL;"
-      " IF e IS NOT NULL THEN RAISE EXCEPTION 'formato_invalido: %', e; END IF; END $$;",
+      ("\\echo 'pecas fora do formato (ficam de fora desta importacao):'\n"
+       "DELETE FROM _imp WHERE conteudo.erros_formato(tipo, corpo) IS NOT NULL RETURNING tipo, conteudo.erros_formato(tipo, corpo);") if PARCIAL else
+      ("DO $$ DECLARE e TEXT; BEGIN SELECT string_agg(tipo || ': ' || conteudo.erros_formato(tipo, corpo), ' | ') INTO e FROM _imp WHERE conteudo.erros_formato(tipo, corpo) IS NOT NULL;"
+       " IF e IS NOT NULL THEN RAISE EXCEPTION 'formato_invalido: %', e; END IF; END $$;"),
       # pecas: nova versao em rascunho quando o texto mudou
       f"""INSERT INTO conteudo.artefato (tema_id, tipo, versao, status, titulo, corpo, checklist_conforme)
 SELECT t.tema_id, i.tipo, coalesce((SELECT max(versao) FROM conteudo.artefato a WHERE a.tema_id = t.tema_id AND a.tipo::text = i.tipo), 0) + 1,
@@ -238,8 +254,10 @@ for tipo, pc in pecas.items():
         L.append(f"""INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
 SELECT a.artefato_id, '{cod}', {dq(a['texto'])}, {lit(a['fonte_arquivo'])}, {lit(a['trecho_literal'])}
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.tipo::text = '{tipo}'
+   {"AND EXISTS (SELECT 1 FROM _imp WHERE _imp.tipo = '" + tipo + "')" if PARCIAL else ''}
    AND a.versao = (SELECT max(x.versao) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo = a.tipo)
 ON CONFLICT (artefato_id, codigo) DO UPDATE SET texto = EXCLUDED.texto, fonte_arquivo = EXCLUDED.fonte_arquivo, trecho_literal = EXCLUDED.trecho_literal;""")
+_ini_questoes = len(L)
 # questoes carregadas antes do importador (T001): passam a usar o codigo no padrao <tema>-<id>.
 # Se a copia antiga voltou (o subir antigo recarregava o banco de questoes de 37), e ninguem a respondeu, ela sai,
 # junto com a sua posicao nas ondas, e fica a do importador.
@@ -256,6 +274,7 @@ DELETE FROM app.item WHERE item_id IN (SELECT item_id FROM _velhas);""")
 L.append(f"""UPDATE app.item i SET codigo = '{tema}-' || i.codigo FROM app.tema t
  WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo ~ '^T[1-6]-';
 UPDATE app.item i SET codigo = '{tema}-FIXA-1' FROM app.tema t WHERE i.tema_id = t.tema_id AND {TEMA_SQL} AND i.codigo = '{tema}-FIXA';""")
+_fim_velhas = len(L)
 # fonte guardada em outro tema (triador de fontes) e citada aqui pelo codigo F<8 letras>: passa a valer tambem neste tema
 for ref in sorted({a['fonte_arquivo'] for a in afirm.values() if re.fullmatch(r'F[0-9a-f]{8}', a['fonte_arquivo'] or '')}):
     L.append(f"""INSERT INTO conteudo.fonte (tema_id, camada, titulo, autores, ano, doi, pmid, url, texto_integral, arquivo_origem, sha256, camada_confirmada, tema_confirmado)
@@ -270,6 +289,7 @@ SELECT t.tema_id, {f['camada']}, {dq(f['titulo'])}, {lit(f['autores'])}, {f['ano
   FROM app.tema t WHERE {TEMA_SQL}
    AND NOT EXISTS (SELECT 1 FROM conteudo.fonte x WHERE x.tema_id = t.tema_id
                      AND ({'x.sha256 = ' + dq(f['sha']) if f['sha'] else 'false'} OR (x.titulo = {dq(f['titulo'])} AND x.texto_integral IS NULL)));""")
+_ini_casos = len(L)
 # casos dos testes
 for n, (ct, cx) in sorted(casos.items()):
     L.append(f"INSERT INTO app.caso_teste (tema_id, teste_num, titulo, texto) SELECT t.tema_id, {n}, {dq(ct)}, {dq(cx)} FROM app.tema t WHERE {TEMA_SQL} "
@@ -313,6 +333,8 @@ SELECT o.onda_id, i.item_id,
   JOIN app.item i ON i.tema_id = o.tema_id AND (i.fixa OR i.teste_num = o.teste_num)
  WHERE {TEMA_SQL} AND i.codigo IS NOT NULL
    AND NOT EXISTS (SELECT 1 FROM app.item_selecionado s WHERE s.onda_id = o.onda_id AND s.item_id = i.item_id);""")
+if PARCIAL:  # questoes, casos e ondas so na importacao completa
+    L = L[:_ini_questoes] + L[_fim_velhas:_ini_casos]
 # Pré-revisões que esperam decisão sobre uma versão que acabou de ganhar versão nova ficam "substituídas" (não vetadas:
 # veto vira regra para o agente). O agente de peças revisa a versão nova na rodada seguinte. Pareceres de conteúdo
 # não entram aqui: valem para o mesmo texto em qualquer versão (script 94).
@@ -330,6 +352,7 @@ L += ["\\echo 'resultado:'",
        (SELECT count(*) FROM app.item i JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL}) AS questoes,
        (SELECT count(*) FROM app.item i JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND i.fixa) AS ancoras;"""]
 open(saida, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
-print(f'{tema}: {len(pecas)} peças ({len(MATERIAL)} de material, 12 testes e gabaritos gerados), {len(afirm)} afirmações, '
-      f'{len(fontes)} fontes, {len(questoes)} questões ({len(fixas)} âncoras).')
+print(f'{tema}{" (parcial)" if PARCIAL else ""}: {len(pecas)} peças ({len([t for t in pecas if t in MATERIAL])} de material, '
+      f'{2 * len(gerados)} testes e gabaritos gerados), {len(afirm)} afirmações, '
+      f'{len(fontes)} fontes, {len(questoes)} questões ({len(fixas)} âncoras)' + ('; questões e casos entram só na importação completa.' if PARCIAL else '.'))
 if avisos: print('AVISOS (não impedem):'); [print('  - ' + a) for a in avisos]

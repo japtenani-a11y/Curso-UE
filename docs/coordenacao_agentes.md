@@ -32,17 +32,21 @@ ponte --> banco: propostas aguardando --> aba "Para revisar" --> sua decisão --
 - **Arquivo recusado.** Um arquivo de proposta fora do formato vai para `com_erro\`, com o motivo ao lado.
 - **Dados que os agentes nunca recebem:** e-mail, nome completo, telefone, notas individuais com nome e dados de paciente.
 
-## Os sete agentes
+## Os oito agentes
+
+Desde 17/11/2026 o trabalho dos agentes fica entre 1h e 6h, quando o computador fica ligado. Cada um tem uma reserva na nuvem
+uma hora depois (horários em `agente_produtor.md`). O produtor de temas é descrito em `agente_produtor.md`.
 
 | Agente | Quando roda | Entrada | O que propõe | Ao aprovar |
 |---|---|---|---|---|
-| Dúvidas dos alunos | Todo dia, 6h40 | Dúvidas sem resposta, material publicado do tema, respostas anteriores | Resposta (`resposta`) ou alerta (`alerta`: dado de paciente, pergunta fora do escopo, conduta de caso real) | A resposta é publicada e o aluno é avisado |
-| Revisor de conteúdo | Todo dia, 5h50 | Até 120 textos de afirmação sem parecer (cada texto vale para todas as peças em que aparece), do tema com aula mais próxima, com o trecho citado e o contexto da fonte; referências do tema | Parecer sugerido por afirmação: aprovar, conferir melhor ou reprovar (`parecer`) | O parecer entra na revisão em seu nome, marcado como sugerido pelo agente |
-| Pré-revisão das peças | Todo dia, 5h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo, a versão publicada anterior e, para as peças da aula, o material de antes da aula | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção, incluindo a teoria repetida na aula (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
-| Alunos atrasados | Segunda-feira, 7h10 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
-| Indicadores clínicos | Dia 5 de cada mês, 8h20 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
-| Triador de fontes | Todo dia, 4h47 e 17h47 | PDFs soltos em `CUT_coordenacao\fontes_novas` (a ponte extrai o texto, recusa o que tem cara de dado de paciente e registra) e o catálogo dos 150 temas | Referência conferida no PubMed, camada e todos os temas em que a fonte serve, inclusive os ainda não produzidos (`fonte`), ou recusa | Aprovação automática: assim que o arquivo chega, a fonte fica guardada com o texto integral em cada tema indicado (`conteudo.fonte`). A coordenação não precisa decidir |
-| Supervisor | Todo dia, 7h30 (resumo do dia); sexta, 16h10 (auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios | Não propõe: escreve o resumo do dia (o que decidir primeiro) e a auditoria semanal da qualidade de cada agente, com a mudança sugerida na skill dele | — |
+| Dúvidas dos alunos | Todo dia, 5h10 | Dúvidas sem resposta, material publicado do tema, respostas anteriores | Resposta (`resposta`) ou alerta (`alerta`: dado de paciente, pergunta fora do escopo, conduta de caso real) | A resposta é publicada e o aluno é avisado |
+| Revisor de conteúdo | Todo dia, 4h10 | Até 120 textos de afirmação sem parecer (cada texto vale para todas as peças em que aparece), do tema com aula mais próxima, com o trecho citado e o contexto da fonte; referências do tema | Parecer sugerido por afirmação: aprovar, conferir melhor ou reprovar (`parecer`) | O parecer entra na revisão em seu nome, marcado como sugerido pelo agente |
+| Pré-revisão das peças | Todo dia, 3h20 | Rascunhos novos, com a conferência de formato, o tempo de estudo, a versão publicada anterior e, para as peças da aula, o material de antes da aula | Veredito (pronta, ajustar ou refazer) e lista de problemas com a correção, incluindo a teoria repetida na aula (`pre_revisao`) | Fica registrado; a correção da peça é feita na produção |
+| Alunos atrasados | Segunda-feira, 5h17 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
+| Indicadores clínicos | Dia 5 de cada mês, 4h33 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
+| Triador de fontes | Todo dia, 1h47 | PDFs soltos em `CUT_coordenacao\fontes_novas` (a ponte extrai o texto, recusa o que tem cara de dado de paciente e registra) e o catálogo dos 150 temas | Referência conferida no PubMed, camada e todos os temas em que a fonte serve, inclusive os ainda não produzidos (`fonte`), ou recusa | Aprovação automática: assim que o arquivo chega, a fonte fica guardada com o texto integral em cada tema indicado (`conteudo.fonte`). A coordenação não precisa decidir |
+| Supervisor | Todo dia, 5h43 (resumo do dia; na sexta, também a auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios | Não propõe: escreve o resumo do dia (o que decidir primeiro) e a auditoria semanal da qualidade de cada agente, com a mudança sugerida na skill dele | — |
+| Produtor de temas | Todo dia, 1h07 e 13h07 | Tema liberado em `producao\liberados.csv`: fontes do tema, pré-revisões e pareceres que voltaram | Não propõe pelo painel: escreve o material do tema em RASCUNHO em `producao\<TEMA>\`, e a ponte grava no banco | As peças seguem a revisão de sempre |
 
 ## Prazos da coordenação
 
