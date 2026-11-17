@@ -84,3 +84,9 @@ Força: alta (ensaio grande ou revisão Cochrane de qualidade), moderada (coorte
 - T054_2026_Lassola_10.1007-s00134-026-08581-5.pdf
 
 Os arquivos estão no zip original; basta arrastá-los para a pasta do tema no Drive.
+
+## Livro-texto da área (camada D)
+
+Walls Manual of Emergency Airway Management, 6ª edição (Brown, Sakles e Mick, eds.; Wolters Kluwer, 2022). Cópia pessoal da coordenação: fica em `CUT_coordenacao\livros\Walls6`, com o texto de cada capítulo para os agentes conferirem as afirmações. Não vai para o GitHub.
+
+Capítulos centrais para o T002: 1 (decisão de intubar), 2 a 4 (via aérea anatômica e fisiologicamente difícil, falha), 5 (algoritmos), 8 (oxigenação peri-intubação), 19 (via aérea cirúrgica de emergência), 20 (sequência rápida), 23 (sucesso na primeira tentativa), 33 (paciente instável), 34 (via aérea no trauma) e 35 (neurocrítico). Os outros capítulos servem a T053, T054, T058, T075, T088, T100, T111, T113, T137, T138 e T149 (mapa completo no LEIA-ME da pasta do livro).
