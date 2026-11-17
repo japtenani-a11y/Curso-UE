@@ -1,6 +1,6 @@
 # CUT · Plano de análise para pré-registro
 
-Versão 1.2 (decisões da coordenação incorporadas; falta a revisão de um estatístico) · 16/11/2026
+Versão 1.3 (decisões da coordenação incorporadas; falta a revisão de um estatístico) · 17/11/2026
 
 Este plano deve ser registrado (OSF Registries ou equivalente) **antes da abertura do primeiro pré-teste de 2027**, e
 anexado ao protocolo do CEP com o dicionário de dados (`docs/dicionario_dados_pesquisa.md`).
@@ -42,6 +42,7 @@ egressos e preceptores que fazem o curso como alunos) e graduação.
 | H5 | A certeza acompanha o acerto (gamma > 0), e essa relação melhora ao longo do curso | Secundária |
 | H6 | O erro cometido com "tenho certeza" é corrigido com mais frequência na onda seguinte do que o erro com pouca certeza (hipercorreção) | Exploratória |
 | H7 | Os indicadores da sala de trauma melhoram depois que o tema é dado (nível 3 de Kirkpatrick) | Secundária |
+| H8 | O uso de cada formato do material (texto, áudio, slides com fala, caso, flashcards) antes da aula se associa ao acerto no pré-teste 2 e no D0 | Exploratória |
 
 ## 3. Desfechos
 
@@ -129,6 +130,23 @@ onda seguinte, conforme a certeza do erro. Regressão logística mista com o par
 
 H7 passa a ser exploratória.
 
+**Uso do material por formato (H8, exploratória).** Incluída em 17/11/2026, antes de qualquer coleta. O curso oferece
+o mesmo conteúdo em vários formatos e não pergunta ao aluno o seu "estilo de aprendizagem". A ideia de ensinar no
+estilo preferido de cada aluno não tem apoio experimental (Pashler et al., 2008, doi:10.1111/j.1539-6053.2009.01038.x),
+e estudos com o questionário VARK medem só a preferência declarada, sem desempenho (por exemplo, Ullrich e Obisesan,
+J Surg Educ 2026, doi:10.1016/j.jsurg.2026.104252). Por isso, a análise usa o uso real do material, já registrado pelo
+aplicativo (`uso_material` e `leitura_tempo`, no dicionário de dados), e não um questionário.
+- **Exposição:** para cada aluno e tema, os minutos com cada formato antes da hora da aula, agrupados em: texto
+  (resumo básico, resumo executivo, síntese, protocolo, objetivos), áudio (podcast), slides com fala, caso (caso base e
+  caso da aula) e revisão ativa (flashcards e banco de questões). Também o número de formatos usados (0 a 5).
+- **Modelo:** o mesmo modelo primário, com o acerto da questão como desfecho, só no pré-teste 2 e no D0, ajustado pelo
+  acerto do mesmo aluno no pré-teste 1 do tema, pelo ano e pela dificuldade, com os minutos por formato (escala
+  logarítmica, log(1 + minutos)) e o número de formatos como variáveis. Erro padrão agrupado por participante.
+- **Leitura:** associação, não causa. Quem estuda mais tende a acertar mais por outros motivos (motivação, tempo livre,
+  experiência), e o tempo com a tela aberta não garante leitura. Nenhum resultado desta análise muda o material de um
+  aluno durante o curso.
+- **Descritiva:** a proporção de alunos que usa cada formato, por ano e por tema, entra no relatório mesmo sem teste.
+
 **Dados faltantes.** Os modelos mistos usam todas as ondas respondidas (ausência aleatória condicional às variáveis do
 modelo). O relatório traz o abandono por onda. Sensibilidade: só quem respondeu as seis ondas do tema.
 
@@ -169,6 +187,8 @@ esperado menor, perto de 5 pontos) precisa do ano inteiro. Por isso:
   âncora repetida, com gabarito visto ao fim de cada onda, mede também a memória da própria questão. O efeito aleatório
   da questão e a análise de itens reduzem esse viés, mas não o eliminam.
 - A aplicabilidade é autorrelatada.
+- O uso do material por formato (H8) é medido pelo tempo com a peça aberta na tela, que não garante leitura nem
+  atenção; e quem usa mais o material pode diferir de quem usa menos por motivos não medidos.
 - Os indicadores clínicos são do serviço como um todo, não só dos residentes do curso, e mudam por outros motivos. Sem
   linha de base de 2026, a comparação fica limitada aos meses registrados a partir de dezembro de 2026.
 - O modelo principal estima o efeito médio da população (erro padrão agrupado), não o efeito por pessoa de um modelo
