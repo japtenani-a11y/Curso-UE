@@ -57,6 +57,7 @@ command -v ngrok >/dev/null || falhar "ngrok nao instalado. Veja docs/servidor_r
 
 SQL="psql postgresql://postgres:$PW@$HOST:$PORTA/programa -v ON_ERROR_STOP=1 -q"
 echo "[1/5] Cadastrando revisores e registro de acesso..."
+: > "$RABS/logs/srv_banco.log"
 for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql 76_certeza_questao_v1.0.sql 78_perfis_v1.0.sql 79_aluno_para_todos_v1.0.sql 81_sequencia_material_v1.0.sql 82_interativo_v1.0.sql 83_ajustes_v2p_v1.0.sql 84_falas_slides_T001_v1.0.sql 85_estudo_pesquisa_v1.0.sql 86_dicas_caso_T001_v1.0.sql 88_formato_tempo_v1.0.sql 89_coordenacao_agentes_v1.0.sql 92_prazos_producao_v1.0.sql 95_entrada_por_email_v1.0.sql 97_aprovar_sugeridas_v1.0.sql; do
   $SQL -f $f >> "$RABS/logs/srv_banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/srv_banco.log"
 done
@@ -90,7 +91,8 @@ echo "      ok"
 
 echo "[5/5] Abrindo o tunel HTTPS (ngrok) em https://$DOMINIO ..."
 ( nohup setsid ngrok http --url="$DOMINIO" 8080 --log stdout > "$RABS/logs/srv_ngrok.log" 2>&1 & echo $! > "$RABS/logs/srv_ngrok.pid" )
-OK=""; for i in $(seq 1 20); do sleep 1; curl -s "https://$DOMINIO/api/health" | grep -q ok && { OK=1; break; }; done
+# o ngrok gratuito mostra uma pagina de aviso a quem nao manda este cabecalho; o navegador passa por ela uma vez
+OK=""; for i in $(seq 1 40); do sleep 1; curl -s -H "ngrok-skip-browser-warning: 1" "https://$DOMINIO/api/health" | grep -q ok && { OK=1; break; }; done
 [ -n "$OK" ] || { tail -15 "$RABS/logs/srv_ngrok.log"; falhar "o tunel nao respondeu (veja acima). Confira o authtoken e o dominio do ngrok."; }
 
 cat <<FIM
