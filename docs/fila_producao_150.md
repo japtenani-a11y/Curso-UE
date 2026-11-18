@@ -1,6 +1,6 @@
 # Fila de produção dos 150 temas
 
-Versão gerada em 13/11/2026. A fila **viva** fica no aplicativo, em Dados → Fila de produção, e se reordena sozinha.
+Versão gerada em 13/11/2026. Os temas marcados "fundido" saíram do programa em 18/11/2026 (147 temas). A fila **viva** fica no aplicativo, em Dados → Fila de produção, e se reordena sozinha.
 
 **Critérios, em ordem:**
 
@@ -91,11 +91,11 @@ Ainda não há pedidos de Avise-me, então hoje o bloco 2 está vazio.
 | 76 | T-020 | Empiema e decorticação pulmonar: indicação e pleurostomia | Trauma de parede torácica e pleural | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 77 | T-030 | Trauma ortopédico e controle de danos ortopédico | Trauma de extremidade, pelve e vascular | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 78 | T-054 | SDRA no paciente cirúrgico | Intensivismo cirúrgico | opcional | relevância 4 · libera 0 · pontos 15.1 |
-| 79 | T-057 | Distúrbios metabólicos e nutricionais | Intensivismo cirúrgico | opcional | relevância 4 · libera 0 · pontos 15.1 |
+| 79 | T-057 | [fundido em T-089/T-090 em 18/11/2026] Distúrbios metabólicos e nutricionais | Intensivismo cirúrgico | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 80 | T-066 | Urgências oncológicas | Hemorragia digestiva e colorretal | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 81 | T-067 | Neoplasia colorretal na urgência | Hemorragia digestiva e colorretal | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 82 | T-090 | Nutrição enteral e parenteral no paciente cirúrgico | Suporte perioperatório e farmacologia | opcional | relevância 4 · libera 0 · pontos 15.1 |
-| 83 | T-092 | Injúria renal perioperatória: nefroproteção e diálise de urgência | Suporte perioperatório e farmacologia | opcional | relevância 4 · libera 0 · pontos 15.1 |
+| 83 | T-092 | [fundido em T-056 em 18/11/2026] Injúria renal perioperatória: nefroproteção e diálise de urgência | Suporte perioperatório e farmacologia | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 84 | T-149 | Traqueostomia percutânea e manejo da via aérea definitiva | Procedimentos à beira-leito | opcional | relevância 4 · libera 0 · pontos 15.1 |
 | 85 | T-017 | Trauma de grandes vasos torácicos | Trauma cardíaco e de grandes vasos | opcional | relevância 4 · libera 0 · pontos 14.8 |
 | 86 | T-019 | Trauma esofágico: cervical, torácico e abdominal | Trauma cardíaco e de grandes vasos | opcional | relevância 4 · libera 0 · pontos 14.8 |
@@ -114,7 +114,7 @@ Ainda não há pedidos de Avise-me, então hoje o bloco 2 está vazio.
 | 99 | T-108 | Complicações de cirurgia videolaparoscópica e robótica | MIS e cirurgia especializada na urgência | recomendado | relevância 3 · libera 0 · pontos 12.8 |
 | 100 | T-127 | Princípios de aprendizagem do adulto e teorias de ensino aplicadas à residência médica | Ensino, preceptoria e avaliação | opcional | relevância 1 · libera 9 · pontos 12.4 |
 | 101 | T-062 | Trauma renal | Urologia e geniturinário | opcional | relevância 3 · libera 1 · pontos 12.4 |
-| 102 | T-120 | Erro aleatório e erro sistemático: intervalo de confiança, poder, valor de p e os seis vieses da literatura cirúrgica | Medicina baseada em evidências — ler e entender | opcional | relevância 2 · libera 5 · pontos 12.1 |
+| 102 | T-120 | [fundido em T-119 em 18/11/2026] Erro aleatório e erro sistemático: intervalo de confiança, poder, valor de p e os seis vieses da literatura cirúrgica | Medicina baseada em evidências — ler e entender | opcional | relevância 2 · libera 5 · pontos 12.1 |
 | 103 | T-113 | Sistemas de trauma, triagem e gestão de incidente com múltiplas vítimas | Auditoria, governança e sistemas | recomendado | relevância 2 · libera 3 · pontos 12.1 |
 | 104 | T-033 | Trauma de face, ocular e otorrinolaringológico: prioridades e quando não operar | Cabeça e pescoço | opcional | relevância 3 · libera 1 · pontos 12.1 |
 | 105 | T-102 | Colonoscopia diagnóstica e terapêutica na urgência | Endoscopia digestiva na urgência | opcional | relevância 3 · libera 1 · pontos 12.1 |
@@ -124,7 +124,7 @@ Ainda não há pedidos de Avise-me, então hoje o bloco 2 está vazio.
 | 109 | T-111 | Epistaxe grave, hematoma de septo e obstrução de via aérea alta | Interfaces, urgência vascular e isquemia visceral | opcional | relevância 3 · libera 0 · pontos 11.4 |
 | 110 | T-061 | Queimadura elétrica e trauma de partes moles | Queimaduras | opcional | relevância 3 · libera 0 · pontos 11.1 |
 | 111 | T-063 | Trauma geniturinário: bexiga, uretra, ureter, pênis e testículo | Urologia e geniturinário | opcional | relevância 3 · libera 0 · pontos 11.1 |
-| 112 | T-080 | Protocolos focados e integração do POCUS à decisão cirúrgica: eFAST seriado, RUSH e volemia | Imagem pelo cirurgião | opcional | relevância 3 · libera 0 · pontos 11.1 |
+| 112 | T-080 | [fundido em T-079 em 18/11/2026] Protocolos focados e integração do POCUS à decisão cirúrgica: eFAST seriado, RUSH e volemia | Imagem pelo cirurgião | opcional | relevância 3 · libera 0 · pontos 11.1 |
 | 113 | T-085 | Simulação realística, CRM e TeamSTEPPS: treinamento de equipe na urgência | Segurança do paciente e qualidade | opcional | relevância 3 · libera 0 · pontos 11.1 |
 | 114 | T-097 | Ectópica rota e hemoperitônio: diagnóstico e preservação reprodutiva | Ginecologia e obstetrícia na urgência | opcional | relevância 3 · libera 0 · pontos 11.1 |
 | 115 | T-098 | Emergências ginecológicas não obstétricas: torção anexial e abscesso tubo-ovariano | Ginecologia e obstetrícia na urgência | opcional | relevância 3 · libera 0 · pontos 11.1 |
@@ -147,8 +147,8 @@ Ainda não há pedidos de Avise-me, então hoje o bloco 2 está vazio.
 | 132 | T-115 | Revisão de mortalidade e morbidade: método, condução e aprendizado institucional | Auditoria, governança e sistemas | recomendado | relevância 2 · libera 0 · pontos 9.1 |
 | 133 | T-125 | Do artigo à beira do leito: aplicabilidade, populações não representadas e a decisão de aplicar ao meu paciente | Medicina baseada em evidências — julgar e aplicar | opcional | relevância 2 · libera 1 · pontos 7.8 |
 | 134 | T-145 | Burnout, segunda vítima e apoio institucional | Governança compartilhada e saúde do profissional | opcional | relevância 2 · libera 1 · pontos 7.8 |
-| 135 | T-124 | Leitura crítica do livro-texto e do capítulo de referência: identificar texto desatualizado e contrastar com a diretriz vigente | Medicina baseada em evidências — julgar e aplicar | opcional | relevância 2 · libera 0 · pontos 7.4 |
-| 136 | T-128 | Estratégias instrucionais: aula expositiva, aprendizagem baseada em problemas, team-based learning e aula invertida | Ensino, preceptoria e avaliação | opcional | relevância 1 · libera 4 · pontos 7.1 |
+| 135 | T-124 | [fundido em T-123 em 18/11/2026] Leitura crítica do livro-texto e do capítulo de referência: identificar texto desatualizado e contrastar com a diretriz vigente | Medicina baseada em evidências — julgar e aplicar | opcional | relevância 2 · libera 0 · pontos 7.4 |
+| 136 | T-128 | [fundido em T-127 em 18/11/2026] Estratégias instrucionais: aula expositiva, aprendizagem baseada em problemas, team-based learning e aula invertida | Ensino, preceptoria e avaliação | opcional | relevância 1 · libera 4 · pontos 7.1 |
 | 137 | T-129 | Prática deliberada e feedback: como dar retorno que muda desempenho | Ensino, preceptoria e avaliação | opcional | relevância 1 · libera 4 · pontos 7.1 |
 | 138 | T-068 | Psiquiatria e cirurgia de urgência e trauma | Fim de vida e decisão compartilhada | opcional | relevância 2 · libera 0 · pontos 6.8 |
 | 139 | T-069 | Cuidados paliativos e cirurgia de urgência e trauma | Fim de vida e decisão compartilhada | opcional | relevância 2 · libera 0 · pontos 6.8 |

@@ -54,7 +54,7 @@ Conferir no site oficial a versão vigente antes de usar: leis e portarias são 
 
 Como guardar: salvar o PDF ou a página (Imprimir > Salvar como PDF) em `fontes_novas\`. O triador identifica e indica os temas.
 
-## 3. Revisão dos temas: proposta (depende de decisão da coordenação)
+## 3. Revisão dos temas: aprovada pela coordenação em 18/11/2026 (aplicada no pacote v2z17)
 
 ### Fusões propostas (153 → 147)
 
@@ -83,4 +83,4 @@ T073 (abdome agudo em anticoagulado) e T047 (sangramento digestivo em anticoagul
 | T136 | Lesões por explosão | Mattox9, DSTC6 |
 | T153 | Dissecção aguda de aorta | ESC2016, Tintinalli9 |
 
-Com as fusões e as ampliações, nenhum tema novo é necessário agora. Se aprovado, a implementação segue o mesmo caminho da fusão de 18/11 (SQL 100 ampliado, SQL 53, 65 e 73, BUSCAS).
+Com as fusões e as ampliações, nenhum tema novo foi necessário. Total: 147 temas.

@@ -1,7 +1,7 @@
 # CUT · Fusão e temas novos (decisão de 18/11/2026)
 
-A coordenação decidiu fundir temas que se sobrepõem antes de criar temas novos. O programa passa de 150 para 153 temas:
-150 − 5 fundidos + 8 novos. Os temas principais e o calendário das 39 quintas não mudam.
+A coordenação decidiu fundir temas que se sobrepõem antes de criar temas novos. O programa passa de 150 para 147 temas:
+150 − 11 fundidos (5 na primeira revisão e 6 na segunda) + 8 novos. Os temas principais e o calendário das 39 quintas não mudam.
 
 Arquivos: SQL 53 (títulos e temas novos), SQL 100 (fusão no banco), SQL 65 (árvore), SQL 73 (relevância) e
 `BUSCAS_PUBMED_150_temas.txt` (buscas novas no fim do arquivo).
@@ -56,3 +56,34 @@ T156 e T157 precisam de fonte brasileira que os livros não têm:
 - T157: Código de Ética Médica e resoluções do CFM sobre consentimento e recusa de tratamento.
 
 O produtor deve pedir esses documentos à coordenação no relatório.
+
+## 4. Segunda revisão (18/11/2026, aprovada pela coordenação)
+
+### Temas fundidos
+
+| Sai | Entra em | Título do tema que recebe |
+|---|---|---|
+| T092 Injúria renal perioperatória | T056 | Lesão renal aguda perioperatória: nefroproteção, terapia substitutiva e diálise de urgência |
+| T057 Distúrbios metabólicos e nutricionais | T089 (a nutrição vai para o T090) | Fluidoterapia, eletrólitos, equilíbrio ácido-base e distúrbios metabólicos no perioperatório |
+| T080 Protocolos focados de POCUS | T079 | Ultrassom point-of-care do cirurgião: pulmonar, cardíaco focado, vascular, eFAST seriado, RUSH, volemia e decisão cirúrgica |
+| T120 Erro aleatório e sistemático | T119 | Medidas de efeito e de erro: risco relativo, razão de chances, hazard ratio, NNT, intervalo de confiança, poder, valor de p e vieses da literatura cirúrgica |
+| T124 Leitura crítica do livro-texto | T123 | Leitura crítica de diretrizes e do livro-texto: conflito de interesse, painel, sociedades que discordam e texto desatualizado |
+| T128 Estratégias instrucionais | T127 | Aprendizagem do adulto e estratégias instrucionais na residência |
+
+Na árvore: T121 passa a depender de T119 e T131 de T127.
+
+### Escopo ampliado
+
+| Tema | Acrescenta |
+|---|---|
+| T001 | Acionamento da equipe de trauma |
+| T005 | Sangue total, ROTEM/TEG e fibrinogênio |
+| T006 | Diagnóstico e tratamento do TEV/TEP já instalado (antes só profilaxia) |
+| T013 | Pneumotórax espontâneo |
+| T054 | ECMO |
+| T090 | Síndrome de realimentação (e a parte de nutrição que estava no T057) |
+| T113 | Incidente químico, biológico, radiológico e nuclear |
+| T136 | Lesões por explosão |
+| T153 | Dissecção aguda de aorta |
+
+Fontes novas para estes temas e para T156 e T157: `pendencias_livros_fontes_2026-11-18.md`.

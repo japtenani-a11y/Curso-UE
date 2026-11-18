@@ -6,6 +6,8 @@
 --   T145 (burnout, segunda vitima e apoio)          -> T135 (desenvolvimento docente, mentoria, burnout e apoio)
 --   T146 (retirada de dreno, paracentese, toracocentese) -> T081 (procedimentos a beira-leito)
 --   T147 (peritoneostomia como procedimento)        -> T009 (peritoneostomia: instalacao, cuidados e retirada)
+-- Segunda revisao (18/11/2026): T092 -> T056, T057 -> T089 (a parte de nutricao vai para o T090), T080 -> T079,
+--   T120 -> T119, T124 -> T123, T128 -> T127.
 -- O que muda: as fontes ja guardadas, os pedidos de "Avise-me" e as variantes de termo do tema fundido passam para o tema
 -- que o recebe; depois o tema fundido e apagado. Os titulos novos e os temas T151 a T158 vem do SQL 53.
 -- Seguranca: se o tema fundido ja tiver material, questoes, ondas, notas ou presenca, NADA e feito com ele (aviso na
@@ -17,7 +19,8 @@ BEGIN;
 DO $$
 DECLARE r RECORD; v_old BIGINT; v_new BIGINT; n INT;
 BEGIN
-  FOR r IN SELECT * FROM (VALUES ('T078','T077'),('T144','T143'),('T145','T135'),('T146','T081'),('T147','T009')) v(velho, novo) LOOP
+  FOR r IN SELECT * FROM (VALUES ('T078','T077'),('T144','T143'),('T145','T135'),('T146','T081'),('T147','T009'),
+                              ('T092','T056'),('T057','T089'),('T080','T079'),('T120','T119'),('T124','T123'),('T128','T127')) v(velho, novo) LOOP
     SELECT tema_id INTO v_old FROM app.tema WHERE replace(codigo,'-','') = r.velho;
     SELECT tema_id INTO v_new FROM app.tema WHERE replace(codigo,'-','') = r.novo;
     IF v_old IS NULL THEN CONTINUE; END IF;              -- ja fundido

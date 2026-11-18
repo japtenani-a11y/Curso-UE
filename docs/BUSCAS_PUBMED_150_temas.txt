@@ -1,5 +1,5 @@
 BUSCA PUBMED POR TEMA - EDICAO CONSOLIDADA
-CUT - Curso de Cirurgia Geral, Urgencia e Trauma - 153 temas - 32 modulos (fusao e temas novos em 18/11/2026, no fim do arquivo)
+CUT - Curso de Cirurgia Geral, Urgencia e Trauma - 147 temas - 32 modulos (fusao e temas novos em 18/11/2026, no fim do arquivo)
 Atualizada em 13/11/2026 (substitui BUSCAS_PUBMED_147_temas e as partes 1 a 4)
 
 O QUE MUDOU NESTA EDICAO
@@ -421,7 +421,7 @@ Grau 3 - 8803 registros
 
 ("acute kidney injury"[mh] OR "acute kidney injury"[tiab] OR "renal replacement therapy"[tiab]) AND (surgery[tiab] OR critical[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T057 Disturbios metabolicos e nutricionais
+T057 Disturbios metabolicos e nutricionais   [FUNDIDO EM T089 (parte metabolica) e T090 (nutricao) em 18/11/2026: busca mantida como complemento]
 Grau 3 - 3235 registros
 
 ("refeeding syndrome"[tiab] OR "nutritional support"[tiab] OR "enteral nutrition"[tiab] OR "parenteral nutrition"[tiab]) AND (surgical[tiab] OR critical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -613,7 +613,7 @@ Grau 3 - 9601 registros
 
 ("point-of-care"[tiab] OR POCUS[tiab] OR "ultrasonography"[mh]) AND (surgeon[tiab] OR "emergency"[tiab] OR trauma[tiab] OR "focused cardiac"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T080 Protocolos focados e integracao do POCUS a decisao cirurgica: eFAST seriado, RUSH e volemia
+T080 Protocolos focados e integracao do POCUS a decisao cirurgica: eFAST seriado, RUSH e volemia   [FUNDIDO EM T079 em 18/11/2026: busca mantida como complemento]
 Grau 3 - 742 registros
 
 ("eFAST"[tiab] OR "RUSH"[tiab] OR "focused assessment"[tiab] OR "volume status"[tiab]) AND (protocol[tiab] OR decision[tiab] OR ultrasound[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -680,7 +680,7 @@ Grau 3 - 3178 registros
 
 ("enteral nutrition"[tiab] OR "parenteral nutrition"[tiab] OR "nutritional support"[tiab]) AND (surgery[tiab] OR surgical[tiab] OR postoperative[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T092 Injuria renal perioperatoria: nefroprotecao e dialise de urgencia
+T092 Injuria renal perioperatoria: nefroprotecao e dialise de urgencia   [FUNDIDO EM T056 em 18/11/2026: busca mantida como complemento]
 Grau 3 - 5443 registros
 
 ("acute kidney injury"[tiab] OR "contrast nephropathy"[tiab] OR "renal protection"[tiab]) AND (perioperative[tiab] OR surgery[tiab] OR trauma[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -844,7 +844,7 @@ Grau 3 - 122 registros
 
 ("odds ratio"[ti] OR "hazard ratio"[ti] OR "relative risk"[ti] OR "number needed to treat"[ti] OR "absolute risk"[ti]) AND (surgery[tiab] OR surgical[tiab] OR trial[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T120 Erro aleatorio e erro sistematico: IC, poder, valor de p e os seis vieses
+T120 Erro aleatorio e erro sistematico: IC, poder, valor de p e os seis vieses   [FUNDIDO EM T119 em 18/11/2026: busca mantida como complemento]
 Grau 3 - 282 registros
 
 ("confidence interval"[ti] OR "p value"[ti] OR "statistical significance"[ti] OR "power calculation"[ti]) AND (surgery[tiab] OR surgical[tiab] OR "randomized"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -868,7 +868,7 @@ Grau 4 - 602 registros
 
 ("practice guideline"[tiab] OR "clinical guideline"[tiab]) AND ("conflict of interest"[tiab] OR discordance[tiab] OR methodology[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T124 Leitura critica do livro-texto e do capitulo de referencia
+T124 Leitura critica do livro-texto e do capitulo de referencia   [FUNDIDO EM T123 em 18/11/2026: busca mantida como complemento]
 Grau 2 - 153 registros
 
 ("textbook"[tiab] OR "book chapter"[tiab]) AND ("evidence-based"[tiab] OR accuracy[tiab] OR outdated[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -892,7 +892,7 @@ Grau 2 - 279 registros
 
 ("adult learning"[tiab] OR "andragogy"[tiab] OR "learning theory"[tiab]) AND ("medical education"[tiab] OR residency[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T128 Estrategias instrucionais: aula expositiva, PBL, TBL e aula invertida
+T128 Estrategias instrucionais: aula expositiva, PBL, TBL e aula invertida   [FUNDIDO EM T127 em 18/11/2026: busca mantida como complemento]
 Grau 3 - 1675 registros
 
 ("flipped classroom"[tiab] OR "problem-based learning"[tiab] OR "team-based learning"[tiab] OR "lecture"[tiab]) AND ("medical education"[tiab] OR surgical[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -977,4 +977,4 @@ Grau 3 - 755 registros
 ("accidental hypothermia"[tiab] OR drowning[tiab] OR "frostbite"[tiab] OR "cold injury"[tiab]) AND (management[tiab] OR rewarming[tiab] OR resuscitation[tiab] OR ECMO[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
 
-FIM - 153 temas em 32 modulos (150 da edicao de 13/11/2026, menos 5 fundidos, mais 8 novos).
+FIM - 147 temas em 32 modulos (150 da edicao de 13/11/2026, menos 11 fundidos, mais 8 novos).

@@ -99,7 +99,7 @@ cat <<FIM
 
 === SERVIDOR DE REVISAO NO AR ===
 Endereco para os revisores:  https://$DOMINIO
-Quem entra (login do Google): japtenani@gmail.com, aline@sardow.com, jorge.carnesecca@hotmail.com
+Quem entra (login do Google): os revisores cadastrados pela coordenacao (lista fora do repositorio)
 O computador precisa ficar ligado e conectado enquanto os revisores trabalham.
 Na primeira visita o ngrok mostra uma pagina de aviso: basta clicar em "Visit Site".
 
