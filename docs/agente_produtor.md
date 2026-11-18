@@ -56,6 +56,8 @@ coordenação:         no fim, importação completa (questões, casos e ondas):
 | Livros-texto | `livros\<livro>\LEIA-ME.txt` diz quais capítulos servem a cada tema. Leia só o capítulo indicado | D1, D2... com `fonte_arquivo` = `Mattox9_cap12`, `Walls6_cap19`, `Sabiston21_cap17` (capítulo e páginas no texto da afirmação) |
 | ATLS 11 | Não é carregado nem lido | Citado só pela seção, sem texto |
 
+Para achar o capítulo certo: `livros\INDICE_TEMAS.csv` lista, para cada tema, os capítulos de todos os livros da pasta (livro, capítulo, título, páginas do PDF). O mapa foi feito pelo título do capítulo: confira ao abrir. Para escrever as questões, siga também `referencia\NBME_guia_redacao_questoes_PT.txt`.
+
 **Regras das fontes:**
 - **Nunca invente.** Não invente PMID, DOI, autor, número, página ou trecho. O trecho literal precisa existir na fonte, no resumo ou no capítulo lido.
 - **Cópia.** Nunca copie mais de 2 frases seguidas de um livro ou artigo. As peças são escritas com as próprias palavras.
