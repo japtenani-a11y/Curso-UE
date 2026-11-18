@@ -32,7 +32,7 @@ UPDATE app.tema t SET relevancia_plantao = v.r
 -- Ajustes por tema (frequencia no plantao ou gravidade acima/abaixo do modulo).
 UPDATE app.tema t SET relevancia_plantao = v.r
   FROM (VALUES ('T-136',5),('T-137',5),('T-006',4),('T-048',4),('T-065',4),('T-064',3),('T-047',5),('T-094',5),('T-093',5),
-               ('T-089',5),('T-140',4),('T-146',4),('T-148',4),('T-111',3),('T-079',4),('T-073',4),('T-074',4)) v(c, r)
+               ('T-089',5),('T-140',4),('T-151',4),('T-152',4),('T-153',5),('T-154',4),('T-155',5),('T-156',4),('T-157',3),('T-158',3),('T-148',4),('T-111',3),('T-079',4),('T-073',4),('T-074',4)) v(c, r)
  WHERE t.codigo = v.c AND NOT t.relevancia_manual;
 UPDATE app.tema SET relevancia_plantao = 3 WHERE relevancia_plantao IS NULL;
 

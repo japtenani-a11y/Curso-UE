@@ -1,5 +1,5 @@
 BUSCA PUBMED POR TEMA - EDICAO CONSOLIDADA
-CUT - Curso de Cirurgia Geral, Urgencia e Trauma - 150 temas - 32 modulos
+CUT - Curso de Cirurgia Geral, Urgencia e Trauma - 153 temas - 32 modulos (fusao e temas novos em 18/11/2026, no fim do arquivo)
 Atualizada em 13/11/2026 (substitui BUSCAS_PUBMED_147_temas e as partes 1 a 4)
 
 O QUE MUDOU NESTA EDICAO
@@ -579,12 +579,12 @@ Grau 2 - 439 registros
 
 ("bedside procedure"[tiab] OR "tube thoracostomy"[tiab] OR "central venous catheter"[tiab] OR "procedural competency"[tiab] OR "intraosseous"[tiab]) AND (training[tiab] OR competency[tiab] OR metric[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T146 Retirada de dreno, paracentese e toracocentese: tecnica e complicacao
+T146 Retirada de dreno, paracentese e toracocentese: tecnica e complicacao   [FUNDIDO EM T081 em 18/11/2026: busca mantida como complemento do T081]
 Grau 2 - 1378 registros
 
 ("paracentesis"[tiab] OR "thoracentesis"[tiab] OR "chest tube removal"[tiab] OR "drain removal"[tiab]) AND (complication*[tiab] OR techniqu*[tiab] OR ultrasound[tiab] OR safety[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T147 Peritoneostomia como procedimento: instalacao, manejo e retirada
+T147 Peritoneostomia como procedimento: instalacao, manejo e retirada   [FUNDIDO EM T009 em 18/11/2026: busca mantida como complemento do T009]
 Grau 3 - 427 registros
 
 ("open abdomen"[tiab] OR "laparostomy"[tiab] OR "peritoneostomy"[tiab] OR "temporary abdominal closure"[tiab]) AND (management[tiab] OR complication*[tiab] OR closure[tiab] OR nursing[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -777,7 +777,7 @@ Grau 5 - 951 registros
 
 ("polytrauma"[tiab] OR "multiple injuries"[tiab] OR "trauma team"[tiab]) AND (outcome[tiab] OR performance[tiab] OR audit[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T078 Fechamento do ciclo clinico: sintese e transicao para governanca
+T078 Fechamento do ciclo clinico: sintese e transicao para governanca   [FUNDIDO EM T077 em 18/11/2026: busca mantida como complemento do T077]
 Grau 3 - 247 registros
 
 ("trauma system"[ti] OR "trauma center"[ti] OR "quality improvement"[ti] OR "trauma registry"[ti]) AND (governance[ti] OR organization[ti] OR performance[ti] OR outcome[ti]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -815,12 +815,12 @@ Grau 4 - 178 registros
 
 ("emergency department"[tiab] AND ("shared governance"[tiab] OR "teamwork"[tiab] OR "collaboration"[tiab])) AND (surgery[tiab] OR emergency medicine[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T144 Limites de escopo e transferencia de cuidado na urgencia
+T144 Limites de escopo e transferencia de cuidado na urgencia   [FUNDIDO EM T143 em 18/11/2026: busca mantida como complemento do T143]
 Grau 4 - 965 registros
 
 ("scope of practice"[tiab] OR "handoff"[tiab] OR "transfer of care"[tiab] OR "care transition"[tiab]) AND (emergency[tiab] OR surgery[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
 ------------------------------------------------------------------------------
-T145 Burnout, segunda vitima e apoio institucional
+T145 Burnout, segunda vitima e apoio institucional   [FUNDIDO EM T135 em 18/11/2026: busca mantida como complemento do T135]
 Grau 4 - 1437 registros
 
 ("second victim"[tiab] OR "burnout"[tiab] OR "physician wellness"[tiab]) AND (surgeon[tiab] OR resident[tiab] OR "emergency medicine"[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
@@ -934,4 +934,47 @@ Grau 5 - 1397 registros
 ------------------------------------------------------------------------------
 
 ==============================================================================
-FIM - 150 temas em 32 modulos.
+TEMAS NOVOS DE 18/11/2026 (decisao da coordenacao: fundir antes de ampliar). Buscas validadas no PubMed em 18/11/2026.
+------------------------------------------------------------------------------
+T151 Paciente cirrotico na cirurgia de urgencia: estratificacao, coagulopatia, ascite e quando nao operar
+Grau 4 - 133 registros
+
+(cirrhosis[tiab] OR cirrhotic[tiab] OR "liver disease"[ti]) AND ("emergency surgery"[tiab] OR "emergency general surgery"[tiab] OR "abdominal surgery"[tiab] OR trauma[ti]) AND (outcome[tiab] OR outcomes[tiab] OR mortality[tiab] OR risk[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T152 Colite grave: C. difficile fulminante, colite ulcerativa grave e megacolon toxico
+Grau 4 - 349 registros
+
+("fulminant colitis"[tiab] OR "toxic megacolon"[tiab] OR "acute severe ulcerative colitis"[tiab] OR "fulminant Clostridioides difficile"[tiab] OR "fulminant Clostridium difficile"[tiab]) AND (colectomy[tiab] OR surgery[tiab] OR surgical[tiab] OR management[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T153 Emergencias vasculares nao traumaticas: aneurisma de aorta abdominal roto e isquemia aguda de membro
+Grau 4 - 1110 registros
+
+("ruptured abdominal aortic aneurysm"[tiab] OR "ruptured AAA"[tiab] OR "acute limb ischemia"[tiab] OR "acute limb ischaemia"[tiab]) AND (management[tiab] OR repair[tiab] OR revascularization[tiab] OR mortality[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T154 Emergencias esofagicas nao traumaticas: Boerhaave, corpo estranho e ingestao caustica
+Grau 4 - 783 registros
+
+("Boerhaave"[tiab] OR "esophageal perforation"[tiab] OR "oesophageal perforation"[tiab] OR "caustic ingestion"[tiab] OR "esophageal foreign body"[tiab] OR "food bolus impaction"[tiab]) AND (management[tiab] OR surgery[tiab] OR endoscopic[tiab] OR stent[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T155 Deiscencia de anastomose e fistula digestiva pos-operatoria
+Grau 4 - 1779 registros
+
+("anastomotic leak"[tiab] OR "anastomotic leakage"[tiab] OR "anastomotic dehiscence"[tiab] OR "postoperative enterocutaneous fistula"[tiab]) AND (management[tiab] OR reoperation[tiab] OR diagnosis[tiab] OR "percutaneous drainage"[tiab] OR diversion[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T156 Violencia interpessoal: maus-tratos, violencia domestica e ao idoso, violencia sexual e notificacao
+Grau 3 - 1132 registros
+
+("child abuse"[tiab] OR "non-accidental trauma"[tiab] OR "intimate partner violence"[tiab] OR "elder abuse"[tiab] OR "sexual assault"[tiab]) AND (trauma[tiab] OR "emergency department"[tiab] OR injury[tiab]) AND (screening[tiab] OR recognition[tiab] OR reporting[tiab] OR identification[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T157 Consentimento e aspectos medico-legais na urgencia: incapaz, menor, recusa de transfusao e documentacao
+Grau 3 - 355 registros
+
+("informed consent"[tiab] OR "refusal of treatment"[tiab] OR "Jehovah's Witness"[tiab] OR "decision-making capacity"[tiab] OR "surrogate decision"[tiab]) AND (emergency[tiab] OR trauma[tiab] OR "acute care surgery"[tiab]) AND (surgery[tiab] OR surgical[tiab] OR transfusion[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+T158 Lesoes ambientais: hipotermia acidental, afogamento e lesao por frio
+Grau 3 - 755 registros
+
+("accidental hypothermia"[tiab] OR drowning[tiab] OR "frostbite"[tiab] OR "cold injury"[tiab]) AND (management[tiab] OR rewarming[tiab] OR resuscitation[tiab] OR ECMO[tiab] OR outcome[tiab]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]
+------------------------------------------------------------------------------
+
+FIM - 153 temas em 32 modulos (150 da edicao de 13/11/2026, menos 5 fundidos, mais 8 novos).
