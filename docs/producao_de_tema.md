@@ -80,6 +80,8 @@ Uma fonte que o triador guardou em outro tema pode ser citada pelo código (F e 
 
 O ATLS 11 (tradução) entra como os outros livros-texto desde 19/11/2026: capítulo e páginas, sem copiar trechos longos.
 
+Informação conflitante entre fontes (decisão de 19/11/2026): vale a mais recente, pela data de publicação do arquivo. Artigos e diretrizes costumam ser mais atuais que livros-texto; um livro só prevalece se for mais recente. O conflito fica registrado na afirmação, com as duas fontes e os anos. Mesmo ano: diretriz, revisão sistemática, ensaio clínico, livro.
+
 Nunca coloque nesta pasta arquivo com dado de paciente.
 
 ### casos_teste.json

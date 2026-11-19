@@ -64,6 +64,7 @@ Para achar o capítulo certo: `livros\INDICE_TEMAS.csv` lista, para cada tema, o
 - **Licença.** Os livros da pasta `livros\` são cópias pessoais da coordenação. Cite capítulo e páginas e não reproduza figuras, tabelas nem trechos longos.
 - **Material sem fonte.** Afirmação sem fonte não entra. Falta de fonte vai para "Pedidos à coordenação" no relatório: o PDF que falta, a diretriz que não estava em `fontes\` ou o capítulo de livro que não existe na pasta.
 - **Dados.** Não use dado de paciente. Casos são sempre fictícios.
+- **Informação conflitante** (decisão da coordenação de 19/11/2026). Quando duas fontes discordam, vale a mais recente, pela data de publicação do próprio arquivo (ano do artigo; ano da edição do livro, em `LEIA-ME.txt`). Artigo e diretriz costumam ser mais atuais que livro-texto: um livro só prevalece sobre um artigo se for mais recente que ele. Registre o conflito na afirmação ("o livro X, de 2015, indica A; a diretriz Y, de 2024, indica B") e use a mais recente no material. Desempate com o mesmo ano: diretriz, depois revisão sistemática, depois ensaio clínico, depois livro.
 
 ## As 14 sessões
 
