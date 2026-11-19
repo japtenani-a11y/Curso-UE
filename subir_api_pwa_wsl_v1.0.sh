@@ -84,6 +84,9 @@ echo "      ok"
 echo "[2/7] Preparando o banco (tabelas de revisao e afirmacoes do T001)..."
 export PGPASSWORD="$PW"
 SQL="psql -h $HOST -p $PORTA -U postgres -d programa -v ON_ERROR_STOP=1 -q"
+# lista de revisores (e-mails) fica fora do repositorio, so neste computador
+REV="$HOME/.config/curso-ue/revisores.csv"
+if [ -f "$REV" ]; then SQL="$SQL -v revisores=$REV"; else echo "      aviso: $REV nao existe; revisores nao alterados (veja docs/servidor_revisao_v1.0.md)"; fi
 $SQL -f 32_revisao_v1.0.sql > "$RAIZ/logs/banco.log" 2>&1 || falhar "32_revisao_v1.0.sql falhou; veja $RAIZ/logs/banco.log"
 if [ -f 35_caso_T001_v2.sql ]; then $SQL -f 35_caso_T001_v2.sql >> "$RAIZ/logs/banco.log" 2>&1 || falhar "35_caso_T001_v2.sql falhou; veja $RAIZ/logs/banco.log"; fi
 V2=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato WHERE tipo='caso_base'")
