@@ -45,7 +45,9 @@ uma hora depois (horários em `agente_produtor.md`). O produtor de temas é desc
 | Alunos atrasados | Segunda-feira, 5h17 | Alunos ativos com testes vencendo, atrasados ou perdidos | Relatório da semana (`relatorio`) e lembrete personalizado por aluno (`lembrete`) | O lembrete sai por e-mail e aviso no celular, só para quem autorizou |
 | Indicadores clínicos | Dia 5 de cada mês, 4h33 | Meses já lançados e planilha de totais em `CUT_coordenacao\indicadores\` | Lançamento por indicador e mês (`lancamento`) ou pendência (`pendencia`) | O total do mês entra no painel de indicadores |
 | Triador de fontes | Todo dia, 1h47 | PDFs soltos em `CUT_coordenacao\fontes_novas` (a ponte extrai o texto, recusa o que tem cara de dado de paciente e registra) e o catálogo dos 150 temas | Referência conferida no PubMed, camada e todos os temas em que a fonte serve, inclusive os ainda não produzidos (`fonte`), ou recusa | Aprovação automática: assim que o arquivo chega, a fonte fica guardada com o texto integral em cada tema indicado (`conteudo.fonte`). A coordenação não precisa decidir |
-| Supervisor | Todo dia, 5h43 (resumo do dia; na sexta, também a auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios | Não propõe: escreve o resumo do dia (o que decidir primeiro) e a auditoria semanal da qualidade de cada agente, com a mudança sugerida na skill dele | — |
+| Supervisor | Todo dia, 5h43 (resumo do dia; na sexta, também a auditoria) | Pacotes de todos os agentes, estado da ponte, arquivos recusados, relatórios, guias publicados (lacunas e indicadores) e perguntas de adaptação local sem resposta | Resumo do dia (o que decidir primeiro) e auditoria semanal; propõe lacunas para o banco de projetos (`projeto`) e indicadores para o catálogo (`indicador`) | Fica registrado; o supervisor mantém `relatorios\banco_projetos.md` e `relatorios\catalogo_indicadores.md` só com o que foi aprovado |
+| Planejador de liberação | Segunda-feira, 6h13 | Temas com data de aula, situação da produção e da revisão, temas já liberados | O próximo tema a liberar (`liberacao`), pela regra: produção pronta 6 semanas antes da aula, com 8 dias de produção e folga; e o relatório da fila (`relatorio`) | O tema entra em `producao\liberados.csv` e o produtor começa na sessão seguinte |
+| Análise das ondas | Dia 3 de cada mês, 6h41 | Só agregados das ondas fechadas (contas simuladas fora): acerto, discriminação, distratores, erros marcados com "tenho certeza" | Ajuste de questão ou de peça (`ajuste`), com o item, o problema e a correção, e o relatório do mês (`relatorio`) | Fica registrado; a correção é feita pelo produtor na próxima sessão do tema |
 | Produtor de temas | Todo dia, 1h07 e 13h07 | Tema liberado em `producao\liberados.csv`: fontes do tema, pré-revisões e pareceres que voltaram | Não propõe pelo painel: escreve o material do tema em RASCUNHO em `producao\<TEMA>\`, e a ponte grava no banco | As peças seguem a revisão de sempre |
 
 ## Prazos da coordenação
@@ -68,6 +70,10 @@ uma hora depois (horários em `agente_produtor.md`). O produtor de temas é desc
 | Tipo | alvo | proposta |
 |---|---|---|
 | resposta | mensagem_id | texto |
+| liberacao | tema | tema, data (AAAA-MM-DD), texto |
+| ajuste | tema, item ou peca | texto |
+| projeto | tema | texto |
+| indicador | tema | texto |
 | alerta | mensagem_id | texto |
 | parecer | artefato_id, afirmacao_codigo | sugestao (aprovar, conferir, reprovar), decisao (correto, erro_leve, erro_critico ou vazio), comentario, evidencias |
 | pre_revisao | artefato_id, versao | veredito (pronta, ajustar, refazer), resumo, itens [{tipo, trecho, problema, correcao}] |

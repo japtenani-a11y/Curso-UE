@@ -61,6 +61,16 @@ fi
 #     em RASCUNHO o que estiver pronto (importador em modo parcial: pecas, afirmacoes, testes e gabaritos completos;
 #     questoes, casos e ondas so na importacao completa, pela coordenacao). O resultado fica em importacao_ultima.txt.
 #  Usa o papel maestro_rw (PRODUCAO_URL), que escreve rascunhos e nao publica nada.
+# Temas liberados pelo painel (proposta "liberacao" do planejador aprovada, 106): acrescenta em producao\liberados.csv
+liberados_painel() {
+  local L="$COORD_DIR/producao/liberados.csv" tema data
+  mkdir -p "$COORD_DIR/producao"; [ -f "$L" ] || : > "$L"
+  "${PSQL[@]}" -F';' -c "SELECT tema, liberado_em FROM app.coord_liberados()" 2>> "$COORD_DIR/entrada/.ponte_erros.log" | while IFS=';' read -r tema data; do
+    [[ "$tema" =~ ^T[0-9]{3}$ ]] || continue
+    grep -q "^$tema;" "$L" || printf '%s;%s\n' "$tema" "$data" >> "$L"
+  done
+}
+
 producao() {
   [ -n "${PRODUCAO_URL:-}" ] || return 0
   local L="$COORD_DIR/producao/liberados.csv" tema data D agora
@@ -112,9 +122,10 @@ rodada() {
         printf '%s\n' "$(printf '%s' "$SAIDA_F" | head -1 | cut -f2)" > "$COORD_DIR/fontes_recusadas/$(basename "$f").motivo.txt" ;;
     esac
   done
+  liberados_painel
   producao
-  for a in duvidas pecas conteudo atrasados indicadores supervisor fontes; do
-    if "${PSQL[@]}" -c "SELECT app.coord_pacote('$a')" > "$COORD_DIR/entrada/.$a.tmp" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
+  for a in duvidas pecas conteudo atrasados indicadores supervisor fontes planejador ondas; do
+    if "${PSQL[@]}" -c "SELECT app.coord_pacote_v2('$a')" > "$COORD_DIR/entrada/.$a.tmp" 2>> "$COORD_DIR/entrada/.ponte_erros.log"; then
       mv -f "$COORD_DIR/entrada/.$a.tmp" "$COORD_DIR/entrada/$a.json"; ok=$((ok + 1))
     else rm -f "$COORD_DIR/entrada/.$a.tmp"; fi
   done

@@ -18,6 +18,7 @@ interface Agente {
 const NOME: Record<string, string> = {
   duvidas: 'Dúvidas dos alunos', conteudo: 'Revisor de conteúdo', pecas: 'Pré-revisão das peças', fontes: 'Triador de fontes',
   atrasados: 'Alunos atrasados', indicadores: 'Indicadores clínicos',
+  planejador: 'Planejador de liberação', ondas: 'Análise das ondas', supervisor: 'Supervisor dos agentes',
 };
 const SUGESTAO: Record<string, string> = { aprovar: 'Sugere aprovar', conferir: 'Sugere conferir melhor', reprovar: 'Sugere reprovar' };
 const DECISAO: [string, string][] = [['correto', 'Correto'], ['erro_leve', 'Erro leve'], ['erro_critico', 'Erro crítico']];
@@ -42,6 +43,7 @@ const data = (v: string | null) => (v ? new Date(v).toLocaleString('pt-BR', { da
 const EDITAVEIS: Record<string, string[]> = {
   resposta: ['texto'], parecer: ['decisao', 'comentario'], lembrete: ['assunto', 'texto'],
   lancamento: ['numerador', 'denominador', 'fonte'], pre_revisao: ['resumo'], fonte: ['temas_texto', 'camada'], relatorio: ['texto'], pendencia: ['texto'], alerta: ['texto'],
+  liberacao: ['tema', 'data', 'texto'], ajuste: ['texto'], projeto: ['texto'], indicador: ['texto'],
 };
 
 function Fontes(props: { fontes: unknown[] }) {
@@ -185,6 +187,19 @@ function Cartao(props: { p: Proposta; decidido: () => void }) {
           </>}
         </>);
       })()}
+
+      {p.tipo === 'liberacao' && (<>
+        <p className="pr-contexto">Aprovar libera o tema para o agente produtor (entra em producao\liberados.csv).</p>
+        {campoTexto('tema', 'Tema', 1)}
+        {campoTexto('data', 'Data da liberação (AAAA-MM-DD)', 1)}
+        {campoTexto('texto', 'Motivo', 6)}
+      </>)}
+
+      {['ajuste', 'projeto', 'indicador'].includes(p.tipo) && (<>
+        <p className="pr-contexto">{p.tipo === 'ajuste' ? 'Ajuste proposto em questão ou peça (aprovar registra a decisão; a mudança é feita pelo produtor na próxima sessão do tema).'
+          : p.tipo === 'projeto' ? 'Lacuna para o banco de projetos de pesquisa.' : 'Indicador para o catálogo de indicadores do serviço.'}</p>
+        {campoTexto('texto', 'Proposta', 10)}
+      </>)}
 
       {['relatorio', 'pendencia', 'alerta'].includes(p.tipo) && (<>
         {ctx.pergunta ? <blockquote className="pr-pergunta">{s(ctx.pergunta)}</blockquote> : null}

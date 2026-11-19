@@ -169,6 +169,12 @@ diretriz diz a alternativa (ex.: sem ROTEM, conduta guiada por fibrinogênio e p
 fonte do dado (ex.: "TXA em até 3 h: pacientes com TXA ≤ 3 h / pacientes com indicação; meta ≥ 90%; prontuário").
 Sempre agregados: nenhum dado identificável de paciente.
 
+**Perguntas à coordenação antes de fechar.** Toda informação que depende do serviço (os campos da "Adaptação local",
+tempos-alvo sem fonte, responsáveis, de onde sai o dado de cada indicador, recursos, contatos, nível de maturidade
+atual) é perguntada à coordenação antes de a proposta ser dada como pronta (`perguntas_coordenacao.md` e
+`respostas_coordenacao.md` na pasta do tema; regra em `agente_produtor.md`). Enquanto não houver resposta, o campo
+fica em branco no guia, nunca preenchido por suposição.
+
 **Implantação.** Pelo modelo de maturidade do curso (`docs/maturidade_implantacao.md`): níveis 0 (sem protocolo) a 5
 (excelência, com processo e resultado ajustado no P90 da referência internacional). A seção traz: (1) a tabela do tema,
 uma linha por nível, com objetivo, marcadores e indicadores do tema e o critério para passar ao nível seguinte;

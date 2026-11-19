@@ -13,8 +13,8 @@ O produtor escreve, em rascunho, todo o material de um tema liberado:
   D+15, D+45 e D+90, com os gabaritos comentados;
 - opcionais: banco de dificuldade e simulado.
 
-Ele trabalha um pouco a cada 12 horas, em 14 sessões. A meta é ter todo o material teórico (antes, durante e depois
-da aula) em até 4 dias e o tema inteiro, já corrigido pelas pré-revisões, em até 7 dias depois da liberação.
+Ele trabalha um pouco a cada 12 horas, em 15 sessões. A meta é ter todo o material teórico (antes, durante e depois
+da aula) em até 4 dias e o tema inteiro, já corrigido pelas pré-revisões, em até 8 dias depois da liberação.
 
 O produtor só propõe. Tudo entra em RASCUNHO e passa pelo mesmo caminho de sempre:
 1. pré-revisão das peças;
@@ -38,7 +38,7 @@ coordenação:         no fim, importação completa (questões, casos e ondas):
                      bash importar_tema_v1.0.sh T002 SENHA --producao --aplicar
 ```
 
-- **Liberar um tema.** Acrescente uma linha `TEMA;AAAA-MM-DD` em `producao\liberados.csv`. A data é a da liberação das fontes e é dela que se contam os 7 dias.
+- **Liberar um tema.** O planejador de liberação propõe toda segunda-feira o próximo tema; ao aprovar a proposta no painel (Revisão > Para revisar), a ponte acrescenta a linha `TEMA;AAAA-MM-DD` em `producao\liberados.csv`. Ainda dá para liberar à mão, acrescentando a linha. A data é a da liberação das fontes e é dela que se contam os 8 dias.
 - **Pausar um tema.** Apague a linha do tema.
 - **Modo parcial.** Grava no banco só as peças prontas, as afirmações e os testes e gabaritos que já estão completos, ou seja, com caso, âncoras e questões nos 5 perfis.
   - Questões, casos e ondas não entram nesse modo: assim nada chega ao aluno.
@@ -66,7 +66,7 @@ Para achar o capítulo certo: `livros\INDICE_TEMAS.csv` lista, para cada tema, o
 - **Dados.** Não use dado de paciente. Casos são sempre fictícios.
 - **Informação conflitante** (decisão da coordenação de 19/11/2026). Quando duas fontes discordam, vale a mais recente, pela data de publicação do próprio arquivo (ano do artigo; ano da edição do livro, em `LEIA-ME.txt`). Artigo e diretriz costumam ser mais atuais que livro-texto: um livro só prevalece sobre um artigo se for mais recente que ele. Registre o conflito na afirmação ("o livro X, de 2015, indica A; a diretriz Y, de 2024, indica B") e use a mais recente no material. Desempate com o mesmo ano: diretriz, depois revisão sistemática, depois ensaio clínico, depois livro.
 
-## As 14 sessões
+## As 15 sessões
 
 Cada sessão começa pela correção do que voltou: erros de `importacao_ultima.txt`, pré-revisões e pareceres. Só
 depois vem a etapa nova. Se a sessão anterior não terminou a etapa dela, termina essa primeiro.
@@ -79,12 +79,23 @@ depois vem a etapa nova. Se a sessão anterior não terminou a etapa dela, termi
 | 4 (d2) | Mapa conceitual e roteiro de podcast | `pecas/mapa.md`, `pecas/podcast_roteiro.md` |
 | 5 (d3) | Aula (texto): caso com decisões, técnica operatória, anatomia cirúrgica, complicações; não repete a teoria | `pecas/aula.md` |
 | 6 (d3) | Slides com fala e caso da aula | `pecas/slides.md`, `pecas/caso.md` |
-| 7 (d4) | Guia de atendimento do tema (peça `protocolo`: diretriz clínica, fluxo e regulação com matriz de responsabilidades, indicadores com monitoramento, segurança do paciente e implantação, no padrão de `referencia\diretriz_do_tema.md`; sempre como PROPOSTA para a diretoria e as equipes validarem, com a faixa `> PROPOSTA ...` abaixo do título) e resumo executivo | `pecas/protocolo.md`, `pecas/resumo.md` |
-| 8 (d4) | Os 6 casos dos testes, 2 a 3 âncoras e as questões dos testes 1 e 2 | `casos_teste.json`, `questoes.json` |
-| 9 (d5) | Questões dos testes 3 e 4 | `questoes.json` |
-| 10 (d5) | Questões dos testes 5 e 6; banco de dificuldade; checklist (das recomendações fortes da diretriz) e flashcards | `questoes.json`, `pecas/banco_dificuldade.md`, `pecas/checklist.md`, `pecas/flashcard.md` |
-| 11 a 13 (d6 e d7) | Correção pelas pré-revisões e pareceres; peças com veredito "refazer" primeiro | as peças apontadas |
-| 14 (d7) | Conferência final com o importador completo (sem `--parcial`): zero erro. Grava `PRONTO_COMPLETO.txt` e pede no relatório a importação completa | — |
+| 7 (d4) | Guia de atendimento, parte 1 (peça `protocolo`, padrão de `referencia\diretriz_do_tema.md`): núcleo clínico (escopo, definições, recomendações, fluxograma, quadro-resumo), fluxo de atendimento e regulação, matriz de responsabilidades. Grava as **perguntas de adaptação local** à coordenação | `pecas/protocolo.md`, `perguntas_coordenacao.md` |
+| 8 (d4) | Guia de atendimento, parte 2: indicadores com ficha técnica, monitoramento, segurança do paciente, adaptação local (com as respostas que já houver), implantação pelos níveis 0 a 5, método e referências em ABNT; resumo executivo | `pecas/protocolo.md`, `pecas/resumo.md` |
+| 9 (d5) | Os 6 casos dos testes, 2 a 3 âncoras e as questões dos testes 1 e 2 | `casos_teste.json`, `questoes.json` |
+| 10 (d5) | Questões dos testes 3 e 4 | `questoes.json` |
+| 11 (d6) | Questões dos testes 5 e 6; banco de dificuldade; checklist (das recomendações fortes do guia e do time out antes de sair da sala) e flashcards | `questoes.json`, `pecas/banco_dificuldade.md`, `pecas/checklist.md`, `pecas/flashcard.md` |
+| 12 a 14 (d6 a d8) | Correção pelas pré-revisões e pareceres (peças com veredito "refazer" primeiro) e incorporação das respostas da coordenação ao guia | as peças apontadas |
+| 15 (d8) | Conferência final com o importador completo (sem `--parcial`): zero erro. Só grava `PRONTO_COMPLETO.txt` se todas as perguntas de adaptação local estiverem respondidas e incorporadas; senão, repete o pedido no relatório e para | — |
+
+**Perguntas de adaptação local (decisão da coordenação de 19/11/2026).** O guia nunca é fechado com dado local
+inventado ou suposto. Na sessão 7, o produtor grava `producao\<TEMA>\perguntas_coordenacao.md`: uma pergunta por
+linha, numerada, curta, com o que o guia vai fazer com a resposta e, quando couber, opções (ex.: "12.3 Tomografia 24
+horas no hospital? (sim / não / só em horário comercial) → define a recomendação de imagem e a transferência"). Entram
+todos os campos da seção "Adaptação local", os tempos-alvo sem fonte, os responsáveis nominais, o registro de onde sai
+cada indicador (ficha do prontuário, base C3, sistema da radiologia) e qualquer outra escolha que dependa do serviço.
+A coordenação responde em `producao\<TEMA>\respostas_coordenacao.md` (mesma numeração) ou na conversa com o Claude,
+que grava o arquivo. O produtor lê as respostas a cada sessão, incorpora no guia e marca no relatório o que ainda falta.
+O resumo do dia do supervisor lista os temas com perguntas sem resposta.
 
 **Regras das questões** (as mesmas do importador e de `referencia\producao_de_tema.md`):
 - **Quantidade.** Ao menos 4 por perfil em cada teste, nos 5 perfis: Graduação, R1, R2, R3 e R+.
