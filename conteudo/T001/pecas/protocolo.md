@@ -435,7 +435,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 
 - **Redação do rascunho:** agente produtor do CUT, sob supervisão da coordenação.
 - **Coordenação:** [nome do coordenador], [instituição]. Conflitos de interesse: [declarar].
-- **Revisores:** [nomes, após a autorização de cada um pelo termo de autorização e declaração de conflitos de interesse]. Conflitos de interesse: [declarar].
+- **Revisores:** os revisores do curso que autorizaram no sistema, com a declaração de conflitos de interesse de cada um (preenchido na publicação, a partir das autorizações registradas).
 - **Encaminhamento:** proposta a ser entregue à diretoria em [data]; validação pelas equipes listadas acima; aprovação como norma do serviço pela instância do hospital em [data].
 
 ## Limitações e lacunas

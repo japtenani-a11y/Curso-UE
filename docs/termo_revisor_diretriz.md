@@ -3,8 +3,9 @@
 Versão 1.0 · 19/11/2026 · Decisão da coordenação de 19/11/2026: os revisores entram nomeados no "Grupo de elaboração e
 conflitos de interesse" de cada diretriz, desde que autorizem e declarem conflitos.
 
-Preenchido uma vez por revisor e atualizado a cada ano, ou quando algo mudar. Guardado pela coordenação, fora do
-repositório do curso.
+No aplicativo (desde 19/11/2026, SQL e tela 107): na primeira entrada, o revisor vê o resumo deste termo, clica "Autorizo" e
+declara se tem conflitos; o registro fica no banco (`app.autorizacao_revisor`) e a coordenação lista os autorizados com
+`app.revisores_autorizados()`. A versão completa abaixo continua valendo para quem preferir assinar em papel.
 
 ---
 
