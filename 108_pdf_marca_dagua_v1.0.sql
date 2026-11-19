@@ -6,6 +6,8 @@
 --     (quando houver), data e hora do download e um codigo de verificacao. Cada download fica registrado aqui,
 --     para rastrear uma copia que circule fora do curso ate quem baixou.
 --  So baixa o que ja esta liberado para a pessoa (mesma regra da leitura: app.etapa_liberada; a equipe ve tudo).
+--  A marca d'agua e o aviso de copyright valem so para alunos: nos perfis de administrador e de curador o PDF sai sem
+--  eles (decisao de 19/11/2026). O download continua registrado.
 -- Pode ser rodado mais de uma vez. Desfazer: DROP TABLE app.download_pdf; ALTER TABLE app.ficha_aluno DROP COLUMN crm, DROP COLUMN crm_uf;
 -- ============================================================
 \set ON_ERROR_STOP on
@@ -93,6 +95,8 @@ BEGIN
   SELECT p.nome_completo, f.crm, f.crm_uf INTO v_nome, v_crm, v_uf
     FROM app.pessoa p LEFT JOIN app.ficha_aluno f ON f.pessoa_id = p.pessoa_id WHERE p.pessoa_id = v_id;
   RETURN jsonb_build_object(
+    -- Administracao e curadoria (perfil ativo admin ou curador) baixam sem marca d'agua (decisao de 19/11/2026).
+    'marca', NOT app.e_equipe(v_id),
     'codigo_verificacao', v_cod, 'baixado_em', now(),
     'nome', coalesce(v_nome, ''), 'codigo_aluno', app.codigo_aluno(v_id),
     'crm', CASE WHEN v_crm IS NOT NULL THEN 'CRM ' || v_crm || '/' || v_uf END,

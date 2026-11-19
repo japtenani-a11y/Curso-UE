@@ -99,7 +99,7 @@ import { Markdown } from '../../lib/md.js';
 
 interface Peca { tipo: string; versao: number; titulo: string; corpo: string }
 interface Pacote {
-  codigo_verificacao: string; baixado_em: string; nome: string; codigo_aluno: string; crm: string | null;
+  marca?: boolean; codigo_verificacao: string; baixado_em: string; nome: string; codigo_aluno: string; crm: string | null;
   tema: { codigo: string; titulo: string }; inteiro: boolean; pecas: Peca[];
 }
 
@@ -158,16 +158,18 @@ function quando(iso: string): string {
 
 function Documento({ d }: { d: Pacote }) {
   const id = [d.nome, d.codigo_aluno, d.crm].filter(Boolean).join(' · ');
+  const marca = d.marca !== false; // administracao e curadoria: sem marca d'agua e sem aviso de copyright
   return (
     <div id="impressao-cut" aria-hidden="true">
-      <div className="dagua">{id} · {d.codigo_verificacao}</div>
+      {marca && <div className="dagua">{id} · {d.codigo_verificacao}</div>}
       <table className="pg">
         <thead><tr><td>
           <div className="cab"><img src="/cut_horizontal_claro.svg" alt="CUT" /><span>{d.tema.codigo} · {d.tema.titulo}</span></div>
         </td></tr></thead>
         <tfoot><tr><td>
-          <div className="rod">Uso pessoal e intransferível. Baixado por <strong>{id}</strong> em {quando(d.baixado_em)} ·
+          {marca ? <div className="rod">Uso pessoal e intransferível. Baixado por <strong>{id}</strong> em {quando(d.baixado_em)} ·
             código de verificação <strong>{d.codigo_verificacao}</strong>. Reprodução e distribuição proibidas.</div>
+            : <div className="rod">CUT · Curso de Cirurgia Geral, Urgência e Trauma · {d.tema.codigo} · {quando(d.baixado_em)}</div>}
         </td></tr></tfoot>
         <tbody><tr><td>
           {d.inteiro && (
@@ -176,8 +178,8 @@ function Documento({ d }: { d: Pacote }) {
               <div className="rotulo">CUT · Curso de Cirurgia Geral, Urgência e Trauma · material do tema</div>
               <h1><span className="cod">{d.tema.codigo}</span> {d.tema.titulo}</h1>
               <ol>{d.pecas.map((p) => <li key={p.tipo}>{NOME[p.tipo] ?? p.tipo}</li>)}</ol>
-              <div className="quem">Cópia de uso pessoal de <strong>{id}</strong>, baixada em {quando(d.baixado_em)}.<br />
-                Código de verificação: <strong>{d.codigo_verificacao}</strong>. O download fica registrado no curso.</div>
+              {marca && <div className="quem">Cópia de uso pessoal de <strong>{id}</strong>, baixada em {quando(d.baixado_em)}.<br />
+                Código de verificação: <strong>{d.codigo_verificacao}</strong>. O download fica registrado no curso.</div>}
             </div>
           )}
           {d.pecas.map((p) => (
@@ -227,8 +229,8 @@ export function BaixarPdf({ tema, tipo }: { tema: string; tipo: string }) {
       <button type="button" className="botao discreto" disabled={ocupado} onClick={() => baixar(false)}>Baixar esta peça em PDF</button>
       <button type="button" className="botao discreto" disabled={ocupado} onClick={() => baixar(true)}>Baixar o tema inteiro em PDF</button>
       <small style={{ flexBasis: '100%', color: 'var(--cut-text-muted)' }}>
-        Na janela que abrir, escolha “Salvar como PDF”. Todas as páginas levam seu nome, seu código no curso, seu CRM
-        (se informado em <a href="/cadastro">Meus dados</a>), a data e a hora do download.
+        Na janela que abrir, escolha “Salvar como PDF”. Na cópia do aluno, todas as páginas levam o nome, o código no
+        curso, o CRM (se informado em <a href="/cadastro">Meus dados</a>), a data e a hora do download.
       </small>
       {erro && <p role="alert" className="faixa-erro" style={{ flexBasis: '100%' }}>{erro}</p>}
       {doc && createPortal(<Documento d={doc} />, document.body)}
