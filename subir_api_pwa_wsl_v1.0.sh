@@ -75,6 +75,7 @@ if [ -f 98_embaralhar_ancoras_app_v1.0.sh ]; then bash 98_embaralhar_ancoras_app
 if [ -f 102_revisao_inicio_app_v1.0.sh ]; then bash 102_revisao_inicio_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "102_revisao_inicio_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 103_acesso_equipe_app_v1.0.sh ]; then bash 103_acesso_equipe_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "103_acesso_equipe_app falhou; veja $RAIZ/logs/gerar.log"; fi
 if [ -f 104_meu_material_app_v1.0.sh ]; then bash 104_meu_material_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "104_meu_material_app falhou; veja $RAIZ/logs/gerar.log"; fi
+if [ -f 105_aulas_app_v1.0.sh ]; then bash 105_aulas_app_v1.0.sh "$RAIZ" >> "$RAIZ/logs/gerar.log" 2>&1 || falhar "105_aulas_app falhou; veja $RAIZ/logs/gerar.log"; fi
 python3 -c "import pandas, scipy, matplotlib" 2>/dev/null || echo "      aviso: o relatorio de analise do painel precisa do Python com pandas, scipy e matplotlib. Rode uma vez: bash instalar_python_analise_v1.0.sh"
 # Conferencia: a tela gerada tem de ser a do CUT (se aparecer a antiga, faltou o git pull ou algum script nao rodou)
 grep -q "CUT · Curso" "$RAIZ/pwa/index.html" || falhar "a tela nova do CUT nao foi gerada; descompacte o zip mais novo por cima da pasta e rode de novo este script"
