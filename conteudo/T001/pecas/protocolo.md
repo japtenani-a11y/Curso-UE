@@ -42,8 +42,8 @@ Na prática: Ponto de protocolo: o cirurgião do trauma lidera [D22]; na ausênc
 
 **Recomendação 2.** Na hemorragia externa exsanguinante, controlar o sangramento antes da via aérea.
 Força: forte | Certeza: baixa
-Origem: adotada do consenso WSES e Panamerican Trauma Society 2025 [G1]; consistente com a ficha do serviço [P19].
-Justificativa: na metanálise do consenso, a sequência ABC se associou a maior mortalidade que a CAB [G2], mas toda a evidência é observacional e não permite concluir causalidade [G3].
+Origem: adotada do consenso WSES e Panamerican Trauma Society 2025 [G1]; consistente com o ATLS 11 [D81] e com a ficha do serviço [P19].
+Justificativa: na metanálise do consenso, a sequência ABC se associou a maior mortalidade que a CAB [G2], mas toda a evidência é observacional e não permite concluir causalidade [G3]. No trauma vascular de extremidade, o torniquete pré-hospitalar se associou a menor mortalidade, com certeza muito baixa [A57].
 Na prática: compressão direta [D6]; no membro, torniquete proximal à lesão, fora da articulação, com a hora anotada e limite de 90 minutos [D7, D59, D60]; nas regiões juncionais (pescoço, axila, virilha), compressão com agente hemostático [D8].
 Divergência: as sequências clássicas começam pela via aérea; o consenso de 2025 é a fonte mais recente e foi a seguida (regra da fonte mais recente).
 
@@ -56,38 +56,38 @@ Na prática: aspiração, cânula orofaríngea, manobras e oxigênio; plano de v
 **Recomendação 4.** No paciente em choque hemorrágico sem obstrução e sem hipóxia grave, usar via aérea não invasiva enquanto a circulação é restaurada e adiar a intubação até a ressuscitação começar.
 Força: condicional | Certeza: baixa
 Origem: adotada de [G6]; justificativa fisiológica em [G7] e [D47].
-Justificativa: a indução, a sedação e a ventilação com pressão positiva podem desfazer a vasoconstrição compensatória e levar ao colapso [G7, D47]. No trauma penetrante exsanguinante, o Glasgow baixo costuma refletir má perfusão cerebral, e não lesão neurológica [G5].
+Justificativa: a indução, a sedação e a ventilação com pressão positiva podem desfazer a vasoconstrição compensatória e levar ao colapso [G7, D47]; hipotensão e hipóxia são riscos da intubação [D82]. No trauma penetrante exsanguinante, o Glasgow baixo costuma refletir má perfusão cerebral, e não lesão neurológica [G5].
 Na prática: cânula, bolsa-válvula-máscara e oxigênio [G6]. Glasgow ≤ 8 indica via aérea definitiva, com o exame neurológico feito antes da sedação [D11, D12]. Via aérea cirúrgica pronta quando a intubação falhar (T002).
 
 **Recomendação 5.** Avaliar a respiração com exame dirigido e eFAST, sem tomar o eFAST negativo como exclusão de pneumotórax.
 Força: forte | Certeza: moderada
 Origem: própria, a partir de [A30] e do livro-texto.
-Justificativa: o eFAST acelera o diagnóstico, mas a sensibilidade não é perfeita [A30].
+Justificativa: o eFAST acelera o diagnóstico, mas a sensibilidade não é perfeita [A30]; radiografia e tomografia completam a investigação no paciente estável [D83].
 Na prática: no paciente em extremis, drenagem torácica bilateral [D48]. Hemotórax no paciente instável: controle imediato da causa [P9].
 
 **Recomendação 6.** Na hipotensão do trauma fechado, procurar e estabilizar a pelve, com cinta pélvica bem posicionada.
 Força: forte | Certeza: baixa
 Origem: própria, a partir do livro-texto [D55, D56] e do indicador da WSES [G11].
 Justificativa: a cinta reduz o volume pélvico e o sangramento venoso; apertada demais na compressão lateral pode aumentar o sangramento [D55].
-Na prática: cinta na altura dos trocânteres; na falta, lençol e haste [D56].
+Na prática: cinta na altura dos trocânteres; na falta, lençol e haste [D56, D84].
 
 **Recomendação 7.** Sem veia periférica em até poucas tentativas, usar acesso intraósseo.
 Força: forte | Certeza: baixa
-Origem: própria, a partir do livro-texto [D15, D46].
+Origem: própria, a partir dos livros-texto [D15, D46, D85].
 Justificativa: o acesso intraósseo é rápido e permite infundir hemocomponentes.
 Na prática: úmero proximal como primeira escolha, salvo contraindicação; tíbia como alternativa [D15, D46].
 
 **Recomendação 8.** Acionar o protocolo de transfusão maciça por critério objetivo ou por avaliação do líder, e administrar ácido tranexâmico até 3 horas da lesão no paciente com sangramento significativo.
 Força: forte | Certeza: moderada
-Origem: transfusão adaptada do protocolo do serviço [P16, P17] e do livro-texto [D33, D34, D35, D36, D37]; ácido tranexâmico adotado do protocolo AAST/ACS-COT de ressuscitação de controle de danos [G8].
+Origem: transfusão adaptada do livro-texto [D33, D34, D35, D36, D37]; ácido tranexâmico adotado do protocolo AAST/ACS-COT de ressuscitação de controle de danos [G8], consistente com o ATLS 11 [D86].
 Justificativa: a hipotensão prediz a necessidade de transfusão maciça [G9]; os escores têm bom valor preditivo negativo e valor preditivo positivo fraco, por isso o julgamento do líder também aciona [D34, P8].
-Na prática: Ponto de protocolo: acionar se escore ABC ≥ 2 (FAST positivo, mecanismo penetrante, FC > 120, PAS < 90; um ponto cada) [D33, P16], comprometimento hemodinâmico pela definição do serviço [P6], limiar crítico de transfusão [D37] ou decisão do líder [P8]. Avisar o banco de sangue de imediato [D35]. Sequência de liberação conforme o protocolo do serviço [P17].
+Na prática: Ponto de protocolo: acionar se escore ABC ≥ 2 (FAST positivo, mecanismo penetrante, FC > 120, PAS < 90; um ponto cada) [D33], comprometimento hemodinâmico pela definição do serviço [P6], limiar crítico de transfusão [D37] ou decisão do líder [P8]. Avisar a agência transfusional de imediato [D35]. Proporção e sequência de liberação dos hemocomponentes conforme o protocolo de transfusão maciça do serviço, que precisa existir e garantir acesso imediato [D36] (ver "Adaptação local").
 Divergência: o livro-texto usa índice de choque de 0,9 como corte de risco [D38]; o serviço usa 1,0 como critério de acionamento [P6]. Vale o critério do serviço, por ser o definido localmente; o corte de 0,9 fica como alerta.
 
 **Recomendação 9.** Prevenir e tratar a hipotermia desde a chegada: despir, aquecer o ambiente, os fluidos e o paciente, e medir a temperatura.
 Força: forte | Certeza: baixa
 Origem: própria, a partir de [D18, D19, A36] e do indicador da WSES [G11].
-Justificativa: a hipotermia piora a coagulopatia e se associa a maior mortalidade [A36].
+Justificativa: a hipotermia é comum no traumatizado em choque [D87], piora a coagulopatia e se associa a maior mortalidade [A36].
 Na prática: manta de ar forçado e aquecedor de fluidos [D19]; temperatura registrada na admissão.
 
 **Recomendação 10.** Paciente instável não vai à tomografia para diagnóstico: vai ao controle do sangramento.
@@ -104,7 +104,7 @@ Na prática: meta de porta-tomografia de 30 minutos, ainda pendente no protocolo
 
 **Recomendação 12.** Fazer a avaliação terciária em todo paciente internado e tratar a hipotensão após a ressuscitação como sangramento até prova em contrário.
 Força: forte | Certeza: baixa
-Origem: própria, a partir do livro-texto [D30, D31, D32] e de [A42].
+Origem: própria, a partir dos livros-texto [D30, D31, D32, D88] e de [A42].
 Justificativa: as lesões não identificadas são a complicação mais comum do atendimento inicial [A42].
 Na prática: reexame completo e revisão das imagens em até 24 horas [D30].
 
@@ -168,7 +168,7 @@ A linha de cuidado vai do aviso de chegada à avaliação terciária. Tempo-alvo
 
 - **Entrada.** O caso chega pela central de regulação de urgência, pelo atendimento pré-hospitalar, por demanda espontânea ou por transferência de outro hospital. O aviso prévio vai direto à sala de trauma por um canal único, definido na "Adaptação local".
 - **Aceite de transferência.** Contato médico a médico, com o líder ou o cirurgião responsável; o caso é aceito pelo recurso que o paciente precisa, não pelo leito vago. Registrar quem aceitou e a hora.
-- **Transferência para fora.** Quando falta recurso no serviço (tomografia, radiologia intervencionista, especialidade), transferir depois da estabilização possível, com contato médico a médico, relatório escrito, imagens e transporte com o nível de suporte que o paciente exige. Normas de regulação e de transporte inter-hospitalar: refs. 24 e 25 (conferir a versão vigente).
+- **Transferência para fora.** Quando falta recurso no serviço (tomografia, radiologia intervencionista, especialidade), transferir depois da estabilização possível, com contato médico a médico, relatório escrito, imagens e transporte com o nível de suporte que o paciente exige. Normas de regulação e de transporte inter-hospitalar: refs. 25 e 26 (conferir a versão vigente).
 - **Regulação interna de leitos.** A vaga de UTI, de centro cirúrgico e de enfermaria é pedida ao núcleo interno de regulação (ou equivalente) logo na decisão de destino, não no fim do atendimento.
 
 ### Passagem de cuidado
@@ -227,14 +227,14 @@ Sempre como totais do mês, sem nenhum dado que identifique paciente. Metas com 
 |---|---|---|---|---|
 | Troca de paciente desconhecido | Vítima sem documento, vários atendimentos ao mesmo tempo | Identificação provisória padronizada na chegada, antes de qualquer coleta ou hemocomponente (Adaptação local) | Identificação do paciente | Troca ou quase troca de identificação |
 | Informação perdida na passagem | Passagem longa, sem estrutura, ou feita durante procedimentos | Passagem MIST de até 1 minuto [D23, D24]; comunicação em alça fechada [D70]; passagem estruturada entre equipes | Comunicação efetiva | Evento com dano ligado à passagem |
-| Erro de hemocomponente | Urgência, liberação em sequência, paciente sem tipagem | Acionamento por critério e aviso precoce à agência [D35, P16, P17]; dupla checagem à beira do leito | Segurança na administração de medicamentos e hemocomponentes | Reação transfusional; troca de bolsa |
+| Erro de hemocomponente | Urgência, liberação em sequência, paciente sem tipagem | Acionamento por critério e aviso precoce à agência [D33, D35]; dupla checagem à beira do leito | Segurança na administração de medicamentos e hemocomponentes | Reação transfusional; troca de bolsa |
 | Lesão não identificada | Foco na lesão mais evidente, paciente sedado | Avaliação secundária completa e avaliação terciária (R12) [A42] | — | Lesão com diagnóstico tardio e dano |
 | Deterioração fora da sala | Paciente instável levado à tomografia; transporte sem monitorização | Instável não vai à tomografia (R10); pausa de segurança antes de sair [P21] | Cirurgia segura (pausa e conferência) | Parada ou deterioração no transporte |
 | Hipotermia | Exposição prolongada, fluidos frios | Prevenção desde a chegada e temperatura registrada (R9) | — | — |
 | Torniquete esquecido | Hora não anotada, troca de equipe | Hora do torniquete registrada e limite de 90 minutos (R2) [D7, D59, D60] | Comunicação efetiva | Isquemia por torniquete |
 | Medicamento em paciente sem história | Alergia desconhecida, anticoagulante não informado | Perguntar e registrar alergias e medicamentos na avaliação secundária [D20]; exceções do anticoagulado (T007) | Segurança na prescrição e administração de medicamentos | Reação adversa grave |
 
-Evento adverso grave e óbito evitável: notificação ao núcleo de segurança do paciente e análise, conforme as refs. 22 e 23 (conferir a versão vigente). A notificação serve para aprender, não para punir.
+Evento adverso grave e óbito evitável: notificação ao núcleo de segurança do paciente e análise, conforme as refs. 23 e 24 (conferir a versão vigente). A notificação serve para aprender, não para punir.
 
 ## Adaptação local
 
@@ -303,8 +303,8 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 
 ## Base legal e ética
 
-- Paciente inconsciente sem responsável: o atendimento de urgência não espera consentimento; registrar a situação no prontuário (refs. 18 e 19).
-- Recusa de transfusão por adulto capaz: respeitar a decisão, documentar e oferecer as alternativas (refs. 20 e 21; conferir a vigência).
+- Paciente inconsciente sem responsável: o atendimento de urgência não espera consentimento; registrar a situação no prontuário (refs. 19 e 20).
+- Recusa de transfusão por adulto capaz: respeitar a decisão, documentar e oferecer as alternativas (refs. 21 e 22; conferir a vigência).
 - Suspeita de violência: notificação compulsória e comunicação conforme a lei (T086).
 
 ## Método e fontes
@@ -320,12 +320,12 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
    Filtro de desenho (segunda passada), acrescentado ao fim da linha:
    `AND ("randomized controlled trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR guideline[ti])`
 
-3. **Diretrizes e consensos de sociedades** (WSES, Panamerican Trauma Society, AAST, ACS-COT, EAST, SBAIT e as das especialidades envolvidas), localizados pela segunda passada e nas páginas das sociedades, publicados nos últimos 10 anos. A qualidade metodológica de cada diretriz foi considerada pelos domínios do AGREE II (ref. 17).
-4. **Livros-texto de referência** (refs. 4 e 5), usados para doutrina, definições e técnica, sempre citados por capítulo.
-5. **Protocolos e fichas do serviço** (refs. 12 a 15), usados para os critérios locais.
+3. **Diretrizes e consensos de sociedades** (WSES, Panamerican Trauma Society, AAST, ACS-COT, EAST, SBAIT e as das especialidades envolvidas), localizados pela segunda passada e nas páginas das sociedades, publicados nos últimos 10 anos. A qualidade metodológica de cada diretriz foi considerada pelos domínios do AGREE II (ref. 18).
+4. **Livros-texto de referência** (refs. 4 a 6), usados para doutrina, definições e técnica, sempre citados por capítulo.
+5. **Protocolos e fichas do serviço** (refs. 14 a 16), usados para os critérios locais.
 6. **Extração.** Cada afirmação do guia foi ligada ao trecho literal da fonte que a sustenta; os códigos entre colchetes no texto ([G#] diretriz ou consenso, [A#] artigo, [D#] livro-texto, [P#] protocolo ou ficha do serviço) remetem à lista de referências abaixo.
-7. **Graduação.** Força da recomendação (forte ou condicional) e certeza da evidência (alta, moderada, baixa, muito baixa) pelo sistema GRADE (ref. 16), propostas pelo grupo de elaboração a partir do desenho dos estudos de cada fonte; precisam ser conferidas pelos revisores contra a graduação publicada em cada diretriz de origem.
-8. **Conflito entre fontes.** Vale a mais recente pela data de publicação; no mesmo ano, diretriz, depois revisão sistemática, depois ensaio clínico, depois livro-texto. Cada conflito fica registrado na linha "Divergência" da recomendação.
+7. **Graduação.** Força da recomendação (forte ou condicional) e certeza da evidência (alta, moderada, baixa, muito baixa) pelo sistema GRADE (ref. 17), propostas pelo grupo de elaboração a partir do desenho dos estudos de cada fonte; precisam ser conferidas pelos revisores contra a graduação publicada em cada diretriz de origem.
+8. **Conflito entre fontes.** Vale a mais recente pela data de publicação; no mesmo ano, diretriz, depois revisão sistemática, depois ensaio clínico, depois livro-texto. Cada conflito fica registrado na linha "Divergência" da recomendação. Na conferência de 19/11/2026, as afirmações tiradas de livro-texto foram comparadas com as fontes mais recentes do tema (ATLS 11, 2026; consenso WSES e Panamerican Trauma Society, 2025; protocolo AAST/ACS-COT, 2024; artigos de 2023 a 2026): nenhuma foi contrariada; as fontes novas reforçam as recomendações 2, 4, 5, 6, 7, 8, 9 e 12.
 9. **Revisão.** Pré-revisão de forma e conferência de cada afirmação contra a fonte, seguidas da revisão por cirurgiões do curso e da validação pelas equipes listadas em "Equipes para validação".
 
 ### Referências
@@ -340,57 +340,59 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 
 **Livros-texto**
 
-4\. FELICIANO, D. V.; MATTOX, K. L.; MOORE, E. E. (ed.). **Trauma**. 9. ed. New York: McGraw-Hill, 2021. Capítulos citados: 13 (avaliação inicial), 15 (choque), 16 (coagulopatia), 39 (pelve), 44 (membro inferior), 45 (vasos periféricos), 48 (trauma pediátrico) e 57 (terapia intensiva). [D1 a D60]
+4\. AMERICAN COLLEGE OF SURGEONS. Committee on Trauma. **ATLS: Advanced Trauma Life Support**. 11. ed., tradução para o português. Chicago: American College of Surgeons, 2026. Capítulos citados: 4 (vias aéreas), 6 (circulação), 8 (exposição) e 10 (trauma musculoesquelético). [D81 a D88]
 
-5\. EUROPEAN TRAUMA COURSE. **The European Trauma Course Manual**. Edição 4.0. Capítulo 1: Human factors, non-technical skills and the principles of crew resource management. [ano a conferir na ficha catalográfica]. [D70, D71]
+5\. FELICIANO, D. V.; MATTOX, K. L.; MOORE, E. E. (ed.). **Trauma**. 9. ed. New York: McGraw-Hill, 2021. Capítulos citados: 13 (avaliação inicial), 15 (choque), 16 (coagulopatia), 39 (pelve), 44 (membro inferior), 45 (vasos periféricos), 48 (trauma pediátrico) e 57 (terapia intensiva). [D1 a D60]
+
+6\. EUROPEAN TRAUMA COURSE. **The European Trauma Course Manual**. Edição 4.0. Capítulo 1: Human factors, non-technical skills and the principles of crew resource management. [2018]. [D70, D71]
 
 **Artigos**
 
-6\. GYEDU, A. et al. Standardized trauma intake form with clinical decision support prompts improves care and reduces mortality for seriously injured patients in non-tertiary hospitals in Ghana: stepped-wedge cluster randomized trial. **British Journal of Surgery**, v. 110, n. 11, p. 1473-1481, 2023. DOI: 10.1093/bjs/znad253. PMID: 37612450. [A14]
+7\. GYEDU, A. et al. Standardized trauma intake form with clinical decision support prompts improves care and reduces mortality for seriously injured patients in non-tertiary hospitals in Ghana: stepped-wedge cluster randomized trial. **British Journal of Surgery**, v. 110, n. 11, p. 1473-1481, 2023. DOI: 10.1093/bjs/znad253. PMID: 37612450. [A14]
 
-7\. WILD, H.; MOCK, C.; LIM, A. Implementation of the WHO Trauma Care Checklist: a qualitative analysis of facilitators and barriers to use. **International Journal of Surgery**, v. 83, p. 15-23, 2020. DOI: 10.1016/j.ijsu.2020.08.050. PMID: 32931975. [A16]
+8\. WILD, H.; MOCK, C.; LIM, A. Implementation of the WHO Trauma Care Checklist: a qualitative analysis of facilitators and barriers to use. **International Journal of Surgery**, v. 83, p. 15-23, 2020. DOI: 10.1016/j.ijsu.2020.08.050. PMID: 32931975. [A16]
 
-8\. SANTORELLI, J. E. et al. Lung ultrasonography underdiagnoses clinically significant pneumothorax. **Surgery**, v. 176, n. 6, p. 1766-1770, 2024. DOI: 10.1016/j.surg.2024.08.013. PMID: 39304444. [A30]
+9\. SANTORELLI, J. E. et al. Lung ultrasonography underdiagnoses clinically significant pneumothorax. **Surgery**, v. 176, n. 6, p. 1766-1770, 2024. DOI: 10.1016/j.surg.2024.08.013. PMID: 39304444. [A30]
 
-9\. PERLMAN, R. et al. A recommended early goal-directed management guideline for the prevention of hypothermia-related transfusion, morbidity, and mortality in severely injured trauma patients. **Critical Care**, v. 20, n. 1, p. 107, 2016. DOI: 10.1186/s13054-016-1271-z. PMID: 27095272. [A36]
+10\. PERLMAN, R. et al. A recommended early goal-directed management guideline for the prevention of hypothermia-related transfusion, morbidity, and mortality in severely injured trauma patients. **Critical Care**, v. 20, n. 1, p. 107, 2016. DOI: 10.1186/s13054-016-1271-z. PMID: 27095272. [A36]
 
-10\. KOK, D. et al. Delayed diagnosed injuries in trauma patients after initial trauma assessment with a total-body computed tomography scan. **Injury**, v. 55, n. 5, p. 111304, 2024. DOI: 10.1016/j.injury.2023.111304. PMID: 38171970. [A42]
+11\. KOK, D. et al. Delayed diagnosed injuries in trauma patients after initial trauma assessment with a total-body computed tomography scan. **Injury**, v. 55, n. 5, p. 111304, 2024. DOI: 10.1016/j.injury.2023.111304. PMID: 38171970. [A42]
 
-11\. BEAUGÉ, Y. et al. Checklist- and algorithm-based simulation training produce comparable improvements in teamwork-related shared mental models: a cluster-randomized study in trauma resuscitation teams. **European Journal of Trauma and Emergency Surgery**, v. 52, n. 1, p. 119, 2026. DOI: 10.1007/s00068-026-03161-0. PMID: 41925867. [A44]
+12\. BEAUGÉ, Y. et al. Checklist- and algorithm-based simulation training produce comparable improvements in teamwork-related shared mental models: a cluster-randomized study in trauma resuscitation teams. **European Journal of Trauma and Emergency Surgery**, v. 52, n. 1, p. 119, 2026. DOI: 10.1007/s00068-026-03161-0. PMID: 41925867. [A44]
+
+13\. KO, Y. C. et al. Effectiveness and safety of tourniquet utilization for civilian vascular extremity trauma in the pre-hospital settings: a systematic review and meta-analysis. **World Journal of Emergency Surgery**, v. 19, n. 1, p. 10, 2024. DOI: 10.1186/s13017-024-00536-9. PMID: 38504263. [A57, A58]
 
 **Protocolos e documentos do serviço**
 
-12\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Unidade de Emergência. **Protocolo de imagem no paciente politraumatizado**. Versão preliminar, em validação. Ribeirão Preto, ago. 2026. Documento institucional, não publicado. [P1 a P15]
+14\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Unidade de Emergência. **Protocolo de imagem no paciente politraumatizado**. Versão preliminar, em validação. Ribeirão Preto, ago. 2026. Documento institucional, não publicado. [P1 a P15]
 
-13\. HOSPITAL DE BASE DE SÃO JOSÉ DO RIO PRETO. **Protocolo de transfusão maciça**. São José do Rio Preto, [s.d.]. Documento institucional, não publicado. [P16, P17]
+15\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA HB-FAMERP / HC-FMRP. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Versão 1.0. Documento controlado, não publicado. [P18 a P21]
 
-14\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA HB-FAMERP / HC-FMRP. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Versão 1.0. Documento controlado, não publicado. [P18 a P21]
-
-15\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026. [P22]
+16\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026. [P22]
 
 **Método**
 
-16\. GUYATT, G. H. et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. **BMJ**, v. 336, n. 7650, p. 924-926, 2008.
+17\. GUYATT, G. H. et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. **BMJ**, v. 336, n. 7650, p. 924-926, 2008.
 
-17\. BROUWERS, M. C. et al. AGREE II: advancing guideline development, reporting and evaluation in health care. **Canadian Medical Association Journal**, v. 182, n. 18, p. E839-E842, 2010.
+18\. BROUWERS, M. C. et al. AGREE II: advancing guideline development, reporting and evaluation in health care. **Canadian Medical Association Journal**, v. 182, n. 18, p. E839-E842, 2010.
 
 **Legislação e normas (conferir a versão vigente antes de adotar)**
 
-18\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.217, de 27 de setembro de 2018. Aprova o Código de Ética Médica.
+19\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.217, de 27 de setembro de 2018. Aprova o Código de Ética Médica.
 
-19\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.638, de 10 de julho de 2002. Define prontuário médico.
+20\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.638, de 10 de julho de 2002. Define prontuário médico.
 
-20\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.232, de 17 de julho de 2019. Normas éticas para a recusa terapêutica e objeção de consciência.
+21\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.232, de 17 de julho de 2019. Normas éticas para a recusa terapêutica e objeção de consciência.
 
-21\. SUPREMO TRIBUNAL FEDERAL. Temas 952 e 1069 da repercussão geral (recusa de transfusão de sangue por motivo religioso). Julgamento em 2024.
+22\. SUPREMO TRIBUNAL FEDERAL. Temas 952 e 1069 da repercussão geral (recusa de transfusão de sangue por motivo religioso). Julgamento em 2024.
 
-22\. AGÊNCIA NACIONAL DE VIGILÂNCIA SANITÁRIA. Resolução da Diretoria Colegiada RDC nº 36, de 25 de julho de 2013. Ações para a segurança do paciente em serviços de saúde.
+23\. AGÊNCIA NACIONAL DE VIGILÂNCIA SANITÁRIA. Resolução da Diretoria Colegiada RDC nº 36, de 25 de julho de 2013. Ações para a segurança do paciente em serviços de saúde.
 
-23\. BRASIL. Ministério da Saúde. Portaria nº 529, de 1º de abril de 2013. Institui o Programa Nacional de Segurança do Paciente.
+24\. BRASIL. Ministério da Saúde. Portaria nº 529, de 1º de abril de 2013. Institui o Programa Nacional de Segurança do Paciente.
 
-24\. BRASIL. Ministério da Saúde. Portaria nº 2.048, de 5 de novembro de 2002. Regulamento técnico dos sistemas estaduais de urgência e emergência.
+25\. BRASIL. Ministério da Saúde. Portaria nº 2.048, de 5 de novembro de 2002. Regulamento técnico dos sistemas estaduais de urgência e emergência.
 
-25\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.672, de 9 de julho de 2003. Transporte inter-hospitalar de pacientes.
+26\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.672, de 9 de julho de 2003. Transporte inter-hospitalar de pacientes.
 
 ## Equipes para validação
 
@@ -422,6 +424,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 ## Limitações e lacunas
 
 - A ordem CAB contra ABC não tem ensaio randomizado; toda a evidência é observacional [G3].
+- A cópia do ATLS 11 disponível para esta versão não traz os capítulos 1 a 3, que tratam da avaliação inicial e da equipe; as recomendações 1 e 3 ainda não têm âncora no ATLS 11.
 - O protocolo de imagem do serviço ainda está em validação [P1], e a meta de porta-tomografia está pendente [P14].
 - Critérios de admissão na UTI sem fonte carregada: precisam ser validados com a UTI.
 - **Perguntas para pesquisa:** o efeito do briefing com funções definidas sobre o tempo até a intervenção no serviço; a adesão à avaliação terciária e o número de lesões não identificadas antes e depois da diretriz; o desempenho do escore ABC contra o julgamento do líder no acionamento da transfusão maciça.
