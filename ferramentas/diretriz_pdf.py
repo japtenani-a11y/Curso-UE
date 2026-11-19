@@ -12,14 +12,17 @@ saida = sys.argv[2] if len(sys.argv) > 2 else re.sub(r'\.md$', '.pdf', arq)
 md = open(arq, encoding='utf-8').read()
 
 # ---- partes fixas ----
-m = re.match(r'#\s*(T\d{3})\s*[—-]\s*(.+)', md.strip().split('\n', 1)[0])
-codigo, titulo = (m.group(1), m.group(2).strip()) if m else ('', md.strip().split('\n', 1)[0].lstrip('# '))
+# o titulo e a primeira linha que comeca com "# " (a faixa RASCUNHO pode vir antes dela)
+h = re.search(r'(?m)^#\s+(.+)$', md)
+linha_titulo = h.group(1).strip() if h else md.strip().split('\n', 1)[0].lstrip('# ')
+m = re.match(r'(T\d{3})\s*[—-]\s*(.+)', linha_titulo)
+codigo, titulo = (m.group(1), m.group(2).strip()) if m else ('', linha_titulo)
 titulo = re.sub(r'^(Proposta de )?([Dd]iretriz clínica|[Gg]uia de atendimento):\s*', '', titulo)
 titulo = titulo[:1].upper() + titulo[1:]
 versao = re.search(r'versão ([\d.]+), (\d{2}/\d{2}/\d{4})', md)
 versao_txt = f'Versão {versao.group(1)} · {versao.group(2)}' if versao else datetime.date.today().strftime('%d/%m/%Y')
 rascunho = bool(re.search(r'(?im)^>\s*RASCUNHO', md))
-corpo = md.split('\n', 1)[1] if '\n' in md else ''
+corpo = (md[:h.start()] + md[h.end():]) if h else (md.split('\n', 1)[1] if '\n' in md else '')
 corpo = re.sub(r'(?m)^>\s*RASCUNHO[^\n]*\n', '', corpo)
 # A diretriz do curso e sempre PROPOSTA (decisao de 19/11/2026): a faixa vai para a capa e o rodape, nao some.
 corpo = re.sub(r'(?m)^>\s*PROPOSTA[^\n]*\n', '', corpo)
