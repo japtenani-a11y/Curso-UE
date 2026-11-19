@@ -142,6 +142,9 @@ Depois de publicada, a diretriz sai também em PDF com a identidade do CUT (capa
 na primeira página; fluxograma em página própria; recomendações; anexos). O PDF é gerado a partir da peça publicada,
 sem texto novo.
 
+Como gerar (no Ubuntu do curso): `python3 ferramentas/diretriz_pdf.py conteudo/T00X/pecas/protocolo.md T00X_diretriz.pdf`.
+Cores, fonte e logo vêm do Design System "CUT"; as recomendações fortes saem na caixa de CONDUTA.
+
 ## Base deste formato
 
 - Nieuwlaat R et al. How to write a guideline: a proposal for a manuscript template that supports the creation of
