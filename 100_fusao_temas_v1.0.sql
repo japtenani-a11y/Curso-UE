@@ -19,6 +19,10 @@ BEGIN;
 DO $$
 DECLARE r RECORD; v_old BIGINT; v_new BIGINT; n INT;
 BEGIN
+  -- Depois da renumeracao de 19/11/2026 (101) os codigos antigos apontam para outros temas: nada a fazer aqui.
+  IF to_regclass('app.migracao_aplicada') IS NOT NULL AND EXISTS (SELECT 1 FROM app.migracao_aplicada WHERE nome = 'renumeracao_2026-11-19') THEN
+    RAISE NOTICE 'fusao de 18/11: ja incluida na reestruturacao de 19/11 (101)'; RETURN;
+  END IF;
   FOR r IN SELECT * FROM (VALUES ('T078','T077'),('T144','T143'),('T145','T135'),('T146','T081'),('T147','T009'),
                               ('T092','T056'),('T057','T089'),('T080','T079'),('T120','T119'),('T124','T123'),('T128','T127')) v(velho, novo) LOOP
     SELECT tema_id INTO v_old FROM app.tema WHERE replace(codigo,'-','') = r.velho;

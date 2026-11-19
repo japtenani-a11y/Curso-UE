@@ -31,8 +31,7 @@ UPDATE app.tema t SET relevancia_plantao = v.r
  WHERE t.modulo = v.modulo AND NOT t.relevancia_manual;
 -- Ajustes por tema (frequencia no plantao ou gravidade acima/abaixo do modulo).
 UPDATE app.tema t SET relevancia_plantao = v.r
-  FROM (VALUES ('T-136',5),('T-137',5),('T-006',4),('T-048',4),('T-065',4),('T-064',3),('T-047',5),('T-094',5),('T-093',5),
-               ('T-089',5),('T-140',4),('T-151',4),('T-152',4),('T-153',5),('T-154',4),('T-155',5),('T-156',4),('T-157',3),('T-158',3),('T-148',4),('T-111',3),('T-079',4),('T-073',4),('T-074',4)) v(c, r)
+  FROM (VALUES ('T-006',4),('T-007',5),('T-008',3),('T-029',5),('T-033',3),('T-036',5),('T-054',4),('T-060',5),('T-061',4),('T-065',4),('T-069',5),('T-070',4),('T-081',3),('T-082',4),('T-086',4),('T-087',3),('T-090',4),('T-091',4),('T-095',4),('T-098',4),('T-104',4),('T-105',4),('T-110',4),('T-111',5),('T-113',5),('T-114',5),('T-125',4),('T-133',4),('T-134',3),('T-141',3),('T-148',3),('T-150',4)) v(c, r)
  WHERE t.codigo = v.c AND NOT t.relevancia_manual;
 UPDATE app.tema SET relevancia_plantao = 3 WHERE relevancia_plantao IS NULL;
 

@@ -1,5 +1,7 @@
 # CUT · Fusão e temas novos (decisão de 18/11/2026)
 
+> Atenção (19/11/2026): os códigos deste documento são os ANTIGOS. Em 19/11/2026 houve mais 5 fusões, 8 temas novos e a renumeração de T001 a T150; ver `renumeracao_temas_2026-11-19.md`.
+
 A coordenação decidiu fundir temas que se sobrepõem antes de criar temas novos. O programa passa de 150 para 147 temas:
 150 − 11 fundidos (5 na primeira revisão e 6 na segunda) + 8 novos. Os temas principais e o calendário das 39 quintas não mudam.
 

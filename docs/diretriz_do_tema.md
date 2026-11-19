@@ -49,7 +49,7 @@ publicação, mas aparece na tela de revisão e na aba "Conferência dos temas".
 ### Núcleo
 
 **Escopo e população.** A pergunta clínica que a diretriz responde; quem está incluído (idade, mecanismo, gravidade,
-cenário) e quem está fora, com o tema do curso que cobre os excluídos ("gestante: ver T138").
+cenário) e quem está fora, com o tema do curso que cobre os excluídos ("gestante: ver T119").
 
 **Usuários e cenário.** Para quem a diretriz foi escrita (cirurgião, emergencista, residente, enfermagem, equipe de
 trauma) e onde se aplica (sala de emergência, centro cirúrgico, UTI, enfermaria; hospital com ou sem cirurgião 24 h).

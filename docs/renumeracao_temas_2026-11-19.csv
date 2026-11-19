@@ -1,0 +1,167 @@
+codigo_novo;codigo_antigo;titulo;modulo;papel;situacao
+T001;T001;Avaliação inicial do traumatizado: o que mudou no xABCDE e acionamento da equipe de trauma;Reanimação e via aérea no trauma;nuclear;mantido
+T002;T002;Via aérea no trauma: falha, cricotireoidostomia e via aérea cirúrgica;Reanimação e via aérea no trauma;nuclear;mantido
+T003;T003;Exames adjuntos ao trauma: laboratório, TC e FAST;Reanimação e via aérea no trauma;nuclear;mantido
+T004;T004;Choque hemorrágico: fisiologia e metas de ressuscitação;Reanimação e via aérea no trauma;nuclear;mantido
+T005;T005;Coagulopatia do trauma, diamante letal, TXA e transfusão: sangue total, ROTEM/TEG e fibrinogênio;Reanimação e via aérea no trauma;nuclear;mantido
+T006;T006;Tromboembolismo venoso no trauma e no paciente cirúrgico: profilaxia, diagnóstico e tratamento do TEP;Reanimação e via aérea no trauma;eletivo;mantido
+T007;T137;Trauma no idoso e no paciente anticoagulado: queda da própria altura, reversão e limites de investimento;Reanimação e via aérea no trauma;complementar;mantido
+T008;T158;Lesões ambientais: hipotermia acidental, afogamento e lesão por frio;Reanimação e via aérea no trauma;eletivo;mantido
+T009;T007;Cirurgia de controle de danos no trauma e na cirurgia de urgência não traumática: indicação e timing de reoperação;Controle de danos e abdome aberto;nuclear;escopo ampliado
+T010;T008;Síndrome compartimental abdominal;Controle de danos e abdome aberto;nuclear;mantido
+T011;T009;Peritoneostomia: instalação, cuidados, fechamento mediado por tela, abdome aberto prolongado e retirada;Controle de danos e abdome aberto;eletivo;mantido
+T012;T010;Fístula enteroatmosférica e hipertensão intra-abdominal;Controle de danos e abdome aberto;eletivo;mantido
+T013;T011;Trauma torácico fechado: contusão pulmonar e insuficiência respiratória;Trauma de parede torácica e pleural;nuclear;mantido
+T014;T012;Fratura de arcos costais: analgesia, ventilação e fixação;Trauma de parede torácica e pleural;nuclear;mantido
+T015;T013;Pneumotórax traumático e espontâneo e drenagem torácica: técnica e manejo do dreno;Trauma de parede torácica e pleural;nuclear;mantido
+T016;T014;Hemotórax retido: VATS, fibrinólise e timing;Trauma de parede torácica e pleural;eletivo;mantido
+T017;T018;Lesão em transição toracoabdominal e lesão de diafragma;Trauma de parede torácica e pleural;nuclear;mantido
+T018;T020;Empiema, decorticação pulmonar e hemoptise maciça: indicação cirúrgica e pleurostomia;Trauma de parede torácica e pleural;eletivo;mantido
+T019;T015;Toracotomia de reanimação: indicação, técnica e desfechos;Trauma cardíaco e de grandes vasos;nuclear;mantido
+T020;T016;Trauma cardíaco: janela pericárdica, sutura e tamponamento;Trauma cardíaco e de grandes vasos;nuclear;mantido
+T021;T017;Trauma de grandes vasos torácicos;Trauma cardíaco e de grandes vasos;eletivo;mantido
+T022;T019;Trauma esofágico: cervical, torácico e abdominal;Trauma cardíaco e de grandes vasos;eletivo;mantido
+T023;T021;Trauma abdominal fechado: laparotomia versus manejo não operatório;Trauma abdominal;nuclear;mantido
+T024;T022;Trauma hepático e de via biliar: graus, packing e complicações;Trauma abdominal;nuclear;mantido
+T025;T023;Trauma esplênico: preservação, embolização seletiva, seguimento e esplenectomia;Trauma abdominal;nuclear;mantido
+T026;T024;Trauma de víscera oca: estômago, duodeno, delgado, cólon e reto;Trauma abdominal;nuclear;mantido
+T027;T025;Trauma de pâncreas e duodeno: exposição retroperitoneal, diagnóstico e reconstrução;Trauma abdominal;eletivo;mantido
+T028;T026;Trauma vascular abdominal: zonas retroperitoneais I, II e III, REBOA e endovascular;Trauma abdominal;nuclear;mantido
+T029;T136;Trauma penetrante e por explosão: balística, ferimento por arma branca, lesões por explosão e manejo não operatório seletivo;Trauma abdominal;complementar;mantido
+T030;T027;Trauma vascular cervical;Interfaces, urgência vascular e isquemia visceral;nuclear;mantido
+T031;T104;Interface com radiologia intervencionista: quando embolização, drenagem e stent são primeira escolha;Interfaces, urgência vascular e isquemia visceral;complementar;mantido
+T032;T107;Cirurgia endócrina na urgência;Interfaces, urgência vascular e isquemia visceral;eletivo;mantido
+T033;T111;Epistaxe grave, hematoma de septo e obstrução de via aérea alta;Interfaces, urgência vascular e isquemia visceral;eletivo;mantido
+T034;T112;Toxicologia e exposições especiais com interface cirúrgica;Interfaces, urgência vascular e isquemia visceral;eletivo;mantido
+T035;T139;Isquemia mesentérica aguda: diagnóstico precoce e decisão de ressecção;Interfaces, urgência vascular e isquemia visceral;nuclear;mantido
+T036;T153;Emergências vasculares não traumáticas: aneurisma de aorta abdominal roto, dissecção aguda de aorta e isquemia aguda de membro;Interfaces, urgência vascular e isquemia visceral;complementar;mantido
+T037;T028;Trauma vascular periférico: salvageability, síndrome compartimental, síndrome do esmagamento e amputação primária;Trauma de extremidade, pelve e vascular;nuclear;mantido
+T038;T029;Fratura exposta, MESS, amputação primária e Morel-Lavallée;Trauma de extremidade, pelve e vascular;nuclear;mantido
+T039;T030;Trauma ortopédico e controle de danos ortopédico;Trauma de extremidade, pelve e vascular;eletivo;mantido
+T040;T031;TCE grave: metas de PIC, PPC e manejo de primeira e segunda linha;Neurotrauma;nuclear;mantido
+T041;T032;Trauma raquimedular: estabilização, timing e prognóstico;Neurotrauma;nuclear;mantido
+T042;T105;Neurocirurgia de urgência para o cirurgião geral;Neurotrauma;eletivo;mantido
+T043;T033;Trauma de face, ocular e otorrinolaringológico: prioridades e quando não operar;Cabeça e pescoço;eletivo;mantido
+T044;T034;Trauma cervical penetrante e lesão de estruturas aerodigestivas;Cabeça e pescoço;nuclear;mantido
+T045;T035;Infecção cervical profunda e mediastinite descendente;Cabeça e pescoço;eletivo;mantido
+T046;T036;Apendicite aguda: antibiótico versus cirurgia;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T047;T037;Colecistite aguda: timing e via de acesso;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T048;T038;Pancreatite aguda grave: estratificação e momento da intervenção;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T049;T039;Icterícia obstrutiva e colangite: drenagem e timing;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T050;T040;Diverticulite complicada: abscesso, peritonite e cirurgia;Abdome agudo inflamatório e obstrutivo;eletivo;mantido
+T051;T041;Abdome agudo obstrutivo: aderência, hérnia, volvo e critérios de cirurgia;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T052;T042;Abdome agudo perfurativo: úlcera, lavado e fechamento;Abdome agudo inflamatório e obstrutivo;nuclear;mantido
+T053;T043;Hérnia inguinal e femoral encarcerada e estrangulada: via e momento;Hérnias e parede abdominal;nuclear;mantido
+T054;T140;Hérnia incisional na urgência: estrangulamento, tela e decisão;Hérnias e parede abdominal;complementar;mantido
+T055;T141;Técnicas de fechamento de parede, prevenção de hérnia incisional, evisceração e deiscência de parede;Hérnias e parede abdominal;complementar;escopo ampliado
+T056;T142;Hérnia traumática de parede abdominal: diagnóstico e quando reparar;Hérnias e parede abdominal;complementar;mantido
+T057;T044;Hemorragia digestiva alta não varicosa: risco, endoscopia e timing;Hemorragia digestiva e colorretal;nuclear;mantido
+T058;T045;Hemorragia varicosa: controle do sangramento e prevenção da recidiva;Hemorragia digestiva e colorretal;eletivo;mantido
+T059;T046;Hemorragia digestiva baixa: localização e decisão cirúrgica;Hemorragia digestiva e colorretal;nuclear;mantido
+T060;T047;Sangramento digestivo em uso de anticoagulante e antiagregante;Hemorragia digestiva e colorretal;complementar;mantido
+T061;T048;Coloproctologia urgente: doença hemorroidária, abscesso, fissura e corpo estranho retal;Hemorragia digestiva e colorretal;eletivo;mantido
+T062;T049;Síndrome de Fournier e urgências orifiais;Hemorragia digestiva e colorretal;complementar;mantido
+T063;T066;Urgências oncológicas e abdome agudo no imunossuprimido (neutropenia e transplante);Hemorragia digestiva e colorretal;eletivo;mantido
+T064;T067;Neoplasia colorretal na urgência e complicações de estomas;Hemorragia digestiva e colorretal;eletivo;mantido
+T065;T152;Colite grave: C. difficile fulminante, colite ulcerativa grave e megacólon tóxico;Hemorragia digestiva e colorretal;complementar;mantido
+T066;T050;Sepse e choque séptico no paciente cirúrgico: foco abdominal, controle do foco e ressuscitação;Infecção e sepse cirúrgica;nuclear;escopo ampliado
+T067;T051;Infecções de pele e partes moles: fasceíte necrotizante;Infecção e sepse cirúrgica;nuclear;mantido
+T068;T052;Peritonite terciária e falência de controle do foco;Infecção e sepse cirúrgica;eletivo;mantido
+T069;T155;Deiscência de anastomose e fístula digestiva pós-operatória: diagnóstico, drenagem, desvio e reoperação;Infecção e sepse cirúrgica;complementar;mantido
+T070;;Hemorragia pós-operatória e reoperação não planejada: reconhecimento, imagem, embolização ou reoperação;Infecção e sepse cirúrgica;complementar;novo
+T071;T053;Ventilação mecânica no pós-operatório;Intensivismo cirúrgico;eletivo;mantido
+T072;T054;SDRA no paciente cirúrgico e ECMO;Intensivismo cirúrgico;eletivo;mantido
+T073;T055;Suporte hemodinâmico: vasopressor e responsividade;Intensivismo cirúrgico;eletivo;mantido
+T074;T056;Lesão renal aguda perioperatória: nefroproteção, terapia substitutiva e diálise de urgência;Intensivismo cirúrgico;eletivo;mantido
+T075;T058;Delirium, sedação e analgesia, inclusive sedação para procedimento e bloqueios regionais;Intensivismo cirúrgico;complementar;mantido
+T076;T059;Reposição volêmica, internação e escarotomia;Queimaduras;eletivo;mantido
+T077;T060;Queimadura de via aérea e lesão inalatória;Queimaduras;eletivo;mantido
+T078;T061;Queimadura elétrica, ferimentos de partes moles e mordeduras: fechamento e profilaxia de tétano e raiva;Queimaduras;eletivo;mantido
+T079;T062;Trauma renal;Urologia e geniturinário;eletivo;mantido
+T080;T063;Trauma geniturinário: bexiga, uretra, ureter, pênis e testículo;Urologia e geniturinário;eletivo;mantido
+T081;T064;Escroto agudo;Urologia e geniturinário;eletivo;mantido
+T082;T065;Urolitíase na urgência;Urologia e geniturinário;eletivo;mantido
+T083;T068;Psiquiatria e cirurgia de urgência e trauma;Fim de vida e decisão compartilhada;eletivo;mantido
+T084;T069;Cuidados paliativos na cirurgia de urgência e trauma: comunicação de más notícias e conversa com a família;Fim de vida e decisão compartilhada;eletivo;escopo ampliado
+T085;T070;Morte encefálica e doação de órgãos;Fim de vida e decisão compartilhada;eletivo;mantido
+T086;T156;Violência interpessoal: maus-tratos à criança, violência doméstica e ao idoso, violência sexual e notificação compulsória;Fim de vida e decisão compartilhada;eletivo;mantido
+T087;T157;Consentimento e aspectos médico-legais na urgência: paciente incapaz, menor, recusa de transfusão e documentação;Fim de vida e decisão compartilhada;eletivo;mantido
+T088;T071;Politrauma com TCE e hemorragia: o conflito de metas;Casos integradores e fechamento;nuclear;mantido
+T089;T072;Pelve instável com fratura exposta: qual sangramento primeiro;Casos integradores e fechamento;nuclear;mantido
+T090;T073;Abdome agudo em anticoagulado;Casos integradores e fechamento;complementar;mantido
+T091;T074;Hérnia encarcerada com isquemia;Casos integradores e fechamento;complementar;mantido
+T092;T075;Trauma de face com via aérea ameaçada;Casos integradores e fechamento;eletivo;mantido
+T093;T076;Grande queimado com trauma associado;Casos integradores e fechamento;eletivo;mantido
+T094;T077;Caso integrador transversal: consolidação do bloco de trauma e fechamento do ciclo clínico;Casos integradores e fechamento;nuclear;mantido
+T095;T079;Ultrassom point-of-care do cirurgião: pulmonar, cardíaco focado, vascular, eFAST seriado, RUSH, volemia e decisão cirúrgica;Imagem pelo cirurgião;complementar;mantido
+T096;T110;Radiologia de urgência interpretada pelo cirurgião: leitura sistemática;Imagem pelo cirurgião;eletivo;mantido
+T097;T081;Procedimentos à beira-leito com métrica de aquisição: toracostomia, cricotireoidostomia, acessos, drenagens, toracocentese, paracentese e retirada de dreno;Procedimentos à beira-leito;complementar;mantido
+T098;T148;Acesso vascular difícil: intraósseo, ecoguiado e dissecção;Procedimentos à beira-leito;complementar;mantido
+T099;T149;Traqueostomia percutânea e manejo da via aérea definitiva;Procedimentos à beira-leito;eletivo;mantido
+T100;T082;Segurança do paciente no centro cirúrgico de urgência: checklist, comunicação e transição de cuidado;Segurança do paciente e qualidade;complementar;mantido
+T101;T083;Infecção relacionada à assistência e sítio cirúrgico: prevenção, bundles e germe multirresistente;Segurança do paciente e qualidade;complementar;mantido
+T102;T084;Evento adverso, segunda vítima e cultura de segurança: revelação, apoio e aprendizado;Segurança do paciente e qualidade;eletivo;mantido
+T103;T085;Liderança da equipe de trauma e comunicação em crise: briefing, debriefing, CRM, TeamSTEPPS e simulação realística;Segurança do paciente e qualidade;eletivo;escopo ampliado
+T104;;Melhoria da qualidade e implementação de diretrizes: PDSA, lean, auditoria e retroalimentação, barreiras e ciência da implementação;Segurança do paciente e qualidade;complementar;novo
+T105;;Raciocínio clínico e erro diagnóstico na urgência: vieses cognitivos, tempo de decisão e checagem;Segurança do paciente e qualidade;complementar;novo
+T106;T086;Avaliação perioperatória, estratificação de risco e recuperação acelerada (ERAS) na cirurgia de urgência;Avaliação de risco perioperatório;complementar;escopo ampliado
+T107;T087;Cuidados perioperatórios no paciente idoso: fragilidade, polifarmácia e delirium;Avaliação de risco perioperatório;complementar;mantido
+T108;T088;Cuidados perioperatórios no paciente pediátrico;Avaliação de risco perioperatório;eletivo;mantido
+T109;T091;Cardiopatia no paciente cirúrgico de urgência;Avaliação de risco perioperatório;complementar;mantido
+T110;T151;Paciente cirrótico na cirurgia de urgência: estratificação (Child, MELD), coagulopatia, ascite e quando não operar;Avaliação de risco perioperatório;complementar;mantido
+T111;T089;Fluidoterapia, eletrólitos, equilíbrio ácido-base e distúrbios metabólicos no perioperatório;Suporte perioperatório e farmacologia;complementar;mantido
+T112;T090;Nutrição enteral e parenteral no paciente cirúrgico e síndrome de realimentação;Suporte perioperatório e farmacologia;eletivo;mantido
+T113;T093;Antibioticoterapia racional e stewardship em cirurgia de urgência;Suporte perioperatório e farmacologia;complementar;mantido
+T114;T094;Farmacologia do paciente cirúrgico de urgência: anticoagulação, antiagregação e reversão;Suporte perioperatório e farmacologia;complementar;mantido
+T115;T095;Abdome agudo na gestante: diagnóstico diferencial, imagem e preservação do binômio;Ginecologia e obstetrícia na urgência;complementar;mantido
+T116;T096;Emergências obstétricas hemorrágicas: reconhecimento do choque e ativação da obstetrícia;Ginecologia e obstetrícia na urgência;eletivo;mantido
+T117;T097;Ectópica rota e hemoperitônio: diagnóstico e preservação reprodutiva;Ginecologia e obstetrícia na urgência;eletivo;mantido
+T118;T098;Emergências ginecológicas não obstétricas: torção anexial e abscesso tubo-ovariano;Ginecologia e obstetrícia na urgência;eletivo;mantido
+T119;T138;Trauma na gestante: prioridades maternas, avaliação fetal e cesárea perimortem;Ginecologia e obstetrícia na urgência;eletivo;mantido
+T120;T099;Abdome agudo no lactente e na criança: apendicite, intussuscepção, Meckel e hérnia encarcerada;Cirurgia pediátrica de urgência;eletivo;mantido
+T121;T100;Trauma na criança: particularidades anatômicas e manejo não operatório;Cirurgia pediátrica de urgência;eletivo;mantido
+T122;T101;Endoscopia digestiva alta diagnóstica e terapêutica na urgência;Endoscopia digestiva na urgência;complementar;mantido
+T123;T102;Colonoscopia diagnóstica e terapêutica na urgência;Endoscopia digestiva na urgência;eletivo;mantido
+T124;T103;Complicações de procedimentos endoscópicos;Endoscopia digestiva na urgência;eletivo;mantido
+T125;T154;Emergências esofágicas não traumáticas: síndrome de Boerhaave, corpo estranho e ingestão cáustica;Endoscopia digestiva na urgência;complementar;mantido
+T126;T106;Cirurgia bariátrica e metabólica na urgência;MIS e cirurgia especializada na urgência;complementar;mantido
+T127;T108;Complicações de cirurgia videolaparoscópica e robótica;MIS e cirurgia especializada na urgência;complementar;mantido
+T128;T109;Laparoscopia no abdome agudo não traumático e videolaparoscopia no trauma;MIS e cirurgia especializada na urgência;eletivo;mantido
+T129;T113;Sistemas de trauma, triagem, incidente com múltiplas vítimas e incidente químico, biológico, radiológico e nuclear;Auditoria, governança e sistemas;complementar;mantido
+T130;T114;Auditoria de protocolos, indicadores de qualidade das diretrizes e escores de trauma e de cirurgia de urgência (RTS, ISS, TRISS, AAST);Auditoria, governança e sistemas;complementar;escopo ampliado
+T131;T115;Revisão de mortalidade e morbidade: método, condução e aprendizado institucional;Auditoria, governança e sistemas;complementar;mantido
+T132;T116;Telemedicina, regulação e transferência inter-hospitalar em trauma;Auditoria, governança e sistemas;complementar;mantido
+T133;;Registro de trauma, vigilância e painéis de desempenho do serviço: da ficha ao indicador;Auditoria, governança e sistemas;complementar;novo
+T134;;Custos e economia em saúde na urgência: custo-efetividade de protocolos, desperdício e o argumento financeiro de uma diretriz;Auditoria, governança e sistemas;eletivo;novo
+T135;T117;A pergunta clínica estruturada: PICO, PECO e a construção da pergunta que a literatura pode responder;Medicina baseada em evidências — ler e entender;eletivo;mantido
+T136;T118;Desenhos de estudo em cirurgia: ensaio clínico, coorte, caso-controle, série de casos e registro;Medicina baseada em evidências — ler e entender;eletivo;mantido
+T137;T119;Medidas de efeito e de erro: risco relativo, razão de chances, hazard ratio, NNT, intervalo de confiança, poder, valor de p e vieses da literatura cirúrgica;Medicina baseada em evidências — ler e entender;eletivo;mantido
+T138;T121;Revisão sistemática, metanálise e qualidade do relato: forest plot, risco de viés, PRISMA, CONSORT, STROBE e IDEAL;Medicina baseada em evidências — julgar e aplicar;eletivo;escopo ampliado
+T139;T122;Da evidência à decisão: GRADE, força da recomendação e aplicabilidade ao meu paciente;Medicina baseada em evidências — julgar e aplicar;eletivo;escopo ampliado
+T140;T123;Diretrizes clínicas: leitura crítica, adaptação e elaboração (AGREE II, ADAPTE, GRADE), conflito de interesse e sociedades que discordam;Medicina baseada em evidências — julgar e aplicar;eletivo;escopo ampliado
+T141;;Do tema ao projeto de pesquisa: pergunta, protocolo, CEP e Plataforma Brasil, LGPD, registro de dados e publicação;Medicina baseada em evidências — julgar e aplicar;eletivo;novo
+T142;T127;Aprendizagem do adulto e estratégias instrucionais na residência: aula expositiva, aprendizagem baseada em problemas, team-based learning e aula invertida;Ensino, preceptoria e avaliação;eletivo;mantido
+T143;T130;Preceptoria à beira do leito: autonomia supervisionada, prática deliberada e feedback que muda desempenho;Ensino, preceptoria e avaliação;eletivo;escopo ampliado
+T144;T131;Avaliação do residente: instrumentos, validade, construção de questões e rubricas e análise psicométrica;Ensino, preceptoria e avaliação;eletivo;escopo ampliado
+T145;T133;Currículo por competências: marcos de progressão, entrustable professional activities e avaliação por observação direta;Ensino, preceptoria e avaliação;eletivo;mantido
+T146;T134;Ensino e certificação de procedimentos: laboratório, simulação, transferência para o ambiente real e medida da habilidade;Ensino, preceptoria e avaliação;eletivo;escopo ampliado
+T147;T135;Desenvolvimento docente, mentoria, burnout e apoio institucional ao preceptor e ao residente;Ensino, preceptoria e avaliação;eletivo;mantido
+T148;;Pesquisa em educação médica: como avaliar o próprio curso (Kirkpatrick, desenho, instrumentos e ética);Ensino, preceptoria e avaliação;eletivo;novo
+T149;T143;Governança compartilhada na sala de emergência, limites de escopo e transferência de cuidado;Governança compartilhada e saúde do profissional;eletivo;mantido
+T150;;Organização do serviço de cirurgia de urgência (acute care surgery): escala, sala dedicada, fluxo do paciente e superlotação;Governança compartilhada e saúde do profissional;complementar;novo
+;T078;fundido em T077 (hoje T094);;;fundido
+;T144;fundido em T143 (hoje T149);;;fundido
+;T145;fundido em T135 (hoje T147);;;fundido
+;T146;fundido em T081 (hoje T097);;;fundido
+;T147;fundido em T009 (hoje T011);;;fundido
+;T092;fundido em T056 (hoje T074);;;fundido
+;T057;fundido em T089 (hoje T111);;;fundido
+;T080;fundido em T079 (hoje T095);;;fundido
+;T120;fundido em T119 (hoje T137);;;fundido
+;T124;fundido em T123 (hoje T140);;;fundido
+;T128;fundido em T127 (hoje T142);;;fundido
+;T126;fundido em T121 (hoje T138);;;fundido
+;T125;fundido em T122 (hoje T139);;;fundido
+;T129;fundido em T130 (hoje T143);;;fundido
+;T132;fundido em T131 (hoje T144);;;fundido
+;T150;fundido em T134 (hoje T146);;;fundido
