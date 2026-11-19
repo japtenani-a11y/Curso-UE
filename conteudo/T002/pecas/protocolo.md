@@ -1,6 +1,6 @@
 > RASCUNHO para revisão (versão 1.1, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada em cada diretriz de origem.
 
-# T002 — Proposta de guia de atendimento: via aérea no traumatizado, via aérea falha e cricotireoidostomia
+# T002 — Proposta de guia de atendimento: via aérea definitiva no traumatizado na sala de trauma
 
 > PROPOSTA para avaliação da diretoria e validação pelas equipes listadas em "Equipes para validação". Não é norma vigente nem diretriz validada.
 
