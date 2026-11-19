@@ -1,6 +1,6 @@
 # CUT · Revisão dos 39 temas das aulas ao vivo
 
-Versão 0.1 · 19/11/2026 · Proposta para a coordenação, ainda não aplicada.
+Versão 1.0 · 19/11/2026 · As quatro trocas foram aprovadas pela coordenação em 19/11/2026 e aplicadas (SQL 53, 65 e 92; calendário em `docs/calendario_aulas_2027_2028.md`).
 
 ## O que foi conferido
 
@@ -38,7 +38,7 @@ três casos integradores (T088, T089, T094) continuam: são o formato que mais a
 | T041 Trauma raquimedular | A conduta do cirurgião geral (proteção, avaliação, choque neurogênico) já está no T001; o resto é da ortopedia e da neurocirurgia. Nenhum tema depende dele. |
 | T030 Trauma vascular cervical | Sobrepõe-se ao T044 (cervical penetrante e estruturas aerodigestivas), que fica e passa a cobrir o essencial do vascular cervical. |
 
-## Ajustes que a troca exige
+## Ajustes feitos com a troca
 
 - **Árvore:**
   - T044 deixa de depender do T030 e passa a depender do T002 (via aérea) e do T004 (choque).
