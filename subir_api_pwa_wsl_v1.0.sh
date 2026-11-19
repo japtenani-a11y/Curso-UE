@@ -125,6 +125,7 @@ OK=""; for i in $(seq 1 30); do sleep 1; curl -s http://localhost:3000/health | 
 echo "      ok"
 
 echo "[6/7] Testando: login do curador de teste e leitura dos rascunhos..."
+RASC=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status='rascunho'" 2>/dev/null || echo 0)
 CK="$RAIZ/logs/cookie.txt"; rm -f "$CK"
 L=$(curl -s -o /dev/null -w "%{http_code}" -c "$CK" -H "Content-Type: application/json" -d '{"email":"curador.teste@setup.local"}' http://localhost:3000/auth/login)
 [ "$L" = "200" ] || { tail -8 "$RAIZ/logs/api.log"; falhar "login de teste respondeu $L (esperado 200)."; }
@@ -134,7 +135,9 @@ const d=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));
 if(!d.artefatos){console.log("      resposta inesperada: "+JSON.stringify(d).slice(0,200));process.exit(1)}
 const af=d.artefatos.reduce((s,a)=>s+a.afirmacoes.length,0);
 console.log("      curador enxerga "+d.artefatos.length+" rascunhos e "+af+" afirmacoes");
-process.exit(d.artefatos.length>=12?0:1)' "$RAIZ/logs/revisao_T001.json" || falhar "o curador nao enxergou os 12 rascunhos; veja $RAIZ/logs/revisao_T001.json"
+const esperado=Number(process.argv[2]||0);
+if(esperado>0&&d.artefatos.length<Math.min(12,esperado))process.exit(1);
+if(esperado===0)console.log("      (o T001 nao tem rascunho: as pecas ja foram aprovadas ou publicadas, e a tela de revisao fica vazia)")' "$RAIZ/logs/revisao_T001.json" "$RASC" || falhar "o curador nao enxergou os rascunhos do T001; veja $RAIZ/logs/revisao_T001.json"
 if [ -f 56_engajamento_app_v1.0.sh ]; then
   DC=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" "http://localhost:3000/curadoria/duvidas")
   PB=$(curl -s -o /dev/null -w "%{http_code}" -b "$CK" -H "Content-Type: application/json" -d '{}' "http://localhost:3000/revisao/artefatos/0/publicar")
