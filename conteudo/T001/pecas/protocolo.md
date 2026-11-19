@@ -4,7 +4,7 @@
 
 Diretriz clínica, fluxo de atendimento e regulação, qualidade e segurança do paciente.
 
-> RASCUNHO para revisão (versão 2.1, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. Reescrita no padrão de `docs/diretriz_do_tema.md`. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
+> RASCUNHO para revisão (versão 2.1, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
 
 ## Escopo e população
 
@@ -168,7 +168,7 @@ A linha de cuidado vai do aviso de chegada à avaliação terciária. Tempo-alvo
 
 - **Entrada.** O caso chega pela central de regulação de urgência, pelo atendimento pré-hospitalar, por demanda espontânea ou por transferência de outro hospital. O aviso prévio vai direto à sala de trauma por um canal único, definido na "Adaptação local".
 - **Aceite de transferência.** Contato médico a médico, com o líder ou o cirurgião responsável; o caso é aceito pelo recurso que o paciente precisa, não pelo leito vago. Registrar quem aceitou e a hora.
-- **Transferência para fora.** Quando falta recurso no serviço (tomografia, radiologia intervencionista, especialidade), transferir depois da estabilização possível, com contato médico a médico, relatório escrito, imagens e transporte com o nível de suporte que o paciente exige. Normas de regulação e de transporte inter-hospitalar: ver a pasta `LegislacaoBR` e conferir a versão vigente.
+- **Transferência para fora.** Quando falta recurso no serviço (tomografia, radiologia intervencionista, especialidade), transferir depois da estabilização possível, com contato médico a médico, relatório escrito, imagens e transporte com o nível de suporte que o paciente exige. Normas de regulação e de transporte inter-hospitalar: refs. 24 e 25 (conferir a versão vigente).
 - **Regulação interna de leitos.** A vaga de UTI, de centro cirúrgico e de enfermaria é pedida ao núcleo interno de regulação (ou equivalente) logo na decisão de destino, não no fim do atendimento.
 
 ### Passagem de cuidado
@@ -234,7 +234,7 @@ Sempre como totais do mês, sem nenhum dado que identifique paciente. Metas com 
 | Torniquete esquecido | Hora não anotada, troca de equipe | Hora do torniquete registrada e limite de 90 minutos (R2) [D7, D59, D60] | Comunicação efetiva | Isquemia por torniquete |
 | Medicamento em paciente sem história | Alergia desconhecida, anticoagulante não informado | Perguntar e registrar alergias e medicamentos na avaliação secundária [D20]; exceções do anticoagulado (T007) | Segurança na prescrição e administração de medicamentos | Reação adversa grave |
 
-Evento adverso grave e óbito evitável: notificação e análise conforme a norma de segurança do paciente vigente (ver a pasta `LegislacaoBR` e conferir a versão vigente). A notificação serve para aprender, não para punir.
+Evento adverso grave e óbito evitável: notificação ao núcleo de segurança do paciente e análise, conforme as refs. 22 e 23 (conferir a versão vigente). A notificação serve para aprender, não para punir.
 
 ## Adaptação local
 
@@ -259,7 +259,7 @@ Sem tomografia no local: imagem dirigida e transferência regulada depois da est
 
 ## Implantação
 
-A implantação segue o modelo de maturidade do curso (`docs/maturidade_implantacao.md`): seis níveis, do serviço sem protocolo (nível 0) ao serviço com tudo implantado e desempenho no percentil 90 (P90) da referência internacional (nível 5). Só se passa ao nível seguinte quando os critérios de saída do nível atual se mantêm pelo período pedido, com o número mínimo de casos definido na "Adaptação local". As metas marcadas como proposta são do curso, para o serviço confirmar.
+A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serviço sem protocolo (nível 0) ao serviço com tudo implantado e desempenho no percentil 90 (P90) da referência internacional (nível 5). Só se passa ao nível seguinte quando os critérios de saída do nível atual se mantêm pelo período pedido, com o número mínimo de casos definido na "Adaptação local". As metas marcadas como proposta são do curso, para o serviço confirmar.
 
 ### Níveis de maturidade deste guia
 
@@ -303,17 +303,94 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 
 ## Base legal e ética
 
-- Paciente inconsciente sem responsável: o atendimento de urgência não espera consentimento; registrar a situação no prontuário (Código de Ética Médica, Resolução CFM 2.217/2018; prontuário, Resolução CFM 1.638/2002).
-- Recusa de transfusão por adulto capaz: respeitar a decisão, documentar e oferecer as alternativas (Resolução CFM 2.232/2019; STF, Temas 952 e 1069, 2024). Conferir a vigência na pasta `LegislacaoBR`.
+- Paciente inconsciente sem responsável: o atendimento de urgência não espera consentimento; registrar a situação no prontuário (refs. 18 e 19).
+- Recusa de transfusão por adulto capaz: respeitar a decisão, documentar e oferecer as alternativas (refs. 20 e 21; conferir a vigência).
 - Suspeita de violência: notificação compulsória e comunicação conforme a lei (T086).
 
 ## Método e fontes
 
-- **Busca.** A busca do tema em `BUSCAS_PUBMED_150_temas.txt`, com filtro de diretriz dos últimos 10 anos, e as fontes já guardadas no tema.
-- **Diretrizes usadas.** Consenso WSES e Panamerican Trauma Society 2025 [G1 a G7]; protocolo AAST/ACS-COT de ressuscitação de controle de danos [G8, G9]; consenso de indicadores de qualidade da WSES [G10, G11]. Protocolos do serviço: imagem no politrauma (versão preliminar, em validação) [P1 a P15], transfusão maciça [P16, P17] e ficha da sala de trauma [P18 a P22].
-- **Livros-texto.** Mattox, Trauma, 9ª ed. (2021), e manual do European Trauma Course (códigos D).
-- **Graduação.** Força e certeza propostas pelo grupo, pelo GRADE, a partir do desenho dos estudos citados em cada fonte; precisam ser conferidas contra a graduação publicada em cada diretriz de origem.
-- **Conflito entre fontes.** Vale a mais recente, pela data de publicação; no mesmo ano, diretriz, revisão sistemática, ensaio, livro.
+**Como foi feito.** Este guia adapta diretrizes e consensos publicados ao contexto do serviço, sem refazer revisões sistemáticas. Os passos foram:
+
+1. **Pergunta clínica e escopo**, definidos pela coordenação do curso (seção "Escopo e população").
+2. **Busca na literatura (PubMed)**, atualizada em 13/11/2026 (510 registros), com a linha abaixo, rodada duas vezes: a primeira sem filtro de desenho, para a varredura ampla; a segunda com o filtro de desenho, para localizar ensaios, revisões sistemáticas e diretrizes.
+
+   Linha de busca:
+   `("advanced trauma life support"[tiab] OR "ATLS"[tiab] OR "primary survey"[tiab] OR "xABCDE"[tiab] OR "ABCDE approach"[tiab]) AND (trauma[tiab] OR "wounds and injuries"[mh]) AND (2016:2026[dp]) AND (english[la] OR portuguese[la] OR spanish[la]) AND humans[mh]`
+
+   Filtro de desenho (segunda passada), acrescentado ao fim da linha:
+   `AND ("randomized controlled trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR guideline[ti])`
+
+3. **Diretrizes e consensos de sociedades** (WSES, Panamerican Trauma Society, AAST, ACS-COT, EAST, SBAIT e as das especialidades envolvidas), localizados pela segunda passada e nas páginas das sociedades, publicados nos últimos 10 anos. A qualidade metodológica de cada diretriz foi considerada pelos domínios do AGREE II (ref. 17).
+4. **Livros-texto de referência** (refs. 4 e 5), usados para doutrina, definições e técnica, sempre citados por capítulo.
+5. **Protocolos e fichas do serviço** (refs. 12 a 15), usados para os critérios locais.
+6. **Extração.** Cada afirmação do guia foi ligada ao trecho literal da fonte que a sustenta; os códigos entre colchetes no texto ([G#] diretriz ou consenso, [A#] artigo, [D#] livro-texto, [P#] protocolo ou ficha do serviço) remetem à lista de referências abaixo.
+7. **Graduação.** Força da recomendação (forte ou condicional) e certeza da evidência (alta, moderada, baixa, muito baixa) pelo sistema GRADE (ref. 16), propostas pelo grupo de elaboração a partir do desenho dos estudos de cada fonte; precisam ser conferidas pelos revisores contra a graduação publicada em cada diretriz de origem.
+8. **Conflito entre fontes.** Vale a mais recente pela data de publicação; no mesmo ano, diretriz, depois revisão sistemática, depois ensaio clínico, depois livro-texto. Cada conflito fica registrado na linha "Divergência" da recomendação.
+9. **Revisão.** Pré-revisão de forma e conferência de cada afirmação contra a fonte, seguidas da revisão por cirurgiões do curso e da validação pelas equipes listadas em "Equipes para validação".
+
+### Referências
+
+**Diretrizes e consensos**
+
+1\. FERRADA, P. et al. Prioritizing circulation over airway to improve survival in trauma patients with exsanguinating injuries: a World Society of Emergency Surgery-Panamerican Trauma consensus statement. **World Journal of Emergency Surgery**, v. 20, n. 1, p. 47, 2025. DOI: 10.1186/s13017-025-00618-2. PMID: 40457450. [G1 a G7]
+
+2\. LAGRONE, L. N. et al. American Association for the Surgery of Trauma/American College of Surgeons Committee on Trauma: clinical protocol for damage-control resuscitation for the adult trauma patient. **Journal of Trauma and Acute Care Surgery**, v. 96, n. 3, p. 510-520, 2024. DOI: 10.1097/TA.0000000000004088. PMID: 37697470. [G8, G9]
+
+3\. COCCOLINI, F. et al. Trauma quality indicators: internationally approved core factors for trauma management quality evaluation. **World Journal of Emergency Surgery**, v. 16, n. 1, p. 6, 2021. DOI: 10.1186/s13017-021-00350-7. PMID: 33622373. [G10, G11]
+
+**Livros-texto**
+
+4\. FELICIANO, D. V.; MATTOX, K. L.; MOORE, E. E. (ed.). **Trauma**. 9. ed. New York: McGraw-Hill, 2021. Capítulos citados: 13 (avaliação inicial), 15 (choque), 16 (coagulopatia), 39 (pelve), 44 (membro inferior), 45 (vasos periféricos), 48 (trauma pediátrico) e 57 (terapia intensiva). [D1 a D60]
+
+5\. EUROPEAN TRAUMA COURSE. **The European Trauma Course Manual**. Edição 4.0. Capítulo 1: Human factors, non-technical skills and the principles of crew resource management. [ano a conferir na ficha catalográfica]. [D70, D71]
+
+**Artigos**
+
+6\. GYEDU, A. et al. Standardized trauma intake form with clinical decision support prompts improves care and reduces mortality for seriously injured patients in non-tertiary hospitals in Ghana: stepped-wedge cluster randomized trial. **British Journal of Surgery**, v. 110, n. 11, p. 1473-1481, 2023. DOI: 10.1093/bjs/znad253. PMID: 37612450. [A14]
+
+7\. WILD, H.; MOCK, C.; LIM, A. Implementation of the WHO Trauma Care Checklist: a qualitative analysis of facilitators and barriers to use. **International Journal of Surgery**, v. 83, p. 15-23, 2020. DOI: 10.1016/j.ijsu.2020.08.050. PMID: 32931975. [A16]
+
+8\. SANTORELLI, J. E. et al. Lung ultrasonography underdiagnoses clinically significant pneumothorax. **Surgery**, v. 176, n. 6, p. 1766-1770, 2024. DOI: 10.1016/j.surg.2024.08.013. PMID: 39304444. [A30]
+
+9\. PERLMAN, R. et al. A recommended early goal-directed management guideline for the prevention of hypothermia-related transfusion, morbidity, and mortality in severely injured trauma patients. **Critical Care**, v. 20, n. 1, p. 107, 2016. DOI: 10.1186/s13054-016-1271-z. PMID: 27095272. [A36]
+
+10\. KOK, D. et al. Delayed diagnosed injuries in trauma patients after initial trauma assessment with a total-body computed tomography scan. **Injury**, v. 55, n. 5, p. 111304, 2024. DOI: 10.1016/j.injury.2023.111304. PMID: 38171970. [A42]
+
+11\. BEAUGÉ, Y. et al. Checklist- and algorithm-based simulation training produce comparable improvements in teamwork-related shared mental models: a cluster-randomized study in trauma resuscitation teams. **European Journal of Trauma and Emergency Surgery**, v. 52, n. 1, p. 119, 2026. DOI: 10.1007/s00068-026-03161-0. PMID: 41925867. [A44]
+
+**Protocolos e documentos do serviço**
+
+12\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Unidade de Emergência. **Protocolo de imagem no paciente politraumatizado**. Versão preliminar, em validação. Ribeirão Preto, ago. 2026. Documento institucional, não publicado. [P1 a P15]
+
+13\. HOSPITAL DE BASE DE SÃO JOSÉ DO RIO PRETO. **Protocolo de transfusão maciça**. São José do Rio Preto, [s.d.]. Documento institucional, não publicado. [P16, P17]
+
+14\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA HB-FAMERP / HC-FMRP. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Versão 1.0. Documento controlado, não publicado. [P18 a P21]
+
+15\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026. [P22]
+
+**Método**
+
+16\. GUYATT, G. H. et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. **BMJ**, v. 336, n. 7650, p. 924-926, 2008.
+
+17\. BROUWERS, M. C. et al. AGREE II: advancing guideline development, reporting and evaluation in health care. **Canadian Medical Association Journal**, v. 182, n. 18, p. E839-E842, 2010.
+
+**Legislação e normas (conferir a versão vigente antes de adotar)**
+
+18\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.217, de 27 de setembro de 2018. Aprova o Código de Ética Médica.
+
+19\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.638, de 10 de julho de 2002. Define prontuário médico.
+
+20\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 2.232, de 17 de julho de 2019. Normas éticas para a recusa terapêutica e objeção de consciência.
+
+21\. SUPREMO TRIBUNAL FEDERAL. Temas 952 e 1069 da repercussão geral (recusa de transfusão de sangue por motivo religioso). Julgamento em 2024.
+
+22\. AGÊNCIA NACIONAL DE VIGILÂNCIA SANITÁRIA. Resolução da Diretoria Colegiada RDC nº 36, de 25 de julho de 2013. Ações para a segurança do paciente em serviços de saúde.
+
+23\. BRASIL. Ministério da Saúde. Portaria nº 529, de 1º de abril de 2013. Institui o Programa Nacional de Segurança do Paciente.
+
+24\. BRASIL. Ministério da Saúde. Portaria nº 2.048, de 5 de novembro de 2002. Regulamento técnico dos sistemas estaduais de urgência e emergência.
+
+25\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.672, de 9 de julho de 2003. Transporte inter-hospitalar de pacientes.
 
 ## Equipes para validação
 
@@ -353,5 +430,5 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 
 - Situação: proposta; entregue à diretoria em [data]; validação pelas equipes: a iniciar; adoção pelo serviço: pendente.
 - Versão 2.1, 19/11/2026: ampliada para guia de atendimento (fluxo e regulação, matriz de responsabilidades, indicadores com ficha técnica, monitoramento, segurança do paciente e implantação por níveis de maturidade, do 0 ao P90).
-- Versão 2.0, 19/11/2026: reescrita no padrão de diretriz clínica (recomendações graduadas, fluxograma, adaptação local, indicadores e governança). A versão anterior fica em `conteudo/T001/arquivo/protocolo_ate_2026-11-19.md`.
+- Versão 2.0, 19/11/2026: reescrita no padrão de diretriz clínica (recomendações graduadas, fluxograma, adaptação local, indicadores e governança). A versão anterior fica arquivada pela coordenação do curso.
 - Próxima revisão: novembro de 2028, ou antes se for publicada nova versão de uma das diretrizes de origem ou se o protocolo de imagem do serviço for aprovado.

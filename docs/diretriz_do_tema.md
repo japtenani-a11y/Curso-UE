@@ -127,8 +127,8 @@ recomendação que a sustenta ("R3").
 - **Regulação.** Em subseção própria: como o caso chega (central de regulação de urgência, atendimento
   pré-hospitalar, demanda espontânea, transferência de outro hospital), quem aceita, critérios de transferência
   para fora quando falta recurso (contato médico a médico, condições de transporte, documentação), e a regulação
-  interna de leitos (núcleo interno de regulação ou equivalente). Normas de regulação e transporte citadas pela
-  pasta `LegislacaoBR`, sempre com "conferir a versão vigente".
+  interna de leitos (núcleo interno de regulação ou equivalente). Normas de regulação e transporte vêm da
+  pasta de legislação do curso e entram no guia como referência numerada (ref. N), com "conferir a versão vigente".
 - **Passagem de cuidado.** Como o caso é passado entre equipes (modelo estruturado do serviço; o curso sugere um,
   marcado como sugestão).
 
@@ -156,7 +156,7 @@ identificada, atraso além do tempo-alvo); auditoria por amostragem; relatório 
 fluxo), protocolo básico de segurança relacionado (identificação do paciente, comunicação efetiva, segurança na
 prescrição e administração de medicamentos e hemocomponentes, cirurgia segura, prevenção de quedas, prevenção de
 lesão por pressão, higiene das mãos e prevenção de infecção) e o que notificar ao núcleo de segurança do paciente.
-Evento grave: notificação e análise conforme a norma vigente (pasta `LegislacaoBR`).
+Evento grave: notificação e análise conforme a norma vigente, citada como referência numerada.
 
 ### Bloco de aplicação no serviço
 
@@ -185,16 +185,23 @@ recomendações fortes.
 ### Base legal e ética (quando o tema tiver)
 
 Consentimento, recusa, menor e incapaz, notificação compulsória, comunicação à autoridade, documentação obrigatória,
-morte encefálica e doação. Cita a norma e o artigo, a partir de `livros\LegislacaoBR\` (ECA, Lei Maria da Penha,
+morte encefálica e doação. Cita a norma e o artigo como referência numerada (ref. N) em "Método e fontes" (ECA, Lei Maria da Penha,
 Código de Ética Médica, Resoluções CFM 2.232/2019, 1.995/2012, 1.638/2002 e 2.173/2017, LGPD, Portaria de
 Consolidação 4/2017 e outras). Lei e resolução podem ser citadas pelo texto do artigo; conferir a versão vigente.
 
 ### Bloco de governança
 
-**Método e fontes.** Como as diretrizes foram escolhidas: a busca do tema (`BUSCAS_PUBMED_150_temas.txt`, filtro de
-diretriz dos últimos 10 anos), as diretrizes encontradas e por que cada uma entrou ou saiu (data, escopo, qualidade
-metodológica, por exemplo pelos domínios do AGREE II), e como a força e a certeza foram atribuídas. Lista as fontes
-com o código de `fontes.csv`.
+**Método e fontes.** Escrita para o leitor do serviço, sem citar nome de arquivo, pasta ou documento interno do curso.
+(1) O método, em passos numerados: pergunta e escopo; busca no PubMed com a data e o número de registros; as duas
+passadas (varredura ampla e filtro de desenho); diretrizes e consensos de sociedade dos últimos 10 anos, com a
+qualidade avaliada pelos domínios do AGREE II; livros-texto; protocolos do serviço; extração com trecho literal;
+graduação pelo GRADE; regra de conflito entre fontes; revisão. (2) A **linha de busca do PubMed escrita por inteiro**,
+em bloco de código, e o filtro de desenho da segunda passada. (3) A subseção `### Referências`, em ABNT, numerada e
+agrupada (diretrizes e consensos; livros-texto, com os capítulos usados; artigos; protocolos e documentos do serviço;
+método; legislação e normas). Cada referência traz DOI e PMID quando houver e, no fim, os códigos de âncora que ela
+sustenta (ex.: "[G1 a G7]"); no texto, as âncoras continuam entre colchetes e a legislação é citada como "ref. N".
+Lei e resolução com "conferir a versão vigente". Documento institucional não publicado entra como tal. Dado
+bibliográfico que não puder ser conferido (ano de edição, por exemplo) fica como `[a conferir]`, nunca inventado.
 
 **Equipes para validação.** As equipes do hospital que precisam validar a diretriz antes da adoção, conforme a
 pertinência ao tema, cada uma com o motivo (que recomendação ou etapa do fluxo depende dela) e se valida o texto
