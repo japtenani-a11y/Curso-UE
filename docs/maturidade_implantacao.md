@@ -91,7 +91,8 @@ o nível seguinte quando cumpre os critérios de saída do nível em que está. 
 A seção "## Implantação" de cada guia traz:
 1. a tabela do tema, uma linha por nível (0 a 5), com o objetivo, os marcadores e indicadores do tema e o critério de
    saída daquele nível;
-2. o plano de execução da etapa seguinte (o que entregar, quem responde, prazo sugerido);
+2. o plano de execução passo a passo de todos os níveis, do 0 ao 5, incluindo a manutenção do nível 5 (o que entregar,
+   quem responde, prazo sugerido, nível ao terminar);
 3. a referência externa para o P90 de cada indicador, com fonte e ano, ou a marca de que não há referência publicada;
 4. os materiais de apoio e as barreiras previsíveis.
 

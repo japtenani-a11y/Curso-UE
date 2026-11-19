@@ -124,6 +124,7 @@ BEGIN
       IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Origem: ..." (diretriz de onde veio).', n - k); RETURN NEXT; END IF;
       IF c !~* '\n>\s*PROPOSTA' THEN gravidade := 'aviso'; mensagem := 'Diretriz: falta a faixa "> PROPOSTA para avaliação da diretoria e validação pelas equipes..." logo abaixo do título (a diretriz é sempre proposta).'; RETURN NEXT; END IF;
       IF c !~* 'nível 5' OR c !~* 'nível 0' THEN gravidade := 'aviso'; mensagem := 'Guia de atendimento: a seção "Implantação" deve trazer os níveis de maturidade 0 a 5 (docs/maturidade_implantacao.md).'; RETURN NEXT; END IF;
+      IF c !~* 'passo a passo \(do nível 0 ao nível 5\)' THEN gravidade := 'aviso'; mensagem := 'Guia de atendimento: a execução passo a passo deve ir do nível 0 ao nível 5, com o título "Execução passo a passo (do nível 0 ao nível 5)".'; RETURN NEXT; END IF;
       IF c !~ '```mermaid' THEN gravidade := 'aviso'; mensagem := 'Diretriz: o fluxograma deve vir num bloco ```mermaid (flowchart).'; RETURN NEXT; END IF;
     END IF;
 

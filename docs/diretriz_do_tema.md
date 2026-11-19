@@ -178,7 +178,7 @@ fica em branco no guia, nunca preenchido por suposição.
 **Implantação.** Pelo modelo de maturidade do curso (`docs/maturidade_implantacao.md`): níveis 0 (sem protocolo) a 5
 (excelência, com processo e resultado ajustado no P90 da referência internacional). A seção traz: (1) a tabela do tema,
 uma linha por nível, com objetivo, marcadores e indicadores do tema e o critério para passar ao nível seguinte;
-(2) a execução passo a passo do nível 0 ao 2 (o que entregar, quem responde, prazo sugerido, nível ao terminar);
+(2) a execução passo a passo do nível 0 ao nível 5, sem parar no 2 (o que entregar, quem responde, prazo sugerido, nível ao terminar), com a passagem de cada nível ao seguinte e a manutenção do nível 5 (decisão da coordenação de 19/11/2026);
 (3) a referência externa do P90 de cada indicador, com fonte e ano, ou a marca de que não há referência publicada
 carregada (nunca um número inventado); (4) materiais de apoio e barreiras previsíveis.
 

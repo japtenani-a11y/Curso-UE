@@ -6,7 +6,7 @@ Diretriz clínica, fluxo de atendimento e regulação, qualidade e segurança do
 
 Proposta dirigida à Unidade de Emergência do Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto da USP (UE-HCFMRP), com a adaptação local preenchida pela coordenação em 19/11/2026.
 
-> RASCUNHO para revisão (versão 2.3, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
+> RASCUNHO para revisão (versão 2.4, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
 
 ## Escopo e população
 
@@ -283,7 +283,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 | Nível | Objetivo | Marcadores e indicadores do T001 | Critério para passar ao nível seguinte |
 |---|---|---|---|
 | 0. Sem protocolo | Saber de onde parte | Diagnóstico da sala de trauma: ficha existente, cirurgião 24 h, tomografia 24 h, radiologia intervencionista, protocolo de transfusão maciça, número de atendimentos por mês; responsável pelo guia nomeado | Proposta entregue à diretoria e equipes da validação convidadas |
-| 1. Formalizado | Regra escrita, aceita e conhecida | Pareceres das equipes; "Adaptação local" preenchida; ficha alinhada ao guia [P18 a P21]; percentual da equipe treinada; linha de base dos 12 indicadores | Guia aprovado com data e instância; ≥ 80% da equipe fixa treinada (proposta); 3 meses de linha de base |
+| 1. Formalizado | Regra escrita, aceita e conhecida | Pareceres das equipes; "Adaptação local" preenchida; ficha alinhada ao guia [P18 a P21]; percentual da equipe treinada; linha de base dos 14 indicadores | Guia aprovado com data e instância; ≥ 80% da equipe fixa treinada (proposta); 3 meses de linha de base |
 | 2. Em uso | Fazer o que está escrito, sempre, e registrar | Líder definido antes da chegada; passagem MIST; via aérea registrada; temperatura na admissão; cinta pélvica; time out antes de sair da sala | Campos-chave da ficha preenchidos em ≥ 90% e esses 6 indicadores na meta por 3 meses seguidos |
 | 3. Gerenciado | Corrigir desvios de forma sistemática | Os 14 indicadores no painel; ciclos de melhoria abertos e concluídos; concordância da auditoria de fichas; eventos notificados; casos revistos na morbimortalidade | Todos os indicadores de processo na meta por 6 meses; todo gatilho com plano; auditoria com concordância ≥ 90% (proposta) |
 | 4. Comparado | Saber onde o serviço está em relação aos melhores | Participação em registro de trauma com ajuste de risco; mortalidade ajustada pela gravidade; lesão com diagnóstico tardio; porta-tomografia comparada | 12 meses de dados ajustados; indicadores comparáveis na mediana da referência ou acima |
@@ -291,7 +291,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 
 **Referência para o P90.** [percentil 90 sem referência publicada carregada neste tema: pedido à coordenação, o relatório de benchmarking com ajuste de risco do registro de trauma de referência e, se houver, valores de referência para os indicadores da WSES [G10, G11]. Até lá, usar a meta interna sustentada por 12 meses.]
 
-### Execução passo a passo (do nível 0 ao nível 2)
+### Execução passo a passo (do nível 0 ao nível 5)
 
 | Passo | O que entregar | Quem responde | Prazo sugerido | Nível ao terminar |
 |---|---|---|---|---|
@@ -303,8 +303,17 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 | 6. Treinamento | Aula, simulação no local com a equipe da sala [A44] e material de bolso | Coordenação do serviço e enfermagem | Antes do piloto | 1 |
 | 7. Piloto | Guia em uso, com acompanhamento mensal | Líderes do atendimento | 3 meses | 1 → 2 |
 | 8. Rotina | Ajustes do piloto incorporados; nova versão para aprovação | Diretoria e comissão de qualidade | Fim do piloto | 2 |
+| 9. Rotina sustentada | Campos-chave da ficha em ≥ 90% e os 6 indicadores do nível 2 na meta por 3 meses seguidos; reunião mensal de morbimortalidade com os casos do tema | Líderes do atendimento e enfermagem da sala | Meses 1 a 3 da rotina | 2 → 3 |
+| 10. Painel mensal | Os 14 indicadores no painel, com gráfico de controle, número de casos do mês e gatilho de ação (abaixo da meta por 3 meses seguidos) | Comissão de qualidade | A partir do mês 4 da rotina | 3 |
+| 11. Ciclos de melhoria | Para cada gatilho disparado, um ciclo planejar, fazer, estudar e agir, com responsável e prazo | Responsável pelo guia | Contínuo | 3 |
+| 12. Auditoria e segurança | Auditoria trimestral de uma amostra de fichas contra o prontuário (preenchimento e horários); eventos adversos notificados ao núcleo de segurança do paciente e analisados; relatório semestral à diretoria | Comissão de qualidade e núcleo de segurança do paciente | A cada 3 meses; relatório a cada 6 | 3 |
+| 13. Gerenciado sustentado | Todos os indicadores de processo na meta por 6 meses seguidos; todo gatilho com plano registrado; concordância da auditoria ≥ 90% (proposta) | Comissão de qualidade | 6 meses | 3 → 4 |
+| 14. Registro com ajuste de risco | Banco do serviço atualizado (hoje com dados até 2021) e codificação das lesões (ISS, RTS, TRISS) para o cálculo da mortalidade ajustada; entrada em registro de trauma ou programa de comparação externa, se o serviço decidir | Coordenação do serviço e equipe do registro | 6 a 12 meses | 4 |
+| 15. Comparação externa | Mortalidade ajustada (razão observado/esperado e estatística W pelo TRISS), lesão com diagnóstico tardio e porta-tomografia comparados com a referência; posição do serviço (percentil) em cada indicador comparável | Comissão de qualidade | 12 meses de dados ajustados | 4 → 5 |
+| 16. Plano para o P90 | Para cada indicador abaixo do P90 da referência, um plano específico; para os que já estão no P90, como manter | Responsável pelo guia e diretoria | Revisão anual | 5 |
+| 17. Excelência sustentada | Processo e resultado ajustado no P90 por 12 meses seguidos; verificação ou acreditação externa, quando houver; lacunas do guia transformadas em projetos (banco de projetos do curso); ensino a outros serviços | Diretoria, coordenação do serviço e coordenação do curso | 12 meses e depois contínuo | 5 (manter) |
 
-Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissão de qualidade com os critérios da tabela acima.
+Em qualquer nível, um indicador de saída abaixo da meta por 3 meses seguidos volta ao nível anterior naquele indicador, com plano de melhoria, até recuperar. Os prazos são sugestões do curso; o serviço ajusta na "Adaptação local".
 
 - **Materiais de apoio.** Ficha 1 · Sala de trauma, na versão proposta pelo curso [P18], cartaz com o quadro-resumo e o fluxograma, checklist do tema (peça "checklist") e cartão de bolso.
 - **O que ajuda a implantar.** Um responsável institucional pelo guia, adaptação ao contexto do serviço e integração à rotina e à ficha [A16].
@@ -461,6 +470,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 ## Revisão
 
 - Situação: proposta; entregue à diretoria em [data]; validação pelas equipes: a iniciar; adoção pelo serviço: pendente.
+- Versão 2.4, 19/11/2026: execução passo a passo da implantação estendida do nível 0 ao nível 5, com a manutenção do nível 5.
 - Versão 2.3, 19/11/2026: conferida contra o ATLS 11 (xABCDE no lugar de CAB, torniquete, cristaloide, ácido tranexâmico, índice de choque, cinta e intraósseo); critérios de acionamento da equipe de trauma em níveis, a partir dos padrões de 2022 do ACS, com dois indicadores novos; Ficha 1 tratada como proposta ainda não implantada; transfusão maciça sem citar outros serviços.
 - Versão 2.1, 19/11/2026: ampliada para guia de atendimento (fluxo e regulação, matriz de responsabilidades, indicadores com ficha técnica, monitoramento, segurança do paciente e implantação por níveis de maturidade, do 0 ao P90).
 - Versão 2.0, 19/11/2026: reescrita no padrão de diretriz clínica (recomendações graduadas, fluxograma, adaptação local, indicadores e governança). A versão anterior fica arquivada pela coordenação do curso.
