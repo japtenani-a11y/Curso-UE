@@ -113,6 +113,16 @@ if 'path="/aluno/aulas"' not in s:
 editar('components/Layout.tsx',
        "    { href: '/aluno', rotulo: 'Início', icone: '⌂', barra: true, topo: true },\n",
        "    { href: '/aluno', rotulo: 'Início', icone: '⌂', barra: true, topo: true },\n    { href: '/aluno/aulas', rotulo: 'Aulas', icone: '▶', barra: true, topo: true },\n",
-       "href: '/aluno/aulas'")
+       "href: '/aluno/aulas', rotulo: 'Aulas', icone: '▶', barra: true, topo: true },\n    { href: '/aluno/pendencias'")
+# menu e Inicio do coordenador e dos revisores (pedido de 19/11/2026)
+editar('components/Layout.tsx',
+       "      { href: '/curador/revisao', rotulo: 'Revisão', icone: '✎', barra: true, topo: true },\n",
+       "      { href: '/curador/revisao', rotulo: 'Revisão', icone: '✎', barra: true, topo: true },\n      { href: '/aluno/aulas', rotulo: 'Aulas', icone: '▶', barra: true, topo: true },\n",
+       "      { href: '/aluno/aulas', rotulo: 'Aulas'")
+editar('pages/curador/Home.tsx',
+       "          {cartao('Revisão', `${r.rascunhos} rascunhos`, '/curador/revisao', `${r.publicados} peças publicadas`)}\n",
+       "          {cartao('Revisão', `${r.rascunhos} rascunhos`, '/curador/revisao', `${r.publicados} peças publicadas`)}\n"
+       "          {cartao('Aulas', 'Aulas publicadas', '/aluno/aulas', 'aula, slides e caso de cada tema, como o aluno vê')}\n",
+       "cartao('Aulas',")
 EOF
 echo "aulas disponiveis (pagina, cartao no Inicio e menu): pronto"
