@@ -252,7 +252,7 @@ for tipo, pc in pecas.items():
     for cod in [c for c in usados if c in afirm]:
         a = afirm[cod]
         L.append(f"""INSERT INTO conteudo.afirmacao (artefato_id, codigo, texto, fonte_arquivo, trecho_literal)
-SELECT a.artefato_id, '{cod}', {dq(a['texto'])}, {lit(a['fonte_arquivo'])}, {lit(a['trecho_literal'])}
+SELECT a.artefato_id, '{cod}', {dq(a['texto'])}, {lit(a['fonte_arquivo'])}, {dq(a['trecho_literal'] or '')}
   FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE {TEMA_SQL} AND a.tipo::text = '{tipo}'
    {"AND EXISTS (SELECT 1 FROM _imp WHERE _imp.tipo = '" + tipo + "')" if PARCIAL else ''}
    AND a.versao = (SELECT max(x.versao) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo = a.tipo)
