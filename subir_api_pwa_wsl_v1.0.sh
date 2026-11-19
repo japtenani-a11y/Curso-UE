@@ -95,10 +95,11 @@ for f in 37_banco_questoes_v1.0.sql 38_liberacao_v1.0.sql 39_ondas_teste_T001_v1
   if [ -f "$f" ]; then $SQL -f "$f" >> "$RAIZ/logs/banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/banco.log"; fi
 done
 N=$($SQL -At -c "SELECT count(*) FROM conteudo.afirmacao")
-R=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status='rascunho'")
+# pecas do T001 em qualquer situacao (rascunho, aprovada ou publicada): depois da revisao elas deixam de ser rascunho
+R=$($SQL -At -c "SELECT count(*) FROM conteudo.artefato a JOIN app.tema t USING (tema_id) WHERE replace(t.codigo,'-','')='T001' AND a.status::text <> 'arquivado'")
 T=$($SQL -At -c "SELECT count(*) FROM pg_proc WHERE proname='fn_sessao_teste'")
-echo "      rascunhos do T001: $R | afirmacoes carregadas: $N"
-[ "$R" -ge 12 ] || falhar "os rascunhos do T001 nao estao no banco. Rode antes o 31_importar_T001_rascunhos_v1.0.sql."
+echo "      pecas do T001 (rascunho, aprovadas ou publicadas): $R | afirmacoes carregadas: $N"
+[ "$R" -ge 12 ] || falhar "as pecas do T001 nao estao no banco. Rode antes o 31_importar_T001_rascunhos_v1.0.sql."
 [ "$T" -ge 1 ] || falhar "funcao de login de teste (fn_sessao_teste) nao existe no banco."
 [ -n "${SO_PREPARAR:-}" ] && { echo "SO_PREPARAR: parando antes de instalar pacotes."; exit 0; }
 
