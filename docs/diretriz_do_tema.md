@@ -241,7 +241,7 @@ sociedades da origem) e o histórico das versões.
 - Números absolutos quando a fonte der (redução de risco, NNT), com a ressalva do desenho do estudo.
 - Linguagem de norma: frases curtas, verbo no início ("Administrar...", "Não realizar..."), sem marcas de texto de
   IA e sem emojis.
-- Tamanho: de 3.000 a 7.000 palavras. Conta como peça de aprofundamento no tempo de estudo; o quadro-resumo e o
+- Tamanho: de 3.000 a 9.000 palavras, contando tabelas e referências. Conta como peça de aprofundamento no tempo de estudo; o quadro-resumo e o
   fluxograma são o essencial para o plantão.
 
 ## PDF
