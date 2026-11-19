@@ -35,7 +35,7 @@ três casos integradores (T088, T089, T094) continuam: são o formato que mais a
 |---|---|
 | T010 Síndrome compartimental abdominal | É conteúdo estreito e encaixa no controle de danos (T009), que fica. Nenhum tema principal depende dele. |
 | T017 Transição toracoabdominal e diafragma | É conteúdo estreito, e boa parte da decisão passa a ser ensinada no T029 (penetrante). Nenhum tema depende dele. |
-| T041 Trauma raquimedular | A conduta do cirurgião geral (proteção, avaliação, choque neurogênico) já está no T001; o resto é da ortopedia e da neurocirurgia. Nenhum tema depende dele. |
+| T041 Trauma raquimedular | A parte do cirurgião geral (proteção da coluna e avaliação neurológica na avaliação primária) está no T001; o resto é sobretudo da ortopedia e da neurocirurgia. Nenhum tema depende dele. |
 | T030 Trauma vascular cervical | Sobrepõe-se ao T044 (cervical penetrante e estruturas aerodigestivas), que fica e passa a cobrir o essencial do vascular cervical. |
 
 ## Ajustes feitos com a troca
@@ -45,7 +45,8 @@ três casos integradores (T088, T089, T094) continuam: são o formato que mais a
   - T069 deixa de depender do T068 (eletivo) e passa a depender do T066 (sepse), que é tema principal.
   - As outras mães continuam: T029 ← T023, T007 ← T005, T050 ← T052.
 - **Calendário:** os quatro temas novos entram pela dificuldade (T007 e T050 no grau 3; T029 e T069 no grau 4), e o
-  calendário de 2027–2028 é gerado de novo (`48_agenda_aulas`). As datas continuam 39 quintas-feiras.
+  calendário de produção (SQL 92) e a tabela do calendário foram refeitos nas mesmas 39 quintas-feiras; o
+  `48_agenda_aulas` gera as ondas no servidor quando for abrir para os alunos.
 - **Produção:** só T001 e T002 estão produzidos, então trocar agora não custa material.
 
 ## Outras opções, se a coordenação preferir
