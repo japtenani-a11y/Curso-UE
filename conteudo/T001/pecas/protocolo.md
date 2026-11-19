@@ -196,6 +196,24 @@ Sempre como totais do mês, sem nenhum dado que identifique paciente.
 - **Graduação.** Força e certeza propostas pelo grupo, pelo GRADE, a partir do desenho dos estudos citados em cada fonte; precisam ser conferidas contra a graduação publicada em cada diretriz de origem.
 - **Conflito entre fontes.** Vale a mais recente, pela data de publicação; no mesmo ano, diretriz, revisão sistemática, ensaio, livro.
 
+## Equipes para validação
+
+A cirurgia de urgência e trauma conduz a validação. As demais equipes validam as recomendações da sua área.
+
+| Equipe | Por que participa | O que valida | Situação |
+|---|---|---|---|
+| Cirurgia de urgência e trauma | Lidera o atendimento e o fluxo inteiro (R1 a R12) | Texto inteiro | A convidar |
+| Medicina de emergência | Divide a sala de trauma e o atendimento inicial | R1 a R9, fluxograma | A convidar |
+| Anestesiologia | Via aérea e indução no choque | R3, R4 | A convidar |
+| Enfermagem da sala de trauma | Posições da equipe, ficha, aquecimento, acesso | R1, R7, R9, indicadores | A convidar |
+| Hemoterapia e agência transfusional | Protocolo de transfusão maciça e ácido tranexâmico | R8 | A convidar |
+| Radiologia e radiologia intervencionista | Pan-TC, porta-tomografia, embolização | R10, R11 | A convidar |
+| Terapia intensiva | Critérios de admissão na UTI e avaliação terciária | R12, destino | A convidar |
+| Ortopedia | Cinta pélvica e fratura pélvica instável | R6 | A convidar |
+| Neurocirurgia | Paciente com TCE grave associado | R4 (Glasgow e via aérea), exceções | A convidar |
+| Atendimento pré-hospitalar e regulação | Aviso prévio e passagem do caso | R1 | A convidar |
+| Comissão de qualidade e segurança do paciente | Indicadores e auditoria | Indicadores de qualidade | A convidar |
+
 ## Grupo de elaboração e conflitos de interesse
 
 - **Redação do rascunho:** agente produtor do CUT, sob supervisão da coordenação.

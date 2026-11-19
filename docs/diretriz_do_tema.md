@@ -24,7 +24,7 @@ transfusão maciça), marcados como tal.
 
 ## Estrutura obrigatória
 
-O formato é conferido pelo banco (`conteudo.conferir_formato`, SQL 88). A falta de uma seção gera aviso: não bloqueia a
+O formato é conferido pelo banco (`conteudo.conferir_formato`, SQL 88). São 14 seções obrigatórias. A falta de uma seção gera aviso: não bloqueia a
 publicação, mas aparece na tela de revisão e na aba "Conferência dos temas".
 
 ```
@@ -41,6 +41,7 @@ publicação, mas aparece na tela de revisão e na aba "Conferência dos temas".
 ## Exceções
 ## Base legal e ética          (só quando o tema tiver)
 ## Método e fontes
+## Equipes para validação
 ## Grupo de elaboração e conflitos de interesse
 ## Limitações e lacunas
 ## Revisão
@@ -114,6 +115,16 @@ Consolidação 4/2017 e outras). Lei e resolução podem ser citadas pelo texto 
 diretriz dos últimos 10 anos), as diretrizes encontradas e por que cada uma entrou ou saiu (data, escopo, qualidade
 metodológica, por exemplo pelos domínios do AGREE II), e como a força e a certeza foram atribuídas. Lista as fontes
 com o código de `fontes.csv`.
+
+**Equipes para validação.** As equipes do hospital que precisam validar a diretriz antes da adoção, conforme a
+pertinência ao tema, cada uma com o motivo (que recomendação ou etapa do fluxo depende dela) e se valida o texto
+inteiro ou só as recomendações da sua área. A cirurgia de urgência e trauma conduz; entram, conforme o tema, medicina
+de emergência, clínica médica, anestesiologia, terapia intensiva, radiologia e radiologia intervencionista,
+hemoterapia, ortopedia, neurocirurgia, cirurgia de cabeça e pescoço, cirurgia vascular, cirurgia torácica, urologia,
+ginecologia e obstetrícia, pediatria e cirurgia pediátrica, endoscopia, infectologia e controle de infecção, cuidados
+paliativos, psiquiatria, enfermagem, farmácia, serviço social, atendimento pré-hospitalar e regulação, comissão de
+qualidade e segurança do paciente, jurídico do hospital (temas com base legal). Formato: tabela com equipe, por que
+participa, o que valida e situação (a convidar, em validação, validou em data).
 
 **Grupo de elaboração e conflitos de interesse.** Quem redigiu (o rascunho é do agente produtor, sob supervisão da
 coordenação), quem revisou (revisores cirurgiões do curso), quem aprovou e a declaração de conflitos de interesse de

@@ -108,7 +108,7 @@ BEGIN
     -- Diretriz clinica do tema (decisao de 19/11/2026, docs/diretriz_do_tema.md). Aviso, para nao travar pecas ja publicadas.
     IF p_tipo = 'protocolo' THEN
       FOREACH perfil IN ARRAY ARRAY['Escopo e população', 'Usuários e cenário', 'Definições', 'Recomendações', 'Fluxograma',
-                                    'Quadro-resumo', 'Adaptação local', 'Indicadores de qualidade', 'Exceções', 'Método e fontes',
+                                    'Quadro-resumo', 'Adaptação local', 'Indicadores de qualidade', 'Exceções', 'Método e fontes', 'Equipes para validação',
                                     'Grupo de elaboração e conflitos de interesse', 'Limitações e lacunas', 'Revisão'] LOOP
         IF position(E'\n## ' || perfil IN E'\n' || c) = 0 THEN
           gravidade := 'aviso'; mensagem := format('Diretriz: falta a seção "## %s".', perfil); RETURN NEXT;

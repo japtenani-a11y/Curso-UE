@@ -41,7 +41,7 @@ O agente de pré-revisão recebe, junto com cada peça da aula, o material de an
 |---|---|---|
 | Objetivos | Uma seção `## ` para cada perfil: Graduação, R1, R2, R3, R+ | — |
 | Resumo básico, resumo executivo, aula | Pelo menos 2 seções `## título` | — |
-| Protocolo (diretriz clínica do tema, `docs/diretriz_do_tema.md`) | Pelo menos 2 seções `## título` | As 13 seções da diretriz (Escopo e população ... Revisão); ao menos 3 `**Recomendação N.**`, cada uma com `Força: ... \| Certeza: ...` e `Origem: ...`; fluxograma em bloco ` ```mermaid ` |
+| Protocolo (diretriz clínica do tema, `docs/diretriz_do_tema.md`) | Pelo menos 2 seções `## título` | As 14 seções da diretriz (Escopo e população ... Revisão); ao menos 3 `**Recomendação N.**`, cada uma com `Força: ... \| Certeza: ...` e `Origem: ...`; fluxograma em bloco ` ```mermaid ` |
 | Síntese de evidência | Pelo menos 2 seções `## título` | `## Consenso`, `## Disputa`, `## Lacunas` |
 | Caso base | Bloco `**Perguntas...**` (ou `## Perguntas`) seguido de perguntas numeradas `1.`, `2.` | — |
 | Caso da aula | Pelo menos 2 `**Ponto de decisão N — título**`; cada um com `Situação:` e `Discussão:` em linhas próprias | `Dica:` em cada ponto; `**Desfecho**` no fim |
