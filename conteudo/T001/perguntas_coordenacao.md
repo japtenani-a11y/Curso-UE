@@ -33,3 +33,9 @@ ou na conversa com o Claude. Sem resposta, o campo fica em branco no guia.
 12.19 Número mínimo de casos no período para um indicador contar como critério de saída de nível (sugestão: 20)?
 12.20 Nível de maturidade atual do serviço neste tema (0 sem protocolo; 1 formalizado; 2 em uso; 3 gerenciado; 4 comparado; 5 excelência)?
 12.21 O serviço participa ou pretende participar de registro de trauma com ajuste de risco para a comparação externa (nível 4)? Qual?
+
+Perguntas acrescentadas na revisão de 19/11/2026 (acionamento da equipe de trauma, escopo ampliado do tema):
+
+12.22 Quem compõe a equipe no acionamento máximo e no acionamento parcial na UE (cirurgião do trauma, emergencista, anestesista, enfermagem, residentes, radiologia)?
+12.23 Os critérios de acionamento máximo (oito critérios do ACS) e de acionamento parcial (diretriz alemã de 2025) propostos no guia servem para a UE, ou há critério a tirar ou a acrescentar?
+12.24 Hoje fica registrado em algum lugar o horário em que o cirurgião do trauma chega à sala? (O guia propõe o indicador "cirurgião à beira do leito em até 15 minutos no acionamento máximo".)

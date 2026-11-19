@@ -3,6 +3,7 @@
 Para uso à beira do leito. Derivado das recomendações fortes do guia de atendimento do tema (R1 a R12, marcadas em cada item). Cada item se responde com sim ou não; os itens que começam com "Se" respondem-se "não se aplica" quando a situação não existir. A letra x marca a hemorragia exsanguinante, que vem antes da via aérea (xABCDE).
 
 **Antes da chegada**
+- [ ] Acionar a equipe no nível certo pelos critérios escritos; no acionamento máximo, chamar o cirurgião do trauma (R1) [G13, G14]
 - [ ] Definir o líder e distribuir as posições A, B e C (R1) [A21, P18]
 - [ ] Combinar o plano B em voz alta [D71]
 - [ ] Aquecer a sala [A36]
@@ -15,7 +16,7 @@ Para uso à beira do leito. Derivado das recomendações fortes do guia de atend
 - [ ] Receber a passagem do SAMU no formato MIST, com a equipe em silêncio [D23]
 - [ ] Encerrar a passagem do SAMU em até 1 minuto [D24]
 - [ ] x — Controlar a hemorragia externa antes da via aérea (R2) [D6, G1]
-- [ ] x — Se houver torniquete: anotar a hora [D60]
+- [ ] x — Se houver torniquete: anotar a hora, de preferência no próprio torniquete [D96]
 - [ ] x — Se houver torniquete: conferir a posição, proximal à lesão e fora da articulação [D59]
 - [ ] A — Avaliar e registrar a via aérea [A14]
 - [ ] A — Se obstrução ou hipóxia grave: tratar a via aérea primeiro (R3) [G4]

@@ -6,7 +6,7 @@ Diretriz clínica, fluxo de atendimento e regulação, qualidade e segurança do
 
 Proposta dirigida à Unidade de Emergência do Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto da USP (UE-HCFMRP), com a adaptação local preenchida pela coordenação em 19/11/2026.
 
-> RASCUNHO para revisão (versão 2.2, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
+> RASCUNHO para revisão (versão 2.3, 19/11/2026). Guia do curso CUT, adaptável a cada serviço. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
 
 ## Escopo e população
 
@@ -28,7 +28,7 @@ Proposta dirigida à Unidade de Emergência do Hospital das Clínicas da Faculda
 
 ## Definições
 
-- **Avaliação primária.** Sequência ABCDE; quando há hemorragia externa exsanguinante ou o paciente está em extremis, a circulação vem antes da via aérea (sequência CAB ou xABCDE) [D2, D3, G1].
+- **Avaliação primária.** Sequência xABCDE: a hemorragia externa exsanguinante é controlada primeiro, sem pular a via aérea [D92, D93]; no choque grave sem obstrução nem hipóxia grave, a intubação espera a ressuscitação começar (R4) [G1, G6].
 - **Avaliação secundária.** História dirigida (alergias, medicamentos, passado médico e gestação, última refeição, ambiente e eventos) e exame físico completo, da cabeça aos pés [D20, D21].
 - **Avaliação terciária.** Novo exame completo e revisão das imagens depois da ressuscitação e das cirurgias, para encontrar a lesão que passou [D30, D31].
 - **Comprometimento hemodinâmico (critério do serviço).** Qualquer um: PAS ≤ 80 mmHg; PAS ≤ 100 mmHg com TCE moderado ou grave; vasopressor ou transfusão em curso para manter a pressão; frequência cardíaca maior ou igual à PAS (índice de choque ≥ 1) [P6]. O índice de choque serve para incluir, não para excluir instabilidade [P7], e o líder pode considerar o paciente instável mesmo sem critério objetivo [P8].
@@ -36,18 +36,20 @@ Proposta dirigida à Unidade de Emergência do Hospital das Clínicas da Faculda
 
 ## Recomendações
 
-**Recomendação 1.** Definir o líder e as funções da equipe antes da chegada do paciente, com briefing do caso e plano B combinado.
+**Recomendação 1.** Acionar a equipe de trauma por critérios escritos, em níveis, e definir o líder e as funções antes da chegada do paciente, com briefing do caso e plano B combinado.
 Força: forte | Certeza: baixa
-Origem: própria, a partir dos livros-texto [D22, D42, D71, D91] e da ficha do serviço [P18].
+Origem: critérios de acionamento máximo adaptados dos padrões de 2022 do Colégio Americano de Cirurgiões [G12, G13, G14] e do acionamento parcial adaptados da diretriz alemã de 2025 [G15 a G18]; equipe e briefing próprios, a partir dos livros-texto [D22, D42, D71, D91, D104] e da Ficha 1 proposta pelo curso, ainda não implantada [P18].
 Justificativa: o trabalho simultâneo e coordenado encurta o tempo até as decisões que salvam vida; a evidência é sobretudo observacional e de opinião de especialistas.
-Na prática: Ponto de protocolo: o cirurgião do trauma lidera [D22]; enquanto ele não está na sala, lidera o emergencista da sala vermelha, presente 24 horas, até o cirurgião assumir [P22]. A equipe de trauma é avisada por bip quando o núcleo interno de regulação informa que o paciente foi regulado, com o tempo previsto de chegada, e de novo na chegada. Posições A (via aérea e neurológico), B (ventilação) e C (choque e hemorragia) [P18]. Passagem do caso pelo atendimento pré-hospitalar em até 1 minuto, com mecanismo, lesões, sinais e tratamento [D23, D24].
+Na prática: Ponto de protocolo: o cirurgião do trauma lidera [D22]; enquanto ele não está na sala, lidera o emergencista da sala vermelha, presente 24 horas, até o cirurgião assumir [P22]. A equipe de trauma é avisada por bip quando o núcleo interno de regulação informa que o paciente foi regulado, com o tempo previsto de chegada, e de novo na chegada. Posições A (via aérea e neurológico), B (ventilação) e C (choque e hemorragia) [P18].
+
+Acionamento máximo (proposta do curso, a partir dos oito critérios obrigatórios do ACS [G13]), por qualquer um destes: PAS confirmada abaixo de 90 mmHg em qualquer momento; ferimento por arma de fogo no pescoço, no tórax ou no abdome; Glasgow abaixo de 9 por trauma; paciente transferido de outro serviço que precisa de transfusão contínua; paciente intubado no pré-hospitalar e trazido direto; comprometimento respiratório ou necessidade de via aérea de emergência; transferido com comprometimento respiratório em curso; decisão do emergencista da sala vermelha. Nível abaixo do máximo (acionamento parcial; proposta do curso a partir da diretriz alemã de 2025, revisão sistemática), por qualquer um destes, quando não houver critério de acionamento máximo: SpO2 abaixo de 90%; frequência respiratória abaixo de 10 ou acima de 29; FC acima de 120; índice de choque acima de 0,9; eFAST positivo; Glasgow 12 ou menos; temperatura abaixo de 35 °C [G15]; tórax instável, fratura de pelve instável, ferimento penetrante do tronco, amputação acima do punho ou do tornozelo, déficit por lesão raquimedular ou intervenção pré-hospitalar (descompressão torácica, catecolamina, torniquete) [G16]; mais de duas fraturas de ossos longos proximais, queimadura acima de 20%, queda de mais de 3 metros, ejeção do veículo [G17]; no idoso, também PAS abaixo de 100 mmHg, Glasgow 14 ou menos com suspeita de TCE ou lesão em duas ou mais regiões [G18]. Quem compõe a equipe em cada nível é definido pelo serviço na "Adaptação local" [G12]. No acionamento máximo, a meta do ACS é o cirurgião do trauma à beira do leito em até 15 minutos da chegada em pelo menos 80% das vezes, sem contar a presença do residente [G14]. A adesão aos critérios é auditada, porque a subtriagem se associa a maior mortalidade [A53, A54]. Passagem do caso pelo atendimento pré-hospitalar em até 1 minuto, com mecanismo, lesões, sinais e tratamento [D23, D24].
 
 **Recomendação 2.** Na hemorragia externa exsanguinante, controlar o sangramento antes da via aérea.
 Força: forte | Certeza: baixa
-Origem: adotada do consenso WSES e Panamerican Trauma Society 2025 [G1]; consistente com o ATLS 11 [D89, D90, D81] e com a ficha do serviço [P19].
+Origem: adotada do consenso WSES e Panamerican Trauma Society 2025 [G1]; consistente com o ATLS 11 [D89, D90, D81] e com a Ficha 1 proposta [P19].
 Justificativa: na metanálise do consenso, a sequência ABC se associou a maior mortalidade que a CAB [G2], mas toda a evidência é observacional e não permite concluir causalidade [G3]. No trauma vascular de extremidade, o torniquete pré-hospitalar se associou a menor mortalidade, com certeza muito baixa [A57].
-Na prática: compressão direta [D6]; no membro, torniquete proximal à lesão, fora da articulação, com a hora anotada e limite de 90 minutos [D7, D59, D60]; nas regiões juncionais (pescoço, axila, virilha), compressão com agente hemostático [D8].
-Divergência: as sequências clássicas começam pela via aérea; o consenso de 2025 é a fonte mais recente e foi a seguida (regra da fonte mais recente).
+Na prática: compressão direta [D6]; no membro, torniquete 5 a 8 cm acima do sangramento, sobre a pele e fora da articulação, com a hora anotada de preferência no próprio torniquete; com menos de 2 horas não parece haver aumento de amputação, e a conversão é avaliada depois da primária [D7, D95, D96, D97]; nas regiões juncionais (pescoço, axila, virilha), compressão com agente hemostático [D8].
+Divergência: o livro-texto de 2021 punha a circulação antes da via aérea também no paciente em extremis (CAB) [D2, D3]; o ATLS 11 (2026), fonte mais recente, põe na frente só a hemorragia externa exsanguinante (x), sem pular a via aérea [D92, D93], e foi o seguido. O adiamento da via aérea invasiva no choque grave está na R4. O livro-texto limitava o torniquete a 90 minutos [D60]; vale o ATLS 11 [D96].
 
 **Recomendação 3.** Manter a via aérea como primeira prioridade quando houver obstrução ou hipóxia grave.
 Força: forte | Certeza: baixa
@@ -71,20 +73,20 @@ Na prática: no paciente em extremis, drenagem torácica bilateral [D48]. Hemot�
 Força: forte | Certeza: baixa
 Origem: própria, a partir do livro-texto [D55, D56] e do indicador da WSES [G11].
 Justificativa: a cinta reduz o volume pélvico e o sangramento venoso; apertada demais na compressão lateral pode aumentar o sangramento [D55].
-Na prática: cinta na altura dos trocânteres; na falta, lençol e haste [D56, D84].
+Na prática: cinta centrada nos trocânteres maiores, evitando a rotação externa do quadril; na falta, lençol e haste [D56, D84, D102].
 
 **Recomendação 7.** Sem veia periférica em até poucas tentativas, usar acesso intraósseo.
 Força: forte | Certeza: baixa
 Origem: própria, a partir dos livros-texto [D15, D46, D85].
 Justificativa: o acesso intraósseo é rápido e permite infundir hemocomponentes.
-Na prática: úmero proximal como primeira escolha, salvo contraindicação; tíbia como alternativa [D15, D46].
+Na prática: úmero proximal como primeira escolha, salvo contraindicação; tíbia proximal como alternativa; nunca distal a uma fratura [D15, D46, D103].
 
 **Recomendação 8.** Acionar o protocolo de transfusão maciça por critério objetivo ou por avaliação do líder, e administrar ácido tranexâmico até 3 horas da lesão no paciente com sangramento significativo.
 Força: forte | Certeza: moderada
 Origem: transfusão adaptada do livro-texto [D33, D34, D35, D36, D37]; ácido tranexâmico adotado do protocolo AAST/ACS-COT de ressuscitação de controle de danos [G8], consistente com o ATLS 11 [D86].
 Justificativa: a hipotensão prediz a necessidade de transfusão maciça [G9]; os escores têm bom valor preditivo negativo e valor preditivo positivo fraco, por isso o julgamento do líder também aciona [D34, P8].
-Na prática: Ponto de protocolo: acionar se escore ABC ≥ 2 (FAST positivo, mecanismo penetrante, FC > 120, PAS < 90; um ponto cada) [D33], comprometimento hemodinâmico pela definição do serviço [P6], limiar crítico de transfusão [D37] ou decisão do líder [P8]. Avisar a agência transfusional de imediato [D35]. Proporção e sequência de liberação conforme o protocolo de transfusão maciça da UE-HCFMRP (ref. 16), que garante acesso imediato [D36]: concentrado de hemácias, plasma, crioprecipitado e plaquetas disponíveis 24 horas, na sala em 5 a 10 minutos, infundidos por infusor rápido com aquecimento. O ácido tranexâmico fica na sala e é preparado pela enfermagem sob prescrição.
-Divergência: o livro-texto usa índice de choque de 0,9 como corte de risco [D38]; o serviço usa 1,0 como critério de acionamento [P6]. Vale o critério do serviço, por ser o definido localmente; o corte de 0,9 fica como alerta.
+Na prática: Ponto de protocolo: acionar se escore ABC ≥ 2 (FAST positivo, mecanismo penetrante, FC > 120, PAS < 90; um ponto cada) [D33], comprometimento hemodinâmico pela definição do serviço [P6], limiar crítico de transfusão [D37] ou decisão do líder [P8]. Avisar a agência transfusional de imediato [D35]. Sem hemocomponente em tempo hábil, começar com 250 a 500 mL de cristaloide e minimizar o cristaloide [D98]; proporção 1:1:1, ou sangue total quando houver [D99]. Proporção e sequência de liberação conforme o protocolo de transfusão maciça da UE-HCFMRP (ref. 16), que garante acesso imediato [D36]: concentrado de hemácias, plasma, crioprecipitado e plaquetas disponíveis 24 horas, na sala em 5 a 10 minutos, infundidos por infusor rápido com aquecimento. O ácido tranexâmico fica na sala e é preparado pela enfermagem sob prescrição: 1 g em bolus e mais 1 g em 8 horas, ou dose única de 2 g, sempre até 3 horas da lesão; depois disso, não, salvo hiperfibrinólise [D100].
+Divergência: o livro-texto de 2021 usa índice de choque de 0,9 como corte de risco [D38]; o ATLS 11 associa índice de 1 ou mais a maior mortalidade [D101], o mesmo corte do protocolo de imagem da UE [P6]. Vale 1,0, pela fonte mais recente e pelo protocolo local.
 
 **Recomendação 9.** Prevenir e tratar a hipotermia desde a chegada: despir, aquecer o ambiente, os fluidos e o paciente, e medir a temperatura.
 Força: forte | Certeza: baixa
@@ -204,6 +206,8 @@ Sempre como totais do mês, sem nenhum dado que identifique paciente. Metas com 
 
 | Indicador | Tipo | Numerador | Denominador | Meta | Fonte do dado | Periodicidade | Coleta | Análise |
 |---|---|---|---|---|---|---|---|---|
+| Acionamento máximo quando havia critério | Processo | Pacientes com critério de acionamento máximo que tiveram acionamento máximo | Pacientes com critério de acionamento máximo (R1) [G13] | Sem meta: linha de base de 3 meses [A53, A54] | Ficha 1 · Sala de trauma (campo a incluir) | Mensal | Enfermagem da sala | Coordenação do serviço |
+| Cirurgião à beira do leito em até 15 minutos | Processo | Acionamentos máximos com cirurgião do trauma presente em até 15 minutos da chegada | Acionamentos máximos | ≥ 80% [G14] | Ficha 1 · Sala de trauma (campo a incluir) | Mensal | Enfermagem da sala | Coordenação do serviço |
 | Líder definido antes da chegada | Processo | Atendimentos com líder registrado antes da chegada | Atendimentos com aviso prévio | ≥ 90% (proposta) | Ficha 1 · Sala de trauma (campo a incluir) [P18] | Mensal | Enfermagem da sala | Coordenação do serviço |
 | Passagem estruturada do pré-hospitalar | Processo | Atendimentos com passagem MIST registrada | Atendimentos trazidos pelo pré-hospitalar | ≥ 90% (proposta) | Ficha 1 · Sala de trauma [D23] | Mensal | Enfermagem da sala | Coordenação do serviço |
 | Via aérea avaliada e registrada | Processo | Admissões com via aérea avaliada e registrada | Admissões de trauma na sala | ≥ 95% (proposta) | Ficha 1 · Sala de trauma [A14] | Mensal | Enfermagem da sala | Coordenação do serviço |
@@ -238,7 +242,7 @@ Sempre como totais do mês, sem nenhum dado que identifique paciente. Metas com 
 | Lesão não identificada | Foco na lesão mais evidente, paciente sedado | Avaliação secundária completa e avaliação terciária (R12) [A42] | — | Lesão com diagnóstico tardio e dano |
 | Deterioração fora da sala | Paciente instável levado à tomografia; transporte sem monitorização | Instável não vai à tomografia (R10); pausa de segurança antes de sair [P21] | Cirurgia segura (pausa e conferência) | Parada ou deterioração no transporte |
 | Hipotermia | Exposição prolongada, fluidos frios | Prevenção desde a chegada e temperatura registrada (R9) | — | — |
-| Torniquete esquecido | Hora não anotada, troca de equipe | Hora do torniquete registrada e limite de 90 minutos (R2) [D7, D59, D60] | Comunicação efetiva | Isquemia por torniquete |
+| Torniquete esquecido | Hora não anotada, troca de equipe | Hora do torniquete registrada, de preferência no próprio torniquete, e conversão avaliada depois da primária (R2) [D96, D97] | Comunicação efetiva | Isquemia por torniquete |
 | Medicamento em paciente sem história | Alergia desconhecida, anticoagulante não informado | Perguntar e registrar alergias e medicamentos na avaliação secundária [D20]; exceções do anticoagulado (T007) | Segurança na prescrição e administração de medicamentos | Reação adversa grave |
 
 Evento adverso grave e óbito evitável: notificação ao núcleo de segurança do paciente e análise, conforme as refs. 25 e 26 (conferir a versão vigente). A notificação serve para aprender, não para punir.
@@ -281,7 +285,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 | 0. Sem protocolo | Saber de onde parte | Diagnóstico da sala de trauma: ficha existente, cirurgião 24 h, tomografia 24 h, radiologia intervencionista, protocolo de transfusão maciça, número de atendimentos por mês; responsável pelo guia nomeado | Proposta entregue à diretoria e equipes da validação convidadas |
 | 1. Formalizado | Regra escrita, aceita e conhecida | Pareceres das equipes; "Adaptação local" preenchida; ficha alinhada ao guia [P18 a P21]; percentual da equipe treinada; linha de base dos 12 indicadores | Guia aprovado com data e instância; ≥ 80% da equipe fixa treinada (proposta); 3 meses de linha de base |
 | 2. Em uso | Fazer o que está escrito, sempre, e registrar | Líder definido antes da chegada; passagem MIST; via aérea registrada; temperatura na admissão; cinta pélvica; time out antes de sair da sala | Campos-chave da ficha preenchidos em ≥ 90% e esses 6 indicadores na meta por 3 meses seguidos |
-| 3. Gerenciado | Corrigir desvios de forma sistemática | Os 12 indicadores no painel; ciclos de melhoria abertos e concluídos; concordância da auditoria de fichas; eventos notificados; casos revistos na morbimortalidade | Todos os indicadores de processo na meta por 6 meses; todo gatilho com plano; auditoria com concordância ≥ 90% (proposta) |
+| 3. Gerenciado | Corrigir desvios de forma sistemática | Os 14 indicadores no painel; ciclos de melhoria abertos e concluídos; concordância da auditoria de fichas; eventos notificados; casos revistos na morbimortalidade | Todos os indicadores de processo na meta por 6 meses; todo gatilho com plano; auditoria com concordância ≥ 90% (proposta) |
 | 4. Comparado | Saber onde o serviço está em relação aos melhores | Participação em registro de trauma com ajuste de risco; mortalidade ajustada pela gravidade; lesão com diagnóstico tardio; porta-tomografia comparada | 12 meses de dados ajustados; indicadores comparáveis na mediana da referência ou acima |
 | 5. Excelência | Ser referência e manter | Percentil do serviço em cada indicador comparável; tempo sustentado no P90; verificação externa; projetos do banco de pesquisa em andamento | Manter processo e resultado ajustado no P90 por 12 meses; queda por 3 meses volta o indicador ao nível 4 |
 
@@ -302,7 +306,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 
 Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissão de qualidade com os critérios da tabela acima.
 
-- **Materiais de apoio.** Ficha da sala de trauma [P18], cartaz com o quadro-resumo e o fluxograma, checklist do tema (peça "checklist") e cartão de bolso.
+- **Materiais de apoio.** Ficha 1 · Sala de trauma, na versão proposta pelo curso [P18], cartaz com o quadro-resumo e o fluxograma, checklist do tema (peça "checklist") e cartão de bolso.
 - **O que ajuda a implantar.** Um responsável institucional pelo guia, adaptação ao contexto do serviço e integração à rotina e à ficha [A16].
 - **Barreiras previsíveis.** Rodízio de equipes e residentes, falta de tempo para registrar, ficha diferente da prática. Resposta: treinamento a cada entrada de residentes e ficha revisada junto com o guia.
 
@@ -353,7 +357,7 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 
 **Livros-texto**
 
-4\. AMERICAN COLLEGE OF SURGEONS. Committee on Trauma. **ATLS: Advanced Trauma Life Support**. 11. ed., tradução para o português. Chicago: American College of Surgeons, 2026. Tradução automática. Capítulos citados: 1 (avaliação primária), 3 (controle da hemorragia), 4 (vias aéreas), 5 (respiração e ventilação), 6 (circulação), 8 (exposição) e 10 (trauma musculoesquelético). [D81 a D91]
+4\. AMERICAN COLLEGE OF SURGEONS. Committee on Trauma. **ATLS: Advanced Trauma Life Support**. 11. ed., tradução para o português. Chicago: American College of Surgeons, 2026. Tradução automática. Capítulos citados: 1 (avaliação primária), 3 (controle da hemorragia), 4 (vias aéreas), 5 (respiração e ventilação), 6 (circulação), 8 (exposição) e 10 (trauma musculoesquelético). [D81 a D104]
 
 5\. FELICIANO, D. V.; MATTOX, K. L.; MOORE, E. E. (ed.). **Trauma**. 9. ed. New York: McGraw-Hill, 2021. Capítulos citados: 13 (avaliação inicial), 15 (choque), 16 (coagulopatia), 39 (pelve), 44 (membro inferior), 45 (vasos periféricos), 48 (trauma pediátrico) e 57 (terapia intensiva). [D1 a D60]
 
@@ -383,9 +387,9 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 
 16\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Unidade de Emergência. **Protocolo de transfusão maciça**. Ribeirão Preto, [s.d.]. Documento institucional, não publicado.
 
-17\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA HB-FAMERP / HC-FMRP. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Versão 1.0. Documento controlado, não publicado. [P18 a P21]
+17\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Proposta de atualização, ainda não implantada. Documento não publicado. [P18 a P21]
 
-18\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026. [P22]
+18\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026, atualizada em 19 nov. 2026. [P22]
 
 **Método**
 
@@ -410,6 +414,14 @@ Do nível 2 em diante, o plano de cada passagem de nível é feito pela comissã
 27\. BRASIL. Ministério da Saúde. Portaria nº 2.048, de 5 de novembro de 2002. Regulamento técnico dos sistemas estaduais de urgência e emergência.
 
 28\. CONSELHO FEDERAL DE MEDICINA. Resolução CFM nº 1.672, de 9 de julho de 2003. Transporte inter-hospitalar de pacientes.
+
+**Acrescentadas na revisão de 19/11/2026**
+
+29\. AMERICAN COLLEGE OF SURGEONS. Committee on Trauma. **Resources for Optimal Care of the Injured Patient: 2022 Standards**. Revisão de 2023. Chicago: American College of Surgeons, 2023. Padrões 5.3 (níveis de acionamento) e 5.4 (resposta do cirurgião ao acionamento máximo). [G12 a G14]
+
+30\. KÜHNE, C. A. et al. Criteria for trauma team activation and staffing requirements for the management of patients with (suspected) multiple and/or severe injuries in the resuscitation room: a systematic review and clinical practice guideline update. **European Journal of Trauma and Emergency Surgery**, v. 51, n. 1, art. 142, 2025. DOI: 10.1007/s00068-025-02817-7. [G15 a G18]
+
+31\. NUNEZ, T. C. et al. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? **Journal of Trauma**, v. 66, n. 2, p. 346-352, 2009. DOI: 10.1097/TA.0b013e3181961c35. [H1]
 
 ## Equipes para validação
 
@@ -449,6 +461,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 ## Revisão
 
 - Situação: proposta; entregue à diretoria em [data]; validação pelas equipes: a iniciar; adoção pelo serviço: pendente.
+- Versão 2.3, 19/11/2026: conferida contra o ATLS 11 (xABCDE no lugar de CAB, torniquete, cristaloide, ácido tranexâmico, índice de choque, cinta e intraósseo); critérios de acionamento da equipe de trauma em níveis, a partir dos padrões de 2022 do ACS, com dois indicadores novos; Ficha 1 tratada como proposta ainda não implantada; transfusão maciça sem citar outros serviços.
 - Versão 2.1, 19/11/2026: ampliada para guia de atendimento (fluxo e regulação, matriz de responsabilidades, indicadores com ficha técnica, monitoramento, segurança do paciente e implantação por níveis de maturidade, do 0 ao P90).
 - Versão 2.0, 19/11/2026: reescrita no padrão de diretriz clínica (recomendações graduadas, fluxograma, adaptação local, indicadores e governança). A versão anterior fica arquivada pela coordenação do curso.
 - Próxima revisão: novembro de 2028, ou antes se for publicada nova versão de uma das diretrizes de origem ou se o protocolo de imagem do serviço for aprovado.

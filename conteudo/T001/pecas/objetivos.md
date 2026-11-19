@@ -4,7 +4,7 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 
 ## Graduação (4º a 6º ano)
 
-1. (C) **Descrever** a sequência ABCDE e quando a circulação vem antes da via aérea [D2, D3, G1], em uma pergunta oral, sem omitir etapas e citando as duas situações que invertem a ordem.
+1. (C) **Descrever** a sequência xABCDE e o que a etapa x inclui e não inclui [D92, D93], em uma pergunta oral, sem omitir etapas.
 2. (H) **Aplicar** compressão direta em sangramento externo [D6], em simulação, como primeira medida e sem soltar até o sangramento parar ou alguém assumir.
 3. (C) **Reconhecer** os sinais de via aérea pérvia e a indicação de via aérea definitiva por Glasgow [D10, D11], em caso escrito, acertando a conduta em todos os casos apresentados.
 4. (H) **Colher** a história AMPLA [D21] de um paciente simulado, com os cinco itens, em até 3 minutos.
@@ -14,12 +14,12 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 ## R1
 
 1. (H) **Executar** a avaliação primária completa [D1, D5], em simulação, verbalizando cada etapa e reavaliando após cada intervenção, sem pular letra.
-2. (R) **Decidir** entre ABCDE e CAB diante de hemorragia externa ou paciente em extremis [D2, D3, G1, G4], em caso escrito, com justificativa que cite o critério que inverte a ordem.
+2. (R) **Decidir** quando adiar a intubação no paciente em choque grave e quando a via aérea vem primeiro [G1, G4, G6, D82], em caso escrito, com justificativa que cite o critério.
 3. (H) **Obter** acesso intraósseo em simulador no úmero proximal e na tíbia [D15, D46], no laboratório de habilidades (T-081), na primeira tentativa, dizendo por que o esterno é evitado.
 4. (C) **Explicar** por que a agitação pode ser sinal de choque e por que o aparelho automático de pressão pode errar no choque [D14, D17], em pergunta oral, com as duas razões corretas.
-5. (A) **Registrar** a avaliação na ficha da sala de trauma [A13, A14, P18] em todo atendimento real ou simulado, com os campos de via aérea e de horário preenchidos.
+5. (A) **Registrar** a avaliação em ficha estruturada da sala de trauma (o curso propõe a Ficha 1) [A13, A14, P18] em todo atendimento real ou simulado, com os campos de via aérea e de horário preenchidos.
 6. (H) **Realizar** a avaliação secundária completa [D20], em paciente simulado, e documentá-la sem omitir segmento do exame.
-7. (H, aula) **Aplicar** torniquete e cinta pélvica em manequim [D54, D59, D60], na posição correta (torniquete proximal e o mais distal possível; cinta nos trocânteres), registrando a hora do torniquete.
+7. (H, aula) **Aplicar** torniquete e cinta pélvica em manequim [D54, D95, D96, D102], na posição correta (torniquete 5 a 8 cm acima do sangramento; cinta nos trocânteres), registrando a hora do torniquete.
 
 ## R2
 
@@ -41,9 +41,10 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 
 ## R+ (R4 a R6, egressos e preceptores)
 
-1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist, torniquete e a ordem CAB [A2, A4, A23, A57, G2, G3], na discussão de artigo, apontando o desenho de cada estudo e separando associação de causa.
+1. (R) **Avaliar criticamente** a evidência sobre treinamento, checklist, torniquete e a ordem da avaliação primária [A2, A4, A23, A57, G2, G3], na discussão de artigo, apontando o desenho de cada estudo e separando associação de causa.
 2. (R) **Propor** ajustes ao protocolo institucional de avaliação inicial [A7, A37], por escrito, com pelo menos uma lacuna identificada e a forma de medir o efeito da mudança.
 3. (H) **Ensinar** a avaliação inicial em simulação in situ com debriefing [A18, A44], conduzindo uma sessão completa com residentes, com debriefing estruturado que cubra os objetivos da sessão.
 4. (R) **Auditar** indicadores de processo da sala de trauma (acionamento do time, registro da via aérea, temperatura, lesões tardias) [A14, A42, A53, G11], com dados do serviço, comparando com os valores das fontes.
 5. (A) **Supervisionar** treinandos na liderança da equipe [D29], em atendimento real ou simulado, intervindo só quando houver risco ao paciente.
 6. (R, aula) **Analisar** um óbito pelo padrão de erro (atraso, julgamento, diagnóstico não feito) [A50, A51, A52], na atividade da aula, apontando em que momento da avaliação inicial ele poderia ter sido evitado.
+7. (R) **Auditar** o acionamento da equipe de trauma no serviço contra os critérios obrigatórios de acionamento máximo [G13, A53, A54], com os totais de um mês, calculando a proporção de pacientes com critério que foram acionados.

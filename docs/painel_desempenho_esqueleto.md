@@ -78,6 +78,8 @@ com os indicadores clínicos do CUT (`app.indicador_clinico`).
 | Mortalidade ajustada pela gravidade | 47 Razão observado/esperado e 48 W | C1 + C3 + alta | Cenário C |
 | Óbitos inesperados revisados | 50 Óbitos inesperados revisados | C3 + C7 | Cenário C |
 | Pausa de segurança antes de sair da sala | 65 Transferências documentadas (C8) | C8 | Cenário B |
+| Acionamento máximo quando havia critério | sem correspondente (C1 não registra o critério de acionamento) | — | Pergunta de adaptação local |
+| Cirurgião à beira do leito em até 15 minutos | sem correspondente (horário de chegada do cirurgião) | — | Pergunta de adaptação local (12.24) |
 | Líder definido antes da chegada | sem correspondente (C1 registra o preceptor líder, não o momento) | C1_PRECEPTOR | Pergunta de adaptação local |
 | Passagem estruturada do pré-hospitalar | sem correspondente | — | Pergunta de adaptação local |
 | Via aérea avaliada e registrada | sem correspondente direto (C1_VA registra a via aérea definitiva) | C1_VA | Pergunta de adaptação local |
@@ -85,6 +87,8 @@ com os indicadores clínicos do CUT (`app.indicador_clinico`).
 
 ## O que falta para aplicar
 
+- O guia do T001 cita como fonte dos indicadores a "Ficha 1 · Sala de trauma", que é uma proposta de atualização ainda não
+  implantada (decisão de 19/11/2026). Até ela entrar em uso, a fonte possível é a C1 da tabela acima.
 - Decidir se o painel do curso lê os totais da aba Resumo da base C3 (exportação mensal só de totais) ou se os
   totais continuam digitados pela coordenação.
 - Quem no serviço extrai os totais do mês e quem é responsável por cada linha de cuidado.

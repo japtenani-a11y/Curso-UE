@@ -23,7 +23,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Caso · Fontes: D71, D42, D43, P18*
 
-> **Nota do apresentador:** Caso fictício, o mesmo do caso da aula. Deixar a turma responder antes de mostrar o próximo slide. Resposta esperada: briefing com nomes, posições A, B e C da ficha do serviço [P18], líder ao pé da maca [D43], tarefas simultâneas [D42], plano B combinado [D71].
+> **Nota do apresentador:** Caso fictício, o mesmo do caso da aula. Deixar a turma responder antes de mostrar o próximo slide. Resposta esperada: briefing com nomes, posições A, B e C da Ficha 1 proposta pelo curso [P18], líder ao pé da maca [D43], tarefas simultâneas [D42], plano B combinado [D71].
 
 > **Fala:** O SAMU avisa: motociclista de quarenta e um anos, colisão com caminhão, dor na bacia, pressão de oitenta e quatro por cinquenta, frequência de cento e vinte e seis. Chega em oito minutos. Na sala há um residente do terceiro ano, um do primeiro, dois enfermeiros e um técnico. Antes de seguir, responda: o que essa equipe faz nesses oito minutos? Pense em quem lidera, onde ele fica, quem faz o quê e qual é o plano se o paciente chegar pior do que o aviso [D71].
 
@@ -35,7 +35,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Decisão da ordem · Fontes: D44, G1, G4, G6, P20*
 
-> **Nota do apresentador:** A correspondência entre pulso e pressão é pouco estudada, segundo o próprio livro [D44]. Consenso WSES-PTS 2025: hemorragia exsanguinante, circulação primeiro [G1]; obstrução e hipóxia grave mantêm a via aérea na frente [G4]; via aérea não invasiva nesse intervalo [G6], que é o plano A da ficha do serviço [P20].
+> **Nota do apresentador:** A correspondência entre pulso e pressão é pouco estudada, segundo o próprio livro [D44]. Consenso WSES-PTS 2025: hemorragia exsanguinante, circulação primeiro [G1]; obstrução e hipóxia grave mantêm a via aérea na frente [G4]; via aérea não invasiva nesse intervalo [G6], que é o plano A da Ficha 1 proposta [P20].
 
 > **Fala:** Na chegada, ele tem pulso femoral e não tem radial. Isso sugere uma pressão sistólica provavelmente entre setenta e noventa, numa estimativa pouco estudada [D44]. Está agitado e frio. A via aérea está livre e ele satura noventa e três por cento com máscara. O que mata primeiro é o sangramento, e a circulação passa na frente [G1]. A via aérea só continuaria em primeiro lugar com obstrução ou hipóxia grave [G4]. Enquanto o sangue entra, oxigênio, aspiração e cânula bastam [G6].
 
@@ -67,17 +67,17 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 > **Fala:** A técnica depende de onde a ferida está. No membro, compressão direta sobre o ponto que sangra [D6] e, se não parar, torniquete. No pescoço, na axila, na virilha e no tronco, o torniquete não cabe: use o agente hemostático e o tamponamento da ferida [D62]. A gaze vai até o fundo, contra o vaso, e a mão continua apertando. Se ainda assim sangrar, sutura de aproximação ou exploração [D45]. E nunca pince às cegas: os nervos correm junto dos vasos [D8].
 
 ### Slide 6. Torniquete: quatro decisões
-- Onde: proximal à lesão, o mais distal possível
-- Onde não: articulação, proeminência óssea
-- Quanto: até ocluir o fluxo
-- Quanto tempo: hora anotada, limite de 90 minutos
+- Onde: 5 a 8 cm acima do sangramento, sobre a pele
+- Onde não: articulação
+- Quanto: até parar o sangramento e sumir o pulso distal
+- Quanto tempo: hora anotada no torniquete; menos de 2 horas sem aumento de amputação
 - Angio-TC do membro: conduta com o torniquete ainda pendente no protocolo
 
-*T001 · Técnica · Fontes: D59, D60, D61, A24, A58, P13*
+*T001 · Técnica · Fontes: D95, D96, D97, D61, A24, A58, P13*
 
-> **Nota do apresentador:** Posição [D59], pressão [D61], tempo e nervo [D60]. O efeito em mortalidade e amputação é controverso, já lido na síntese [A24, A58]: aqui ele vira cuidado de técnica. Protocolo de imagem do serviço, versão preliminar, conduta ainda pendente [P13].
+> **Nota do apresentador:** Posição [D95], pressão [D61], tempo [D96], conversão [D97]. O efeito em mortalidade e amputação é controverso, já lido na síntese [A24, A58]: aqui ele vira cuidado de técnica. Protocolo de imagem do serviço, versão preliminar, conduta ainda pendente [P13].
 
-> **Fala:** O torniquete pede quatro decisões. Onde: acima da lesão, mas o mais perto dela possível, para não deixar tecido são sem sangue [D59]. Onde não: sobre articulação ou proeminência óssea. Quanto apertar: até o fluxo parar [D61]. Quanto tempo: anote a hora; o limite é noventa minutos, por causa do nervo [D60]. Você leu que o efeito do torniquete na amputação é controverso [A24, A58]. Na mesa, a resposta a isso é técnica correta e controle definitivo rápido.
+> **Fala:** O torniquete pede quatro decisões. Onde: cinco a oito centímetros acima do ponto que sangra, direto na pele [D95]. Onde não: sobre articulação [D95]. Quanto apertar: até o sangramento parar e o pulso distal sumir [D61]. Quanto tempo: anote a hora, de preferência no próprio torniquete; com menos de duas horas não parece haver mais amputação, e depois da primária se avalia trocar por outro método [D96, D97]. Você leu que o efeito do torniquete na amputação é controverso [A24, A58]. Na mesa, a resposta a isso é técnica correta e controle definitivo rápido.
 
 ### Slide 7. Pelve: o que sangra
 - Anel: sacro + dois inominados
@@ -114,11 +114,11 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 - Tíbia: alternativa
 - Pelo acesso: sangue e plasma antes de cristaloide
 
-*T001 · Técnica · Fontes: D15, D46, D39, P16, P17, G8*
+*T001 · Técnica · Fontes: D15, D46, D39, H1, D35, G8*
 
-> **Nota do apresentador:** Intraósseo quando o venoso não é imediato [D15]; local [D46]. Sangue e plasma cedo [D39]. Escore ABC de 2 ou mais ativa o protocolo do Hospital de Base [P16]; primeira caixa com 2 concentrados e 2 plasmas [P17]. Ácido tranexâmico em até 3 horas [G8]. Mostrar o kit e os pontos de referência no manequim.
+> **Nota do apresentador:** Intraósseo quando o venoso não é imediato [D15]; local [D46]. Sangue e plasma cedo [D39]. Escore ABC de 2 ou mais prevê transfusão maciça [H1]; acionar o protocolo de transfusão maciça da UE, que define a sequência [D35]. Ácido tranexâmico em até 3 horas [G8]. Mostrar o kit e os pontos de referência no manequim.
 
-> **Fala:** A veia não veio de imediato. Não insista: faça o acesso intraósseo [D15]. No traumatizado, o melhor local pode ser o úmero proximal, que está mais perto do coração. O esterno atrapalha a toracotomia e a massagem, e a tíbia é a alternativa [D46]. Por esse acesso corre sangue e plasma, antes ou em vez de soro [D39]. No nosso protocolo, dois pontos no escore ABC ativam a transfusão maciça [P16].
+> **Fala:** A veia não veio de imediato. Não insista: faça o acesso intraósseo [D15]. No traumatizado, o melhor local pode ser o úmero proximal, que está mais perto do coração. O esterno atrapalha a toracotomia e a massagem, e a tíbia é a alternativa [D46]. Por esse acesso corre sangue e plasma, antes ou em vez de soro [D39]. Com dois pontos ou mais no escore ABC, a chance de transfusão maciça é alta: acione o protocolo de transfusão maciça [H1, D35].
 
 ### Slide 10. Acesso arterial femoral e REBOA
 - Hipotenso por sangramento abdominal ou pélvico: pensar cedo
@@ -128,7 +128,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Técnica · Fontes: D50, D51*
 
-> **Nota do apresentador:** O livro recomenda considerar o acesso arterial precoce [D50] e a punção guiada por ultrassom [D51]. O uso do REBOA depende de protocolo institucional e de treinamento; a evidência de benefício é conflitante, segundo o mesmo capítulo. O tema é aprofundado no T026.
+> **Nota do apresentador:** O livro recomenda considerar o acesso arterial precoce [D50] e a punção guiada por ultrassom [D51]. O uso do REBOA depende de protocolo institucional e de treinamento; a evidência de benefício é conflitante, segundo o mesmo capítulo. O tema é aprofundado no T028.
 
 > **Fala:** No hipotenso por sangramento do abdome ou da pelve, pense cedo no acesso arterial femoral [D50]. Ele dá a pressão contínua e deixa o caminho pronto para o balão de oclusão da aorta. Com pressão abaixo de oitenta, a femoral quase não se palpa: use o ultrassom [D51]. Antes de pensar no balão, olhe a radiografia de tórax. Se houver lesão torácica, o balão pode piorar a hemorragia [D50].
 
@@ -155,7 +155,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Anatomia e técnica · Fontes: D67, A28, P20*
 
-> **Nota do apresentador:** Planos A, B e C da ficha do serviço [P20]. Anatomia e técnica [D67]. Frequência [A28]. O procedimento completo é do T002; aqui só o que a avaliação inicial precisa. Palpar a membrana em voluntário.
+> **Nota do apresentador:** Planos A, B e C da Ficha 1 proposta pelo curso [P20]. Anatomia e técnica [D67]. Frequência [A28]. O procedimento completo é do T002; aqui só o que a avaliação inicial precisa. Palpar a membrana em voluntário.
 
 > **Fala:** Se a via aérea falhar, o plano C é a cricotireoidostomia [P20]. A membrana fica entre a cartilagem tireoide, acima, e a cricoide, abaixo. A mão não dominante fixa a laringe e não solta até a cânula entrar. A incisão da pele é vertical e a da membrana é transversal [D67]. Depois da pele, o sangue cobre tudo e você trabalha pelo tato. Ela é necessária em menos de um por cento dos casos [A28]. Por isso se treina em simulação.
 

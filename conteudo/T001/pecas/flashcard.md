@@ -21,7 +21,7 @@ Cartões de conduta para o plantão. Os cinco marcados R+ trazem evidência para
 | 15 | Por que a intubação pode piorar o choque hemorrágico? | Indução, sedação e pressão positiva desfazem a vasoconstrição compensatória [G7]. |
 | 16 | Pulso femoral presente e radial ausente: o que isso sugere sobre a PAS? | Entre 70 e 90 mmHg, estimativa pouco estudada [D44]. |
 | 17 | Onde colocar o torniquete? | Proximal à lesão, o mais distal possível, fora de articulação [D59]. |
-| 18 | Qual o tempo máximo de torniquete e por quê? | 90 minutos, pelo risco de isquemia do nervo [D60]. |
+| 18 | O que o ATLS 11 diz sobre o tempo de torniquete? | Com menos de 2 horas não parece haver aumento de amputação; anotar a hora, de preferência no próprio torniquete [D96]. |
 | 19 | Qual a referência óssea da cinta pélvica? | Os trocânteres maiores, e não as cristas ilíacas [D54]. |
 | 20 | Em que fratura de pelve a cinta apertada pode piorar o sangramento? | Na compressão lateral importante [D55]. |
 | 21 | Qual o ramo arterial mais lesado nas fraturas de pelve? | A artéria glútea superior [D57]. |
@@ -33,4 +33,6 @@ Cartões de conduta para o plantão. Os cinco marcados R+ trazem evidência para
 | 27 | R+ · REACT-2: a TC de corpo inteiro imediata reduziu a mortalidade? | Não: 16% nos dois grupos (p = 0,92) [A48]. |
 | 28 | Depois da ressuscitação e das cirurgias, como não perder lesões? | Avaliação terciária [D31]. |
 | 29 | R+ · A TC de corpo inteiro na chegada elimina as lesões tardias? | Não: 13,9% tiveram diagnóstico tardio mesmo com ela [A42]. |
-| 30 | Qual escore ABC ativa o protocolo de transfusão maciça do hospital? | 2 pontos ou mais [P16]. |
+| 30 | A partir de quantos pontos o escore ABC prevê transfusão maciça? | 2 pontos ou mais (sensibilidade 75%, especificidade 86%) [H1]. |
+| 31 | Cite quatro critérios obrigatórios de acionamento máximo da equipe de trauma. | Quatro destes: PAS confirmada < 90 mmHg; tiro no pescoço, tórax ou abdome; Glasgow < 9; intubado no pré-hospitalar; comprometimento respiratório ou via aérea de emergência; transferido com transfusão ou problema respiratório; decisão do emergencista [G13]. |
+| 32 | No acionamento máximo, em quanto tempo o cirurgião do trauma deve estar à beira do leito? | Em até 15 minutos, em pelo menos 80% das vezes, pelos padrões do ACS [G14]. |

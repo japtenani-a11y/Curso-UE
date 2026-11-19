@@ -8,7 +8,7 @@ A avaliação inicial existe para achar e tratar, rapidamente, o que pode matar 
 
 ## A ordem
 
-A ordem padrão é ABCDE: via aérea, respiração, circulação, estado neurológico e exposição. Há uma exceção: quando há sangramento externo grave ou o paciente chega em extremis, a circulação vem primeiro (CAB) [D2, D3]. No pré-hospitalar, a regra é a mesma: hemorragia externa maciça primeiro [D4].
+A ordem é xABCDE (ATLS 11): primeiro o sangramento externo que mata (x), depois via aérea, respiração, circulação, estado neurológico e exposição [D92, D89]. O x não pula a via aérea: enquanto um membro da equipe controla o sangramento, outro já cuida da via aérea básica [D93, D94]. No choque grave, a via aérea começa não invasiva e a intubação espera a reposição de sangue [G1, G6, D82]. Livros anteriores chamavam a inversão de CAB [D2, D3]; vale a forma do ATLS 11, mais recente. No pré-hospitalar, a regra é a mesma: hemorragia externa maciça primeiro [D4].
 
 Em 2025, um consenso de duas sociedades de trauma reforçou essa exceção: no paciente que está sangrando até a morte, controlar a hemorragia e repor sangue vêm antes da intubação [G1]. A via aérea continua em primeiro lugar quando está obstruída ou quando há hipóxia grave [G4]. A evidência desse consenso é toda observacional [G3].
 
@@ -29,7 +29,9 @@ A avaliação secundária é a história (AMPLA: alergias, medicamentos, passado
 
 ## A equipe
 
-Um líder coordena e fica com a visão do todo [D43]. No serviço, é o cirurgião; na impossibilidade, o médico mais experiente presente lidera até o cirurgião assumir [D22, P22]. Quando há aviso antes da chegada, a equipe faz o briefing: cada um diz o nome, combina-se o plano e o que fazer se o paciente chegar mais grave [D71]. A equipe do pré-hospitalar passa o caso em menos de um minuto, num formato fixo como o MIST: mecanismo, lesões, sinais vitais e sintomas, tratamentos já feitos [D23, D24]. Quem recebe uma ordem a repete em voz alta e avisa quando terminou [D70]. Fichas e checklists ajudam a não esquecer etapas [A8, A13].
+A equipe é chamada por critérios escritos, em níveis. O acionamento máximo, pelos padrões do Colégio Americano de Cirurgiões, inclui sempre: PAS confirmada abaixo de 90 mmHg, tiro no pescoço, no tórax ou no abdome, Glasgow abaixo de 9, intubado no pré-hospitalar, comprometimento respiratório ou via aérea de emergência, transferido que precisa de transfusão ou com problema respiratório em curso, e a decisão do emergencista [G12, G13]. Nesse nível, o cirurgião deve chegar à beira do leito em até 15 minutos [G14]. Quem tem critério e não é acionado morre mais [A54].
+
+Um líder coordena e fica com a visão do todo [D43]. Na UE, é o cirurgião do trauma; enquanto ele não chega, lidera o emergencista da sala vermelha, até o cirurgião assumir [D22, P22]. Quando há aviso antes da chegada, a equipe faz o briefing: cada um diz o nome, combina-se o plano e o que fazer se o paciente chegar mais grave [D71]. A equipe do pré-hospitalar passa o caso em menos de um minuto, num formato fixo como o MIST: mecanismo, lesões, sinais vitais e sintomas, tratamentos já feitos [D23, D24]. Quem recebe uma ordem a repete em voz alta e avisa quando terminou [D70]. Fichas e checklists ajudam a não esquecer etapas [A8, A13].
 
 ## Leve para o plantão
 

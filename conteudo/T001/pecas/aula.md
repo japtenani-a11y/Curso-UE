@@ -4,13 +4,13 @@ Duração: 30 minutos de exposição com os slides, dentro da reunião de 60 (au
 
 ## 1. O minuto em que se decide a ordem
 
-Na chegada, a pergunta é: este paciente, agora, morre primeiro de quê? A regra está no resumo básico: a circulação passa na frente quando há hemorragia que mata ou o paciente está em extremis [D2, D3].
+Na chegada, a pergunta é: este paciente, agora, morre primeiro de quê? A regra está no resumo básico: xABCDE, com o sangramento externo que mata na frente de tudo [D92, D89], e, no choque grave, intubação só depois de começar a repor sangue [G1, D82].
 
 - **Sinais de que a circulação passa na frente:** sangramento externo ativo, pulso radial ausente com femoral presente, agitação [D17], pele fria. A relação entre pulso e pressão é estimativa pouco estudada: radial sugere PAS de pelo menos 90 a 100 mmHg, femoral 70 a 80 e carotídeo 60 a 70 [D44].
 - **Pulso e pressão.** O pulso permite estimar uma faixa de PAS. Palpe radial, femoral e carotídeo; se o aparelho automático e a clínica discordarem, meça a pressão manualmente [D14].
 - **Sinais de que a via aérea continua na frente:** obstrução (sangue, vômito, queda da língua, estridor) e hipóxia grave que não cede com oxigênio [G4].
-- **O que fazer com a via aérea enquanto se trata a circulação:** oxigênio, aspiração, cânula e bolsa-válvula-máscara [G6]. É o plano A da ficha do serviço [P20].
-- **Por que adiar o tubo:** o porquê está no resumo básico [G7, D47]. Quando a intubação vier, com sangue e plasma já correndo [D39], deixe à mão a aspiração, as medicações e o plano B da ficha [P20]. Indutor: etomidato ou cetamina são os mais adequados na sequência rápida [D78]; no hipotenso, considere reduzir a dose em até 50% (o livro usa índice de choque acima de 0,8) [D79].
+- **O que fazer com a via aérea enquanto se trata a circulação:** oxigênio, aspiração, cânula e bolsa-válvula-máscara [G6]. É o plano A da Ficha 1 proposta pelo curso [P20].
+- **Por que adiar o tubo:** o porquê está no resumo básico [G7, D47]. Quando a intubação vier, com sangue e plasma já correndo [D39], deixe à mão a aspiração, as medicações e o plano B da Ficha 1 proposta [P20]. Indutor: etomidato ou cetamina são os mais adequados na sequência rápida [D78]; no hipotenso, considere reduzir a dose em até 50% (o livro usa índice de choque acima de 0,8) [D79].
 - **O risco oposto:** a falha em assegurar a via aérea esteve em 16% dos óbitos com erro [A51]. Adiar exige material pronto, pessoa designada e gatilho combinado ("se saturar abaixo de 90% com máscara, intubamos").
 
 ## 2. Hemorragia externa: a técnica muda com a anatomia
@@ -19,7 +19,7 @@ O que decide a técnica é onde a ferida está.
 
 **Membro (abaixo da axila e da virilha).**
 1. Compressão direta com a mão sobre o ponto que sangra, e não sobre o curativo encharcado [D6].
-2. Se não parar: torniquete. Posição: proximal à lesão, o mais distal possível, nunca sobre articulação ou proeminência óssea [D59]. Aperto: até ocluir o fluxo [D61]. Hora anotada; limite de 90 minutos, pelo nervo [D60].
+2. Se não parar: torniquete. Posição: 5 a 8 cm acima do ponto que sangra, sobre a pele, nunca sobre articulação [D95, D59]; se ainda sangrar, um segundo 5 a 8 cm acima do primeiro [D95]. Aperto: até parar o sangramento e sumir o pulso distal [D61]. Hora anotada, de preferência no próprio torniquete; com menos de 2 horas não parece haver mais amputação [D96]. Depois da primária e da ressuscitação, avaliar a conversão para outro método [D97].
 3. Reavaliar: a percepção de quem aplica pressão não é confiável [A26].
 4. Angio-TC do membro com torniquete: decidir com o assistente se e quando afrouxar; o protocolo de imagem do serviço ainda está definindo essa conduta [P13].
 
@@ -46,7 +46,7 @@ O que decide a técnica é onde a ferida está.
 
 - **Intraósseo.** Indicado quando o acesso venoso não é imediato [D15]. Local: salvo contraindicação, o úmero proximal pode ser o melhor no traumatizado; a tíbia é a alternativa, e o esterno atrapalha a toracotomia e a massagem [D46]. Os marcos de punção, a confirmação e as complicações seguem o manual do dispositivo usado no serviço e são treinados no laboratório de habilidades (tema T-081); aqui se decide quando e onde.
 - **Arterial femoral.** No hipotenso por sangramento abdominal ou pélvico, o acesso arterial precoce dá pressão contínua e prepara o REBOA [D50]. Com PAS abaixo de 80 mmHg, a femoral mal se palpa: usar o ultrassom [D51]. Cuidado no trauma torácico associado [D50].
-- **O que entra pelo acesso.** No choque evidente, sangue e plasma antes ou em vez de cristaloide [D39]. Escore ABC de 2 ou mais ativa o protocolo do hospital [P16]; a primeira caixa traz 2 concentrados e 2 plasmas [P17]. Ácido tranexâmico em até 3 horas [G8].
+- **O que entra pelo acesso.** No choque evidente, sangue e plasma antes ou em vez de cristaloide [D39]. Escore ABC de 2 ou mais prevê bem a transfusão maciça [H1, D33] e, na proposta de guia do curso, é um dos critérios para acionar o protocolo de transfusão maciça da UE, que define a sequência dos hemocomponentes [D35, D36]. Ácido tranexâmico em até 3 horas [G8].
 
 ## 5. Tórax: olhar, ouvir, drenar
 
@@ -59,7 +59,7 @@ O que decide a técnica é onde a ferida está.
 
 ## 6. Via aérea cirúrgica: quando o plano C chega
 
-A ficha do serviço prevê três planos: A (aspiração, cânula e manobras), B (intubação com bougie) e C (cricotireoidostomia com bougie) [P20]. A via aérea cirúrgica foi necessária em 0,24% de uma coorte [A28]: rara o bastante para ninguém ter prática, e por isso treinada em simulação.
+A Ficha 1 proposta pelo curso (ainda não implantada) prevê três planos: A (aspiração, cânula e manobras), B (intubação com bougie) e C (cricotireoidostomia com bougie) [P20]. A via aérea cirúrgica foi necessária em 0,24% de uma coorte [A28]: rara o bastante para ninguém ter prática, e por isso treinada em simulação.
 
 **Anatomia.** A membrana cricotireóidea fica entre a cartilagem tireoide, acima, e a cricoide, abaixo. Hematoma e enfisema subcutâneo a escondem [D67].
 
@@ -78,6 +78,7 @@ Exceção decidida pela coordenação: as complicações e armadilhas da via aé
 - **FAST negativo no hipotenso com trauma fechado:** repetir em 15 a 30 minutos ou aspirar o peritônio [D63].
 - **Tomografia:** a regra do resumo básico vale [D52, P9]; a decisão da aula é quem vai. Quem vai à TC de corpo inteiro no serviço: pelo menos um dos três grupos do protocolo, mecanismo, critério clínico ou TCE moderado a grave [P2]. Exemplo: capotamento [P3] com Glasgow 11 aferido antes da sedação [P5] vai, se estável.
 - **Tempo:** os óbitos de tórax e abdome se concentram entre 1 e 6 horas [A56]; o erro que mais se repete é o atraso [A51, A52]. Em um centro, chegar ao centro cirúrgico em menos de 10 minutos associou-se a maior sobrevida no ferimento por arma de fogo do tronco [D69].
+- **Acionamento:** quem tinha critério de acionamento máximo e não foi acionado é o paciente que mais se perde [A53, A54]. Os oito critérios estão no resumo básico [G13]; na dúvida, aciona-se, e o emergencista pode acionar por decisão própria [G13].
 - **Equipe:** briefing com plano B [D71]; ordem dada pelo nome e repetida por quem recebe [D70]; qualquer um pode parar o atendimento, em degraus: perguntar, alertar, contestar, agir [D72]. Debriefing não punitivo depois [D73].
 
 **Para o R+: achar o minuto do erro.** Óbito fictício. Motociclista, 34 anos, chega às 22h00 com PAS 80 e FAST negativo. 22h05: cinta pélvica. 22h15: PAS 90 após a primeira caixa; vai à TC "aproveitando a melhora". 22h40: volta com PAS 60. 23h10: angiografia. 23h35: parada. Em que minuto a conduta mudou o desfecho, e qual dos padrões de erro se aplica: atraso no tratamento, erro de julgamento ou diagnóstico não feito [A51, A52]? Proponha a regra que teria evitado o erro.

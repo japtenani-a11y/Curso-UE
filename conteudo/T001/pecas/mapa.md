@@ -4,8 +4,8 @@
 mindmap
   root((Avaliação inicial xABCDE))
     Ordem
-      ABCDE é o padrão D2
-      CAB na hemorragia exsanguinante G1
+      xABCDE é o padrão D92
+      Intubação adiada no choque grave G1
       Via aérea primeiro se obstruída G4
       Evidência observacional G3
     Evidência do treinamento
@@ -43,6 +43,8 @@ mindmap
       Lesões tardias mesmo com TC A42
       Terciária sempre A41
     Equipe
+      Acionamento por critério em níveis G12 G13
+      Cirurgião em 15 minutos G14
       Briefing e plano B D71
       Alça fechada D70
       Passagem MIST em 1 minuto D23 D24

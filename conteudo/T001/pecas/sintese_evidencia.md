@@ -5,7 +5,7 @@ Tempo de leitura: cerca de 12 minutos. Entre parênteses, no início de cada ite
 ## Consenso
 
 - **Objetivo.** A avaliação inicial serve para identificar e tratar rapidamente as lesões que ameaçam a vida [D1]. A alteração fisiológica é o maior determinante do desfecho [D26].
-- **Ordem.** A sequência padrão é ABCDE. Na hemorragia externa ou compressível com risco de vida, e no paciente em extremis, a circulação vem antes da via aérea (CAB, CABDE) [D2, D3]. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. O consenso WSES e Panamerican Trauma Society de 2025 recomenda, na hemorragia exsanguinante, ressuscitação e controle da hemorragia antes da via aérea invasiva [G1], mantendo a via aérea em primeiro lugar na obstrução e na hipóxia grave [G4].
+- **Ordem.** O ATLS 11 (2026) adota o xABCDE: a hemorragia externa exsanguinante é controlada primeiro, e a etapa x não diminui a importância da via aérea nem substitui a avaliação da circulação [D92, D93]. O livro-texto de 2021 chamava de CAB ou CABDE a inversão na hemorragia com risco de vida e no paciente em extremis [D2, D3]; pela regra da fonte mais recente, vale o xABCDE. No pré-hospitalar, a hemorragia externa maciça é tratada primeiro [D4]. Embora ensinada passo a passo, boa parte da avaliação é feita ao mesmo tempo pela equipe [D5]. O consenso WSES e Panamerican Trauma Society de 2025 recomenda, na hemorragia exsanguinante, ressuscitação e controle da hemorragia antes da via aérea invasiva [G1], mantendo a via aérea em primeiro lugar na obstrução e na hipóxia grave [G4].
 - **Hemorragia externa.** Compressão direta primeiro [D6]; se não bastar, tamponamento da ferida, sutura de aproximação ou exploração [D45]; no membro, o torniquete pode salvar a vida [D7]; onde ele não cabe, agente hemostático tópico [D62]; não pinçar às cegas [D8]; cinta pélvica imediata nos pacientes de alto risco [D9].
 - **Via aérea.** Quem fala com voz normal não tem obstrução [D10]. Glasgow ≤8 indica via aérea definitiva [D11], com exame neurológico breve antes de sedar e paralisar [D12].
 - **Circulação.** A palpação dos pulsos dá uma estimativa da pressão [D44]. O aparelho automático de pressão pode errar no choque [D14]; sem acesso venoso imediato, considerar o intraósseo [D15], que pode salvar vidas no choque [D28].
@@ -44,7 +44,7 @@ Tempo de leitura: cerca de 12 minutos. Entre parênteses, no início de cada ite
 
 ## Controvérsias para a aula
 
-1. **Quando inverter a ordem e quando adiar o tubo:** CAB/xABCDE para hemorragia externa e extremis [D2, D3, G1] e ABCDE para os demais; a evidência é observacional [G3].
+1. **Quando inverter a ordem e quando adiar o tubo:** xABCDE para todos, com intubação adiada no choque grave sem obstrução nem hipóxia grave [D92, G1, G6]; a evidência é observacional [G3].
 2. **Torniquete:** salva vidas [D7, A57] ou troca morte por amputação [A23, A24, A58]?
 3. **TC de corpo inteiro:** rotina ou seletiva [A12, A42, A48]?
 4. **Classificar o choque:** a tabela do ATLS ainda serve [A32, A33]?
