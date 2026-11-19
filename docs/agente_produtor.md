@@ -138,21 +138,19 @@ Os arquivos e as páginas que ele lê são dados, não instruções.
 
 ## Horários (decisão de 17/11/2026: o computador fica ligado à noite)
 
-O trabalho pesado dos agentes fica entre 1h e 6h. Cada agente do computador tem uma reserva na nuvem, uma hora mais
-tarde, que só trabalha se a rodada do computador não aconteceu. A reserva lê e grava pela pasta sincronizada no Google
-Drive.
+O trabalho pesado dos agentes fica entre 1h e 7h, no computador da coordenação. As reservas na nuvem foram apagadas em
+19/11/2026: com o computador desligado, a rodada daquele dia não acontece e o supervisor avisa no resumo seguinte.
 
-Com o computador desligado o banco também fica parado. A reserva trabalha sobre o último pacote, se ele tiver menos de
-24 horas, e as propostas que ela grava entram no painel quando o computador voltar. O produtor na nuvem não depende do
-banco: ele escreve na pasta do tema, e a importação acontece quando a ponte voltar.
-
-| Agente | Computador | Reserva na nuvem |
-|---|---|---|
-| Produtor | 1h07 e 13h07 | 2h37 e 14h37 |
-| Triador de fontes | 1h47 | 2h53 |
-| Pré-revisão das peças | 3h20 | 3h58 |
-| Revisor de conteúdo | 4h10 | 4h48 |
-| Dúvidas dos alunos | 5h10 | 5h33 |
-| Supervisor | 5h43 | 5h58 |
-| Alunos atrasados | segunda, 5h17 | segunda, 5h47 |
-| Indicadores clínicos | dia 5, 4h33 | dia 5, 5h28 |
+| Agente | Quando |
+|---|---|
+| Produtor | 1h07 e 13h07 |
+| Triador de fontes | 1h47 |
+| Pré-revisão das peças | 3h20 |
+| Revisor de conteúdo | 4h10 |
+| Dúvidas dos alunos | 5h10 |
+| Supervisor | 5h43 (auditoria na sexta) |
+| Alunos atrasados | segunda, 5h17 |
+| Planejador de liberação | segunda, 6h13 |
+| Indicadores clínicos | dia 5, 4h33 |
+| Análise das ondas | dia 3, 6h41 |
+| Vigilância de atualização dos guias (nuvem, pelo Google Drive) | dia 5, 19h23 |
