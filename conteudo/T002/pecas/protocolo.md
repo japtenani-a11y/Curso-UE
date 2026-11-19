@@ -86,7 +86,7 @@ Divergência: a EAST de 2012 e o livro-texto de 2021 mantinham a succinilcolina 
 Força: forte | Certeza: moderada
 Origem: adotada de [G2] e [D29].
 Justificativa: a detecção de CO2 expirado é obrigatória para confirmar o tubo [D29]; o colorimétrico pode falhar na parada prolongada, e o ultrassom ajuda a confirmar a ventilação [D61, A36].
-Na prática: curva sustentada e ausculta bilateral [D91]; profundidade anotada na comissura labial [G18]. Na UE-HCFMRP não há capnógrafo em forma de onda disponível para a sala: a aquisição é requisito do nível 1 (passo 4 da implantação). Até lá, ultrassom (disponível) para confirmar a ventilação [A36] e o detector de CO2 que houver no serviço, sabendo que o colorimétrico pode falhar na parada prolongada [D61] [existência de detector colorimétrico na sala: a confirmar pela coordenação].
+Na prática: curva sustentada e ausculta bilateral [D91]; profundidade anotada na comissura labial [G18]. Na UE-HCFMRP não há capnógrafo em forma de onda disponível para a sala: a aquisição é requisito do nível 1 (passo 4 da implantação). Também não há detector colorimétrico; hoje a confirmação é feita por ausculta e saturação, que não bastam [D29]. Até a chegada do capnógrafo, a proposta é somar o ultrassom (disponível) à ausculta para confirmar a ventilação [A36], com o registro do método usado.
 
 **Recomendação 9.** Limitar as tentativas, interromper com saturação abaixo de 90% e declarar a falha em voz alta.
 Força: forte | Certeza: consenso de especialistas
@@ -248,10 +248,10 @@ Para a UE-HCFMRP, com as respostas da coordenação de 19/11/2026. Outro serviç
 
 | Ponto | UE-HCFMRP hoje | Proposta do curso |
 |---|---|---|
-| Quem intuba | Residente da emergência ou da cirurgia, em rodízio, na primeira tentativa; chefe da emergência ou da cirurgia da segunda em diante | Na via aérea difícil prevista (sangue ou deformidade da face, edema, lesão inalatória, choque com índice acima de 0,8, obesidade, LEMON positivo), a primeira tentativa é do chefe presente ou do operador mais experiente [D81, D9]; na via aérea prevista sem dificuldade, o residente faz a primeira com o chefe na sala |
+| Quem intuba | Residente da emergência ou da cirurgia, em rodízio, na primeira tentativa; chefe da emergência ou da cirurgia da segunda em diante | Na via aérea difícil prevista (sangue ou deformidade da face, edema, lesão inalatória, choque com índice acima de 0,8, obesidade, LEMON positivo), a primeira tentativa é do R3, residente mais experiente da sala [D81, D9]; na via aérea prevista sem dificuldade, segue o rodízio, com o chefe na sala; da segunda tentativa em diante, o chefe (decisão da coordenação de 19/11/2026) |
 | Quem faz a cricotireoidostomia | Equipe de cirurgia (residente e preceptor) | Mantida; o cirurgião que fará o pescoço participa da pausa pré-intubação (R1) |
-| Anestesiologia | 24 horas no centro cirúrgico; chamada por telefone depois que os chefes da emergência e do trauma não conseguem | Aviso antecipado ao anestesista na via aérea difícil prevista, sem mudar quem intuba; a decisão é das equipes na validação |
-| Material na sala 24 horas | Videolaringoscópio (diversas marcas), bougie, máscara laríngea e ultrassom: sim. I-gel, capnógrafo em forma de onda e endoscópio flexível: não disponíveis para a sala | Capnógrafo em forma de onda na sala como requisito do nível 1 (R8) |
+| Anestesiologia | 24 horas no centro cirúrgico; chamada por telefone depois que os chefes da emergência e do trauma não conseguem | Na via aérea difícil prevista (a da primeira tentativa pelo R3), o anestesista é avisado logo após a primeira falha, sem mudar quem intuba (decisão da coordenação de 19/11/2026) |
+| Material na sala 24 horas | Videolaringoscópio (diversas marcas), bougie, máscara laríngea e ultrassom: sim. I-gel, capnógrafo em forma de onda e endoscópio flexível: não disponíveis para a sala | Capnógrafo em forma de onda na sala como requisito do nível 1 (R8); hoje não há detector colorimétrico, e a confirmação é por ausculta e saturação |
 | Kit de cricotireoidostomia | Pronto na sala (bisturi lâmina 10, bougie, tubo 6,0, gancho) | Conferência diária, com indicador; sequência impressa na tampa |
 | Fármacos na sala | Succinilcolina, cetamina, etomidato e propofol 24 horas; rocurônio e sugamadex só na farmácia | Rocurônio na sala (R7); até lá, succinilcolina sem contraindicação e rocurônio pedido na decisão de intubar quando houver contraindicação |
 | Checklist e registro | Há checklist; a intubação é anotada no prontuário depois da tentativa, já com o desfecho | O checklist atual não é usado: nova ficha de checklist pré-intubação e registro da intubação, na seção "Implantação" |
@@ -314,12 +314,12 @@ Proposta do curso para a UE-HCFMRP, em substituição ao checklist atual. Preenc
 | Item | Sim | Não |
 |---|---|---|
 | Funções ditas: quem intuba, quem ventila, quem segura a cabeça, quem aspira, quem olha saturação e relógio (R1) | | |
-| Via aérea difícil prevista? Se sim, primeira tentativa pelo chefe ou pelo mais experiente e anestesista avisado (R6) | | |
+| Via aérea difícil prevista? Se sim, primeira tentativa pelo R3 e anestesista avisado logo após a primeira falha (R6) | | |
 | Plano para a falha dito: extraglótico, quem faz o pescoço, idade abaixo de 12 anos = agulha (R1, R10, R11) | | |
 | Kit do pescoço aberto: bisturi lâmina 10, bougie, tubo 6,0 (R1) | | |
 | Aspirador rígido ligado e testado (R1) | | |
 | Videolaringoscópio, bougie e máscara laríngea à mão (R6) | | |
-| Confirmação pronta: capnógrafo ligado ao circuito, ou, enquanto não houver, ultrassom e detector disponível (R8) | | |
+| Confirmação pronta: capnógrafo ligado ao circuito, ou, enquanto não houver, ultrassom à mão além da ausculta (R8) | | |
 | Sangue correndo se o paciente sangra; índice de choque calculado; adrenalina em bolus preparada se acima de 0,8 (R3, R4) | | |
 | Saturação acima de 94% por 3 minutos; cateter nasal a 15 L/min (R4) | | |
 | Pneumotórax e tamponamento procurados (R12) | | |
@@ -339,10 +339,10 @@ Proposta do curso para a UE-HCFMRP, em substituição ao checklist atual. Preenc
 | Sucesso na primeira tentativa | Sim / Não |
 | Saturação mínima durante o procedimento | |
 | PAS menor que 90 mmHg ou parada até 10 minutos após o tubo | Sim / Não |
-| Confirmação: capnografia, colorimétrico, ultrassom, ausculta | |
+| Confirmação: capnografia, ultrassom, ausculta | |
 | Profundidade na comissura labial | |
 | Falha declarada; extraglótico; cricotireoidostomia (hora da declaração e hora da incisão) | |
-| Anestesista chamado (hora) | |
+| Anestesista avisado ou chamado (hora; após qual tentativa) | |
 | Eventos: tubo esofágico, aspiração, broncoaspiração, falso trajeto | |
 | Destino da via aérea cirúrgica: equipe responsável e prazo | |
 
@@ -519,6 +519,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 ## Revisão
 
 - Situação: proposta; entregue à diretoria em [data]; validação pelas equipes: a iniciar; adoção pelo serviço: pendente.
+- Versão 1.1, 19/11/2026 (18h05): primeira tentativa pelo R3 na via aérea difícil prevista; anestesista avisado após a primeira falha; sem detector colorimétrico, ultrassom somado à ausculta.
 - Versão 1.1, 19/11/2026: "Adaptação local" preenchida com as respostas da coordenação; ficha proposta de checklist e registro; capnógrafo e rocurônio na sala como requisitos do nível 1.
 - Versão 1.0, 19/11/2026: primeira versão, no padrão de guia de atendimento do curso (19 seções e implantação do nível 0 ao nível 5).
 - Próxima revisão: novembro de 2028, ou antes se for publicada nova versão de uma das diretrizes de origem.

@@ -26,6 +26,8 @@ Itens gerais (aproveitados do T001, salvo indicação em contrário): proposta d
 8. Conversão para traqueostomia pela cirurgia de cabeça e pescoço ou pela cirurgia de urgência, em 48 horas.
 9. Iniciar no nível 0 e propor o passo a passo até o nível 5.
 
-## Pendente
+## Respostas de 19/11/2026, 18:04
 
-10. Há detector colorimétrico de CO2 na sala de trauma? (Define a confirmação do tubo enquanto o capnógrafo em forma de onda não chega.)
+10. Não há detector colorimétrico; a confirmação atual é por ausculta e observação da saturação.
+- Primeira tentativa na via aérea difícil prevista: R3.
+- Anestesista: aviso logo após a primeira falha nos pacientes com sinais de via aérea difícil (os da primeira tentativa pelo R3).

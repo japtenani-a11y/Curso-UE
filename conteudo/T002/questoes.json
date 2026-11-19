@@ -1150,11 +1150,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, o que é a intubação neuroprotetora?",
   "alternativas": [
-   "Intubar pela via nasal, às cegas, sem bloqueio",
-   "Intubar sem sedação, para não baixar a pressão",
-   "Intubar evitando hipotensão, hipóxia, hipercapnia e descarga simpática",
-   "Intubar só com cetamina, em qualquer dose",
-   "Intubar só depois da tomografia de crânio"
+   "Intubar pela via nasal, às cegas, sem nenhum bloqueio",
+   "Intubar sem sedação, para não baixar a pressão arterial",
+   "Evitar hipotensão, hipóxia, hipercapnia e descarga simpática",
+   "Intubar só com cetamina, em qualquer dose, sem bloqueador",
+   "Intubar só depois da tomografia de crânio sem contraste"
   ],
   "correta": "C",
   "justificativas": [
@@ -1646,11 +1646,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, o que registrar da intubação para o indicador do serviço?",
   "alternativas": [
-   "Só o horário de início da intubação",
-   "Tentativas, dispositivo, operador, saturação mínima, confirmação",
-   "Só o fármaco e a dose da indução",
-   "Só o tamanho e a profundidade do tubo",
-   "Nada; isso já fica no prontuário da UTI"
+   "Só o horário de início e de fim da intubação",
+   "Tentativas, dispositivo, operador, saturação mínima",
+   "Só o fármaco e a dose usados na indução",
+   "Só o tamanho e a profundidade do tubo na comissura",
+   "Nada; isso já fica registrado no prontuário da UTI"
   ],
   "correta": "B",
   "justificativas": [
@@ -2491,11 +2491,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, a equipe discute ordem: o que é consenso entre as fontes?",
   "alternativas": [
-   "Se oxigena, o tubo espera; se não oxigena, a via aérea vem antes",
-   "Não há nenhum ponto de consenso",
-   "Depende do sexo e da idade do paciente",
-   "Sempre a circulação antes de tudo",
-   "Sempre a via aérea antes de tudo"
+   "Se oxigena, o tubo espera; se não, a via aérea vem antes",
+   "Não há nenhum ponto de consenso entre as fontes",
+   "Depende do sexo e da idade do paciente na chegada",
+   "Sempre a circulação antes de tudo, mesmo sem oxigenar",
+   "Sempre a via aérea antes de tudo, mesmo se oxigena"
   ],
   "correta": "A",
   "justificativas": [
@@ -2665,10 +2665,10 @@
   "enunciado": "Sobre o caso 3: no estudo de Ferrada, o que indica que os grupos eram diferentes desde a chegada?",
   "alternativas": [
    "Mais lesões penetrantes e mais intubações no centro cirúrgico",
-   "A mesma pressão de chegada nos grupos",
-   "A idade média igual nos dois grupos",
-   "O mesmo mecanismo de trauma em todos",
-   "A mesma equipe atendendo os dois grupos"
+   "A mesma pressão arterial de chegada nos dois grupos",
+   "A idade média igual nos dois grupos do estudo",
+   "O mesmo mecanismo de trauma em todos os pacientes",
+   "A mesma equipe e o mesmo hospital em todos os casos"
   ],
   "correta": "A",
   "justificativas": [
@@ -3834,11 +3834,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, como o ultrassom ajuda a confirmar a ventilação?",
   "alternativas": [
-   "Não ajuda na confirmação",
-   "Mede a pressão intracraniana",
-   "Mostra o balonete na carina",
+   "Não ajuda a confirmar a ventilação",
+   "Mede a pressão intracraniana pelo nervo óptico",
+   "Mostra o balonete do tubo apoiado na carina",
    "Deslizamento pleural, pulso pulmonar, diafragma",
-   "Mede o CO2 expirado"
+   "Mede o CO2 expirado a cada ventilação"
   ],
   "correta": "D",
   "justificativas": [
@@ -4293,11 +4293,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 5, na passagem para a UTI, o que garantir?",
   "alternativas": [
-   "Nada a mais que o prontuário",
+   "Nada a mais do que já está no prontuário",
    "Sedação, eucapnia, normoxia e causa tratada",
-   "Suspender o oxigênio logo",
-   "Extubação precoce na UTI",
-   "Hiperventilação de rotina"
+   "Suspender o oxigênio logo para evitar hiperóxia",
+   "Extubação precoce na UTI, nas primeiras horas",
+   "Hiperventilação de rotina para proteger o cérebro"
   ],
   "correta": "B",
   "justificativas": [
@@ -4996,11 +4996,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, o que preparar antes da indução?",
   "alternativas": [
-   "Só o oxímetro",
+   "Só o oxímetro e o monitor cardíaco",
    "Vídeo, tubos menores, aspirador e agulha",
-   "Nada além do tubo",
-   "Só o bloqueador",
-   "Só a máscara facial"
+   "Nada além do tubo do tamanho habitual",
+   "Só o bloqueador e o indutor na seringa",
+   "Só a máscara facial e o ambu infantil"
   ],
   "correta": "B",
   "justificativas": [
@@ -5031,11 +5031,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, por que a membrana favorece o acesso de emergência em relação à traqueia?",
   "alternativas": [
-   "Porque é mais profunda",
-   "Não favorece o acesso",
+   "Porque é mais profunda que a traqueia",
+   "Não favorece; a traqueia é mais fácil",
    "Mais superficial e menos vascularizada",
-   "Porque é cartilaginosa",
-   "Mais larga na criança"
+   "Porque é cartilaginosa e não sangra",
+   "Porque é mais larga na criança pequena"
   ],
   "correta": "C",
   "justificativas": [
@@ -5142,10 +5142,10 @@
   "enunciado": "No caso 6, quem tem o porte de adolescente aos 10 anos muda a técnica?",
   "alternativas": [
    "Walls admite pelo porte; o curso mantém 12 anos",
-   "Só com ultrassom disponível",
-   "Só se tiver mais de 50 kg",
-   "Não, nunca em nenhuma fonte",
-   "Sim, sempre, em todas as fontes"
+   "Só com ultrassom disponível na sala de trauma",
+   "Só se pesar mais de 50 kg, segundo o curso",
+   "Não, nenhuma fonte admite exceção pelo porte",
+   "Sim, todas as fontes liberam a técnica aberta"
   ],
   "correta": "A",
   "justificativas": [
@@ -5172,23 +5172,23 @@
   "fixa": false,
   "perfil": "R3",
   "teste": 6,
-  "grau": 5,
-  "taxa_esperada": "15% a 30%",
-  "enunciado": "No caso 6, o que registrar para o indicador do serviço?",
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a máscara laríngea foi usada como ponte enquanto se prepara o resgate. Ela protege a via aérea contra aspiração?",
   "alternativas": [
-   "Só o fármaco usado na indução",
-   "Tentativas, dispositivo, operador e confirmação",
-   "Nada; não há indicador",
-   "Só o horário da intubação",
-   "Só o tamanho do tubo usado"
+   "Sim, se o balonete estiver bem insuflado",
+   "Não de forma confiável: é medida temporária",
+   "Sim, desde que a criança esteja sedada",
+   "Sim, como o tubo com balonete na traqueia",
+   "Só não protege em adultos obesos"
   ],
   "correta": "B",
   "justificativas": [
-   "É parte, não o todo [A22].",
-   "Correta: tentativas, primeira tentativa, eventos e confirmação [A22, G2].",
-   "O registro é parte do protocolo [A22].",
-   "Não mede a qualidade [A22].",
-   "É parte, não o todo [A22]."
+   "O balonete do extraglótico não dá a proteção do tubo traqueal [D57].",
+   "Correta: o dispositivo extraglótico é medida temporária e não protege de forma confiável contra aspiração [D57, G11].",
+   "A sedação não muda a proteção [D57].",
+   "Não é via aérea definitiva [G11, D47].",
+   "A limitação vale para todos [D57]."
   ],
   "categorias": [
    "erro técnico",
@@ -5198,8 +5198,9 @@
    "erro de conduta"
   ],
   "ancoras": [
-   "A22",
-   "G2"
+   "D57",
+   "G11",
+   "D47"
   ]
  },
  {
@@ -5280,10 +5281,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 6: a traqueostomia precoce no politrauma reduziu a mortalidade?",
   "alternativas": [
-   "Não foi estudada",
-   "Aumentou a mortalidade",
-   "Sim, reduziu de forma clara",
-   "Só reduziu em crianças",
+   "Não foi estudada em revisão sistemática",
+   "Aumentou a mortalidade em relação à tardia",
+   "Sim, reduziu a mortalidade de forma clara",
+   "Só reduziu a mortalidade em crianças",
    "Pouco ou nenhum efeito, comparada à tardia"
   ],
   "correta": "E",
