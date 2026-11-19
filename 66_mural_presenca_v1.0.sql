@@ -56,7 +56,7 @@ RETURNS TABLE (uid TEXT, inicio TIMESTAMPTZ, titulo TEXT, descricao TEXT, link T
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app AS $$
   WITH p AS (SELECT pessoa_id FROM app.agenda_token WHERE token = p_token AND length(p_token) >= 30)
   SELECT 'aula-' || t.codigo || '@programa-cut', a.data_hora, t.codigo || ' — ' || t.titulo,
-         'Aula do Programa de Cirurgia de Urgência e Trauma (tema principal).', coalesce(a.link_meet, app.config('link_meet'))
+         'Aula do CUT (Curso de Cirurgia Geral, Urgência e Trauma) (tema principal).', coalesce(a.link_meet, app.config('link_meet'))
     FROM app.agenda_aula a JOIN app.tema t ON t.tema_id = a.tema_id, p
   UNION ALL
   SELECT 'd0-' || t.codigo || '-' || p.pessoa_id || '@programa-cut', o.data_abertura, t.codigo || ' — ' || t.titulo || ' (minha data)',
@@ -156,7 +156,7 @@ BEGIN
            'Novo no mural do curso: ' || left(p->>'titulo', 120),
            left(coalesce(p->>'corpo', ''), 1500) || CASE WHEN p->>'tipo' = 'questionario' THEN E'\n\nHá um questionário para responder no aplicativo.' ELSE '' END,
            jsonb_build_object('caminho', '/aluno/mural', 'rotulo_link', 'Abrir o mural',
-                              'rodape', 'Você recebe este aviso porque autorizou e-mails do Programa de Cirurgia de Urgência e Trauma.')
+                              'rodape', 'Você recebe este aviso porque autorizou e-mails do CUT (Curso de Cirurgia Geral, Urgência e Trauma).')
       FROM app.contato_aluno c JOIN app.pessoa pe ON pe.pessoa_id = c.pessoa_id
      WHERE c.aceita_email AND app.eh_aluno_ativo(c.pessoa_id);
   END IF;
@@ -542,7 +542,7 @@ BEGIN
             WHERE c.aceita_email AND app.eh_aluno_ativo(c.pessoa_id)
               AND NOT EXISTS (SELECT 1 FROM app.resumo_enviado e WHERE e.pessoa_id = c.pessoa_id AND e.semana = v_sem) LOOP
     PERFORM set_config('app.pessoa_id', r.pessoa_id::text, true);
-    SELECT 'Olá, ' || split_part(r.nome_completo, ' ', 1) || E'! Sua semana no Programa de Cirurgia de Urgência e Trauma:\n\n'
+    SELECT 'Olá, ' || split_part(r.nome_completo, ' ', 1) || E'! Sua semana no CUT (Curso de Cirurgia Geral, Urgência e Trauma):\n\n'
       || coalesce('AULAS DA SEMANA\n' || (SELECT string_agg('• ' || to_char(a.data_hora AT TIME ZONE 'America/Sao_Paulo', 'DD/MM (Dy) HH24:MI') || ' — ' || a.codigo || ' ' || a.titulo, E'\n' ORDER BY a.data_hora)
                     FROM app.calendario_aulas() a WHERE a.data_hora >= now() AND a.data_hora < now() + interval '7 days') || E'\n\n', '')
       || coalesce('TESTES PENDENTES\n' || (SELECT string_agg('• ' || pd.codigo || ' — ' || pd.nome || coalesce(' (até ' || to_char(pd.prazo AT TIME ZONE 'America/Sao_Paulo', 'DD/MM HH24:MI') || ')', ''), E'\n')
@@ -583,7 +583,7 @@ BEGIN
               AND NOT EXISTS (SELECT 1 FROM app.aniversario_enviado e WHERE e.pessoa_id = p.pessoa_id AND e.ano = extract(year FROM v_hoje)) LOOP
     a := app.aproveitamento(r.pessoa_id);
     v_txt := 'Prezado(a) ' || split_part(r.nome_completo, ' ', 1) || E',\n\n'
-      || E'Em nome da coordenação do Programa de Cirurgia de Urgência e Trauma, desejamos a você um feliz aniversário! '
+      || E'Em nome da coordenação do CUT (Curso de Cirurgia Geral, Urgência e Trauma), desejamos a você um feliz aniversário! '
       || E'Que este novo ano traga saúde, realizações e muitas conquistas na sua formação e na sua vida.\n\n'
       || E'Aproveitamos a data para compartilhar o seu caminho no curso até aqui:\n'
       || '• Temas concluídos: ' || (a->>'temas_concluidos') || ' (' || (a->>'horas') || E' horas)\n'
@@ -593,11 +593,11 @@ BEGIN
       || coalesce('• Média nos testes: ' || (SELECT round(avg(n.pct))::text FROM app.nota_teste n WHERE n.pessoa_id = r.pessoa_id) || '% '
                   || '(esperada para o seu perfil: ' || (SELECT round(avg(n.esperado))::text FROM app.nota_teste n WHERE n.pessoa_id = r.pessoa_id) || E'%)\n', '')
       || E'\nMuito obrigado pela confiança depositada no programa e pela sua participação: ela é o que dá sentido a este trabalho. '
-      || E'Seguimos juntos!\n\nCom carinho e estima,\nCoordenação do Programa de Cirurgia de Urgência e Trauma';
+      || E'Seguimos juntos!\n\nCom carinho e estima,\nCoordenação do CUT (Curso de Cirurgia Geral, Urgência e Trauma)';
     INSERT INTO app.notificacao_saida (pessoa_id, canal, destino, assunto, corpo, parametros)
     VALUES (r.pessoa_id, 'email', r.email, 'Feliz aniversário, ' || split_part(r.nome_completo, ' ', 1) || '!', v_txt,
             jsonb_build_object('caminho', '/aluno/desempenho', 'rotulo_link', 'Ver o seu desempenho',
-                               'rodape', 'Mensagem da coordenação do Programa de Cirurgia de Urgência e Trauma.'));
+                               'rodape', 'Mensagem da coordenação do CUT (Curso de Cirurgia Geral, Urgência e Trauma).'));
     INSERT INTO app.aniversario_enviado VALUES (r.pessoa_id, extract(year FROM v_hoje));
     n := n + 1;
   END LOOP;

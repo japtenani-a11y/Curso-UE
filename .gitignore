@@ -1,1 +1,13 @@
 __pycache__/
+
+# audios do podcast (gerados localmente; nao vao para o GitHub)
+/podcast/
+/programa-cut/podcast/
+*.mp3
+/slides/
+/programa-cut/slides/
+
+# texto integral das fontes e saidas locais (nao vao para o GitHub)
+/conteudo/*/fontes_banco/
+/conteudo/*/fontes/
+/logs/

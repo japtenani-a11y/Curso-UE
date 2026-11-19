@@ -5,7 +5,7 @@
 # entrarem com o login do Google. Tudo passa por uma porta unica (gateway) e um tunel HTTPS do ngrok.
 #   navegador -> https://SEU-DOMINIO.ngrok-free.app -> ngrok -> gateway :8080 -> aplicativo (pwa/dist)
 #                                                                         \-> /api/* -> API :3000
-# Quem entra: so os e-mails cadastrados no 49_revisores_v1.0.sql (japtenani, Aline, Jorge).
+# Quem entra: so os e-mails da lista ~/.config/curso-ue/revisores.csv (cadastrados pelo 49_revisores_v1.0.sql).
 # Modo producao: sem login de teste, cookies seguros, CORS so do dominio, limites de acesso.
 #
 # PREPARO (uma vez so; ver docs/servidor_revisao_v1.0.md):
@@ -56,8 +56,13 @@ command -v ngrok >/dev/null || falhar "ngrok nao instalado. Veja docs/servidor_r
 [ -f "$RABS/servidor/gateway.mjs" ] || falhar "falta servidor/gateway.mjs: rode o subir_api_pwa_wsl_v1.0.sh atualizado (ele aplica o 51)."
 
 SQL="psql postgresql://postgres:$PW@$HOST:$PORTA/programa -v ON_ERROR_STOP=1 -q"
+REV="$HOME/.config/curso-ue/revisores.csv"   # e-mails dos revisores: so neste computador, fora do repositorio
+[ -f "$REV" ] || falhar "falta $REV (uma linha por pessoa: email;nome;papel;substitui). Veja docs/servidor_revisao_v1.0.md, passo 3."
+SQL="$SQL -v revisores=$REV"
 echo "[1/5] Cadastrando revisores e registro de acesso..."
-for f in 49_revisores_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql; do
+: > "$RABS/logs/srv_banco.log"
+for f in 49_revisores_v1.0.sql 101_reestruturacao_temas_v1.0.sql 53_temas_programa_v1.0.sql 54_temas_opcionais_v1.0.sql 55_avaliacao_ranking_v1.0.sql 58_duvidas_publicacao_v1.0.sql 59_aviso_revisao_v1.0.sql 60_jornada_aluno_v1.0.sql 62_cadastro_aluno_v1.0.sql 64_nota_esperada_v1.0.sql 65_arvore_temas_v1.0.sql 66_mural_presenca_v1.0.sql 68_estudo_dirigido_v1.0.sql 71_temas_producao_v1.0.sql 72_sintese_pesquisa_v1.0.sql 73_extras_v1.0.sql 76_certeza_questao_v1.0.sql 78_perfis_v1.0.sql 79_aluno_para_todos_v1.0.sql 81_sequencia_material_v1.0.sql 82_interativo_v1.0.sql 83_ajustes_v2p_v1.0.sql 84_falas_slides_T001_v1.0.sql 85_estudo_pesquisa_v1.0.sql 86_dicas_caso_T001_v1.0.sql 88_formato_tempo_v1.0.sql 89_coordenacao_agentes_v1.0.sql 92_prazos_producao_v1.0.sql 95_entrada_por_email_v1.0.sql 97_aprovar_sugeridas_v1.0.sql 99_producao_agente_v1.0.sql 100_fusao_temas_v1.0.sql 103_acesso_equipe_v1.0.sql 104_meu_material_v1.0.sql 105_temas_liberados_v1.0.sql 106_agentes_novos_v1.0.sql 107_autorizacao_revisor_v1.0.sql 108_pdf_marca_dagua_v1.0.sql 109_simulado_filtros_v1.0.sql; do
+  [ -f "$f" ] || continue
   $SQL -f $f >> "$RABS/logs/srv_banco.log" 2>&1 || falhar "$f falhou; veja $RAIZ/logs/srv_banco.log"
 done
 grep -E "@" "$RABS/logs/srv_banco.log" | sed 's/^/      /'
@@ -90,14 +95,15 @@ echo "      ok"
 
 echo "[5/5] Abrindo o tunel HTTPS (ngrok) em https://$DOMINIO ..."
 ( nohup setsid ngrok http --url="$DOMINIO" 8080 --log stdout > "$RABS/logs/srv_ngrok.log" 2>&1 & echo $! > "$RABS/logs/srv_ngrok.pid" )
-OK=""; for i in $(seq 1 20); do sleep 1; curl -s "https://$DOMINIO/api/health" | grep -q ok && { OK=1; break; }; done
+# o ngrok gratuito mostra uma pagina de aviso a quem nao manda este cabecalho; o navegador passa por ela uma vez
+OK=""; for i in $(seq 1 40); do sleep 1; curl -s -H "ngrok-skip-browser-warning: 1" "https://$DOMINIO/api/health" | grep -q ok && { OK=1; break; }; done
 [ -n "$OK" ] || { tail -15 "$RABS/logs/srv_ngrok.log"; falhar "o tunel nao respondeu (veja acima). Confira o authtoken e o dominio do ngrok."; }
 
 cat <<FIM
 
 === SERVIDOR DE REVISAO NO AR ===
 Endereco para os revisores:  https://$DOMINIO
-Quem entra (login do Google): japtenani@gmail.com, aline@sardow.com, jorge.carnesecca@hotmail.com
+Quem entra (login do Google): os revisores cadastrados pela coordenacao (lista fora do repositorio)
 O computador precisa ficar ligado e conectado enquanto os revisores trabalham.
 Na primeira visita o ngrok mostra uma pagina de aviso: basta clicar em "Visit Site".
 

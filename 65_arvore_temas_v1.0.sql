@@ -18,47 +18,35 @@ GRANT SELECT ON app.tema_requisito TO api_rw;
 -- filho <- maes (codigos sem hifen)
 CREATE TEMP TABLE req (filho TEXT, maes TEXT) ON COMMIT DROP;
 INSERT INTO req VALUES
--- Reanimacao, via aerea, choque (principais)
-('T002','T001'),('T003','T001'),('T013','T001'),('T004','T001 T003'),('T005','T004'),
-('T007','T005'),('T008','T007'),('T011','T013'),('T012','T011'),('T018','T013 T003'),
-('T024','T003'),('T029','T001 T004'),
--- Abdome agudo (principais)
-('T039','T037'),('T041','T036'),('T042','T036'),('T043','T041'),('T044','T004'),('T046','T044'),
-('T050','T036 T042'),('T038','T037 T050'),('T051','T050'),('T139','T041 T050'),
--- Trauma avancado (principais)
-('T016','T013 T004'),('T021','T003 T004'),('T022','T021 T007'),('T023','T021'),('T027','T002 T004'),
-('T028','T004 T029'),('T031','T001 T002'),('T032','T001'),('T034','T002 T027'),('T015','T016 T004'),
-('T026','T021 T007 T028'),('T071','T031 T005'),('T072','T029 T005'),('T077','T071 T072 T026 T015'),
--- Opcionais de trauma
-('T006','T001'),('T009','T007'),('T010','T008 T009'),('T014','T013'),('T017','T016'),('T019','T034 T018'),
-('T020','T014'),('T025','T024 T021'),('T030','T029'),('T033','T002'),('T035','T034 T050'),
-('T062','T021'),('T063','T062'),('T070','T031'),('T100','T021 T088'),('T105','T031'),('T142','T021'),
-('T059','T001'),('T060','T059 T002'),('T061','T059'),('T076','T059 T060'),('T075','T033 T002'),
-('T113','T001'),('T116','T113'),('T143','T113'),('T144','T116'),
--- Opcionais de abdome, digestivo e parede
-('T040','T042'),('T045','T044'),('T047','T044 T094'),('T049','T051'),('T052','T050 T009'),
-('T066','T041'),('T067','T041 T046'),('T073','T094 T036'),('T074','T043 T139'),('T095','T036 T037'),
-('T097','T036'),('T098','T036'),('T099','T036 T088'),('T101','T044'),('T102','T046'),('T103','T101 T102'),
-('T104','T023'),('T106','T041'),('T108','T109'),('T109','T036 T037'),('T140','T043'),('T141','T008'),
-('T096','T004'),
--- Terapia intensiva, perioperatorio e farmacologia
-('T053','T011'),('T054','T053'),('T055','T004'),('T056','T055'),('T057','T089'),('T087','T086'),
-('T088','T086'),('T091','T086'),('T090','T089'),('T092','T089 T056'),('T093','T050'),('T083','T093'),
-('T094','T005'),
--- Temas que entraram em 13/11/2026 (opcionais)
-('T136','T001 T021'),('T137','T001 T012'),('T138','T001 T004 T095'),
--- Imagem e procedimentos
-('T079','T003'),('T080','T079'),('T110','T003'),('T111','T002'),('T081','T013 T002'),('T146','T013'),
-('T147','T009 T081'),('T148','T081'),('T149','T002 T081'),('T150','T081 T131'),
--- Seguranca, qualidade, governanca
-('T084','T082'),('T085','T082'),('T114','T082'),('T115','T114'),('T078','T077'),
--- Medicina baseada em evidencias
-('T118','T117'),('T119','T118'),('T120','T119'),('T121','T120'),('T122','T121'),('T123','T122'),
-('T124','T117'),('T125','T120 T122'),('T126','T121 T125'),
--- Ensino e preceptoria
-('T128','T127'),('T129','T127'),('T130','T129'),('T131','T128'),('T132','T131'),('T133','T130 T131'),
-('T134','T129 T081'),('T135','T130 T145');
--- Orfaos (sem mae e sem filho): T048, T058, T064, T065, T068, T069, T107, T112.
+-- renumerada em 19/11/2026 (codigos novos, T001 a T150)
+('T002','T001'), ('T003','T001'), ('T004','T001'), ('T005','T004'), ('T007','T005'), ('T008','T001'),
+('T009','T005'), ('T010','T009'), ('T011','T009'), ('T012','T010 T011'), ('T013','T001'), ('T014','T013'),
+('T015','T001'), ('T016','T015'), ('T017','T015 T003'), ('T018','T016'), ('T019','T020'), ('T020','T003 T004'),
+('T021','T020'), ('T022','T044'), ('T023','T003 T004'), ('T024','T023 T009'), ('T025','T023'), ('T026','T003'),
+('T027','T026 T023'), ('T028','T023 T009'), ('T029','T023'), ('T030','T002 T004'), ('T031','T025'), ('T033','T002'),
+('T035','T066'), ('T036','T035 T028'), ('T037','T038'), ('T038','T004'), ('T039','T038'), ('T040','T002'),
+('T041','T001'), ('T042','T040'), ('T043','T002'), ('T044','T030'), ('T045','T002 T066'), ('T048','T047 T066'),
+('T049','T047'), ('T050','T052'), ('T053','T051'), ('T054','T053'), ('T056','T023'), ('T057','T004'),
+('T058','T057'), ('T059','T057'), ('T060','T057 T114'), ('T062','T067'), ('T063','T066'), ('T064','T051 T059'),
+('T065','T066 T059'), ('T066','T052'), ('T067','T066'), ('T068','T066 T011'), ('T069','T068'), ('T070','T031'),
+('T071','T013'), ('T072','T071'), ('T073','T004'), ('T074','T073'), ('T076','T001'), ('T077','T076 T002'),
+('T078','T076'), ('T079','T023'), ('T080','T079'), ('T085','T040'), ('T086','T001'), ('T088','T040 T005'),
+('T089','T038 T005'), ('T090','T114'), ('T091','T053'), ('T092','T043'), ('T093','T077'), ('T094','T088 T089 T028 T019'),
+('T095','T003'), ('T096','T003'), ('T097','T015 T002'), ('T098','T097'), ('T099','T097'), ('T101','T113'),
+('T102','T100'), ('T103','T001'), ('T104','T130'), ('T105','T100'), ('T107','T106'), ('T108','T106'),
+('T109','T106'), ('T110','T106 T058'), ('T112','T111'), ('T113','T066'), ('T114','T005'), ('T115','T046 T047'),
+('T116','T004'), ('T117','T004'), ('T118','T046'), ('T119','T004 T115'), ('T120','T046 T108'), ('T121','T023 T108'),
+('T122','T057'), ('T123','T059'), ('T124','T122 T123'), ('T125','T022 T122'), ('T126','T051'), ('T127','T128'),
+('T128','T046 T047'), ('T129','T001'), ('T130','T100'), ('T131','T130'), ('T132','T129'), ('T133','T130 T129'),
+('T134','T130'), ('T136','T135'), ('T137','T136'), ('T138','T137'), ('T139','T138'), ('T140','T139'),
+('T141','T136'), ('T144','T142'), ('T145','T143 T144'), ('T146','T143 T097'), ('T147','T143'), ('T148','T144'),
+('T149','T132'), ('T150','T149')
+;
+-- Enxugada em 19/11/2026 (aprovada pela coordenacao): 29 mudancas, 161 relacoes, cadeia maxima 6;
+--  ver docs/arvore_dependencias_proposta_2026-11-19.md. Avulsos (sem mae nem filho): T006, T032, T034, T055, T061, T075, T081, T082, T083, T084, T087.
+-- Revisao da coordenacao em 15/11/2026: 150 temas confirmados; sugestoes S1-S5 aplicadas (169 relacoes):
+--  S1 tiradas 16 ligacoes redundantes; S2 T074 sem T139 (T041 ja vem por T043); S3 T035 com T002 no lugar de T034;
+--  S4 T049 com T050 no lugar de T051; S5 T058 passa a depender de T053.
 
 DELETE FROM app.tema_requisito;
 INSERT INTO app.tema_requisito (tema_id, requisito_id)
@@ -133,10 +121,18 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = pg_catalog, public, app, 
     SELECT t.tema_id, 0 FROM app.tema t WHERE NOT EXISTS (SELECT 1 FROM app.tema_requisito r WHERE r.tema_id = t.tema_id)
     UNION ALL
     SELECT r.tema_id, prof.nivel + 1 FROM prof JOIN app.tema_requisito r ON r.requisito_id = prof.tema_id WHERE prof.nivel < 30),
-  niv AS (SELECT tema_id, max(nivel) AS nivel FROM prof GROUP BY tema_id)
+  niv AS (SELECT tema_id, max(nivel) AS nivel FROM prof GROUP BY tema_id),
+  anc(tema_id, req_id) AS (
+    SELECT tema_id, requisito_id FROM app.tema_requisito
+    UNION
+    SELECT anc.tema_id, r.requisito_id FROM anc JOIN app.tema_requisito r ON r.tema_id = anc.req_id),
+  -- abre_apos: a aula (ordem) do ultimo tema principal de que o tema depende, direta ou indiretamente.
+  abre AS (SELECT anc.tema_id, max(m.ordem_principal) AS aula FROM anc JOIN app.tema m ON m.tema_id = anc.req_id
+            WHERE m.papel_curricular = 'nuclear' GROUP BY anc.tema_id)
   SELECT jsonb_build_object(
     'nos', (SELECT jsonb_agg(jsonb_build_object(
         'codigo', t.codigo, 'titulo', t.titulo, 'modulo', t.modulo, 'papel', t.papel_curricular, 'nivel', n.nivel,
+        'ordem', t.ordem_principal, 'grau', t.dificuldade, 'abre_apos', (SELECT ab.aula FROM abre ab WHERE ab.tema_id = t.tema_id),
         'orfao', NOT EXISTS (SELECT 1 FROM app.tema_requisito r WHERE r.tema_id = t.tema_id OR r.requisito_id = t.tema_id),
         'concluido', app.tema_concluido(p.id, t.tema_id),
         'iniciado', app.teste_submetido(p.id, t.tema_id, 1::smallint),

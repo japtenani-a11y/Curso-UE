@@ -1,0 +1,170 @@
+# T001 · Atualização de 16/11/2026
+
+Nova versão de todo o material do T001, em rascunho, na pasta `conteudo/T001/` (formato do importador).
+
+## O que mudou
+
+| Peça | Mudança |
+|---|---|
+| Objetivos | Um objetivo de aula por perfil (técnica e anatomia); citações das fontes novas |
+| Resumo básico | Consenso de 2025 (circulação antes da via aérea invasiva), tamponamento, pulsos, instável não vai à TC |
+| Podcast | Trecho novo sobre o consenso e o REACT-2 |
+| Caso base | Duas perguntas novas (posição do torniquete; intubar ou não) |
+| Síntese de evidência | Camadas 3 e 5 agora com fonte; disputa CAB contra ABC; REACT-2; seção "O que mata na sala de trauma" |
+| Mapa | Ramos novos: ordem, erros que matam |
+| Aula (texto) | Reescrita: não repete a teoria. Oito seções de decisão, técnica e anatomia |
+| Slides | Reescritos: 15 slides com fala, sobre o caso, hemorragia externa, torniquete, pelve, acesso, tórax, via aérea cirúrgica, destino e erro |
+| Caso da aula | Novo: fratura de pelve em choque, com seis pontos de decisão |
+| Resumo executivo, checklist, flashcards | Atualizados com a técnica da aula |
+| Protocolo | Passos de hemorragia, via aérea e circulação detalhados; protocolo de transfusão maciça do Hospital de Base; indicadores |
+
+## Fontes
+
+- 59 afirmações novas, cada uma com o trecho literal conferido no texto da fonte: 163 no total.
+- Diretriz e consenso (G1 a G11): WSES-PTS 2025, protocolo AAST/ACS-COT de ressuscitação de controle de danos, indicadores da WSES.
+- Artigos (A48 a A56): REACT-2, Gruen 2006, Teixeira 2007, Tignanelli 2018, Demetriades 2004.
+- Livro-texto (D42 a D75): Mattox 9ª ed., capítulos 10, 13, 14, 18, 28, 39 e 45; manual do European Trauma Course, capítulo 1.
+- Protocolo e ficha do serviço (P16 a P21): transfusão maciça do Hospital de Base; ficha da sala de trauma.
+
+## Questões
+
+- 193 questões: as 170 anteriores, 20 novas sobre o conteúdo da aula (uma por perfil nos testes 3 a 6) e 3 âncoras.
+- Alternativas reescritas para ficarem de tamanho parecido. A correta era a mais longa em 87% das questões e, em média, 2,75 vezes maior que as erradas; agora é a mais longa em 20% (o esperado ao acaso) e 1,14 vez maior.
+- O sentido de cada alternativa foi mantido, para as justificativas continuarem válidas. As alternativas reescritas precisam da leitura de um revisor.
+
+## Como gravar
+
+```
+cd ~/Curso-UE
+bash fontes_do_tema_v1.0.sh T001 SENHA
+bash importar_tema_v1.0.sh T001 SENHA
+bash importar_tema_v1.0.sh T001 SENHA --aplicar
+```
+
+As peças entram em rascunho, como versão nova. O que está publicado continua valendo até a revisão e a publicação.
+
+## Depois de gravar
+
+**Aproveitar os pareceres e limpar as questões de exemplo** (`94_aproveitar_pareceres_v1.0.sql`):
+
+```
+PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql
+```
+
+- Copia cada parecer já dado nas versões anteriores para a afirmação idêntica (mesmo texto e mesma fonte) da versão nova, em nome do mesmo revisor. Sobram para revisar só as afirmações novas ou alteradas.
+- Remove as questões de exemplo da instalação ("Item 1: qual a conduta inicial..."), se nunca foram respondidas.
+
+**Imagens dos slides novos.** O baralho visual dos 15 slides está em `conteudo/T001/slides/imagens_v3/` (gerado por `ferramentas/T001/gerar_deck_v3.py`). Os slides 3, 6, 8 e 12 têm esquemas (pulsos e pressão, posição do torniquete, cinta pélvica, membrana cricotireóidea). As imagens só vão para o aplicativo depois de a peça de slides nova ser publicada, porque o número de cada imagem precisa bater com o slide:
+
+```
+mkdir -p ~/Curso-UE/programa-cut/slides/T001
+rm -f ~/Curso-UE/programa-cut/slides/T001/slide_*.png
+cp ~/Curso-UE/conteudo/T001/slides/imagens_v3/slide_*.png ~/Curso-UE/programa-cut/slides/T001/
+```
+
+**Áudio do podcast e das falas dos slides** (precisa da chave do Google em `~/.config/curso-ue/tts.env`; ver `docs/podcast_audio.md`):
+
+```
+python3 gerar_podcast_audio_v1.0.py T001 --rascunho            # ouvir antes de publicar (T001_rascunho.mp3)
+python3 gerar_podcast_audio_v1.0.py T001 --slides --rascunho   # falas dos slides, para conferir
+```
+
+Depois de publicar o roteiro e os slides, gerar as versões que o aplicativo mostra:
+
+```
+python3 gerar_podcast_audio_v1.0.py T001
+python3 gerar_podcast_audio_v1.0.py T001 --slides
+```
+
+## Pendências para a revisão
+
+- Os trechos do Mattox não são conferidos pelo importador (o livro não está no banco): o revisor confere no capítulo.
+- A extrapolação do consenso de 2025 ao trauma fechado com possível TCE está marcada no caso da aula como ponto de cautela.
+- Gruen 2006 e Teixeira 2007 têm mais de dez anos.
+
+## Correções depois da auditoria de 16/11 (CUT_v2z7)
+
+- **Vetos da coordenação:**
+  - A39 (TC de corpo inteiro no choque) e A5 (tamanho do ensaio ADVANCE TRAUMA) saíram do material e das questões. A questão T3-R3-2 foi trocada por uma sobre os critérios de pan-TC do protocolo [P2].
+  - Torniquete (A23, A24) passou a controvérsia, com a segunda meta-análise (Ko 2024, A57 e A58; PMID 38504263).
+  - Hemotórax (D68): o critério de volume vale para o paciente estável; no instável, decide a clínica [D26, P9].
+  - P5: os critérios completos de TCE moderado a grave do protocolo de imagem.
+- **Erros leves corrigidos no texto das peças:** A11, A18, A22, A32, D44, D46, D75, P13.
+- **Pré-revisões "ajustar" aplicadas:**
+  - Aula: indutor e dose no choque [D78, D79], janelas abdominais do FAST [D80], passos e material da cricotireoidostomia [D76, D77], atividade do R+ sobre o minuto do erro, menos repetição da teoria. A técnica da drenagem e os marcos do intraósseo foram remetidos aos temas T-013 e T-081.
+  - Caso da aula: 4 pontos em 15 minutos, dicas sem a resposta, supervisão à distância.
+  - Caso base: 25 minutos, sinais de choque, perguntas sobre cinta, exposição e AMPLA, e "Onde está a resposta".
+  - Checklist: itens de uma ação só, MIST, Glasgow ≤8, reavaliação e avaliação secundária.
+  - Flashcards: 4 cartões de evidência (R+) e o resto de conduta.
+  - Banco de questões: refeito a partir das questões atuais (contagem por teste, faixas sem sobreposição, sem "ATLS vigente").
+- **Publicar** tira a faixa "RASCUNHO" do início dos testes e gabaritos (97).
+- **Script 94** aproveita os pareceres de qualquer versão anterior, inclusive rascunho, para as afirmações idênticas da versão nova.
+- **Slides:** 6 (torniquete) e 11 (tórax) com as fontes novas; imagens refeitas.
+
+Instalar: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois
+`PGPASSWORD=SENHA psql -h localhost -U postgres -d programa -v tema=T001 -f 94_aproveitar_pareceres_v1.0.sql`.
+Os agentes revisam só os textos novos ou alterados. O áudio do podcast precisa ser gerado de novo.
+
+## Banco de questões e peças depois da pré-revisão (CUT_v2z8 e CUT_v2z9)
+
+A v2z9 inclui tudo da v2z7 e da v2z8; quem ainda não instalou nenhuma das duas instala só a v2z9. A v2z9 acrescenta à v2z8 só o nome do curso na abertura do podcast ("CUT, o Curso de Cirurgia Geral, Urgência e Trauma").
+
+- **Questões (questoes.json), 169 de 193 reescritas:**
+  - as alternativas absurdas ("Nada", "Nenhum", "Zero", "Esperar", "Punição", "Endoscopia") viraram erros plausíveis;
+  - toda alternativa, certa ou errada, tem explicação de uma ou duas frases com o código da fonte, e as âncoras de cada questão são os códigos citados;
+  - a letra da correta foi embaralhada para ficar equilibrada dentro de cada teste e perfil (antes, havia testes com a mesma letra em 6 de 10 questões e perfis sem nenhuma resposta E);
+  - T5-Graduação-4, que repetia a T5-Graduação-1, virou uma questão sobre o reexame completo [D18, D19, D30];
+  - T4-R2-5 citava uma concordância com a TC que não está nas fontes; passou a perguntar a proporção de alargamento da sínfise [A35];
+  - saíram números sem fonte em três questões (T5-R+-7, T5-R3-7 e T6-R+-7).
+- **Gabaritos:** o importador não repete mais "Correta:" depois de "correta".
+- **Objetivos:** cada objetivo agora tem condição e critério.
+- **Síntese de evidência:** saiu a marcação interna sobre o ATLS 11, cada item da disputa mostra o desenho do estudo, e o tempo de leitura bate com o do sistema.
+- **Resumo, resumo básico e protocolo:**
+  - tempo de leitura corrigido (6, 5 e o calculado pelo sistema);
+  - FAST negativo no hipotenso com trauma fechado: repetir ou aspirar [D63];
+  - escores de transfusão maciça: "por ora, a experiência provavelmente decide melhor" [D34];
+  - a frase sem fonte sobre murmúrio ausente saiu do resumo básico;
+  - as referências do protocolo passam a listar G4, G6 e G11.
+- **Aula e checklist:** a mesma correção do FAST [D63].
+- **Importação:** ao gravar, as pré-revisões que esperam decisão sobre uma versão antiga da mesma peça passam a "substituída", com o motivo registrado. Não são vetadas, porque veto vira regra para o agente. Os pareceres de conteúdo continuam valendo e são copiados pelo script 94.
+
+Instalar como na v2z7: unzip; subir; `bash importar_tema_v1.0.sh T001 SENHA` (confere) e `--aplicar`; depois o script 94.
+
+### CUT_v2z10
+
+- **Erro na importação ("duplicate key ... uq_item_tema_codigo").** O subir recarregava o banco de questões antigo do T001 (37) e as ondas de teste (39) a cada vez, recriando as questões antigas ao lado das novas. Agora o subir pula esses dois quando o T001 já passou pelo importador, e o importador apaga as cópias antigas que ninguém respondeu, tirando-as também das ondas.
+
+### CUT_v2z11
+
+- **Caso da aula narrado:** quadro "Acompanhar o caso como na aula (com áudio)" na peça do caso, com 10 passos; o áudio para depois de cada pergunta e a discussão só toca quando o aluno pede. Gerar com `python3 gerar_podcast_audio_v1.0.py T001 --caso` (ver docs/podcast_audio.md).
+- **Podcast sem áudio gravado:** o aplicativo lê o roteiro com a voz do aparelho, com duas vozes quando houver, e retoma da fala em que o aluno parou.
+
+### CUT_v2z12
+
+Correções das pré-revisões "ajustar" de todas as peças do T001 (rodadas das 12h09 às 13h26), depois que a coordenação aceitou as propostas.
+
+- **Questões (193):**
+  - 20 questões reescritas na rodada de 13h; mais 30 nesta rodada: SILENT só numa questão (o tema não tem objetivo dele), a paciente do caso 5 fica na enfermaria, o R1 deixa de ter três questões sobre a terciária, a presença do cirurgião e o treino por simulação aparecem como associação, saíram os distratores que desqualificam a paciente ou a equipe e os que ninguém escolheria, e as questões de grau Extrema que se resolviam por exclusão foram regraduadas ou reescritas.
+  - Novas questões de decisão: PACE (D72), momento da intubação no exsanguinante (G1, G7, D47), cinta pélvica com sínfise alargada (A35, D9, D54), torniquete no antebraço (D59, D60), MIST montado a partir do caso, alça fechada (D70), choque com pressão automática normal (D14, D17).
+  - Palavras absolutas tiradas de 167 distratores; 38 corretas encurtadas.
+- **Peças:** objetivos com condição e critério; síntese com desenho de cada estudo em todas as seções, A4 como ensaio proposto e o estudo com dados dos alunos condicionado à coordenação e ao comitê de ética; podcast reescrito (números por extenso, um ponto por fala, blocos de TC juntos); protocolo com seção de pendências para validação; resumos, aula, checklist, flashcards, mapa, caso base e slides ajustados. Imagens dos slides 1, 4, 8 e 11 refeitas.
+
+### CUT_v2z13
+
+Correções das pré-revisões das 18h48 (aula, banco, checklist, flashcards, gabaritos 1 a 5) e resposta da coordenação sobre a TC.
+
+- **Caso 5:** a TC de corpo inteiro do serviço é crânio, coluna total, tórax, abdome e pelve, sem os pés. A dor nova passou do pé para as costelas, que estão no campo da TC; a lição do caso (lesão tardia mesmo com TC) continua correta.
+- **Questões:** cerca de 35 reescritas ou ajustadas. Saíram as repetições do mesmo fato para o mesmo perfil (aparelho automático no R1, voz normal na Graduação, MIST duas vezes no mesmo teste, aquecer, cinta, 13,9%), as questões fora dos objetivos (adrenalina na parada, RUSH e FAST-PLUS, oxigênio por opinião, sangramento pela boca) e a oxigenoterapia que o caso 2 não descreve. Entraram questões de objetivos que estavam sem item: compressão até alguém assumir, pulsos e faixa de pressão, ficha da sala (P18), reavaliação após cada intervenção, adjuntos da primária, FAST negativo no hipotenso (D63), treino in situ, supervisão do residente que lidera, auditoria do acionamento do time (A53). "Duas tentativas" de veia virou "sem acesso venoso imediato", como diz o D15. Graus corrigidos onde a questão se resolvia por exclusão. A correta mais longa caiu de 38% para 26% das questões de caso.
+- **Aula:** exceção da coordenação registrada (complicações da via aérea cirúrgica no T002; intraósseo e drenagem no T-081 e T-013); passo do torniquete na angio-TC como decisão com o assistente; ausculta e eFAST com ponte para o resumo básico e foco na armadilha do intubado; duas frases de efeito retiradas.
+- **Checklist:** a letra x explicada no topo; itens condicionais começam por "Se" e aceitam "não se aplica".
+- **Banco de questões:** tabela de graus com a contagem real; nota sobre repetições e sobre as âncoras (o aplicativo ainda não embaralha as alternativas delas).
+- **Resumo básico, flashcards e slides:** pulso radial "pelo menos 90 a 100 mmHg" [D44]; cartão 11 sem ambiguidade; slide 9 sem "duas tentativas".
+
+### CUT_v2z14
+
+Decisões da coordenação de 16/11, 20h52, aplicadas.
+
+- **D21 (AMPLA):** aceita, citando o ATLS 11 pela seção (história da avaliação secundária).
+- **Líder (P22, decisão da coordenação):** todo atendimento é liderado pelo cirurgião; na impossibilidade, pelo médico mais experiente presente, até o cirurgião assumir. Entrou no protocolo (sai da lista de pendências), no resumo básico e no mapa de respostas do caso base.
+- **Âncoras embaralhadas por onda:** novo script `98_embaralhar_ancoras_app_v1.0.sh`, chamado pelo subir. As alternativas das três âncoras mudam de ordem em cada teste (1 a 6), iguais no teste e no gabarito da mesma onda; as respostas continuam gravadas pela alternativa, então nada muda nas respostas já dadas. O importador usa a mesma regra nos testes e gabaritos em texto. O banco de questões ganhou a tabela do grau das âncoras por perfil, que o aplicativo já usava.
+- **Conferidos na fonte:** D78 e D79 (Mattox, cap. 14; a aula agora diz que o livro usa índice de choque acima de 0,8), D60 (90 minutos como limite), D24 (45 segundos a 1 minuto), G2 (6 estudos, 11.855 pacientes, OR 3,65, I² 92%) e A51 (16% e 16%). Na questão do A51, o enunciado passou a dizer que os 16% são dos 64 óbitos com erro, não dos 2.594.

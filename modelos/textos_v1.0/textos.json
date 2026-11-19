@@ -1,0 +1,342 @@
+[
+ {
+  "arquivo": "pwa/src/pages/Publico.tsx",
+  "antigo": "Programa educacional para residentes e estudantes de medicina: reuniões semanais às quintas, 20h, pelo Google Meet, com material de estudo, casos e testes antes e depois de cada aula.",
+  "novo": "Curso para residentes e estudantes de medicina. Um tema por semana, com aula ao vivo às quintas, às 20h, pelo Google Meet."
+ },
+ {
+  "arquivo": "pwa/src/pages/Publico.tsx",
+  "antigo": "Entrar ou fazer inscrição com o Google",
+  "novo": "Entrar ou se inscrever com o Google"
+ },
+ {
+  "arquivo": "pwa/src/pages/Publico.tsx",
+  "antigo": "Cada tema abre 15 dias antes da aula com um pré-teste. Depois vêm o material pré-aula, a aula com caso clínico e os pós-testes em D0, D+15, D+45 e D+90, sempre com gabarito comentado.",
+  "novo": "Cada tema abre 15 dias antes da aula. Você faz um teste curto, estuda o material e faz um segundo teste. Na aula, a turma discute um caso clínico. Depois, novos testes no mesmo dia e 15, 45 e 90 dias depois mostram o que ficou. Todo teste tem gabarito comentado."
+ },
+ {
+  "arquivo": "pwa/src/pages/Publico.tsx",
+  "antigo": "Residentes de cirurgia geral, cirurgia de urgência e trauma, medicina de emergência e outras especialidades cirúrgicas, e estudantes do 7º ao 12º semestre. A inscrição é feita com a conta Google e aprovada pela coordenação.",
+  "novo": "Residentes de qualquer especialidade, médicos formados e estudantes do 7º ao 12º semestre. Você se inscreve com a sua conta Google, e a coordenação aprova a inscrição."
+ },
+ {
+  "arquivo": "pwa/src/pages/Publico.tsx",
+  "antigo": "O conteúdo é revisado por cirurgiões e de uso exclusivo dos participantes. Os dados são tratados conforme a LGPD; a participação em pesquisa é opcional. Veja a ",
+  "novo": "O material é revisado por cirurgiões, e só os participantes têm acesso. Seus dados são tratados conforme a LGPD, e participar da pesquisa é opcional. Leia a "
+ },
+ {
+  "arquivo": "pwa/src/pages/Login.tsx",
+  "antigo": "'As inscrições estão fechadas no momento e este e-mail não está cadastrado. Fale com a coordenação.'",
+  "novo": "'As inscrições estão fechadas e este e-mail não está cadastrado. Fale com a coordenação do curso.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/Login.tsx",
+  "antigo": "'O Google não confirmou este e-mail.'",
+  "novo": "'O Google não confirmou este e-mail. Entre com uma conta Google de e-mail confirmado.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/Login.tsx",
+  "antigo": "'O login com Google ainda não foi configurado neste computador. Ele funciona no servidor de revisão (passo 8). No teste local, use o campo abaixo.'",
+  "novo": "'O login com Google ainda não foi configurado neste computador. No teste local, use o campo abaixo.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/Login.tsx",
+  "antigo": "'Não foi possível entrar.'",
+  "novo": "'Não foi possível entrar. Tente de novo.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/Login.tsx",
+  "antigo": "Primeiro acesso? Entre com a sua conta Google para fazer a inscrição; a coordenação aprova o acesso. O acesso é pessoal e intransferível.",
+  "novo": "Primeira vez? Entre com a sua conta Google para se inscrever, e a coordenação aprova a inscrição. O acesso é só seu: não o compartilhe."
+ },
+ {
+  "arquivo": "pwa/src/components/PrimeiroAcesso.tsx",
+  "antigo": "'O tema abre 15 dias antes da aula com o pré-teste inicial. Ao enviá-lo, chegam o material pré-aula e o pré-teste 2 (até 1 hora antes da aula). Na aula (quinta, 20h, Google Meet) abrem a aula, o caso e o pós-teste D0; depois, o material pós-aula e os pós-testes de D+15, D+45 e D+90. Alguns temas dependem de outros: veja a árvore de temas.'",
+  "novo": "'Cada tema abre 15 dias antes da aula com o pré-teste 1. Quando você o envia, chegam o material básico (objetivos, resumo, podcast, caso base, síntese de evidência e mapa conceitual) e o pré-teste 2, que fecha 1 hora antes da aula. Com o pré-teste 2 enviado, a aula, os slides e o caso abrem na hora da aula (quinta, 20h, Google Meet), junto com o pós-teste D0. Ao enviar o pós-teste D0, chegam o resumo executivo, o protocolo, os checklists, os flashcards e o banco de questões. Outros testes chegam 15, 45 e 90 dias depois. Alguns temas só abrem depois de outros: veja a árvore de temas.'"
+ },
+ {
+  "arquivo": "pwa/src/components/PrimeiroAcesso.tsx",
+  "antigo": "'Em Pendências estão os testes liberados e as avaliações que faltam, com a contagem do prazo. No Início aparecem a próxima aula, o link do Meet e o campo para resgatar o crédito de presença com o código mostrado na aula.'",
+  "novo": "'Em Pendências ficam os testes abertos e as avaliações que faltam, com o prazo de cada um. No Início estão a próxima aula, o link do Meet e o campo para registrar a sua presença com o código mostrado na aula.'"
+ },
+ {
+  "arquivo": "pwa/src/components/PrimeiroAcesso.tsx",
+  "antigo": "'Em Meus dados → Lembretes, autorize os e-mails: você recebe o aviso de abertura de cada tema, o prazo do pré-teste 2 e um resumo toda segunda-feira. No Calendário, adicione as aulas à sua agenda do Google ou do Outlook com um clique.'",
+  "novo": "'Em Lembretes por e-mail, autorize os avisos: você fica sabendo quando cada tema abre e quando o pré-teste 2 vai fechar, e recebe um resumo toda segunda-feira. No Calendário, você põe as aulas na sua agenda do Google ou do Outlook com um clique.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "Nenhuma aula do grupo marcada para os próximos dias. As datas aparecem aqui assim que a coordenação publicar o calendário.",
+  "novo": "Nenhuma aula marcada para os próximos dias. As datas aparecem aqui quando a coordenação publicar o calendário."
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "Calendário · temas principais",
+  "novo": "Próximas aulas da turma"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "Calendário · meus opcionais",
+  "novo": "Meus temas opcionais"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "'bloqueado' : 'grupo'",
+  "novo": "'bloqueado' : 'turma'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "Você ainda não agendou temas opcionais. Escolha em ",
+  "novo": "Você ainda não marcou nenhum tema opcional. Escolha em "
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "<strong>Progressão</strong><span>Cada tema concluído libera os seguintes.</span>",
+  "novo": "<strong>Ordem dos temas</strong><span>Veja quais temas abrem depois de cada um.</span>"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "<span>Sua nota, a esperada e a dos colegas.</span>",
+  "novo": "<span>Sua nota comparada à esperada e à da turma.</span>"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "<strong>Aproveitamento</strong><span>Presença nas aulas e certificado.</span>",
+  "novo": "<strong>Seu aproveitamento</strong><span>Presença nas aulas e certificado.</span>"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Home.tsx",
+  "antigo": "<span>Passo a passo, instalar no celular e prazos.</span>",
+  "novo": "<span>Como o curso funciona, prazos e como instalar no celular.</span>"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "'Você já começou este tema; a data não pode mais mudar.'",
+  "novo": "'Você já começou este tema, então a data não pode mais mudar.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "titulo: 'Abertura (D-15)', testes: [1], texto: 'O tema abre 15 dias antes da aula, com o pré-teste inicial.'",
+  "novo": "titulo: 'Abertura (15 dias antes da aula)', testes: [1], texto: 'O tema abre com o pré-teste 1, um teste curto para ver o que você já sabe.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "texto: 'Liberado ao enviar o pré-teste inicial. O pré-teste 2 fecha 1 hora antes da aula.'",
+  "novo": "texto: 'Abre quando você envia o pré-teste 1: objetivos, resumo básico, podcast, caso base, síntese de evidência, mapa conceitual e o pré-teste 2, que fecha 1 hora antes da aula.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "titulo: 'Aula (D0)', testes: [3], texto: 'Liberado na hora da aula, com o pré-teste inicial feito.'",
+  "novo": "titulo: 'Aula (D0, o dia da aula)', testes: [3], texto: 'Abre na hora da aula para quem enviou o pré-teste 2: aula, slides, caso da aula e o pós-teste D0, para fazer logo depois da aula.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "texto: 'Liberado ao enviar o pós-teste D0. Os pós-testes seguem em D+15, D+45 e D+90.'",
+  "novo": "texto: 'Abre quando você envia o pós-teste D0: resumo executivo, protocolo, checklists, flashcards e banco de questões. Os próximos testes chegam 15, 45 e 90 dias depois da aula (D+15, D+45 e D+90).'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "'Data registrada. O pré-teste inicial abre 15 dias antes (ou já, se faltar menos que isso).'",
+  "novo": "'Data salva. O pré-teste 1 abre 15 dias antes dela, ou agora, se faltar menos que isso.'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "Tema bloqueado: conclua antes ",
+  "novo": "Este tema abre depois que você concluir "
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": " (pós-teste D0 enviado).</p>",
+  "novo": " (ou seja, enviar o pós-teste D0 de cada um).</p>"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "<>Depende de: ",
+  "novo": "<>Precisa antes: "
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "; o pré-teste inicial abre 15 dias antes e você recebe um aviso.`",
+  "novo": ". O pré-teste 1 abre 15 dias antes, e você recebe um aviso.`"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "'Agendar este tema'",
+  "novo": "'Escolher a data deste tema'"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "Escolha o dia e a hora em que você quer estudar a aula (D0). Todo o resto segue essa data:",
+  "novo": "Escolha o dia e a hora em que você vai estudar a aula deste tema (o seu D0). Os testes seguem essa data:"
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "pré-teste inicial em D-15, pré-teste 2 até 1 hora antes, pós-testes em D0, D+15, D+45 e D+90.",
+  "novo": "pré-teste 1 quinze dias antes, pré-teste 2 até 1 hora antes, e pós-testes no próprio dia e 15, 45 e 90 dias depois."
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Tema.tsx",
+  "antigo": "'Mudar data' : 'Agendar'",
+  "novo": "'Mudar a data' : 'Salvar a data'"
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "<div className=\"em-producao-icone\" aria-hidden=\"true\">🛠</div>",
+  "novo": ""
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "' e já está na fase de revisão pelos cirurgiões'",
+  "novo": "' e já está sendo revisado pelos cirurgiões'"
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "com as peças, os testes e o agendamento.",
+  "novo": "com o material, os testes e a escolha da data."
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "<p>Todo tema novo é anunciado no espaço <a href=\"/aluno/mural\">Temas novos no site</a>, no mural.</p>",
+  "novo": "<p>Todo tema novo é anunciado no mural, em <a href=\"/aluno/mural\">Temas novos no site</a>.</p>"
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "'Pronto, você não será mais avisado sobre este tema.'",
+  "novo": "'Pronto: você não receberá mais avisos sobre este tema.'"
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "'Combinado! Você recebe um e-mail e um aviso no mural assim que o tema for publicado.'",
+  "novo": "'Combinado: você recebe um e-mail e um aviso no mural quando o tema for publicado.'"
+ },
+ {
+  "arquivo": "pwa/src/components/EmProducao.tsx",
+  "antigo": "Enquanto isso, adiante os temas que ele exige: ",
+  "novo": "Enquanto isso, você pode adiantar os temas que vêm antes dele: "
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Pendencias.tsx",
+  "antigo": "Nada pendente. Bom trabalho!",
+  "novo": "Nada pendente."
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Temas.tsx",
+  "antigo": "têm data de aula do grupo (quintas, 20h).",
+  "novo": "têm aula com a turma, às quintas, às 20h."
+ },
+ {
+  "arquivo": "pwa/src/pages/aluno/Temas.tsx",
+  "antigo": "você escolhe a sua data (D0) dentro do tema.",
+  "novo": "você escolhe, dentro do tema, a data em que vai estudar."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "São reuniões semanais às <strong>quintas, 20h, pelo Google Meet</strong>, sempre no mesmo link. Cada tema segue quatro fases:",
+  "novo": "A aula é toda <strong>quinta, às 20h, pelo Google Meet</strong>, sempre no mesmo link. Cada tema passa por quatro fases:"
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Abertura (15 dias antes):</strong> abre o pré-teste inicial. Você recebe um e-mail.",
+  "novo": "<strong>Abertura (15 dias antes da aula):</strong> abre o pré-teste 1, e você recebe um e-mail."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Pré-aula:</strong> ao enviar o pré-teste inicial, chegam objetivos, resumo básico, podcast, caso base e o pré-teste 2, que fecha <strong>1 hora antes da aula</strong>.",
+  "novo": "<strong>Antes da aula:</strong> quando você envia o pré-teste 1, chegam os objetivos de aprendizagem do seu ano, o resumo básico, o podcast, o caso base, a síntese de evidência, o mapa conceitual e o pré-teste 2, que fecha <strong>1 hora antes da aula</strong>."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Aula (D0):</strong> na hora da aula abrem a aula, os slides, o caso e o pós-teste D0.",
+  "novo": "<strong>Aula (D0):</strong> com o pré-teste 2 enviado, na hora da aula abrem a aula, os slides, o caso da aula e o pós-teste D0."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Pós-aula:</strong> ao enviar o pós-teste D0, chegam síntese, resumo executivo, mapa, flashcards, protocolo, checklists e simulados. Os pós-testes voltam em D+15, D+45 e D+90.",
+  "novo": "<strong>Depois da aula:</strong> quando você envia o pós-teste D0, chegam o resumo executivo, o protocolo, os checklists, os flashcards e o banco de questões. Outros pós-testes chegam 15, 45 e 90 dias depois da aula (D+15, D+45 e D+90)."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "O gabarito comentado aparece logo depois de enviar cada teste, com a sua nota, a nota esperada para o seu perfil e a média dos colegas.",
+  "novo": "Em cada questão, marque também a sua certeza: chutei, acho que sim ou tenho certeza. O gabarito comentado aparece logo depois que você envia o teste, com a sua nota, a nota esperada para o seu ano e a média da turma."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Principais (39):</strong> têm data de aula do grupo, em ordem de dificuldade. <strong>Opcionais:</strong> você escolhe a data (D0) na tela do tema e tudo passa a contar a partir dela.",
+  "novo": "<strong>Principais (39):</strong> têm aula com a turma, em ordem de dificuldade. <strong>Recomendados e opcionais:</strong> você escolhe, na tela do tema, a data em que vai estudar (o seu D0), e os testes passam a contar a partir dela."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Alguns temas dependem de outros: um tema só abre quando os temas “mãe” foram concluídos (pós-teste D0 enviado). Veja o caminho em ",
+  "novo": "Alguns temas só abrem depois de outros: é preciso concluir antes os temas de que ele depende (enviar o pós-teste D0 de cada um). Veja o caminho em "
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Digite-o em “Resgatar crédito de presença”, no Início. Se esquecer, a presença também vale se o relatório do Google Meet mostrar que você ficou <strong>pelo menos metade da aula</strong> — para isso, entre no Meet com o mesmo e-mail cadastrado.",
+  "novo": "Digite-o no Início, em “Registrar presença”. Se esquecer, a presença também vale se o relatório do Google Meet mostrar que você ficou <strong>pelo menos metade da aula</strong>. Para isso, entre no Meet com o mesmo e-mail do cadastro."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Os pós-testes ficam abertos até 180 dias depois da aula, mas o ideal é fazê-los na data: a ideia é medir o quanto você retém.",
+  "novo": "Os pós-testes ficam abertos até 180 dias depois da aula, mas faça cada um na data: eles medem o quanto você guardou com o tempo."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Autorize os e-mails em <a href=\"/aluno/contato\">Lembretes</a>: aviso de abertura, prazo do pré-teste 2, testes atrasados, resumo da semana (segunda, 7h) e respostas das suas dúvidas.",
+  "novo": "Autorize os e-mails em <a href=\"/aluno/contato\">Lembretes</a>: aviso de abertura do tema, prazo do pré-teste 2, testes atrasados, resumo da semana (segunda, às 7h) e respostas das suas dúvidas."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "No fim de cada peça e de cada gabarito há “Enviar dúvida ou feedback”. As dúvidas vão para a coordenação, que responde no app (e por e-mail, se autorizado). Não escreva dados de pacientes (nome, iniciais, prontuário, datas, imagens).",
+  "novo": "No fim de cada material e de cada gabarito há “Enviar dúvida ou feedback”. A coordenação responde no aplicativo e, se você autorizou, também por e-mail. Não escreva dados de pacientes: nome, iniciais, prontuário, datas ou imagens."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Você entra com a sua conta Google; o curso <strong>não guarda nem vê a sua senha</strong>. Ative a verificação em duas etapas na sua conta Google.",
+  "novo": "Você entra com a sua conta Google, e o curso <strong>não guarda nem vê a sua senha</strong>. Ative a verificação em duas etapas na sua conta Google."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "As telas de conteúdo levam marca d’água com o seu nome; o material é de uso exclusivo e não pode ser copiado, gravado ou repassado.",
+  "novo": "As telas de conteúdo mostram o seu nome ao fundo. O material é só para quem participa e não pode ser copiado, gravado nem repassado."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "No ranking, os colegas veem só a sua posição, o ano e a especialidade — nunca o seu nome ou a sua nota.",
+  "novo": "No ranking, os colegas veem só a sua posição, o seu ano e a especialidade, nunca o seu nome nem a sua nota."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Participar da pesquisa é opcional e pode ser mudado a qualquer momento em <a href=\"/cadastro\">Meus dados</a>, onde também é possível pedir cópia, correção ou exclusão dos dados.",
+  "novo": "Participar da pesquisa é opcional, e você pode mudar de ideia a qualquer momento em <a href=\"/cadastro\">Meus dados</a>. Lá também dá para pedir cópia, correção ou exclusão dos seus dados."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "É preciso internet para estudar: por segurança, o material não fica salvo no aparelho.",
+  "novo": "É preciso internet para estudar, porque, por segurança, o material não fica salvo no aparelho. Nos testes, as respostas ficam guardadas no aparelho se a internet cair."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "O conteúdo é educacional: não substitui o julgamento clínico, a supervisão do seu serviço nem os protocolos da sua instituição.",
+  "novo": "O conteúdo é educacional. Ele não substitui o julgamento clínico, a supervisão do seu serviço nem os protocolos do seu hospital."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Inscrição:</strong> feita pela ficha em Meus dados e aprovada pela coordenação (ou automaticamente para e-mails institucionais cadastrados).",
+  "novo": "<strong>Inscrição:</strong> você preenche a ficha em Meus dados, e a coordenação aprova. E-mails institucionais já cadastrados são aprovados automaticamente."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "<strong>Atualização anual:</strong> todo mês de março o app pede para você confirmar o ano de residência e a especialidade.",
+  "novo": "<strong>Atualização anual:</strong> todo mês de março, o aplicativo pede para você confirmar o ano de residência e a especialidade."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "No aviso “Visit Site” do primeiro acesso, clique para continuar (é a proteção do endereço provisório).",
+  "novo": "Se aparecer o aviso “Visit Site” no primeiro acesso, clique nele para continuar. É uma proteção do endereço provisório."
+ },
+ {
+  "arquivo": "pwa/src/pages/Ajuda.tsx",
+  "antigo": "Persistindo, envie um feedback descrevendo o que tentou fazer, o aparelho e o navegador.",
+  "novo": "Se o problema continuar, envie um feedback contando o que tentou fazer, o aparelho e o navegador."
+ }
+]

@@ -17,6 +17,7 @@ const CONSULTAS: Record<string, string> = {
   presenca: 'SELECT * FROM app.painel_presenca()',
   estudo: 'SELECT * FROM app.painel_estudo()',
   producao: 'SELECT * FROM app.fila_producao()',
+  certeza: 'SELECT * FROM app.painel_certeza()',
   coleta: 'SELECT * FROM app.painel_coleta()',
   leitura: 'SELECT * FROM app.painel_leitura()',
 };

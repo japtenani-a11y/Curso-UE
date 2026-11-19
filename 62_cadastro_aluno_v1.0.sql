@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS app.ficha_aluno (
   semestre              SMALLINT CHECK (semestre BETWEEN 7 AND 12),
   ano_formatura         SMALLINT CHECK (ano_formatura BETWEEN 1960 AND 2100),
   faculdade             TEXT CHECK (length(faculdade) <= 200),
-  especialidade         TEXT CHECK (especialidade IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica')),
+  especialidade         TEXT,
   especialidade_outra   TEXT CHECK (length(especialidade_outra) <= 120),
   instituicao_residencia TEXT CHECK (length(instituicao_residencia) <= 200),
   ano_ingresso_residencia SMALLINT CHECK (ano_ingresso_residencia BETWEEN 1990 AND 2100),
@@ -40,6 +40,16 @@ CREATE TABLE IF NOT EXISTS app.ficha_aluno (
   enviado_em            TIMESTAMPTZ,
   criado_em             TIMESTAMPTZ NOT NULL DEFAULT now(),
   atualizado_em         TIMESTAMPTZ NOT NULL DEFAULT now());
+-- Especialidades aceitas (15/11/2026: entrou "outra especialidade nao cirurgica"). Recriada a cada execucao.
+DO $$ DECLARE c TEXT; BEGIN
+  FOR c IN SELECT conname FROM pg_constraint WHERE conrelid = 'app.ficha_aluno'::regclass AND contype = 'c'
+            AND pg_get_constraintdef(oid) LIKE '%especialidade%' AND pg_get_constraintdef(oid) LIKE '%cirurgia_geral%' LOOP
+    EXECUTE format('ALTER TABLE app.ficha_aluno DROP CONSTRAINT %I', c);
+  END LOOP;
+  ALTER TABLE app.ficha_aluno ADD CONSTRAINT ficha_aluno_especialidade_chk CHECK (especialidade IN
+    ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica','outra_nao_cirurgica'));
+END $$;
+
 ALTER TABLE app.ficha_aluno ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS pol_ficha_propria ON app.ficha_aluno;
 CREATE POLICY pol_ficha_propria ON app.ficha_aluno FOR SELECT TO api_rw USING (pessoa_id = app.pessoa_atual());
@@ -104,14 +114,14 @@ ALTER TABLE app.notificacao_saida ADD COLUMN IF NOT EXISTS inscricao_pessoa_id B
 -- e os alunos precisam aceitar de novo os termos obrigatorios.
 CREATE TEMP TABLE termo_novo (LIKE app.termo INCLUDING DEFAULTS) ON COMMIT DROP;
 INSERT INTO termo_novo (codigo, versao, titulo, resumo, obrigatorio, texto) VALUES
-('uso', 'v1-2026-11', 'Termo de uso, confidencialidade e segurança',
+('uso', 'v2-2026-11', 'Termo de uso, confidencialidade e segurança',
  'Regras de uso da plataforma, sigilo do conteúdo e dos casos, proibição de dados de pacientes e registro das ações para segurança.',
  true, $t$
-**Programa de Cirurgia de Urgência e Trauma — Termo de uso, confidencialidade e segurança (versão v1-2026-11)**
+**CUT · Curso de Cirurgia Geral, Urgência e Trauma — Termo de uso, confidencialidade e segurança (versão v2-2026-11)**
 
 Ao se inscrever, você declara que leu e concorda com as regras abaixo.
 
-**1. Sobre o curso e a responsabilidade pelo conteúdo.** O programa é uma atividade educacional idealizada e coordenada pela equipe responsável pelo curso, que se responsabiliza pelo conteúdo publicado: ele é elaborado a partir das fontes citadas em cada material e revisado por cirurgiões antes da publicação. O conteúdo tem finalidade exclusivamente educacional, reflete as evidências disponíveis na data da revisão e não substitui o julgamento clínico, a supervisão do seu serviço nem os protocolos da instituição onde você atua. Casos e dados de pacientes apresentados no curso são fictícios ou desidentificados.
+**1. Sobre o curso e a responsabilidade pelo conteúdo.** O CUT é uma atividade educacional idealizada e coordenada pela equipe responsável pelo curso, que se responsabiliza pelo conteúdo publicado: ele é elaborado a partir das fontes citadas em cada material e revisado por cirurgiões antes da publicação. O conteúdo tem finalidade exclusivamente educacional, reflete as evidências disponíveis na data da revisão e não substitui o julgamento clínico, a supervisão do seu serviço nem os protocolos da instituição onde você atua. Casos e dados de pacientes apresentados no curso são fictícios ou desidentificados.
 
 **2. Sua conta.** O acesso é pessoal e intransferível, feito com a sua conta Google. Não compartilhe o acesso. Você é responsável pelas ações feitas na sua conta e deve avisar a coordenação se suspeitar de uso indevido.
 
@@ -129,10 +139,10 @@ Ao se inscrever, você declara que leu e concorda com as regras abaixo.
 
 Contato da coordenação: [e-mail institucional do curso].
 $t$),
-('privacidade', 'v1-2026-11', 'Aviso de privacidade e proteção de dados (LGPD)',
+('privacidade', 'v2-2026-11', 'Aviso de privacidade e proteção de dados (LGPD)',
  'Quais dados pessoais coletamos, para quê, com quem compartilhamos, por quanto tempo guardamos, como protegemos e quais são os seus direitos.',
  true, $t$
-**Aviso de privacidade e proteção de dados — Lei 13.709/2018 (versão v1-2026-11)**
+**Aviso de privacidade e proteção de dados — Lei 13.709/2018 (versão v2-2026-11)**
 
 **Controlador:** [instituição/coordenação responsável pelo curso]. **Contato para assuntos de dados pessoais:** [e-mail do encarregado ou da coordenação].
 
@@ -155,16 +165,16 @@ $t$),
 
 **6. Seus direitos (art. 18).** Confirmar o tratamento, acessar, corrigir, pedir anonimização, bloqueio ou eliminação de dados desnecessários, portabilidade, informação sobre compartilhamento e revogar consentimentos. A ficha pode ser corrigida em "Meus dados"; os demais pedidos podem ser feitos pelo contato acima ou pelo botão de solicitação na mesma tela.
 $t$),
-('pesquisa', 'v1-2026-11', 'TCLE — uso dos seus dados em pesquisa científica (opcional)',
+('pesquisa', 'v2-2026-11', 'TCLE — uso dos seus dados em pesquisa científica (opcional)',
  'Autoriza, de forma voluntária e revogável, o uso dos dados gerados por você no curso em pesquisas científicas, sem identificação.',
  false, $t$
-**Termo de Consentimento Livre e Esclarecido — pesquisa científica (versão v1-2026-11)**
+**Termo de Consentimento Livre e Esclarecido — pesquisa científica (versão v2-2026-11)**
 *Minuta: o texto definitivo deve seguir o protocolo aprovado pelo Comitê de Ética em Pesquisa (Resoluções CNS 466/2012 e 510/2016).*
 
 **Título provisório:** Avaliação de um programa educacional estruturado em cirurgia de urgência e trauma para residentes e estudantes de medicina.
 **Pesquisador responsável:** [nome, instituição, e-mail e telefone]. **CEP:** [Comitê de Ética em Pesquisa — endereço, telefone e e-mail].
 
-**1. Por que você está sendo convidado.** Você participa do programa, e queremos estudar o aprendizado, a retenção do conhecimento e a satisfação com o método.
+**1. Por que você está sendo convidado.** Você participa do CUT, e queremos estudar o aprendizado, a retenção do conhecimento e a satisfação com o método.
 
 **2. O que será usado.** Os dados que o curso já gera: respostas e notas dos testes (pré e pós), tempo de resposta e de leitura, materiais acessados, avaliações de satisfação (NPS), dúvidas e feedback, e dados da ficha (idade, situação acadêmica, especialidade, ano de residência). Nenhuma atividade extra é exigida.
 
@@ -182,12 +192,12 @@ $t$),
 
 Ao marcar "Aceito", você declara que entendeu as informações e concorda, voluntariamente, em participar.
 $t$),
-('divulgacao', 'v1-2026-11', 'Autorização de divulgação (opcional)',
+('divulgacao', 'v2-2026-11', 'Autorização de divulgação (opcional)',
  'Autoriza o uso de resultados agregados e de comentários anônimos na divulgação do curso (apresentações, congressos, redes e materiais institucionais).',
  false, $t$
-**Autorização de divulgação (versão v1-2026-11)**
+**Autorização de divulgação (versão v2-2026-11)**
 
-Autorizo, de forma voluntária, gratuita e revogável, que os idealizadores do programa utilizem, na divulgação do curso (apresentações, congressos, relatórios, materiais institucionais e redes sociais):
+Autorizo, de forma voluntária, gratuita e revogável, que os idealizadores do CUT utilizem, na divulgação do curso (apresentações, congressos, relatórios, materiais institucionais e redes sociais):
 - resultados agregados de desempenho e satisfação dos quais meus dados façam parte, sem identificação;
 - trechos de comentários e avaliações que eu escrever, sempre sem nome, foto ou qualquer dado que me identifique.
 
@@ -224,6 +234,7 @@ CREATE OR REPLACE FUNCTION app.rotulo_especialidade(p TEXT, p_outra TEXT) RETURN
   SELECT CASE p WHEN 'cirurgia_geral' THEN 'Cirurgia Geral' WHEN 'cirurgia_urgencia_trauma' THEN 'Cirurgia de Urgência e Trauma'
                 WHEN 'medicina_emergencia' THEN 'Medicina de Emergência'
                 WHEN 'outra_cirurgica' THEN coalesce('Outra cirúrgica: ' || nullif(trim(p_outra), ''), 'Outra especialidade cirúrgica')
+                WHEN 'outra_nao_cirurgica' THEN coalesce('Outra não cirúrgica: ' || nullif(trim(p_outra), ''), 'Outra especialidade não cirúrgica')
                 ELSE NULL END $$;
 
 -- Grau (R1...R6, graduacao, egresso) a partir da ficha.
@@ -291,9 +302,9 @@ BEGIN
   IF v_sit = 'residencia' AND length(trim(coalesce(p->>'instituicao_residencia', ''))) < 3 THEN RAISE EXCEPTION 'campo:instituicao_residencia'; END IF;
   IF v_sit <> 'graduacao' AND coalesce((p->>'ano_formatura')::int, 0) NOT BETWEEN 1960 AND extract(year FROM current_date)::int THEN
     RAISE EXCEPTION 'campo:ano_formatura'; END IF;
-  IF v_sit <> 'graduacao' AND coalesce(p->>'especialidade', '') NOT IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica') THEN
+  IF v_sit <> 'graduacao' AND coalesce(p->>'especialidade', '') NOT IN ('cirurgia_geral','cirurgia_urgencia_trauma','medicina_emergencia','outra_cirurgica','outra_nao_cirurgica') THEN
     RAISE EXCEPTION 'campo:especialidade'; END IF;
-  IF v_sit <> 'graduacao' AND p->>'especialidade' = 'outra_cirurgica' AND length(trim(coalesce(p->>'especialidade_outra', ''))) < 3 THEN
+  IF v_sit <> 'graduacao' AND p->>'especialidade' IN ('outra_cirurgica','outra_nao_cirurgica') AND length(trim(coalesce(p->>'especialidade_outra', ''))) < 3 THEN
     RAISE EXCEPTION 'campo:especialidade_outra'; END IF;
   IF v_sit = 'residencia' THEN
     IF coalesce((p->>'ano_ingresso_residencia')::int, 0) NOT BETWEEN 1990 AND extract(year FROM current_date)::int + 1 THEN
@@ -317,7 +328,7 @@ BEGIN
           CASE WHEN v_sit <> 'graduacao' THEN (p->>'ano_formatura')::smallint END,
           nullif(left(trim(coalesce(p->>'faculdade', '')), 200), ''),
           CASE WHEN v_sit <> 'graduacao' THEN p->>'especialidade' END,
-          CASE WHEN v_sit <> 'graduacao' AND p->>'especialidade' = 'outra_cirurgica' THEN left(trim(p->>'especialidade_outra'), 120) END,
+          CASE WHEN v_sit <> 'graduacao' AND p->>'especialidade' IN ('outra_cirurgica','outra_nao_cirurgica') THEN left(trim(p->>'especialidade_outra'), 120) END,
           CASE WHEN v_sit IN ('residencia','formado') THEN nullif(left(trim(coalesce(p->>'instituicao_residencia', '')), 200), '') END,
           CASE WHEN v_sit = 'residencia' THEN (p->>'ano_ingresso_residencia')::smallint END,
           CASE WHEN v_sit = 'residencia' THEN v_term END,
@@ -346,10 +357,10 @@ BEGIN
     UPDATE app.ficha_aluno SET status = 'aprovado', decidido_em = now(), motivo_status = 'aprovação automática' WHERE pessoa_id = v_id;
     PERFORM app.atualizar_posicao(v_id);
     INSERT INTO app.notificacao_saida (inscricao_pessoa_id, pessoa_id, canal, destino, assunto, corpo, parametros)
-    SELECT v_id, v_id, 'email', p2.email_primario::text, 'Inscrição aprovada — Programa de Cirurgia de Urgência e Trauma',
+    SELECT v_id, v_id, 'email', p2.email_primario::text, 'Inscrição aprovada — CUT (Curso de Cirurgia Geral, Urgência e Trauma)',
            'Sua inscrição foi aprovada. Você já pode acessar o calendário, os temas e os testes.',
            jsonb_build_object('caminho', '/aluno', 'rotulo_link', 'Abrir o curso',
-                              'rodape', 'Você recebe esta mensagem porque se inscreveu no Programa de Cirurgia de Urgência e Trauma.')
+                              'rodape', 'Você recebe esta mensagem porque se inscreveu no CUT (Curso de Cirurgia Geral, Urgência e Trauma).')
       FROM app.pessoa p2 WHERE p2.pessoa_id = v_id;
     v_novo := false;
   END IF;
@@ -369,7 +380,7 @@ BEGIN
                            ELSE ' — médico formado em ' || (p->>'ano_formatura') || '.' END
              || E'\n\nAprove ou recuse pelo aplicativo, na tela Inscrições.',
            jsonb_build_object('caminho', '/curador/inscricoes', 'rotulo_link', 'Abrir inscrições',
-                              'rodape', 'Você recebe este aviso por ser curador ou coordenador do Programa de Cirurgia de Urgência e Trauma.')
+                              'rodape', 'Você recebe este aviso por ser curador ou coordenador do CUT (Curso de Cirurgia Geral, Urgência e Trauma).')
       FROM app.designacao d JOIN app.pessoa pc ON pc.pessoa_id = d.pessoa_id
      WHERE d.papel IN ('admin','curador') AND d.vigencia_inicio <= current_date
        AND (d.vigencia_fim IS NULL OR d.vigencia_fim >= current_date);
@@ -418,13 +429,13 @@ BEGIN
   IF p_aprovar THEN PERFORM app.atualizar_posicao(p_pessoa); END IF;
   INSERT INTO app.notificacao_saida (inscricao_pessoa_id, pessoa_id, canal, destino, assunto, corpo, parametros)
   SELECT p_pessoa, p_pessoa, 'email', p.email_primario::text,
-         CASE WHEN p_aprovar THEN 'Inscrição aprovada — Programa de Cirurgia de Urgência e Trauma'
-              ELSE 'Inscrição não aprovada — Programa de Cirurgia de Urgência e Trauma' END,
+         CASE WHEN p_aprovar THEN 'Inscrição aprovada — CUT (Curso de Cirurgia Geral, Urgência e Trauma)'
+              ELSE 'Inscrição não aprovada — CUT (Curso de Cirurgia Geral, Urgência e Trauma)' END,
          CASE WHEN p_aprovar THEN 'Sua inscrição foi aprovada. Você já pode acessar o calendário, os temas e os testes.'
               ELSE 'Sua inscrição não foi aprovada' || coalesce(': ' || nullif(trim(p_motivo), ''), '.')
                    || ' Você pode corrigir a ficha e enviar de novo.' END,
          jsonb_build_object('caminho', CASE WHEN p_aprovar THEN '/aluno' ELSE '/cadastro' END, 'rotulo_link', 'Abrir o curso',
-                            'rodape', 'Você recebe esta mensagem porque se inscreveu no Programa de Cirurgia de Urgência e Trauma.')
+                            'rodape', 'Você recebe esta mensagem porque se inscreveu no CUT (Curso de Cirurgia Geral, Urgência e Trauma).')
     FROM app.pessoa p WHERE p.pessoa_id = p_pessoa;
   RETURN v;
 END $$;

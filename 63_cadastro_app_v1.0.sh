@@ -79,7 +79,7 @@ trocar(i, "  if (!sessao) return <Navigate to=\"/login\" replace />;", "  if (!s
 # Login: links publicos
 g = f"{pwa}/pages/Login.tsx"
 trocar(g, "O acesso é pessoal e intransferível.</p>",
-       "O acesso é pessoal e intransferível.</p>\n        <p style={{ fontSize: '.8rem' }}><a href=\"/sobre\">O programa</a> · <a href=\"/privacidade\">Política de privacidade</a> · <a href=\"/termos\">Termos de uso</a></p>", 'href=\"/privacidade\"')
+       "O acesso é pessoal e intransferível.</p>\n        <p style={{ fontSize: '.8rem' }}><a href=\"/sobre\">O curso</a> · <a href=\"/privacidade\">Política de privacidade</a> · <a href=\"/termos\">Termos de uso</a></p>", 'href=\"/privacidade\"')
 l = f"{pwa}/components/Layout.tsx"
 trocar(l, "import { Protecao } from './Protecao.js';", "import { Protecao } from './Protecao.js';\nimport { GuardaCadastro } from './GuardaCadastro.js';", "GuardaCadastro }")
 trocar(l, "export function Layout(props: { children: ReactNode; papeis?: string[]; proteger?: boolean }) {",

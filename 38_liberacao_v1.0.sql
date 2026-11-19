@@ -15,7 +15,13 @@ ALTER TABLE app.onda_instancia
   ADD COLUMN IF NOT EXISTS teste_num SMALLINT;
 ALTER TABLE app.onda_instancia DROP CONSTRAINT IF EXISTS onda_teste_check;
 ALTER TABLE app.onda_instancia ADD CONSTRAINT onda_teste_check CHECK (teste_num IS NULL OR teste_num BETWEEN 1 AND 6);
-CREATE UNIQUE INDEX IF NOT EXISTS uq_onda_tema_teste ON app.onda_instancia (tema_id, teste_num) WHERE tema_id IS NOT NULL;
+-- Um teste por tema. Depois do 54 (temas opcionais, com ondas por pessoa) este indice da lugar a dois outros
+-- (uq_onda_tema_teste_grupo e uq_onda_tema_teste_pessoa); por isso so e criado em banco que ainda nao passou pelo 54.
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = 'app' AND table_name = 'onda_instancia' AND column_name = 'pessoa_id') THEN
+    CREATE UNIQUE INDEX IF NOT EXISTS uq_onda_tema_teste ON app.onda_instancia (tema_id, teste_num) WHERE tema_id IS NOT NULL;
+  END IF;
+END $$;
 
 -- Perfil de questoes a partir do grau mais recente da pessoa (NULL se o grau nao estiver cadastrado).
 CREATE OR REPLACE FUNCTION app.perfil_da_pessoa(p_pessoa BIGINT) RETURNS TEXT

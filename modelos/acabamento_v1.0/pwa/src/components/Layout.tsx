@@ -42,7 +42,7 @@ export function Layout(props: { children: ReactNode; papeis?: string[]; proteger
     <>
       <header className="topo">
         <div className="topo-interno">
-          <a className="marca" href="/"><img src="/icone.svg" alt="" /><span>Cirurgia de Urgência e Trauma<small>HCFMRP-USP · Programa de reuniões</small></span></a>
+          <a className="marca" href="/"><img src="/icone_pequeno.svg" alt="" className="marca-icone" /><span className="marca-nome"><img src="/cut_palavra_claro.svg" alt="CUT" className="marca-palavra" /><small>Curso de Cirurgia Geral, Urgência e Trauma</small></span></a>
           <nav className="nav" aria-label="Principal">
             {itens.map((i) => (
               <a key={i.href} href={i.href} className={local.pathname === i.href || (i.href !== '/aluno' && i.href !== '/curador' && local.pathname.startsWith(i.href)) ? 'ativo' : ''}>{i.rotulo}</a>

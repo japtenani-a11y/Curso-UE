@@ -1,6 +1,6 @@
 -- ============================================================
 -- 27_correcoes_seguranca_v1.0.sql
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Correcoes de seguranca do banco (aplicar depois do 23).
 --
 -- O QUE FAZ

@@ -1,0 +1,26 @@
+{
+ "1": {
+  "texto": "Mulher de 45 anos, motorista, colisão frontal. Chega acordada e responde às perguntas com voz normal. Há fratura exposta da perna direita com sangramento ativo em jato, que encharca o lençol. FC 124, pele fria e pálida. A equipe ainda não fez nenhuma intervenção.",
+  "titulo": "Caso 1"
+ },
+ "2": {
+  "texto": "Homem de 22 anos, ferido por faca no hemitórax esquerdo. Chega falando, ansioso, com respiração rápida. SpO2 89% em ar ambiente, FC 112, o aparelho automático marca PA 104/70. O eFAST não mostra sinais de pneumotórax. A equipe do SAMU quer contar o caso enquanto o paciente é passado para a maca.",
+  "titulo": "Caso 2"
+ },
+ "3": {
+  "texto": "Homem de 72 anos, caiu de uma escada de 3 metros. Chega com Glasgow 7, ronco, hálito alcoólico. No caminho estava agitado. FC 118, pele fria, temperatura 35,1 °C. O aparelho automático marca PA 132/84.",
+  "titulo": "Caso 3"
+ },
+ "4": {
+  "texto": "Homem de 30 anos, motociclista, colisão contra poste. Chega pálido e sonolento. PA 78/50 medida manualmente, FC 136. Dor à palpação da bacia, sem sangramento externo. Duas tentativas de acesso venoso falharam. O ultrassom à beira-leito está disponível.",
+  "titulo": "Caso 4"
+ },
+ "5": {
+  "texto": "Mulher de 41 anos, atropelada. Foi avaliada na sala de trauma, com avaliações primária e secundária sem alterações importantes, e fez TC de corpo inteiro, sem lesões. Foi internada para observação. No dia seguinte, refere dor nas costelas à direita e no ombro direito. À tarde, a PA cai para 88/56.",
+  "titulo": "Caso 5"
+ },
+ "6": {
+  "texto": "Sábado à noite. O SAMU avisa que dois pacientes de um mesmo acidente chegarão em 10 minutos: um motorista consciente com sangramento em antebraço e um passageiro inconsciente. Na sala estão um R1, um R2, um R3, dois enfermeiros e o cirurgião assistente.",
+  "titulo": "Caso 6"
+ }
+}

@@ -37,7 +37,7 @@ BEGIN
            || coalesce(', na peça "' || NEW.ferramenta || '"', '') || E':\n\n' || NEW.texto
            || E'\n\nResponda pelo aplicativo, na tela Dúvidas dos alunos.',
          jsonb_build_object('caminho', '/curador/duvidas', 'rotulo_link', 'Responder no aplicativo',
-                            'rodape', 'Você recebe este aviso por ser curador ou coordenador do Programa de Cirurgia de Urgência e Trauma.')
+                            'rodape', 'Você recebe este aviso por ser curador ou coordenador do CUT (Curso de Cirurgia Geral, Urgência e Trauma).')
     FROM app.designacao d JOIN app.pessoa p ON p.pessoa_id = d.pessoa_id
     LEFT JOIN app.tema t ON t.tema_id = NEW.tema_id
    WHERE d.papel IN ('admin','curador') AND d.vigencia_inicio <= current_date

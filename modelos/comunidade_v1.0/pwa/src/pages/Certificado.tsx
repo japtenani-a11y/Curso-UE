@@ -16,14 +16,14 @@ export function Certificado() {
     <div className="certificado-pagina">
       <p className="sem-impressao"><button type="button" className="botao" onClick={() => window.print()}>Imprimir ou salvar em PDF</button> <a href="/aluno/aproveitamento">Voltar</a></p>
       <article className="certificado">
-        <img src="/icone.svg" alt="" className="cert-icone" />
-        <p className="cert-instituicao">Programa de Cirurgia de Urgência e Trauma · HCFMRP-USP</p>
+        <img src="/cut_horizontal_claro.svg" alt="CUT · Curso de Cirurgia Geral, Urgência e Trauma" className="cert-logo" />
+        <p className="cert-instituicao">Curso de Cirurgia Geral, Urgência e Trauma · HCFMRP-USP</p>
         <h1>{c.modulo ? 'Certificado de conclusão de módulo' : 'Certificado de participação'}</h1>
-        <p className="cert-texto">Certificamos que <strong>{c.nome}</strong>{c.perfil?.ano ? ` (${c.perfil.ano}${c.perfil.especialidade ? `, ${c.perfil.especialidade}` : ''})` : ''} {c.modulo ? <> concluiu o módulo <strong>{c.modulo}</strong> do Programa de Cirurgia de Urgência e Trauma,</> : ' participou do Programa de Cirurgia de Urgência e Trauma,'}
+        <p className="cert-texto">Certificamos que <strong>{c.nome}</strong>{c.perfil?.ano ? ` (${c.perfil.ano}${c.perfil.especialidade ? `, ${c.perfil.especialidade}` : ''})` : ''} {c.modulo ? <> concluiu o módulo <strong>{c.modulo}</strong> do CUT · Curso de Cirurgia Geral, Urgência e Trauma,</> : ' participou do CUT · Curso de Cirurgia Geral, Urgência e Trauma,'}
           concluindo <strong>{c.temas_concluidos} {c.temas_concluidos === 1 ? 'tema' : 'temas'}</strong>, com carga horária de <strong>{c.horas} horas</strong>
           {c.presenca_pct !== null ? <> e <strong>{c.presenca_pct}% de presença</strong> nas aulas ao vivo{c.aulas_realizadas ? ` (${c.aulas_presentes} de ${c.aulas_realizadas})` : ''}</> : null}.</p>
         <details className="cert-temas" open={c.lista_temas.length <= 12}><summary>{c.modulo ? 'Temas do módulo' : 'Temas concluídos'}</summary><ol>{c.lista_temas.map((t) => <li key={t}>{t}</li>)}</ol></details>
-        <div className="cert-assinatura"><span>Coordenação do Programa de Cirurgia de Urgência e Trauma</span></div>
+        <div className="cert-assinatura"><span>Coordenação do CUT</span></div>
         <p className="cert-verif">Emitido em {new Date(c.emitido_em).toLocaleDateString('pt-BR')} · Código de verificação <strong>{c.codigo}</strong> · {url}</p>
       </article>
     </div>

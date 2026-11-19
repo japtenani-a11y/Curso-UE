@@ -57,13 +57,13 @@ trocar(p, "          {!dados.previa && <Engajamento key={art.tipo}",
        "          {!dados.previa && <TempoLeitura key={`t${art.tipo}`} tema={dados.tema.codigo} tipo={art.tipo} />}\n"
        "          {!dados.previa && art.tipo === 'sintese_evidencia' && <InteressePesquisa tema={dados.tema.codigo} corpo={art.corpo} />}\n"
        "          {!dados.previa && <Engajamento key={art.tipo}", "<TempoLeitura key")
-# Testes: confianca antes de abrir as questoes
+# Testes: confianca antes de abrir as questoes (so na tela antiga; a tela nova do 76 marca a certeza por questao)
 p = f"{pwa}/pages/aluno/Testes.tsx"
-trocar(p, "import { ComparativoTeste } from '../../components/Comparativo.js';",
+if "tst2" not in open(p).read(): trocar(p, "import { ComparativoTeste } from '../../components/Comparativo.js';",
        "import { ComparativoTeste } from '../../components/Comparativo.js';\nimport { ConfiancaTeste } from '../../components/ConfiancaTeste.js';", "ConfiancaTeste }")
-trocar(p, "  async function abrir(ondaId: number) {",
+if "tst2" not in open(p).read(): trocar(p, "  async function abrir(ondaId: number) {",
        "  const [confOk, setConfOk] = useState(false);\n  async function abrir(ondaId: number) {\n    setConfOk(false);", "setConfOk(false)")
-trocar(p, "      {aberto && (\n        <div>\n          <h2>{NOMES[aberto.dados.teste_num]}</h2>",
+if "tst2" not in open(p).read(): trocar(p, "      {aberto && (\n        <div>\n          <h2>{NOMES[aberto.dados.teste_num]}</h2>",
        "      {aberto && !confOk && <ConfiancaTeste ondaId={aberto.ondaId} aoConfirmar={() => setConfOk(true)} />}\n"
        "      {aberto && confOk && (\n        <div>\n          <h2>{NOMES[aberto.dados.teste_num]}</h2>", "aberto && confOk &&")
 PY

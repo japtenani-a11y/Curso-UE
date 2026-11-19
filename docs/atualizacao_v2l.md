@@ -97,6 +97,73 @@
 - **Buscas PubMed:** o arquivo ganhou a seção "Como nomear os PDFs da curadoria manual"
   (`T001_A07_2023_Silva_PMID37123456.pdf`).
 
+## Árvore revisada e nova tela da árvore (65 + 75), 15/11/2026
+
+- A coordenação confirmou os 150 temas e aceitou as 6 sugestões da revisão da árvore. A árvore passou de 185 para 169 ligações:
+  - S1: saíram 16 ligações redundantes (o tema já dependia da mesma mãe por outro caminho; nada muda na liberação);
+  - S2: T074 (hérnia encarcerada com isquemia) deixou de depender de T139 e abre depois da aula 19, não mais da 36. T041 não entrou como mãe nova porque já vem por T043;
+  - S3: T035 (infecção cervical profunda) passou a depender de T002 e T050 e abre depois da aula 22, não mais da 31;
+  - S4: T049 (Fournier) passou a depender de T050 e abre depois da aula 22, não mais da 33;
+  - S5: T058 (delirium, sedação e analgesia) passou a depender de T053. Ficam 7 temas avulsos.
+- A árvore do banco agora informa, para cada tema, a aula e "abre depois da aula N" (S6).
+- Nova tela /aluno/arvore (script 75), com três vistas:
+  - **Mapa:** arrastar e zoom, com o caminho do tema escolhido em azul (antes) e laranja (depois);
+  - **Foco:** o tema no centro, com o que ele exige, o que libera e a ordem de estudo;
+  - **Linha do curso:** cada aula de quinta e os temas que abrem depois dela.
+  No celular a tela abre na Linha do curso.
+- O estilo.css ganhou o bloco "tema CUT (Design System)" com as variáveis --cut-*. É o primeiro passo do arquivo de tema: as telas novas usam só essas variáveis.
+- Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 65 e o 75. Para voltar à tela antiga, rode de novo o 67.
+
+## Certeza em cada questão e nova tela de testes (76), 15/11/2026
+
+- Decisão da coordenação: em cada questão das ondas, o residente marca "Chutei", "Acho que sim" ou "Tenho certeza" antes de ver o gabarito. O teste só é enviado com alternativa e certeza em todas.
+- A confiança única de 0 a 100% por teste deixou de ser pedida. Os dados já coletados continuam no painel "Calibração e aplicabilidade".
+- Tela de testes no padrão do Design System CUT:
+  - uma questão por tela, com "questão 3 de 7" e barra de progresso;
+  - cada resposta é salva na hora, e o teste retoma de onde parou;
+  - revisão antes de enviar.
+- Gabarito:
+  - acerto em azul (✓) e erro em laranja (✕), sempre com texto;
+  - mostra a certeza marcada e o acerto por nível de certeza;
+  - destaca no alto os erros com "tenho certeza".
+- As respostas definitivas continuam imutáveis. Enquanto o teste está aberto, elas ficam num rascunho (app.resposta_rascunho) e só vão para app.resposta no envio.
+- Painel: nova aba "Certeza por questão", com acerto por nível de certeza e erros com alta certeza, por aluno, tema e teste.
+- Corrigido: a contagem de acertos do gabarito comparava códigos em formatos diferentes (texto e número) e podia mostrar zero.
+- Sem internet: a resposta fica guardada no aparelho e vai ao servidor quando a conexão volta. Um aviso fixo no alto avisa que está sem conexão, e o envio do teste espera a conexão.
+- As mensagens de erro agora dizem o motivo: sem conexão, teste ainda bloqueado, fora do prazo, grau não cadastrado ou sessão expirada.
+- Início: os testes pendentes aparecem num cartão em destaque, com o botão "Responder agora" levando direto ao teste e um aviso quando o prazo está perto do fim.
+- Todas as telas usam as cores e a fonte do CUT (script 77).
+- Para instalar: o `subir_api_pwa_wsl_v1.0.sh` já roda o 76 (banco) e o 76_certeza_app (aplicativo).
+
+## Perfis e funções da equipe (78), 15/11/2026
+
+- **Ao entrar:** quem tem mais de um perfil escolhe com qual quer usar o aplicativo. O administrador pode usar qualquer perfil (administrador, curador, preceptor, pesquisador, responsável pelos dados, aluno). A equipe também pode ver o aplicativo como aluno.
+- **Trocar de perfil:** a qualquer momento, em "Meu perfil", que fica no perfil atual ao lado do seu nome, no alto da tela (no celular, em "Mais").
+- **Funções da equipe** (em Meu perfil, usando o perfil de Administrador):
+  - buscar a pessoa por nome ou e-mail (ela precisa ter entrado ao menos uma vez);
+  - atribuir curador, preceptor, pesquisador, responsável pelos dados ou administrador;
+  - encerrar uma função. Encerrar não apaga: a função fica no histórico com data de fim, e o curso nunca fica sem administrador.
+- **Segurança:** trocar de perfil nunca dá mais acesso do que a pessoa tem; usando o perfil de aluno, você vê só o que um aluno vê.
+- **Google Cloud com o nome CUT:** veja `docs/google_cloud_cut.md`.
+
+## Parte do aluno para todos e especialidade não cirúrgica (79 + 62), 15/11/2026
+
+- Quem está no curso, inclusive a equipe usando o perfil de Aluno, responde os testes normalmente. O nível das questões vem do ano de residência do cadastro; sem ano cadastrado, as questões são as de R+ (antes, os testes ficavam indisponíveis).
+- Cadastro: nova opção de especialidade, "Outra especialidade não cirúrgica", que também pede "Qual especialidade?".
+
+## Identidade do CUT em todo o sistema, 15/11/2026
+
+- **Nome:** "CUT · Curso de Cirurgia Geral, Urgência e Trauma" no título, no app instalado (nome curto "CUT"), no login, no topo, na página pública, no certificado, no calendário assinado e nos e-mails (remetente "CUT").
+- **Logos do Design System:**
+  - ícone pequeno e a palavra CUT no topo;
+  - logo vertical no login;
+  - logo horizontal no certificado;
+  - ícones PNG para instalar no celular.
+  O app instalado troca o ícone sozinho na próxima abertura, porque o cache foi renovado.
+- **Termos na versão v2-2026-11 com o nome CUT.** A versão anterior deixa de valer e cada pessoa aceita de novo os termos obrigatórios no próximo acesso. Como ainda não há residentes, ninguém da turma precisa reaceitar.
+- **O conteúdo do tema T001** (roteiro do podcast, rodapés) fica como está: é material do curso. Para trocar, edite a próxima versão do material.
+- **E-mail:** o remetente só muda se você rodar de novo o `52_configurar_email_v1.0.sh`.
+
 ## Ajuste que só dá para fazer à mão no Google Agenda (entrada sem aprovação)
 1. Abra o Google Agenda no computador e clique na aula de quinta (20:00).
 2. Clique no ícone de engrenagem ao lado de "Participar com o Google Meet" (Opções do organizador).
@@ -133,3 +200,193 @@
   5. No Google Cloud (credencial OAuth e tela de consentimento), troque o endereço do ngrok pelo novo:
      origem, `…/api/auth/callback`, página inicial, privacidade, termos e domínio autorizado.
      Ajuste também `APP_URL` e `CORS_ORIGINS` no .env.
+
+## Sequência de entrega do material (81) e textos revisados (80) — CUT_v2n
+
+- D-15: só o pré-teste 1.
+- Ao enviar o pré-teste 1: objetivos de aprendizagem (abre na parte do ano do aluno), resumo básico, podcast (roteiro e
+  áudio), caso base, síntese de evidência, mapa conceitual e pré-teste 2.
+- Com o pré-teste 2 enviado e na hora da aula: aula, slides, caso da aula e pós-teste D0. Quem perdeu o prazo do
+  pré-teste 2 (1 hora antes da aula) recebe esta etapa na hora da aula.
+- Ao enviar o pós-teste D0: resumo executivo, protocolo assistencial, checklists, flashcards e banco de questões.
+- D+15, D+45 e D+90: os pós-testes seguintes, nas datas.
+- "Pré-teste inicial" passa a "Pré-teste 1"; "Simulados" passa a "Banco de questões".
+- Áudio do podcast: veja `docs/podcast_audio.md`.
+- 80 aplica `modelos/textos_v1.0/textos.json` (textos das telas em linguagem mais simples).
+- A seção "Instalar" da Ajuda deixou de quebrar o texto em pedaços (CSS `.passos`).
+
+## Material interativo (82) — CUT_v2o
+
+- Caso da aula: em cada ponto de decisão, o aluno escreve a conduta e marca a certeza antes de abrir a discussão. A
+  resposta daquele ponto fica registrada. Depois ele compara ("parecida", "em parte", "diferente"). Conduta diferente
+  marcada com "tenho certeza" recebe destaque. No fim: desfecho e resumo das respostas.
+- Caso base: respostas às perguntas do fim, salvas no site; podem mudar até a hora da aula. Depois da aula ficam só
+  para leitura, com um campo ao lado para "o que eu responderia agora".
+- Mapa conceitual: ramos em cartões que abrem e fecham, com o modo "Testar-me" (esconde os itens até o aluno tocar).
+- Checklist: itens clicáveis, com contagem; as marcações ficam salvas.
+- Slides: aula e caso, com fala em texto e áudio por slide, avanço automático sincronizado e velocidade de 1x a 2x.
+  Imagens do deck e áudios: `docs/podcast_audio.md`.
+- Podcast: velocidade de 1x a 2x e retomada do ponto em que parou.
+- Onde parou: peça aberta, posição do texto, ponto do caso, slide e tempo do áudio, guardados no aparelho e no
+  servidor. Sem internet, vão quando a conexão volta. O Início mostra "Continuar de onde parou".
+
+## Ajustes CUT_v2p (83, 84)
+
+- Pré-teste 2 fora do prazo: a aula abre no horário mesmo sem ele, e o aluno ainda pode fazer o pré-teste 2 depois
+  (até 180 dias após a aula). O que for enviado depois da hora da aula fica marcado na tentativa e na nota, e aparece
+  no painel de notas, coluna "observacao", como "feito depois da aula (conteúdo já apresentado)".
+- Caso da aula: depois de concluir, o aluno pode refazer. A tentativa anterior fica guardada e aparece ao lado, ponto
+  a ponto.
+- Painel: abas "Caso da aula" (conduta, certeza e comparação por ponto e por tentativa; alerta quando a conduta foi
+  diferente e marcada com "tenho certeza") e "Caso base" (resposta antes e depois da aula). O pesquisador vê o código
+  do participante, e a coordenação vê o nome.
+- Slides do T001:
+  - nova versão em rascunho, com uma "Fala" para o aluno em cada slide (texto em
+    `conteudo/T001/v3/T001_slides_falas.md`; precisa de revisão antes de publicar e de gerar o áudio);
+  - as imagens do deck (`conteudo/T001/slides/imagens`) entram no aplicativo.
+- Nome: "CUT" no lugar do nome antigo do programa, no material (todas as versões), nas telas e nos scripts. Os termos
+  já aceitos e os e-mails já enviados ficam como estavam, porque são registro histórico.
+
+## Dados simulados (90 e 91) — CUT_v2q
+
+- `90_simulacao_5_residentes_v1.0.sql`: 5 residentes fictícios (nomes "SIMULADO …", e-mails @simulado.local), com o
+  T001 inteiro e aula em 13/08/2026. Não entra no subir; roda à mão. Perfis:
+  - Ana, R1, estudiosa;
+  - Bruno, R1, faz o pré-teste 2 depois da aula, responde rápido demais e não faz o D+90;
+  - Carla, R2, confiante demais, refaz o caso;
+  - Diego, R3, estável;
+  - Elisa, R4, muito boa mas insegura, e não aceita a pesquisa.
+- `91_apagar_simulacao_v1.0.sql`: apaga tudo o que é simulado. Rodar antes de abrir o curso.
+
+## Experiência do aluno, aprendizagem e pesquisa (85, 86) — CUT_v2r
+
+- **Leitura do tema:** peças agrupadas em "Antes da aula", "Aula" e "Depois da aula", com a marca de visto ou feito.
+- **Início:** "O que fazer agora", uma ação em destaque, na ordem:
+  1. aula agora;
+  2. teste com prazo em até 3 dias;
+  3. continuar o que estudou;
+  4. outro teste;
+  5. revisão do dia;
+  6. próxima aula.
+- **Avisos no celular:** veja `docs/avisos_celular.md`.
+- **Acessibilidade:** as telas novas passaram por checagem automática (nome dos controles, contraste, área de toque e
+  largura de 320 px). Foi corrigido o seletor de temas do estudo dirigido, que passava da tela no celular.
+- **Revisão espaçada das questões** (os flashcards já tinham desde o 73): a questão errada volta em 1 dia; depois
+  em 3, 7, 16, 35 e 90 dias. O estudo dirigido ganhou "Revisão do dia" e o simulado misturado.
+- **Desempenho:** "A sua certeza" mostra o acerto em cada nível de certeza, com uma leitura do que fazer.
+- **Caso da aula:**
+  - depois de abrir a discussão, o aluno escreve em uma frase por que a conduta é essa;
+  - graduação, R1 e R2 podem pedir uma dica em cada ponto (dicas do T001 em rascunho, script 86).
+- **Pesquisa:**
+  - base por resposta com as marcas de qualidade;
+  - análise das questões só com dados válidos;
+  - indicadores clínicos mensais;
+  - dicionário de dados (`docs/dicionario_dados_pesquisa.md`);
+  - plano de análise (`docs/plano_analise_preregistro.md`);
+  - script de análise (`analise/`).
+
+## Relatório de análise no painel (87) — CUT_v2s
+
+- `instalar_python_analise_v1.0.sh`: instala o Python com pandas, scipy e matplotlib (pelo apt, pede a senha do WSL) e
+  testa o relatório. Rodar uma vez.
+- Painel, primeira aba, cartão "Relatório de análise":
+  - "Gerar com os dados válidos": monta a base atual e roda o plano de análise, com o modelo principal;
+  - "Ensaio com os dados simulados".
+- O relatório abre numa aba nova. Quem tem perfil de pesquisador recebe só quem consentiu, por código.
+
+## Formato, âncoras, tempo de estudo e agentes da coordenação (88, 89) — CUT_v2u
+
+- **Formato fixo das peças** (`docs/formato_das_pecas.md`):
+  - o banco recusa publicar peça com erro de formato;
+  - a revisão e a prévia mostram a conferência;
+  - aba "Conferência dos temas" no painel.
+- **Questões âncora:**
+  - política de 2 a 3 por tema;
+  - coluna `fixa` na base de análise;
+  - análise de sensibilidade só com as âncoras no relatório.
+- **Tempo de estudo:** cada peça mostra "Essencial" ou "Aprofundamento" e os minutos; cada grupo mostra o tempo essencial.
+- **Telas antigas no Design System:** a tela de lembretes e as telas de leitura e de revisão estão sem cor nem fonte fixas.
+- **Agentes da coordenação** (`docs/coordenacao_agentes.md`):
+  - ponte com a pasta `CUT_coordenacao` do Windows;
+  - aba "Para revisar" do painel, com aprovar, aprovar com alteração e vetar, e o desempenho de cada agente.
+- Python: os avisos do pandas (FutureWarning) no relatório foram retirados.
+
+## Revisão por texto, prazos, importador de temas e limpeza (89, 92, 93) — CUT_v2w
+
+- **Revisão uma vez por texto:**
+  - o parecer vale para as cópias idênticas da afirmação nas outras peças do tema;
+  - o revisor de conteúdo passa a 120 textos por dia.
+- **Prazos de produção** (92):
+  - calendário das 39 aulas;
+  - produção pronta 6 semanas antes e revisão 3 semanas antes;
+  - aba "Prazos de produção" no painel;
+  - aviso diário do supervisor.
+- **Importador genérico de temas** (`importar_tema_v1.0.sh`, `docs/producao_de_tema.md`):
+  - confere e carrega peças, afirmações, fontes com texto integral, casos dos testes e questões com âncoras;
+  - gera os testes e os gabaritos.
+- **Limpeza** (`93_apagar_respostas_teste_v1.0.sh`):
+  - apaga todas as respostas e atividades de teste e as pessoas simuladas;
+  - faz antes uma cópia do banco.
+
+## Triador de fontes (89, ponte, fontes_do_tema) — CUT_v2x
+
+- **Pasta de entrada.** A coordenação solta os PDFs em `CUT_coordenacao\fontes_novas`.
+- **A ponte:**
+  - extrai o texto;
+  - recusa o que tem cara de dado de paciente;
+  - guarda o arquivo com o código F... e registra a fonte.
+- **O triador** (tarefa agendada às 4h47 e às 17h47) propõe a referência, a camada e todos os temas em que a fonte serve.
+- **A aprovação** na aba "Para revisar" grava a fonte em cada tema.
+- **`fontes_do_tema_v1.0.sh`** traz as fontes de um tema para a produção; o importador as reconhece.
+
+## Fonte já guardada em outro tema e primeira triagem (89) — CUT_v2y
+
+- **Proposta de fonte pelo código do arquivo (sha256).** O triador passa a poder propor uma fonte que já está no banco, como as do T001, para outros temas. Ao aprovar, ela é gravada nos temas novos com o mesmo texto integral, sem precisar do PDF de novo.
+- **Arquivo que ainda não chegou.** Se a proposta for aprovada antes de a ponte registrar o arquivo, a tela avisa "a fonte ainda não chegou pela ponte" e a proposta continua aguardando.
+- **Primeira triagem** (`docs/triagem_fontes_2026-11-16.md`):
+  - 129 arquivos recebidos (MVPEP, Atuais, Bibliografias e sugestões): 103 guardados e 26 recusados (versões antigas, cópias, administrativos, catálogo AIS licenciado);
+  - 66 fontes do T001 reaproveitadas em outros temas;
+  - 169 propostas na aba "Para revisar".
+- **A aula não repete a teoria** (decisão de 16/11/2026): o material de antes da aula é a fonte teórica; aula, slides e caso aprofundam em caso clínico, técnica cirúrgica e anatomia cirúrgica (`docs/formato_das_pecas.md`). O agente de pré-revisão recebe, com cada peça da aula, o material de antes da aula do tema para apontar a repetição.
+
+## Fontes aprovadas automaticamente (89, ponte) — CUT_v2z
+
+- A ponte aprova sozinha, a cada rodada, as propostas de fonte cujo arquivo já chegou. A fonte fica guardada nos temas indicados, sem passar pela aba "Para revisar".
+- O `estado.json` passa a mostrar `fontes_aprovadas` na última rodada.
+
+## T001 atualizado e importador (CUT_v2z2)
+
+- **T001:** nova versão de todo o material na pasta `conteudo/T001/` (`docs/T001_atualizacao_2026-11-16.md`).
+- **Importador:**
+  - fonte guardada em outro tema e citada pelo código F... passa a valer também no tema importado;
+  - questões novas entram nas ondas de teste já criadas;
+  - as questões antigas do T001 passam a usar o código no padrão do importador.
+- **Ponte:** arquivo de propostas de qualquer tamanho (v2z1).
+
+## Entrada por e-mail, pareceres aproveitados e baralho novo do T001 (94, 95) — CUT_v2z3
+
+- **Entrada sem conta Google** (`95_entrada_por_email_v1.0.sql`, `95_entrada_email_app_v1.0.sh`):
+  - na tela de entrada, "Sem conta Google? Entre pelo e-mail": a pessoa recebe um link de uso único, válido por 20 minutos, sem senha;
+  - o link abre a tela "Entrar", que pede um toque (o leitor de links do e-mail não gasta o link);
+  - vale a mesma regra do Google: e-mail cadastrado entra; e-mail novo só se as inscrições estiverem abertas, e segue para a ficha, os termos e a aprovação da coordenação;
+  - a resposta da tela é sempre a mesma, para não revelar quem está cadastrado; limite de 3 links por e-mail a cada 15 minutos e 20 por endereço de rede por hora;
+  - o e-mail sai pela conta configurada no `52_configurar_email_v1.0.sh`; sem ela, no teste local, o link aparece na própria tela.
+- **Google:** erro no retorno (entrada demorada, aberta em outra aba, e-mail não confirmado) volta para a tela de entrada com a explicação, em vez de uma página com código.
+- **Pareceres** (`94_aproveitar_pareceres_v1.0.sql`): copia os pareceres das versões anteriores para as afirmações idênticas da versão nova e remove as questões de exemplo da instalação.
+- **T001:** baralho visual dos 15 slides novos em `conteudo/T001/slides/imagens_v3/`.
+
+## Servidor de produção para as três opções (96) — CUT_v2z4
+
+- **`96_producao_v1.0.sh`:** põe o CUT no ar em modo produção no Google Cloud, num servidor do HC/USP ou no seu computador. Lê `~/.config/curso-ue/producao.env` (endereço, forma de acesso, Google). Em servidor, cada parte vira serviço do sistema e volta sozinha depois de reiniciar; no WSL, roda em segundo plano. Remove o login de teste do banco e confere o endereço de fora no fim. `parar` e `conferir` também.
+- **Acesso:** `caddy` (servidor com IP público, certificado https automático), `cloudflare` ou `ngrok` (túnel, sem porta aberta), `local` (o servidor web da instituição repassa).
+- **Endereço provisório:** IP com traços seguido de `.sslip.io` nos servidores; o domínio do ngrok no seu computador. Trocar depois é mudar uma linha e rodar de novo.
+- **`96_migrar_banco_v1.0.sh`:** leva o banco do seu computador para o servidor num arquivo criptografado; o banco que já estava lá fica guardado.
+- **`96_backup_producao_v1.0.sh`:** cópia diária no servidor e cópia das cópias para a pasta do Drive no seu computador.
+- **Passo a passo, custos e o que pedir à informática:** `docs/producao_v1.0.md`.
+
+## Revisão: propostas dos agentes no menu Revisão e aprovação em lote (97) — CUT_v2z5
+
+- **"Para revisar" saiu do Painel** e foi para o menu **Revisão**, ao lado dos rascunhos do tema: a tela abre em "Para revisar (N)" e o outro botão leva aos "Rascunhos do T001". O link "abrir a peça" de uma proposta abre direto nos rascunhos.
+- **Botão "Aprovar tudo o que os agentes sugerem liberar (N)"**: aprova de uma vez, como vieram, as respostas a dúvidas, os lembretes aos alunos, os lançamentos de indicadores, os pareceres de conteúdo com sugestão "aprovar" (entram como "correto"), as peças com veredito "pronta" e as fontes sem sugestão de recusa. Pede confirmação e diz quantas de cada tipo vai aprovar. Respeita o filtro por agente.
+- **Continuam uma a uma:** pareceres "conferir melhor" e "reprovar", peças "ajustar" e "refazer", fontes com sugestão de recusa, e alertas, pendências e relatórios (não liberam nada, pedem leitura; um alerta sobre um aluno não pode ser dado como lido em lote).
+- Cada aprovação em lote fica registrada com o motivo "aprovada em lote: o agente sugeriu aprovar".

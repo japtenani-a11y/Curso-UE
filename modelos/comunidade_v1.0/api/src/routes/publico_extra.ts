@@ -23,7 +23,7 @@ publicoExtraRouter.get('/agenda/:token', async (req, res, next) => {
       { uid: string; inicio: Date; titulo: string; descricao: string; link: string | null }[]);
     const durMin = 90;
     const linhas = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Programa CUT//Agenda//PT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
-      'X-WR-CALNAME:Programa de Cirurgia de Urgência e Trauma', 'X-WR-TIMEZONE:America/Sao_Paulo'];
+      'X-WR-CALNAME:CUT · Curso de Cirurgia Geral, Urgência e Trauma', 'X-WR-TIMEZONE:America/Sao_Paulo'];
     for (const e of ev) {
       const ini = new Date(e.inicio); const fim = new Date(ini.getTime() + durMin * 60_000);
       linhas.push('BEGIN:VEVENT', `UID:${e.uid}`, `DTSTAMP:${dt(new Date())}`, `DTSTART:${dt(ini)}`, `DTEND:${dt(fim)}`,

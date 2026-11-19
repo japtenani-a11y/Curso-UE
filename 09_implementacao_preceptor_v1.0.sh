@@ -2,7 +2,7 @@
 # ============================================================
 # 09_implementacao_preceptor_v1.0.sh
 # Sistema de Producao Curricular e Coleta Cientifica
-# Programa de Cirurgia de Urgencia e Trauma
+# CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 # Versao 1.0 / 10-11-2026
 #
 # OBJETIVO: implementar as rotas do preceptor: modulos, tarefas,

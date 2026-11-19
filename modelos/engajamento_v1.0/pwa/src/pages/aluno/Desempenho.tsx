@@ -37,7 +37,7 @@ export function Desempenho() {
         </table></div>)}
       <h2>Avaliação do curso</h2>
       <p>Sua opinião sobre a metodologia como um todo: apresentação, complexidade, conteúdo, objetividade, clareza, tempo exigido e frequência dos testes.</p>
-      <Avaliacao tema={null} ferramenta="curso" titulo="Programa de reuniões e testes" curso />
+      <Avaliacao tema={null} ferramenta="curso" titulo="o CUT (encontros e testes)" curso />
     </section>
   );
 }

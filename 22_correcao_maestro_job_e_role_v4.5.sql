@@ -1,7 +1,7 @@
 -- ============================================================
 -- 22_correcao_maestro_job_e_role_v4.5.sql
 -- Sistema de Producao Curricular e Coleta Cientifica
--- Programa de Cirurgia de Urgencia e Trauma
+-- CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 -- Versao 4.5 / 10-11-2026
 --
 -- OBJETIVO: corrigir tres defeitos identificados na v4.4:

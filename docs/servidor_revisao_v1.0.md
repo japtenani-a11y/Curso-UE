@@ -2,11 +2,7 @@
 
 O aplicativo roda no seu computador (WSL) e fica acessível pela internet por um túnel HTTPS do **ngrok**. Os revisores entram com a **Conta Google**. Só entram os e-mails cadastrados no `49_revisores_v1.0.sql`:
 
-| Pessoa | E-mail | Papel |
-| --- | --- | --- |
-| José Pezati | japtenani@gmail.com | coordenador (admin) |
-| Aline | aline@sardow.com | revisora (curador) |
-| Jorge Carnesecca | jorge.carnesecca@hotmail.com | revisor (curador) |
+Os e-mails não ficam no repositório. A lista fica só no seu computador, em `~/.config/curso-ue/revisores.csv` (passo 3): o coordenador com papel `admin` e os revisores com papel `curador`.
 
 > Cada e-mail precisa ser uma Conta Google. Um e-mail que não é Gmail vira Conta Google em accounts.google.com → "Criar conta" → "Usar meu endereço de e-mail atual". Se o Jorge ou a Aline preferirem um Gmail, troque o e-mail no `49_revisores_v1.0.sql` e rode de novo.
 
@@ -29,14 +25,14 @@ O ngrok cria um endereço HTTPS fixo na internet que aponta para o seu computado
 
 ## Passo 2 — credencial do Google (uma vez, ~15 min)
 
-Faça logado como **japtenani@gmail.com**, em **console.cloud.google.com**. (O Google renomeou os menus: se você vir "Google Auth Platform", use os nomes entre parênteses.)
+Faça logado com a sua Conta Google de coordenador, em **console.cloud.google.com**. (O Google renomeou os menus: se você vir "Google Auth Platform", use os nomes entre parênteses.)
 
 1. No topo, **Selecionar projeto → Novo projeto** → nome "Programa CUT" → Criar. Confira que ele ficou selecionado.
 2. Menu ☰ → **APIs e serviços → Tela de consentimento OAuth** (ou **Google Auth Platform → Branding**) → **Começar**:
-   - Nome do app: `Programa de Cirurgia de Urgência e Trauma`; e-mail de suporte: o seu.
+   - Nome do app: `CUT`; e-mail de suporte: o seu.
    - Público (Audience): **Externo**.
    - Contato do desenvolvedor: o seu e-mail → Criar.
-3. **Público-alvo / Audience → Usuários de teste → Adicionar usuários**: `japtenani@gmail.com`, `aline@sardow.com`, `jorge.carnesecca@hotmail.com` → Salvar. Deixe o app **Em teste**: assim só esses três conseguem entrar (até 100 usuários de teste, sem verificação do Google).
+3. **Público-alvo / Audience → Usuários de teste → Adicionar usuários**: os mesmos e-mails da lista `revisores.csv` → Salvar. Deixe o app **Em teste**: assim só esses três conseguem entrar (até 100 usuários de teste, sem verificação do Google).
 4. **Credenciais → Criar credenciais → ID do cliente OAuth** (ou **Clients → Create client**):
    - Tipo: **Aplicativo da Web**; nome: `Servidor de revisão`.
    - **Origens JavaScript autorizadas**: `https://SEU-DOMINIO.ngrok-free.app`
@@ -62,6 +58,20 @@ GOOGLE_CLIENT_ID=....apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=....
 ```
 Nunca coloque esses valores no repositório nem no chat.
+
+A lista de quem entra fica no mesmo lugar, também fora do repositório:
+```bash
+nano ~/.config/curso-ue/revisores.csv     # uma linha por pessoa: email;nome;papel;substitui
+chmod 600 ~/.config/curso-ue/revisores.csv
+```
+```
+seu.email@gmail.com;Seu nome;admin;
+email.da.revisora@exemplo.com;Nome da revisora;curador;
+email.novo@gmail.com;Nome do revisor;curador;email.antigo@exemplo.com
+```
+- `papel`: `admin` (coordenação) ou `curador` (revisor).
+- `substitui`: deixe vazio, ou ponha o e-mail antigo da mesma pessoa quando ela trocar de e-mail: o cadastro antigo recebe o novo e guarda os pareceres.
+- Para tirar alguém, apague a linha e rode de novo; para acrescentar, inclua a linha. Lembre de acertar também os "Usuários de teste" no Google (passo 2).
 
 ## Passo 4 — e-mail pelo seu Gmail (uma vez): lembretes, dúvidas e respostas
 

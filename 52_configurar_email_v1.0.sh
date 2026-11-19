@@ -23,7 +23,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 SMTP_USER=$CONTA
 SMTP_PASS=$SENHA
-SMTP_FROM="Programa de Cirurgia de Urgência e Trauma <$CONTA>"
+SMTP_FROM="CUT <$CONTA>"
 NOTIFICAR_MODO=enviar
 FIM
 chmod 600 "$ARQ"

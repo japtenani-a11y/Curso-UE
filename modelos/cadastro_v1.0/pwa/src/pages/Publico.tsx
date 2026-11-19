@@ -8,13 +8,13 @@ function Casca(props: { children: React.ReactNode }) {
   return (
     <div className="publico">
       <header className="topo"><div className="topo-interno">
-        <a className="marca" href="/sobre"><img src="/icone.svg" alt="" /><span>Cirurgia de Urgência e Trauma<small>HCFMRP-USP · Programa de reuniões</small></span></a>
+        <a className="marca" href="/sobre"><img src="/icone_pequeno.svg" alt="" className="marca-icone" /><span className="marca-nome"><img src="/cut_palavra_claro.svg" alt="CUT" className="marca-palavra" /><small>Curso de Cirurgia Geral, Urgência e Trauma</small></span></a>
         <nav className="nav" aria-label="Páginas públicas">
-          <a href="/sobre">O programa</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos de uso</a><a href="/login">Entrar</a>
+          <a href="/sobre">O curso</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos de uso</a><a href="/login">Entrar</a>
         </nav>
       </div></header>
       <main className="conteudo publico-conteudo">{props.children}</main>
-      <footer className="rodape">Programa de Cirurgia de Urgência e Trauma · <a href="/privacidade">Política de privacidade</a> · <a href="/termos">Termos de uso</a> · <a href="/pesquisa-tcle">TCLE da pesquisa</a></footer>
+      <footer className="rodape">CUT · Curso de Cirurgia Geral, Urgência e Trauma · <a href="/privacidade">Política de privacidade</a> · <a href="/termos">Termos de uso</a> · <a href="/pesquisa-tcle">TCLE da pesquisa</a></footer>
     </div>
   );
 }
@@ -24,7 +24,7 @@ export function PaginaInicial() {
   return (
     <Casca>
       <section className="capa">
-        <h1>Programa de Cirurgia de Urgência e Trauma</h1>
+        <h1>CUT · Curso de Cirurgia Geral, Urgência e Trauma</h1>
         <p className="capa-sub">Programa educacional para residentes e estudantes de medicina: reuniões semanais às quintas, 20h, pelo Google Meet, com material de estudo, casos e testes antes e depois de cada aula.</p>
         <p><a className="botao" href="/login">Entrar ou fazer inscrição com o Google</a></p>
       </section>

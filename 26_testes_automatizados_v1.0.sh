@@ -2,7 +2,7 @@
 # ============================================================
 # 26_testes_automatizados_v1.0.sh
 # Sistema de Producao Curricular e Coleta Cientifica
-# Programa de Cirurgia de Urgencia e Trauma
+# CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 # Versao 1.0 / 10-11-2026
 #
 # OBJETIVO: criar os testes automatizados: 3 unitarios, 3 de

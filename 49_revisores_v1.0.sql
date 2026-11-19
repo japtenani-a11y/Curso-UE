@@ -1,27 +1,45 @@
 -- 49_revisores_v1.0.sql
--- Cadastra quem entra no servidor de revisao com o login do Google:
---   coordenador (admin): japtenani@gmail.com
---   revisores (curador): aline@sardow.com e jorge.carnesecca@hotmail.com
--- O login do Google so abre sessao para e-mails cadastrados aqui (app.fn_sessao_google).
--- Cada e-mail precisa ser uma Conta Google (um e-mail que nao e Gmail pode virar Conta Google
--- em accounts.google.com, opcao "usar meu endereco de e-mail atual").
--- Tambem registra cada acesso as telas de conteudo (app.acesso_conteudo), para rastrear vazamento.
+-- Cadastra quem entra no servidor de revisao com o login do Google (coordenador = admin; revisores = curador).
+-- Os e-mails NAO ficam no repositorio: vem do arquivo ~/.config/curso-ue/revisores.csv, so no computador da
+-- coordenacao, com uma linha por pessoa no formato   email;nome;papel;substitui
+--   papel: admin ou curador. substitui: e-mail antigo da mesma pessoa (opcional) - o cadastro antigo recebe o e-mail
+--   novo e guarda os pareceres; se os dois ja existem, o antigo perde o papel.
+-- Quem chama passa o caminho:  psql ... -v revisores="$HOME/.config/curso-ue/revisores.csv" -f 49_revisores_v1.0.sql
+-- Sem o arquivo, nenhum revisor e cadastrado ou alterado (os ja cadastrados continuam).
+-- O login do Google so abre sessao para e-mails cadastrados aqui (app.fn_sessao_google). Cada e-mail precisa ser uma
+-- Conta Google. Tambem registra cada acesso as telas de conteudo (app.acesso_conteudo), para rastrear vazamento.
 -- Pode ser rodado mais de uma vez.
 \set ON_ERROR_STOP on
 BEGIN;
 
-INSERT INTO app.pessoa (nome_completo, email_primario) VALUES
-  ('José Pezati', 'japtenani@gmail.com'),
-  ('Aline (revisora)', 'aline@sardow.com'),
-  ('Jorge Carnesecca (revisor)', 'jorge.carnesecca@hotmail.com')
+CREATE TEMP TABLE rev (email TEXT, nome TEXT, papel TEXT, substitui TEXT) ON COMMIT DROP;
+\if :{?revisores}
+  \set copia '\\copy rev FROM ' :'revisores' ' WITH (FORMAT csv, DELIMITER '';'')'
+  :copia
+\else
+  \echo 'aviso: sem a variavel revisores (arquivo ~/.config/curso-ue/revisores.csv): revisores nao alterados'
+\endif
+UPDATE rev SET email = lower(trim(email)), papel = lower(trim(papel)), substitui = nullif(lower(trim(coalesce(substitui, ''))), '');
+DELETE FROM rev WHERE email IS NULL OR email !~ '^[^@;\s]+@[^@;\s]+$' OR papel NOT IN ('admin', 'curador');
+
+-- Troca de e-mail da mesma pessoa
+UPDATE app.pessoa p SET email_primario = r.email, nome_completo = coalesce(nullif(trim(r.nome), ''), p.nome_completo)
+  FROM rev r
+ WHERE r.substitui IS NOT NULL AND lower(p.email_primario::text) = r.substitui
+   AND NOT EXISTS (SELECT 1 FROM app.pessoa q WHERE lower(q.email_primario::text) = r.email);
+UPDATE app.designacao d SET vigencia_fim = current_date
+  FROM app.pessoa p, rev r
+ WHERE p.pessoa_id = d.pessoa_id AND r.substitui IS NOT NULL AND lower(p.email_primario::text) = r.substitui
+   AND d.vigencia_fim IS NULL;
+
+INSERT INTO app.pessoa (nome_completo, email_primario)
+  SELECT coalesce(nullif(trim(nome), ''), email), email FROM rev
 ON CONFLICT (email_primario) DO NOTHING;
 
 INSERT INTO app.designacao (pessoa_id, papel, vigencia_inicio)
-SELECT p.pessoa_id, v.papel, DATE '2026-11-01'
-  FROM (VALUES ('japtenani@gmail.com','admin'), ('aline@sardow.com','curador'),
-               ('jorge.carnesecca@hotmail.com','curador')) v(email, papel)
-  JOIN app.pessoa p ON lower(p.email_primario::text) = v.email
- WHERE NOT EXISTS (SELECT 1 FROM app.designacao d WHERE d.pessoa_id = p.pessoa_id AND d.papel = v.papel);
+SELECT p.pessoa_id, r.papel, DATE '2026-11-01'
+  FROM rev r JOIN app.pessoa p ON lower(p.email_primario::text) = r.email
+ WHERE NOT EXISTS (SELECT 1 FROM app.designacao d WHERE d.pessoa_id = p.pessoa_id AND d.papel::text = r.papel);
 
 -- Registro de acesso as telas de conteudo (leitura, testes, revisao). So a funcao grava; ninguem le pela API.
 CREATE TABLE IF NOT EXISTS app.acesso_conteudo (
@@ -70,7 +88,8 @@ UPDATE conteudo.artefato a SET status = 'arquivado'
  WHERE a.tema_id = t.tema_id AND replace(t.codigo,'-','') = 'T001' AND a.status = 'publicado'
    AND a.corpo LIKE 'Conteudo do artefato %' AND length(a.corpo) < 200;
 
-SELECT p.email_primario, d.papel FROM app.designacao d JOIN app.pessoa p USING (pessoa_id)
- WHERE p.email_primario::text IN ('japtenani@gmail.com','aline@sardow.com','jorge.carnesecca@hotmail.com');
+SELECT p.email_primario, d.papel, coalesce(d.vigencia_fim::text, 'vigente') AS situacao
+  FROM app.designacao d JOIN app.pessoa p USING (pessoa_id)
+ WHERE lower(p.email_primario::text) IN (SELECT email FROM rev UNION SELECT substitui FROM rev);
 COMMIT;
 \echo 'revisores cadastrados'

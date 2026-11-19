@@ -2,7 +2,7 @@
 # ============================================================
 # 06_scaffolding_v1.0.sh
 # Sistema de Producao Curricular e Coleta Cientifica
-# Programa de Cirurgia de Urgencia e Trauma
+# CUT - Curso de Cirurgia Geral, Urgencia e Trauma
 # Versao 1.0 / 10-11-2026
 #
 # OBJETIVO: criar a estrutura de pastas e os arquivos base da
@@ -354,7 +354,7 @@ cat > "$RAIZ/pwa/index.html" <<'EOF'
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programa de Cirurgia de Urgencia e Trauma</title>
+    <title>CUT - Curso de Cirurgia Geral, Urgencia e Trauma</title>
   </head>
   <body>
     <div id="root"></div>
