@@ -78,7 +78,7 @@ A seleção da coordenação entra aqui do mesmo jeito: basta pôr o PDF em `fon
 
 Uma fonte que o triador guardou em outro tema pode ser citada pelo código (F e oito letras) em `fonte_arquivo`: ao gravar, o importador a guarda também neste tema.
 
-O ATLS 11 não entra como fonte com texto: é citado só pela seção.
+O ATLS 11 (tradução) entra como os outros livros-texto desde 19/11/2026: capítulo e páginas, sem copiar trechos longos.
 
 Nunca coloque nesta pasta arquivo com dado de paciente.
 

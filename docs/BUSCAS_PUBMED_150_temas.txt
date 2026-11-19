@@ -42,7 +42,7 @@ Regras:
   3. Uma pasta por tema, a que ja existe no Drive (ex.: "T001 Avaliacao inicial..."), com a subpasta fontes_pdf.
   4. No FONTES.md do tema, uma linha por arquivo: codigo, referencia, PMID/DOI, desenho do estudo, data da busca.
   5. Livro-texto (camada D) nao entra como PDF: registre so capitulo e paginas no FONTES.md.
-     O ATLS nao entra no material de nenhuma forma.
+     O ATLS 11 (traducao) entra como os outros livros-texto (decisao de 19/11/2026).
   6. Os PDFs ficam no Drive. Nunca vao para o GitHub (direitos autorais).
   7. Sem dados de pacientes reais em nenhum arquivo.
   8. Para a producao do tema, envie a pasta fontes_pdf inteira (ou um zip com o nome T001_fontes.zip).
