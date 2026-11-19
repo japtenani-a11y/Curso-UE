@@ -105,6 +105,23 @@ BEGIN
         END IF;
       END LOOP;
     END IF;
+    -- Diretriz clinica do tema (decisao de 19/11/2026, docs/diretriz_do_tema.md). Aviso, para nao travar pecas ja publicadas.
+    IF p_tipo = 'protocolo' THEN
+      FOREACH perfil IN ARRAY ARRAY['Escopo e população', 'Usuários e cenário', 'Definições', 'Recomendações', 'Fluxograma',
+                                    'Quadro-resumo', 'Adaptação local', 'Indicadores de qualidade', 'Exceções', 'Método e fontes',
+                                    'Grupo de elaboração e conflitos de interesse', 'Limitações e lacunas', 'Revisão'] LOOP
+        IF position(E'\n## ' || perfil IN E'\n' || c) = 0 THEN
+          gravidade := 'aviso'; mensagem := format('Diretriz: falta a seção "## %s".', perfil); RETURN NEXT;
+        END IF;
+      END LOOP;
+      n := (SELECT count(*) FROM regexp_matches(c, '\n\*\*Recomendação \d+', 'g'));
+      IF n < 3 THEN gravidade := 'aviso'; mensagem := format('Diretriz: o padrão tem ao menos 3 "**Recomendação N.**"; tem %s.', n); RETURN NEXT; END IF;
+      k := (SELECT count(*) FROM regexp_matches(c, '\nForça: ', 'g'));
+      IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Força: ... | Certeza: ...".', n - k); RETURN NEXT; END IF;
+      k := (SELECT count(*) FROM regexp_matches(c, '\nOrigem: ', 'g'));
+      IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Origem: ..." (diretriz de onde veio).', n - k); RETURN NEXT; END IF;
+      IF c !~ '```mermaid' THEN gravidade := 'aviso'; mensagem := 'Diretriz: o fluxograma deve vir num bloco ```mermaid (flowchart).'; RETURN NEXT; END IF;
+    END IF;
 
   ELSIF p_tipo ~ '^teste_[1-6]$' THEN
     FOREACH perfil IN ARRAY ARRAY['Graduação', 'R1', 'R2', 'R3', 'R+'] LOOP

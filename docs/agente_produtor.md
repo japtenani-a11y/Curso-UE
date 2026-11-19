@@ -8,7 +8,7 @@ importador em modo parcial (`ferramentas/importar_tema.py --parcial`) e SQL 99.
 O produtor escreve, em rascunho, todo o material de um tema liberado:
 - antes da aula: objetivos, resumo básico, roteiro de podcast, caso base, síntese de evidência e mapa;
 - aula: texto da aula, slides com fala e caso da aula;
-- depois da aula: resumo executivo, protocolo, checklist e flashcards;
+- depois da aula: resumo executivo, diretriz clínica do tema (peça "protocolo", ver `diretriz_do_tema.md`), checklist e flashcards;
 - avaliação: os 6 casos dos testes, as âncoras e as questões, dos quais saem pré-teste 1, pré-teste 2, pós-teste D0,
   D+15, D+45 e D+90, com os gabaritos comentados;
 - opcionais: banco de dificuldade e simulado.
@@ -79,10 +79,10 @@ depois vem a etapa nova. Se a sessão anterior não terminou a etapa dela, termi
 | 4 (d2) | Mapa conceitual e roteiro de podcast | `pecas/mapa.md`, `pecas/podcast_roteiro.md` |
 | 5 (d3) | Aula (texto): caso com decisões, técnica operatória, anatomia cirúrgica, complicações; não repete a teoria | `pecas/aula.md` |
 | 6 (d3) | Slides com fala e caso da aula | `pecas/slides.md`, `pecas/caso.md` |
-| 7 (d4) | Depois da aula: resumo executivo, protocolo, checklist, flashcards | `pecas/resumo.md`, `pecas/protocolo.md`, `pecas/checklist.md`, `pecas/flashcard.md` |
+| 7 (d4) | Diretriz clínica do tema (peça `protocolo`, no padrão de `referencia\diretriz_do_tema.md`) e resumo executivo | `pecas/protocolo.md`, `pecas/resumo.md` |
 | 8 (d4) | Os 6 casos dos testes, 2 a 3 âncoras e as questões dos testes 1 e 2 | `casos_teste.json`, `questoes.json` |
 | 9 (d5) | Questões dos testes 3 e 4 | `questoes.json` |
-| 10 (d5) | Questões dos testes 5 e 6; banco de dificuldade | `questoes.json`, `pecas/banco_dificuldade.md` |
+| 10 (d5) | Questões dos testes 5 e 6; banco de dificuldade; checklist (das recomendações fortes da diretriz) e flashcards | `questoes.json`, `pecas/banco_dificuldade.md`, `pecas/checklist.md`, `pecas/flashcard.md` |
 | 11 a 13 (d6 e d7) | Correção pelas pré-revisões e pareceres; peças com veredito "refazer" primeiro | as peças apontadas |
 | 14 (d7) | Conferência final com o importador completo (sem `--parcial`): zero erro. Grava `PRONTO_COMPLETO.txt` e pede no relatório a importação completa | — |
 

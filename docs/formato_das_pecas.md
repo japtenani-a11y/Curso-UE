@@ -21,7 +21,7 @@ Versão 1.0 · 16/11/2026 · Conferido pelo banco em `conteudo.conferir_formato(
 |---|---|---|
 | Antes da aula | objetivos, resumo básico, podcast, caso base, síntese de evidência, mapa | A fonte teórica do tema. Tudo o que o aluno precisa saber de base chega aqui. |
 | Aula | aula (texto), slides, caso da aula | Não repete a teoria de antes da aula. Parte do pressuposto de que o aluno a leu e vai além: discussão de caso clínico, decisão em cada ponto, técnica cirúrgica passo a passo, anatomia cirúrgica, armadilhas e complicações. |
-| Depois da aula | resumo executivo, protocolo, checklist, flashcards | Consolida e leva à prática: o que fazer no plantão. |
+| Depois da aula | resumo executivo, diretriz clínica (protocolo), checklist, flashcards | Consolida e leva à prática: o que fazer no plantão. A diretriz é a norma de conduta do tema. |
 
 **Na aula, o que pode voltar da teoria:** só a frase que serve de ponte para a discussão, citando a peça em que ela está ("como no resumo básico, ..."). Um slide que só reexplica um conceito do resumo básico é retrabalho e sai.
 
@@ -40,7 +40,8 @@ O agente de pré-revisão recebe, junto com cada peça da aula, o material de an
 | Peça | Formato obrigatório (erro se faltar) | Recomendado (aviso se faltar) |
 |---|---|---|
 | Objetivos | Uma seção `## ` para cada perfil: Graduação, R1, R2, R3, R+ | — |
-| Resumo básico, resumo executivo, aula, protocolo | Pelo menos 2 seções `## título` | — |
+| Resumo básico, resumo executivo, aula | Pelo menos 2 seções `## título` | — |
+| Protocolo (diretriz clínica do tema, `docs/diretriz_do_tema.md`) | Pelo menos 2 seções `## título` | As 13 seções da diretriz (Escopo e população ... Revisão); ao menos 3 `**Recomendação N.**`, cada uma com `Força: ... \| Certeza: ...` e `Origem: ...`; fluxograma em bloco ` ```mermaid ` |
 | Síntese de evidência | Pelo menos 2 seções `## título` | `## Consenso`, `## Disputa`, `## Lacunas` |
 | Caso base | Bloco `**Perguntas...**` (ou `## Perguntas`) seguido de perguntas numeradas `1.`, `2.` | — |
 | Caso da aula | Pelo menos 2 `**Ponto de decisão N — título**`; cada um com `Situação:` e `Discussão:` em linhas próprias | `Dica:` em cada ponto; `**Desfecho**` no fim |
