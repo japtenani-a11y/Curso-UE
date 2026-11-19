@@ -38,11 +38,11 @@ Proposta dirigida à Unidade de Emergência do Hospital das Clínicas da Faculda
 
 **Recomendação 1.** Acionar a equipe de trauma por critérios escritos, em níveis, e definir o líder e as funções antes da chegada do paciente, com briefing do caso e plano B combinado.
 Força: forte | Certeza: baixa
-Origem: critérios de acionamento máximo adaptados dos padrões de 2022 do Colégio Americano de Cirurgiões [G12, G13, G14] e do acionamento parcial adaptados da diretriz alemã de 2025 [G15 a G18]; equipe e briefing próprios, a partir dos livros-texto [D22, D42, D71, D91, D104] e da Ficha 1 proposta pelo curso, ainda não implantada [P18].
+Origem: critérios de acionamento máximo adaptados dos padrões de 2022 do Colégio Americano de Cirurgiões [G12, G13, G14] e do acionamento parcial adaptados da diretriz alemã de 2025 [G15 a G18]; equipe e briefing próprios, a partir dos livros-texto [D22, D42, D71, D91, D104] e da Ficha 1 proposta do HC-FMRP, ainda não implantada [P18].
 Justificativa: o trabalho simultâneo e coordenado encurta o tempo até as decisões que salvam vida; a evidência é sobretudo observacional e de opinião de especialistas.
 Na prática: Ponto de protocolo: o cirurgião do trauma lidera [D22]; enquanto ele não está na sala, lidera o emergencista da sala vermelha, presente 24 horas, até o cirurgião assumir [P22]. A equipe de trauma é avisada por bip quando o núcleo interno de regulação informa que o paciente foi regulado, com o tempo previsto de chegada, e de novo na chegada. Posições A (via aérea e neurológico), B (ventilação) e C (choque e hemorragia) [P18].
 
-Acionamento máximo (proposta do curso, a partir dos oito critérios obrigatórios do ACS [G13]), por qualquer um destes: PAS confirmada abaixo de 90 mmHg em qualquer momento; ferimento por arma de fogo no pescoço, no tórax ou no abdome; Glasgow abaixo de 9 por trauma; paciente transferido de outro serviço que precisa de transfusão contínua; paciente intubado no pré-hospitalar e trazido direto; comprometimento respiratório ou necessidade de via aérea de emergência; transferido com comprometimento respiratório em curso; decisão do emergencista da sala vermelha. Nível abaixo do máximo (acionamento parcial; proposta do curso a partir da diretriz alemã de 2025, revisão sistemática), por qualquer um destes, quando não houver critério de acionamento máximo: SpO2 abaixo de 90%; frequência respiratória abaixo de 10 ou acima de 29; FC acima de 120; índice de choque acima de 0,9; eFAST positivo; Glasgow 12 ou menos; temperatura abaixo de 35 °C [G15]; tórax instável, fratura de pelve instável, ferimento penetrante do tronco, amputação acima do punho ou do tornozelo, déficit por lesão raquimedular ou intervenção pré-hospitalar (descompressão torácica, catecolamina, torniquete) [G16]; mais de duas fraturas de ossos longos proximais, queimadura acima de 20%, queda de mais de 3 metros, ejeção do veículo [G17]; no idoso, também PAS abaixo de 100 mmHg, Glasgow 14 ou menos com suspeita de TCE ou lesão em duas ou mais regiões [G18]. Quem compõe a equipe em cada nível é definido pelo serviço na "Adaptação local" [G12]. No acionamento máximo, a meta do ACS é o cirurgião do trauma à beira do leito em até 15 minutos da chegada em pelo menos 80% das vezes, sem contar a presença do residente [G14]. A adesão aos critérios é auditada, porque a subtriagem se associa a maior mortalidade [A53, A54]. Passagem do caso pelo atendimento pré-hospitalar em até 1 minuto, com mecanismo, lesões, sinais e tratamento [D23, D24].
+Acionamento máximo (proposta do curso, a partir dos oito critérios obrigatórios do ACS [G13]), por qualquer um destes: PAS confirmada abaixo de 90 mmHg em qualquer momento; ferimento por arma de fogo no pescoço, no tórax ou no abdome; Glasgow abaixo de 9 por trauma; paciente transferido de outro serviço que precisa de transfusão contínua; paciente intubado no pré-hospitalar e trazido direto; comprometimento respiratório ou necessidade de via aérea de emergência; transferido com comprometimento respiratório em curso; decisão do emergencista da sala vermelha. Nível abaixo do máximo (acionamento parcial; proposta do curso a partir da diretriz alemã de 2025, revisão sistemática), por qualquer um destes, quando não houver critério de acionamento máximo: SpO2 abaixo de 90%; frequência respiratória abaixo de 10 ou acima de 29; FC acima de 120; índice de choque acima de 0,9; eFAST positivo; Glasgow 12 ou menos; temperatura abaixo de 35 °C [G15]; tórax instável, fratura de pelve instável, ferimento penetrante do tronco, amputação acima do punho ou do tornozelo, déficit por lesão raquimedular ou intervenção pré-hospitalar (descompressão torácica, catecolamina, torniquete) [G16]; mais de duas fraturas de ossos longos proximais, queimadura acima de 20%, queda de mais de 3 metros, ejeção do veículo [G17]; no idoso, também PAS abaixo de 100 mmHg, Glasgow 14 ou menos com suspeita de TCE ou lesão em duas ou mais regiões [G18]. Na UE, o acionamento máximo chama centro cirúrgico, tomografia, anestesia, cirurgia do trauma, ortopedia, neurocirurgia e medicina de emergência; o parcial chama medicina de emergência, cirurgia do trauma e quem mais o caso pedir (ver "Adaptação local") [G12]. No acionamento máximo, a meta do ACS é o cirurgião do trauma à beira do leito em até 15 minutos da chegada em pelo menos 80% das vezes, sem contar a presença do residente [G14]. A adesão aos critérios é auditada, porque a subtriagem se associa a maior mortalidade [A53, A54]. Passagem do caso pelo atendimento pré-hospitalar em até 1 minuto, com mecanismo, lesões, sinais e tratamento [D23, D24].
 
 **Recomendação 2.** Na hemorragia externa exsanguinante, controlar o sangramento antes da via aérea.
 Força: forte | Certeza: baixa
@@ -255,6 +255,9 @@ Preenchida para a UE-HCFMRP pela coordenação em 19/11/2026. Outro serviço que
 |---|---|
 | Liderança | Cirurgião do trauma; enquanto ele não está na sala, o emergencista da sala vermelha, presente 24 horas, até o cirurgião assumir |
 | Equipe | Emergência: residentes do 1º ao 3º ano e chefe da emergência, na sala. Trauma: residentes do 1º ao 5º ano, chefe da cirurgia e enfermagem do trauma, no hospital 24 horas |
+| Acionamento máximo | Critérios do guia aceitos pela coordenação. Chama centro cirúrgico, tomografia, anestesia, cirurgia do trauma, ortopedia, neurocirurgia e medicina de emergência |
+| Acionamento parcial | Critérios do guia aceitos pela coordenação. Chama medicina de emergência, cirurgia do trauma e quem mais for necessário para o caso |
+| Chegada do cirurgião | Não há registro do horário; segundo a coordenação, o cirurgião chega junto com a equipe de trauma. O campo do horário entra na Ficha 1 para medir o indicador de 15 minutos |
 | Aviso prévio | NIR informa o paciente regulado e o tempo previsto de chegada; bip para a equipe de trauma na regulação e na chegada |
 | Entrada | Central de regulação de urgência, CROSS e contato direto |
 | Vagas de UTI, centro cirúrgico e enfermaria | NIR, em sistema próprio; UTI pela ficha de pedido de UTI, com critérios de priorização, selecionada pelo NIR com o intensivista |
@@ -264,7 +267,7 @@ Preenchida para a UE-HCFMRP pela coordenação em 19/11/2026. Outro serviço que
 | Tomografia | 24 horas; avisada na chegada e mantida livre para o paciente |
 | Radiologia intervencionista | Sobreaviso 24 horas, acionada por bip |
 | Sala híbrida | Não há |
-| Registro dos indicadores | Ficha 1 · Sala de trauma. Ela ainda não tem campo para o líder definido antes da chegada nem para a pausa de segurança: os dois campos entram na revisão da ficha (nível 1 da implantação) |
+| Registro dos indicadores | Ficha 1 · Sala de trauma, na versão proposta do HC-FMRP, ainda não implantada; ela já prevê o líder, as posições e a pausa de segurança. Faltam o momento em que o líder foi definido, o critério e o nível de acionamento e o horário de chegada do cirurgião: esses campos entram na revisão da ficha (nível 1 da implantação) |
 | Tempos-alvo | Não havia; os deste guia são propostas do curso (ver "Fluxo de atendimento e regulação") |
 | Metas dos indicadores | As propostas do curso foram aceitas pela coordenação |
 | Responsáveis pelos indicadores | Por cargo, como na tabela de indicadores |
@@ -298,7 +301,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 | 1. Diagnóstico | Diagnóstico da sala de trauma e responsável nomeado | Coordenação do serviço | Semana 1 | 0 |
 | 2. Apresentação | Esta proposta entregue à diretoria, com o quadro-resumo, os indicadores e este plano | Coordenação do serviço | Semana 2 | 0 → 1 |
 | 3. Validação pelas equipes | Parecer de cada equipe da tabela "Equipes para validação" | Cirurgia de urgência e trauma (conduz) | Semanas 2 a 6 | 1 |
-| 4. Adaptação local | "Adaptação local" aprovada; Ficha 1 · Sala de trauma revisada, com os campos de líder definido antes da chegada e de pausa de segurança antes de sair da sala | Coordenação do serviço | Semanas 4 a 8 | 1 |
+| 4. Adaptação local | "Adaptação local" aprovada; Ficha 1 · Sala de trauma proposta do HC-FMRP implantada, com os campos acrescentados de líder definido antes da chegada, critério e nível de acionamento e horário de chegada do cirurgião | Coordenação do serviço | Semanas 4 a 8 | 1 |
 | 5. Linha de base | Indicadores medidos com a ficha nova, antes do treinamento | Comissão de qualidade | 3 meses (junto dos passos 3 e 4) | 1 |
 | 6. Treinamento | Aula, simulação no local com a equipe da sala [A44] e material de bolso | Coordenação do serviço e enfermagem | Antes do piloto | 1 |
 | 7. Piloto | Guia em uso, com acompanhamento mensal | Líderes do atendimento | 3 meses | 1 → 2 |
@@ -315,7 +318,7 @@ A implantação segue o modelo de maturidade do curso CUT: seis níveis, do serv
 
 Em qualquer nível, um indicador de saída abaixo da meta por 3 meses seguidos volta ao nível anterior naquele indicador, com plano de melhoria, até recuperar. Os prazos são sugestões do curso; o serviço ajusta na "Adaptação local".
 
-- **Materiais de apoio.** Ficha 1 · Sala de trauma, na versão proposta pelo curso [P18], cartaz com o quadro-resumo e o fluxograma, checklist do tema (peça "checklist") e cartão de bolso.
+- **Materiais de apoio.** Ficha 1 · Sala de trauma, na versão proposta do HC-FMRP [P18], cartaz com o quadro-resumo e o fluxograma, checklist do tema (peça "checklist") e cartão de bolso.
 - **O que ajuda a implantar.** Um responsável institucional pelo guia, adaptação ao contexto do serviço e integração à rotina e à ficha [A16].
 - **Barreiras previsíveis.** Rodízio de equipes e residentes, falta de tempo para registrar, ficha diferente da prática. Resposta: treinamento a cada entrada de residentes e ficha revisada junto com o guia.
 
@@ -396,7 +399,7 @@ Em qualquer nível, um indicador de saída abaixo da meta por 3 meses seguidos v
 
 16\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Unidade de Emergência. **Protocolo de transfusão maciça**. Ribeirão Preto, [s.d.]. Documento institucional, não publicado.
 
-17\. SERVIÇO DE CIRURGIA DE URGÊNCIA E TRAUMA. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Proposta de atualização, ainda não implantada. Documento não publicado. [P18 a P21]
+17\. HOSPITAL DAS CLÍNICAS DA FACULDADE DE MEDICINA DE RIBEIRÃO PRETO DA USP. Serviço de Cirurgia de Urgência e Trauma. **Ficha 1: Sala de trauma. Atendimento inicial ao trauma, registro prospectivo**. Proposta de atualização, ainda não implantada. Documento não publicado. [P18 a P21]
 
 18\. CURSO DE CIRURGIA GERAL, URGÊNCIA E TRAUMA (CUT). **Decisão da coordenação sobre a liderança da sala de trauma**. 16 nov. 2026, atualizada em 19 nov. 2026. [P22]
 

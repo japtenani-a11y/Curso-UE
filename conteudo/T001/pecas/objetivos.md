@@ -17,7 +17,7 @@ Cada objetivo tem verbo observável, condição (em que situação o aluno mostr
 2. (R) **Decidir** quando adiar a intubação no paciente em choque grave e quando a via aérea vem primeiro [G1, G4, G6, D82], em caso escrito, com justificativa que cite o critério.
 3. (H) **Obter** acesso intraósseo em simulador no úmero proximal e na tíbia [D15, D46], no laboratório de habilidades (T-081), na primeira tentativa, dizendo por que o esterno é evitado.
 4. (C) **Explicar** por que a agitação pode ser sinal de choque e por que o aparelho automático de pressão pode errar no choque [D14, D17], em pergunta oral, com as duas razões corretas.
-5. (A) **Registrar** a avaliação em ficha estruturada da sala de trauma (o curso propõe a Ficha 1) [A13, A14, P18] em todo atendimento real ou simulado, com os campos de via aérea e de horário preenchidos.
+5. (A) **Registrar** a avaliação em ficha estruturada da sala de trauma (a proposta do HC-FMRP é a Ficha 1) [A13, A14, P18] em todo atendimento real ou simulado, com os campos de via aérea e de horário preenchidos.
 6. (H) **Realizar** a avaliação secundária completa [D20], em paciente simulado, e documentá-la sem omitir segmento do exame.
 7. (H, aula) **Aplicar** torniquete e cinta pélvica em manequim [D54, D95, D96, D102], na posição correta (torniquete 5 a 8 cm acima do sangramento; cinta nos trocânteres), registrando a hora do torniquete.
 

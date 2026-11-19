@@ -9,7 +9,7 @@ Na chegada, a pergunta é: este paciente, agora, morre primeiro de quê? A regra
 - **Sinais de que a circulação passa na frente:** sangramento externo ativo, pulso radial ausente com femoral presente, agitação [D17], pele fria. A relação entre pulso e pressão é estimativa pouco estudada: radial sugere PAS de pelo menos 90 a 100 mmHg, femoral 70 a 80 e carotídeo 60 a 70 [D44].
 - **Pulso e pressão.** O pulso permite estimar uma faixa de PAS. Palpe radial, femoral e carotídeo; se o aparelho automático e a clínica discordarem, meça a pressão manualmente [D14].
 - **Sinais de que a via aérea continua na frente:** obstrução (sangue, vômito, queda da língua, estridor) e hipóxia grave que não cede com oxigênio [G4].
-- **O que fazer com a via aérea enquanto se trata a circulação:** oxigênio, aspiração, cânula e bolsa-válvula-máscara [G6]. É o plano A da Ficha 1 proposta pelo curso [P20].
+- **O que fazer com a via aérea enquanto se trata a circulação:** oxigênio, aspiração, cânula e bolsa-válvula-máscara [G6]. É o plano A da Ficha 1 proposta do HC-FMRP [P20].
 - **Por que adiar o tubo:** o porquê está no resumo básico [G7, D47]. Quando a intubação vier, com sangue e plasma já correndo [D39], deixe à mão a aspiração, as medicações e o plano B da Ficha 1 proposta [P20]. Indutor: etomidato ou cetamina são os mais adequados na sequência rápida [D78]; no hipotenso, considere reduzir a dose em até 50% (o livro usa índice de choque acima de 0,8) [D79].
 - **O risco oposto:** a falha em assegurar a via aérea esteve em 16% dos óbitos com erro [A51]. Adiar exige material pronto, pessoa designada e gatilho combinado ("se saturar abaixo de 90% com máscara, intubamos").
 
@@ -59,7 +59,7 @@ O que decide a técnica é onde a ferida está.
 
 ## 6. Via aérea cirúrgica: quando o plano C chega
 
-A Ficha 1 proposta pelo curso (ainda não implantada) prevê três planos: A (aspiração, cânula e manobras), B (intubação com bougie) e C (cricotireoidostomia com bougie) [P20]. A via aérea cirúrgica foi necessária em 0,24% de uma coorte [A28]: rara o bastante para ninguém ter prática, e por isso treinada em simulação.
+A Ficha 1 proposta do HC-FMRP (ainda não implantada) prevê três planos: A (aspiração, cânula e manobras), B (intubação com bougie) e C (cricotireoidostomia com bougie) [P20]. A via aérea cirúrgica foi necessária em 0,24% de uma coorte [A28]: rara o bastante para ninguém ter prática, e por isso treinada em simulação.
 
 **Anatomia.** A membrana cricotireóidea fica entre a cartilagem tireoide, acima, e a cricoide, abaixo. Hematoma e enfisema subcutâneo a escondem [D67].
 

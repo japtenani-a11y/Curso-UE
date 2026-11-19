@@ -23,7 +23,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Caso · Fontes: D71, D42, D43, P18*
 
-> **Nota do apresentador:** Caso fictício, o mesmo do caso da aula. Deixar a turma responder antes de mostrar o próximo slide. Resposta esperada: briefing com nomes, posições A, B e C da Ficha 1 proposta pelo curso [P18], líder ao pé da maca [D43], tarefas simultâneas [D42], plano B combinado [D71].
+> **Nota do apresentador:** Caso fictício, o mesmo do caso da aula. Deixar a turma responder antes de mostrar o próximo slide. Resposta esperada: briefing com nomes, posições A, B e C da Ficha 1 proposta do HC-FMRP [P18], líder ao pé da maca [D43], tarefas simultâneas [D42], plano B combinado [D71].
 
 > **Fala:** O SAMU avisa: motociclista de quarenta e um anos, colisão com caminhão, dor na bacia, pressão de oitenta e quatro por cinquenta, frequência de cento e vinte e seis. Chega em oito minutos. Na sala há um residente do terceiro ano, um do primeiro, dois enfermeiros e um técnico. Antes de seguir, responda: o que essa equipe faz nesses oito minutos? Pense em quem lidera, onde ele fica, quem faz o quê e qual é o plano se o paciente chegar pior do que o aviso [D71].
 
@@ -155,7 +155,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Anatomia e técnica · Fontes: D67, A28, P20*
 
-> **Nota do apresentador:** Planos A, B e C da Ficha 1 proposta pelo curso [P20]. Anatomia e técnica [D67]. Frequência [A28]. O procedimento completo é do T002; aqui só o que a avaliação inicial precisa. Palpar a membrana em voluntário.
+> **Nota do apresentador:** Planos A, B e C da Ficha 1 proposta do HC-FMRP [P20]. Anatomia e técnica [D67]. Frequência [A28]. O procedimento completo é do T002; aqui só o que a avaliação inicial precisa. Palpar a membrana em voluntário.
 
 > **Fala:** Se a via aérea falhar, o plano C é a cricotireoidostomia [P20]. A membrana fica entre a cartilagem tireoide, acima, e a cricoide, abaixo. A mão não dominante fixa a laringe e não solta até a cânula entrar. A incisão da pele é vertical e a da membrana é transversal [D67]. Depois da pele, o sangue cobre tudo e você trabalha pelo tato. Ela é necessária em menos de um por cento dos casos [A28]. Por isso se treina em simulação.
 

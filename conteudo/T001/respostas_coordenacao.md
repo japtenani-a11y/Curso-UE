@@ -21,3 +21,10 @@
 12.19 20 casos.
 12.20 Nível 0.
 12.21 Banco interno do serviço, desatualizado (dados até 2021).
+
+Respostas de 19/11/2026 (acionamento da equipe de trauma):
+
+12.22 Acionamento máximo: centro cirúrgico, tomografia, anestesia, cirurgia do trauma, ortopedia, neurocirurgia e medicina de emergência. Acionamento parcial: medicina de emergência, cirurgia do trauma e quem mais for necessário para o caso.
+12.23 Sim, os critérios propostos servem.
+12.24 Não há registro do horário de chegada do cirurgião; ele chega sempre junto com a equipe de trauma.
+Outras decisões: sem questões novas de acionamento nas ondas; G16 a G18 ficam sem trecho literal; P18 a P21 são da Ficha 1 proposta do HC-FMRP.
