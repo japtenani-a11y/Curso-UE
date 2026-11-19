@@ -1,0 +1,72 @@
+{
+ "tema": "T002",
+ "sessao": 5,
+ "sessoes_total": 14,
+ "ultima_sessao": "2026-11-19T17:58:00-03:00",
+ "etapas_concluidas": [
+  "plano do tema",
+  "fontes.csv conferido",
+  "objetivos",
+  "nucleo inicial de afirmacoes (31)",
+  "afirmacoes.csv (124)",
+  "resumo basico",
+  "caso base",
+  "sintese de evidencia",
+  "afirmacoes.csv (155: G24-G32 e A40-A42 novas)",
+  "fontes DAS 2025, Duan 2023 e Merkle 2025 com PDF (G1, G2, A23, A24 passam a citar o PDF; G33 a G39 novas)",
+  "mapa conceitual",
+  "roteiro de podcast",
+  "afirmacoes D81-D102 (ATLS 11 e Roberts 8)",
+  "aula, caso, slides, resumo, checklist, flashcard",
+  "protocolo v1.1 com adaptacao local",
+  "questoes (153: 3 fixas + 6 testes x 5 perfis x 5)",
+  "casos_teste (6)"
+ ],
+ "pecas_prontas": [
+  "objetivos",
+  "resumo_basico",
+  "caso_base",
+  "sintese_evidencia",
+  "mapa",
+  "podcast_roteiro",
+  "aula",
+  "caso",
+  "slides",
+  "resumo",
+  "checklist",
+  "flashcard",
+  "protocolo"
+ ],
+ "afirmacoes": 184,
+ "fontes_csv": 57,
+ "questoes_por_teste_e_perfil": {
+  "1": 5,
+  "2": 5,
+  "3": 5,
+  "4": 5,
+  "5": 5,
+  "6": 5
+ },
+ "casos_teste": 0,
+ "ancoras": 0,
+ "correcoes_pendentes": [],
+ "proxima_sessao": {
+  "numero": 5,
+  "etapa": "pecas/aula.md (caso com decisões, técnica da cricotireoidostomia, anatomia cirúrgica, complicações)"
+ },
+ "previsao_termino": "2026-11-25",
+ "prazo_producao_pronta": "2027-01-28",
+ "aula": "2027-03-11",
+ "tempo_essencial_antes_da_aula": "objetivos (~5 min) + resumo basico (~26 min) + caso base (~5 min de texto + 12 perguntas x 3 min = ~41 min): cerca de 72 min, dentro da meta de 60 a 90",
+ "ultima_alteracao": "2026-11-19T13:12:35-03:00",
+ "decisoes_coordenacao": [
+  "Divergencia entre fontes (19/11/2026, substitui o \"Mattox soberano\"): vale a fonte mais recente pela data de publicacao; no mesmo ano, diretriz, revisao sistematica, ensaio, livro. ATLS 11 (2026) entra como livro-texto.",
+  "Cricotireoidostomia cirurgica contraindicada abaixo de 12 anos (Mattox)",
+  "Ate 3 tentativas de intubacao antes de passar ao resgate (Mattox, fig. 14-7); sem oxigenacao, nao esperar a contagem",
+  "Incisao de pele vertical mediana e o padrao do curso na cricotireoidostomia cirurgica (coordenacao, 19/11/2026)",
+  "Nao ha diretriz da SBAIT sobre via aerea no trauma (coordenacao, 19/11/2026)"
+ ],
+ "aprofundamento_antes_da_aula": "síntese de evidência + mapa (10 min) + podcast (~9 min, 1.358 palavras de fala)",
+ "pausado": "19/11/2026 17:35: producao do T002 assumida pela coordenacao na conversa com o Claude; linha retirada de liberados.csv para o produtor automatico nao escrever ao mesmo tempo",
+ "pendente": "pergunta 10 (detector colorimetrico); revisao das 11 questoes com correta mais longa"
+}

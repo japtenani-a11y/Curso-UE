@@ -1,0 +1,5411 @@
+[
+ {
+  "id": "FIXA-1",
+  "fixa": true,
+  "grau": 3,
+  "enunciado": "Na via aérea do traumatizado, quando a intubação e a ventilação por máscara e por dispositivo de resgate falham, qual é a conduta?",
+  "alternativas": [
+   "Cricotireoidostomia cirúrgica com bisturi, bougie e tubo",
+   "Traqueostomia aberta na sala de trauma",
+   "Aguardar o anestesista para intubação com endoscópio",
+   "Ventilação com máscara por mais 5 minutos antes de decidir",
+   "Nova tentativa de intubação com outra lâmina"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no não intubo, não oxigeno, faz-se a via aérea cirúrgica com bisturi, bougie e tubo [D85, D86].",
+   "A traqueostomia é mais demorada e profunda; o resgate de emergência é a cricotireoidostomia [D40, D86].",
+   "Esperar o especialista sem oxigenar leva à lesão hipóxica [D5].",
+   "A máscara já falhou; insistir é a decisão tardia que causa hipóxia [D5].",
+   "Sem oxigenação, nova tentativa só aumenta edema e hipóxia [D84, D66]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D85",
+   "D86",
+   "D84",
+   "D66",
+   "D5",
+   "D40"
+  ]
+ },
+ {
+  "id": "FIXA-2",
+  "fixa": true,
+  "grau": 3,
+  "enunciado": "Na cricotireoidostomia cirúrgica de emergência no adulto, como são as incisões da pele e da membrana?",
+  "alternativas": [
+   "Punção da membrana, sem incisão de pele",
+   "Pele vertical e membrana transversal",
+   "Pele transversal e membrana vertical",
+   "Pele vertical e membrana vertical",
+   "Pele transversal e membrana transversal"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A punção é mais lenta, sem diferença no sucesso, com baixa certeza [A23].",
+   "Correta: pele vertical na linha média e membrana transversal [D88, D89, G33].",
+   "A combinação inverte a lógica: a pele vertical poupa os vasos laterais e a membrana é transversal [D88, D89].",
+   "A membrana é larga e baixa; cortá-la na vertical arrisca as cartilagens [D89, D93].",
+   "A pele transversal só serve quando a membrana é identificada com segurança [G34]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D88",
+   "D89",
+   "G33",
+   "G34",
+   "D93",
+   "A23"
+  ]
+ },
+ {
+  "id": "FIXA-3",
+  "fixa": true,
+  "grau": 2,
+  "enunciado": "Qual é a forma obrigatória de confirmar que o tubo está na traqueia?",
+  "alternativas": [
+   "Elevação do tórax à ventilação",
+   "Radiografia de tórax",
+   "Detecção de CO2 expirado",
+   "Embaçamento do tubo",
+   "Ausculta do epigástrio"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A elevação do tórax engana; a confirmação é pelo CO2 [D29].",
+   "A radiografia vê a profundidade, não a posição traqueal, e demora [D29].",
+   "Correta: a detecção de CO2 expirado é obrigatória, de preferência por capnografia em forma de onda [D29, G2].",
+   "O embaçamento ocorre também no esôfago [D29].",
+   "A ausculta isolada não exclui o tubo esofágico [D29]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D29",
+   "G2"
+  ]
+ },
+ {
+  "id": "T1-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 1,
+  "grau": 1,
+  "taxa_esperada": "acima de 90%",
+  "enunciado": "No caso 1, qual achado indica ameaça à via aérea?",
+  "alternativas": [
+   "FC de 104",
+   "PA de 136/82",
+   "Glasgow 14",
+   "Voz abafada e sangue na boca",
+   "Colar cervical colocado"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A taquicardia leve não é sinal de via aérea [D16].",
+   "A pressão normal não informa sobre a via aérea [D16].",
+   "Glasgow 14 não indica, por si, ameaça à via aérea [A29].",
+   "Correta: voz abafada é um dos sinais cardinais de obstrução alta [D16].",
+   "O colar é medida de proteção da coluna [D77]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D16",
+   "A29",
+   "D77"
+  ]
+ },
+ {
+  "id": "T1-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 1,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, o que é uma via aérea definitiva?",
+  "alternativas": [
+   "A cânula orofaríngea bem posicionada",
+   "A cânula nasofaríngea",
+   "A máscara laríngea com boa ventilação",
+   "A máscara com reservatório a 15 L/min",
+   "O tubo com balonete na traqueia"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A cânula só mantém a patência; é temporária [D47].",
+   "A nasofaríngea é medida temporária [D47].",
+   "O extraglótico é temporário e não protege da aspiração [D57, G11].",
+   "A máscara oferece oxigênio, não protege a via aérea [D47].",
+   "Correta: via aérea definitiva é o tubo com balonete na traqueia [D47]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D47",
+   "D57",
+   "G11"
+  ]
+ },
+ {
+  "id": "T1-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 1,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, testar o reflexo de vômito ajuda a decidir a intubação?",
+  "alternativas": [
+   "Não: não tem valor e pode provocar aspiração",
+   "Só se o Glasgow for menor que 8",
+   "Só depois de tirar o colar",
+   "Sim, se presente dispensa o tubo",
+   "Sim, a ausência dele indica intubar"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: testar o reflexo não tem valor clínico e pode ser perigoso [D13].",
+   "O teste não ganha valor com o Glasgow [D13].",
+   "O colar não muda a falta de valor do teste [D13].",
+   "Respirar ou ter reflexo não prova proteção da via aérea [D14].",
+   "O teste não tem valor clínico para a decisão [D13]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D13",
+   "D14"
+  ]
+ },
+ {
+  "id": "T1-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, qual mnemônico avalia a dificuldade da laringoscopia?",
+  "alternativas": [
+   "ROMAN",
+   "LEMON",
+   "MIST",
+   "SMART",
+   "RODS"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "ROMAN avalia a ventilação com máscara [D44].",
+   "Correta: LEMON avalia a laringoscopia difícil [D43].",
+   "MIST é a passagem do pré-hospitalar, não a avaliação da via aérea [D10].",
+   "SMART avalia a cricotireoidostomia [D46].",
+   "RODS avalia o dispositivo extraglótico [D45]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D43",
+   "D44",
+   "D45",
+   "D46",
+   "D10"
+  ]
+ },
+ {
+  "id": "T1-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, a cânula orofaríngea é indicada neste paciente acordado?",
+  "alternativas": [
+   "Sim, sempre no trauma de face",
+   "Sim, para proteger contra aspiração",
+   "Não: contraindicada com reflexo presente",
+   "Só depois de retirar o colar",
+   "Sim, por ser via aérea definitiva"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é indicação geral [G14].",
+   "Não protege contra aspiração; é medida temporária [D47].",
+   "Correta: a cânula orofaríngea é contraindicada no consciente com reflexo presente [G14].",
+   "O colar não é o critério [G14].",
+   "Não é via aérea definitiva [D47]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G14",
+   "D47"
+  ]
+ },
+ {
+  "id": "T1-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 1,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 1, por que a intubação deve ser tratada como potencialmente difícil?",
+  "alternativas": [
+   "Porque o Glasgow é 14",
+   "Porque a PA está normal",
+   "Porque o paciente é jovem",
+   "Porque toda via aérea do trauma é presumida difícil",
+   "Porque a saturação está abaixo de 95%"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O Glasgow não define a dificuldade anatômica [D43].",
+   "A pressão normal não muda a premissa [G9].",
+   "A idade não define a dificuldade [D9].",
+   "Correta: toda intubação no trauma é considerada potencialmente difícil [D9, G9].",
+   "A saturação é um dado, mas a premissa vale para todo traumatizado [D9]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D9",
+   "G9",
+   "D43"
+  ]
+ },
+ {
+  "id": "T1-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, o edema da face aumenta. Qual o princípio para a via aérea lesada?",
+  "alternativas": [
+   "Esperar o edema ceder com corticoide",
+   "Manter a máscara e reavaliar em 6 horas",
+   "Intubar só se a saturação cair abaixo de 85%",
+   "Fazer traqueostomia eletiva no dia seguinte",
+   "Proteger cedo, enquanto há opções"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Esperar perde a janela em que o tubo é possível [D36].",
+   "O edema progride e fecha as opções [D36].",
+   "Esperar a dessaturação é decidir tarde [D5, D36].",
+   "O problema é agora; o destino vem depois [D36].",
+   "Correta: na lesão direta da via aérea, protege-se cedo, enquanto há mais opções [D36]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D36",
+   "D5"
+  ]
+ },
+ {
+  "id": "T1-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, o que fazer com o colar cervical ao intubar?",
+  "alternativas": [
+   "Abrir a frente e manter a estabilização manual",
+   "Trocar por colar de outro tamanho",
+   "Retirar o colar e liberar o pescoço",
+   "Intubar sem nenhuma restrição",
+   "Manter o colar fechado"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: abre-se o colar e mantém-se a estabilização manual em linha [D77, D11].",
+   "Trocar o colar não resolve o acesso [D77].",
+   "Liberar o pescoço sem restrição não protege a coluna [D11].",
+   "A restrição manual é mantida [D87].",
+   "O colar fechado atrapalha a abertura da boca e o acesso [D77]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D77",
+   "D11",
+   "D87"
+  ]
+ },
+ {
+  "id": "T1-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, se houver tempo e o campo não estiver tomado por sangue, qual abordagem costuma ser a melhor?",
+  "alternativas": [
+   "Sequência rápida com laringoscopia direta",
+   "Intubação acordada com endoscópio flexível",
+   "Intubação nasotraqueal às cegas",
+   "Cricotireoidostomia imediata",
+   "Máscara laríngea e transporte"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A sequência rápida tira a respiração espontânea numa via aérea distorcida [D37].",
+   "Correta: com tempo e sem sangue no campo, a intubação acordada com endoscópio flexível costuma ser a melhor [D37].",
+   "Às cegas, na face lesada, é perigoso; a abordagem é guiada pelo endoscópio [D37].",
+   "A via cirúrgica é o resgate, não a primeira escolha com o paciente oxigenando [D37, D2].",
+   "O extraglótico é temporário e não protege [D57]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D37",
+   "D57",
+   "D2"
+  ]
+ },
+ {
+  "id": "T1-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, ele fala com voz abafada. O que isso significa?",
+  "alternativas": [
+   "Sinal de traumatismo craniano",
+   "Voz normal para o trauma",
+   "Sinal cardinal de obstrução alta",
+   "Sinal de pneumotórax",
+   "Sinal apenas de ansiedade"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é sinal neurológico [D16].",
+   "Não é voz clara [D48].",
+   "Correta: voz abafada é sinal cardinal de obstrução alta, com dificuldade de deglutir, estridor e dispneia [D16].",
+   "Não é sinal torácico [D16].",
+   "Não é a leitura correta [D16]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D16",
+   "D48"
+  ]
+ },
+ {
+  "id": "T1-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, qual mnemônico prevê a cricotireoidostomia difícil, e o que nele pesa aqui?",
+  "alternativas": [
+   "MIST, pelo mecanismo",
+   "RODS, pela obstrução",
+   "ROMAN, pela vedação da máscara",
+   "SMART, pelo trauma da região",
+   "LEMON, pela mobilidade cervical"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "MIST não avalia a via aérea [D10].",
+   "RODS avalia o extraglótico [D45].",
+   "ROMAN avalia a máscara [D44].",
+   "Correta: SMART avalia a cricotireoidostomia, e trauma na região é um dos itens [D46].",
+   "LEMON avalia a laringoscopia [D43]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D46",
+   "D43",
+   "D44",
+   "D45"
+  ]
+ },
+ {
+  "id": "T1-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 1,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 1, a saturação é 92% com máscara. Como pré-oxigenar antes da indução?",
+  "alternativas": [
+   "Basta a máscara por 1 minuto",
+   "Cateter nasal a 2 L/min",
+   "Oxigênio só depois da indução",
+   "Ventilação manual vigorosa sem vedação",
+   "Pressão positiva, porque não passa de 93%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A meta é saturação acima de 94% por 3 minutos [D67].",
+   "O cateter nasal entra a 15 L/min durante a tentativa [D68].",
+   "O oxigênio vem antes, para dar tempo de apneia [D22].",
+   "Ventilação sem vedação não oxigena [D56].",
+   "Correta: quem não passa de 93% com alto fluxo recebe pré-oxigenação com pressão positiva [D23]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D23",
+   "D67",
+   "D22",
+   "D68"
+  ]
+ },
+ {
+  "id": "T1-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, o R2 escolhe o laringoscópio. O que sustenta o videolaringoscópio no trauma?",
+  "alternativas": [
+   "Revisão sistemática no trauma com sucesso não inferior ou maior",
+   "Diretriz EAST de 2012",
+   "Só a experiência do operador",
+   "Nenhuma evidência; é preferência",
+   "Ensaio grande em traumatizados com redução de mortalidade"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no trauma, a revisão sistemática mostrou sucesso não inferior ou maior, com dados heterogêneos [A5].",
+   "A EAST 2012 recomendava a laringoscopia direta [G24].",
+   "O operador conta, mas o dispositivo também [D81].",
+   "Há evidência, embora heterogênea, e o ATLS 11 o inclui entre os fatores de sucesso [A5, D81].",
+   "Não há ensaio grande de mortalidade no trauma [A5]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A5",
+   "G24",
+   "D81"
+  ]
+ },
+ {
+  "id": "T1-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, o sangue na boca aumenta durante a preparação. O que define o sucesso?",
+  "alternativas": [
+   "Laringoscopia mais rápida",
+   "Aspiração potente e proativa",
+   "Posição de Trendelenburg",
+   "Fio-guia rígido",
+   "Lâmina maior"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Pressa sem aspiração aumenta a falha [D54].",
+   "Correta: a aspiração eficiente define o sucesso; a técnica SALAD a usa de forma proativa [D54, D55].",
+   "A posição não substitui a aspiração [D54].",
+   "O fio-guia não remove o sangue [D54].",
+   "A lâmina não resolve o campo com sangue [D54]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D54",
+   "D55"
+  ]
+ },
+ {
+  "id": "T1-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, respirar espontaneamente prova que a via aérea está protegida?",
+  "alternativas": [
+   "Sim, se satura acima de 90%",
+   "Só se não houver sangue",
+   "Não",
+   "Sim",
+   "Sim, se o Glasgow é 14"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A saturação não prova proteção [D14].",
+   "Não é o critério [D14].",
+   "Correta: respirar espontaneamente não prova que a proteção esteja preservada [D14].",
+   "Não prova [D14].",
+   "O Glasgow não prova proteção [A29]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D14",
+   "A29"
+  ]
+ },
+ {
+  "id": "T1-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, você lidera. O que precisa estar pronto antes da primeira dose?",
+  "alternativas": [
+   "Só o laringoscópio e o tubo",
+   "O consentimento da família",
+   "A tomografia de face",
+   "O material da via aérea cirúrgica aberto",
+   "A traqueostomia agendada"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Planejar só o sucesso é o erro que atrasa o resgate [D18].",
+   "A via aérea de urgência não espera consentimento [D36].",
+   "A imagem não precede a via aérea ameaçada [D36].",
+   "Correta: convém preparar-se sempre para a falha, inclusive o resgate cirúrgico [D18, G35].",
+   "O destino vem depois [A9]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D18",
+   "G35",
+   "A9",
+   "D36"
+  ]
+ },
+ {
+  "id": "T1-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 1, quem deve olhar a saturação e o relógio durante a tentativa?",
+  "alternativas": [
+   "O técnico de enfermagem, sem avisar ninguém",
+   "O anestesista, por telefone, de outro setor",
+   "Quem está laringoscopando, de olho na glote",
+   "Ninguém; basta deixar o alarme do monitor",
+   "Alguém fora da laringoscopia, que pode encerrá-la"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Sem comunicação, a equipe segue na tentativa anterior [G5].",
+   "A função precisa estar na sala [D58].",
+   "Quem laringoscopa perde a noção do tempo; o erro de fixação não é falta de conhecimento [D59].",
+   "O alarme sem dono não para a tentativa [D58].",
+   "Correta: alguém fora da tarefa acompanha e encerra a tentativa, em alça fechada [D58, D59]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D58",
+   "D59",
+   "G5"
+  ]
+ },
+ {
+  "id": "T1-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 1, a primeira tentativa no videolaringoscópio falha, saturação 88%. Qual o próximo passo?",
+  "alternativas": [
+   "Voltar às manobras básicas e reoxigenar",
+   "Cricotireoidostomia imediata",
+   "Intubação nasal às cegas",
+   "Sedação adicional",
+   "Segunda tentativa imediata, mesmo operador"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: o primeiro passo na falha é voltar às manobras básicas e reoxigenar [G23, G21].",
+   "Ainda há oxigenação possível; a via cirúrgica vem no não intubo, não oxigeno [D85].",
+   "Às cegas na face lesada é perigoso [D37].",
+   "Sedação não resolve a falha [G23].",
+   "Tentar sem reoxigenar e sem mudar nada aumenta a hipóxia [G21, D84]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "G23",
+   "G21",
+   "D84",
+   "D85"
+  ]
+ },
+ {
+  "id": "T1-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 1, para a próxima tentativa, o que precisa mudar?",
+  "alternativas": [
+   "Nada; repetir igual já dá mais experiência",
+   "Algo concreto: operador, lâmina, posição ou dispositivo",
+   "Só a posição do monitor na sala de trauma",
+   "Só a dose do sedativo, para relaxar mais",
+   "Só o tamanho do colar cervical do paciente"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Repetir sem mudança é insistência [D84, D5].",
+   "Correta: nenhuma tentativa se repete sem mudar algo concreto [D84].",
+   "O monitor não muda a laringoscopia [D84].",
+   "A dose não muda a visão da glote [D84].",
+   "O colar fica aberto na frente [D87]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D84",
+   "D5",
+   "D87"
+  ]
+ },
+ {
+  "id": "T1-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 1, o edema e o sangue aumentam. Quando a via aérea cirúrgica pode vir já após a primeira falha?",
+  "alternativas": [
+   "Só depois de 5 tentativas",
+   "Só quando for criança",
+   "Com via aérea edemaciada ou distorcida",
+   "Nunca, só após três tentativas",
+   "Só se o anestesista autorizar"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Cada tentativa aumenta edema [D84].",
+   "Na criança, o resgate é por agulha [D62].",
+   "Correta: a WTA admite a via aérea cirúrgica após a primeira falha com via aérea edemaciada ou distorcida [G7].",
+   "O algoritmo admite [G7].",
+   "A decisão é de quem lidera a via aérea [G7]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G7",
+   "D84",
+   "D62"
+  ]
+ },
+ {
+  "id": "T1-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 1,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "Sobre o caso 1: no registro NEAR, com que frequência a via aérea cirúrgica de resgate foi necessária?",
+  "alternativas": [
+   "0,28 por 1.000",
+   "10%",
+   "25%",
+   "2,8 por 1.000",
+   "28 por 1.000"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O valor é dez vezes maior que isso [A1].",
+   "Seria muito acima do observado [A1].",
+   "Muito acima do observado [A1].",
+   "Correta: 2,8 por 1.000 pacientes com tentativa inicial de intubação [A1].",
+   "O número é dez vezes menor [A1]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A1"
+  ]
+ },
+ {
+  "id": "T1-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 1: na coorte canadense de intubação no trauma, o que se associou a menor sucesso na primeira tentativa?",
+  "alternativas": [
+   "Colar retirado",
+   "Pressão normal",
+   "Sexo feminino",
+   "Idade abaixo de 30 anos",
+   "Lesão de cabeça, face ou pescoço"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "O fator foi a lesão [A6].",
+   "Pressão normal não reduz o sucesso [A6].",
+   "Não foi o fator descrito [A6].",
+   "A idade não foi o fator descrito [A6].",
+   "Correta: lesão de cabeça, face ou pescoço associou-se a menor sucesso na primeira tentativa [A6]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A6",
+   "A22"
+  ]
+ },
+ {
+  "id": "T1-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 1: como avaliar o desempenho da intubação no serviço?",
+  "alternativas": [
+   "Pelo sucesso na primeira tentativa e pelos eventos",
+   "Pelo número total de intubações no mês",
+   "Pelo custo de cada videolaringoscópio usado",
+   "Pelo tempo de internação dos intubados",
+   "Pela opinião dos residentes sobre o plantão"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: sucesso na primeira tentativa e eventos adversos (85% e 22% na coorte canadense) são medidas usadas [A22].",
+   "Volume não mede qualidade [A22].",
+   "O custo não mede o desempenho [A22].",
+   "O tempo de internação não mede a intubação [A22].",
+   "A opinião não substitui a medida [A22]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A22",
+   "G2"
+  ]
+ },
+ {
+  "id": "T1-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 1,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 1: o que dizer da evidência dos ensaios de intubação para o trauma?",
+  "alternativas": [
+   "São todos feitos em pacientes de trauma",
+   "São em geral de adultos críticos: evidência indireta",
+   "Provam benefício de mortalidade no trauma",
+   "Não existem ensaios sobre intubação",
+   "São todos feitos em pacientes pediátricos"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A maioria não é de trauma [A13].",
+   "Correta: quase todos os ensaios são de adultos críticos em geral; para o trauma, evidência indireta [A13, A14, A16, A18].",
+   "Os ensaios medem sucesso e hipoxemia, não provam mortalidade no trauma [A13].",
+   "Há vários ensaios, como DEVICE, PREOXI, RSI e BOUGIE [A13].",
+   "São de adultos [A13]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A13",
+   "A14",
+   "A16",
+   "A18"
+  ]
+ },
+ {
+  "id": "T1-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 1,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 1: quantas recomendações a diretriz multissociedade de 2024 sobre coluna cervical reúne, e com que evidência?",
+  "alternativas": [
+   "Nenhuma recomendação formal",
+   "23, todas com evidência forte",
+   "23, com evidência em geral modesta",
+   "100, quase todas com ensaios",
+   "5, todas com evidência forte"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não [G4].",
+   "Só uma moderada e duas fortes [G4].",
+   "Correta: 23 recomendações, com evidência em geral modesta [G4].",
+   "Não [G4].",
+   "Não [G4]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G4"
+  ]
+ },
+ {
+  "id": "T2-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 2,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, qual a primeira medida para a via aérea?",
+  "alternativas": [
+   "Dar sedativo",
+   "Pedir tomografia de crânio",
+   "Medir a glicemia",
+   "Aspirar o vômito da boca",
+   "Retirar o colar"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Sedar sem via aérea piora a hipóxia [D34].",
+   "A imagem não vem antes da via aérea [D52].",
+   "A glicemia não trata a obstrução [D54].",
+   "Correta: com vômito e roncos, a aspiração vem primeiro; ela define o sucesso e evita aspiração maciça [D54].",
+   "O colar fica; abre-se só a frente na intubação [D77]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D54",
+   "D34",
+   "D77"
+  ]
+ },
+ {
+  "id": "T2-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 2,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 2, por que a saturação de 86% preocupa no traumatismo craniano?",
+  "alternativas": [
+   "Porque indica pneumotórax",
+   "Porque obriga a hiperventilar",
+   "Porque indica choque",
+   "Porque contraindica a intubação",
+   "Porque a hipóxia piora a lesão cerebral"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Saturação baixa não diagnostica pneumotórax [D34].",
+   "A hiperventilação piora os desfechos [D35].",
+   "A PA está alta; a saturação não indica choque [D34].",
+   "A hipóxia é motivo para intubar, não contraindicação [D12].",
+   "Correta: no TCE grave, o manejo reduz a intensidade e a duração da hipóxia e da hipotensão [D34]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D34",
+   "D12",
+   "D35"
+  ]
+ },
+ {
+  "id": "T2-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, o Glasgow 7 justifica considerar via aérea definitiva?",
+  "alternativas": [
+   "Sim, junto com vômito e hipoxemia",
+   "Não, idosos não são intubados",
+   "Só se a PA cair",
+   "Não, só abaixo de 5",
+   "Só depois da tomografia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: há falha de proteção e de oxigenação, além do Glasgow [D12, A29].",
+   "A idade não exclui a indicação [D12].",
+   "A decisão segue as três perguntas, não só a pressão [D12].",
+   "O valor clássico é abaixo de 9, mas não decide sozinho [A29].",
+   "A via aérea não espera a imagem [D52]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D12",
+   "A29"
+  ]
+ },
+ {
+  "id": "T2-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, depois do tubo, como ventilar?",
+  "alternativas": [
+   "Usar volume corrente máximo",
+   "Buscar eucapnia e normoxia",
+   "Hiperventilar para baixar a pressão intracraniana",
+   "Ventilar só quando a saturação cair",
+   "Manter saturação de 88%"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Volume excessivo não é a meta [A34].",
+   "Correta: depois do tubo, na lesão cerebral aguda, a prioridade é eucapnia, normoxia e sedação [A34].",
+   "A hiperventilação reduz a pressão por pouco tempo e piora os desfechos [D35].",
+   "A ventilação é contínua [A34].",
+   "Hipóxia piora a lesão cerebral [D34]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A34",
+   "D35",
+   "D34"
+  ]
+ },
+ {
+  "id": "T2-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, o que é a intubação neuroprotetora?",
+  "alternativas": [
+   "Intubar pela via nasal, às cegas, sem bloqueio",
+   "Intubar sem sedação, para não baixar a pressão",
+   "Intubar evitando hipotensão, hipóxia, hipercapnia e descarga simpática",
+   "Intubar só com cetamina, em qualquer dose",
+   "Intubar só depois da tomografia de crânio"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é definida pela via [A7].",
+   "Sem sedação há descarga simpática [A7].",
+   "Correta: busca evitar a lesão secundária, reduzindo hipotensão, hipóxia, hipercapnia e descarga simpática [A7].",
+   "Não é definida por um fármaco [A7].",
+   "Não é definida pelo momento da imagem [A7]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A7"
+  ]
+ },
+ {
+  "id": "T2-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, com sinais de hipertensão intracraniana, quando dar a terapia hiperosmolar?",
+  "alternativas": [
+   "Só se a pupila não reagir",
+   "Na UTI",
+   "Depois da tomografia",
+   "Antes da intubação",
+   "Nunca no trauma"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A anisocoria já é o sinal [A35].",
+   "O momento é antes do tubo [A35].",
+   "Esperar a imagem atrasa a proteção [A35].",
+   "Correta: com suspeita de hipertensão intracraniana, a terapia hiperosmolar vem antes da intubação [A35].",
+   "Ela é indicada nessa situação [A35]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A35"
+  ]
+ },
+ {
+  "id": "T2-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, a filha relata marca-passo. O que isso muda na avaliação do choque?",
+  "alternativas": [
+   "Obriga a usar succinilcolina",
+   "Nada",
+   "Indica cetamina",
+   "Contraindica a intubação",
+   "A FC pode ficar fixa e esconder o choque"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não define o bloqueador [D82].",
+   "Muda a leitura da FC [D71].",
+   "Não define o indutor [D69].",
+   "Não contraindica [D12].",
+   "Correta: o marca-passo pode impedir a taquicardia compensatória; o índice de choque fica enganoso [D71, D31]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D71",
+   "D31",
+   "D12"
+  ]
+ },
+ {
+  "id": "T2-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, qual bloqueador é a primeira escolha do curso, e em que dose?",
+  "alternativas": [
+   "Rocurônio 1,2 mg/kg ou mais",
+   "Rocurônio 0,3 mg/kg",
+   "Succinilcolina 0,5 mg/kg",
+   "Atracúrio 0,5 mg/kg",
+   "Nenhum; intubar sem bloqueador"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: rocurônio em 1,2 mg/kg ou mais dá as mesmas condições com menos efeitos colaterais [D82].",
+   "Dose baixa não dá condições de intubação rápida [D82, D25].",
+   "Dose insuficiente; e a primeira escolha é o rocurônio [D82].",
+   "Não é bloqueador adequado à sequência rápida [D24].",
+   "A sequência rápida usa bloqueador [D20]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D82",
+   "D25",
+   "D24",
+   "D20"
+  ]
+ },
+ {
+  "id": "T2-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, como confirmar o tubo?",
+  "alternativas": [
+   "Pela saturação que sobe",
+   "Pela curva de capnografia",
+   "Pela ausculta",
+   "Pela radiografia",
+   "Pelo embaçamento"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A saturação demora e engana [D29].",
+   "Correta: CO2 expirado é obrigatório, de preferência em forma de onda [D29, G2].",
+   "A ausculta não basta [D29].",
+   "A radiografia não confirma posição traqueal a tempo [D29].",
+   "O embaçamento ocorre no esôfago [D29]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D29",
+   "G2"
+  ]
+ },
+ {
+  "id": "T2-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 2,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 2, depois da indução, o que fazer com o cateter nasal da pré-oxigenação?",
+  "alternativas": [
+   "Passar sonda nasogástrica por ele",
+   "Retirar para não atrapalhar",
+   "Mantê-lo no lugar",
+   "Trocar por máscara",
+   "Desligar o oxigênio"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não serve para isso [D52].",
+   "Retirá-lo perde a oxigenação apneica [D52].",
+   "Correta: a máscara e o cateter nasal permanecem depois da indução [D52, D68].",
+   "A máscara sai na laringoscopia; o cateter fica [D52].",
+   "O fluxo é mantido a 15 L/min [D68]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D52",
+   "D68"
+  ]
+ },
+ {
+  "id": "T2-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, a PA é 168/94 com FC 58. Que leitura fazer?",
+  "alternativas": [
+   "Pneumotórax hipertensivo à direita",
+   "Tamponamento cardíaco pela queda",
+   "Efeito da dor apenas, sem outro significado",
+   "Possível reflexo de hipertensão intracraniana",
+   "Choque compensado, com pressão ainda mantida"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O pneumotórax hipertensivo causa hipotensão [D32].",
+   "O tamponamento causa hipotensão [D33].",
+   "Com anisocoria, o sinal é neurológico [A35].",
+   "Correta: com anisocoria e Glasgow 7, hipertensão com bradicardia sugere hipertensão intracraniana; terapia hiperosmolar antes do tubo [A35].",
+   "PA alta com bradicardia não é choque [D31]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A35",
+   "D31",
+   "D32"
+  ]
+ },
+ {
+  "id": "T2-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, qual cuidado com a dose do indutor numa idosa com PA alta e marca-passo?",
+  "alternativas": [
+   "Dose cheia sempre, para garantir a sedação",
+   "Só opioide em dose alta, sem indutor",
+   "Dose dobrada, pela PA alta de entrada",
+   "Nenhum indutor, só o bloqueador",
+   "Dose ajustada, evitando a hipotensão"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A hipotensão após o tubo piora o desfecho no TCE [A3].",
+   "Opioide isolado não é a sequência rápida [D20].",
+   "Dobrar aumenta a hipotensão [A3].",
+   "Sem indutor há descarga simpática [A7].",
+   "Correta: o objetivo é evitar hipotensão e hipóxia; a hipotensão pós-intubação associou-se a maior mortalidade [A3, D34]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A3",
+   "D34",
+   "A7"
+  ]
+ },
+ {
+  "id": "T2-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, a evidência sobre intubação pré-hospitalar no TCE grave diz o quê?",
+  "alternativas": [
+   "Não houve diferença de mortalidade em metanálise",
+   "Só beneficia idosos",
+   "Não há estudo",
+   "Aumenta a mortalidade sempre",
+   "Reduz a mortalidade de forma clara"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: metanálise não achou diferença de mortalidade entre intubar ou não no pré-hospital [A28].",
+   "Não se mostrou efeito por idade [A28].",
+   "Há metanálise e revisão sistemática [A27, A28].",
+   "Não se mostrou aumento sistemático [A28].",
+   "Não se mostrou redução clara [A28]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A28",
+   "A27"
+  ]
+ },
+ {
+  "id": "T2-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, o registro japonês com mais intubação na sala de emergência no Glasgow abaixo de 8 mostrou o quê?",
+  "alternativas": [
+   "Pior desfecho neurológico nesses hospitais",
+   "Melhor desfecho neurológico, sem efeito na sobrevida",
+   "Maior sobrevida global nesses hospitais",
+   "Nenhuma diferença em nenhum desfecho",
+   "Mais pneumonia, sem outro efeito medido"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "O achado foi o oposto [A12].",
+   "Correta: melhores desfechos neurológicos nos hospitais que intubaram mais, sem correlação com a sobrevida global, em comparação entre hospitais [A12].",
+   "Não houve correlação com a sobrevida global [A12].",
+   "Houve diferença neurológica [A12].",
+   "Não foi o desfecho relatado [A12]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A12"
+  ]
+ },
+ {
+  "id": "T2-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, por que a hiperventilação de rotina é evitada?",
+  "alternativas": [
+   "Porque aumenta a pressão intracraniana",
+   "Porque causa pneumotórax com frequência",
+   "Porque reduz a pressão só por pouco tempo e piora o desfecho",
+   "Porque exige o uso de succinilcolina",
+   "Porque aumenta muito a frequência cardíaca"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Ela reduz a pressão, de forma transitória [D35].",
+   "Não é esse o motivo [D35].",
+   "Correta: a hiperventilação reduz a pressão intracraniana transitoriamente, mas piora os desfechos [D35].",
+   "Não tem relação [D35].",
+   "Não é esse o motivo [D35]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D35",
+   "A34"
+  ]
+ },
+ {
+  "id": "T2-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, você lidera. Qual a sequência da preparação?",
+  "alternativas": [
+   "Hiperventilar com máscara antes, depois induzir",
+   "Indução, depois aspiração, depois pré-oxigenação",
+   "Intubação acordada com endoscópio, sem preparo",
+   "Aspirar, oxigenar, hiperosmolar, induzir com dose ajustada, capnografia",
+   "Tomografia de crânio primeiro, depois a intubação"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Hiperventilar piora os desfechos [D35].",
+   "Induzir antes de aspirar e oxigenar é a via aérea fisiologicamente difícil [D54, D22].",
+   "Com Glasgow 7 e vômito, a acordada não é viável [D37].",
+   "Correta: aspirar, oxigenar, proteger o cérebro antes, induzir com dose ajustada e confirmar por capnografia [D54, D67, A35, A7, D29].",
+   "A via aérea não espera a imagem [D52]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D54",
+   "D67",
+   "A35",
+   "A7",
+   "D29",
+   "D22"
+  ]
+ },
+ {
+  "id": "T2-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, o rocurônio foi usado. O que garantir depois do tubo?",
+  "alternativas": [
+   "Nova dose de succinilcolina",
+   "Nada; o bloqueio é curto",
+   "Extubação em 10 minutos",
+   "Reversão com sugamadex",
+   "Sedação adequada, porque o bloqueio dura"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não há indicação [D80].",
+   "O bloqueio do rocurônio é longo [D80].",
+   "Não há extubação precoce neste caso [A34].",
+   "O sugamadex não ajuda no trauma, em que acordar não é opção [D82].",
+   "Correta: a duração longa do rocurônio exige atenção à sedação [D80, A34]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D80",
+   "D82",
+   "A34"
+  ]
+ },
+ {
+  "id": "T2-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, quem deve intubar?",
+  "alternativas": [
+   "O profissional mais experiente disponível",
+   "O técnico de enfermagem",
+   "O residente mais novo, para aprender",
+   "O neurocirurgião obrigatoriamente",
+   "Quem chegar primeiro"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: o operador mais experiente faz da primeira tentativa a melhor [D81].",
+   "Não é a função dele [D81].",
+   "O aprendizado acontece com supervisão, não na primeira tentativa difícil [D81].",
+   "A especialidade não é o critério; a experiência é [D81].",
+   "A escolha é pela experiência [D81]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D81"
+  ]
+ },
+ {
+  "id": "T2-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 2, o que registrar da intubação para o indicador do serviço?",
+  "alternativas": [
+   "Só o horário de início da intubação",
+   "Tentativas, dispositivo, operador, saturação mínima, confirmação",
+   "Só o fármaco e a dose da indução",
+   "Só o tamanho e a profundidade do tubo",
+   "Nada; isso já fica no prontuário da UTI"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Só o horário não mede a qualidade [A22].",
+   "Correta: tentativas, primeira tentativa, eventos e confirmação compõem os indicadores [A22, G2].",
+   "O fármaco é parte, não o todo [A22].",
+   "O tubo é parte, não o todo [A22].",
+   "O registro é feito na sala [A22]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A22",
+   "G2"
+  ]
+ },
+ {
+  "id": "T2-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 2,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 2, a profundidade do tubo deve ficar em torno de quanto na comissura?",
+  "alternativas": [
+   "30 cm na mulher",
+   "28 cm na mulher",
+   "21 cm na mulher",
+   "10 cm na mulher",
+   "15 cm na mulher"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Profundo demais [G18].",
+   "Profundo demais: risco de seletiva [G18].",
+   "Correta: cerca de 21 cm nas mulheres e 23 cm nos homens [G18].",
+   "Raso demais [G18].",
+   "Raso demais [G18]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G18"
+  ]
+ },
+ {
+  "id": "T2-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 2: a hipotensão pós-intubação no TCE grave com politrauma associou-se a quê?",
+  "alternativas": [
+   "Mais tempo de ventilação apenas",
+   "Nenhuma associação",
+   "Menor mortalidade",
+   "Maior mortalidade em 30 dias",
+   "Menos pneumonia"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O desfecho foi mortalidade [A3].",
+   "Houve associação [A3].",
+   "O achado foi o oposto [A3].",
+   "Correta: associou-se a maior mortalidade em 30 dias nos politraumatizados [A3].",
+   "Não foi o desfecho estudado [A3]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A3"
+  ]
+ },
+ {
+  "id": "T2-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 2: o que a coorte suíça de transporte aéreo concluiu sobre o Glasgow?",
+  "alternativas": [
+   "O Glasgow é inútil no trauma",
+   "O Glasgow deve ser substituído pelo FOUR",
+   "Glasgow abaixo de 8 basta para intubar",
+   "O Glasgow prevê aspiração",
+   "O Glasgow não serve como indicador único"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Ele segue útil, mas não isolado [A4].",
+   "Não foi a conclusão [A4].",
+   "A conclusão foi o contrário [A4].",
+   "Não discrimina bem a aspiração [A29].",
+   "Correta: o Glasgow não serve como indicador único de intubação pré-hospitalar [A4]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "A4",
+   "A29"
+  ]
+ },
+ {
+  "id": "T2-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 2,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 2: qual a força da evidência do ensaio RSI (cetamina contra etomidato) para o trauma?",
+  "alternativas": [
+   "Indireta: feito em adultos críticos",
+   "Direta e forte, por ser ensaio grande",
+   "Inexistente para esse tipo de paciente",
+   "Só pré-hospitalar, sem dados na sala",
+   "Só pediátrica, sem dados em adultos"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: o ensaio foi em adultos críticos; no trauma, evidência indireta [A16, A17].",
+   "Não é ensaio de trauma [A16].",
+   "O ensaio existe e é grande [A16].",
+   "Foi intra-hospitalar [A16].",
+   "Foi em adultos [A16]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A16",
+   "A17"
+  ]
+ },
+ {
+  "id": "T2-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 2,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 2: no ensaio RSI, o que diferiu entre cetamina e etomidato?",
+  "alternativas": [
+   "A duração da internação",
+   "O colapso cardiovascular, maior com cetamina",
+   "O sucesso na primeira tentativa",
+   "A pneumonia",
+   "A mortalidade"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não foi o desfecho relatado [A17].",
+   "Correta: colapso cardiovascular de 22,1% com cetamina contra 17,0% com etomidato [A17].",
+   "Não foi o desfecho relatado [A17].",
+   "Não foi o desfecho relatado [A17].",
+   "A morte até o dia 28 não diferiu (28,1% e 29,1%) [A16]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A17",
+   "A16"
+  ]
+ },
+ {
+  "id": "T2-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 2,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 2: o que a revisão de Vieux (2026) diz do Glasgow abaixo de 8 isolado?",
+  "alternativas": [
+   "Deve ser abandonado na avaliação do trauma",
+   "Discrimina bem o risco de aspiração",
+   "Não discrimina com segurança risco, oxigenação ou sobrevida",
+   "Só tem valor nos pacientes idosos",
+   "Prevê a mortalidade com boa precisão"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A conclusão é usá-lo junto de outros critérios [A29].",
+   "O achado foi o contrário [A29].",
+   "Correta: isolado, não discrimina com segurança risco de aspiração, oxigenação comprometida ou benefício de sobrevida [A29].",
+   "Não foi restrito a idosos [A29].",
+   "Não foi esse o achado [A29]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A29"
+  ]
+ },
+ {
+  "id": "T3-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 3,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 3, qual o índice de choque?",
+  "alternativas": [
+   "2,5",
+   "0,9",
+   "0,6",
+   "1,7",
+   "1,0"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Acima do valor real [D71].",
+   "Abaixo do valor real [D71].",
+   "Calcule FC dividida pela sistólica: 138 dividido por 82 [D71].",
+   "Correta: 138 dividido por 82 dá cerca de 1,7 [D71].",
+   "Abaixo do valor real [D71]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D71"
+  ]
+ },
+ {
+  "id": "T3-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 3,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, o paciente fala com voz clara e satura 95%. O que isso indica sobre a via aérea?",
+  "alternativas": [
+   "Que a via aérea vai falhar em minutos",
+   "Que há pneumotórax do lado esquerdo",
+   "Que ele está entrando em coma",
+   "Que ele precisa de tubo imediatamente",
+   "Forte indício de via aérea pérvia e protegida"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não há sinal de falha [D48].",
+   "A voz não diagnostica pneumotórax [D48].",
+   "Ele está consciente [D48].",
+   "Falar e oxigenar não exigem tubo imediato [D48].",
+   "Correta: voz clara indica patência, proteção e perfusão cerebral [D48]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D48"
+  ]
+ },
+ {
+  "id": "T3-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 3,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, o que deve começar antes do tubo?",
+  "alternativas": [
+   "Hemoderivados",
+   "Sonda vesical",
+   "Analgesia com opioide em dose cheia",
+   "Tomografia de abdome",
+   "Antibiótico"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no hipotenso por provável hemorragia, os hemoderivados começam o quanto antes [D72, G10].",
+   "Não precede a reanimação [D72].",
+   "Opioide em dose cheia pode derrubar a pressão [D30].",
+   "O instável não vai à tomografia [D52].",
+   "Não precede a reanimação [D72]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D72",
+   "G10",
+   "D52",
+   "D30"
+  ]
+ },
+ {
+  "id": "T3-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 3,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, por que intubar agora pode ser perigoso?",
+  "alternativas": [
+   "Porque ele está com colar cervical",
+   "Porque indução e pressão positiva podem levar ao colapso",
+   "Porque ele está agitado e não colabora",
+   "Porque ele está acordado e fala bem",
+   "Porque o tubo não passa no choque"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "O colar não é o risco principal [D30].",
+   "Correta: quanto mais instável, mais importa reanimar antes de intubar [D30].",
+   "A agitação, por si, não é indicação nem contraindicação [D51].",
+   "Estar acordado não é o risco [D30].",
+   "O risco não é técnico [D30]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D30",
+   "D51"
+  ]
+ },
+ {
+  "id": "T3-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, ele está agitado. Isso, sozinho, indica intubar?",
+  "alternativas": [
+   "Sim, se a pressão arterial estiver baixa",
+   "Não, nunca se intuba o paciente agitado",
+   "Não: sem lesão que obrigue, tranquilização rápida",
+   "Sim, sempre que houver agitação no trauma",
+   "Sim, se for homem jovem com trauma"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A hipotensão pede sangue antes [D72].",
+   "Se as lesões exigirem, intuba-se de imediato [D51].",
+   "Correta: sem necessidade de intubar, a tranquilização rápida é apropriada [D51].",
+   "A agitação sozinha não indica o tubo [D51].",
+   "O sexo não decide [D51]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D51",
+   "D72"
+  ]
+ },
+ {
+  "id": "T3-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 3,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 3, se ele mantém a via aérea, oxigena e ventila, o que diz a regra da WTA?",
+  "alternativas": [
+   "Fazer cricotireoidostomia",
+   "Dar máscara laríngea",
+   "Intubar na sala para levar à tomografia",
+   "O tubo pode esperar a correção hemodinâmica",
+   "Intubar antes da laparotomia sempre"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não há falha de via aérea [D85].",
+   "Não há indicação [G10].",
+   "O instável não vai à tomografia [D52].",
+   "Correta: se a via aérea se mantém e o paciente oxigena e ventila, o tubo pode esperar a correção hemodinâmica [G10].",
+   "A regra admite esperar [G10]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G10",
+   "D52",
+   "D85"
+  ]
+ },
+ {
+  "id": "T3-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, com índice de choque acima de 0,8, como ajustar o indutor?",
+  "alternativas": [
+   "Dose cheia",
+   "Dobrar",
+   "Não usar indutor",
+   "Trocar por propofol",
+   "Reduzir até 50%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A dose cheia aumenta o risco de hipotensão [D71].",
+   "Dobrar piora a hipotensão [D69].",
+   "Sem indutor há descarga simpática e condições ruins [D20].",
+   "O propofol não é a escolha no choque [D69].",
+   "Correta: o algoritmo reduz o indutor até 50% com índice de choque acima de 0,8 [D69]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D69",
+   "D71",
+   "D20"
+  ]
+ },
+ {
+  "id": "T3-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, com índice de choque acima de 0,8, o que fazer com o rocurônio?",
+  "alternativas": [
+   "Aumentar 25%",
+   "Manter 0,6 mg/kg",
+   "Dar metade agora e metade depois",
+   "Não usar",
+   "Reduzir 50%"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: a dose do bloqueador sobe 25% com índice de choque acima de 0,8 [D70].",
+   "Dose baixa demais para a sequência rápida [D82].",
+   "Não é o esquema [D70].",
+   "O bloqueador é parte da sequência [D20].",
+   "O bloqueador não é reduzido [D70]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D70",
+   "D82",
+   "D20"
+  ]
+ },
+ {
+  "id": "T3-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, qual adrenalina o algoritmo prevê com índice de choque acima de 0,8?",
+  "alternativas": [
+   "1 mg em bolus, sem diluir, de uma vez",
+   "Bolus diluído: 0,5 a 2 mL de 0,01 mg/mL a cada 2 a 5 min",
+   "Infusão contínua a 1 mcg/kg/min, sem bolus",
+   "0,5 mg por via intramuscular, dose única",
+   "Nenhuma adrenalina antes de intubar"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "É a dose da parada [D73].",
+   "Correta: é o bolus diluído do algoritmo de trauma [D73].",
+   "Não é o esquema do algoritmo [D73].",
+   "Não é a via do algoritmo [D73].",
+   "O algoritmo prevê [D73]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D73"
+  ]
+ },
+ {
+  "id": "T3-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, o bolus rotineiro de fluido antes da intubação reduz o colapso?",
+  "alternativas": [
+   "Sim, no ensaio feito só no trauma",
+   "Só reduziu com coloide",
+   "Não reduziu, em ensaio em críticos",
+   "Só reduziu com cristaloide",
+   "Sim, sempre, em qualquer paciente"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "O ensaio não foi de trauma; no trauma vale o sangue [A20, D72].",
+   "O ensaio não mostrou benefício [A20].",
+   "Correta: em adultos críticos, o bolus rotineiro não reduziu o colapso cardiovascular [A20].",
+   "O ensaio não mostrou benefício [A20].",
+   "O ensaio não mostrou redução [A20]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A20",
+   "D72"
+  ]
+ },
+ {
+  "id": "T3-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, o estudo de Ferrada (2024) mostrou mortalidade de 11,1% no CAB e 69,2% no ABC. Como interpretar?",
+  "alternativas": [
+   "O estudo é randomizado",
+   "Adiar o tubo reduz a mortalidade em 58 pontos",
+   "O CAB é sempre melhor",
+   "Os grupos eram diferentes; não permite causalidade",
+   "O ABC deve ser proibido"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "O desenho não é randomizado [A42].",
+   "A diferença é grande demais para ser efeito da ordem [A41, A42].",
+   "O dado é observacional [A42].",
+   "Correta: o grupo CAB tinha mais lesões penetrantes e mais intubações no centro cirúrgico; os autores negam causalidade [A41, A42].",
+   "O dado não sustenta proibição [A42]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A40",
+   "A41",
+   "A42"
+  ]
+ },
+ {
+  "id": "T3-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, qual é a força da recomendação de sangue antes do tubo no doente que oxigena?",
+  "alternativas": [
+   "Contraindicada",
+   "Não há recomendação",
+   "Forte, com ensaio",
+   "Forte, por metanálise de ensaios",
+   "Condicional, com evidência observacional"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é contraindicada [G10].",
+   "Há recomendação, condicional [G10].",
+   "Não há ensaio [G8].",
+   "A metanálise do consenso é de estudos observacionais [G25].",
+   "Correta: a base é observacional, com heterogeneidade alta [G8, A2]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "G8",
+   "G25",
+   "A2",
+   "G10"
+  ]
+ },
+ {
+  "id": "T3-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, a pressão cai a 70/40 e ele fica sonolento, mas ainda oxigena. O que muda?",
+  "alternativas": [
+   "Controlar o sangramento; intubar no centro cirúrgico",
+   "Hiperventilar com máscara até a cirurgia",
+   "Cricotireoidostomia na sala de trauma",
+   "Tomografia antes de qualquer conduta",
+   "Nada; segue esperando a correção"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: com sangue correndo, a intubação se faz no centro cirúrgico, onde se controla o sangramento [A2, D72].",
+   "Não há indicação [D35].",
+   "Não há falha de via aérea [D85].",
+   "O instável não vai à tomografia [D52].",
+   "O quadro piora; precisa de controle do sangramento [D72]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A2",
+   "D72",
+   "D52"
+  ]
+ },
+ {
+  "id": "T3-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, o paciente agitado não tolera a máscara. Qual opção o livro-texto descreve?",
+  "alternativas": [
+   "Intubar acordado, sem anestesia tópica",
+   "Indução retardada: cetamina, oxigenar, depois o bloqueador",
+   "Contenção física e máscara na face",
+   "Desistir da pré-oxigenação e intubar",
+   "Bloqueador sem indutor, para ganhar tempo"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não é viável no agitado [D79].",
+   "Correta: cetamina 1 a 1,5 mg/kg, oxigenar e só então o bloqueador [D79, A39].",
+   "A contenção não oxigena [D79].",
+   "A pré-oxigenação é essencial [D67].",
+   "Bloqueador sem indutor é inaceitável [D20]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D79",
+   "A39",
+   "D20",
+   "D67"
+  ]
+ },
+ {
+  "id": "T3-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 3,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 3, a saturação cai durante a tentativa a 88%. O que fazer?",
+  "alternativas": [
+   "Aumentar a dose do bloqueador",
+   "Pedir radiografia",
+   "Interromper e ventilar",
+   "Trocar de lâmina sem parar",
+   "Continuar até ver a glote"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não trata a hipóxia [D64].",
+   "Não trata a hipóxia [D64].",
+   "Correta: saturação abaixo de 90% interrompe a tentativa e ventila-se [D64].",
+   "Trocar sem ventilar mantém a hipóxia [D64].",
+   "Continuar aprofunda a hipóxia [D64]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D64"
+  ]
+ },
+ {
+  "id": "T3-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, você lidera. Onde e quando intubar?",
+  "alternativas": [
+   "Na sala, antes de qualquer reposição",
+   "Na UTI, depois de estabilizar a pressão",
+   "Na enfermaria, depois da laparotomia",
+   "No centro cirúrgico, com sangue correndo e equipe pronta",
+   "Na tomografia, para não atrasar a imagem"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Intubar o chocado na sala, antes da reposição, aumenta o colapso [D30].",
+   "Ele precisa de cirurgia [A2].",
+   "Não é lugar para isso [A2].",
+   "Correta: com sangue correndo, intubar onde o sangramento será controlado reduz o tempo de hipotensão [A2, D30].",
+   "O instável não vai à tomografia [D52]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A2",
+   "D30",
+   "D52"
+  ]
+ },
+ {
+  "id": "T3-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, qual é a lacuna de pesquisa declarada pela WTA neste cenário?",
+  "alternativas": [
+   "O tamanho do tubo no adulto",
+   "O número máximo de tentativas",
+   "O uso de cânula orofaríngea",
+   "O uso do colar durante a intubação",
+   "O momento e o local ideais da intubação"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é a lacuna citada [G29].",
+   "Não é a lacuna deste cenário [G29].",
+   "Não é a lacuna citada [G29].",
+   "Não é a lacuna citada [G29].",
+   "Correta: o momento e o local ideais da intubação no choque hemorrágico são lacuna declarada [G29]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "G29",
+   "G30"
+  ]
+ },
+ {
+  "id": "T3-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, a equipe discute ordem: o que é consenso entre as fontes?",
+  "alternativas": [
+   "Se oxigena, o tubo espera; se não oxigena, a via aérea vem antes",
+   "Não há nenhum ponto de consenso",
+   "Depende do sexo e da idade do paciente",
+   "Sempre a circulação antes de tudo",
+   "Sempre a via aérea antes de tudo"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: o ponto aceito por todos é mais estreito: com oxigenação, o tubo espera; sem ela, a via aérea é prioridade [G10, A2].",
+   "Há o ponto de consenso estreito [G10].",
+   "Não é critério [G10].",
+   "A circulação não passa à frente de quem não oxigena [G4].",
+   "O tubo pode esperar a correção hemodinâmica se o paciente oxigena [G10]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G10",
+   "A2",
+   "G4"
+  ]
+ },
+ {
+  "id": "T3-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 3,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 3, quais fármacos são lacuna declarada pela WTA no choque hemorrágico?",
+  "alternativas": [
+   "Os antieméticos",
+   "Os fármacos ideais da sequência rápida",
+   "Antibióticos",
+   "Os analgésicos pós-operatórios",
+   "Os vasopressores de UTI"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não é a lacuna citada [G30].",
+   "Correta: os fármacos ideais da sequência rápida na hemorragia grave são lacuna declarada [G30].",
+   "Não é a lacuna citada [G30].",
+   "Não é a lacuna citada [G30].",
+   "Não é a lacuna citada [G30]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G30"
+  ]
+ },
+ {
+  "id": "T3-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 3, como garantir sangue a tempo antes da indução?",
+  "alternativas": [
+   "Pedir só plasma, sem hemácias",
+   "Esperar o hemograma para decidir",
+   "Usar o O negativo da sala e acionar a transfusão maciça",
+   "Começar cristaloide em grande volume",
+   "Pedir a tipagem e esperar o resultado"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "O objetivo é sangue e plasma [D72].",
+   "O hemograma inicial não reflete a perda aguda [D72].",
+   "Correta: os hemoderivados começam o quanto antes no hipotenso por hemorragia [D72]; a transfusão maciça segue o guia do T001.",
+   "O cristaloide em volume não substitui o sangue [D72].",
+   "Esperar a tipagem atrasa a reanimação [D72]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D72"
+  ]
+ },
+ {
+  "id": "T3-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 3: na metanálise do consenso WSES-Panamerican, qual o OR combinado do ABC contra o CAB?",
+  "alternativas": [
+   "1,0",
+   "0,95",
+   "0,36",
+   "3,65",
+   "10,5"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Houve diferença [G25].",
+   "Abaixo do relatado [G25].",
+   "O valor é maior que 1 [G25].",
+   "Correta: OR combinado de 3,65 (IC 95% 1,74 a 7,65), com seis estudos observacionais [G25].",
+   "Acima do relatado [G25]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "G25",
+   "G8"
+  ]
+ },
+ {
+  "id": "T3-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 3: qual a heterogeneidade dessa metanálise, e o que ela significa?",
+  "alternativas": [
+   "Nula; os estudos concordam totalmente",
+   "Baixa; o resultado é robusto entre estudos",
+   "Moderada; o resultado já é causal",
+   "Não foi medida na metanálise",
+   "Alta; o resultado varia muito entre os estudos"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não foi nula [G8].",
+   "A heterogeneidade foi alta [G8].",
+   "Não permite causalidade [G8].",
+   "Foi medida [G8].",
+   "Correta: heterogeneidade alta, com estudos observacionais; o resultado é pouco consistente [G8]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "G8"
+  ]
+ },
+ {
+  "id": "T3-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 3,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 3: no estudo de Ferrada, o que indica que os grupos eram diferentes desde a chegada?",
+  "alternativas": [
+   "Mais lesões penetrantes e mais intubações no centro cirúrgico",
+   "A mesma pressão de chegada nos grupos",
+   "A idade média igual nos dois grupos",
+   "O mesmo mecanismo de trauma em todos",
+   "A mesma equipe atendendo os dois grupos"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: o grupo CAB tinha mais lesões penetrantes e mais intubações no centro cirúrgico [A41].",
+   "Não é o ponto relatado [A41].",
+   "A idade não foi o ponto [A41].",
+   "Os mecanismos diferiam [A41].",
+   "Não é o ponto relatado [A41]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A41"
+  ]
+ },
+ {
+  "id": "T3-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 3,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 3: como a WTA construiu o algoritmo de via aérea?",
+  "alternativas": [
+   "Só com estudos de pediatria",
+   "Sobretudo com coortes e opinião dos membros",
+   "Com metanálise de ensaios randomizados",
+   "Com ensaios randomizados em trauma",
+   "Com dados de simulação realística"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não [G28].",
+   "Correta: baseia-se sobretudo em coortes prospectivas e retrospectivas e na opinião dos membros [G28].",
+   "Não houve metanálise de ensaios [G28].",
+   "Faltam ensaios [G28].",
+   "Não [G28]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "G28"
+  ]
+ },
+ {
+  "id": "T3-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 3,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 3: qual foi o ponto de maior divergência entre os membros da WTA?",
+  "alternativas": [
+   "O uso do colar na intubação",
+   "O tamanho do tubo",
+   "O número de tentativas",
+   "O indutor de escolha",
+   "O uso do capnógrafo"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não foi o ponto relatado [G32].",
+   "Não foi o ponto relatado [G32].",
+   "Correta: a maior divergência foi sobre o número de tentativas [G32].",
+   "Não foi o ponto relatado [G32].",
+   "Não foi o ponto relatado [G32]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "G32"
+  ]
+ },
+ {
+  "id": "T4-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 4,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 4, o que fazer antes de qualquer tentativa de intubação?",
+  "alternativas": [
+   "Passar sonda nasogástrica",
+   "Retirar o colar por completo",
+   "Pedir radiografia de mandíbula",
+   "Aspirar a boca com aspirador rígido",
+   "Dar o bloqueador"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não é a prioridade [D54].",
+   "A frente do colar é aberta, com estabilização manual em linha [D77].",
+   "A imagem não vem antes da via aérea [D54].",
+   "Correta: com sangue em grande volume, a aspiração proativa com aspirador rígido define o sucesso [D54, D55].",
+   "Sem aspirar e oxigenar, o bloqueador precipita a hipóxia [D67]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D54",
+   "D55",
+   "D77",
+   "D67"
+  ]
+ },
+ {
+  "id": "T4-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 4,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, quais mnemônicos ajudam a prever a dificuldade?",
+  "alternativas": [
+   "Só o Glasgow de chegada",
+   "Só o Mallampati sentado",
+   "Só o índice de choque",
+   "AMPLE e ABCDE juntos",
+   "LEMON, ROMAN, RODS e SMART"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "O Glasgow não prevê dificuldade técnica [D10].",
+   "O Mallampati é parte do LEMON e quase nunca é avaliável no trauma [D43].",
+   "A sequência de atendimento não prevê dificuldade [D10].",
+   "A história AMPLE não prevê dificuldade de via aérea [D10].",
+   "Correta: preveem laringoscopia, ventilação com máscara, dispositivo extraglótico e cricotireoidostomia difíceis [D10]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D10",
+   "D43"
+  ]
+ },
+ {
+  "id": "T4-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 4,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, quantas tentativas de intubação, no máximo, um mesmo operador deve fazer?",
+  "alternativas": [
+   "Três",
+   "Quantas forem necessárias",
+   "Duas, e então traqueostomia",
+   "Uma",
+   "Cinco"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no máximo três por operador, com uma a mais por operador mais experiente; menos podem bastar [D84].",
+   "Cada tentativa aumenta edema e obstrução [D84].",
+   "O resgate de emergência não é a traqueostomia [D86].",
+   "Pode ser apropriado parar antes, mas o limite é maior [D84].",
+   "Acima do limite [D84]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D84",
+   "D86"
+  ]
+ },
+ {
+  "id": "T4-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 4,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, qual a diferença entre via aérea difícil e via aérea falha?",
+  "alternativas": [
+   "Na falha, insiste-se no tubo",
+   "Na difícil, busca-se o tubo; na falha, oxigenar por qualquer meio",
+   "Na difícil, faz-se cricotireoidostomia de saída",
+   "Na falha, espera-se o anestesista",
+   "Nenhuma"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Insistir causa lesão hipóxica [D5].",
+   "Correta: na difícil o objetivo é o tubo; na falha, garantir oxigenação por qualquer meio [D17].",
+   "A difícil começa pelo tubo bem preparado [D17].",
+   "Esperar sem oxigenar causa lesão hipóxica [D5].",
+   "São situações diferentes [D17]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D17",
+   "D5"
+  ]
+ },
+ {
+  "id": "T4-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, por que é mais difícil palpar a membrana cricotireóidea?",
+  "alternativas": [
+   "Porque a fratura de mandíbula a desloca",
+   "Porque a membrana não existe no obeso",
+   "Porque a palpação é mais difícil em obesos e mulheres",
+   "Porque o colar a esconde sempre",
+   "Porque o sangue a dissolve"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A mandíbula não desloca a membrana [D41].",
+   "A membrana existe; o tecido a esconde [D93].",
+   "Correta: a palpação pode ser mais difícil do que se supunha, sobretudo em mulheres e obesos [D41].",
+   "A frente do colar é removida no procedimento [D87].",
+   "Não é o motivo [D41]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D41",
+   "D93",
+   "D87"
+  ]
+ },
+ {
+  "id": "T4-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 4,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, como fazer da primeira tentativa a melhor?",
+  "alternativas": [
+   "Sem pré-oxigenação, para ganhar tempo",
+   "Intubação nasal às cegas, sem bloqueio",
+   "Residente novo, com laringoscópio direto",
+   "Mais experiente, vídeo, bougie e bom posicionamento",
+   "Qualquer operador, sem preparação"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "A pré-oxigenação dá a reserva de apneia [D22].",
+   "Não é a técnica do caso [D81].",
+   "O ganho vem do operador experiente e do dispositivo [D81].",
+   "Correta: operador mais experiente, videolaringoscopia com tela visível, estilete ou bougie e melhor posicionamento [D81].",
+   "A preparação é o que reduz falha [G22]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D81",
+   "G22",
+   "D22"
+  ]
+ },
+ {
+  "id": "T4-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a saturação é 89% com máscara. Qual a meta antes de tentar?",
+  "alternativas": [
+   "85% por 3 minutos",
+   "90% por 1 minuto basta",
+   "Qualquer valor, desde que estável",
+   "100% obrigatória antes da indução",
+   "Acima de 94% por 3 minutos"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Abaixo da meta [D67].",
+   "Abaixo da meta [D67].",
+   "Há meta definida [D67].",
+   "Quanto mais perto de 100%, melhor, mas a meta é acima de 94% [G21].",
+   "Correta: acima de 94% por 3 minutos antes da tentativa [D67]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D67",
+   "G21"
+  ]
+ },
+ {
+  "id": "T4-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a saturação não passa de 93% com máscara em alto fluxo. O que fazer?",
+  "alternativas": [
+   "Pré-oxigenar com pressão positiva",
+   "Esperar mais 10 minutos",
+   "Intubar assim mesmo",
+   "Dar bicarbonato",
+   "Retirar o oxigênio"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: quem não passa de 93% com alto fluxo recebe pré-oxigenação com pressão positiva [D23].",
+   "Esperar não muda a reserva [D23].",
+   "Intubar sem reserva aumenta a hipóxia [D22].",
+   "Não trata a hipóxia [D23].",
+   "Piora a hipóxia [D23]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D23",
+   "D22"
+  ]
+ },
+ {
+  "id": "T4-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a primeira tentativa falhou e a saturação caiu a 88%. O que fazer?",
+  "alternativas": [
+   "Cricotireoidostomia de imediato",
+   "Interromper, voltar às manobras básicas e ventilar",
+   "Trocar o tubo por um menor sem ventilar",
+   "Segunda tentativa imediata",
+   "Pedir tomografia"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Se a ventilação funcionar, não há indicação ainda [D85].",
+   "Correta: abaixo de 90%, interrompe-se e ventila-se; o primeiro passo após a falha é voltar às manobras básicas [D64, G23].",
+   "Não trata a hipóxia [D64].",
+   "Sem ventilar, a nova tentativa aprofunda a hipóxia [D64].",
+   "Não trata a hipóxia [D64]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D64",
+   "G23",
+   "D85"
+  ]
+ },
+ {
+  "id": "T4-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 4,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 4, qual o papel do dispositivo extraglótico depois da falha?",
+  "alternativas": [
+   "Substitui a cricotireoidostomia sempre",
+   "Só serve para resgate em criança",
+   "Resgate temporário, sem proteção confiável",
+   "É via aérea definitiva, como o tubo",
+   "É contraindicado em todo trauma"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "No não intubo, não oxigeno, faz-se uma tentativa em paralelo ao preparo da cricotireoidostomia [D19].",
+   "Não é restrito à criança [D86].",
+   "Correta: é medida temporária, sem proteção confiável contra aspiração [D57, G11].",
+   "Não é via aérea definitiva [G11].",
+   "É parte do resgate [D86]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D57",
+   "G11",
+   "D19",
+   "D86"
+  ]
+ },
+ {
+  "id": "T4-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, depois de 3 tentativas sem tubo, a máscara laríngea não ventila e a saturação cai. Qual a situação?",
+  "alternativas": [
+   "Via aérea difícil, ainda controlada",
+   "Hora de esperar o anestesista chegar",
+   "Hora de mais uma tentativa com outra lâmina",
+   "Não intubo, não oxigeno: via cirúrgica",
+   "Pneumotórax hipertensivo bilateral"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Já é via aérea falha [D1].",
+   "Esperar leva à lesão hipóxica [D5].",
+   "Cada tentativa aumenta edema e obstrução [D84].",
+   "Correta: sem intubar e sem ventilar com o resgate, faz-se a via aérea cirúrgica [D66, D85].",
+   "O cenário é falha de via aérea [D85]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D66",
+   "D85",
+   "D84",
+   "D5",
+   "D1"
+  ]
+ },
+ {
+  "id": "T4-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, qual o material do acesso frontal?",
+  "alternativas": [
+   "Kit de traqueostomia percutânea",
+   "Agulha 14 e seringa",
+   "Pinça e gancho apenas",
+   "Tubo 8,5 sem bougie",
+   "Bisturi com lâmina 10, bougie e tubo 6,0"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é o procedimento de emergência [D86].",
+   "É o resgate da criança [D62].",
+   "Faltam o bisturi e o tubo [G35].",
+   "Não é o material indicado [G35].",
+   "Correta: bisturi lâmina 10, bougie e tubo 6,0 [G35]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "G35",
+   "D62",
+   "D86"
+  ]
+ },
+ {
+  "id": "T4-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, a membrana não é palpável. Que incisão de pele fazer?",
+  "alternativas": [
+   "Vertical, na linha média, de baixo para cima",
+   "Transversal em punhalada",
+   "Oblíqua lateral",
+   "Nenhuma; punção",
+   "Em colar, como na tireoidectomia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: incisão vertical, mediana, de até 8 cm, de baixo para cima [G33, G36].",
+   "A punhalada transversa só serve à membrana palpável [G34].",
+   "Sai da linha média e aumenta o sangramento [D88].",
+   "A punção é o resgate da criança [D62].",
+   "Não é a técnica de emergência [G36]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G33",
+   "G34",
+   "G36",
+   "D62",
+   "D88"
+  ]
+ },
+ {
+  "id": "T4-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, sem palpar a depressão, onde estimar a membrana?",
+  "alternativas": [
+   "No nível do osso hioide",
+   "2 a 3 cm abaixo da proeminência laríngea",
+   "Dois dedos abaixo da cartilagem cricóidea",
+   "Logo acima da fúrcula esternal",
+   "Na borda inferior da mandíbula"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Alto demais [D93].",
+   "Correta: estima-se 2 a 3 cm abaixo da proeminência laríngea ou quatro dedos acima da fúrcula [D93].",
+   "Abaixo da cricoide é traqueia [D95].",
+   "Baixo demais: é traqueia [D93].",
+   "Alto demais [D93]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D93",
+   "D95"
+  ]
+ },
+ {
+  "id": "T4-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, como incisar a membrana?",
+  "alternativas": [
+   "Com tesoura, depois de pinçar",
+   "Em cruz, para abrir mais espaço",
+   "Transversal, na porção inferior, sem serrar",
+   "Vertical, de cima a baixo, na membrana",
+   "Transversal, rente à borda superior"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é a técnica [D89].",
+   "Não é a técnica [D89].",
+   "Correta: transversal, sem serrar, na porção inferior, para evitar a artéria cricotireóidea [D89, D96].",
+   "A membrana é aberta transversalmente [D89].",
+   "Na borda superior corre a artéria cricotireóidea [D94]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D89",
+   "D96",
+   "D94"
+  ]
+ },
+ {
+  "id": "T4-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, você lidera. Quando declarar a falha?",
+  "alternativas": [
+   "Depois de 6 tentativas sem sucesso",
+   "Só depois da tomografia de pescoço",
+   "Nunca; insistir até conseguir o tubo",
+   "Ao perder a saturação ou esgotar as tentativas",
+   "Só quando surgir bradicardia"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Acima do limite [D84].",
+   "A via aérea não espera a imagem [D52].",
+   "Insistir causa lesão hipóxica [D5].",
+   "Correta: declara-se a falha e progride-se no algoritmo; a complicação mais grave é a decisão tardia [D86, D5, G2].",
+   "Esperar a bradicardia é decidir tarde [D5]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D86",
+   "D5",
+   "G2",
+   "D84"
+  ]
+ },
+ {
+  "id": "T4-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, qual a parte mais difícil da via aérea cirúrgica?",
+  "alternativas": [
+   "A incisão de pele",
+   "Passar o bougie",
+   "Inflar o balonete",
+   "Fixar o tubo",
+   "Tomar a decisão"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é o passo mais difícil [D2].",
+   "Não é o passo mais difícil [D2].",
+   "Não é o passo mais difícil [D2].",
+   "Não é o passo mais difícil [D2].",
+   "Correta: a parte mais difícil é tomar a decisão [D2]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D2",
+   "D5"
+  ]
+ },
+ {
+  "id": "T4-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, depois da incisão de pele, o campo enche de sangue. Como seguir?",
+  "alternativas": [
+   "Seguir pela palpação e concluir o procedimento",
+   "Trocar por punção",
+   "Ventilar com máscara por 5 minutos",
+   "Parar e fazer hemostasia",
+   "Chamar outro cirurgião e esperar"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: depois da incisão de pele, segue-se pela palpação; iniciado, o procedimento é concluído apesar do sangue [D98, D101].",
+   "A punção é o resgate da criança [D62].",
+   "A máscara já falhou [D85].",
+   "Não há tempo para hemostasia [D98].",
+   "Esperar é decidir tarde [D5]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D98",
+   "D101",
+   "D62",
+   "D5"
+  ]
+ },
+ {
+  "id": "T4-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 4, ventilou pelo tubo cirúrgico, o pescoço inchou e não há CO2. O que é e o que fazer?",
+  "alternativas": [
+   "Broncoespasmo; dar broncodilatador",
+   "Tubo no subcutâneo; retirar e reavaliar a via aérea",
+   "Seletiva; recuar o tubo",
+   "Pneumotórax; drenar",
+   "Normal; manter"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Sem CO2, o tubo não está na via aérea [D97].",
+   "Correta: enfisema ao ventilar e ausência de CO2 revelam o tubo no subcutâneo; retira-se e reavalia-se [D97].",
+   "Na seletiva há CO2 [D97].",
+   "O quadro é do tubo fora da traqueia [D97].",
+   "Sem CO2 o tubo está fora da traqueia [D29]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D97",
+   "D29"
+  ]
+ },
+ {
+  "id": "T4-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 4,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 4, como confirmar e fixar o tubo cirúrgico?",
+  "alternativas": [
+   "Pelo embaçamento, com esparadrapo",
+   "Pela saturação, sem necessidade de fixar",
+   "Por CO2 sustentado e ausculta; sutura",
+   "Pela palpação do balonete no pescoço",
+   "Pela radiografia, com fixação por fita"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "O embaçamento ocorre fora da traqueia [D29].",
+   "A saturação demora e engana [D29].",
+   "Correta: confirma-se por CO2 sustentado e ausculta, e fixa-se com sutura [D91].",
+   "Não confirma a posição [D91].",
+   "A radiografia não é a confirmação imediata [D91]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D91",
+   "D29"
+  ]
+ },
+ {
+  "id": "T4-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 4: na análise de Walls com dados do NEAR, quantos traumatizados precisaram de via aérea cirúrgica?",
+  "alternativas": [
+   "Nenhum",
+   "Metade",
+   "310 de 4.499 (7%)",
+   "31 de 4.499 (0,7%)",
+   "1 de 10.000"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Houve casos [D50].",
+   "Muito acima [D50].",
+   "Dez vezes acima [D50].",
+   "Correta: 31 de 4.499 traumatizados (0,7%) [D50].",
+   "Abaixo do relatado [D50]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D50",
+   "D49"
+  ]
+ },
+ {
+  "id": "T4-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 4: na metanálise de bisturi contra punção, qual o achado?",
+  "alternativas": [
+   "Bisturi com mais sucesso, alta certeza",
+   "Punção mais segura, com alta certeza",
+   "Sem diferença no tempo entre as técnicas",
+   "Punção mais rápida que o bisturi",
+   "Bisturi mais rápido, sucesso igual, baixa certeza"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A certeza foi baixa e o sucesso não diferiu [A23].",
+   "Não foi o achado [A23].",
+   "Houve diferença no tempo [A23].",
+   "O achado foi o contrário [A23].",
+   "Correta: bisturi mais rápido, sem diferença no sucesso global, evidência de baixa certeza [A23]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A23"
+  ]
+ },
+ {
+  "id": "T4-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 4,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 4: qual a faixa de complicações agudas da cricotireoidostomia cirúrgica?",
+  "alternativas": [
+   "8,7% a 40%",
+   "50% a 70%",
+   "Menos de 1%",
+   "Não há dados",
+   "Sempre acima de 60%"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: de 8,7% a 40%, sobretudo sangramento e mau posicionamento [D96].",
+   "Acima do relatado [D96].",
+   "Abaixo do relatado [D96].",
+   "Há dados [D96, H1].",
+   "Acima do relatado [D96]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D96",
+   "H1"
+  ]
+ },
+ {
+  "id": "T4-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 4,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 4: o que o ultrassom acrescenta à localização da membrana?",
+  "alternativas": [
+   "Substitui a palpação no não intubo, não oxigeno",
+   "Mais acerto, mas alonga e pode não elevar o sucesso",
+   "Aumenta o sucesso global sempre",
+   "É contraindicado no trauma",
+   "Nada de útil na localização"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Alonga o procedimento quando não há tempo [D100].",
+   "Correta: aumenta muito o acerto, sobretudo na anatomia difícil, mas alonga e pode não aumentar o sucesso global [D100, A37].",
+   "Não se mostrou [D100].",
+   "Não é contraindicado [A37].",
+   "Aumenta o acerto [D100]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D100",
+   "A37"
+  ]
+ },
+ {
+  "id": "T4-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 4,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 4: o que a DAS 2025 reconhece sobre a evidência dos passos do acesso frontal?",
+  "alternativas": [
+   "É forte para todos os passos",
+   "Não foi avaliada",
+   "Há pouca evidência para muitos passos",
+   "Vem de ensaios randomizados",
+   "É específica para o trauma"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não é o que a diretriz diz [G39].",
+   "Foi avaliada e declarada fraca [G39].",
+   "Correta: a própria diretriz reconhece pouca evidência para muitos passos [G39].",
+   "Não há ensaios para a maioria dos passos [G39].",
+   "A diretriz não é específica para o trauma [G38]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G39",
+   "G38"
+  ]
+ },
+ {
+  "id": "T5-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 5,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 5, qual a primeira coisa a conferir depois do tubo?",
+  "alternativas": [
+   "A tomografia de tórax",
+   "O hemograma de controle",
+   "A reação das pupilas",
+   "A capnografia e o ventilador",
+   "A glicemia capilar"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não resolve o problema imediato [G20].",
+   "Não é a prioridade [G20].",
+   "Não é a prioridade [G20].",
+   "Correta: conferir o ventilador e a posição do tubo; CO2 em forma de onda confirma o tubo [G20, D29].",
+   "Não é a prioridade [G20]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G20",
+   "D29"
+  ]
+ },
+ {
+  "id": "T5-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 5,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, por que a ventilação com pressão positiva pode piorar um pneumotórax?",
+  "alternativas": [
+   "Porque reduz o volume do pulmão",
+   "Porque não piora; a pressão positiva protege",
+   "Porque baixa demais o CO2 do sangue",
+   "Porque o tubo perfura o pulmão",
+   "Porque pode tornar hipertensivo um pneumotórax simples"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é o mecanismo [D32].",
+   "Pode piorar [D32].",
+   "Não é o mecanismo [D32].",
+   "Não é o mecanismo [D32].",
+   "Correta: a pressão positiva pode tornar hipertensivo um pneumotórax simples [D32]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D32"
+  ]
+ },
+ {
+  "id": "T5-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 5,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, o que a escoriação no hemitórax direito sugere?",
+  "alternativas": [
+   "Possível pneumotórax, agravado pela ventilação",
+   "Nada; escoriação não muda a conduta",
+   "Fratura de clavícula apenas",
+   "Lesão de baço pelo mesmo impacto",
+   "Tamponamento cardíaco obrigatório"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: com hipotensão e queda da saturação logo após o tubo, avalia-se pneumotórax hipertensivo [G20, D53].",
+   "É pista do mecanismo [G20].",
+   "Não explica o quadro [D53].",
+   "Não explica a queda da saturação [G20].",
+   "O tamponamento é outra causa possível, não obrigatória [D33]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "G20",
+   "D53",
+   "D33"
+  ]
+ },
+ {
+  "id": "T5-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 5,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, que três causas procurar na hipotensão pós-intubação?",
+  "alternativas": [
+   "Arritmia, alergia e sepse",
+   "Ventilador, pneumotórax e sangramento",
+   "Nenhuma; é só efeito do fármaco",
+   "Glicemia, sódio e potássio",
+   "Febre, dor e ansiedade"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não são as causas a buscar [G20].",
+   "Correta: conferir o ventilador, avaliar pneumotórax hipertensivo e procurar sangramento [G20].",
+   "Persistente ou profunda, pode indicar causa grave [D53].",
+   "Não são as causas a buscar [G20].",
+   "Não são as causas a buscar [G20]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G20",
+   "D53"
+  ]
+ },
+ {
+  "id": "T5-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, a hipotensão persistente pós-tubo deve ser vista como efeito do indutor?",
+  "alternativas": [
+   "Sim, sempre é efeito do indutor",
+   "Sim, se o indutor foi o etomidato",
+   "Não: pode indicar causa grave",
+   "Não, é sempre sangramento",
+   "Sim, se a PA de chegada era normal"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Pode haver causa grave [D53].",
+   "O fármaco não exclui outra causa [D53].",
+   "Correta: hipotensão persistente ou profunda pode indicar causa grave, como pneumotórax hipertensivo [D53].",
+   "Há outras causas possíveis [G20].",
+   "Não exclui outra causa [D53]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D53",
+   "G20"
+  ]
+ },
+ {
+  "id": "T5-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 5,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, como o ultrassom ajuda a confirmar a ventilação?",
+  "alternativas": [
+   "Não ajuda na confirmação",
+   "Mede a pressão intracraniana",
+   "Mostra o balonete na carina",
+   "Deslizamento pleural, pulso pulmonar, diafragma",
+   "Mede o CO2 expirado"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Ajuda [A36].",
+   "Não é o uso [A36].",
+   "Não é o uso descrito [A36].",
+   "Correta: deslizamento pleural, pulso pulmonar e movimento diafragmático ajudam a confirmar a ventilação [A36].",
+   "Não mede CO2 [A36]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A36"
+  ]
+ },
+ {
+  "id": "T5-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o tubo está a 27 cm na comissura de uma mulher. O que pensar?",
+  "alternativas": [
+   "Tubo curto demais, risco de sair",
+   "Tubo certamente no esôfago",
+   "Posição ideal para a mulher",
+   "Não importa a profundidade",
+   "Possível seletiva; o esperado é cerca de 21 cm"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Está profundo, não curto [G18].",
+   "Com CO2 presente, não está no esôfago [D29].",
+   "Profundo demais [G18].",
+   "A profundidade importa [G18].",
+   "Correta: cerca de 21 cm nas mulheres; 27 cm sugere seletiva [G18]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "G18",
+   "D29"
+  ]
+ },
+ {
+  "id": "T5-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, a capnografia mostra curva normal e a PA segue caindo. O que fazer a seguir?",
+  "alternativas": [
+   "Avaliar pneumotórax e sangramento",
+   "Nada; o tubo está certo",
+   "Hiperventilar para subir a PA",
+   "Extubar e reavaliar",
+   "Trocar o tubo por outro"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: com tubo confirmado, avalia-se pneumotórax hipertensivo e sangramento [G20].",
+   "O tubo certo não explica a hipotensão [G20].",
+   "A hiperventilação aumenta a pressão intratorácica [D35].",
+   "Não há indicação [G20].",
+   "O tubo está na traqueia [D29]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G20",
+   "D29"
+  ]
+ },
+ {
+  "id": "T5-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, se o pneumotórax for identificado antes de intubar, qual a recomendação?",
+  "alternativas": [
+   "Intubar e drenar só no dia seguinte",
+   "Considerar a drenagem simultânea à intubação",
+   "Não intubar nunca",
+   "Fazer cricotireoidostomia",
+   "Drenar só se a saturação cair abaixo de 70%"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A pressão positiva pode torná-lo hipertensivo [D32].",
+   "Correta: com pneumotórax identificado, considera-se a drenagem simultânea à intubação [G19].",
+   "Não é contraindicação [G19].",
+   "Não há indicação [G19].",
+   "Não é critério [G19]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G19",
+   "D32"
+  ]
+ },
+ {
+  "id": "T5-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 5,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 5, o detector colorimétrico não mudou de cor. Isso prova tubo no esôfago?",
+  "alternativas": [
+   "Sim, se a pressão caiu",
+   "Sim, sempre prova o esôfago",
+   "Não: pode falhar na parada prolongada",
+   "Sim, se a paciente é mulher",
+   "Não; o detector não serve para nada"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "A pressão não define [D61].",
+   "Há exceção [D61].",
+   "Correta: pode não mudar de cor com tubo correto na parada prolongada; a capnografia em forma de onda é preferida [D61, G2].",
+   "O sexo não define [D61].",
+   "Serve, com limites [D61]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D61",
+   "G2"
+  ]
+ },
+ {
+  "id": "T5-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o etomidato foi usado. Qual a dose no comprometimento hemodinâmico?",
+  "alternativas": [
+   "0,6 mg/kg",
+   "1,5 mg/kg",
+   "Mesma de 0,3 mg/kg sempre",
+   "Redução até 0,15 mg/kg",
+   "Não se usa"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Acima da dose [D26].",
+   "É a dose da cetamina [D27].",
+   "Há redução prevista [D26].",
+   "Correta: 0,3 mg/kg no estável, com redução até 0,15 mg/kg no comprometimento hemodinâmico [D26].",
+   "Pode ser usado [D26]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D26",
+   "D27"
+  ]
+ },
+ {
+  "id": "T5-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, a pré-oxigenação com pressão positiva reduziu a hipoxemia em críticos? Qual ensaio?",
+  "alternativas": [
+   "Não; mostrou o ensaio RSI",
+   "Sim; mostrou o ensaio BEST",
+   "Não; mostrou o ensaio DEVICE",
+   "Sim; mostrou o ensaio BOUGIE",
+   "Sim; ensaio PREOXI, 9,1% e 18,5%"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "O RSI comparou indutores [A16].",
+   "O BEST comparou bougie e fio-guia [A19].",
+   "O DEVICE comparou laringoscópios [A13].",
+   "O BOUGIE comparou introdutores [A18].",
+   "Correta: no PREOXI, hipoxemia de 9,1% com ventilação não invasiva e 18,5% com máscara [A14]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "A14",
+   "A16",
+   "A19",
+   "A13",
+   "A18"
+  ]
+ },
+ {
+  "id": "T5-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, a ventilação com bolsa-máscara entre a indução e a laringoscopia aumenta aspiração?",
+  "alternativas": [
+   "Não aumentou e reduziu a hipoxemia grave",
+   "Não se estudou em nenhum ensaio",
+   "Sim, no ensaio feito no trauma",
+   "Sim, sempre aumenta a aspiração",
+   "Só aumentou em pacientes obesos"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no PreVent, reduziu a hipoxemia grave (10,9% contra 22,8%) sem aumentar a aspiração [A15].",
+   "Foi estudado [A15].",
+   "O ensaio não foi de trauma; evidência indireta [A15].",
+   "O ensaio não mostrou aumento [A15].",
+   "Não foi o achado [A15]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A15"
+  ]
+ },
+ {
+  "id": "T5-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, qual a frequência de eventos adversos peri-intubação no trauma na coorte canadense?",
+  "alternativas": [
+   "2%",
+   "22%",
+   "60%",
+   "Zero",
+   "85%"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Abaixo do relatado [A22].",
+   "Correta: 22% tiveram eventos adversos; 85% tiveram sucesso na primeira tentativa [A22].",
+   "Acima do relatado [A22].",
+   "Houve eventos [A22].",
+   "É o sucesso na primeira tentativa, não os eventos [A22]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A22"
+  ]
+ },
+ {
+  "id": "T5-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, o tubo foi trocado por suspeita de mau posicionamento. Como encarar essa troca?",
+  "alternativas": [
+   "Como procedimento simples e rápido",
+   "Sem pré-oxigenar, para ganhar tempo",
+   "Como via aérea difícil, com plano de falha",
+   "Sem capnografia, pela pressa",
+   "Pelo menos experiente, para treinar"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Toda intubação no trauma é potencialmente difícil [D9].",
+   "A pré-oxigenação dá a reserva [D22].",
+   "Correta: a troca de via aérea deve ser encarada como via aérea difícil [G16, D18].",
+   "A confirmação por CO2 é obrigatória [D29].",
+   "O mais experiente faz a melhor tentativa [D81]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "G16",
+   "D18",
+   "D9",
+   "D29",
+   "D81"
+  ]
+ },
+ {
+  "id": "T5-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, você lidera. Qual a sequência diante da queda de PA e de saturação?",
+  "alternativas": [
+   "Mais sedação e esperar a PA subir",
+   "Tomografia de tórax primeiro",
+   "Extubar e reintubar logo",
+   "Tubo e ventilador, pneumotórax, sangramento",
+   "Aumentar o volume corrente"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Sedação piora a hipotensão [A3].",
+   "O instável não vai à tomografia [D52].",
+   "Reintubar sem motivo expõe a nova falha [D84].",
+   "Correta: conferir tubo e ventilador, avaliar pneumotórax hipertensivo e procurar sangramento [G20, D53].",
+   "Aumenta a pressão intratorácica [D32]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "G20",
+   "D53",
+   "D84",
+   "D32"
+  ]
+ },
+ {
+  "id": "T5-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, que indicador do serviço esta intubação alimenta?",
+  "alternativas": [
+   "Só o tempo de internação",
+   "Só o número de radiografias",
+   "Nenhum indicador do serviço",
+   "Só o custo dos fármacos",
+   "Sucesso na primeira tentativa e eventos"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não mede a intubação [A22].",
+   "Não mede a qualidade [A22].",
+   "Alimenta os indicadores [A22].",
+   "Não mede a qualidade [A22].",
+   "Correta: sucesso na primeira tentativa e eventos adversos são indicadores da intubação [A22, G2]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "A22",
+   "G2"
+  ]
+ },
+ {
+  "id": "T5-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, o que o sucesso na intubação depende mais, segundo Walls?",
+  "alternativas": [
+   "De sistemas que apoiam o profissional",
+   "Da habilidade individual apenas",
+   "Da sorte",
+   "Da hora do dia",
+   "Do fármaco"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: depende muito de sistemas que apoiam o profissional, mais que da habilidade individual [D60].",
+   "O livro enfatiza o sistema [D60].",
+   "Não [D60].",
+   "Não é o fator descrito [D60].",
+   "Não é o fator principal [D60]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D60"
+  ]
+ },
+ {
+  "id": "T5-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 5, na passagem para a UTI, o que garantir?",
+  "alternativas": [
+   "Nada a mais que o prontuário",
+   "Sedação, eucapnia, normoxia e causa tratada",
+   "Suspender o oxigênio logo",
+   "Extubação precoce na UTI",
+   "Hiperventilação de rotina"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "A passagem tem metas [A34].",
+   "Correta: metas pós-intubação de eucapnia, normoxia e sedação, com a causa da hipotensão tratada [A34, G20].",
+   "Piora a hipóxia [A34].",
+   "Não há indicação [A34].",
+   "Piora os desfechos [D35]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A34",
+   "G20",
+   "D35"
+  ]
+ },
+ {
+  "id": "T5-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 5,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 5, como a comunicação em alça fechada ajuda nesta crise?",
+  "alternativas": [
+   "Só serve no centro cirúrgico",
+   "Substitui o checklist pré-intubação",
+   "Confirma o pedido e quando foi cumprido",
+   "Não ajuda na crise",
+   "Atrasa a conduta da equipe"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Serve em qualquer equipe [D58].",
+   "Complementa o checklist [G22].",
+   "Correta: confirma que o pedido foi ouvido e reconfirma quando foi cumprido [D58].",
+   "Ajuda [D58].",
+   "Não é o efeito descrito [D58]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D58",
+   "G22"
+  ]
+ },
+ {
+  "id": "T5-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 5: no ensaio DEVICE, qual o sucesso na primeira tentativa com cada laringoscópio?",
+  "alternativas": [
+   "95% em ambos",
+   "Iguais",
+   "50% em ambos",
+   "85,1% com vídeo e 70,8% com direto",
+   "70,8% com vídeo e 85,1% com direto"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não foi o relatado [A13].",
+   "Houve diferença [A13].",
+   "Não foi o relatado [A13].",
+   "Correta: 85,1% com videolaringoscópio e 70,8% com laringoscópio direto, em adultos críticos [A13].",
+   "Invertido [A13]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A13",
+   "A5"
+  ]
+ },
+ {
+  "id": "T5-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 5,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 5: qual a limitação do DEVICE para o trauma?",
+  "alternativas": [
+   "Não tem limitação para o trauma",
+   "Feito só em crianças",
+   "Amostra de apenas 10 pacientes",
+   "Não mediu o sucesso na tentativa",
+   "Feito em críticos: evidência indireta"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Tem limitação para o trauma [A13].",
+   "Foi em adultos [A13].",
+   "Não foi o tamanho [A13].",
+   "Mediu sucesso na primeira tentativa [A13].",
+   "Correta: em adultos críticos; no trauma, evidência indireta, com dados heterogêneos na revisão do trauma [A13, A5]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "A13",
+   "A5"
+  ]
+ },
+ {
+  "id": "T5-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 5: o que a revisão Cochrane diz da oxigenação na apneia?",
+  "alternativas": [
+   "Eleva pouco a menor saturação, sem relevância clara",
+   "Não tem nenhum efeito na saturação",
+   "Grande benefício clínico comprovado",
+   "Aumenta a mortalidade hospitalar",
+   "Só funciona em crianças pequenas"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: pode elevar a menor saturação, mas com diferença pouco relevante clinicamente [A21].",
+   "Houve efeito na saturação [A21].",
+   "Não foi o achado [A21].",
+   "Não foi o achado [A21].",
+   "Não foi o achado [A21]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "A21"
+  ]
+ },
+ {
+  "id": "T5-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 5,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 5: o que se sabe da hiperóxia grave logo após a intubação?",
+  "alternativas": [
+   "É inofensiva em qualquer paciente",
+   "Faltam dados sobre seu efeito",
+   "É sempre benéfica após o tubo",
+   "Aumenta a sobrevida no trauma",
+   "É obrigatória após a intubação"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não se sabe [A33].",
+   "Correta: faltam dados sobre o efeito da hiperóxia grave logo após a intubação [A33].",
+   "Não se sabe [A33].",
+   "Não se sabe [A33].",
+   "Não há tal recomendação [A33]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A33",
+   "A34"
+  ]
+ },
+ {
+  "id": "T5-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 5,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 5: o bolus rotineiro de fluido antes da intubação em críticos reduziu o colapso?",
+  "alternativas": [
+   "Não foi medido",
+   "Sim, só no trauma",
+   "Não",
+   "Aumentou a sobrevida",
+   "Sim"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Foi medido [A20].",
+   "O ensaio não foi de trauma [A20].",
+   "Correta: não reduziu o colapso cardiovascular [A20].",
+   "Não foi o achado [A20].",
+   "O ensaio não mostrou redução [A20]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A20"
+  ]
+ },
+ {
+  "id": "T6-Graduação-1",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 6,
+  "grau": 2,
+  "taxa_esperada": "75% a 90%",
+  "enunciado": "No caso 6, quais sinais indicam risco de obstrução da via aérea?",
+  "alternativas": [
+   "O Glasgow de 14 na chegada",
+   "Só a frequência cardíaca alta",
+   "Só a queimadura dos braços",
+   "Rouquidão, estridor, pelos chamuscados",
+   "A pressão arterial normal"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não indica obstrução [D16].",
+   "Não indica obstrução [D16].",
+   "Não indica obstrução [D16].",
+   "Correta: rouquidão e estridor são sinais de obstrução alta; os pelos chamuscados apontam inalação [D16, D38].",
+   "Não indica obstrução [D16]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D16",
+   "D38"
+  ]
+ },
+ {
+  "id": "T6-Graduação-2",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, por que não esperar piorar para intubar?",
+  "alternativas": [
+   "Porque a PA está baixa",
+   "Porque o tubo fica mais fácil depois",
+   "Porque a criança pede",
+   "Não há pressa",
+   "Porque o edema progride de forma rápida e oculta"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A PA não é o motivo [D38].",
+   "Fica mais difícil com o edema [D36].",
+   "Não é o critério [D38].",
+   "Há pressa [D38].",
+   "Correta: o edema supraglótico indica intubação, mesmo leve, porque progride rápido e oculto [D38]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "D38",
+   "D36"
+  ]
+ },
+ {
+  "id": "T6-Graduação-3",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, qual o princípio na lesão direta da via aérea?",
+  "alternativas": [
+   "Protegê-la cedo, com mais opções",
+   "Só observar a evolução",
+   "Dar corticoide e esperar",
+   "Intubar só se parar de respirar",
+   "Esperar o laudo da endoscopia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: protegê-la cedo, enquanto há mais opções e o paciente permite abordagem deliberada [D36].",
+   "A progressão é rápida [D38].",
+   "Não substitui a via aérea [D36].",
+   "Esperar a parada é tarde [D5].",
+   "Atrasa a proteção [D36]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D36",
+   "D38"
+  ]
+ },
+ {
+  "id": "T6-Graduação-4",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, qual o limite de idade do curso para a cricotireoidostomia cirúrgica?",
+  "alternativas": [
+   "Não há limite de idade",
+   "Abaixo de 12, não; resgate por agulha",
+   "Abaixo de 6 anos; acima, cirúrgica",
+   "Abaixo de 18 anos, nunca",
+   "Abaixo de 2 anos; acima, cirúrgica"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "As fontes divergem; o curso adota 12 anos [D92].",
+   "Correta: decisão da coordenação, com base no Mattox: abaixo de 12 anos, não; o resgate é a punção por agulha [D8, D62].",
+   "Há quem cite 6 anos, mas o curso adota 12 [A25, D8].",
+   "Não é o limite adotado [D8].",
+   "O curso adota limite maior [D8]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D8",
+   "D62",
+   "D92",
+   "A25"
+  ]
+ },
+ {
+  "id": "T6-Graduação-5",
+  "fixa": false,
+  "perfil": "Graduação",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, quem precisa ser chamado logo?",
+  "alternativas": [
+   "Ninguém além da equipe presente",
+   "Só a assistente social",
+   "O mais experiente em via aérea",
+   "O radiologista de plantão",
+   "O ortopedista de plantão"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "É via aérea difícil prevista [D9].",
+   "Não resolve a via aérea [D81].",
+   "Correta: o operador mais experiente faz a primeira tentativa a melhor [D81].",
+   "Não resolve a via aérea [D81].",
+   "Não resolve a via aérea [D81]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "D81",
+   "D9"
+  ]
+ },
+ {
+  "id": "T6-R1-1",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, por que a membrana cricotireóidea é mais difícil na criança?",
+  "alternativas": [
+   "Porque já é calcificada",
+   "Porque é muito mais vascularizada",
+   "Porque fica abaixo da cricoide",
+   "Laringe alta e cartilagens sobrepostas",
+   "Porque a membrana não existe"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não é o motivo [D102].",
+   "Não é o motivo descrito [D102].",
+   "Fica acima da cricoide [D95].",
+   "Correta: laringe mais alta e mais sobreposição entre as cartilagens tornam a membrana proporcionalmente menor [D102].",
+   "Existe [D102]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D102",
+   "D95"
+  ]
+ },
+ {
+  "id": "T6-R1-2",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 6,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a succinilcolina pode ser usada nesta queimadura aguda?",
+  "alternativas": [
+   "Não, nunca em queimado",
+   "Só em criança abaixo de 5 anos",
+   "Só se o potássio estiver alto",
+   "Só depois de 48 horas da queimadura",
+   "Sim: só é contraindicada após 24 horas"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "A contraindicação é depois de 24 horas [D75].",
+   "Não é o critério [D75].",
+   "Potássio alto contraindica [D76].",
+   "Invertido: depois de 24 horas é contraindicada [D75].",
+   "Correta: é segura na maioria das queimaduras agudas e contraindicada depois de 24 horas; o curso adota rocurônio como primeira escolha [D75, D82]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta"
+  ],
+  "ancoras": [
+   "D75",
+   "D82",
+   "D76"
+  ]
+ },
+ {
+  "id": "T6-R1-3",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 6,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, a obstrução abaixo da membrana se resolve com cricotireoidostomia?",
+  "alternativas": [
+   "Não",
+   "Sim, com tubo maior",
+   "Só com agulha",
+   "Só em adultos",
+   "Sim"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: a cricotireoidostomia não resolve obstrução abaixo da membrana [D42].",
+   "O tamanho não muda o nível [D42].",
+   "A agulha também entra pela membrana [D42].",
+   "Vale em qualquer idade [D42].",
+   "Ela não resolve obstrução abaixo da membrana [D42]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D42"
+  ]
+ },
+ {
+  "id": "T6-R1-4",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 6,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, qual o papel da endoscopia flexível na inalatória?",
+  "alternativas": [
+   "Nenhum papel na avaliação",
+   "Avaliar e talvez evitar o tubo desnecessário",
+   "Só no paciente adulto",
+   "Só depois de 7 dias de internação",
+   "Substituir a intubação no estridor"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Tem papel central [A8].",
+   "Correta: tem papel central na avaliação e pode evitar intubação desnecessária [A8].",
+   "Não é restrita ao adulto [A8].",
+   "O momento é na avaliação inicial [A8].",
+   "Com estridor e rouquidão progressiva, o edema supraglótico já indica intubação [D38]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A8",
+   "D38"
+  ]
+ },
+ {
+  "id": "T6-R1-5",
+  "fixa": false,
+  "perfil": "R1",
+  "teste": 6,
+  "grau": 3,
+  "taxa_esperada": "50% a 75%",
+  "enunciado": "No caso 6, como confirmar o tubo?",
+  "alternativas": [
+   "Embaçamento",
+   "Ausculta",
+   "Capnografia",
+   "Saturação",
+   "Radiografia"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Ocorre no esôfago [D29].",
+   "Não basta [D29].",
+   "Correta: detecção de CO2 obrigatória, preferindo a capnografia em forma de onda [D29, G2].",
+   "Demora e engana [D29].",
+   "Não confirma a tempo [D29]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D29",
+   "G2"
+  ]
+ },
+ {
+  "id": "T6-R2-1",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 6,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, o que Walls orienta sobre a cricotireoidostomia aberta em crianças?",
+  "alternativas": [
+   "Evitar só abaixo de 2 anos",
+   "Só fazer guiada por ultrassom",
+   "Fazer em qualquer idade",
+   "Evitar até 10 anos, salvo porte maior",
+   "É a técnica de escolha na criança"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não é o limite de Walls [D7].",
+   "Não é a condição [D7].",
+   "Há restrição [D7].",
+   "Correta: evitar a técnica aberta padrão em crianças de 10 anos ou menos, salvo porte de adolescente ou adulto [D7].",
+   "A punção é o resgate de escolha na criança [D62]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D7",
+   "D62"
+  ]
+ },
+ {
+  "id": "T6-R2-2",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, o curso adota 12 anos como limite. Por que é decisão da coordenação?",
+  "alternativas": [
+   "Porque é exigência legal",
+   "Porque não há fonte",
+   "Porque as fontes concordam",
+   "Porque o ATLS manda",
+   "Porque as fontes divergem"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Não é lei [D92].",
+   "Há fontes [D92].",
+   "As fontes divergem [D92].",
+   "O limite vem do Mattox [D8].",
+   "Correta: as referências vão de 5 a 10 ou 12 anos; o curso fixou 12 com base no Mattox [D92, D8]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta"
+  ],
+  "ancoras": [
+   "D92",
+   "D8",
+   "D7"
+  ]
+ },
+ {
+  "id": "T6-R2-3",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, no edema grave de laringe, qual a conduta apontada como padrão?",
+  "alternativas": [
+   "Traqueostomia",
+   "Observação",
+   "Corticoide isolado",
+   "Máscara laríngea",
+   "Cricotireoidostomia"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: no edema grave de laringe, a traqueostomia é apontada como padrão [A11].",
+   "Atrasa a proteção [D38].",
+   "Não substitui a via aérea [A11].",
+   "Não é via aérea definitiva [G11].",
+   "A obstrução pode estar abaixo da membrana [D42]."
+  ],
+  "categorias": [
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A11",
+   "D42",
+   "G11"
+  ]
+ },
+ {
+  "id": "T6-R2-4",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 6,
+  "grau": 4,
+  "taxa_esperada": "30% a 50%",
+  "enunciado": "No caso 6, o que preparar antes da indução?",
+  "alternativas": [
+   "Só o oxímetro",
+   "Vídeo, tubos menores, aspirador e agulha",
+   "Nada além do tubo",
+   "Só o bloqueador",
+   "Só a máscara facial"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Não basta [D18].",
+   "Correta: preparar-se para a falha, inclusive para o resgate da criança por agulha [D18, D62].",
+   "Convém preparar-se sempre para a falha [D18].",
+   "Não basta [D18].",
+   "Não basta [D18]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D18",
+   "D62"
+  ]
+ },
+ {
+  "id": "T6-R2-5",
+  "fixa": false,
+  "perfil": "R2",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, por que a membrana favorece o acesso de emergência em relação à traqueia?",
+  "alternativas": [
+   "Porque é mais profunda",
+   "Não favorece o acesso",
+   "Mais superficial e menos vascularizada",
+   "Porque é cartilaginosa",
+   "Mais larga na criança"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "É mais superficial [D40].",
+   "Favorece [D40].",
+   "Correta: mais superficial que a traqueia e com menos vascularização ao redor [D40].",
+   "É membrana, entre cartilagens [D95].",
+   "Na criança é proporcionalmente menor [D102]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "D40",
+   "D102",
+   "D95"
+  ]
+ },
+ {
+  "id": "T6-R3-1",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, você lidera. Qual a decisão?",
+  "alternativas": [
+   "Esperar a endoscopia em 24 horas",
+   "Cricotireoidostomia cirúrgica de saída",
+   "Observar com corticoide",
+   "Intubar cedo, com o mais experiente e agulha pronta",
+   "Transferir antes de qualquer conduta"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Com estridor, o edema já indica intubação [D38].",
+   "Abaixo de 12 anos, o curso não indica a técnica cirúrgica [D8].",
+   "O edema progride rápido [D38].",
+   "Correta: proteção precoce, primeira tentativa otimizada e plano de resgate adequado à idade [D38, D81, D62].",
+   "A via aérea vem antes do transporte [D36]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "D38",
+   "D81",
+   "D62",
+   "D8"
+  ]
+ },
+ {
+  "id": "T6-R3-2",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, a intubação falha e a criança não oxigena. Qual o resgate?",
+  "alternativas": [
+   "Máscara por 10 minutos",
+   "Traqueostomia na sala",
+   "Nova tentativa sem limite",
+   "Cricotireoidostomia cirúrgica",
+   "Cricotireoidostomia por agulha"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Insistir causa lesão hipóxica [D5].",
+   "É mais demorada [D40].",
+   "Cada tentativa piora o edema [D84].",
+   "Abaixo de 12 anos, o curso não indica [D8].",
+   "Correta: na criança, a cricotireoidostomia por agulha é o resgate de escolha [D62]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "correta"
+  ],
+  "ancoras": [
+   "D62",
+   "D8",
+   "D84",
+   "D5"
+  ]
+ },
+ {
+  "id": "T6-R3-3",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, quem tem o porte de adolescente aos 10 anos muda a técnica?",
+  "alternativas": [
+   "Walls admite pelo porte; o curso mantém 12 anos",
+   "Só com ultrassom disponível",
+   "Só se tiver mais de 50 kg",
+   "Não, nunca em nenhuma fonte",
+   "Sim, sempre, em todas as fontes"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: Walls admite pelo porte; o curso mantém o limite de 12 anos como decisão da coordenação [D7, D8].",
+   "Não é a condição [D7].",
+   "Não há corte por peso nas fontes [D7].",
+   "Walls admite exceção [D7].",
+   "Não é sempre [D7]."
+  ],
+  "categorias": [
+   "correta",
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual"
+  ],
+  "ancoras": [
+   "D7",
+   "D8"
+  ]
+ },
+ {
+  "id": "T6-R3-4",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "No caso 6, o que registrar para o indicador do serviço?",
+  "alternativas": [
+   "Só o fármaco usado na indução",
+   "Tentativas, dispositivo, operador e confirmação",
+   "Nada; não há indicador",
+   "Só o horário da intubação",
+   "Só o tamanho do tubo usado"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "É parte, não o todo [A22].",
+   "Correta: tentativas, primeira tentativa, eventos e confirmação [A22, G2].",
+   "O registro é parte do protocolo [A22].",
+   "Não mede a qualidade [A22].",
+   "É parte, não o todo [A22]."
+  ],
+  "categorias": [
+   "erro técnico",
+   "correta",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "A22",
+   "G2"
+  ]
+ },
+ {
+  "id": "T6-R3-5",
+  "fixa": false,
+  "perfil": "R3",
+  "teste": 6,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "No caso 6, qual lacuna de pesquisa a WTA aponta sobre a via aérea cirúrgica?",
+  "alternativas": [
+   "O fármaco ideal para o choque",
+   "A marca do capnógrafo",
+   "O treino e a manutenção da habilidade",
+   "O tamanho do tubo no adulto",
+   "O uso do colar cervical"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "É outra lacuna, do choque hemorrágico [G30].",
+   "Não [G31].",
+   "Correta: o melhor caminho de treino e de manutenção da habilidade em via aérea cirúrgica [G31].",
+   "Não é a lacuna citada [G31].",
+   "Não [G31]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "erro conceitual",
+   "correta",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "G31",
+   "G30"
+  ]
+ },
+ {
+  "id": "T6-R+-1",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 6: o que Dave e Shriki listam como contraindicação relativa da cricotireoidostomia?",
+  "alternativas": [
+   "Hipotensão e choque",
+   "Sexo feminino e baixa estatura",
+   "Idade acima de 60 anos e diabetes",
+   "Idade abaixo de 6 anos e cirurgia traqueal prévia",
+   "Obesidade e pescoço curto"
+  ],
+  "correta": "D",
+  "justificativas": [
+   "Não [A25].",
+   "Não [A25].",
+   "Não [A25].",
+   "Correta: cirurgia traqueal prévia, ruptura laringotraqueal e idade abaixo de 6 anos [A25].",
+   "Não [A25]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico",
+   "correta",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A25"
+  ]
+ },
+ {
+  "id": "T6-R+-2",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 6: a traqueostomia precoce no politrauma reduziu a mortalidade?",
+  "alternativas": [
+   "Não foi estudada",
+   "Aumentou a mortalidade",
+   "Sim, reduziu de forma clara",
+   "Só reduziu em crianças",
+   "Pouco ou nenhum efeito, comparada à tardia"
+  ],
+  "correta": "E",
+  "justificativas": [
+   "Foi estudada [A9].",
+   "Não foi o achado [A9].",
+   "Não foi o achado [A9].",
+   "Não foi o achado [A9].",
+   "Correta: a traqueostomia precoce (menos de 10 dias) pode ter pouco ou nenhum efeito sobre a mortalidade [A9]."
+  ],
+  "categorias": [
+   "erro de conduta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "correta"
+  ],
+  "ancoras": [
+   "A9"
+  ]
+ },
+ {
+  "id": "T6-R+-3",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 6,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 6: o que a revisão de Brantigan e Grow (1976) fez pela cricotireoidostomia?",
+  "alternativas": [
+   "Reviu a condenação de 1921, com 6,1% de complicações",
+   "Proibiu o procedimento em crianças",
+   "Condenou o procedimento de vez",
+   "Criou a técnica da punção por agulha",
+   "Descreveu o uso do ultrassom"
+  ],
+  "correta": "A",
+  "justificativas": [
+   "Correta: 655 casos, 6,1% de complicações, revendo a condenação de 1921 [H1].",
+   "Não foi o achado [H1].",
+   "A condenação era de 1921 [H1].",
+   "Não foi o achado [H1].",
+   "Não foi o achado [H1]."
+  ],
+  "categorias": [
+   "correta",
+   "erro técnico",
+   "erro de indicação",
+   "erro conceitual",
+   "erro de conduta"
+  ],
+  "ancoras": [
+   "H1"
+  ]
+ },
+ {
+  "id": "T6-R+-4",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 6,
+  "grau": 5,
+  "taxa_esperada": "15% a 30%",
+  "enunciado": "Sobre o caso 6: quanto das mortes por trauma antes do socorro envolve apneia potencialmente reversível?",
+  "alternativas": [
+   "50% a 70%",
+   "18% a 43%",
+   "80% a 90%",
+   "Nenhuma",
+   "1% a 2%"
+  ],
+  "correta": "B",
+  "justificativas": [
+   "Acima do relatado [A30].",
+   "Correta: autópsias e registros sugerem 18% a 43% [A30].",
+   "Acima do relatado [A30].",
+   "Há [A30].",
+   "Abaixo do relatado [A30]."
+  ],
+  "categorias": [
+   "erro de indicação",
+   "correta",
+   "erro conceitual",
+   "erro de conduta",
+   "erro técnico"
+  ],
+  "ancoras": [
+   "A30"
+  ]
+ },
+ {
+  "id": "T6-R+-5",
+  "fixa": false,
+  "perfil": "R+",
+  "teste": 6,
+  "grau": 6,
+  "taxa_esperada": "abaixo de 15%",
+  "enunciado": "Sobre o caso 6: qual a incidência do acesso frontal no trauma civil comparada à do trauma militar?",
+  "alternativas": [
+   "Igual",
+   "Maior",
+   "Menor que a metade",
+   "Não há comparação",
+   "O dobro"
+  ],
+  "correta": "C",
+  "justificativas": [
+   "Não foi o achado [A10].",
+   "Não foi o achado [A10].",
+   "Correta: no trauma civil, menos da metade da observada no trauma militar [A10].",
+   "Há comparação [A10].",
+   "Não foi o achado [A10]."
+  ],
+  "categorias": [
+   "erro conceitual",
+   "erro de conduta",
+   "correta",
+   "erro técnico",
+   "erro de indicação"
+  ],
+  "ancoras": [
+   "A10",
+   "A1"
+  ]
+ }
+]
