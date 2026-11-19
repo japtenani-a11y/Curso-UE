@@ -120,6 +120,7 @@ BEGIN
       IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Força: ... | Certeza: ...".', n - k); RETURN NEXT; END IF;
       k := (SELECT count(*) FROM regexp_matches(c, '\nOrigem: ', 'g'));
       IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Origem: ..." (diretriz de onde veio).', n - k); RETURN NEXT; END IF;
+      IF c !~* '\n>\s*PROPOSTA' THEN gravidade := 'aviso'; mensagem := 'Diretriz: falta a faixa "> PROPOSTA para avaliação da diretoria e validação pelas equipes..." logo abaixo do título (a diretriz é sempre proposta).'; RETURN NEXT; END IF;
       IF c !~ '```mermaid' THEN gravidade := 'aviso'; mensagem := 'Diretriz: o fluxograma deve vir num bloco ```mermaid (flowchart).'; RETURN NEXT; END IF;
     END IF;
 

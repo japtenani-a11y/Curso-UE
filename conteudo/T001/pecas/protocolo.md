@@ -1,4 +1,6 @@
-# T001 — Diretriz clínica: avaliação inicial do traumatizado na sala de trauma
+# T001 — Proposta de diretriz clínica: avaliação inicial do traumatizado na sala de trauma
+
+> PROPOSTA para avaliação da diretoria e validação pelas equipes listadas em "Equipes para validação". Não é norma vigente nem diretriz validada.
 
 > RASCUNHO para revisão (versão 2.0, 19/11/2026). Diretriz do curso CUT, adaptável a cada serviço. Reescrita no padrão de `docs/diretriz_do_tema.md`. A força e a certeza de cada recomendação são propostas do grupo de elaboração e precisam ser conferidas pelos revisores contra a graduação publicada nas diretrizes de origem.
 
@@ -219,7 +221,7 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 - **Redação do rascunho:** agente produtor do CUT, sob supervisão da coordenação.
 - **Coordenação:** [nome do coordenador], [instituição]. Conflitos de interesse: [declarar].
 - **Revisores:** [nomes, após a autorização de cada um pelo termo de autorização e declaração de conflitos de interesse]. Conflitos de interesse: [declarar].
-- **Aprovação:** [data e instância].
+- **Encaminhamento:** proposta a ser entregue à diretoria em [data]; validação pelas equipes listadas acima; aprovação como norma do serviço pela instância do hospital em [data].
 
 ## Limitações e lacunas
 
@@ -230,5 +232,6 @@ A cirurgia de urgência e trauma conduz a validação. As demais equipes validam
 
 ## Revisão
 
+- Situação: proposta; entregue à diretoria em [data]; validação pelas equipes: a iniciar; adoção pelo serviço: pendente.
 - Versão 2.0, 19/11/2026: reescrita no padrão de diretriz clínica (recomendações graduadas, fluxograma, adaptação local, indicadores e governança). A versão anterior fica em `conteudo/T001/arquivo/protocolo_ate_2026-11-19.md`.
 - Próxima revisão: novembro de 2028, ou antes se for publicada nova versão de uma das diretrizes de origem ou se o protocolo de imagem do serviço for aprovado.

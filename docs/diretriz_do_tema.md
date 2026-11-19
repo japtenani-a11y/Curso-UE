@@ -3,8 +3,13 @@
 Versão 1.0 · 19/11/2026 · Decisão da coordenação de 19/11/2026.
 
 A peça `pecas/protocolo.md` de cada tema deixa de ser um fluxograma com orientações. Ela passa a ser uma **diretriz
-clínica**: uma norma de conduta escrita, com recomendações graduadas, justificadas e rastreáveis até a fonte, que um
+clínica**: uma proposta de norma de conduta escrita, com recomendações graduadas, justificadas e rastreáveis até a fonte, que um
 serviço pode adotar.
+
+**A diretriz do curso é sempre uma proposta** (decisão da coordenação de 19/11/2026). Ela é entregue à diretoria do
+hospital para avaliação e validada com as equipes listadas na seção "Equipes para validação". Não é apresentada como
+definitiva nem como validada, nem no aplicativo, nem no PDF, mesmo depois de publicada no curso. Publicar no curso quer
+dizer que a revisão do conteúdo terminou; a validação e a adoção como norma do serviço são da diretoria e das equipes.
 
 ## O que foi decidido
 
@@ -13,6 +18,7 @@ serviço pode adotar.
 | Método | **Adaptação de diretrizes existentes.** Cada recomendação parte das diretrizes publicadas (EAST, WSES, AAST, WTA, ACS COT/ATLS, SBAIT, CBC, ERC, NICE e as da especialidade do tema), recebe força e certeza pelo GRADE e diz se foi adotada, adaptada ou se diverge da fonte, e por quê. |
 | Para quem | **Diretriz do curso, adaptável.** Vale para qualquer serviço. A seção "Adaptação local" traz os campos que cada hospital preenche: recursos disponíveis, quem aciona, para onde transferir e contatos. |
 | Partes | Núcleo, bloco de qualidade, bloco de governança e, quando o tema tiver, base legal e ética. |
+| Natureza | **Proposta.** Toda diretriz é apresentada como proposta para a diretoria avaliar e as equipes validarem; nunca como norma vigente ou já validada. |
 | Entrega | Peça do tema no aplicativo, no material de depois da aula, e PDF diagramado para imprimir ou levar à comissão do hospital. |
 
 ## Diretriz e protocolo: a diferença que vale aqui
@@ -28,7 +34,9 @@ O formato é conferido pelo banco (`conteudo.conferir_formato`, SQL 88). São 14
 publicação, mas aparece na tela de revisão e na aba "Conferência dos temas".
 
 ```
-# T00X — Diretriz clínica: <título do tema>
+# T00X — Proposta de diretriz clínica: <título do tema>
+
+> PROPOSTA para avaliação da diretoria e validação pelas equipes listadas em "Equipes para validação". Não é norma vigente nem diretriz validada.
 
 ## Escopo e população
 ## Usuários e cenário
@@ -132,6 +140,10 @@ cada um. Sem nome de revisor que não tenha autorizado.
 
 **Limitações e lacunas.** O que a evidência não responde, as recomendações de certeza baixa e as perguntas que pedem
 pesquisa (que podem virar projeto dos residentes).
+
+**Situação da proposta** (dentro de "Revisão"). Uma linha fixa: "Situação: proposta; entregue à diretoria em [data];
+validação pelas equipes: [a iniciar, em andamento, concluída em data]; adoção pelo serviço: [pendente, aprovada pela
+instância X em data]". Até a diretoria aprovar, o texto continua dizendo "proposta".
 
 **Revisão.** Data desta versão, data prevista da próxima (2 anos, ou antes se sair diretriz nova de uma das
 sociedades da origem) e o histórico das versões.

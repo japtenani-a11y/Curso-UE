@@ -14,13 +14,15 @@ md = open(arq, encoding='utf-8').read()
 # ---- partes fixas ----
 m = re.match(r'#\s*(T\d{3})\s*[—-]\s*(.+)', md.strip().split('\n', 1)[0])
 codigo, titulo = (m.group(1), m.group(2).strip()) if m else ('', md.strip().split('\n', 1)[0].lstrip('# '))
-titulo = re.sub(r'^Diretriz clínica:\s*', '', titulo)
+titulo = re.sub(r'^(Proposta de )?[Dd]iretriz clínica:\s*', '', titulo)
 titulo = titulo[:1].upper() + titulo[1:]
 versao = re.search(r'versão ([\d.]+), (\d{2}/\d{2}/\d{4})', md)
 versao_txt = f'Versão {versao.group(1)} · {versao.group(2)}' if versao else datetime.date.today().strftime('%d/%m/%Y')
 rascunho = bool(re.search(r'(?im)^>\s*RASCUNHO', md))
 corpo = md.split('\n', 1)[1] if '\n' in md else ''
 corpo = re.sub(r'(?m)^>\s*RASCUNHO[^\n]*\n', '', corpo)
+# A diretriz do curso e sempre PROPOSTA (decisao de 19/11/2026): a faixa vai para a capa e o rodape, nao some.
+corpo = re.sub(r'(?m)^>\s*PROPOSTA[^\n]*\n', '', corpo)
 
 # ---- fluxograma: mermaid -> SVG ----
 def mermaid_svg(cod):
@@ -81,7 +83,7 @@ def logo():
 lg = logo()
 marca = f'<img class="logo" src="{lg}" alt="CUT">' if lg else '<div class="logo-txt">CUT</div>'
 
-doc = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>{html.escape(codigo)} · Diretriz clínica</title>
+doc = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>{html.escape(codigo)} · Proposta de diretriz clínica</title>
 <style>
 :root {{ --brand:#0E1726; --incision:#D7263D; --text:#0E1726; --text-muted:#5B6473; --surface:#FFFFFF; --surface-sunken:#F4F5F7;
   --surface-raised:#FFFFFF; --line:#DDE1E7; --line-strong:#7C8594; --correct:#174A85;
@@ -119,16 +121,17 @@ tr {{ break-inside: avoid; }}
 code {{ font-size: 9pt; }}
 </style></head><body>
 <section class="capa"><div class="topo">{marca}</div>
-<div class="bloco"><div class="rot">DIRETRIZ CLÍNICA · {html.escape(codigo)}</div><h1>{html.escape(titulo)}</h1>
-<div class="ver">{html.escape(versao_txt)} · Diretriz do curso CUT, adaptável a cada serviço</div>
-{'<div class="aviso">RASCUNHO PARA REVISÃO: não é norma vigente.</div>' if rascunho else ''}</div></section>
+<div class="bloco"><div class="rot">PROPOSTA DE DIRETRIZ CLÍNICA · {html.escape(codigo)}</div><h1>{html.escape(titulo)}</h1>
+<div class="ver">{html.escape(versao_txt)} · Proposta do curso CUT, adaptável a cada serviço</div>
+<div class="aviso">Proposta para avaliação da diretoria e validação pelas equipes listadas na seção "Equipes para validação". Não é norma vigente nem diretriz validada.</div>
+{'<div class="aviso">RASCUNHO: revisão do conteúdo em andamento.</div>' if rascunho else ''}</div></section>
 {html_corpo}
 </body></html>'''
 
 tmp_html = re.sub(r'\.pdf$', '.html', saida)
 open(tmp_html, 'w', encoding='utf-8').write(doc)
 from playwright.sync_api import sync_playwright
-rod = f'<div style="font-family:Inter,Arial,sans-serif;font-size:7.5pt;color:#5B6473;width:100%;padding:0 18mm;display:flex;justify-content:space-between"><span>CUT · {html.escape(codigo)} · Diretriz clínica{" · RASCUNHO" if rascunho else ""}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>'
+rod = f'<div style="font-family:Inter,Arial,sans-serif;font-size:7.5pt;color:#5B6473;width:100%;padding:0 18mm;display:flex;justify-content:space-between"><span>CUT · {html.escape(codigo)} · Proposta de diretriz clínica, não validada{" · RASCUNHO" if rascunho else ""}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>'
 with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page()
     pg.goto('file://' + os.path.abspath(tmp_html)); pg.wait_for_timeout(300)

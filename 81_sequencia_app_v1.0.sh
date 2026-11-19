@@ -129,7 +129,7 @@ gravar(p, s)
 # ---------- nomes em todas as telas ----------
 TROCAS = [("Pré-teste após o conhecimento básico", "Pré-teste 2"), ("Pré-teste inicial", "Pré-teste 1"), ("pré-teste inicial", "pré-teste 1"),
           ("['simulado', 'Simulados']", "['simulado', 'Banco de questões']"), ("simulado: 'Simulados'", "simulado: 'Banco de questões'"),
-          ("slides: 'Slides'", "slides: 'Slides da aula'"), ("protocolo: 'Protocolo'", "protocolo: 'Protocolo assistencial'")]
+          ("slides: 'Slides'", "slides: 'Slides da aula'"), ("protocolo: 'Protocolo'", "protocolo: 'Proposta de diretriz clínica'")]
 n = 0
 for f in glob.glob(os.path.join(raiz, 'pwa/src/**/*.tsx'), recursive=True) + glob.glob(os.path.join(raiz, 'pwa/src/**/*.ts'), recursive=True) \
         + glob.glob(os.path.join(raiz, 'api/src/**/*.ts'), recursive=True):

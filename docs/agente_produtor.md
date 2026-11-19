@@ -79,7 +79,7 @@ depois vem a etapa nova. Se a sessão anterior não terminou a etapa dela, termi
 | 4 (d2) | Mapa conceitual e roteiro de podcast | `pecas/mapa.md`, `pecas/podcast_roteiro.md` |
 | 5 (d3) | Aula (texto): caso com decisões, técnica operatória, anatomia cirúrgica, complicações; não repete a teoria | `pecas/aula.md` |
 | 6 (d3) | Slides com fala e caso da aula | `pecas/slides.md`, `pecas/caso.md` |
-| 7 (d4) | Diretriz clínica do tema (peça `protocolo`, no padrão de `referencia\diretriz_do_tema.md`) e resumo executivo | `pecas/protocolo.md`, `pecas/resumo.md` |
+| 7 (d4) | Diretriz clínica do tema (peça `protocolo`, no padrão de `referencia\diretriz_do_tema.md`; sempre como PROPOSTA para a diretoria e as equipes validarem, com a faixa `> PROPOSTA ...` abaixo do título) e resumo executivo | `pecas/protocolo.md`, `pecas/resumo.md` |
 | 8 (d4) | Os 6 casos dos testes, 2 a 3 âncoras e as questões dos testes 1 e 2 | `casos_teste.json`, `questoes.json` |
 | 9 (d5) | Questões dos testes 3 e 4 | `questoes.json` |
 | 10 (d5) | Questões dos testes 5 e 6; banco de dificuldade; checklist (das recomendações fortes da diretriz) e flashcards | `questoes.json`, `pecas/banco_dificuldade.md`, `pecas/checklist.md`, `pecas/flashcard.md` |

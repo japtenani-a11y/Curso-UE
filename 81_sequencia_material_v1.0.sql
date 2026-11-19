@@ -45,7 +45,7 @@ CREATE OR REPLACE FUNCTION app.nome_material(p_tipo TEXT) RETURNS TEXT LANGUAGE 
     WHEN 'objetivos' THEN 'Objetivos de aprendizagem' WHEN 'resumo_basico' THEN 'Resumo básico' WHEN 'podcast_roteiro' THEN 'Podcast'
     WHEN 'caso_base' THEN 'Caso base' WHEN 'sintese_evidencia' THEN 'Síntese de evidência' WHEN 'mapa' THEN 'Mapa conceitual'
     WHEN 'aula' THEN 'Aula' WHEN 'slides' THEN 'Slides da aula' WHEN 'caso' THEN 'Caso da aula'
-    WHEN 'resumo' THEN 'Resumo executivo' WHEN 'protocolo' THEN 'Protocolo assistencial' WHEN 'checklist' THEN 'Checklists'
+    WHEN 'resumo' THEN 'Resumo executivo' WHEN 'protocolo' THEN 'Proposta de diretriz clínica' WHEN 'checklist' THEN 'Checklists'
     WHEN 'flashcard' THEN 'Flashcards' WHEN 'simulado' THEN 'Banco de questões' ELSE p_tipo END $$;
 
 GRANT EXECUTE ON FUNCTION app.etapa_liberada(BIGINT, BIGINT), app.etapa_do_material(TEXT), app.nome_teste(SMALLINT),
