@@ -108,10 +108,12 @@ BEGIN
     -- Diretriz clinica do tema (decisao de 19/11/2026, docs/diretriz_do_tema.md). Aviso, para nao travar pecas ja publicadas.
     IF p_tipo = 'protocolo' THEN
       FOREACH perfil IN ARRAY ARRAY['Escopo e população', 'Usuários e cenário', 'Definições', 'Recomendações', 'Fluxograma',
-                                    'Quadro-resumo', 'Adaptação local', 'Indicadores de qualidade', 'Exceções', 'Método e fontes', 'Equipes para validação',
+                                    'Quadro-resumo', 'Fluxo de atendimento e regulação', 'Matriz de responsabilidades',
+                                    'Indicadores de qualidade', 'Monitoramento e melhoria', 'Segurança do paciente',
+                                    'Adaptação local', 'Implantação', 'Exceções', 'Método e fontes', 'Equipes para validação',
                                     'Grupo de elaboração e conflitos de interesse', 'Limitações e lacunas', 'Revisão'] LOOP
         IF position(E'\n## ' || perfil IN E'\n' || c) = 0 THEN
-          gravidade := 'aviso'; mensagem := format('Diretriz: falta a seção "## %s".', perfil); RETURN NEXT;
+          gravidade := 'aviso'; mensagem := format('Guia de atendimento: falta a seção "## %s".', perfil); RETURN NEXT;
         END IF;
       END LOOP;
       n := (SELECT count(*) FROM regexp_matches(c, '\n\*\*Recomendação \d+', 'g'));
@@ -121,6 +123,7 @@ BEGIN
       k := (SELECT count(*) FROM regexp_matches(c, '\nOrigem: ', 'g'));
       IF n > 0 AND k < n THEN gravidade := 'aviso'; mensagem := format('Diretriz: %s recomendações sem a linha "Origem: ..." (diretriz de onde veio).', n - k); RETURN NEXT; END IF;
       IF c !~* '\n>\s*PROPOSTA' THEN gravidade := 'aviso'; mensagem := 'Diretriz: falta a faixa "> PROPOSTA para avaliação da diretoria e validação pelas equipes..." logo abaixo do título (a diretriz é sempre proposta).'; RETURN NEXT; END IF;
+      IF c !~* 'nível 5' OR c !~* 'nível 0' THEN gravidade := 'aviso'; mensagem := 'Guia de atendimento: a seção "Implantação" deve trazer os níveis de maturidade 0 a 5 (docs/maturidade_implantacao.md).'; RETURN NEXT; END IF;
       IF c !~ '```mermaid' THEN gravidade := 'aviso'; mensagem := 'Diretriz: o fluxograma deve vir num bloco ```mermaid (flowchart).'; RETURN NEXT; END IF;
     END IF;
 

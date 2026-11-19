@@ -39,7 +39,7 @@ interface Peca { codigo: string; titulo: string; tipo: string; publicado_em: str
 const NOME: Record<string, string> = {
   objetivos: 'Objetivos', resumo_basico: 'Resumo básico', podcast_roteiro: 'Podcast', caso_base: 'Caso base',
   sintese_evidencia: 'Síntese da evidência', mapa: 'Mapa conceitual', aula: 'Aula', slides: 'Slides', caso: 'Caso da aula',
-  resumo: 'Resumo executivo', protocolo: 'Proposta de diretriz clínica', checklist: 'Checklist', flashcard: 'Flashcards', simulado: 'Simulado',
+  resumo: 'Resumo executivo', protocolo: 'Guia de atendimento (proposta)', checklist: 'Checklist', flashcard: 'Flashcards', simulado: 'Simulado',
 };
 const MOSTRAR = 8;
 

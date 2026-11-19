@@ -1,10 +1,17 @@
-# CUT · Diretriz clínica do tema (a peça "protocolo")
+# CUT · Guia de atendimento do tema (a peça "protocolo")
 
-Versão 1.0 · 19/11/2026 · Decisão da coordenação de 19/11/2026.
+Versão 2.0 · 19/11/2026 · Decisões da coordenação de 19/11/2026.
 
 A peça `pecas/protocolo.md` de cada tema deixa de ser um fluxograma com orientações. Ela passa a ser uma **diretriz
 clínica**: uma proposta de norma de conduta escrita, com recomendações graduadas, justificadas e rastreáveis até a fonte, que um
 serviço pode adotar.
+
+**Versão 2.0 (decisão da coordenação de 19/11/2026): a peça vira um guia de atendimento completo.** Além da diretriz
+clínica, ela serve como guia de **regulação do fluxo de atendimento** e de **gestão da qualidade e da segurança do
+paciente**: diz por onde o paciente entra e sai, quem faz o quê em cada etapa (matriz de responsabilidades), com que
+tempo-alvo, que indicadores medem o cuidado, como são monitorados e quem responde por eles, que riscos ao paciente
+existem e que barreira os previne, e como o serviço implanta o guia. O objetivo é um documento profissional, que a
+diretoria e as equipes possam aplicar de forma prática e estruturada.
 
 **A diretriz do curso é sempre uma proposta** (decisão da coordenação de 19/11/2026). Ela é entregue à diretoria do
 hospital para avaliação e validada com as equipes listadas na seção "Equipes para validação". Não é apresentada como
@@ -17,7 +24,7 @@ dizer que a revisão do conteúdo terminou; a validação e a adoção como norm
 |---|---|
 | Método | **Adaptação de diretrizes existentes.** Cada recomendação parte das diretrizes publicadas (EAST, WSES, AAST, WTA, ACS COT/ATLS, SBAIT, CBC, ERC, NICE e as da especialidade do tema), recebe força e certeza pelo GRADE e diz se foi adotada, adaptada ou se diverge da fonte, e por quê. |
 | Para quem | **Diretriz do curso, adaptável.** Vale para qualquer serviço. A seção "Adaptação local" traz os campos que cada hospital preenche: recursos disponíveis, quem aciona, para onde transferir e contatos. |
-| Partes | Núcleo, bloco de qualidade, bloco de governança e, quando o tema tiver, base legal e ética. |
+| Partes | Cinco blocos: (A) núcleo clínico; (B) fluxo de atendimento e regulação, com a matriz de responsabilidades; (C) qualidade e segurança do paciente, com indicadores, monitoramento e riscos; (D) aplicação no serviço (adaptação local, implantação, exceções, base legal); (E) governança. |
 | Natureza | **Proposta.** Toda diretriz é apresentada como proposta para a diretoria avaliar e as equipes validarem; nunca como norma vigente ou já validada. |
 | Entrega | Peça do tema no aplicativo, no material de depois da aula, e PDF diagramado para imprimir ou levar à comissão do hospital. |
 
@@ -30,24 +37,36 @@ transfusão maciça), marcados como tal.
 
 ## Estrutura obrigatória
 
-O formato é conferido pelo banco (`conteudo.conferir_formato`, SQL 88). São 14 seções obrigatórias. A falta de uma seção gera aviso: não bloqueia a
+O formato é conferido pelo banco (`conteudo.conferir_formato`, SQL 88). São 19 seções obrigatórias e 1 condicional (base legal e ética). A falta de uma seção gera aviso: não bloqueia a
 publicação, mas aparece na tela de revisão e na aba "Conferência dos temas".
 
 ```
-# T00X — Proposta de diretriz clínica: <título do tema>
+# T00X — Proposta de guia de atendimento: <título do tema>
 
 > PROPOSTA para avaliação da diretoria e validação pelas equipes listadas em "Equipes para validação". Não é norma vigente nem diretriz validada.
 
+Diretriz clínica, fluxo de atendimento e regulação, qualidade e segurança do paciente.
+
+                                  (A) Núcleo clínico
 ## Escopo e população
 ## Usuários e cenário
 ## Definições
 ## Recomendações
 ## Fluxograma
 ## Quadro-resumo
-## Adaptação local
+                                  (B) Fluxo de atendimento e regulação
+## Fluxo de atendimento e regulação
+## Matriz de responsabilidades
+                                  (C) Qualidade e segurança do paciente
 ## Indicadores de qualidade
+## Monitoramento e melhoria
+## Segurança do paciente
+                                  (D) Aplicação no serviço
+## Adaptação local
+## Implantação
 ## Exceções
 ## Base legal e ética          (só quando o tema tiver)
+                                  (E) Governança
 ## Método e fontes
 ## Equipes para validação
 ## Grupo de elaboração e conflitos de interesse
@@ -93,7 +112,53 @@ recomendação que a sustenta ("R3").
 
 **Quadro-resumo.** Uma tabela de uma página: recomendação, força, certeza. É o que vai para a parede do serviço.
 
-### Bloco de qualidade
+### Bloco de fluxo de atendimento e regulação
+
+**Fluxo de atendimento e regulação.** A linha de cuidado do tema, da entrada à saída, numa tabela por etapa:
+
+| Etapa | Gatilho de entrada | O que acontece (recomendações) | Responsável | Tempo-alvo | Registro |
+|---|---|---|---|---|---|
+
+- Etapas típicas: aviso e regulação de entrada; chegada e passagem do caso; avaliação e tratamento; decisão de
+  destino; transferência interna (centro cirúrgico, UTI, enfermaria) ou externa; passagem de cuidado; reavaliação e
+  alta. Cada etapa remete às recomendações (R#) e ao fluxograma.
+- Tempo-alvo só com fonte (diretriz, protocolo do serviço, livro). Sem fonte: `[meta a definir pelo serviço]`. Nunca
+  inventar número.
+- **Regulação.** Em subseção própria: como o caso chega (central de regulação de urgência, atendimento
+  pré-hospitalar, demanda espontânea, transferência de outro hospital), quem aceita, critérios de transferência
+  para fora quando falta recurso (contato médico a médico, condições de transporte, documentação), e a regulação
+  interna de leitos (núcleo interno de regulação ou equivalente). Normas de regulação e transporte citadas pela
+  pasta `LegislacaoBR`, sempre com "conferir a versão vigente".
+- **Passagem de cuidado.** Como o caso é passado entre equipes (modelo estruturado do serviço; o curso sugere um,
+  marcado como sugestão).
+
+**Matriz de responsabilidades.** Tabela RACI: as atividades do fluxo nas linhas, os papéis nas colunas (líder do
+atendimento, demais médicos, anestesiologia, enfermagem, técnicos, radiologia, agência transfusional, regulação ou
+núcleo interno de regulação, coordenação do serviço, comissão de qualidade e segurança). R = executa; A = responde
+pelo resultado (um só A por linha); C = consultado; I = informado. É sugestão do curso: o serviço confirma na
+implantação.
+
+### Bloco de qualidade e segurança do paciente
+
+**Indicadores de qualidade.** De 3 a 8 indicadores, cada um com a ficha técnica completa numa tabela: nome, tipo
+(estrutura, processo ou resultado), numerador, denominador, meta (com fonte, ou `[meta a definir pelo serviço]`),
+fonte do dado, periodicidade, responsável pela coleta e responsável pela análise. Ao menos um indicador de processo
+ligado a cada recomendação forte que se possa medir e ao menos um de resultado. Sempre agregados: nenhum dado
+identificável de paciente. Eles alimentam o painel de desempenho (`docs/painel_desempenho_esqueleto.md`).
+
+**Monitoramento e melhoria.** Como o serviço acompanha: quem coleta e quando; onde os totais são guardados; quem
+analisa e em que reunião (comissão de qualidade, reunião de morbimortalidade); como é mostrado (gráfico mês a mês,
+gráfico de controle com 12 meses ou mais); gatilhos de ação (ex.: abaixo da meta por 3 meses seguidos → análise de
+causa e ciclo de melhoria PDSA); casos que vão sempre para revisão (óbito, evento adverso grave, lesão não
+identificada, atraso além do tempo-alvo); auditoria por amostragem; relatório periódico à diretoria.
+
+**Segurança do paciente.** Tabela de riscos do tema: risco, como acontece, barreira prevista no guia (R# ou etapa do
+fluxo), protocolo básico de segurança relacionado (identificação do paciente, comunicação efetiva, segurança na
+prescrição e administração de medicamentos e hemocomponentes, cirurgia segura, prevenção de quedas, prevenção de
+lesão por pressão, higiene das mãos e prevenção de infecção) e o que notificar ao núcleo de segurança do paciente.
+Evento grave: notificação e análise conforme a norma vigente (pasta `LegislacaoBR`).
+
+### Bloco de aplicação no serviço
 
 **Adaptação local.** Lista de campos para o serviço preencher, sem valores inventados:
 `[ ] Hemocomponentes disponíveis e tempo até a sala:`, `[ ] Quem aciona o protocolo e por qual telefone:`,
@@ -103,6 +168,13 @@ diretriz diz a alternativa (ex.: sem ROTEM, conduta guiada por fibrinogênio e p
 **Indicadores de qualidade.** De 2 a 5 indicadores para auditar a adesão, cada um com numerador, denominador, meta e
 fonte do dado (ex.: "TXA em até 3 h: pacientes com TXA ≤ 3 h / pacientes com indicação; meta ≥ 90%; prontuário").
 Sempre agregados: nenhum dado identificável de paciente.
+
+**Implantação.** Pelo modelo de maturidade do curso (`docs/maturidade_implantacao.md`): níveis 0 (sem protocolo) a 5
+(excelência, com processo e resultado ajustado no P90 da referência internacional). A seção traz: (1) a tabela do tema,
+uma linha por nível, com objetivo, marcadores e indicadores do tema e o critério para passar ao nível seguinte;
+(2) a execução passo a passo do nível 0 ao 2 (o que entregar, quem responde, prazo sugerido, nível ao terminar);
+(3) a referência externa do P90 de cada indicador, com fonte e ano, ou a marca de que não há referência publicada
+carregada (nunca um número inventado); (4) materiais de apoio e barreiras previsíveis.
 
 **Exceções.** Situações em que a recomendação não se aplica ou precisa de outra conduta (gestação, anticoagulado,
 criança, recusa de hemocomponente, idoso frágil), com o tema do curso que trata cada uma.
@@ -156,12 +228,12 @@ sociedades da origem) e o histórico das versões.
 - Números absolutos quando a fonte der (redução de risco, NNT), com a ressalva do desenho do estudo.
 - Linguagem de norma: frases curtas, verbo no início ("Administrar...", "Não realizar..."), sem marcas de texto de
   IA e sem emojis.
-- Tamanho: de 1.500 a 4.000 palavras. Conta como peça de aprofundamento no tempo de estudo; o quadro-resumo e o
+- Tamanho: de 3.000 a 7.000 palavras. Conta como peça de aprofundamento no tempo de estudo; o quadro-resumo e o
   fluxograma são o essencial para o plantão.
 
 ## PDF
 
-Depois de publicada, a diretriz sai também em PDF com a identidade do CUT (capa com tema, versão e data; quadro-resumo
+Depois de publicado, o guia sai também em PDF com a identidade do CUT (capa com tema, versão e data; quadro-resumo
 na primeira página; fluxograma em página própria; recomendações; anexos). O PDF é gerado a partir da peça publicada,
 sem texto novo.
 
