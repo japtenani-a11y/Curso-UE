@@ -159,7 +159,7 @@ S=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/revisao/temas/T
 echo "      sem login a mesma pagina responde $S (esperado 403)"
 if [ -f 34_leitura_aluno_v1.0.sh ]; then
   NP=$(curl -s -b "$CK" "http://localhost:3000/leitura/temas/T001?previa=1" | grep -o '"artefato_id"' | wc -l)
-  echo "      previa de leitura para o revisor: $NP artefatos (esperado 13)"
+  echo "      previa de leitura para o revisor: $NP pecas de material em rascunho (muda conforme as pecas sao aprovadas; 0 so se o T001 nao tiver rascunho)"
   CA="$RAIZ/logs/cookie_aluno.txt"
   curl -s -o /dev/null -c "$CA" -H "Content-Type: application/json" -d '{"email":"r1.teste@setup.local"}' http://localhost:3000/auth/login
   SA=$(curl -s -o /dev/null -w "%{http_code}" -b "$CA" "http://localhost:3000/leitura/temas/T001?previa=1")
