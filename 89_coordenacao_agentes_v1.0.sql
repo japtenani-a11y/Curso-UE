@@ -170,7 +170,7 @@ BEGIN
   ELSIF p_agente = 'pecas' THEN
     SELECT jsonb_build_object('pecas', coalesce(jsonb_agg(jsonb_build_object(
              'artefato_id', a.artefato_id, 'tema', tm.codigo, 'titulo_tema', tm.titulo, 'tipo', a.tipo, 'versao', a.versao, 'titulo', a.titulo,
-             'nome_material', app.nome_material(a.tipo::text), 'corpo', left(a.corpo, 40000),
+             'nome_material', app.nome_material(a.tipo::text), 'corpo', left(a.corpo, 150000),
              'aula_em', (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = a.tema_id AND o.teste_num = 3 AND o.pessoa_id IS NULL),
              'objetivos_do_tema', (SELECT left(x.corpo, 12000) FROM conteudo.artefato x WHERE x.tema_id = a.tema_id AND x.tipo::text = 'objetivos'
                                     AND x.status::text IN ('publicado', 'rascunho') ORDER BY x.versao DESC LIMIT 1),
@@ -184,7 +184,7 @@ BEGIN
                   FROM (SELECT DISTINCT ON (y.tipo) y.tipo::text AS tipo, y.corpo FROM conteudo.artefato y
                          WHERE y.tema_id = a.tema_id AND y.status::text IN ('publicado', 'rascunho') AND app.etapa_do_material(y.tipo::text) = 2
                          ORDER BY y.tipo, y.versao DESC) u) END,
-             'publicada_anterior', (SELECT left(p.corpo, 40000) FROM conteudo.artefato p WHERE p.tema_id = a.tema_id AND p.tipo = a.tipo
+             'publicada_anterior', (SELECT left(p.corpo, 150000) FROM conteudo.artefato p WHERE p.tema_id = a.tema_id AND p.tipo = a.tipo
                                      AND p.status::text = 'publicado' ORDER BY p.versao DESC LIMIT 1))
              ORDER BY (SELECT min(o.data_abertura) FROM app.onda_instancia o WHERE o.tema_id = a.tema_id AND o.teste_num = 3 AND o.pessoa_id IS NULL) NULLS LAST,
                       tm.codigo, a.tipo), '[]'))
