@@ -13,7 +13,7 @@ Versão em texto dos 14 slides da aula, com as notas do apresentador e a fala de
 
 *T002 · Abertura*
 
-> **Nota do apresentador:** Aula de 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15). Não reexplicar LEMON, doses nem o algoritmo: perguntar a quem leu. Ter um modelo de pescoço ou um voluntário para a palpação.
+> **Nota do apresentador:** Aula de 20 minutos, dentro do encontro de 60 (aula do residente 20, caso 15, votação 10, síntese do R+ 5, fechamento do preceptor 5; formato decidido pela coordenação em 24/11/2026). Não reexplicar LEMON, doses nem o algoritmo: perguntar a quem leu. Ter um modelo de pescoço ou um voluntário para a palpação.
 
 > **Fala:** Esta aula parte do que você já estudou no resumo básico e na síntese de evidência. Não vamos repetir como decidir a intubação nem as doses. Vamos começar pelo caso base, no ponto em que ele terminou: duas laringoscopias perdidas, um dispositivo sem curva de capnografia e a saturação caindo. A partir daí, a aula é sobre uma decisão e um procedimento: declarar a falha e abrir o pescoço.
 

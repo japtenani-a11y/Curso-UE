@@ -1,6 +1,6 @@
 # T001 — Aula: da teoria à mesa. Caso, técnica e anatomia da avaliação inicial
 
-Duração: 30 minutos de exposição com os slides, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15); a leitura do texto leva menos. Este texto acompanha os slides. Ele não repete o resumo básico nem a síntese de evidência: parte deles. Quem não leu o material de antes da aula deve lê-lo primeiro.
+Duração: 20 minutos de exposição com os slides, dentro do encontro de 60 (aula do residente 20, caso 15, votação 10, síntese do R+ 5, fechamento do preceptor 5; formato decidido pela coordenação em 24/11/2026); a leitura do texto leva menos. Este texto acompanha os slides. Ele não repete o resumo básico nem a síntese de evidência: parte deles. Quem não leu o material de antes da aula deve lê-lo primeiro.
 
 ## 1. O minuto em que se decide a ordem
 

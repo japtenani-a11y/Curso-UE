@@ -11,7 +11,7 @@ Versão em texto dos 15 slides da aula, com as notas do apresentador e a fala de
 
 *T001 · Abertura*
 
-> **Nota do apresentador:** Aula de 30 minutos, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15). Não explicar de novo a sequência nem os números da síntese: perguntar a quem leu. Se a turma não leu, remeter ao resumo básico e seguir.
+> **Nota do apresentador:** Aula de 20 minutos, dentro do encontro de 60 (aula do residente 20, caso 15, votação 10, síntese do R+ 5, fechamento do preceptor 5; formato decidido pela coordenação em 24/11/2026). Não explicar de novo a sequência nem os números da síntese: perguntar a quem leu. Se a turma não leu, remeter ao resumo básico e seguir.
 
 > **Fala:** Esta aula parte do que você já estudou no resumo básico e na síntese de evidência. Não vamos repetir a sequência da avaliação inicial. Vamos usá-la em um caso e descer ao detalhe das técnicas: o controle do sangramento externo, a cinta pélvica, o acesso quando não há veia, o exame do tórax e a via aérea cirúrgica. Em cada uma, a pergunta é a mesma: onde ponho a mão, e por quê.
 

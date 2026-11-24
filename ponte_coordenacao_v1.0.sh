@@ -23,7 +23,7 @@ fi
 mkdir -p "$COORD_DIR"/{entrada,propostas,processadas,com_erro,indicadores,relatorios,referencia,fontes_novas,fontes_recebidas,fontes_recusadas,producao}
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 # regras que os agentes consultam (copiadas a cada ligacao da ponte, para ficarem sempre na versao instalada)
-for d in formato_das_pecas.md coordenacao_agentes.md producao_de_tema.md agente_produtor.md BUSCAS_PUBMED_150_temas.txt fila_producao_150.md temas_fusao_2026-11-18.md diretriz_do_tema.md maturidade_implantacao.md painel_desempenho_esqueleto.md banco_projetos_pesquisa.md renumeracao_temas_2026-11-19.csv; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
+for d in formato_das_pecas.md coordenacao_agentes.md producao_de_tema.md agente_produtor.md BUSCAS_PUBMED_150_temas.txt fila_producao_150.md temas_fusao_2026-11-18.md diretriz_do_tema.md maturidade_implantacao.md painel_desempenho_esqueleto.md banco_projetos_pesquisa.md renumeracao_temas_2026-11-19.csv decisoes_vigentes.md; do [ -f "$AQUI/docs/$d" ] && cp -f "$AQUI/docs/$d" "$COORD_DIR/referencia/"; done
 # o produtor confere a propria pasta com o mesmo importador (sem banco) antes de pedir a importacao
 [ -f "$AQUI/ferramentas/importar_tema.py" ] && cp -f "$AQUI/ferramentas/importar_tema.py" "$COORD_DIR/referencia/"
 # modelo da planilha de indicadores: so totais do mes

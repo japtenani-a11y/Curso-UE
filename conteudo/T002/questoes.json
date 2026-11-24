@@ -5,10 +5,10 @@
   "grau": 3,
   "enunciado": "Na via aérea do traumatizado, quando a intubação e a ventilação por máscara e por dispositivo de resgate falham, qual é a conduta?",
   "alternativas": [
-   "Traqueostomia aberta na sala de trauma",
-   "Cricotireoidostomia cirúrgica com bisturi, bougie e tubo",
+   "Traqueostomia aberta na sala de trauma, por cirurgião",
+   "Cricotireoidostomia com bisturi, bougie e tubo",
    "Ventilação com máscara por mais 5 minutos antes de decidir",
-   "Nova tentativa de intubação com outra lâmina",
+   "Nova tentativa de intubação com outra lâmina e outro operador",
    "Aguardar o anestesista para intubação com endoscópio"
   ],
   "correta": "B",
@@ -112,10 +112,10 @@
   "taxa_esperada": "acima de 90%",
   "enunciado": "No caso 1, qual achado indica ameaça à via aérea?",
   "alternativas": [
-   "FC de 104",
-   "PA de 136/82",
-   "Colar cervical colocado",
-   "Glasgow 14",
+   "Frequência cardíaca de 104",
+   "Pressão arterial de 136/82",
+   "Colar cervical já colocado",
+   "Glasgow de 14 na chegada",
    "Voz abafada e sangue na boca"
   ],
   "correta": "E",
@@ -184,11 +184,11 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 1, testar o reflexo de vômito ajuda a decidir a intubação?",
   "alternativas": [
-   "Só se o Glasgow for menor que 8",
-   "Sim, a ausência dele indica intubar",
-   "Só depois de tirar o colar",
-   "Não: não tem valor e pode provocar aspiração",
-   "Sim, se presente dispensa o tubo"
+   "Sim, se o Glasgow for menor que 8 pontos",
+   "Sim, a ausência do reflexo indica intubar",
+   "Sim, mas depois de abrir o colar cervical",
+   "Não: não tem valor e pode causar aspiração",
+   "Sim, o reflexo presente dispensa o tubo"
   ],
   "correta": "D",
   "justificativas": [
@@ -257,9 +257,9 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 1, a cânula orofaríngea é indicada neste paciente acordado?",
   "alternativas": [
-   "Só depois de retirar o colar",
-   "Sim, sempre no trauma de face",
-   "Não: contraindicada com reflexo presente",
+   "Sim, depois de retirar o colar",
+   "Sim, no trauma de face",
+   "Não: contraindicada com reflexo",
    "Sim, por ser via aérea definitiva",
    "Sim, para proteger contra aspiração"
   ],
@@ -292,11 +292,11 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 1, por que a intubação deve ser tratada como potencialmente difícil?",
   "alternativas": [
-   "Porque a PA está normal",
-   "Porque o Glasgow é 14",
-   "Porque toda via aérea do trauma é presumida difícil",
-   "Porque o paciente é jovem",
-   "Porque a saturação está abaixo de 95%"
+   "Porque a pressão arterial está normal",
+   "Porque o Glasgow de chegada é 14 e pode cair",
+   "Porque a via aérea no trauma é presumida difícil",
+   "Porque o paciente é jovem e musculoso",
+   "Porque a saturação está abaixo de 95% com máscara"
   ],
   "correta": "C",
   "justificativas": [
@@ -328,7 +328,7 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 1, o edema da face aumenta. Qual o princípio para a via aérea lesada?",
   "alternativas": [
-   "Intubar só se a saturação cair abaixo de 85%",
+   "Intubar quando a saturação cair abaixo de 85%",
    "Manter a máscara e reavaliar em 6 horas",
    "Esperar o edema ceder com corticoide",
    "Fazer traqueostomia eletiva no dia seguinte",
@@ -365,9 +365,9 @@
   "alternativas": [
    "Retirar o colar e liberar o pescoço",
    "Abrir a frente e manter a estabilização manual",
-   "Manter o colar fechado",
-   "Trocar por colar de outro tamanho",
-   "Intubar sem nenhuma restrição"
+   "Manter o colar fechado durante a laringoscopia",
+   "Trocar por um colar de outro tamanho",
+   "Intubar sem restrição do movimento cervical"
   ],
   "correta": "B",
   "justificativas": [
@@ -399,11 +399,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 1, se houver tempo e o campo não estiver tomado por sangue, qual abordagem costuma ser a melhor?",
   "alternativas": [
-   "Máscara laríngea e transporte",
+   "Máscara laríngea e transporte ao centro",
    "Intubação acordada com endoscópio flexível",
    "Sequência rápida com laringoscopia direta",
-   "Cricotireoidostomia imediata",
-   "Intubação nasotraqueal às cegas"
+   "Cricotireoidostomia imediata com bisturi",
+   "Intubação nasotraqueal às cegas, acordado"
   ],
   "correta": "B",
   "justificativas": [
@@ -435,11 +435,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 1, ele fala com voz abafada. O que isso significa?",
   "alternativas": [
-   "Sinal de pneumotórax",
+   "Sinal de pneumotórax hipertensivo",
    "Sinal de traumatismo craniano",
-   "Voz normal para o trauma",
+   "Voz normal para o trauma de face",
    "Sinal cardinal de obstrução alta",
-   "Sinal apenas de ansiedade"
+   "Sinal de ansiedade, sem gravidade"
   ],
   "correta": "D",
   "justificativas": [
@@ -507,10 +507,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 1, a saturação é 92% com máscara. Como pré-oxigenar antes da indução?",
   "alternativas": [
-   "Oxigênio só depois da indução",
-   "Cateter nasal a 2 L/min",
+   "Oxigênio a partir da indução, não antes",
+   "Cateter nasal a 2 L/min por 3 minutos",
    "Pressão positiva, porque não passa de 93%",
-   "Basta a máscara por 1 minuto",
+   "Máscara não reinalante por 1 minuto",
    "Ventilação manual vigorosa sem vedação"
   ],
   "correta": "C",
@@ -544,11 +544,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 1, o R2 escolhe o laringoscópio. O que sustenta o videolaringoscópio no trauma?",
   "alternativas": [
-   "Ensaio grande em traumatizados com redução de mortalidade",
-   "Revisão sistemática no trauma com sucesso não inferior ou maior",
-   "Diretriz EAST de 2012",
-   "Só a experiência do operador",
-   "Nenhuma evidência; é preferência"
+   "Ensaio grande em traumatizados, com menor mortalidade",
+   "Revisão no trauma: sucesso não inferior ou maior",
+   "Diretriz EAST de 2012 sobre via aérea no trauma",
+   "A experiência do operador, sem estudos no trauma",
+   "Consenso de especialistas sem estudos comparativos"
   ],
   "correta": "B",
   "justificativas": [
@@ -582,8 +582,8 @@
   "alternativas": [
    "Posição de Trendelenburg",
    "Laringoscopia mais rápida",
-   "Fio-guia rígido",
-   "Lâmina maior",
+   "Fio-guia rígido dentro do tubo",
+   "Lâmina de tamanho maior",
    "Aspiração potente e proativa"
   ],
   "correta": "E",
@@ -618,7 +618,7 @@
    "Não",
    "Sim, se satura acima de 90%",
    "Sim, se o Glasgow é 14",
-   "Só se não houver sangue",
+   "Sim, se não houver sangue",
    "Sim"
   ],
   "correta": "A",
@@ -650,10 +650,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 1, você lidera. O que precisa estar pronto antes da primeira dose?",
   "alternativas": [
-   "A tomografia de face",
-   "Só o laringoscópio e o tubo",
-   "A traqueostomia agendada",
-   "O consentimento da família",
+   "A tomografia de face já solicitada",
+   "O laringoscópio e o tubo, sem mais nada",
+   "A traqueostomia já agendada no centro",
+   "O consentimento da família por escrito",
    "O material da via aérea cirúrgica aberto"
   ],
   "correta": "E",
@@ -689,7 +689,7 @@
   "alternativas": [
    "O anestesista, por telefone, de outro setor",
    "Ninguém; basta deixar o alarme do monitor",
-   "Alguém fora da laringoscopia, que pode encerrá-la",
+   "Alguém fora da laringoscopia, que a encerra",
    "Quem está laringoscopando, de olho na glote",
    "O técnico de enfermagem, sem avisar ninguém"
   ],
@@ -725,9 +725,9 @@
   "alternativas": [
    "Voltar às manobras básicas e reoxigenar",
    "Segunda tentativa imediata, mesmo operador",
-   "Sedação adicional",
-   "Intubação nasal às cegas",
-   "Cricotireoidostomia imediata"
+   "Sedação adicional antes da nova tentativa",
+   "Intubação nasal às cegas com o paciente",
+   "Cricotireoidostomia imediata com bisturi"
   ],
   "correta": "A",
   "justificativas": [
@@ -761,11 +761,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 1, para a próxima tentativa, o que precisa mudar?",
   "alternativas": [
-   "Só a dose do sedativo, para relaxar mais",
+   "A dose do sedativo, para relaxar mais",
    "Nada; repetir igual já dá mais experiência",
-   "Só a posição do monitor na sala de trauma",
-   "Só o tamanho do colar cervical do paciente",
-   "Algo concreto: operador, lâmina, posição ou dispositivo"
+   "A posição do monitor na sala de trauma",
+   "O tamanho do colar cervical do paciente",
+   "Algo concreto: operador, lâmina ou posição"
   ],
   "correta": "E",
   "justificativas": [
@@ -797,11 +797,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 1, o edema e o sangue aumentam. Quando a via aérea cirúrgica pode vir já após a primeira falha?",
   "alternativas": [
-   "Só depois de 5 tentativas",
-   "Só quando for criança",
-   "Nunca, só após três tentativas",
+   "Depois de 5 tentativas sem sucesso",
+   "Quando o paciente for criança pequena",
+   "Depois de três tentativas sem sucesso na sala",
    "Com via aérea edemaciada ou distorcida",
-   "Só se o anestesista autorizar"
+   "Se o anestesista autorizar por telefone"
   ],
   "correta": "D",
   "justificativas": [
@@ -834,10 +834,10 @@
   "enunciado": "Sobre o caso 1: no registro NEAR, com que frequência a via aérea cirúrgica de resgate foi necessária?",
   "alternativas": [
    "0,28 por 1.000",
-   "25%",
+   "25 por 1.000",
    "28 por 1.000",
    "2,8 por 1.000",
-   "10%"
+   "10 por 1.000"
   ],
   "correta": "D",
   "justificativas": [
@@ -868,10 +868,10 @@
   "enunciado": "Sobre o caso 1: na coorte canadense de intubação no trauma, o que se associou a menor sucesso na primeira tentativa?",
   "alternativas": [
    "Idade abaixo de 30 anos",
-   "Pressão normal",
-   "Sexo feminino",
+   "Pressão arterial normal na chegada",
+   "Sexo feminino e baixa estatura",
    "Lesão de cabeça, face ou pescoço",
-   "Colar retirado"
+   "Colar cervical retirado antes"
   ],
   "correta": "D",
   "justificativas": [
@@ -902,7 +902,7 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 1: como avaliar o desempenho da intubação no serviço?",
   "alternativas": [
-   "Pelo sucesso na primeira tentativa e pelos eventos",
+   "Pelo sucesso na primeira tentativa e eventos",
    "Pelo tempo de internação dos intubados",
    "Pelo número total de intubações no mês",
    "Pelo custo de cada videolaringoscópio usado",
@@ -937,9 +937,9 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 1: o que dizer da evidência dos ensaios de intubação para o trauma?",
   "alternativas": [
-   "São em geral de adultos críticos: evidência indireta",
-   "São todos feitos em pacientes de trauma",
-   "São todos feitos em pacientes pediátricos",
+   "São em geral de críticos: evidência indireta",
+   "São feitos em pacientes de trauma, na maioria",
+   "São feitos em pacientes pediátricos, na maioria",
    "Não existem ensaios sobre intubação",
    "Provam benefício de mortalidade no trauma"
   ],
@@ -974,11 +974,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 1: quantas recomendações a diretriz multissociedade de 2024 sobre coluna cervical reúne, e com que evidência?",
   "alternativas": [
-   "100, quase todas com ensaios",
+   "100, a maioria apoiada em ensaios",
    "23, com evidência em geral modesta",
-   "Nenhuma recomendação formal",
-   "5, todas com evidência forte",
-   "23, todas com evidência forte"
+   "Não há recomendação formal no texto",
+   "5, com evidência forte em cada uma",
+   "23, com evidência forte na maioria"
   ],
   "correta": "B",
   "justificativas": [
@@ -1008,11 +1008,11 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 2, qual a primeira medida para a via aérea?",
   "alternativas": [
-   "Medir a glicemia",
-   "Retirar o colar",
+   "Medir a glicemia capilar",
+   "Retirar o colar cervical",
    "Aspirar o vômito da boca",
    "Pedir tomografia de crânio",
-   "Dar sedativo"
+   "Dar sedativo para acalmar"
   ],
   "correta": "C",
   "justificativas": [
@@ -1045,10 +1045,10 @@
   "enunciado": "No caso 2, por que a saturação de 86% preocupa no traumatismo craniano?",
   "alternativas": [
    "Porque a hipóxia piora a lesão cerebral",
-   "Porque indica pneumotórax",
-   "Porque obriga a hiperventilar",
-   "Porque indica choque",
-   "Porque contraindica a intubação"
+   "Porque indica pneumotórax à direita",
+   "Porque obriga a hiperventilar depois",
+   "Porque indica choque hemorrágico oculto",
+   "Porque contraindica a intubação agora"
   ],
   "correta": "A",
   "justificativas": [
@@ -1081,10 +1081,10 @@
   "enunciado": "No caso 2, o Glasgow 7 justifica considerar via aérea definitiva?",
   "alternativas": [
    "Sim, junto com vômito e hipoxemia",
-   "Não, só abaixo de 5",
+   "Não, a indicação é abaixo de 5",
    "Não, idosos não são intubados",
-   "Só se a PA cair",
-   "Só depois da tomografia"
+   "Não, a menos que a pressão caia",
+   "Não antes da tomografia de crânio"
   ],
   "correta": "A",
   "justificativas": [
@@ -1115,10 +1115,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, depois do tubo, como ventilar?",
   "alternativas": [
-   "Manter saturação de 88%",
-   "Usar volume corrente máximo",
+   "Manter a saturação em torno de 88%",
+   "Usar o volume corrente máximo",
    "Hiperventilar para baixar a pressão intracraniana",
-   "Ventilar só quando a saturação cair",
+   "Ventilar quando a saturação cair",
    "Buscar eucapnia e normoxia"
   ],
   "correta": "E",
@@ -1151,11 +1151,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, o que é a intubação neuroprotetora?",
   "alternativas": [
-   "Intubar só depois da tomografia de crânio sem contraste",
+   "Intubar depois da tomografia de crânio sem contraste, na sala",
    "Evitar hipotensão, hipóxia, hipercapnia e descarga simpática",
-   "Intubar só com cetamina, em qualquer dose, sem bloqueador",
+   "Intubar com cetamina em dose alta, sem usar bloqueador algum",
    "Intubar sem sedação, para não baixar a pressão arterial",
-   "Intubar pela via nasal, às cegas, sem nenhum bloqueio"
+   "Intubar pela via nasal, às cegas, sem bloqueio neuromuscular"
   ],
   "correta": "B",
   "justificativas": [
@@ -1185,10 +1185,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, com sinais de hipertensão intracraniana, quando dar a terapia hiperosmolar?",
   "alternativas": [
-   "Na UTI",
-   "Só se a pupila não reagir",
+   "Na chegada à UTI",
+   "Se a pupila não reagir",
    "Antes da intubação",
-   "Nunca no trauma",
+   "Não se dá no trauma",
    "Depois da tomografia"
   ],
   "correta": "C",
@@ -1219,11 +1219,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 2, a filha relata marca-passo. O que isso muda na avaliação do choque?",
   "alternativas": [
-   "Obriga a usar succinilcolina",
-   "Contraindica a intubação",
+   "Obriga a usar succinilcolina na indução",
+   "Contraindica a intubação na sala de trauma",
    "A FC pode ficar fixa e esconder o choque",
-   "Nada",
-   "Indica cetamina"
+   "Nada muda na avaliação do choque",
+   "Indica cetamina como indutor de escolha"
   ],
   "correta": "C",
   "justificativas": [
@@ -1255,10 +1255,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, qual bloqueador é a primeira escolha do curso, e em que dose?",
   "alternativas": [
-   "Rocurônio 0,3 mg/kg",
+   "Rocurônio 0,3 mg/kg em bolus",
    "Rocurônio 1,2 mg/kg ou mais",
-   "Nenhum; intubar sem bloqueador",
-   "Atracúrio 0,5 mg/kg",
+   "Intubar sem bloqueador algum",
+   "Atracúrio 0,5 mg/kg em bolus",
    "Succinilcolina 0,5 mg/kg"
   ],
   "correta": "B",
@@ -1293,9 +1293,9 @@
   "enunciado": "No caso 2, como confirmar o tubo?",
   "alternativas": [
    "Pela curva de capnografia",
-   "Pela radiografia",
-   "Pela ausculta",
-   "Pelo embaçamento",
+   "Pela radiografia de tórax",
+   "Pela ausculta dos pulmões",
+   "Pelo embaçamento do tubo",
    "Pela saturação que sobe"
   ],
   "correta": "A",
@@ -1362,11 +1362,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, a PA é 168/94 com FC 58. Que leitura fazer?",
   "alternativas": [
-   "Choque compensado, com pressão ainda mantida",
-   "Efeito da dor apenas, sem outro significado",
-   "Pneumotórax hipertensivo à direita",
+   "Choque compensado, com a pressão ainda mantida",
+   "Efeito da dor e do estresse, sem significado",
+   "Pneumotórax hipertensivo à direita, a drenar",
    "Possível reflexo de hipertensão intracraniana",
-   "Tamponamento cardíaco pela queda"
+   "Tamponamento cardíaco em fase inicial"
   ],
   "correta": "D",
   "justificativas": [
@@ -1398,10 +1398,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, qual cuidado com a dose do indutor numa idosa com PA alta e marca-passo?",
   "alternativas": [
-   "Dose cheia sempre, para garantir a sedação",
+   "Dose cheia, para garantir a sedação",
    "Dose dobrada, pela PA alta de entrada",
-   "Só opioide em dose alta, sem indutor",
-   "Nenhum indutor, só o bloqueador",
+   "Opioide em dose alta, sem indutor",
+   "Sem indutor, usando o bloqueador",
    "Dose ajustada, evitando a hipotensão"
   ],
   "correta": "E",
@@ -1435,10 +1435,10 @@
   "enunciado": "No caso 2, a evidência sobre intubação pré-hospitalar no TCE grave diz o quê?",
   "alternativas": [
    "Reduz a mortalidade de forma clara",
-   "Só beneficia idosos",
-   "Não há estudo",
-   "Aumenta a mortalidade sempre",
-   "Não houve diferença de mortalidade em metanálise"
+   "Beneficia os idosos, não os jovens",
+   "Não há estudo comparativo publicado",
+   "Aumenta a mortalidade em metanálise",
+   "Não mudou a mortalidade em metanálise"
   ],
   "correta": "E",
   "justificativas": [
@@ -1469,11 +1469,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, o registro japonês com mais intubação na sala de emergência no Glasgow abaixo de 8 mostrou o quê?",
   "alternativas": [
-   "Maior sobrevida global nesses hospitais",
+   "Maior sobrevida global nesses hospitais intubadores",
    "Melhor desfecho neurológico, sem efeito na sobrevida",
-   "Pior desfecho neurológico nesses hospitais",
-   "Mais pneumonia, sem outro efeito medido",
-   "Nenhuma diferença em nenhum desfecho"
+   "Pior desfecho neurológico nos hospitais que intubaram",
+   "Mais pneumonia associada, sem outro efeito medido",
+   "Diferença ausente nos desfechos neurológicos medidos"
   ],
   "correta": "B",
   "justificativas": [
@@ -1503,11 +1503,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, por que a hiperventilação de rotina é evitada?",
   "alternativas": [
-   "Porque aumenta muito a frequência cardíaca",
-   "Porque exige o uso de succinilcolina",
-   "Porque aumenta a pressão intracraniana",
-   "Porque causa pneumotórax com frequência",
-   "Porque reduz a pressão só por pouco tempo e piora o desfecho"
+   "Porque aumenta muito a frequência cardíaca e a pressão",
+   "Porque exige o uso de succinilcolina para ventilar bem",
+   "Porque aumenta a pressão intracraniana em minutos",
+   "Porque causa pneumotórax com frequência no idoso",
+   "Porque reduz a pressão por pouco tempo e piora o desfecho"
   ],
   "correta": "E",
   "justificativas": [
@@ -1538,11 +1538,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, você lidera. Qual a sequência da preparação?",
   "alternativas": [
-   "Indução, depois aspiração, depois pré-oxigenação",
-   "Tomografia de crânio primeiro, depois a intubação",
-   "Hiperventilar com máscara antes, depois induzir",
-   "Aspirar, oxigenar, hiperosmolar, induzir com dose ajustada, capnografia",
-   "Intubação acordada com endoscópio, sem preparo"
+   "Indução, depois aspiração, depois pré-oxigenação e o tubo",
+   "Tomografia de crânio primeiro, depois a intubação na sala",
+   "Hiperventilar com máscara antes, depois induzir e intubar",
+   "Aspirar, oxigenar, hiperosmolar, indução ajustada, capnografia",
+   "Intubação acordada com endoscópio, sem preparo prévio"
   ],
   "correta": "D",
   "justificativas": [
@@ -1577,11 +1577,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, o rocurônio foi usado. O que garantir depois do tubo?",
   "alternativas": [
-   "Reversão com sugamadex",
-   "Extubação em 10 minutos",
-   "Nova dose de succinilcolina",
+   "Reversão com sugamadex logo após o tubo",
+   "Extubação em 10 minutos, ainda na sala",
+   "Nova dose de succinilcolina em seguida",
    "Sedação adequada, porque o bloqueio dura",
-   "Nada; o bloqueio é curto"
+   "Nada; o bloqueio do rocurônio é curto"
   ],
   "correta": "D",
   "justificativas": [
@@ -1613,11 +1613,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 2, quem deve intubar?",
   "alternativas": [
-   "O técnico de enfermagem",
-   "Quem chegar primeiro",
+   "O técnico de enfermagem que preparou o material",
+   "Quem chegar primeiro à cabeceira da paciente",
    "O profissional mais experiente disponível",
-   "O residente mais novo, para aprender",
-   "O neurocirurgião obrigatoriamente"
+   "O residente mais novo da sala, para aprender",
+   "O neurocirurgião de plantão, por ser TCE"
   ],
   "correta": "C",
   "justificativas": [
@@ -1647,11 +1647,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 2, o que registrar da intubação para o indicador do serviço?",
   "alternativas": [
-   "Só o horário de início e de fim da intubação",
+   "O horário de início e de fim da intubação na sala",
    "Tentativas, dispositivo, operador, saturação mínima",
-   "Só o tamanho e a profundidade do tubo na comissura",
+   "O tamanho e a profundidade do tubo na comissura",
    "Nada; isso já fica registrado no prontuário da UTI",
-   "Só o fármaco e a dose usados na indução"
+   "O fármaco e a dose usados na indução e no bloqueio"
   ],
   "correta": "B",
   "justificativas": [
@@ -1716,11 +1716,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 2: a hipotensão pós-intubação no TCE grave com politrauma associou-se a quê?",
   "alternativas": [
-   "Nenhuma associação",
-   "Menor mortalidade",
-   "Mais tempo de ventilação apenas",
+   "Mortalidade igual em 30 dias",
+   "Menor mortalidade em 30 dias",
+   "Mais tempo de ventilação, sem efeito na morte",
    "Maior mortalidade em 30 dias",
-   "Menos pneumonia"
+   "Menos pneumonia associada à ventilação"
   ],
   "correta": "D",
   "justificativas": [
@@ -1753,8 +1753,8 @@
    "O Glasgow não serve como indicador único",
    "Glasgow abaixo de 8 basta para intubar",
    "O Glasgow deve ser substituído pelo FOUR",
-   "O Glasgow prevê aspiração",
-   "O Glasgow é inútil no trauma"
+   "O Glasgow prevê bem a aspiração",
+   "O Glasgow não tem valor no trauma"
   ],
   "correta": "A",
   "justificativas": [
@@ -1788,8 +1788,8 @@
    "Direta e forte, por ser ensaio grande",
    "Indireta: feito em adultos críticos",
    "Inexistente para esse tipo de paciente",
-   "Só pediátrica, sem dados em adultos",
-   "Só pré-hospitalar, sem dados na sala"
+   "Pediátrica, sem dados em adultos",
+   "Pré-hospitalar, sem dados na sala"
   ],
   "correta": "B",
   "justificativas": [
@@ -1820,10 +1820,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 2: no ensaio RSI, o que diferiu entre cetamina e etomidato?",
   "alternativas": [
-   "A pneumonia",
-   "O sucesso na primeira tentativa",
-   "A mortalidade",
-   "A duração da internação",
+   "A incidência de pneumonia associada à ventilação",
+   "O sucesso na primeira tentativa de intubação",
+   "A mortalidade até o dia 28 após a intubação",
+   "A duração da internação hospitalar e na UTI",
    "O colapso cardiovascular, maior com cetamina"
   ],
   "correta": "E",
@@ -1855,11 +1855,11 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 2: o que a revisão de Vieux (2026) diz do Glasgow abaixo de 8 isolado?",
   "alternativas": [
-   "Discrimina bem o risco de aspiração",
-   "Prevê a mortalidade com boa precisão",
-   "Não discrimina com segurança risco, oxigenação ou sobrevida",
-   "Deve ser abandonado na avaliação do trauma",
-   "Só tem valor nos pacientes idosos"
+   "Discrimina bem o risco de aspiração no pré-hospitalar",
+   "Prevê a mortalidade com boa precisão no trauma",
+   "Não discrimina bem risco, oxigenação ou sobrevida",
+   "Deve ser abandonado na avaliação do trauma grave",
+   "Tem valor nos pacientes idosos, não nos jovens"
   ],
   "correta": "C",
   "justificativas": [
@@ -1926,7 +1926,7 @@
    "Que ele precisa de tubo imediatamente",
    "Que há pneumotórax do lado esquerdo",
    "Que a via aérea vai falhar em minutos",
-   "Forte indício de via aérea pérvia e protegida",
+   "Indício de via aérea pérvia e protegida",
    "Que ele está entrando em coma"
   ],
   "correta": "D",
@@ -1994,11 +1994,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 3, por que intubar agora pode ser perigoso?",
   "alternativas": [
-   "Porque o tubo não passa no choque",
-   "Porque indução e pressão positiva podem levar ao colapso",
-   "Porque ele está agitado e não colabora",
-   "Porque ele está com colar cervical",
-   "Porque ele está acordado e fala bem"
+   "Porque o tubo não passa no paciente em choque grave",
+   "Porque indução e pressão positiva levam ao colapso",
+   "Porque ele está agitado e não colabora com o preparo",
+   "Porque ele está com colar cervical e mandíbula fixa",
+   "Porque ele está acordado e fala bem com a equipe"
   ],
   "correta": "B",
   "justificativas": [
@@ -2029,9 +2029,9 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, ele está agitado. Isso, sozinho, indica intubar?",
   "alternativas": [
-   "Não: sem lesão que obrigue, tranquilização rápida",
-   "Sim, sempre que houver agitação no trauma",
-   "Não, nunca se intuba o paciente agitado",
+   "Não: sem lesão que obrigue, tranquilização",
+   "Sim, a agitação no trauma indica intubar",
+   "Não, o paciente agitado não se intuba",
    "Sim, se for homem jovem com trauma",
    "Sim, se a pressão arterial estiver baixa"
   ],
@@ -2064,11 +2064,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 3, se ele mantém a via aérea, oxigena e ventila, o que diz a regra da WTA?",
   "alternativas": [
-   "Fazer cricotireoidostomia",
+   "Fazer cricotireoidostomia na sala de trauma",
    "Intubar na sala para levar à tomografia",
-   "Intubar antes da laparotomia sempre",
+   "Intubar antes da laparotomia, de rotina",
    "O tubo pode esperar a correção hemodinâmica",
-   "Dar máscara laríngea"
+   "Dar máscara laríngea e levar à cirurgia"
   ],
   "correta": "D",
   "justificativas": [
@@ -2102,7 +2102,7 @@
   "alternativas": [
    "Trocar por propofol",
    "Reduzir até 50%",
-   "Dobrar",
+   "Dobrar a dose",
    "Não usar indutor",
    "Dose cheia"
   ],
@@ -2172,11 +2172,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, qual adrenalina o algoritmo prevê com índice de choque acima de 0,8?",
   "alternativas": [
-   "Bolus diluído: 0,5 a 2 mL de 0,01 mg/mL a cada 2 a 5 min",
-   "Nenhuma adrenalina antes de intubar",
-   "1 mg em bolus, sem diluir, de uma vez",
-   "Infusão contínua a 1 mcg/kg/min, sem bolus",
-   "0,5 mg por via intramuscular, dose única"
+   "Bolus diluído a 0,01 mg/mL, de 2 em 2 a 5 em 5 min",
+   "Sem adrenalina antes de intubar o paciente em choque",
+   "1 mg em bolus, sem diluir, de uma vez na veia periférica",
+   "Infusão contínua a 1 mcg/kg/min, sem bolus inicial",
+   "0,5 mg por via intramuscular, dose única na coxa"
   ],
   "correta": "A",
   "justificativas": [
@@ -2206,10 +2206,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, o bolus rotineiro de fluido antes da intubação reduz o colapso?",
   "alternativas": [
-   "Sim, sempre, em qualquer paciente",
-   "Sim, no ensaio feito só no trauma",
-   "Só reduziu com cristaloide",
-   "Só reduziu com coloide",
+   "Sim, em todo paciente crítico",
+   "Sim, no ensaio feito no trauma",
+   "Reduziu com cristaloide, não coloide",
+   "Reduziu com coloide, não cristaloide",
    "Não reduziu, em ensaio em críticos"
   ],
   "correta": "E",
@@ -2241,10 +2241,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, o estudo de Ferrada (2024) mostrou mortalidade de 11,1% no CAB e 69,2% no ABC. Como interpretar?",
   "alternativas": [
-   "O CAB é sempre melhor",
-   "O ABC deve ser proibido",
-   "Os grupos eram diferentes; não permite causalidade",
-   "O estudo é randomizado",
+   "O CAB é melhor nos cenários estudados, sem exceção",
+   "O ABC deve ser abandonado no exsanguinante",
+   "Os grupos eram diferentes; não há causalidade",
+   "O estudo é randomizado, controlado e cego",
    "Adiar o tubo reduz a mortalidade em 58 pontos"
   ],
   "correta": "C",
@@ -2277,11 +2277,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 3, qual é a força da recomendação de sangue antes do tubo no doente que oxigena?",
   "alternativas": [
-   "Contraindicada",
-   "Forte, com ensaio",
-   "Condicional, com evidência observacional",
-   "Forte, por metanálise de ensaios",
-   "Não há recomendação"
+   "Contraindicada antes do tubo no choque",
+   "Forte, com ensaio randomizado no trauma",
+   "Condicional, com base observacional",
+   "Forte, por metanálise de ensaios clínicos",
+   "Não há recomendação publicada sobre isso"
   ],
   "correta": "C",
   "justificativas": [
@@ -2315,9 +2315,9 @@
   "enunciado": "No caso 3, a pressão cai a 70/40 e ele fica sonolento, mas ainda oxigena. O que muda?",
   "alternativas": [
    "Cricotireoidostomia na sala de trauma",
-   "Tomografia antes de qualquer conduta",
-   "Nada; segue esperando a correção",
-   "Controlar o sangramento; intubar no centro cirúrgico",
+   "Tomografia de abdome antes de outra conduta",
+   "Nada; segue esperando a correção com sangue",
+   "Controlar o sangramento; intubar no centro",
    "Hiperventilar com máscara até a cirurgia"
   ],
   "correta": "D",
@@ -2350,11 +2350,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, o paciente agitado não tolera a máscara. Qual opção o livro-texto descreve?",
   "alternativas": [
-   "Indução retardada: cetamina, oxigenar, depois o bloqueador",
-   "Bloqueador sem indutor, para ganhar tempo",
-   "Intubar acordado, sem anestesia tópica",
-   "Desistir da pré-oxigenação e intubar",
-   "Contenção física e máscara na face"
+   "Indução retardada com cetamina, depois o bloqueador",
+   "Bloqueador sem indutor, para ganhar tempo na sala",
+   "Intubar acordado, sem anestesia tópica, com vídeo",
+   "Desistir da pré-oxigenação e intubar de imediato",
+   "Contenção física e máscara firme na face"
   ],
   "correta": "A",
   "justificativas": [
@@ -2421,11 +2421,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, você lidera. Onde e quando intubar?",
   "alternativas": [
-   "Na sala, antes de qualquer reposição",
-   "Na tomografia, para não atrasar a imagem",
-   "No centro cirúrgico, com sangue correndo e equipe pronta",
-   "Na UTI, depois de estabilizar a pressão",
-   "Na enfermaria, depois da laparotomia"
+   "Na sala, antes de iniciar a reposição de sangue",
+   "Na tomografia, para não atrasar a imagem do abdome",
+   "No centro cirúrgico, com sangue e equipe prontos",
+   "Na UTI, depois de estabilizar a pressão arterial",
+   "Na enfermaria, depois da laparotomia exploradora"
   ],
   "correta": "C",
   "justificativas": [
@@ -2457,7 +2457,7 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, qual é a lacuna de pesquisa declarada pela WTA neste cenário?",
   "alternativas": [
-   "O momento e o local ideais da intubação",
+   "O momento e o local da intubação",
    "O tamanho do tubo no adulto",
    "O uso do colar durante a intubação",
    "O uso de cânula orofaríngea",
@@ -2492,10 +2492,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, a equipe discute ordem: o que é consenso entre as fontes?",
   "alternativas": [
-   "Sempre a circulação antes de tudo, mesmo sem oxigenar",
-   "Não há nenhum ponto de consenso entre as fontes",
-   "Depende do sexo e da idade do paciente na chegada",
-   "Sempre a via aérea antes de tudo, mesmo se oxigena",
+   "A circulação vem antes de tudo, mesmo sem oxigenar",
+   "Não há ponto de consenso entre as fontes sobre a ordem",
+   "Depende do sexo e da idade do paciente na chegada à sala",
+   "A via aérea vem antes de tudo, mesmo se ele oxigena bem",
    "Se oxigena, o tubo espera; se não, a via aérea vem antes"
   ],
   "correta": "E",
@@ -2528,10 +2528,10 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "No caso 3, quais fármacos são lacuna declarada pela WTA no choque hemorrágico?",
   "alternativas": [
-   "Os analgésicos pós-operatórios",
-   "Os vasopressores de UTI",
-   "Os antieméticos",
-   "Antibióticos",
+   "Os analgésicos do pós-operatório imediato",
+   "Os vasopressores usados depois, na UTI",
+   "Os antieméticos usados antes da indução",
+   "Os antibióticos profiláticos da cirurgia",
    "Os fármacos ideais da sequência rápida"
   ],
   "correta": "E",
@@ -2562,11 +2562,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 3, como garantir sangue a tempo antes da indução?",
   "alternativas": [
-   "Pedir a tipagem e esperar o resultado",
-   "Usar o O negativo da sala e acionar a transfusão maciça",
-   "Pedir só plasma, sem hemácias",
-   "Esperar o hemograma para decidir",
-   "Começar cristaloide em grande volume"
+   "Pedir a tipagem sanguínea e esperar o resultado",
+   "Usar o O negativo e acionar a transfusão maciça",
+   "Pedir plasma fresco, sem hemácias por enquanto",
+   "Esperar o hemograma de chegada para decidir",
+   "Começar cristaloide aquecido em grande volume"
   ],
   "correta": "B",
   "justificativas": [
@@ -2634,7 +2634,7 @@
    "Nula; os estudos concordam totalmente",
    "Moderada; o resultado já é causal",
    "Baixa; o resultado é robusto entre estudos",
-   "Alta; o resultado varia muito entre os estudos",
+   "Alta; o resultado varia entre os estudos",
    "Não foi medida na metanálise"
   ],
   "correta": "D",
@@ -2665,11 +2665,11 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 3: no estudo de Ferrada, o que indica que os grupos eram diferentes desde a chegada?",
   "alternativas": [
-   "A mesma equipe e o mesmo hospital em todos os casos",
-   "O mesmo mecanismo de trauma em todos os pacientes",
+   "A mesma equipe e o mesmo hospital nos casos",
+   "O mesmo mecanismo de trauma nos dois grupos",
    "A idade média igual nos dois grupos do estudo",
-   "A mesma pressão arterial de chegada nos dois grupos",
-   "Mais lesões penetrantes e mais intubações no centro cirúrgico"
+   "A mesma pressão arterial de chegada nos grupos",
+   "Mais lesões penetrantes e intubações no centro"
   ],
   "correta": "E",
   "justificativas": [
@@ -2699,10 +2699,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 3: como a WTA construiu o algoritmo de via aérea?",
   "alternativas": [
-   "Sobretudo com coortes e opinião dos membros",
+   "Sobretudo com coortes e opinião",
    "Com metanálise de ensaios randomizados",
    "Com dados de simulação realística",
-   "Só com estudos de pediatria",
+   "Com estudos de pediatria, adaptados",
    "Com ensaios randomizados em trauma"
   ],
   "correta": "A",
@@ -2768,10 +2768,10 @@
   "enunciado": "No caso 4, o que fazer antes de qualquer tentativa de intubação?",
   "alternativas": [
    "Aspirar a boca com aspirador rígido",
-   "Pedir radiografia de mandíbula",
-   "Retirar o colar por completo",
-   "Dar o bloqueador",
-   "Passar sonda nasogástrica"
+   "Pedir radiografia de mandíbula e face",
+   "Retirar o colar por completo para examinar",
+   "Dar o bloqueador neuromuscular de imediato",
+   "Passar sonda nasogástrica para descomprimir"
   ],
   "correta": "A",
   "justificativas": [
@@ -2804,11 +2804,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 4, quais mnemônicos ajudam a prever a dificuldade?",
   "alternativas": [
-   "Só o índice de choque",
-   "Só o Mallampati sentado",
-   "Só o Glasgow de chegada",
+   "O índice de choque da chegada",
+   "O Mallampati, com o paciente sentado",
+   "O Glasgow de chegada",
    "LEMON, ROMAN, RODS e SMART",
-   "AMPLE e ABCDE juntos"
+   "AMPLE e ABCDE, aplicados juntos"
   ],
   "correta": "D",
   "justificativas": [
@@ -2874,11 +2874,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 4, qual a diferença entre via aérea difícil e via aérea falha?",
   "alternativas": [
-   "Na falha, espera-se o anestesista",
+   "Na falha, espera-se o anestesista chegar à sala",
    "Na difícil, faz-se cricotireoidostomia de saída",
-   "Na difícil, busca-se o tubo; na falha, oxigenar por qualquer meio",
-   "Nenhuma",
-   "Na falha, insiste-se no tubo"
+   "Na difícil, busca-se o tubo; na falha, oxigenar",
+   "Não há diferença: são a mesma situação clínica",
+   "Na falha, insiste-se no tubo até conseguir passá-lo"
   ],
   "correta": "C",
   "justificativas": [
@@ -2909,11 +2909,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, por que é mais difícil palpar a membrana cricotireóidea?",
   "alternativas": [
-   "Porque o colar a esconde sempre",
-   "Porque a fratura de mandíbula a desloca",
-   "Porque a membrana não existe no obeso",
-   "Porque o sangue a dissolve",
-   "Porque a palpação é mais difícil em obesos e mulheres"
+   "Porque o colar cervical a esconde da palpação",
+   "Porque a fratura de mandíbula a desloca para baixo",
+   "Porque a membrana não existe no paciente obeso",
+   "Porque o sangue no pescoço a dissolve e apaga",
+   "Porque a palpação é pior em obesos e mulheres"
   ],
   "correta": "E",
   "justificativas": [
@@ -2945,10 +2945,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 4, como fazer da primeira tentativa a melhor?",
   "alternativas": [
-   "Qualquer operador, sem preparação",
+   "Operador disponível, sem preparação",
    "Intubação nasal às cegas, sem bloqueio",
    "Residente novo, com laringoscópio direto",
-   "Mais experiente, vídeo, bougie e bom posicionamento",
+   "Mais experiente, vídeo, bougie e posição",
    "Sem pré-oxigenação, para ganhar tempo"
   ],
   "correta": "D",
@@ -2981,11 +2981,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, a saturação é 89% com máscara. Qual a meta antes de tentar?",
   "alternativas": [
-   "Qualquer valor, desde que estável",
+   "Valor estável, seja qual for",
    "Acima de 94% por 3 minutos",
    "90% por 1 minuto basta",
    "85% por 3 minutos",
-   "100% obrigatória antes da indução"
+   "100% antes da indução, em cada caso"
   ],
   "correta": "B",
   "justificativas": [
@@ -3016,10 +3016,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, a saturação não passa de 93% com máscara em alto fluxo. O que fazer?",
   "alternativas": [
-   "Retirar o oxigênio",
-   "Esperar mais 10 minutos",
-   "Intubar assim mesmo",
-   "Dar bicarbonato",
+   "Retirar o oxigênio e reavaliar",
+   "Esperar mais 10 minutos com máscara",
+   "Intubar assim mesmo, sem demora",
+   "Dar bicarbonato antes da indução",
    "Pré-oxigenar com pressão positiva"
   ],
   "correta": "E",
@@ -3051,11 +3051,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, a primeira tentativa falhou e a saturação caiu a 88%, mas a ventilação com máscara a duas mãos ainda funciona. O que fazer?",
   "alternativas": [
-   "Cricotireoidostomia de imediato",
-   "Interromper, voltar às manobras básicas e ventilar",
-   "Segunda tentativa imediata",
+   "Cricotireoidostomia de imediato, com bisturi",
+   "Interromper, voltar às manobras e ventilar",
+   "Segunda tentativa imediata, mesmo operador",
    "Trocar o tubo por um menor sem ventilar",
-   "Pedir tomografia"
+   "Pedir tomografia antes de nova tentativa"
   ],
   "correta": "B",
   "justificativas": [
@@ -3089,9 +3089,9 @@
   "enunciado": "No caso 4, qual o papel do dispositivo extraglótico depois da falha?",
   "alternativas": [
    "Resgate temporário, sem proteção confiável",
-   "Só serve para resgate em criança",
-   "Substitui a cricotireoidostomia sempre",
-   "É contraindicado em todo trauma",
+   "Serve para resgate em criança, não adulto",
+   "Substitui a cricotireoidostomia no trauma",
+   "É contraindicado no trauma fechado",
    "É via aérea definitiva, como o tubo"
   ],
   "correta": "A",
@@ -3164,10 +3164,10 @@
   "enunciado": "No caso 4, qual o material do acesso frontal?",
   "alternativas": [
    "Kit de traqueostomia percutânea",
-   "Tubo 8,5 sem bougie",
-   "Pinça e gancho apenas",
-   "Bisturi com lâmina 10, bougie e tubo 6,0",
-   "Agulha 14 e seringa"
+   "Tubo 8,5 com balonete, sem bougie",
+   "Pinça hemostática e gancho traqueal",
+   "Bisturi lâmina 10, bougie e tubo 6,0",
+   "Agulha 14 e seringa com soro"
   ],
   "correta": "D",
   "justificativas": [
@@ -3199,10 +3199,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 4, a membrana não é palpável. Que incisão de pele fazer?",
   "alternativas": [
-   "Oblíqua lateral",
-   "Nenhuma; punção",
-   "Transversal em punhalada",
-   "Em colar, como na tireoidectomia",
+   "Oblíqua lateral, junto ao esternocleidomastóideo",
+   "Sem incisão; punção por agulha calibrosa",
+   "Transversal em punhalada sobre a membrana",
+   "Em colar, como na tireoidectomia eletiva",
    "Vertical, na linha média, de baixo para cima"
   ],
   "correta": "E",
@@ -3238,10 +3238,10 @@
   "enunciado": "No caso 4, sem palpar a depressão, onde estimar a membrana?",
   "alternativas": [
    "Dois dedos abaixo da cartilagem cricóidea",
-   "Na borda inferior da mandíbula",
-   "Logo acima da fúrcula esternal",
+   "Na borda inferior da mandíbula, no centro",
+   "Logo acima da fúrcula esternal, na linha média",
    "2 a 3 cm abaixo da proeminência laríngea",
-   "No nível do osso hioide"
+   "No nível do osso hioide, acima da cartilagem"
   ],
   "correta": "D",
   "justificativas": [
@@ -3273,7 +3273,7 @@
   "enunciado": "No caso 4, como incisar a membrana?",
   "alternativas": [
    "Transversal, rente à borda superior",
-   "Transversal, na porção inferior, sem serrar",
+   "Transversal, na porção inferior",
    "Em cruz, para abrir mais espaço",
    "Vertical, de cima a baixo, na membrana",
    "Com tesoura, depois de pinçar"
@@ -3308,11 +3308,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 4, você lidera. Quando declarar a falha?",
   "alternativas": [
-   "Ao perder a saturação ou esgotar as tentativas",
-   "Só quando surgir bradicardia",
-   "Depois de 6 tentativas sem sucesso",
-   "Só depois da tomografia de pescoço",
-   "Nunca; insistir até conseguir o tubo"
+   "Ao perder a saturação ou esgotar tentativas",
+   "Quando surgir bradicardia no monitor cardíaco",
+   "Depois de 6 tentativas sem sucesso na sala",
+   "Depois da tomografia de pescoço e de face",
+   "Não se declara; insistir até passar o tubo"
   ],
   "correta": "A",
   "justificativas": [
@@ -3381,10 +3381,10 @@
   "enunciado": "No caso 4, depois da incisão de pele, o campo enche de sangue. Como seguir?",
   "alternativas": [
    "Ventilar com máscara por 5 minutos",
-   "Seguir pela palpação e concluir o procedimento",
-   "Parar e fazer hemostasia",
+   "Seguir pela palpação e concluir",
+   "Parar e fazer hemostasia antes de seguir",
    "Chamar outro cirurgião e esperar",
-   "Trocar por punção"
+   "Trocar por punção com agulha 14"
   ],
   "correta": "B",
   "justificativas": [
@@ -3417,11 +3417,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 4, ventilou pelo tubo cirúrgico, o pescoço inchou e não há CO2. O que é e o que fazer?",
   "alternativas": [
-   "Broncoespasmo; dar broncodilatador",
-   "Seletiva; recuar o tubo",
-   "Tubo no subcutâneo; retirar e reavaliar a via aérea",
-   "Pneumotórax; drenar",
-   "Normal; manter"
+   "Broncoespasmo; dar broncodilatador inalado",
+   "Seletiva; recuar o tubo 2 cm e reavaliar",
+   "Tubo no subcutâneo; retirar e reavaliar",
+   "Pneumotórax; drenar o tórax à direita",
+   "Normal; manter e fixar o tubo com sutura"
   ],
   "correta": "C",
   "justificativas": [
@@ -3487,10 +3487,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 4: na análise de Walls com dados do NEAR, quantos traumatizados precisaram de via aérea cirúrgica?",
   "alternativas": [
-   "Metade",
-   "1 de 10.000",
+   "Cerca de metade",
+   "1 em cada 10.000",
    "31 de 4.499 (0,7%)",
-   "Nenhum",
+   "Menos de 1 em 4.499",
    "310 de 4.499 (7%)"
   ],
   "correta": "C",
@@ -3524,7 +3524,7 @@
   "alternativas": [
    "Sem diferença no tempo entre as técnicas",
    "Punção mais rápida que o bisturi",
-   "Bisturi mais rápido, sucesso igual, baixa certeza",
+   "Bisturi mais rápido, sucesso igual",
    "Punção mais segura, com alta certeza",
    "Bisturi com mais sucesso, alta certeza"
   ],
@@ -3560,7 +3560,7 @@
    "50% a 70%",
    "Menos de 1%",
    "Não há dados",
-   "Sempre acima de 60%"
+   "Acima de 60%"
   ],
   "correta": "A",
   "justificativas": [
@@ -3592,10 +3592,10 @@
   "enunciado": "Sobre o caso 4: o que o ultrassom acrescenta à localização da membrana?",
   "alternativas": [
    "Nada de útil na localização",
-   "Mais acerto, mas alonga e pode não elevar o sucesso",
-   "Aumenta o sucesso global sempre",
+   "Mais acerto, mas alonga o procedimento",
+   "Aumenta o sucesso global em cada caso",
    "Substitui a palpação no não intubo, não oxigeno",
-   "É contraindicado no trauma"
+   "É contraindicado no trauma cervical"
   ],
   "correta": "B",
   "justificativas": [
@@ -3626,11 +3626,11 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 4: o que a DAS 2025 reconhece sobre a evidência dos passos do acesso frontal?",
   "alternativas": [
-   "Vem de ensaios randomizados",
-   "É forte para todos os passos",
-   "É específica para o trauma",
+   "Vem de ensaios randomizados no trauma",
+   "É forte para os passos principais da técnica",
+   "É específica para o paciente traumatizado",
    "Há pouca evidência para muitos passos",
-   "Não foi avaliada"
+   "Não foi avaliada pela diretriz de 2025"
   ],
   "correta": "D",
   "justificativas": [
@@ -3661,11 +3661,11 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 5, qual a primeira coisa a conferir depois do tubo?",
   "alternativas": [
-   "O hemograma de controle",
-   "A reação das pupilas",
-   "A glicemia capilar",
+   "O hemograma de controle da chegada",
+   "A reação das pupilas à luz",
+   "A glicemia capilar logo após o tubo",
    "A capnografia e o ventilador",
-   "A tomografia de tórax"
+   "A tomografia de tórax do paciente"
   ],
   "correta": "D",
   "justificativas": [
@@ -3696,11 +3696,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, por que a ventilação com pressão positiva pode piorar um pneumotórax?",
   "alternativas": [
-   "Porque baixa demais o CO2 do sangue",
+   "Porque baixa demais o CO2 do sangue arterial",
    "Porque não piora; a pressão positiva protege",
-   "Porque o tubo perfura o pulmão",
-   "Porque reduz o volume do pulmão",
-   "Porque pode tornar hipertensivo um pneumotórax simples"
+   "Porque o tubo perfura o pulmão na passagem",
+   "Porque reduz o volume do pulmão ventilado",
+   "Porque pode tornar hipertensivo o pneumotórax"
   ],
   "correta": "E",
   "justificativas": [
@@ -3730,11 +3730,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, o que a escoriação no hemitórax direito sugere?",
   "alternativas": [
-   "Possível pneumotórax, agravado pela ventilação",
-   "Tamponamento cardíaco obrigatório",
-   "Nada; escoriação não muda a conduta",
-   "Fratura de clavícula apenas",
-   "Lesão de baço pelo mesmo impacto"
+   "Possível pneumotórax, agravado pelo tubo",
+   "Tamponamento cardíaco obrigatório pela lesão",
+   "Nada; escoriação não muda a conduta na sala",
+   "Fratura de clavícula, sem outra lesão associada",
+   "Lesão de baço pelo mesmo impacto lateral"
   ],
   "correta": "A",
   "justificativas": [
@@ -3766,11 +3766,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 5, que três causas procurar na hipotensão pós-intubação?",
   "alternativas": [
-   "Ventilador, pneumotórax e sangramento",
-   "Arritmia, alergia e sepse",
-   "Nenhuma; é só efeito do fármaco",
-   "Febre, dor e ansiedade",
-   "Glicemia, sódio e potássio"
+   "Ventilador, pneumotórax, sangramento",
+   "Arritmia, alergia ao fármaco e sepse",
+   "Causa alguma; é efeito do fármaco",
+   "Febre, dor e ansiedade da paciente",
+   "Glicemia, sódio e potássio séricos"
   ],
   "correta": "A",
   "justificativas": [
@@ -3804,8 +3804,8 @@
    "Sim, se o indutor foi o etomidato",
    "Sim, se a PA de chegada era normal",
    "Não: pode indicar causa grave",
-   "Sim, sempre é efeito do indutor",
-   "Não, é sempre sangramento"
+   "Sim, é efeito do indutor",
+   "Não, a causa é sangramento, em geral"
   ],
   "correta": "C",
   "justificativas": [
@@ -3813,7 +3813,7 @@
    "Não exclui outra causa [D53]. Hipotensão persistente ou profunda pode indicar causa grave, como pneumotórax hipertensivo [D53].",
    "Correta: hipotensão persistente ou profunda pode indicar causa grave, como pneumotórax hipertensivo [D53].",
    "Pode haver causa grave [D53]. Hipotensão persistente ou profunda pode indicar causa grave, como pneumotórax hipertensivo [D53].",
-   "Há outras causas possíveis [G20]. Hipotensão persistente ou profunda pode indicar causa grave, como pneumotórax hipertensivo [D53]."
+   "Há outras causas possíveis além do sangramento; a conduta é procurá-las [G20]."
   ],
   "categorias": [
    "erro de indicação",
@@ -3839,7 +3839,7 @@
    "Mostra o balonete do tubo apoiado na carina",
    "Mede o CO2 expirado a cada ventilação",
    "Mede a pressão intracraniana pelo nervo óptico",
-   "Deslizamento pleural, pulso pulmonar, diafragma",
+   "Deslizamento pleural, pulso pulmonar",
    "Não ajuda a confirmar a ventilação"
   ],
   "correta": "D",
@@ -3871,10 +3871,10 @@
   "enunciado": "No caso 5, o tubo está a 27 cm na comissura de uma mulher. O que pensar?",
   "alternativas": [
    "Tubo certamente no esôfago",
-   "Tubo curto demais, risco de sair",
-   "Possível seletiva; o esperado é cerca de 21 cm",
-   "Não importa a profundidade",
-   "Posição ideal para a mulher"
+   "Tubo curto demais, com risco de sair",
+   "Possível seletiva; esperado é 21 cm",
+   "A profundidade não importa aqui",
+   "Posição ideal para a mulher adulta"
   ],
   "correta": "C",
   "justificativas": [
@@ -3905,10 +3905,10 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, a capnografia mostra curva normal e a PA segue caindo. O que fazer a seguir?",
   "alternativas": [
-   "Hiperventilar para subir a PA",
-   "Trocar o tubo por outro",
-   "Extubar e reavaliar",
-   "Nada; o tubo está certo",
+   "Hiperventilar para subir a pressão arterial",
+   "Trocar o tubo por outro de calibre maior",
+   "Extubar e reavaliar a via aérea da paciente",
+   "Nada; o tubo está certo e basta esperar",
    "Avaliar pneumotórax e sangramento"
   ],
   "correta": "E",
@@ -3940,11 +3940,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, se o pneumotórax for identificado antes de intubar, qual a recomendação?",
   "alternativas": [
-   "Não intubar nunca",
-   "Fazer cricotireoidostomia",
-   "Considerar a drenagem simultânea à intubação",
-   "Drenar só se a saturação cair abaixo de 70%",
-   "Intubar e drenar só no dia seguinte"
+   "Não intubar enquanto houver pneumotórax",
+   "Fazer cricotireoidostomia antes de drenar",
+   "Considerar drenar junto com a intubação",
+   "Drenar se a saturação cair abaixo de 70%",
+   "Intubar e drenar no dia seguinte"
   ],
   "correta": "C",
   "justificativas": [
@@ -3976,10 +3976,10 @@
   "enunciado": "No caso 5, o detector colorimétrico não mudou de cor. Isso prova tubo no esôfago?",
   "alternativas": [
    "Não: pode falhar na parada prolongada",
-   "Sim, sempre prova o esôfago",
-   "Sim, se a paciente é mulher",
-   "Sim, se a pressão caiu",
-   "Não; o detector não serve para nada"
+   "Sim, prova o esôfago em todo paciente",
+   "Sim, se a paciente é mulher e jovem",
+   "Sim, se a pressão arterial caiu depois",
+   "Não; o detector não tem utilidade clínica"
   ],
   "correta": "A",
   "justificativas": [
@@ -4010,11 +4010,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 5, o etomidato foi usado. Qual a dose no comprometimento hemodinâmico?",
   "alternativas": [
-   "0,6 mg/kg",
-   "Mesma de 0,3 mg/kg sempre",
-   "Não se usa",
+   "0,6 mg/kg em bolus",
+   "A mesma de 0,3 mg/kg do estável",
+   "Não se usa etomidato no choque",
    "Redução até 0,15 mg/kg",
-   "1,5 mg/kg"
+   "1,5 mg/kg em bolus lento"
   ],
   "correta": "D",
   "justificativas": [
@@ -4048,7 +4048,7 @@
    "Não; mostrou o ensaio RSI",
    "Sim; mostrou o ensaio BEST",
    "Não; mostrou o ensaio DEVICE",
-   "Sim; ensaio PREOXI, 9,1% e 18,5%",
+   "Sim; ensaio PREOXI",
    "Sim; mostrou o ensaio BOUGIE"
   ],
   "correta": "D",
@@ -4083,11 +4083,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 5, a ventilação com bolsa-máscara entre a indução e a laringoscopia aumenta aspiração?",
   "alternativas": [
-   "Sim, sempre aumenta a aspiração",
-   "Não aumentou e reduziu a hipoxemia grave",
-   "Só aumentou em pacientes obesos",
-   "Não se estudou em nenhum ensaio",
-   "Sim, no ensaio feito no trauma"
+   "Sim, aumentou a aspiração pulmonar",
+   "Não aumentou e reduziu a hipoxemia",
+   "Aumentou a aspiração em pacientes obesos",
+   "Não foi estudada em ensaio randomizado",
+   "Sim, no ensaio feito em traumatizados"
   ],
   "correta": "B",
   "justificativas": [
@@ -4153,7 +4153,7 @@
   "alternativas": [
    "Como procedimento simples e rápido",
    "Sem capnografia, pela pressa",
-   "Como via aérea difícil, com plano de falha",
+   "Como via aérea difícil, com plano",
    "Pelo menos experiente, para treinar",
    "Sem pré-oxigenar, para ganhar tempo"
   ],
@@ -4190,10 +4190,10 @@
   "enunciado": "No caso 5, você lidera. Qual a sequência diante da queda de PA e de saturação?",
   "alternativas": [
    "Mais sedação e esperar a PA subir",
-   "Aumentar o volume corrente",
-   "Tomografia de tórax primeiro",
-   "Extubar e reintubar logo",
-   "Tubo e ventilador, pneumotórax, sangramento"
+   "Aumentar o volume corrente agora",
+   "Tomografia de tórax antes de tudo",
+   "Extubar e reintubar logo em seguida",
+   "Tubo, ventilador, pneumotórax, sangue"
   ],
   "correta": "E",
   "justificativas": [
@@ -4226,11 +4226,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 5, que indicador do serviço esta intubação alimenta?",
   "alternativas": [
-   "Só o tempo de internação",
-   "Sucesso na primeira tentativa e eventos",
-   "Só o custo dos fármacos",
-   "Só o número de radiografias",
-   "Nenhum indicador do serviço"
+   "O tempo de internação na UTI",
+   "Sucesso na 1ª tentativa e eventos",
+   "O custo dos fármacos da indução",
+   "O número de radiografias de tórax",
+   "Indicador algum; é caso isolado"
   ],
   "correta": "B",
   "justificativas": [
@@ -4262,10 +4262,10 @@
   "enunciado": "No caso 5, o que o sucesso na intubação depende mais, segundo Walls?",
   "alternativas": [
    "De sistemas que apoiam o profissional",
-   "Da sorte",
-   "Da hora do dia",
-   "Do fármaco",
-   "Da habilidade individual apenas"
+   "Da sorte de cada tentativa na sala",
+   "Da hora do dia e do cansaço da equipe",
+   "Do fármaco usado na indução da sequência",
+   "Da habilidade individual de quem intuba"
   ],
   "correta": "A",
   "justificativas": [
@@ -4333,9 +4333,9 @@
   "alternativas": [
    "Atrasa a conduta da equipe",
    "Substitui o checklist pré-intubação",
-   "Só serve no centro cirúrgico",
+   "Serve no centro cirúrgico, não na sala",
    "Não ajuda na crise",
-   "Confirma o pedido e quando foi cumprido"
+   "Confirma o pedido e o cumprimento"
   ],
   "correta": "E",
   "justificativas": [
@@ -4366,11 +4366,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 5: no ensaio DEVICE, qual o sucesso na primeira tentativa com cada laringoscópio?",
   "alternativas": [
-   "95% em ambos",
-   "50% em ambos",
+   "Cerca de 95% com cada laringoscópio",
+   "Cerca de 50% com cada laringoscópio",
    "70,8% com vídeo e 85,1% com direto",
    "85,1% com vídeo e 70,8% com direto",
-   "Iguais"
+   "Iguais, cerca de 78% com cada um"
   ],
   "correta": "D",
   "justificativas": [
@@ -4401,11 +4401,11 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 5: qual a limitação do DEVICE para o trauma?",
   "alternativas": [
-   "Feito só em crianças",
+   "Feito em crianças, não em adultos críticos",
    "Feito em críticos: evidência indireta",
    "Não tem limitação para o trauma",
-   "Não mediu o sucesso na tentativa",
-   "Amostra de apenas 10 pacientes"
+   "Não mediu o sucesso na primeira tentativa",
+   "Amostra de 10 pacientes por grupo"
   ],
   "correta": "B",
   "justificativas": [
@@ -4436,10 +4436,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 5: o que a revisão Cochrane diz da oxigenação na apneia?",
   "alternativas": [
-   "Eleva pouco a menor saturação, sem relevância clara",
+   "Eleva pouco a menor saturação",
    "Grande benefício clínico comprovado",
-   "Só funciona em crianças pequenas",
-   "Não tem nenhum efeito na saturação",
+   "Funciona em crianças pequenas, não adultos",
+   "Não tem efeito na saturação",
    "Aumenta a mortalidade hospitalar"
   ],
   "correta": "A",
@@ -4470,10 +4470,10 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 5: o que se sabe da hiperóxia grave logo após a intubação?",
   "alternativas": [
-   "É obrigatória após a intubação",
+   "É recomendada após a intubação",
    "Faltam dados sobre seu efeito",
-   "É sempre benéfica após o tubo",
-   "É inofensiva em qualquer paciente",
+   "É benéfica após o tubo",
+   "É inofensiva em pacientes críticos",
    "Aumenta a sobrevida no trauma"
   ],
   "correta": "B",
@@ -4506,7 +4506,7 @@
   "enunciado": "Sobre o caso 5: o bolus rotineiro de fluido antes da intubação em críticos reduziu o colapso?",
   "alternativas": [
    "Aumentou a sobrevida",
-   "Sim, só no trauma",
+   "Sim, no trauma",
    "Não foi medido",
    "Sim",
    "Não"
@@ -4539,11 +4539,11 @@
   "taxa_esperada": "75% a 90%",
   "enunciado": "No caso 6, quais sinais indicam risco de obstrução da via aérea?",
   "alternativas": [
-   "O Glasgow de 14 na chegada",
-   "Só a queimadura dos braços",
-   "Só a frequência cardíaca alta",
+   "O Glasgow de 14 na chegada à sala",
+   "A queimadura dos braços e do tronco",
+   "A frequência cardíaca alta da chegada",
    "Rouquidão, estridor, pelos chamuscados",
-   "A pressão arterial normal"
+   "A pressão arterial normal na chegada"
   ],
   "correta": "D",
   "justificativas": [
@@ -4574,11 +4574,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, por que não esperar piorar para intubar?",
   "alternativas": [
-   "Porque a PA está baixa",
-   "Porque o edema progride de forma rápida e oculta",
+   "Porque a pressão arterial está baixa",
+   "Porque o edema progride rápido e oculto",
    "Porque o tubo fica mais fácil depois",
-   "Porque a criança pede",
-   "Não há pressa"
+   "Porque a criança pede para ser intubada",
+   "Não há pressa; pode-se esperar"
   ],
   "correta": "B",
   "justificativas": [
@@ -4609,10 +4609,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, qual o princípio na lesão direta da via aérea?",
   "alternativas": [
-   "Intubar só se parar de respirar",
-   "Dar corticoide e esperar",
+   "Intubar se parar de respirar",
+   "Dar corticoide e esperar o efeito",
    "Protegê-la cedo, com mais opções",
-   "Só observar a evolução",
+   "Observar a evolução por algumas horas",
    "Esperar o laudo da endoscopia"
   ],
   "correta": "C",
@@ -4644,11 +4644,11 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, qual o limite de idade do curso para a cricotireoidostomia cirúrgica?",
   "alternativas": [
-   "Não há limite de idade",
+   "Não há limite de idade para a técnica",
    "Abaixo de 12, não; resgate por agulha",
-   "Abaixo de 6 anos; acima, cirúrgica",
-   "Abaixo de 18 anos, nunca",
-   "Abaixo de 2 anos; acima, cirúrgica"
+   "Abaixo de 6 anos, não; acima, cirúrgica",
+   "Abaixo de 18 anos, não se faz a técnica",
+   "Abaixo de 2 anos, não; acima, cirúrgica"
   ],
   "correta": "B",
   "justificativas": [
@@ -4681,10 +4681,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, quem precisa ser chamado logo?",
   "alternativas": [
-   "O ortopedista de plantão",
-   "O radiologista de plantão",
-   "Só a assistente social",
-   "Ninguém além da equipe presente",
+   "O ortopedista de plantão para os membros",
+   "O radiologista de plantão para a TC",
+   "A assistente social, pelos pais",
+   "A equipe presente basta para o caso",
    "O mais experiente em via aérea"
   ],
   "correta": "E",
@@ -4716,10 +4716,10 @@
   "taxa_esperada": "50% a 75%",
   "enunciado": "No caso 6, por que a membrana cricotireóidea é mais difícil na criança?",
   "alternativas": [
-   "Porque a membrana não existe",
+   "Porque a membrana não existe na criança",
    "Porque fica abaixo da cricoide",
    "Porque é muito mais vascularizada",
-   "Porque já é calcificada",
+   "Porque já é calcificada aos 10 anos",
    "Laringe alta e cartilagens sobrepostas"
   ],
   "correta": "E",
@@ -4751,11 +4751,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, a succinilcolina pode ser usada nesta queimadura aguda?",
   "alternativas": [
-   "Só em criança abaixo de 5 anos",
-   "Sim: só é contraindicada após 24 horas",
-   "Só se o potássio estiver alto",
-   "Só depois de 48 horas da queimadura",
-   "Não, nunca em queimado"
+   "Sim, em criança abaixo de 5 anos de idade",
+   "Sim: a contraindicação é após 24 horas",
+   "Sim, se o potássio estiver alto na chegada",
+   "Sim, depois de 48 horas da queimadura",
+   "Não, a queimadura contraindica de imediato"
   ],
   "correta": "B",
   "justificativas": [
@@ -4788,10 +4788,10 @@
   "enunciado": "No caso 6, a obstrução abaixo da membrana se resolve com cricotireoidostomia?",
   "alternativas": [
    "Não",
-   "Só em adultos",
+   "Sim, em adultos",
    "Sim",
    "Sim, com tubo maior",
-   "Só com agulha"
+   "Sim, com agulha"
   ],
   "correta": "A",
   "justificativas": [
@@ -4821,11 +4821,11 @@
   "taxa_esperada": "30% a 50%",
   "enunciado": "No caso 6, qual o papel da endoscopia flexível na inalatória?",
   "alternativas": [
-   "Nenhum papel na avaliação",
+   "Papel algum na avaliação inicial",
    "Substituir a intubação no estridor",
-   "Só depois de 7 dias de internação",
-   "Avaliar e talvez evitar o tubo desnecessário",
-   "Só no paciente adulto"
+   "Ser feita depois de 7 dias de internação",
+   "Avaliar e talvez evitar o tubo",
+   "Ser usada no paciente adulto, não na criança"
   ],
   "correta": "D",
   "justificativas": [
@@ -4892,10 +4892,10 @@
   "enunciado": "No caso 6, o que Walls orienta sobre a cricotireoidostomia aberta em crianças?",
   "alternativas": [
    "Evitar até 10 anos, salvo porte maior",
-   "Só fazer guiada por ultrassom",
+   "Fazer guiada por ultrassom na criança",
    "É a técnica de escolha na criança",
-   "Fazer em qualquer idade",
-   "Evitar só abaixo de 2 anos"
+   "Fazer a partir de 2 anos de idade",
+   "Evitar abaixo de 2 anos, não depois"
   ],
   "correta": "A",
   "justificativas": [
@@ -4999,10 +4999,10 @@
   "enunciado": "No caso 6, o que preparar antes da indução?",
   "alternativas": [
    "Vídeo, tubos menores, aspirador e agulha",
-   "Nada além do tubo do tamanho habitual",
-   "Só o oxímetro e o monitor cardíaco",
-   "Só a máscara facial e o ambu infantil",
-   "Só o bloqueador e o indutor na seringa"
+   "O tubo do tamanho habitual, sem mais nada",
+   "O oxímetro e o monitor cardíaco ligados",
+   "A máscara facial e o ambu infantil",
+   "O bloqueador e o indutor na seringa"
   ],
   "correta": "A",
   "justificativas": [
@@ -5069,11 +5069,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, você lidera. Qual a decisão?",
   "alternativas": [
-   "Observar com corticoide",
-   "Transferir antes de qualquer conduta",
+   "Observar com corticoide e reavaliar",
+   "Transferir antes de outra conduta",
    "Cricotireoidostomia cirúrgica de saída",
    "Esperar a endoscopia em 24 horas",
-   "Intubar cedo, com o mais experiente e agulha pronta"
+   "Intubar cedo, com o mais experiente"
   ],
   "correta": "E",
   "justificativas": [
@@ -5106,11 +5106,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, a intubação falha e a criança não oxigena. Qual o resgate?",
   "alternativas": [
-   "Traqueostomia na sala",
+   "Traqueostomia na sala de trauma",
    "Cricotireoidostomia por agulha",
    "Cricotireoidostomia cirúrgica",
-   "Máscara por 10 minutos",
-   "Nova tentativa sem limite"
+   "Máscara por mais 10 minutos",
+   "Novas tentativas até conseguir"
   ],
   "correta": "B",
   "justificativas": [
@@ -5143,10 +5143,10 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "No caso 6, quem tem o porte de adolescente aos 10 anos muda a técnica?",
   "alternativas": [
-   "Não, nenhuma fonte admite exceção pelo porte",
-   "Só se pesar mais de 50 kg, segundo o curso",
-   "Só com ultrassom disponível na sala de trauma",
-   "Sim, todas as fontes liberam a técnica aberta",
+   "Não, as fontes não admitem exceção pelo porte",
+   "Sim, se pesar mais de 50 kg, segundo o curso",
+   "Sim, com ultrassom disponível na sala",
+   "Sim, as fontes liberam a técnica aberta",
    "Walls admite pelo porte; o curso mantém 12 anos"
   ],
   "correta": "E",
@@ -5179,10 +5179,10 @@
   "enunciado": "No caso 6, a máscara laríngea foi usada como ponte enquanto se prepara o resgate. Ela protege a via aérea contra aspiração?",
   "alternativas": [
    "Não de forma confiável: é medida temporária",
-   "Só não protege em adultos obesos",
-   "Sim, desde que a criança esteja sedada",
+   "Sim, exceto em adultos obesos e com sangue",
+   "Sim, desde que a criança esteja sedada e quieta",
    "Sim, como o tubo com balonete na traqueia",
-   "Sim, se o balonete estiver bem insuflado"
+   "Sim, se o balonete estiver bem insuflado e fixo"
   ],
   "correta": "A",
   "justificativas": [
@@ -5216,9 +5216,9 @@
   "alternativas": [
    "O tamanho do tubo no adulto",
    "O treino e a manutenção da habilidade",
-   "O fármaco ideal para o choque",
-   "O uso do colar cervical",
-   "A marca do capnógrafo"
+   "O fármaco ideal para o paciente em choque",
+   "O uso do colar cervical durante a técnica",
+   "A marca do capnógrafo usado na sala"
   ],
   "correta": "B",
   "justificativas": [
@@ -5249,11 +5249,11 @@
   "taxa_esperada": "15% a 30%",
   "enunciado": "Sobre o caso 6: o que Dave e Shriki listam como contraindicação relativa da cricotireoidostomia?",
   "alternativas": [
-   "Sexo feminino e baixa estatura",
-   "Hipotensão e choque",
-   "Obesidade e pescoço curto",
-   "Idade acima de 60 anos e diabetes",
-   "Idade abaixo de 6 anos e cirurgia traqueal prévia"
+   "Sexo feminino e baixa estatura da paciente",
+   "Hipotensão e choque hemorrágico grave",
+   "Obesidade e pescoço curto e largo",
+   "Idade acima de 60 anos e diabetes melito",
+   "Idade abaixo de 6 anos e cirurgia traqueal"
   ],
   "correta": "E",
   "justificativas": [
@@ -5284,7 +5284,7 @@
   "enunciado": "Sobre o caso 6: a traqueostomia precoce no politrauma reduziu a mortalidade?",
   "alternativas": [
    "Pouco ou nenhum efeito, comparada à tardia",
-   "Só reduziu a mortalidade em crianças",
+   "Reduziu a mortalidade em crianças",
    "Não foi estudada em revisão sistemática",
    "Aumentou a mortalidade em relação à tardia",
    "Sim, reduziu a mortalidade de forma clara"
@@ -5319,9 +5319,9 @@
   "alternativas": [
    "Proibiu o procedimento em crianças",
    "Criou a técnica da punção por agulha",
-   "Condenou o procedimento de vez",
-   "Reviu a condenação de 1921, com 6,1% de complicações",
-   "Descreveu o uso do ultrassom"
+   "Condenou o procedimento em definitivo",
+   "Reviu a condenação de 1921 com nova série",
+   "Descreveu o uso do ultrassom no pescoço"
   ],
   "correta": "D",
   "justificativas": [
@@ -5352,7 +5352,7 @@
   "enunciado": "Sobre o caso 6: quanto das mortes por trauma antes do socorro envolve apneia potencialmente reversível?",
   "alternativas": [
    "1% a 2%",
-   "Nenhuma",
+   "Menos de 1%",
    "50% a 70%",
    "18% a 43%",
    "80% a 90%"
@@ -5385,11 +5385,11 @@
   "taxa_esperada": "abaixo de 15%",
   "enunciado": "Sobre o caso 6: qual a incidência do acesso frontal no trauma civil comparada à do trauma militar?",
   "alternativas": [
-   "O dobro",
-   "Maior",
+   "O dobro do militar",
+   "Maior que no militar",
    "Menor que a metade",
    "Não há comparação",
-   "Igual"
+   "Igual nos dois"
   ],
   "correta": "C",
   "justificativas": [

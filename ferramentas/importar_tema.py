@@ -162,6 +162,30 @@ for q in questoes:
     if any(re.search(r'todas as (anteriores|alternativas)|nenhuma das anteriores', x, re.I) for x in alts):
         aviso(f'questão {qid}: evite "todas" ou "nenhuma das anteriores"')
 if longas: aviso(f'{len(longas)} de {len(questoes)} questões têm a correta bem mais longa que as outras (pista para o aluno): ' + ', '.join(longas[:12]) + (' ...' if len(longas) > 12 else ''))
+# pistas no banco inteiro (regras do nbme-item-writing e do MedIWF; so avisos, nada e alterado)
+ABSOLUTOS = re.compile(r'\b(sempre|nunca|somente|apenas|só|todos|todas|nenhum|nenhuma|qualquer|obrigatoriamente|jamais|exclusivamente)\b', re.I)
+validas = [q for q in questoes if len(q.get('alternativas', [])) == 5 and q.get('correta') in LET[:5]]
+if validas:
+    acerto_longa, mais15, absol, curtas = 0.0, [], [], []
+    for q in validas:
+        alts = q['alternativas']; c = LET.index(q['correta']); tam = [len(x) for x in alts]
+        topo = [i for i, t in enumerate(tam) if t == max(tam)]
+        if c in topo: acerto_longa += 1 / len(topo)
+        if tam[c] > 1.15 * sum(t for i, t in enumerate(tam) if i != c) / 4: mais15.append(q.get('id', '?'))
+        if any(ABSOLUTOS.search(x) for i, x in enumerate(alts) if i != c) and not ABSOLUTOS.search(alts[c]): absol.append(q.get('id', '?'))
+        js = q.get('justificativas', [])
+        if len(js) == 5 and any(len(re.sub(r'\[[^\]]*\]', '', j).strip(' .')) <= 30 for i, j in enumerate(js) if i != c): curtas.append(q.get('id', '?'))
+    taxa = 100 * acerto_longa / len(validas)
+    if taxa > 30: aviso(f'quem marcar sempre a alternativa mais longa acerta {taxa:.0f}% das questões (o acaso dá 20%; limite 30%): reescreva as alternativas')
+    if mais15: aviso(f'{len(mais15)} questões com a correta mais de 15% maior que a média das erradas: ' + ', '.join(mais15[:12]) + (' ...' if len(mais15) > 12 else ''))
+    if absol: aviso(f'{len(absol)} questões com "sempre", "nunca", "apenas", "só", "todos" ou "nenhum" só nas erradas (dá para eliminar sem saber): ' + ', '.join(absol[:12]) + (' ...' if len(absol) > 12 else ''))
+    if curtas: aviso(f'{len(curtas)} questões com explicação de alternativa errada curta demais para dizer o erro: ' + ', '.join(curtas[:12]) + (' ...' if len(curtas) > 12 else ''))
+    for n in range(1, 7):
+        seqs = {}
+        for q in validas:
+            if q.get('teste') == n and not q.get('fixa'): seqs[q.get('perfil')] = seqs.get(q.get('perfil'), '') + q['correta']
+        longas_seq = [v for v in seqs.values() if len(v) >= 4]
+        if len(longas_seq) > 1 and len(set(longas_seq)) < len(longas_seq): aviso(f'teste {n}: a sequência de letras certas se repete entre perfis ({", ".join(sorted(set(longas_seq)))}): sorteie a posição')
 fixas = [q for q in questoes if q.get('fixa')]
 if PARCIAL and not questoes: pass
 elif not fixas: falta('nenhuma questão âncora (fixa): a regra é 2 a 3 por tema')

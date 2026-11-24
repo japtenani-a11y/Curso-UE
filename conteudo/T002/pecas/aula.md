@@ -2,7 +2,7 @@
 
 # T002 — Aula: da falha ao pescoço. Caso, técnica e anatomia da cricotireoidostomia
 
-Duração: 30 minutos de exposição com os slides, dentro da reunião de 60 (aula 30, caso da aula 15, pós-teste D0 15). Este texto acompanha os slides e parte do material de antes da aula: a decisão de intubar, a fisiologia, a sequência rápida e o algoritmo estão no resumo básico e na síntese de evidência. Aqui o foco é o minuto em que a via aérea falha e o que a mão faz no pescoço.
+Duração: 20 minutos de exposição com os slides, dentro do encontro de 60 (aula do residente 20, caso 15, votação 10, síntese do R+ 5, fechamento do preceptor 5; formato decidido pela coordenação em 24/11/2026). Este texto acompanha os slides e parte do material de antes da aula: a decisão de intubar, a fisiologia, a sequência rápida e o algoritmo estão no resumo básico e na síntese de evidência. Aqui o foco é o minuto em que a via aérea falha e o que a mão faz no pescoço.
 
 ## 1. O caso na mesa: quando a contagem já não importa
 
